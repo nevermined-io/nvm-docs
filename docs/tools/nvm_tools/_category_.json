@@ -1,0 +1,8 @@
+{
+  "label": "Nevermined Tools",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Runs a fully functional Nevermined environment in your local computer"
+  }
+}

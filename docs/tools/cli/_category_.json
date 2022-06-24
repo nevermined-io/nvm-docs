@@ -1,0 +1,8 @@
+{
+  "label": "Command Line Interface",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Command Line Interface for interacting with Nevermined ecosystems"
+  }
+}
