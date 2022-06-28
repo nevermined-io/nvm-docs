@@ -39,7 +39,7 @@ const Blog = () => {
         <div>
             {posts.map(p => 
                 <div key={p.title} className={b('content')}>
-                    <UiText type='h2' className={b('title')}>{p.title}</UiText>
+                    <UiText type='h1' className={b('title')}>{p.title}</UiText>
                     <UiText dangerouslySetInnerHTML={{__html: p.content}} className={b('content')}/>
                     <UiText type='small' className={b('pub-data')}><strong>Published:</strong> {p.pubDate}</UiText>   
                 </div>    

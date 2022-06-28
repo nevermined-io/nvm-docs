@@ -24,4 +24,30 @@
         font-weight: bold;
     }
 
+    li {
+        list-style-type: disc;
+        margin-left: 16px;
+
+        &.theme-doc-sidebar-item-link, &.theme-doc-sidebar-item-category {
+            list-style-type: none;
+        }
+    }
+
+    p.text--truncate {
+        margin-top: 15px;
+    }
+
+    a.hash-link {
+        color: #57A7DE;
+    }
+
+    .table-of-contents__left-border {
+        li {
+            list-style-type: none;
+        }
+    }
+
+    strong {
+        font-weight: bold;
+    }
 }

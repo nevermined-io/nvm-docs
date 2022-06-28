@@ -42,6 +42,9 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          blogTitle: 'Nevermined blog',
+          blogDescription: 'Here is included the last 10 posts from Nevermined Medium',
+          blogSidebarCount: 0,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
