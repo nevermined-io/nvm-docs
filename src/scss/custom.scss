@@ -7,11 +7,12 @@
 .main-wrapper {
     background-color: #fff;
     color: black;
-    line-height: 25px;
-    font-size: 20px;
+    font-size: 1.125rem;
+    line-height: 2rem;
+    font-family: "Titillium Web", sans-serif;
 
     .breadcrumbs {
-        margin-bottom: 50px;
+        margin-bottom: 1.5em;
     }
 
     h1 {
@@ -19,8 +20,7 @@
         font-weight: bold;
     }
 
-    h2 {
-        margin-top: 60px;
+    h2 {        
         font-size: 40px;
         font-weight: bold;
 
@@ -40,21 +40,25 @@
 
     li {
         list-style-type: disc;
-        margin-left: 16px;
-        margin-bottom: 20px;
+        margin-left: 20px;
 
         &.theme-doc-sidebar-item-link, &.theme-doc-sidebar-item-category {
             list-style-type: none;
         }
     }
 
+    .menu__link {
+        font-weight: bold;
+    }
+    .table-of-contents__link {
+        font-weight: bold;
+    }
     p.text--truncate {
         margin-top: 15px;
     }
 
-    p {
-        margin-bottom: 40px;
-        line-height: 30px;
+    p {        
+        line-height: 2em;
     }
 
     a.hash-link, a {
