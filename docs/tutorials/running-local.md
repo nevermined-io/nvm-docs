@@ -161,6 +161,8 @@ function App() {
 export default App;
 ```
 
+Visit the code [here](https://github.com/nevermined-io/tutorials/tree/main/catalog/001-Create%20Nevermined%20dApp).
+
 ### Login with Metamask
 
 After see how it is possible list some data coming from the blockchain let's see how you can login with your Nevermined dApp using our catalog integration with Metamask. 
@@ -272,4 +274,8 @@ function App() {
 export default App;
 ```
 
-You can find the source code in [github](https://github.com/nevermined-io/tutorials/tree/main/catalog).
+Visit the code [here](https://github.com/nevermined-io/tutorials/tree/main/catalog/002-Login%20with%20Metamask).
+
+
+
+You can find a full list of examples in [github](https://github.com/nevermined-io/tutorials/tree/main/catalog).
