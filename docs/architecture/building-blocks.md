@@ -14,12 +14,10 @@ requirements of the enterprises.
 
 The complete technical solution includes the following components:
 
-## Architecture of Components
-
 ![Nevermined components](images/components_architecture.png)
 
 
-### Smart Contracts
+## Smart Contracts
 
 [Nevermined Smart Contracts](https://github.com/nevermined-io/contracts/)
 provide the core of the Data Ecosystem. Using an Ethereum network and
@@ -67,7 +65,7 @@ extended functionalities:
 - Improved SEA - Allowing to have faster agreements and simpler negotiations
 
 
-### Decentralized Autonomous Organization framework (DAOs framework)
+## Decentralized Autonomous Organization framework (DAOs framework)
 
 The control of the Smart Contracts (deployment, upgrade) is typically a
 responsibility of the Governance committee of the Digital Ecosystem.
@@ -83,17 +81,18 @@ Nevermined provides a [DAOs contracts framework](https://github.com/nevermined-i
 that allows the governance of a digital ecosystem.
 
 
-### Metadata API
+## Marketplace API
 
-The [Nevermined Metadata API](https://github.com/nevermined-io/metadata)
+The [Nevermined Marketplace API](https://github.com/nevermined-io/marketplace-api)
 is an Open Source micro-service that allows to store Assets metadata in an
 off-chain repository. It provides a plugins system allowing to persist the
-Metadata in ElasticSearch or MongoDB. The Metadata API exposes the functionality
+Metadata in ElasticSearch. The Marketplace API exposes the functionality
  for searching metadata using multiple filters and parameters.
 
-The Metadata API is typically the backend used for Data Marketplaces or Data
+The Marketplace API is typically the backend used for Data Marketplaces or Data
 Catalogs for storing all the Metadata of a specific domain related to a
-Marketplace or Catalog .
+Marketplace or Catalog. It also provide the management of typical capabilities
+you can find in a Marketplace (user profiles, bookmarks, etc).
 
 Nevermined provides the package and automation of the micro-service allowing an
 easy integration and deployment in cloud providers and Kubernetes clusters.
@@ -109,7 +108,7 @@ extended data services (e.g. storage and compute). The Nevermined Gateway, as
 part of the Publisher ecosystem, includes the credentials to interact with the
 infrastructure (initially cloud, but could be on-premise).
 
-The Gateway allows also the encryption and decryption of components using the following mechanisms:
+The Gateway allows also the encryption and decryption of content via:
 
 * RSA
 * ECDSA
@@ -158,15 +157,13 @@ complex use cases on top of the Nevermined Data Ecosystems.
   integrated with front-end applications.
 - [Nevermined SDK PY](https://github.com/nevermined-io/sdk-py) - Python version of the Nevermined SDK to be
   integrated with back-end applications. The primary users are data scientists.
-- [Nevermined SDK JAVA](https://github.com/nevermined-io/sdk-java) - Java version of the Nevermined SDK to be
-  integrated with [JVM](https://en.wikipedia.org/wiki/Java_virtual_machine) applications. The primary users are
-  data engineers.
+
 
 The libraries are packaged and delivered in the typical formats for each language allowing easy integration:
 
 - [NPM Nevermined SDK JS](https://www.npmjs.com/package/@nevermined-io/sdk-js)
 - [NPM Nevermined SDK PY](https://pypi.org/project/nevermined-sdk-py/)
-- [NPM Nevermined SDK JAVA](https://search.maven.org/artifact/io.keyko.nevermind/api)
+
 
 
 ### Command Line Interface (CLI) tool

@@ -3,7 +3,7 @@ sidebar_position: 1
 description: Deep dive in Nevermined technical solution
 ---
 
-# Intro to the Architecture
+# Intro to Nevermined Architecture
 
 Nevermined is a digital ecosystems builder solution that provides the capabilities of
 creating bespoke networks where different entities can interact around digital assets.
@@ -31,44 +31,64 @@ Nevermined is the product powered by [Nevermined AG](https://nevermined.io).
   handle an ecosystem with multiple and independent participants
 
 
-## Digital Ecosystem Principles
+## Digital Ecosystem
 
-During the design and construction of Nevermined, we identified **6 key factors**
-for the adoption and usage of a digital ecosystem and its continued growth:
+A digital ecosystem is an environment where different users can interact around 
+digital assets. So Nevermined is built around these digital assets and how they can 
+be used between different parties.
 
-* **Culture** - Culture & Organization help to establish how each ecosystem actor
-  interact with others.  We promote it giving a user centric approach
-* **User Experience (UX)** - The ecosystems should provide an excellent User
-  eXperience, facilitating the participation of all the partners and users
-* **Trust** - Data ecosystems must promote trustful environments where untrusted
-  parties can collaborate
-* **Integrity** - Data integrity and provenance as first class citizens where the
-  ecosystem users can validate that data doesn't change and from where is coming
-* **Compliance** - Data first approach compliance with all the data regulatory
-  requirements
-* **Incentives** - We promote the usage and retention of digital ecosystems via
-  gamification and providing additional value
+### Everything is about assets
+
+An asset in Nevermined is the representation of a phisical or digital thing. It is 
+registered by the origital creator or a provider. As an abstract concept, an asset
+can represent a piece of digital art, a dataset, an algorithm or piece of software,
+a manufactured good or any other kind of physical or digital entity.
+
+An asset in Nevermined is composed by 3 things:
+
+* The unique registry of the asset (on-chain) including the Decentralized Identifier
+  of the asset (aka **DID**) and the reference to the asset metadata (aka **DDO**).
+* The metadata describing the asset. This includes things like a description of the
+  asset, author, creation date, etc. The metadata of the asset can be stored anywhere
+  (off-chain in a database or on-chain in IPFS, Filecoin, etc).
+* All the files attached to the asset. They can be of any type, format, size, encrypted
+  or not, etc. The files can be stored in the cloud, on-premise, public network, etc.
+
+![Asset composition](images/asset_composition.png)
+
+:::info
+
+Nevermined don't store the files attached to an asset. So if you register an asset you 
+can keep all of them wherever you want (in a private or public storage). 
+In Nevermined we just keep the **DID** and some **metadata** to facilitate the discovery
+of the asset.
+
+:::
 
 
-## Use Cases
+The main reason of an asset in Nevermined is to **offer certain services** from the 
+publishers of that asset to the rest of the world. These services are flexible and 
+typically can be understood as something like the following example:
 
-Nevermined is a platform agnostic solution enabling data use cases where
-different parties don't trust each other.
-It allows to provide digital ecosystems where **DATA OWNERS** need to share and
-monetize their data with third-party people, but they want to keep the privacy
-and the control of their data.
+```
+As a owner of this asset, I want to allow others to download the contents associated
+to it if they pay 1 ETH.
+```
 
-Typical use cases are:
+The above example is a simple service offered by an asset owner published on Nevermined
+where it allows data sharing to anyone paying `1 ETH`. Nevermined allows the registration
+of assets with attached services like that one, and orchestrates all the trading to 
+mediate in the delivery of that service in a decentralized and secure way. 
 
-* **Digital Marketplaces** - Allowing content creators to directly interact with their
-  users. Nevermined allows data sharing, NFTs minting and selling, secondary marketts,
-  royalties enforcement, access to exclusive content, etc
-* **Banking** - Data Sharing with the regulator or internal across different
-  jurisdictions
-* **Telco** - Anonymized Data Sharing with the regulator and partners. AI without 
-  moving the data  
-* **Health & Pharma** - AI over medical results of different hospitals without
-  revealing PI
-* **Supply Chain** - Provenance, integrity and tracking of goods
-* **Automotive** - Data Sharing for AI to promote the autonomous cars
-* **Others** - Real estate, digital assets tokenization, ..
+Nevermined implements this and some other services around digital assets, allowing to 
+build use cases where content creators and/or publishers can create robust interactions
+without having a central entity keeping the assets of the users.
+
+:::info
+
+This last part is important. Nevermined don't store your private files, your credentials
+or own any of the assets you register in any of the networks.
+
+:::
+
+
