@@ -114,6 +114,7 @@
 			"templateId": "0xaabb",
 			"attributes": {
 				"main": {
+					"ercType": 1155,
 					"name": "nftSalesAgreement",
 					"creator": "",
 					"datePublished": "2019-02-08T08:13:49Z",
@@ -309,6 +310,7 @@
 			"templateId": "0xccdd",
 			"attributes": {
 				"main": {
+					"ercType": 1155,
 					"name": "nftAccessAgreement",
 					"creator": "",
 					"datePublished": "2019-02-08T08:13:49Z",

@@ -108,43 +108,51 @@
 			}
 		},
 		{
-			"type": "access",
-			"index": 1,
-			"serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
-			"templateId": "0x1234",
+			"type": "nft-sales",
+			"index": 6,
+			"serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/nft",
+			"templateId": "0xaabb",
 			"attributes": {
-				"main": {					
-					"name": "dataAssetAccessServiceAgreement",
+				"main": {
+					"ercType": 1155,
+					"name": "nftSalesAgreement",
 					"creator": "",
 					"datePublished": "2019-02-08T08:13:49Z",
-					"price": "10",
-					"timeout": 36000
+					"price": "20",
+					"timeout": 36000,
+					"encrypted": true,
+					"encryptionMode": "dtp"
 				},
 				"additionalInformation": {
-					"description": ""
+					"description": "",
+					"poseidonHash": "0x610D9314EDF2ced7681BA1633C33fdb8cF365a12",
+					"providerKey": {
+						"x": "89328493849328493284932",
+						"y": "89328493849328493284932"
+					}
 				},
 				"serviceAgreementTemplate": {
-					"contractName": "EscrowAccessSecretStoreTemplate",
+					"contractName": "NFTSalesTemplate",
 					"events": [{
 						"name": "AgreementCreated",
 						"actorType": "consumer",
 						"handler": {
-							"moduleName": "escrowAccessSecretStoreTemplate",
+							"moduleName": "nftSalesTemplate",
 							"functionName": "fulfillLockPaymentCondition",
 							"version": "0.1"
 						}
 					}],
 					"fulfillmentOrder": [
 						"lockPayment.fulfill",
-						"access.fulfill",
+						"transferNFT.fulfill",
 						"escrowPayment.fulfill"
 					],
 					"conditionDependency": {
 						"lockPayment": [],
-						"grantSecretStoreAccess": [],
-						"releaseReward": [
+						"transferNFT": [],
+						"escrowPayment": [
 							"lockPayment",
-							"access"
+							"transferNFT"
 						]
 					},
 					"conditions": [{
@@ -153,8 +161,7 @@
 							"timeout": 0,
 							"contractName": "LockPaymentCondition",
 							"functionName": "fulfill",
-							"parameters": [
-								{
+							"parameters": [{
 									"name": "_did",
 									"type": "bytes32",
 									"value": ""
@@ -172,46 +179,66 @@
 								{
 									"name": "_amounts",
 									"type": "uint256[]",
-									"value": ["10", "2"]
+									"value": ["9"]
 								},
 								{
 									"name": "_receivers",
 									"type": "address[]",
-									"value": ["0x00Bd138aBD70e2F00903268F3Db08f2D25677C9e", "0x068ed00cf0441e4829d9784fcbe7b9e26d4bd8d0"]
+									"value": ["0x00Bd138aBD70e2F00903268F3Db08f2D25677C9e"]
 								}
 							],
 							"events": [{
 								"name": "Fulfilled",
 								"actorType": "publisher",
 								"handler": {
-									"moduleName": "lockPaymentConditon",
-									"functionName": "fulfillAccessCondition",
+									"moduleName": "lockPaymentCondition",
+									"functionName": "fulfillTransferNFTCondition",
 									"version": "0.1"
 								}
 							}]
 						},
 						{
-							"name": "access",
+							"name": "transferNFT",
 							"timelock": 0,
 							"timeout": 0,
-							"contractName": "AccessCondition",
+							"contractName": "TransferNFTCondition",
 							"functionName": "fulfill",
 							"parameters": [{
-									"name": "_did",
+									"name": "_documentId",
 									"type": "bytes32",
 									"value": ""
 								},
 								{
-									"name": "_grantee",
+									"name": "_receiver",
 									"type": "address",
 									"value": ""
+								},
+								{
+									"name": "_numberNfts",
+									"type": "uint256",
+									"value": "1"
+								},
+								{
+									"name": "_nftHolder",
+									"type": "address",
+									"value": "0x00Bd138aBD70e2F00903268F3Db08f2D25677C9e"
+								},
+								{
+									"name": "_conditionId",
+									"type": "bytes32",
+									"value": ""
+								},
+								{
+									"name": "_contractAddress",
+									"type": "address",
+									"value": "0xf0ff000512fC47ab52aC8e4f90E335a5Fe3dD024"
 								}
 							],
 							"events": [{
 									"name": "Fulfilled",
 									"actorType": "publisher",
 									"handler": {
-										"moduleName": "access",
+										"moduleName": "transferNFT",
 										"functionName": "fulfillEscrowPaymentCondition",
 										"version": "0.1"
 									}
@@ -231,10 +258,9 @@
 							"name": "escrowPayment",
 							"timelock": 0,
 							"timeout": 0,
-							"contractName": "EscrowPaymentCondition",
+							"contractName": "EscrowPayment",
 							"functionName": "fulfill",
-							"parameters": [
-								{
+							"parameters": [{
 									"name": "_did",
 									"type": "bytes32",
 									"value": ""
@@ -242,12 +268,12 @@
 								{
 									"name": "_amounts",
 									"type": "uint256[]",
-									"value": ["10", "2"]
+									"value": ["9"]
 								},
 								{
 									"name": "_receivers",
 									"type": "address[]",
-									"value": ["0x00Bd138aBD70e2F00903268F3Db08f2D25677C9e", "0x068ed00cf0441e4829d9784fcbe7b9e26d4bd8d0"]
+									"value": ["0x00Bd138aBD70e2F00903268F3Db08f2D25677C9e"]
 								},
 								{
 									"name": "_sender",
@@ -274,7 +300,7 @@
 								"name": "Fulfilled",
 								"actorType": "publisher",
 								"handler": {
-									"moduleName": "escrowPaymentConditon",
+									"moduleName": "escrowPaymentCondition",
 									"functionName": "verifyRewardTokens",
 									"version": "0.1"
 								}
@@ -285,15 +311,118 @@
 			}
 		},
 		{
-			"index": 2,
-			"type": "authorization",
+			"type": "nft-access",
+			"index": 7,
+			"serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/nft-access",
+			"templateId": "0xccdd",
 			"attributes": {
 				"main": {
-					"service": "PSK-ECDSA",
-					"publicKey": "0xd793eb43ef7d191bf64f127c9f1a2c9037406d72706d3be7dc564fb9a9f08f21156b32d1ee3afbe64cc9f676f6facffac1377f7804daf932d3b8aa04fdeb0630"
+					"ercType": 1155,
+					"name": "nftAccessAgreement",
+					"creator": "",
+					"datePublished": "2019-02-08T08:13:49Z",
+					"price": "0",
+					"timeout": 0
+				},
+				"additionalInformation": {
+					"description": ""
+				},
+				"serviceAgreementTemplate": {
+					"contractName": "NFTAccessTemplate",
+					"events": [{
+						"name": "AgreementCreated",
+						"actorType": "consumer",
+						"handler": {
+							"moduleName": "nftAccessTemplate",
+							"functionName": "fulfillNFTHolderCondition",
+							"version": "0.1"
+						}
+					}],
+					"fulfillmentOrder": [
+						"nftHolder.fulfill",
+						"nftAccess.fulfill"
+					],
+					"conditionDependency": {
+						"nftHolder": [],
+						"nftAccess": []
+					},
+					"conditions": [{
+							"name": "nftHolder",
+							"timelock": 0,
+							"timeout": 0,
+							"contractName": "NFTHolderCondition",
+							"functionName": "fulfill",
+							"parameters": [{
+									"name": "_did",
+									"type": "bytes32",
+									"value": ""
+								},
+								{
+									"name": "_holderAddress",
+									"type": "address",
+									"value": ""
+								},
+								{
+									"name": "_numberNfts",
+									"type": "uint256",
+									"value": "1"
+								},
+								{
+									"name": "_contractAddress",
+									"type": "address",
+									"value": "0xf0ff000512fC47ab52aC8e4f90E335a5Fe3dD024"
+								}
+							],
+							"events": [{
+								"name": "Fulfilled",
+								"actorType": "publisher",
+								"handler": {
+									"moduleName": "nftHolderCondition",
+									"functionName": "fulfillNFTHolderCondition",
+									"version": "0.1"
+								}
+							}]
+						},
+						{
+							"name": "nftAccess",
+							"timelock": 0,
+							"timeout": 0,
+							"contractName": "NFTAccessCondition",
+							"functionName": "fulfill",
+							"parameters": [{
+									"name": "_documentId",
+									"type": "bytes32",
+									"value": ""
+								},
+								{
+									"name": "_grantee",
+									"type": "address",
+									"value": ""
+								}
+							],
+							"events": [{
+									"name": "Fulfilled",
+									"actorType": "publisher",
+									"handler": {
+										"moduleName": "nftAccess",
+										"functionName": "fulfillNFTAccessCondition",
+										"version": "0.1"
+									}
+								},
+								{
+									"name": "TimedOut",
+									"actorType": "consumer",
+									"handler": {
+										"moduleName": "nftAccess",
+										"functionName": "fulfillNFTAccessCondition",
+										"version": "0.1"
+									}
+								}
+							]
+						}
+					]
 				}
-			},
-			"serviceEndpoint": "http://localhost:8030/"
+			}
 		}
 	]
 }

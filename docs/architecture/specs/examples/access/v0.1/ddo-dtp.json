@@ -118,10 +118,17 @@
 					"creator": "",
 					"datePublished": "2019-02-08T08:13:49Z",
 					"price": "10",
-					"timeout": 36000
+					"timeout": 36000,
+					"encrypted": true,
+					"encryptionMode": "dtp"
 				},
-				"additionalInformation": {
-					"description": ""
+				"additionalInformation": {					
+					"description": "",
+					"poseidonHash": "0x610D9314EDF2ced7681BA1633C33fdb8cF365a12",
+					"providerKey": {
+						"x": "89328493849328493284932",
+						"y": "89328493849328493284932"
+					}
 				},
 				"serviceAgreementTemplate": {
 					"contractName": "EscrowAccessSecretStoreTemplate",

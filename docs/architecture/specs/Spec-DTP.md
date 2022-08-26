@@ -59,6 +59,11 @@ The public parts that have to be added to `additionalInformation` are
 * `poseidonHash`: Poseidon hash of the key.
 * `providerKey.x` and `providerKey.y`: The Babyjubjub public key of the provider.
 
+When the asset files are encrypted, the DDO will include under `main` the attribute `encryption` with the possible values of:
+
+* `dtp` - It means the file/s are encrypted via Data Tranfer Proofs
+* `none` - The files are not encrypted. This is the default behavior if the parameter is not defined
+
 ### Service agreement
 
 For the service agreement, following data is needed:

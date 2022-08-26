@@ -120,9 +120,10 @@ A file object has the following attributes, with the details necessary to consum
 | **`encoding`**      | no       | File encoding (e.g. UTF-8). |
 | **`compression`**   | no       | File compression (e.g. no, gzip, bzip2, etc). |
 | **`encrypted`**     | no       | Boolean. Is the file encrypted? If is not set is assumed the file is not encrypted |
-| **`encryptionMode`**| no       | Encryption mode used. Just valid if `encrypted=true` |
+| **`encryptionMode`**| no       | Encryption mode used. Just valid if `encrypted=true`. Currently only `dtp` is implemented |
 | **`resourceId`**    | no       | Remote identifier of the file in the external provider. It is typically the remote id in the cloud provider. |
 | **`attributes`**    | no       | Key-Value hash map with additional attributes describing the asset file. It could include details like the Amazon S3 bucket, region, etc. |
+| **`ercType`**       | no       | If the service refers to a NFT (ERC-721 or ERC-1155), this will store a `721` or `1155` values |
 
 ### Additional Attributes
 
@@ -136,7 +137,10 @@ All the additional information will be stored as part of the `additionalInformat
 | **`copyrightHolder`**| Text       | No            | The party holding the legal copyright. Empty by default. |
 | **`workExample`** | Text          | No            | Example of the concept of this asset. This example is part of the metadata, not an external link. |
 | **`links`**       | Array of Link | No            | Mapping of links for data samples, or links to find out more information. Links may be to either a URL or another Asset. We expect marketplaces to converge on agreements of typical formats for linked data: Nevermined itself does not mandate any specific formats as these requirements are likely to be domain-specific. The links array can be an empty array, but if there is a link object in it, then an "url" is required in that link object. |
-| **`inLanguage`**  | Text          | No            | The language of the content. Please use one of the language codes from the [IETF BCP 47 standard](https://tools.ietf.org/html/bcp47). |
+| **`poseidonHash`**  | Text        | No            | For DTP: Poseidon hash of the key. |
+| **`providerKey.x`**  | Text       | No            | For DTP: The Babyjubjub public key of the provider. |
+| **`providerKey.y`**  | Text       | No            | For DTP: The Babyjubjub public key of the provider. |
+
 
 #### Other Suggested Additional Attributes
 
