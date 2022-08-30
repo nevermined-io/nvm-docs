@@ -1,10 +1,15 @@
+@nevermined-io/catalog-providers / [Exports](modules.md)
+
 ---
-sidebar_position: 6
+sidebar_position: 1
+title: Getting started
 ---
 
-# Getting started with providers
+# Getting started
 
 The Catalog exposes a package facilitating the interaction with Web3 providers like Metamask.
+
+**Note**: Currently `Catalog providers` only support Metamask but more providers will be supported soon.
 
 ## Pre-requisites
 
