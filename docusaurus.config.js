@@ -70,21 +70,15 @@ const config = {
         items: [        
           {
             type: 'doc',
-            docId: 'overview/what-is-nvm',
+            docId: 'getting-started/what-is-nvm',
             position: 'left',
-            label: 'Overview',
+            label: 'Getting Started',
           },
           {
             type: 'doc',
             docId: 'architecture/overview',
             position: 'left',
             label: 'Architecture',
-          },
-          {
-            type: 'doc',
-            docId: 'integration',
-            position: 'left',
-            label: 'Integration',
           },
           {
             type: 'doc',
@@ -111,16 +105,12 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Overview',
-                to: '/docs/overview/what-is-nvm',
+                label: 'Getting Started',
+                to: '/docs/getting-started/what-is-nvm',
               },
               {
                 label: 'Architecture',
                 to: '/docs/architecture/overview',
-              },
-              {
-                label: 'Integration',
-                to: '/docs/integration',
               },
               {
                 label: 'Tutorials',
