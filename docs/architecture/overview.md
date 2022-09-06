@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 description: Deep dive in Nevermined technical solution
+title: Overview
 ---
 
 # Intro to Nevermined Architecture

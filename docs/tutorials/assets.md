@@ -130,7 +130,7 @@ const Publisher = () => {
 
 This section will show how to consume an asset already published using Nevermined.
 
-1. Create and component that accept as parameter a [ddo](../architecture/components/sdks/api-reference/classes/DDO.md)  and import from the Catalog all the functionalities needed for this purpose
+1. Create and component that accept as parameter a [ddo](../nevermined-sdk/api-reference/classes/DDO.md)  and import from the Catalog all the functionalities needed for this purpose
 
 ```ts
 import { AssetService } from '@nevermined-io/catalog-core';
@@ -244,7 +244,7 @@ This section will guide you to the creation of your first Nevermined NFT ERC721.
 
 #### Requirements
 
-First you need to deploy the contract address of the nft ERC-721, you can use the `cli` for it, [see more here](../tools/cli/using-cli.md#nfts)
+First you need to deploy the contract address of the nft ERC-721, you can use the `cli` for it, [see more here](../cli/using-cli.md#nfts)
 
 
 1. Import the function from the AssetService and the contract NFT token address.
@@ -344,7 +344,7 @@ const Publisher = () => {
 
 This section will show how to consume an asset already published using Nevermined.
 
-1. Create and component that accept as parameter a [ddo](../architecture/components/sdks/api-reference/classes/DDO.md)  and import from the Catalog all the functionalities needed for this purpose
+1. Create and component that accept as parameter a [ddo](../nevermined-sdk/api-reference/classes/DDO.md)  and import from the Catalog all the functionalities needed for this purpose
 
 ```ts
 import { AssetService } from '@nevermined-io/catalog-core';
@@ -484,7 +484,7 @@ const Publisher = () => {
     ...
 ```
 
-3. Call the function in your code. Creating a button that publish when you click and send the `metadata` object, the amount of nft to mint, the royalty and the [royalty type](../architecture/components/catalog/core/API/enums/RoyaltyKind.md).
+3. Call the function in your code. Creating a button that publish when you click and send the `metadata` object, the amount of nft to mint, the royalty and the [royalty type](../catalog/core/API/enums/RoyaltyKind.md).
 
 ```ts
     ...
@@ -542,7 +542,7 @@ const Publisher = () => {
 
 This section will show how to consume an NFT1155 already published using Nevermined.
 
-1. Create and component that accept as parameter a [ddo](../architecture/components/sdks/api-reference/classes/DDO.md)  and import from the Catalog all the functionalities needed for this purpose
+1. Create and component that accept as parameter a [ddo](../nevermined-sdk/api-reference/classes/DDO.md)  and import from the Catalog all the functionalities needed for this purpose
 
 ```ts
 import { AssetService } from '@nevermined-io/catalog-core';
