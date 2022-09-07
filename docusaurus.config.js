@@ -30,9 +30,13 @@ const config = {
 
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      'classic',      
+      /** @type {import('@docusaurus/preset-classic').Options} */        
       ({
+        googleAnalytics: {
+          trackingID: 'G-S70X8HQFLP',
+          anonymizeIP: true,
+        },               
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
