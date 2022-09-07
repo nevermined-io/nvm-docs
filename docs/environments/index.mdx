@@ -1,0 +1,44 @@
+---
+sidebar_position: 1
+description: Nevermined Environments
+---
+
+# Nevermined Public Environments
+
+Nevermined is available in different networks/environments allowing users to make use of this
+infrastructure without the complexity of deploying Smart Contracts and other components of 
+the stack.
+
+The different existing networks have different characteristics related to the underlying blockchain network being used and if they are a production or test environment.
+
+## Blockchain networks supported
+
+Nevermined Smart Contracts are EVM compatible so they can be deployed in any EVM compatible blockchain network. Currently we support **Ethereum** and **Polygon**. But we plan in the future
+to augment this list giving support to some others.
+
+## Production and Testing environments
+
+For each blockchain network we support actively we have Production and Testing deployments. This can help you to go through a typical development/testing process and further release into production independently of the blockchain network you use.
+
+## Versions
+
+We use [Semantic versioning](https://semver.org/) for our Smart Contracts interfaces and Apis. And we deploy and mantain multiple versions of the contracts and apis in these environments allowing to integrate with different versions of the stack.
+
+Generally we **upgrade** Smart Contracts when we implement **patches** and **minor** changes and deploy a new version of the Smart Contracts when we implement **mayor** changes.
+
+This means for the same network and environment you could have available the Smart Contracts in the version `v1.3.5` and `v2.0.5`, allowing you to integrate one or the other depending on your development lifecycle.
+
+## About the tags
+
+Tags are different contract deployments for the same network&version. Each tag is independant from the others. Generically we use two different tags:
+
+- `public`: This tag/contracts instane is meant to be used for new integrations, public integrations, etc... It expected to have the latest versions and/or configurations. This is a *shared* environment. *Probably you need to use these environments.*
+
+- `common`: This tag/contracts instane is used by more "stable" applications. Each application has its own nevermined stack (`gateway` + `markeplace-api`).
+
+
+
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />

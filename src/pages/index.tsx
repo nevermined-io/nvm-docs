@@ -27,7 +27,7 @@ const FeatureList: BoxItem[] = [
   {
     title: 'Nevermined',
     className: b('box'),
-    link: 'docs/getting-started/what-is-nvm',
+    link: 'docs/getting-started',
     Svg: require('@site/static/nevermined/neverminedDocs.svg').default,
     description: (
       <>
@@ -50,7 +50,7 @@ const FeatureList: BoxItem[] = [
   {
     title: 'Tutorials',
     className: b('box'),
-    link: 'docs/category/tutorials',
+    link: 'docs/tutorials',
     Svg: require('@site/static/nevermined/tutorialsDocs.svg').default,
     description: (
       <>

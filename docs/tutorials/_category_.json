@@ -2,7 +2,7 @@
   "label": "Tutorials",
   "position": 5,
   "link": {
-    "type": "generated-index",
-    "description": "Learn about how to make use of Nevermined technology"
+    "type": "doc",
+    "id": "tutorials/index"
   }
 }
