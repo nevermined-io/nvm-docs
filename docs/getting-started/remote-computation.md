@@ -5,6 +5,19 @@ description: Nevermined enables the execution of computation remotely in a priva
 
 # Remote Computation
 
+Nevermined empowers enterprises by enabling computation in a frictionless manner as a real-time Web3 infrastructure provider. The Nevermined platform enables dynamic and secure data sharing through a combination of blockchain technology, Federated Learning, and on-chain computation. 
+
+With Nevermined’s Data Sharing capabilities, all actors can advertise their assets and monetize their data without having to move or change their existing infrastructure, thus becoming data providers. And Nevermined’s Data In Situ Computation (DISC) capability allows for consumers of the data (third-party actors) to run generic computations (inside the scope allowed by the data providers) without ever having to access the data directly.
+
+This means that data remains private and static. This is achieved via a single-access interface that participants can use to access data from multiple, wholly distinct and independent organizations. All the heavy lifting of orchestrating a Federated Learning session spanning multiple organizations is handled by Nevermined. This means the Data Scientist or Data Engineer only needs to reuse his existing machine learning code and tools with little to no modification.
+Nevermined’s approach is two-fold: first is to show how smart contract-based models can be a very natural data exchange channel for federated learning. Second, leveraging this infrastructure, we can show how an intuitive measure of each agents' contribution can be programmed and integrated with the life cycle of the process that consists of 3 actors:
+
+* **Coordinator**: All the components required to perform the coordination of a Federated Learning session. The components provided by the main framework (coordinator + aggregator)
+* **Participant**: Component responsible for interacting with the coordinator and executing the machine learning task over the data.
+* **Federated Learning Session**: The time from setup of the coordinator to the successful execution of the machine learning plan. Typically this involves coordinating the participants for a finite number or rounds and then storing the resulting model
+
+## Use Cases
+
 When sharing data is not an option because of privacy constraints, permitting an algorithm to compute on a data set you can’t see is a rational alternative. There are many different possibilities and technical solutions for this depending on the computation being executed, like a simple aggregation or a fully-fledged analytics process using Spark or similar, as well as the privacy constraints of the data.
 
 To deliver this type of sophisticated solution involves the orchestration of computation techniques, **Federated Learning**, and on-chain computation. What pattern is leveraged depends entirely on the use case.
@@ -13,8 +26,15 @@ What is important is to understand the use case, what limitations or requirement
 
 The main intention here is to support use cases such as the following:
 
-* I work in the payments department of a bank. I have a model that can detect 50% of the frauds happening using the bank’s credit card transactions. If I could train my model in a privacy-preserving manner on top of other banks’ credit card transactions, I could improve the accuracy of my model, detect more fraudulent transactions and save a pile of money. I could also sell my model to the banks that share their data!
-* I work in a distribution center where COVID vaccines are received before local distribution. I would like to run a query against the temperature sensors of the carrier to check that temperature was always within the appropriate temperature range, and flag for further analysis any shipment that fails acceptance criteria.
+:::info Credit Card Fraud Detection
+I work in the payments department of a bank. I have a model that can detect 50% of the frauds happening using the bank’s credit card transactions. If I could train my model in a privacy-preserving manner on top of other banks’ credit card transactions, I could improve the accuracy of my model, detect more fraudulent transactions and save a pile of money. I could also sell my model to the banks that share their data!
+:::
+
+Or:
+
+:::info Remote Querying
+I work in a distribution center where COVID vaccines are received before local distribution. I would like to run a query against the temperature sensors of the carrier to check that temperature was always within the appropriate temperature range, and flag for further analysis any shipment that fails acceptance criteria.
+:::
 
 For example, in the drug shipping use case, being able to orchestrate temperature threshold calculations across numerous providers’ datasets could help flag a problem with the shipment before it becomes a problem. However, knowing which dataset provided the flagging information could be kept private through aggregation techniques, etc. This type of capability could limit the risk exposure of any given data provider within the supply chain.
 
