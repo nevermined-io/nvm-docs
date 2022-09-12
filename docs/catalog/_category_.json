@@ -2,8 +2,8 @@
     "label": "Nevermined Catalog",
     "position": 3,
     "link": {
-      "type": "generated-index",
-      "description": "Nevermined React components catalog"
+      "type": "doc",
+      "id": "catalog/intro"
     }
   }
   

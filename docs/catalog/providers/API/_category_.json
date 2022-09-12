@@ -2,7 +2,7 @@
   "label": "API Ref.",
   "position": 2,
   "link": {
-    "type": "generated-index",
-    "description": "Nevermined Catalog Providers API Reference"
+    "type": "doc",
+    "id": "catalog/providers/API/modules"
   }
 }
