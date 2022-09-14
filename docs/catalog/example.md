@@ -4,23 +4,6 @@ sidebar_position: 3
 
 # Demo & Example
 
-Content:
-
-1. [Requirements](#requirements)
-2. [How to get the source of this example?](#how-to-get-the-source-of-this-example)
-3. [Let's start with the app config file](#lets-start-with-the-app-config-file)
-4. [Setting the networks for web3 providers](#setting-the-networks-for-web3-providers)
-5. [The example file](#the-example-file)
-    - [SDKInstance](#sdkinstance)
-    - [constructRewardMap](#constructrewardmap)
-    - [PublishAsset](#publishasset)
-    - [BuyAsset](#buyasset)
-    - [MMWallet](#mmwallet)
-    - [App](#app)
-    - [Complete example file](#complete-example-file)
-6. [Styling](#styling)
-7. [The index file](#the-index-file)
-
 ## Requirements
 Before to start with this demo you need:
 
