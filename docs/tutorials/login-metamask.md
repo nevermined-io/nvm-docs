@@ -134,7 +134,7 @@ ReactDOM.render(
 ```
 
 ## Add login component
-Let's create a component that contains a login button which will login to the wallet once that it is clicked and other button to logout
+Let's create a component that contains a login button, which will login to the wallet once that it is clicked, and other button to logout
 
 ```tsx
 const LoginMetaMask = () => {
