@@ -14,7 +14,7 @@ Before to start with this demo you need:
 You can even install the example in your local machine without setting anything, just ready to run it, you can find that [here](https://github.com/nevermined-io/create-nevermined-react)
 
 ## Let's start with the app config file
-The first file that you need to create is the `config.ts` file which contains all the [options needed](https://nvm-docs.nevermined.io/docs/nevermined-sdk/api-reference/classes/Config) to initialize the [Catalog core](https://nvm-docs.nevermined.io/docs/catalog/core/).
+The first file that you need to create is the `config.ts` file which contains all the [options needed](../nevermined-sdk/api-reference/classes/Config.md) to initialize the [Catalog core](./core/README.md).
 
 ```ts
 import { Config } from '@nevermined-io/nevermined-sdk-js';
