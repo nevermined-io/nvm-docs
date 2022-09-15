@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Demo & Example
+# Example
 
 ## Requirements
 Before to start with this demo you need:

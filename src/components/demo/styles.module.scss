@@ -1,0 +1,23 @@
+@import '~@nevermined-io/styles/lib/cjs/styles/index.scss';
+
+.demo {
+  @include component;  
+
+  &__container {
+    padding: 25px 0 0 25px;
+  }
+
+  &__detail {
+    margin-right: 5px;
+    color: #000;
+  }
+
+  &__ddo {
+    line-height: 16px;
+  }
+
+  &__buy {
+    margin-top: 20px;
+    color: #000;
+  }
+}
