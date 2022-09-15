@@ -44,13 +44,11 @@ import ReactDOM from 'react-dom';
 import Example from 'examples';
 import { MetaMask } from '@nevermined-io/catalog-providers';
 
-const NODE_URI="http://localhost:8545"
-
 ReactDOM.render(
     <div>
         <MetaMask.WalletProvider
-            correctNetworkId={mumbaiChainId}
-            nodeUri={NODE_URI}
+            correctNetworkId="0x13881"
+            nodeUri="https://matic-mumbai.chainstacklabs.com"
         >
             ...
         </MetaMask.WalletProvider>
