@@ -43,14 +43,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Example from 'examples';
 import { MetaMask } from '@nevermined-io/catalog-providers';
-import chainConfig, { mumbaiChainId } from './chain_config';
 
 const NODE_URI="http://localhost:8545"
 
 ReactDOM.render(
     <div>
         <MetaMask.WalletProvider
-            chainConfig={chainConfig}
             correctNetworkId={mumbaiChainId}
             nodeUri={NODE_URI}
         >
@@ -92,9 +90,7 @@ At least that you need to set differents networks for your dapp than [polygon](h
 import { zeroX } from '@nevermined-io/nevermined-sdk-js/dist/node/utils';
 import { acceptedChainId } from 'config';
 
-const acceptedChainIdHex = zeroX((+acceptedChainId).toString(16));
-const polygonLocalnetChainId = zeroX((8997).toString(16));
-export const mumbaiChainId = zeroX((80001).toString(16));
+const mumbaiChainId = zeroX((80001).toString(16));
 const mainnetChainId = zeroX((137).toString(16));
 
 const ChainConfig = {
@@ -147,11 +143,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { MetaMask } from '@nevermined-io/catalog-providers';
 import { zeroX } from '@nevermined-io/nevermined-sdk-js/dist/node/utils';
-import { acceptedChainId } from 'config';
 
-const acceptedChainIdHex = zeroX((+acceptedChainId).toString(16));
-const polygonLocalnetChainId = zeroX((8997).toString(16));
-export const mumbaiChainId = zeroX((80001).toString(16));
+const mumbaiChainId = zeroX((80001).toString(16));
 const mainnetChainId = zeroX((137).toString(16));
 
 const ChainConfig = {
@@ -213,7 +206,7 @@ const LoginMetamask = () => {
 ReactDOM.render(
     <div>
         <MetaMask.WalletProvider
-            chainConfig={ChainConfig}
+            externalChainConfig={ChainConfig}
             correctNetworkId={mumbaiChainId}
             nodeUri={ChainConfig.mainnet.rpcUrls[0]}
         >
