@@ -35,78 +35,6 @@ npm install --save @nevermined-io/catalog-providers
   </TabItem>
 </Tabs>
 
-## Config your network (optional)
-At least that you need to set differents networks for your dapp than [polygon](https://polygon.technology/) this file is not needed, anyway here we show you how should look the config file.
-
-```ts
-import { zeroX } from '@nevermined-io/nevermined-sdk-js/dist/node/utils';
-import { acceptedChainId } from 'config';
-
-const acceptedChainIdHex = zeroX((+acceptedChainId).toString(16));
-const spreeChainId = zeroX((8996).toString(16));
-const polygonLocalnetChainId = zeroX((8997).toString(16));
-export const mumbaiChainId = zeroX((80001).toString(16));
-const mainnetChainId = zeroX((137).toString(16));
-
-const ChainConfig = {
-  development: {
-    chainId: acceptedChainIdHex === spreeChainId ? spreeChainId : polygonLocalnetChainId,
-    chainName: 'Localhost development',
-    nativeCurrency: {
-      name: 'Ethereum',
-      symbol: 'ETH',
-      decimals: 18
-    },
-    rpcUrls: ['http://localhost:8545'],
-    blockExplorerUrls: [''],
-    iconUrls: ['https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png']
-  },
-  mumbai: {
-    chainId: mumbaiChainId,
-    chainName: 'Polygon Testnet Mumbai',
-    nativeCurrency: {
-      name: 'Matic',
-      symbol: 'MATIC',
-      decimals: 18
-    },
-    rpcUrls: [
-      'https://matic-mumbai.chainstacklabs.com',
-      'https://rpc-endpoints.superfluid.dev/mumbai'
-    ],
-    blockExplorerUrls: ['https://mumbai.polygonscan.com/'],
-    iconUrls: ['https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png']
-  },
-  mainnet: {
-    chainId: mainnetChainId,
-    chainName: 'Polygon Mainnet',
-    nativeCurrency: {
-      name: 'Matic',
-      symbol: 'MATIC',
-      decimals: 18
-    },
-    rpcUrls: ['https://polygon-rpc.com'],
-    blockExplorerUrls: ['https://polygonscan.com/'],
-    iconUrls: ['https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png']
-  },
-  returnConfig: (chainIdHex: string) => {
-    if (chainIdHex === spreeChainId || chainIdHex === polygonLocalnetChainId) {
-      return ChainConfig.development;
-    }
-    if (chainIdHex === mumbaiChainId) {
-      return ChainConfig.mumbai;
-    }
-    if (chainIdHex === mainnetChainId) {
-      return ChainConfig.mainnet;
-    }
-    return ChainConfig.development;
-  }
-};
-
-export default ChainConfig;
-```
-
-This config file represent all the networks that your dapp support, and a default one where metamask will ask to switch in case that the wallet is in some not supported network
-
 ## Add the Metamask provider
 Now in our app we need to add the Metamask provider as a parent of all the components that will use functionalities from it
 
@@ -157,6 +85,60 @@ const LoginMetaMask = () => {
 
 In this component we have the `loginMetamask` and `logout` functions and the `walletAddress` state, if `walletAddress` is not empty means that the metamask is connected and will show the address and logout button otherwise will show the button to connect
 
+## Config your network (optional)
+At least that you need to set differents networks for your dapp than [polygon](https://polygon.technology/) this file is not needed, anyway here we show you how should look the config file.
+
+```ts
+import { zeroX } from '@nevermined-io/nevermined-sdk-js/dist/node/utils';
+import { acceptedChainId } from 'config';
+
+const acceptedChainIdHex = zeroX((+acceptedChainId).toString(16));
+const polygonLocalnetChainId = zeroX((8997).toString(16));
+export const mumbaiChainId = zeroX((80001).toString(16));
+const mainnetChainId = zeroX((137).toString(16));
+
+const ChainConfig = {
+  mumbai: {
+    chainId: mumbaiChainId,
+    chainName: 'Polygon Testnet Mumbai',
+    nativeCurrency: {
+      name: 'Matic',
+      symbol: 'MATIC',
+      decimals: 18
+    },
+    rpcUrls: [
+      'https://matic-mumbai.chainstacklabs.com',
+      'https://rpc-endpoints.superfluid.dev/mumbai'
+    ],
+    blockExplorerUrls: ['https://mumbai.polygonscan.com/'],
+    iconUrls: ['https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png']
+  },
+  mainnet: {
+    chainId: mainnetChainId,
+    chainName: 'Polygon Mainnet',
+    nativeCurrency: {
+      name: 'Matic',
+      symbol: 'MATIC',
+      decimals: 18
+    },
+    rpcUrls: ['https://polygon-rpc.com'],
+    blockExplorerUrls: ['https://polygonscan.com/'],
+    iconUrls: ['https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png']
+  },
+  returnConfig: (chainIdHex: string) => {
+    if (chainIdHex === mumbaiChainId) {
+      return ChainConfig.mumbai;
+    }
+    if (chainIdHex === mainnetChainId) {
+      return ChainConfig.mainnet;
+    }
+    return ChainConfig.mainnet;
+  }
+};
+
+export default ChainConfig;
+```
+
 ## Lets put everything together
 In order to finish we need to call this component inside of the Metamask provider, this is the complete example
 
@@ -164,9 +146,52 @@ In order to finish we need to call this component inside of the Metamask provide
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { MetaMask } from '@nevermined-io/catalog-providers';
-import chainConfig, { mumbaiChainId } from './chain_config';
+import { zeroX } from '@nevermined-io/nevermined-sdk-js/dist/node/utils';
+import { acceptedChainId } from 'config';
 
-const NODE_URI="http://localhost:8545"
+const acceptedChainIdHex = zeroX((+acceptedChainId).toString(16));
+const polygonLocalnetChainId = zeroX((8997).toString(16));
+export const mumbaiChainId = zeroX((80001).toString(16));
+const mainnetChainId = zeroX((137).toString(16));
+
+const ChainConfig = {
+  mumbai: {
+    chainId: mumbaiChainId,
+    chainName: 'Polygon Testnet Mumbai',
+    nativeCurrency: {
+      name: 'Matic',
+      symbol: 'MATIC',
+      decimals: 18
+    },
+    rpcUrls: [
+      'https://matic-mumbai.chainstacklabs.com',
+      'https://rpc-endpoints.superfluid.dev/mumbai'
+    ],
+    blockExplorerUrls: ['https://mumbai.polygonscan.com/'],
+    iconUrls: ['https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png']
+  },
+  mainnet: {
+    chainId: mainnetChainId,
+    chainName: 'Polygon Mainnet',
+    nativeCurrency: {
+      name: 'Matic',
+      symbol: 'MATIC',
+      decimals: 18
+    },
+    rpcUrls: ['https://polygon-rpc.com'],
+    blockExplorerUrls: ['https://polygonscan.com/'],
+    iconUrls: ['https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png']
+  },
+  returnConfig: (chainIdHex: string) => {
+    if (chainIdHex === mumbaiChainId) {
+      return ChainConfig.mumbai;
+    }
+    if (chainIdHex === mainnetChainId) {
+      return ChainConfig.mainnet;
+    }
+    return ChainConfig.mainnet;
+  }
+};
 
 const LoginMetamask = () => {
     const { loginMetamask, walletAddress, logout} = MetaMask.useWallet();
@@ -188,9 +213,9 @@ const LoginMetamask = () => {
 ReactDOM.render(
     <div>
         <MetaMask.WalletProvider
-            chainConfig={chainConfig}
+            chainConfig={ChainConfig}
             correctNetworkId={mumbaiChainId}
-            nodeUri={NODE_URI}
+            nodeUri={ChainConfig.mainnet.rpcUrls[0]}
         >
           <LoginMetamask/>
         </MetaMask.WalletProvider>
@@ -198,6 +223,8 @@ ReactDOM.render(
     document.getElementById("root") as HTMLElement
 );
 ```
+
+This config file represent all the networks that your dapp support, and a default one where metamask will ask to switch in case that the wallet is in some not supported network
 
 ## Demo
 
