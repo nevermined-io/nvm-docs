@@ -12,16 +12,16 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "artifacts:download": "./scripts/download-artifacts.sh v2.0.5 mumbai"
   },
   "dependencies": {
     "@docusaurus/core": "2.1.0",
     "@docusaurus/plugin-google-analytics": "2.1.0",
     "@docusaurus/preset-classic": "2.1.0",
     "@mdx-js/react": "^1.6.22",
-    "@nevermined-io/catalog-core": "^0.1.2",
-    "@nevermined-io/catalog-providers": "^0.1.2",
-    "@nevermined-io/nevermined-sdk-js": "^0.23.5",
+    "@nevermined-io/catalog-core": "0.2.0",
+    "@nevermined-io/catalog-providers": "0.2.0",
     "@nevermined-io/styles": "^0.1.1",
     "axios": "^0.27.2",
     "bem-helpers": "^1.1.0",

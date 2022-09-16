@@ -3,16 +3,14 @@ import React, { useEffect, useState } from 'react';
 import AssetRewards from '@nevermined-io/nevermined-sdk-js/dist/node/models/AssetRewards';
 import { MetaData, Logger, DDO } from '@nevermined-io/nevermined-sdk-js';
 import BigNumber from '@nevermined-io/nevermined-sdk-js/dist/node/utils/BigNumber';
-import { Catalog, AssetService, RoyaltyKind } from '@nevermined-io/catalog-core';
-import { getCurrentAccount, AuthToken } from '@nevermined-io/catalog-core'
+import { Catalog, AssetService, RoyaltyKind, getCurrentAccount, getRoyaltyScheme, AuthToken } from '@nevermined-io/catalog-core';
 import { MetaMask } from '@nevermined-io/catalog-providers';
 import { UiText, UiLayout, BEM, UiButton } from '@nevermined-io/styles';
 import styles from './styles.module.scss';
 import { ethers } from 'ethers';
-import { useLocation } from '@docusaurus/router';
 
 const appConfig = {
-  web3Provider: typeof window !== 'undefined' ? (window as any).ethereum : new ethers.providers.JsonRpcProvider('https://matic-mumbai.chainstacklabs.com'),
+  web3Provider: typeof window !== 'undefined' ? (window as any).ethereum : new ethers.providers.JsonRpcProvider(),
   gatewayUri: 'https://defi.v2.gateway.mumbai.nevermined.rocks',
   faucetUri: 'https://faucet.rinkeby.nevermined.rocks',
   verbose: true,
@@ -20,7 +18,7 @@ const appConfig = {
   graphHttpUri: 'https://api.thegraph.com/subgraphs/name/nevermined-io/common',
   marketplaceAuthToken: AuthToken.fetchMarketplaceApiTokenFromLocalStorage().token,
   marketplaceUri: 'https://defi.v2.marketplace-api.mumbai.nevermined.rocks',
-  artifactsFolder: ''
+  artifactsFolder: `${location.protocol}//${location.host}/contracts`
   
 }
 
@@ -127,6 +125,7 @@ const BuyAsset = ({ddo}: {ddo: DDO}) => {
   };
 
   const download = async () => {
+    console.log(ddo.id);
     await assets.downloadNFT(ddo.id);
   };
 
@@ -187,6 +186,11 @@ const App = () => {
       const rewardsRecipients: any[] = [];
       const assetRewardsMap = constructRewardMap(rewardsRecipients, 100, publisher.getId());
       const assetRewards = new AssetRewards(assetRewardsMap);
+      const royaltyAttributes = {
+        royaltyKind: RoyaltyKind.Standard,
+        scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
+        amount: 0,
+      };
 
       if (!account.isTokenValid()) {
         await account.generateToken();
@@ -198,9 +202,8 @@ const App = () => {
         nftAmount: 1,
         preMint: true,
         cap: 100,
-        royalties: 0,
-        royaltyKind: RoyaltyKind.Standard,
-        erc20TokenAddress: '0x2058A9D7613eEE744279e3856Ef0eAda5FCbaA7e',
+        royaltyAttributes,
+        erc20TokenAddress: "0x2058A9D7613eEE744279e3856Ef0eAda5FCbaA7e",
       });
 
       setDDO(response as DDO);
@@ -228,15 +231,12 @@ const App = () => {
 };
 
 const Demo = () => {
-  const { pathname } = useLocation();
-  appConfig.artifactsFolder = `${useLocation().pathname}/contracts`;
-
   return(
     <Catalog.NeverminedProvider config={appConfig} verbose={true}>
       <AssetService.AssetPublishProvider>
         <MetaMask.WalletProvider
           correctNetworkId="0x13881"
-          nodeUri="https://matic-mumbai.chainstacklabs.com"
+          nodeUri=""
         >
           <App />
         </MetaMask.WalletProvider>

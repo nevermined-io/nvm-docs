@@ -30,7 +30,7 @@ Handle publish asset message
 
 #### Defined in
 
-[types/index.ts:756](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L756)
+[types/index.ts:756](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L756)
 
 ___
 
@@ -42,7 +42,7 @@ All the parameters needed to publish an asset
 
 #### Defined in
 
-[types/index.ts:762](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L762)
+[types/index.ts:762](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L762)
 
 ___
 
@@ -54,7 +54,7 @@ Handle error publish asset message
 
 #### Defined in
 
-[types/index.ts:754](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L754)
+[types/index.ts:754](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L754)
 
 ___
 
@@ -81,7 +81,7 @@ Update asset parameters when some input changes
 
 #### Defined in
 
-[types/index.ts:773](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L773)
+[types/index.ts:773](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L773)
 
 ___
 
@@ -93,7 +93,7 @@ If the asset is publishing
 
 #### Defined in
 
-[types/index.ts:760](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L760)
+[types/index.ts:760](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L760)
 
 ___
 
@@ -105,7 +105,7 @@ If the asset was published correctly
 
 #### Defined in
 
-[types/index.ts:758](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L758)
+[types/index.ts:758](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L758)
 
 ___
 
@@ -144,7 +144,7 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:795](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L795)
+[types/index.ts:795](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L795)
 
 ___
 
@@ -188,7 +188,7 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:889](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L889)
+[types/index.ts:889](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L889)
 
 ___
 
@@ -233,7 +233,7 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:838](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L838)
+[types/index.ts:838](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L838)
 
 ___
 
@@ -259,7 +259,7 @@ Reset all the parameters of the asset
 
 #### Defined in
 
-[types/index.ts:777](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L777)
+[types/index.ts:777](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L777)
 
 ___
 
@@ -271,7 +271,7 @@ Set asset message
 
 #### Defined in
 
-[types/index.ts:766](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L766)
+[types/index.ts:766](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L766)
 
 ___
 
@@ -283,7 +283,7 @@ Set parameters needed to publish an asset
 
 #### Defined in
 
-[types/index.ts:764](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L764)
+[types/index.ts:764](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L764)
 
 ___
 
@@ -295,4 +295,4 @@ Set error asset message
 
 #### Defined in
 
-[types/index.ts:768](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L768)
+[types/index.ts:768](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L768)

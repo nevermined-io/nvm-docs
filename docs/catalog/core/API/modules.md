@@ -61,7 +61,7 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:347](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/types/index.ts#L347)
+[types/index.ts:347](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L347)
 
 ## Functions
 
@@ -89,7 +89,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:42](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/utils/index.ts#L42)
+[utils/index.ts:42](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/utils/index.ts#L42)
 
 ___
 
@@ -115,7 +115,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:110](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/utils/index.ts#L110)
+[utils/index.ts:110](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/utils/index.ts#L110)
 
 ___
 
@@ -137,7 +137,7 @@ Returns current account registered in SDK
 
 #### Defined in
 
-[utils/index.ts:17](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/utils/index.ts#L17)
+[utils/index.ts:17](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/utils/index.ts#L17)
 
 ___
 
@@ -163,7 +163,7 @@ Return the result data of the request
 
 #### Defined in
 
-[utils/index.ts:139](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/utils/index.ts#L139)
+[utils/index.ts:139](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/utils/index.ts#L139)
 
 ___
 
@@ -187,7 +187,7 @@ Checks if object is empty
 
 #### Defined in
 
-[utils/index.ts:10](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/utils/index.ts#L10)
+[utils/index.ts:10](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/utils/index.ts#L10)
 
 ___
 
@@ -213,4 +213,4 @@ Array of object with the document id of each fullfilled events
 
 #### Defined in
 
-[utils/index.ts:81](https://github.com/nevermined-io/components-catalog/blob/2b829fa/lib/src/utils/index.ts#L81)
+[utils/index.ts:81](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/utils/index.ts#L81)

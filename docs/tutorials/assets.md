@@ -247,7 +247,7 @@ This section will guide you to the creation of your first Nevermined NFT ERC721.
 First you need to deploy the contract address of the nft ERC-721, you can use the `cli` for it, [see more here](../cli/using-cli.md#nfts)
 
 
-1. Import the function from the AssetService and the contract NFT token address.
+1. Import the function from the AssetService and the contract NFT token address, also we will need the sdk.
         
 ```typescript
 
@@ -256,12 +256,12 @@ import { NFTTokenAddress } from './config'
 
 const Publisher = () => {
     const { publishNFT721, assetPublish, setAssetPublish } = AssetService.useAssetPublish();
-
+    const { sdk } = Catalog.useNevermined();
     ...
 }
 ```
 
-2. Create the metadata object that will be published offchain.
+2. Create the metadata object that will be published offchain and the royaltyAttribute object.
 
 ```typescript
     ...
@@ -281,6 +281,12 @@ const Publisher = () => {
             categories: []
         }
     } as MetaData
+
+    const royaltyAttributes = {
+        royaltyKind: RoyaltyKind.Standard,
+        scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
+        amount: 0,
+    };
     ...
 ```
 
@@ -289,7 +295,11 @@ const Publisher = () => {
 ```ts
     ...
     async function handleOnSubmit() {
-        const ddo = await publishNFT721(NFTTokenAddress, {metadata: metadata})
+        const ddo = await publishNFT721({
+            nftAddress,
+            metadata,
+            royaltyAttributes,
+        })
         setDidDeployed(ddo!.id)
     }
     ...
@@ -305,7 +315,7 @@ import { NFTTokenAddress } from './config'
     
 const Publisher = () => {
     const { publishNFT721, assetPublish, setAssetPublish } = AssetService.useAssetPublish();
-    const { isLoadingSDK } = Catalog.useNevermined();
+    const { sdk } = Catalog.useNevermined();
 
     const metadata: MetaData = {
     main: {
@@ -324,9 +334,19 @@ const Publisher = () => {
         }
     } as MetaData
 
+    const royaltyAttributes = {
+        royaltyKind: RoyaltyKind.Standard,
+        scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
+        amount: 0,
+    };
+
     async function handleOnSubmit() {
-        const ddo = await publishNFT721(NFTTokenAddress, {metadata: metadata}, )
-        setDidDeployed(ddo!.id)
+        const ddo = await publishNFT721({
+            nftAddress,
+            metadata,
+            royaltyAttributes,
+        });
+        setDidDeployed(ddo!.id);
     }
 
     return (
@@ -448,7 +468,7 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
 ### How to create an NFT ERC1155
 This section will guide you to the creation of your first Nevermined NFT ERC1155 asset.
 
-1. Import the function from the AssetService.
+1. Import the functions from the AssetService and the sdk.
         
 ```typescript
 
@@ -456,12 +476,12 @@ import { AssetService } from '@nevermined-io/catalog-core';
 
 const Publisher = () => {
     const { publishNFT1155, assetPublish, setAssetPublish } = AssetService.useAssetPublish();
-
+    const { sdk } = Catalog.useNevermined();
     ...
 }
 ```
 
-2. Create the metadata object that will be published offchain.
+2. Create the metadata object that will be published offchain and the royaltyAttribute object.
 
 ```typescript
     ...
@@ -480,7 +500,13 @@ const Publisher = () => {
             description: assetPublish?.description,
             categories: []
         }
-    } as MetaData
+    } as MetaData;
+
+    const royaltyAttributes = {
+        royaltyKind: RoyaltyKind.Standard,
+        scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
+        amount: 0,
+    };
     ...
 ```
 
@@ -489,7 +515,12 @@ const Publisher = () => {
 ```ts
     ...
     async function handleOnSubmit() {
-        const ddo = await publishNFT1155({metadata: metadata}, 100, 0, RoyaltyKind.Standard);
+        const result = await publishNFT1155({
+              gatewayAddress: String(appConfig.gatewayAddress),
+              metadata,
+              cap: 100,
+              royaltyAttributes: royaltyAttributes(sdk)
+        });
         setDidDeployed(ddo!.id);
     }
     ...
@@ -503,27 +534,38 @@ const Publisher = () => {
     
 const Publisher = () => {
     const { publishAsset, assetPublish, setAssetPublish } = AssetService.useAssetPublish();
-    const { isLoadingSDK } = Catalog.useNevermined();
+    const { isLoadingSDK, sdk } = Catalog.useNevermined();
 
     const metadata: MetaData = {
-    main: {
-        name: assetPublish?.name,
-        dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-        author: assetPublish?.author,
-        license: 'No License Specified',
-        price: String(assetPublish?.price),
-        datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-        type: assetPublish?.type,
-        files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
-        },
-        additionalInformation: {
-            description: assetPublish?.description,
-            categories: []
-        }
-    } as MetaData
+        main: {
+            name: assetPublish?.name,
+            dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
+            author: assetPublish?.author,
+            license: 'No License Specified',
+            price: String(assetPublish?.price),
+            datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
+            type: assetPublish?.type,
+            files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
+            },
+            additionalInformation: {
+                description: assetPublish?.description,
+                categories: []
+            }
+    } as MetaData;
+
+    const royaltyAttributes = {
+        royaltyKind: RoyaltyKind.Standard,
+        scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
+        amount: 0,
+    };
 
     async function handleOnSubmit() {
-        const ddo = await publishNFT1155({metadata: metadata}, 100, 0, RoyaltyKind.Standard);
+        const result = await publishNFT1155({
+              gatewayAddress: String(appConfig.gatewayAddress),
+              metadata,
+              cap: 100,
+              royaltyAttributes: royaltyAttributes(sdk)
+        });
         setDidDeployed(ddo!.id);
     }
 

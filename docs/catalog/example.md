@@ -288,10 +288,14 @@ The main component of the example, it calls the rest of the components and also 
 ```tsx
 const App = () => {
   const { isLoadingSDK, sdk, account } = Catalog.useNevermined();
-  const { publishNFT1155 } = AssetService.useAssetPublish()
-  const { walletAddress } = MetaMask.useWallet()
-  const [ddo, setDDO] = useState<DDO>({} as DDO)
-  Logger.setLevel(3);
+  const { publishNFT1155 } = AssetService.useAssetPublish();
+  const { walletAddress } = MetaMask.useWallet();
+  const [ddo, setDDO] = useState<DDO>({} as DDO);
+  const royaltyAttributes = {
+    royaltyKind: RoyaltyKind.Standard,
+    scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
+    amount: 0,
+  };
 
   const metadata: MetaData = {
     main: {
@@ -315,6 +319,11 @@ const App = () => {
       const rewardsRecipients: any[] = [];
       const assetRewardsMap = constructRewardMap(rewardsRecipients, 100, publisher.getId());
       const assetRewards = new AssetRewards(assetRewardsMap);
+      const royaltyAttributes = {
+        royaltyKind: RoyaltyKind.Standard,
+        scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
+        amount: 0,
+      };
 
       if (!account.isTokenValid()) {
         await account.generateToken();
@@ -326,8 +335,7 @@ const App = () => {
         nftAmount: 1,
         preMint: true,
         cap: 100,
-        royalties: 0,
-        royaltyKind: RoyaltyKind.Standard,
+        royaltyAttributes,
         erc20TokenAddress,
       });
 
@@ -509,10 +517,14 @@ const MMWallet = () => {
 
 const App = () => {
   const { isLoadingSDK, sdk, account } = Catalog.useNevermined();
-  const { publishNFT1155 } = AssetService.useAssetPublish()
-  const { walletAddress } = MetaMask.useWallet()
-  const [ddo, setDDO] = useState<DDO>({} as DDO)
-  Logger.setLevel(3);
+  const { publishNFT1155 } = AssetService.useAssetPublish();
+  const { walletAddress } = MetaMask.useWallet();
+  const [ddo, setDDO] = useState<DDO>({} as DDO);
+  const royaltyAttributes = {
+    royaltyKind: RoyaltyKind.Standard,
+    scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
+    amount: 0,
+  };
 
   const metadata: MetaData = {
     main: {
@@ -536,6 +548,11 @@ const App = () => {
       const rewardsRecipients: any[] = [];
       const assetRewardsMap = constructRewardMap(rewardsRecipients, 100, publisher.getId());
       const assetRewards = new AssetRewards(assetRewardsMap);
+      const royaltyAttributes = {
+        royaltyKind: RoyaltyKind.Standard,
+        scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
+        amount: 0,
+      };
 
       if (!account.isTokenValid()) {
         await account.generateToken();
@@ -547,8 +564,7 @@ const App = () => {
         nftAmount: 1,
         preMint: true,
         cap: 100,
-        royalties: 0,
-        royaltyKind: RoyaltyKind.Standard,
+        royaltyAttributes,
         erc20TokenAddress,
       });
 

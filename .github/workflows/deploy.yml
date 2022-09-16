@@ -20,6 +20,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+      - name: Download artifacts
+        run: yarn artifacts:download
       - name: Build website
         run: yarn build
 
