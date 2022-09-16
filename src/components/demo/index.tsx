@@ -9,19 +9,6 @@ import { UiText, UiLayout, BEM, UiButton } from '@nevermined-io/styles';
 import styles from './styles.module.scss';
 import { ethers } from 'ethers';
 
-const appConfig = {
-  web3Provider: typeof window !== 'undefined' ? (window as any).ethereum : new ethers.providers.JsonRpcProvider(),
-  gatewayUri: 'https://defi.v2.gateway.mumbai.nevermined.rocks',
-  faucetUri: 'https://faucet.rinkeby.nevermined.rocks',
-  verbose: true,
-  gatewayAddress: "0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc",
-  graphHttpUri: 'https://api.thegraph.com/subgraphs/name/nevermined-io/common',
-  marketplaceAuthToken: AuthToken.fetchMarketplaceApiTokenFromLocalStorage().token,
-  marketplaceUri: 'https://defi.v2.marketplace-api.mumbai.nevermined.rocks',
-  artifactsFolder: `${location.protocol}//${location.host}/contracts`
-  
-}
-
 const b = BEM('demo', styles);
 
 const SDKInstance = () => {
@@ -157,7 +144,7 @@ const MMWallet = () => {
   );
 };
 
-const App = () => {
+const App = ({ gatewayAddress }: {gatewayAddress: string}) => {
   const { isLoadingSDK, sdk, account } = Catalog.useNevermined();
   const { publishNFT1155 } = AssetService.useAssetPublish()
   const { walletAddress } = MetaMask.useWallet()
@@ -196,7 +183,7 @@ const App = () => {
         await account.generateToken();
       }
       const response = await publishNFT1155({
-        gatewayAddress: String(appConfig.gatewayAddress),
+        gatewayAddress,
         assetRewards,
         metadata,
         nftAmount: 1,
@@ -231,6 +218,18 @@ const App = () => {
 };
 
 const Demo = () => {
+  const appConfig = {
+    web3Provider: typeof window !== 'undefined' ? (window as any).ethereum : new ethers.providers.JsonRpcProvider(),
+    gatewayUri: 'https://defi.v2.gateway.mumbai.nevermined.rocks',
+    faucetUri: 'https://faucet.rinkeby.nevermined.rocks',
+    verbose: true,
+    gatewayAddress: "0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc",
+    graphHttpUri: 'https://api.thegraph.com/subgraphs/name/nevermined-io/common',
+    marketplaceAuthToken: AuthToken.fetchMarketplaceApiTokenFromLocalStorage().token,
+    marketplaceUri: 'https://defi.v2.marketplace-api.mumbai.nevermined.rocks',
+    artifactsFolder: `${location.protocol}//${location.host}/contracts`
+  }
+
   return(
     <Catalog.NeverminedProvider config={appConfig} verbose={true}>
       <AssetService.AssetPublishProvider>
@@ -238,7 +237,7 @@ const Demo = () => {
           correctNetworkId="0x13881"
           nodeUri=""
         >
-          <App />
+          <App gatewayAddress={appConfig.gatewayAddress}/>
         </MetaMask.WalletProvider>
       </AssetService.AssetPublishProvider>
     </Catalog.NeverminedProvider>

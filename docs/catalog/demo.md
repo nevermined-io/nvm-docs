@@ -2,7 +2,8 @@
 sidebar_position: 4
 ---
 
-import Demo from '@site/src/components/demo'
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import Demo from '@site/src/components/demo';
 
 # Demo
 This demo is based in the code of the [Example](./example.md) section
@@ -27,4 +28,6 @@ from the beginning again
 
 ## View
 
-<Demo/>
+<BrowserOnly fallback={<div>Loading demo...</div>}>
+ {()=> <Demo/>}
+</BrowserOnly>
