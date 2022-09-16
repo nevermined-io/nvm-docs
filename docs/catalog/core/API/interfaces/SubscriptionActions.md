@@ -36,4 +36,4 @@ It is true if the subscription was successfully completed
 
 #### Defined in
 
-[types/index.ts:740](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L740)
+[types/index.ts:747](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L747)

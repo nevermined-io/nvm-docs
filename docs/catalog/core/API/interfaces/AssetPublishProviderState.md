@@ -30,7 +30,7 @@ Handle publish asset message
 
 #### Defined in
 
-[types/index.ts:756](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L756)
+[types/index.ts:763](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L763)
 
 ___
 
@@ -42,7 +42,7 @@ All the parameters needed to publish an asset
 
 #### Defined in
 
-[types/index.ts:762](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L762)
+[types/index.ts:769](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L769)
 
 ___
 
@@ -54,7 +54,7 @@ Handle error publish asset message
 
 #### Defined in
 
-[types/index.ts:754](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L754)
+[types/index.ts:761](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L761)
 
 ___
 
@@ -81,7 +81,7 @@ Update asset parameters when some input changes
 
 #### Defined in
 
-[types/index.ts:773](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L773)
+[types/index.ts:780](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L780)
 
 ___
 
@@ -93,7 +93,7 @@ If the asset is publishing
 
 #### Defined in
 
-[types/index.ts:760](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L760)
+[types/index.ts:767](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L767)
 
 ___
 
@@ -105,13 +105,13 @@ If the asset was published correctly
 
 #### Defined in
 
-[types/index.ts:758](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L758)
+[types/index.ts:765](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L765)
 
 ___
 
 ### publishAsset
 
-• **publishAsset**: (`asset`: { `assetRewards?`: `default` ; `erc20TokenAddress?`: `string` ; `metadata`: `MetaData` ; `method?`: `string` ; `providers?`: `string`[] ; `serviceTypes?`: `ServiceType`[] ; `services?`: `ServiceCommon`[] ; `txParameters?`: `TxParameters`  }) => `Promise`<`undefined` \| `DDO`\>
+• **publishAsset**: (`asset`: { `assetRewards?`: `default` ; `erc20TokenAddress?`: `string` ; `metadata`: `MetaData` ; `method?`: `EncryptionMethod` ; `providers?`: `string`[] ; `serviceTypes?`: `ServiceType`[] ; `services?`: `ServiceCommon`[] ; `txParameters?`: `TxParameters`  }) => `Promise`<`undefined` \| `DDO`\>
 
 #### Type declaration
 
@@ -130,7 +130,7 @@ This will return the DDO created (including the unique identifier of the asset -
 | `asset.assetRewards?` | `default` | The price of the asset that the owner will receive |
 | `asset.erc20TokenAddress?` | `string` | The erc20 token address which the buyer will pay the price |
 | `asset.metadata` | `MetaData` | The metadata object describing the asset |
-| `asset.method?` | `string` | Method used to encrypt the urls |
+| `asset.method?` | `EncryptionMethod` | Method used to encrypt the urls |
 | `asset.providers?` | `string`[] | Array that contains the provider addreses |
 | `asset.serviceTypes?` | `ServiceType`[] | - |
 | `asset.services?` | `ServiceCommon`[] | List of services associate with the asset |
@@ -144,13 +144,13 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:795](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L795)
+[types/index.ts:802](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L802)
 
 ___
 
 ### publishNFT1155
 
-• **publishNFT1155**: (`nft1155`: { `assetRewards?`: `default` ; `cap`: `number` ; `erc20TokenAddress?`: `string` ; `gatewayAddress`: `string` ; `metadata`: `MetaData` ; `nftAmount?`: `number` ; `nftMetadata?`: `string` ; `preMint?`: `boolean` ; `royalties`: `number` ; `royaltyKind`: `RoyaltyKind` ; `txParameters?`: `TxParameters`  }) => `Promise`<`undefined` \| `DDO`\>
+• **publishNFT1155**: (`nft1155`: { `assetRewards?`: `default` ; `cap`: `number` ; `erc20TokenAddress?`: `string` ; `gatewayAddress`: `string` ; `metadata`: `MetaData` ; `nftAmount?`: `number` ; `nftMetadata?`: `string` ; `preMint?`: `boolean` ; `royaltyAttributes`: `RoyaltyAttributes` ; `txParameters?`: `TxParameters`  }) => `Promise`<`undefined` \| `DDO`\>
 
 #### Type declaration
 
@@ -176,8 +176,7 @@ This method will create a new digital asset associated to a ERC-1155 NFT contrac
 | `nft1155.nftAmount?` | `number` | NFT amount to publish |
 | `nft1155.nftMetadata?` | `string` | Url to set at publishing time that resolves to the metadata of the nft as expected by opensea |
 | `nft1155.preMint?` | `boolean` | If assets are minted in the creation process |
-| `nft1155.royalties` | `number` | The amount of royalties paid back to the original creator in the secondary market |
-| `nft1155.royaltyKind` | `RoyaltyKind` | The royalties scheme that can be used |
+| `nft1155.royaltyAttributes` | `RoyaltyAttributes` | The amount of royalties paid back to the original creator in the secondary market |
 | `nft1155.txParameters?` | `TxParameters` | Trasaction number of the asset creation |
 
 ##### Returns
@@ -188,13 +187,13 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:889](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L889)
+[types/index.ts:895](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L895)
 
 ___
 
 ### publishNFT721
 
-• **publishNFT721**: (`nft721`: { `assetRewards?`: `default` ; `duration?`: `number` ; `erc20TokenAddress?`: `string` ; `metadata`: `MetaData` ; `method?`: `string` ; `nftAddress`: `string` ; `nftMetadata?`: `string` ; `nftTransfer?`: `boolean` ; `preMint?`: `boolean` ; `providers?`: `string`[] ; `royalties?`: `number` ; `services?`: `string`[] ; `txParameters?`: `TxParameters`  }) => `Promise`<`undefined` \| `DDO`\>
+• **publishNFT721**: (`nft721`: { `assetRewards?`: `default` ; `duration?`: `number` ; `erc20TokenAddress?`: `string` ; `metadata`: `MetaData` ; `method?`: `EncryptionMethod` ; `nftAddress`: `string` ; `nftMetadata?`: `string` ; `nftTransfer?`: `boolean` ; `preMint?`: `boolean` ; `providers?`: `string`[] ; `royaltyAttributes`: `RoyaltyAttributes` ; `services?`: `ServiceType`[] ; `txParameters?`: `TxParameters`  }) => `Promise`<`undefined` \| `DDO`\>
 
 #### Type declaration
 
@@ -215,14 +214,14 @@ It will create a new digital asset associated to a ERC-721 NFT contract
 | `nft721.duration?` | `number` | When expire the NFT721. The default 0 value means never |
 | `nft721.erc20TokenAddress?` | `string` | The erc20 token address which the buyer will pay the price |
 | `nft721.metadata` | `MetaData` | The metadata object describing the asset |
-| `nft721.method?` | `string` | Method used to encrypt the urls |
+| `nft721.method?` | `EncryptionMethod` | Method used to encrypt the urls |
 | `nft721.nftAddress` | `string` | The contract address of the ERC-721 NFT |
 | `nft721.nftMetadata?` | `string` | Url to set at publishing time that resolves to the metadata of the nft as expected by opensea |
 | `nft721.nftTransfer?` | `boolean` | if the nft will be transfered to other address after published |
 | `nft721.preMint?` | `boolean` | If assets are minted in the creation process |
 | `nft721.providers?` | `string`[] | Array that contains the provider addreses |
-| `nft721.royalties?` | `number` | The amount of royalties paid back to the original creator in the secondary market |
-| `nft721.services?` | `string`[] | List of services associate with the asset |
+| `nft721.royaltyAttributes` | `RoyaltyAttributes` | The amount of royalties paid back to the original creator in the secondary market |
+| `nft721.services?` | `ServiceType`[] | List of services associate with the asset |
 | `nft721.txParameters?` | `TxParameters` | Trasaction number of the asset creation |
 
 ##### Returns
@@ -233,7 +232,7 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:838](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L838)
+[types/index.ts:845](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L845)
 
 ___
 
@@ -259,7 +258,7 @@ Reset all the parameters of the asset
 
 #### Defined in
 
-[types/index.ts:777](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L777)
+[types/index.ts:784](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L784)
 
 ___
 
@@ -271,7 +270,7 @@ Set asset message
 
 #### Defined in
 
-[types/index.ts:766](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L766)
+[types/index.ts:773](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L773)
 
 ___
 
@@ -283,7 +282,7 @@ Set parameters needed to publish an asset
 
 #### Defined in
 
-[types/index.ts:764](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L764)
+[types/index.ts:771](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L771)
 
 ___
 
@@ -295,4 +294,4 @@ Set error asset message
 
 #### Defined in
 
-[types/index.ts:768](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L768)
+[types/index.ts:775](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L775)

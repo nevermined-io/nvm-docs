@@ -106,4 +106,4 @@ Return the network confing by giving chain Id in Hexadecimal
 
 #### Defined in
 
-[metamask.tsx:125](https://github.com/nevermined-io/components-catalog/blob/dda3469/providers/src/metamask.tsx#L125)
+[metamask.tsx:125](https://github.com/nevermined-io/components-catalog/blob/c256646/providers/src/metamask.tsx#L125)
