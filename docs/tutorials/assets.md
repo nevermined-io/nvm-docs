@@ -10,7 +10,7 @@ Following with our series, this is going to continue showing how to unblock Neve
 
 ## Prerequisites
 
-The tutorial assumes your familiarity with blockchain, and general programming. If is your first time using the Nevermined catalog don't hesitate to go back and take a look to the [previous chapter](https://nvm-docs.nevermined.io/docs/tutorials/running-local).
+The tutorial assumes your familiarity with blockchain, and general programming. If is your first time using the Nevermined catalog don't hesitate to go back and take a look to the [previous chapter](../tutorials/running-local).
 
 ### For all the assets type
 

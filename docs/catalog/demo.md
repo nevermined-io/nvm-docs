@@ -9,8 +9,7 @@ This demo is based in the code of the [Example](./example.md) section
 
 ## Workflow example
 
-The example included in the template covers the most used functionalities to work with NFT1155,
-for others assets or more info please see [the documentation](http://nvm-docs.nevermined.io/).
+The example included in the template covers the most used functionalities to work with NFT1155.
 
 **Requirements:** The accounts wallet used for the example need to have `Matic` and `USDC`
 
