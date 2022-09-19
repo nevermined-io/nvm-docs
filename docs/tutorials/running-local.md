@@ -5,7 +5,7 @@ description: Building a DApp using Nevermined frameworks
 
 # How to build a React application integrated with Nevermined
 
-The idea of this tutorial is give a quick go through about using the [Nevermined Catalog](https://github.com/nevermined-io/components-catalog) of React components to support the development of dApps using the Nevermined environment. Nevermined Catalog is a library that provides some React components to make it easier the integration with Nevermined technologies. You can find more info in the [documentation](https://docs.nevermined.io/docs/architecture/components/catalog/getting-started/).
+The idea of this tutorial is give a quick go through about using the [Nevermined Catalog](https://github.com/nevermined-io/components-catalog) of React components to support the development of dApps using the Nevermined environment. Nevermined Catalog is a library that provides some React components to make it easier the integration with Nevermined technologies. You can find more info in the [documentation](../catalog/intro.md).
 
 ## Prerequisites
 

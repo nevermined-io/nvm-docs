@@ -50,7 +50,7 @@ Array of events with method `unsubscribe` in order to stop listening specific ev
 
 #### Defined in
 
-[services/subscribe.ts:35](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/services/subscribe.ts#L35)
+[services/subscribe.ts:35](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/services/subscribe.ts#L35)
 
 ___
 
@@ -101,4 +101,4 @@ Array of events with method `unsubscribe` in order to stop listening specific ev
 
 #### Defined in
 
-[services/subscribe.ts:93](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/services/subscribe.ts#L93)
+[services/subscribe.ts:93](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/services/subscribe.ts#L93)

@@ -28,7 +28,7 @@ Files to download after buy the asset
 
 #### Defined in
 
-[types/index.ts:681](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L681)
+[types/index.ts:688](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L688)
 
 ___
 
@@ -40,7 +40,7 @@ Who create the asset
 
 #### Defined in
 
-[types/index.ts:671](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L671)
+[types/index.ts:678](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L678)
 
 ___
 
@@ -52,7 +52,7 @@ The category that belong the asset
 
 #### Defined in
 
-[types/index.ts:677](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L677)
+[types/index.ts:684](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L684)
 
 ___
 
@@ -64,7 +64,7 @@ Description about what is the utility of the asset
 
 #### Defined in
 
-[types/index.ts:673](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L673)
+[types/index.ts:680](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L680)
 
 ___
 
@@ -76,7 +76,7 @@ Name of the asset
 
 #### Defined in
 
-[types/index.ts:669](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L669)
+[types/index.ts:676](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L676)
 
 ___
 
@@ -88,7 +88,7 @@ Price of the asset
 
 #### Defined in
 
-[types/index.ts:679](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L679)
+[types/index.ts:686](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L686)
 
 ___
 
@@ -100,4 +100,4 @@ The type of the asset
 
 #### Defined in
 
-[types/index.ts:675](https://github.com/nevermined-io/components-catalog/blob/dda3469/lib/src/types/index.ts#L675)
+[types/index.ts:682](https://github.com/nevermined-io/components-catalog/blob/c256646/lib/src/types/index.ts#L682)
