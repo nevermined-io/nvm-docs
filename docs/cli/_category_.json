@@ -1,9 +1,8 @@
 {
-    "label": "CLI",
-    "position": 4,
-    "link": {
-      "type": "generated-index",
-      "description": "Nevermined Command Line Interface"
-    }
+  "label": "CLI",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "cli/index"
   }
-  
+}
