@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 3
 description: Nevermined Building Blocks
 ---
 
@@ -21,49 +21,7 @@ The complete technical solution includes the following components:
 
 [Nevermined Smart Contracts](https://github.com/nevermined-io/contracts/)
 provide the core of the Data Ecosystem. Using an Ethereum network and
-implemented in Solidity, the Smart Contracts provide the following
-functionality:
-
-
-- **DID Registry** - Nevermined uses W3C Decentralized Identifiers (DID) to identify
-  and register assets in the platform.
-  The DID Registry allows the registering and resolving capabilities of assets
-  across multiple Metadata providers.
-- **NFT Contracts** - Allowing the management of ERC-1155 and ERC-721 NFTs
-- **Service Execution Agreements (SEAs)** - The core engine of the platform. They
-  allow to define on-chain condition pipelines enabling to the users to define
-  complex use cases. The SEAs orchestrate the execution of the Data Access and
-  Data Computation use cases of Nevermined.
-- **Conditions** - Small modules that can be plugged into the SEAs allowing to add
-  validations logic
-- **Contract Templates** - Pre-defined contract templates implementing different user
-  flows. 
-- **Governance** - Enabling the live configuration and governance of a Nevermined 
-  deployment
-- **ERC20 Token** - Utility token used within the platform allowing to build all the
-  payment mechanisms used across the system.
-
-- **Dispenser** - Contract that allows to dispense token under request
-- **Libraries** - Utility libraries used across the contracts
-
-All the previous contracts are **Open Source** software and provide the core of the
-Nevermined network.
-
-In addition to those, Nevermined provides some extensions of the contracts with
-extended functionalities:
-
-- Group and individual whitelisting conditions - Enterprise users typically
-  manage their corporate identity using Active Directory solutions or similar.
-  In those platforms exist the mapping between the user identity and the groups
-  where those users are part of. The advanced whitelisting conditions allow to
-  map complex identity systems with the Smart Contracts logic allowing to
-  provide access control mechanisms on-chain.
-- Interface for external Tokens - It allows to plug in the system an external
-  ERC20 Token avoiding to use the Nevermined ERC20 token.
-- Additional SEAs Templates - The additional Service Execution Templates provide
-  a richer set of use cases to be used in the platform.
-- Improved SEA - Allowing to have faster agreements and simpler negotiations
-
+implemented in Solidity, the Smart Contracts allow the creation of complex interaction between parties around digital assets.
 
 ## Decentralized Autonomous Organization framework (DAOs framework)
 
@@ -101,7 +59,7 @@ easy integration and deployment in cloud providers and Kubernetes clusters.
 
 ### Gateway
 
-The [Nevermined Gateway](https://github.com/nevermined-io/gateway) is an
+The [Nevermined Gateway](https://github.com/nevermined-io/gateway-ts) is an
 Open Source micro-service in the Nevermined ecosystem. The Gateway is the
 technical component executed by Data/Compute Providers allowing them to provide
 extended data services (e.g. storage and compute). The Nevermined Gateway, as
@@ -112,7 +70,6 @@ The Gateway allows also the encryption and decryption of content via:
 
 * RSA
 * ECDSA
-* Parity Secret Store
 
 Nevermined provides the package and automation of the micro-service allowing an
 easy integration and deployment in cloud providers and Kubernetes clusters.
@@ -214,27 +171,3 @@ This approach allows to:
   networks used for testing
 - Connect to remote blockchain networks from your local environment
 
-
-#### Multisig Wallet
-
-[Nevermined Multisig Wallet](https://github.com/nevermined-io/multisigwallet)
-helps during the token governance process. The purpose of multisig wallets is to
- increase security by requiring multiple parties to agree on transactions before
-  execution. Transactions can be executed only when confirmed by a predefined
-  number of owners.
-
-
-
-### Control Center
-
-The Nevermined Control Center allows the monitoring of Nevermined deployments in different
-networks. It allows to control:
-
-* The execution of the Service Agreements
-* Assets registered
-* Token Payments
-* Compute use cases
-* Blocks, Events and Transactions of the network
-
-The monitoring tool exposes the dashboards for an easy understanding of what's
-going on in the network.

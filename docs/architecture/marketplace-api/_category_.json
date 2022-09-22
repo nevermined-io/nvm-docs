@@ -2,8 +2,8 @@
     "label": "Marketplace API",
     "position": 5,
     "link": {
-      "type": "generated-index",
-      "description": "The API allowing to manage Marketplace common functionalities"
+      "type": "doc",
+      "id": "architecture/marketplace-api/index"
     }
   }
   

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 description: What faucets can you use to start playing with Nevermined environments
 ---
 

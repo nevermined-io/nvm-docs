@@ -1,9 +1,9 @@
 {
     "label": "Gateway",
-    "position": 4,
+    "position": 6,
     "link": {
-      "type": "generated-index",
-      "description": "Nevermined gate keeper helping data publishers & owners to provide extended data services nevermined.io"
+      "type": "doc",
+      "id": "architecture/gateway/index"
     }
   }
   

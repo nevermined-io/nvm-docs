@@ -1,11 +1,11 @@
 ---
-sidebar_position: 4
+sidebar_position: 7
 description: Use nevermined tools to have a fully functional Nevermined environment in your local environment
 ---
 
 # Running Nevermined in your local environment
 
-All the functionalities of Nevermined are provided via the integration of [different software components](architecture/building-blocks).
+All the functionalities of Nevermined are provided via the integration of [different software components](../architecture/building-blocks.md).
 To facilitate the creation of applications using the Nevermined capabilities in an easy way, we have deployed [different environments](../environments/) with all these components.
 This makes easier for application developers and creators tu build their use cases without dealing with some of the DevOps complexities of running a fully functional Nevermined environment.
 

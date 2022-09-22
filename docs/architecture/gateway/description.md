@@ -3,7 +3,7 @@ sidebar_position: 1
 description: Nevermined Gateway
 ---
 
-# Gateway
+# Description
 
 In the Nevermined ecosystem, the [Gateway](https://github.com/nevermined-io/gateway-ts/) is 
 the technical component executed by the Publishers allowing them to provide extended data 
