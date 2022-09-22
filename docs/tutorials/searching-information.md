@@ -29,7 +29,7 @@ The following queries can be sent to the [Marketplace API](../architecture/marke
 
 ### Search by asset name
 
-The [main Metadata attributes]((../architecture/specs/Spec-METADATA#main-attributes)) (like name, author, description, etc) are under the `service.attributes.main` object in the DDO/Metadata object. So for searching all the assets with a certain name you can run a query like this:
+The [main metadata attributes](../architecture/specs/Spec-METADATA#main-attributes) (like name, author, description, etc) are under the `service.attributes.main` object in the DDO/Metadata object. So for searching all the assets with a certain name you can run a query like this:
 
 ```json
 {
