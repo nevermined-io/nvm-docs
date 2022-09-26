@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 description: Nevermined Building Blocks
 ---
 
@@ -14,7 +14,7 @@ requirements of the enterprises.
 
 The complete technical solution includes the following components:
 
-![Nevermined components](images/components_architecture.png)
+![Nevermined components](images/nvm_logical_architecture.png)
 
 
 ## Smart Contracts
