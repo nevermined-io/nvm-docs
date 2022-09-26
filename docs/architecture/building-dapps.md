@@ -12,12 +12,12 @@ Nevermined ships different [technical components](building-blocks.md) to make th
 To facilitate the utilization of Nevermined and the orchestration of all the different components, we provide the following components:
 
 * The [Nevermined SDK](../nevermined-sdk/)
-* The [Nevermined Catalog](../catalog/)
+* The [Nevermined Catalog](../catalog/intro)
 
 
 :::info Which one to use
 
-If you are building a **React application** our recommendation is to use the [Nevermined Catalog](../catalog/), but if not to use the [Nevermined SDK](../nevermined-sdk/).
+If you are building a **React application** our recommendation is to use the [Nevermined Catalog](../catalog/intro), but if not to use the [Nevermined SDK](../nevermined-sdk/).
 
 :::
 
