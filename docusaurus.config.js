@@ -71,40 +71,36 @@ const config = {
       },
       navbar: {
         style: 'dark',
-        title: 'Nevermined Docs',
         logo: {
           alt: 'Nevermined Logo',
-          src: 'img/nvm-logo.png',
+          src: 'img/nevermined/nevermined_logo.svg',
         },
         items: [
           {
-            type: 'doc',
-            docId: 'getting-started/index',
             position: 'left',
             label: 'Getting Started',
+            to: 'docs/getting-started',
           },
           {
-            type: 'doc',
-            docId: 'architecture/index',
             position: 'left',
             label: 'Architecture',
+            to: 'docs/architecture',
           },
           {
-            type: 'doc',
-            docId: 'tutorials/index',
             position: 'left',
             label: 'Tutorials',
+            to: 'docs/tutorials',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/nevermined-io',
-            label: 'GitHub',
             position: 'right',
+            href: 'https://discord.gg/GZju2qScKq',
+            html: `<img src="/nevermined/discord-gray.svg" alt="Discord" class="discord" />`,
           },
           {
-            href: 'https://discord.gg/GZju2qScKq',
-            label: 'Discord',
             position: 'right',
+            href: 'https://github.com/nevermined-io',
+            html: `<img src="/nevermined/github-gray.svg" alt="Github" class="github" />`,
           },
         ],
       },
