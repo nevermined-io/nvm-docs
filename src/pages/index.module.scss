@@ -1,9 +1,9 @@
 @import '~@nevermined-io/styles/lib/cjs/styles/index.scss';
 
 footer {
-  background: rgba(0,0,0,0.1) !important;
+  background: rgba(0, 0, 0, 0.1) !important;
   a {
-    color: #57A7DE !important;
+    color: #57a7de !important;
   }
 }
 
@@ -21,17 +21,6 @@ footer {
     text-align: center;
   }
 
-  &__page-wrapper {
-    @supports (background-blend-mode: lighten) {
-      background-color: gc(bg);
-      background-image: url('/nevermined/backgrounds/header-bg.png'), url('/nevermined/backgrounds/home-bg-banner.png');
-      background-position: 0 100%, 100% 100%;
-      background-repeat: no-repeat;
-      background-size: 1800px, min(1800px, 100%);
-      background-blend-mode: lighten;
-    }
-  }
-
   &__boxes {
     display: flex;
     align-items: center;
@@ -39,29 +28,83 @@ footer {
     width: 100%;
   }
 
+  &__box {
+    &--main {
+      height: 100%;
+      background: linear-gradient(107.16deg, #2f12dc 9.77%, #1ddef9 100%);
+
+      svg {
+        width: 64px;
+        height: 40px;
+        margin-bottom: 20px;
+      }
+
+      *[class~=text] {
+        color: #fff;
+      }
+    }
+  }
+
+  &__gutter {
+    margin-bottom: 40px;
+
+    &--main {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 997px) {
+      &--main {
+        margin-bottom: 40px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   &__title {
     text-align: center;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 64px;
+    color: var(--ifm-color-black);
   }
 
   &__description {
-    font-size: 25px;
     text-align: center;
     margin-top: 40px;
+    font-weight: 400;
+    font-size: 21px;
+    color: var(--ifm-color-black);
+    padding: 0 25%;
+
+    @media (min-width: 997px) and (max-width: 1439px) {
+      padding: 0 18%;
+    }
+
+    @media (min-width: 768px) and (max-width: 996px) {
+      padding: 0 15%;
+    }
+
+    @media (max-width: 767px) {
+      padding: 0;
+    }
   }
 
   &__banner {
-    padding: 4rem 0;
+    padding-top: 4rem;
     text-align: center;
     position: relative;
     overflow: hidden;
   }
-  
+
   @media screen and (max-width: 996px) {
     &__banner {
       padding: 2rem;
     }
   }
-  
+
   .buttons {
     display: flex;
     align-items: center;
@@ -71,17 +114,13 @@ footer {
 
 @media all and (max-width: 1023px) {
   .nvm {
-    &__title, &__description {
+    &__title,
+    &__description {
       word-break: keep-all;
     }
 
     &__title {
       font-size: 4vh;
-    }
-    &__page-wrapper {
-      @supports (background-blend-mode: lighten) {
-        background-image: url('/nevermined/backgrounds/header-bg_mobile.png'), url('/nevermined/backgrounds/home-bg-banner_mobile.png');
-      }
     }
 
     &__box {

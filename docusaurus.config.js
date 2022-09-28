@@ -7,7 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Nevermined Documentation',
-  tagline: 'Nevermined is an ecosystem development platform for Builders, Entrepreneurs, Artists, Creators, Collectors, Data Nerds, Techies, Degens and Corporate Innovators. It offers the best of Web3 tech as easy-to-integrate components.',
+  tagline:
+    'Nevermined is an ecosystem development platform. It offers the best of Web3 tech as easy-to-integrate components.',
   url: 'https://docs.nevermined.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -30,29 +31,28 @@ const config = {
 
   presets: [
     [
-      'classic',      
-      /** @type {import('@docusaurus/preset-classic').Options} */        
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         googleAnalytics: {
           trackingID: 'G-S70X8HQFLP',
           anonymizeIP: true,
-        },               
+        },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-          'https://github.com/nevermined-io/docs/tree/main/',
+          editUrl: 'https://github.com/nevermined-io/docs/tree/main/',
         },
         blog: {
           showReadingTime: true,
           blogTitle: 'Nevermined blog',
-          blogDescription: 'Here is included the last 10 posts from Nevermined Medium',
+          blogDescription:
+            'Here is included the last 10 posts from Nevermined Medium',
           blogSidebarCount: 0,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-          'https://github.com/nevermined-io/docs/tree/main/blog/',
+          editUrl: 'https://github.com/nevermined-io/docs/tree/main/blog/',
         },
         theme: {
           customCss: require.resolve('./src/scss/custom.scss'),
@@ -76,7 +76,7 @@ const config = {
           alt: 'Nevermined Logo',
           src: 'img/nvm-logo.png',
         },
-        items: [        
+        items: [
           {
             type: 'doc',
             docId: 'getting-started/index',
@@ -94,8 +94,8 @@ const config = {
             docId: 'tutorials/index',
             position: 'left',
             label: 'Tutorials',
-          }, 
-          {to: '/blog', label: 'Blog', position: 'left'},
+          },
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/nevermined-io',
             label: 'GitHub',
@@ -105,7 +105,7 @@ const config = {
             href: 'https://discord.gg/GZju2qScKq',
             label: 'Discord',
             position: 'right',
-          },          
+          },
         ],
       },
       footer: {
@@ -123,8 +123,8 @@ const config = {
               },
               {
                 label: 'Tutorials',
-                to: 'docs/tutorials/index'
-              }
+                to: 'docs/tutorials/index',
+              },
             ],
           },
           {
@@ -145,7 +145,7 @@ const config = {
               {
                 label: 'Linkedin',
                 href: 'https://linkedin.com/company/nevermined',
-              },                           
+              },
             ],
           },
           {
@@ -162,18 +162,18 @@ const config = {
               {
                 label: 'Youtube',
                 href: 'https://www.youtube.com/channel/UCaDKPgnEk4ekvQo2vO6FIBQ',
-              },               
+              },
               {
                 label: 'Email',
                 href: 'mailto:info@nevermined.io',
-              },              
+              },
             ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Nevermined AG.`,
       },
       colorMode: {
-        disableSwitch: true
+        disableSwitch: true,
       },
       prism: {
         theme: lightCodeTheme,
