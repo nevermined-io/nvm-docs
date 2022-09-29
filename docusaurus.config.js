@@ -70,7 +70,6 @@ const config = {
         },
       },
       navbar: {
-        style: 'dark',
         logo: {
           alt: 'Nevermined Logo',
           src: 'img/nevermined/nevermined_logo.svg',
@@ -178,6 +177,7 @@ const config = {
       },
       colorMode: {
         disableSwitch: true,
+        defaultMode: 'light',
       },
       prism: {
         theme: lightCodeTheme,

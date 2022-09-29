@@ -4,12 +4,35 @@
  * work well for content-centric websites.
  */
 
- @import './navbar.scss';
+@import './navbar.scss';
+@import './sidebar.scss';
+
+:root {
+  --ifm-background-color: var(--ifm-color-white);
+
+  --ifm-breadcrumb-item-background-active: #efedfd;
+  --ifm-breadcrumb-item-color-inactive: #bbbac2;
+
+  --ifm-footer-background-color: transparent;
+  --ifm-footer-color: var(--ifm-color-black);
+  --ifm-footer-link-color: var(--ifm-color-black);
+  --ifm-footer-title-color: var(--ifm-color-primary);
+
+  --ifm-color-primary: #2f12dc;
+
+  --ifm-navbar-background-color: var(--ifm-color-white);
+  --ifm-navbar-height: 74px;
+  --ifm-navbar-link-color: var(--ifm-color-black);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary);
+
+  --ifm-menu-color-background-active: rgba(47, 19, 220, 0.08);
+  --ifm-menu-color-background-hover: rgba(47, 19, 220, 0.08);
+}
 
 html,
 body {
-  --ifm-background-color: #fff;
   background: var(--ifm-background-color) !important;
+  color: unset !important;
 }
 
 header,
@@ -19,11 +42,6 @@ footer {
 }
 
 footer {
-  --ifm-footer-background-color: transparent;
-  --ifm-footer-color: var(--ifm-color-black);
-  --ifm-footer-link-color: var(--ifm-color-black);
-  --ifm-footer-title-color: #2f12dc;
-
   ul.social-links {
     > li {
       display: inline-block;
@@ -47,13 +65,10 @@ footer {
   font-size: 1.125rem;
   line-height: 2rem;
   font-family: 'Titillium Web', sans-serif;
+  overflow: hidden;
 
   .container {
     z-index: 1;
-  }
-
-  .breadcrumbs {
-    margin-bottom: 1.5em;
   }
 
   h1 {
@@ -89,10 +104,6 @@ footer {
     }
   }
 
-  .menu__link {
-    font-weight: bold;
-  }
-
   .table-of-contents__link {
     font-weight: bold;
   }
@@ -105,8 +116,7 @@ footer {
     line-height: 2em;
   }
 
-  a.hash-link,
-  a {
+  a.hash-link {
     color: #57a7de;
   }
 
@@ -138,7 +148,7 @@ footer {
 .overlay {
   background: url('/nevermined/backgrounds/home-bg.png') 50% bottom no-repeat;
   background-color: transparent;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   bottom: 0;
@@ -149,10 +159,45 @@ footer {
     background: url('/nevermined/backgrounds/home-bg.png') 50% bottom no-repeat;
     background-color: transparent;
     transform: scaleX(-1);
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     bottom: 0;
     left: 0;
+  }
+}
+
+/* remove it once the breadcrumbs config is implemented
+https://github.com/facebook/docusaurus/issues/6953
+ */
+ul.breadcrumbs {
+  margin-bottom: 1.5em;
+
+  .breadcrumbs__link {
+    color: var(--ifm-breadcrumb-item-color-inactive);
+  }
+
+  .breadcrumbs__item--active {
+    .breadcrumbs__link {
+      color: var(--ifm-breadcrumb-color-active);
+    }
+  }
+
+  li:first-child {
+    a {
+      color: var(--ifm-color-primary);
+
+      &::before {
+        content: 'Nevermined SDK';
+      }
+    }
+
+    &::after {
+      display: none !important;
+    }
+
+    svg {
+      display: none;
+    }
   }
 }
