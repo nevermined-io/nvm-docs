@@ -13,6 +13,7 @@ export type BoxItem = {
   png?: string;
   description: JSX.Element;
   className?: string;
+  overlay?: JSX.Element;
 };
 
 export const Box = ({
@@ -22,17 +23,19 @@ export const Box = ({
   png,
   description,
   className,
+  overlay,
 }: BoxItem) => {
   const content = (
     <div className={clsx(b('container'), className)}>
-      <div className="padding-horiz--md">
+      <div className={clsx('padding-horiz--md', b('content'))}>
         {Svg && <Svg className={b('svg')} />}
         {png && <img className={b('svg')} role="img" src={png} />}
       </div>
-      <div className="padding-horiz--md">
+      <div className={clsx('padding-horiz--md', b('content'))}>
         <UiText type="h3">{title}</UiText>
         <UiText type="p">{description}</UiText>
       </div>
+      {overlay}
     </div>
   );
 

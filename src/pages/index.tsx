@@ -38,6 +38,7 @@ const FeatureList: BoxItem[] = [
         Nevermined in detail about what is it, for what is usefull and use cases
       </>
     ),
+    overlay: <div className={b('box-overlay')} />,
   },
   {
     title: 'Integration',
@@ -69,11 +70,11 @@ const HomepageFeatures = (): JSX.Element => {
   return (
     <section className={b('boxes')}>
       <div className="container">
-        <div className="row">
-          <div className={clsx('col col--6', b('gutter', ['main']))}>
+        <div className={clsx('row', b('row'))}>
+          <div className={clsx('col col--6', b('col'), b('gutter', ['main']))}>
             <Box {...FeatureList[0]} />
           </div>
-          <div className="col col--6">
+          <div className={clsx('col col--6', b('col'))}>
             <div className={clsx('row', b('gutter'))}>
               <div className="col">
                 <Box {...FeatureList[1]} />

@@ -128,27 +128,6 @@ const config = {
             ],
           },
           {
-            title: 'Community',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/GZju2qScKq',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/nevermined_io',
-              },
-              {
-                label: 'Medium',
-                href: 'https://medium.com/nevermined-io',
-              },
-              {
-                label: 'Linkedin',
-                href: 'https://linkedin.com/company/nevermined',
-              },
-            ],
-          },
-          {
             title: 'More',
             items: [
               {
@@ -166,6 +145,35 @@ const config = {
               {
                 label: 'Email',
                 href: 'mailto:info@nevermined.io',
+              },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                html: `<ul class="social-links">
+                  <li>
+                    <a href="https://discord.gg/GZju2qScKq" target="_blank" rel="noopener noreferrer">
+                      <img src="/nevermined/discord.svg" alt="Discord" class="discord" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/nevermined-io" target="_blank" rel="noopener noreferrer">
+                      <img src="/nevermined/github.svg" alt="Github" class="github" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/nevermined_io" target="_blank" rel="noopener noreferrer">
+                      <img src="/nevermined/twitter.svg" alt="Twitter" class="twitter" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://medium.com/nevermined-io" target="_blank" rel="noopener noreferrer">
+                      <img src="/nevermined/medium.svg" alt="Medium" class="medium" />
+                    </a>
+                  </li>
+                </ul>`,
               },
             ],
           },
