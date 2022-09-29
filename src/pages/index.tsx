@@ -105,6 +105,7 @@ export default function Home(): JSX.Element {
           <HomepageFeatures />
         </main>
       </div>
+      <div className="overlay" />
     </Layout>
   );
 }

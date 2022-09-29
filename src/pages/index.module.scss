@@ -1,33 +1,5 @@
 @import '~@nevermined-io/styles/lib/cjs/styles/index.scss';
 
-html,
-body {
-  --ifm-background-color: #f5f5f5;
-}
-
-footer {
-  --ifm-footer-background-color: var(--ifm-background-color);
-  --ifm-footer-color: var(--ifm-color-black);
-  --ifm-footer-link-color: var(--ifm-color-black);
-  --ifm-footer-title-color: #2f12dc;
-
-  ul[class~=social-links] {
-    > li {
-      display: inline-block;
-      margin-right: 10px;
-      margin-bottom: 10px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
-
-  div[class~=footer__col] {
-    flex-basis: 0 !important;
-  }
-}
-
 /**
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
