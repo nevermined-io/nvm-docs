@@ -14,8 +14,6 @@ main {
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
-    // padding-left: 0;
-    // padding-right: 0;
 
     &--active {
       font-weight: 500;
@@ -52,10 +50,6 @@ main {
         }
       }
     }
-  }
-
-  .menu__list {
-    // padding-left: 0 !important;
   }
 
   .menu__list-item-collapsible {
