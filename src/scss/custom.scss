@@ -6,12 +6,21 @@
 
 @import './navbar.scss';
 @import './sidebar.scss';
+@import './fonts.scss';
 
 :root {
   --ifm-background-color: var(--ifm-color-white);
 
   --ifm-breadcrumb-item-background-active: #efedfd;
   --ifm-breadcrumb-item-color-inactive: #bbbac2;
+
+  --ifm-code-font-size: 14px;
+
+  --ifm-font-family-base: Catalogue, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  --ifm-font-family-monospace: 'PT Mono', SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Courier New', monospace;
 
   --ifm-footer-background-color: transparent;
   --ifm-footer-color: var(--ifm-color-black);
@@ -27,6 +36,24 @@
 
   --ifm-menu-color-background-active: rgba(47, 19, 220, 0.08);
   --ifm-menu-color-background-hover: rgba(47, 19, 220, 0.08);
+
+  --ifm-pre-line-height: 1.5rem;
+  --ifm-pre-padding: 1.5rem;
+
+  --ifm-table-border-color: #dbdbdb;
+  --ifm-table-head-background: linear-gradient(
+    107.16deg,
+    #2f12dc 9.77%,
+    #1ddef9 100%
+  );
+  --ifm-table-head-color: var(--ifm-color-white);
+
+  --ifm-tabs-color-active-border: linear-gradient(
+    107.16deg,
+    #2f12dc 9.77%,
+    #1ddef9 100%
+  );
+  --ifm-tabs-color-active: var(--ifm-color-black);
 }
 
 html,
@@ -57,6 +84,19 @@ footer {
   .footer__col {
     flex-basis: 0 !important;
   }
+
+  .footer__title {
+    font-style: normal;
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+code {
+  font-family: var(--ifm-font-family-monospace) !important;
+  font-weight: 400;
+  font-size: var(--ifm-code-font-size) !important;
+  line-height: var(--ifm-pre-line-height) !important;
 }
 
 .main-wrapper {
@@ -64,7 +104,6 @@ footer {
   color: black;
   font-size: 1.125rem;
   line-height: 2rem;
-  font-family: 'Titillium Web', sans-serif;
   overflow: hidden;
 
   .container {
@@ -74,11 +113,13 @@ footer {
   h1 {
     font-size: 50px;
     font-weight: bold;
+    line-height: 4rem;
   }
 
   h2 {
     font-size: 40px;
     font-weight: bold;
+    line-height: 3rem;
 
     &.text--truncate {
       font-size: 35px;
@@ -86,12 +127,14 @@ footer {
   }
 
   h3 {
-    font-weight: 30px;
+    font-size: 30px;
     font-weight: bold;
+    line-height: 2.5rem;
   }
 
   h4 {
     font-weight: bold;
+    line-height: 2rem;
   }
 
   li {
@@ -113,11 +156,14 @@ footer {
   }
 
   p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
     line-height: 2em;
   }
 
   a.hash-link {
-    color: #57a7de;
+    color: var(--ifm-color-primary);
   }
 
   .table-of-contents__left-border {
@@ -135,7 +181,16 @@ footer {
   }
 
   .text {
-    color: #000;
+    color: var(--ifm-color-black);
+    font-family: inherit !important;
+
+    &--h1,
+    &--h2,
+    &--h3,
+    &--h4,
+    &--h4-caps {
+      text-transform: none;
+    }
 
     &--p {
       font-weight: 500;
@@ -198,6 +253,89 @@ ul.breadcrumbs {
 
     svg {
       display: none;
+    }
+  }
+}
+
+.markdown {
+  ul {
+    li {
+      a {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        color: var(--ifm-link-color);
+      }
+    }
+  }
+
+  p {
+    a {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      color: var(--ifm-link-color);
+    }
+  }
+
+  table {
+    thead {
+      background: var(--ifm-table-head-background);
+
+      th {
+        background-color: unset;
+        border-color: transparent;
+
+        &:first-child {
+          border-top-left-radius: 16px;
+        }
+
+        &:last-child {
+          border-top-right-radius: 16px;
+        }
+      }
+    }
+  }
+}
+
+.tabs {
+  .tabs__item {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    &--active {
+      border-bottom-color: unset;
+      border-image-source: var(--ifm-tabs-color-active-border);
+      border-image-slice: 1;
+    }
+  }
+}
+
+.pagination-nav {
+  &__label {
+    color: var(--ifm-color-primary);
+  }
+
+  &__sublabel {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    border: none;
+
+    &--next {
+      .pagination-nav__label {
+        background: linear-gradient(107.16deg, #2f12dc 9.77%, #1ddef9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
     }
   }
 }

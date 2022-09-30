@@ -27,7 +27,7 @@ export const Box = ({
 }: BoxItem) => {
   const content = (
     <div className={clsx(b('container'), className)}>
-      <div className={clsx('padding-horiz--md', b('content'))}>
+      <div className={clsx('padding-horiz--md', b('content', ['icon']))}>
         {Svg && <Svg className={b('svg')} />}
         {png && <img className={b('svg')} role="img" src={png} />}
       </div>

@@ -1,0 +1,106 @@
+/* Catalogue */
+$catalogue-light-font-path: '/fonts/Catalogue/Catalogue-Light';
+$catalogue-light-italic-font-path: '/fonts/Catalogue/Catalogue-LightItalic';
+
+$catalogue-normal-font-path: '/fonts/Catalogue/Catalogue-Regular';
+$catalogue-normal-italic-font-path: '/fonts/Catalogue/Catalogue-Italic';
+
+$catalogue-medium-font-path: '/fonts/Catalogue/Catalogue-Medium';
+$catalogue-medium-italic-font-path: '/fonts/Catalogue/Catalogue-MediumItalic';
+
+$catalogue-demi-bold-font-path: '/fonts/Catalogue/Catalogue-Demi';
+$catalogue-demi-bold-italic-font-path: '/fonts/Catalogue/Catalogue-DemiItalic';
+
+$catalogue-bold-font-path: '/fonts/Catalogue/Catalogue-Bold';
+$catalogue-bold-italic-font-path: '/fonts/Catalogue/Catalogue-BoldItalic';
+
+/* PT Mono */
+$ptmono-normal-font-path: '/fonts/PT_Mono/PTMono-Regular';
+
+/* Light */
+@font-face {
+  font-family: Catalogue;
+  src: url($catalogue-light-font-path + '.otf');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Catalogue;
+  src: url($catalogue-light-italic-font-path + '.otf');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Normal */
+@font-face {
+  font-family: Catalogue;
+  src: url($catalogue-normal-font-path + '.otf');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Catalogue;
+  src: url($catalogue-normal-italic-font-path + '.otf');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Medium */
+@font-face {
+  font-family: Catalogue;
+  src: url($catalogue-medium-font-path + '.otf');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Catalogue;
+  src: url($catalogue-medium-italic-font-path + '.otf');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* DemiBold */
+@font-face {
+  font-family: Catalogue;
+  src: url($catalogue-demi-bold-font-path + '.otf');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Catalogue;
+  src: url($catalogue-demi-bold-italic-font-path + '.otf');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: Catalogue;
+  src: url($catalogue-bold-font-path + '.otf');
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Catalogue;
+  src: url($catalogue-bold-italic-font-path + '.otf');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* PT Mono Normal */
+@font-face {
+  font-family: 'PT Mono';
+  src: url($ptmono-normal-font-path + '.ttf');
+  font-weight: normal;
+  font-display: swap;
+}

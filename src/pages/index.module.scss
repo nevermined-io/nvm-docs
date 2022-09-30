@@ -17,7 +17,7 @@
   &__boxes {
     display: flex;
     align-items: center;
-    padding: 2rem 0 5rem;
+    padding: 3rem 0 5rem;
     width: 100%;
   }
 
@@ -30,7 +30,6 @@
       svg {
         width: 64px;
         height: 40px;
-        margin-bottom: 20px;
       }
 
       *[class~='text'] {
@@ -83,7 +82,7 @@
 
   &__description {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 1.5rem;
     font-weight: 400;
     font-size: 21px;
     color: var(--ifm-color-black);

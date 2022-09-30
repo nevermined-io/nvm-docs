@@ -35,7 +35,7 @@ const FeatureList: BoxItem[] = [
     Svg: require('@site/static/nevermined/neverminedDocs.svg').default,
     description: (
       <>
-        Nevermined in detail about what is it, for what is usefull and use cases
+        Nevermined in detail about what is it, for what is useful and use cases
       </>
     ),
     overlay: <div className={b('box-overlay')} />,
