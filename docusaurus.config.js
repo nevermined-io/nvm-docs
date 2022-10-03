@@ -82,9 +82,14 @@ const config = {
           },
           {
             position: 'left',
-            label: 'Architecture',
-            to: 'docs/architecture',
+            label: 'Catalog',
+            to: 'docs/catalog/intro',
           },
+          {
+            position: 'left',
+            label: 'SDK',
+            to: 'docs/nevermined-sdk/',
+          },          
           {
             position: 'left',
             label: 'Tutorials',
