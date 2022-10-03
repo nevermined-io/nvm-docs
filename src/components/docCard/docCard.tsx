@@ -1,7 +1,3 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- */
-
 import React, { type ReactNode, useState, useEffect } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';

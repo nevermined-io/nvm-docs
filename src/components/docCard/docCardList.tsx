@@ -4,7 +4,7 @@ import {
   useCurrentSidebarCategory,
   filterDocCardListItems,
 } from '@docusaurus/theme-common';
-import DocCard from './DocCard';
+import DocCard from './docCard';
 import type { Props } from '@theme/DocCardList';
 
 function DocCardListForCurrentSidebarCategory({ className }: Props) {

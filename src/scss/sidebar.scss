@@ -9,57 +9,57 @@ main {
   }
 }
 
-.main-wrapper {
-  .menu {
-    &__link {
-      font-style: normal;
+.menu {
+  &__link {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+
+    &--active {
       font-weight: 500;
       font-size: 14px;
       line-height: 18px;
+      padding: var(--ifm-menu-link-padding-vertical)
+        var(--ifm-menu-link-padding-horizontal);
+    }
 
-      &--active {
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 18px;
-        padding: var(--ifm-menu-link-padding-vertical)
-          var(--ifm-menu-link-padding-horizontal);
-      }
+    &--sublist {
+      padding-left: 0;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 24px;
+      color: var(--ifm-color-black);
 
-      &--sublist {
-        padding-left: 0;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 24px;
-        color: var(--ifm-color-black);
+      &-caret {
+        padding: 0;
 
-        &-caret {
-          padding: 0;
+        &::before {
+          content: '';
+          min-width: 1.25rem;
+          background: var(--ifm-menu-link-sublist-icon) 50% / 2rem 2rem;
+          filter: var(--ifm-menu-link-sublist-icon-filter);
+          height: 1.25rem;
+          transform: rotate(180deg);
+          width: 1.25rem;
+          transition: transform var(--ifm-transition-fast) linear;
+          padding: var(--ifm-menu-link-padding-vertical)
+            var(--ifm-menu-link-padding-horizontal);
+        }
 
-          &::before {
-            content: '';
-            min-width: 1.25rem;
-            background: var(--ifm-menu-link-sublist-icon) 50% / 2rem 2rem;
-            filter: var(--ifm-menu-link-sublist-icon-filter);
-            height: 1.25rem;
-            transform: rotate(180deg);
-            width: 1.25rem;
-            transition: transform var(--ifm-transition-fast) linear;
-            padding: var(--ifm-menu-link-padding-vertical)
-              var(--ifm-menu-link-padding-horizontal);
-          }
-
-          &::after {
-            display: none;
-          }
+        &::after {
+          display: none;
         }
       }
     }
   }
+}
 
-  .menu__list-item-collapsible {
-    flex-direction: row-reverse;
-  }
+.menu__list-item-collapsible {
+  flex-direction: row-reverse;
+}
 
+.main-wrapper {
   li.theme-doc-sidebar-item-category {
     margin-left: 0 !important;
   }
