@@ -1,0 +1,37 @@
+.sidebar-item-doc-card {
+  padding: 24px;
+  box-shadow: 0px 0px 24px 0px #3c2f8f1f !important;
+  width: 100%;
+
+  &__row {
+    .col {
+      display: flex;
+      flex-grow: 1;
+
+      @media (max-width: 996px) {
+        --ifm-col-width: 50%;
+      }
+    }
+  }
+
+  &__icon {
+    &-wrapper {
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+  }
+
+  &__title {
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    line-height: 24px !important;
+    margin-bottom: 15px;
+  }
+
+  &__description {
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 21px !important;
+    color: #6e769a;
+  }
+}

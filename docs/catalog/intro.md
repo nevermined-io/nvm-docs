@@ -17,15 +17,17 @@ Some important characteristic of the Nevermined and by extension by the Catalog 
 The Catalog is splitted currently in two modules:
 
 ### [Core](./core/README.md)
-Includes all the Nevermined functionalities splitted in the `Catalog provider` and `Services`. 
+
+Includes all the Nevermined functionalities splitted in the `Catalog provider` and `Services`.
 
 ### [Providers](./providers/README.md)
+
 The Catalog exposes a package facilitating the interaction with Web3 providers like Metamask.
 
 ## React Framework
 
 Nevermined is framework agnostic, but we created this catalog on top of React to facilitate the integration of Nevermined to React builders. The same level of use cases/applications can be delivered in any other framework using the [Nevermined SDK](https://docs.nevermined.io/docs/nevermined-sdk/).
 
-import DocCardList from '@theme/DocCardList';
+import DocCardList from '@site/src/components/docCard/docCardList';
 
 <DocCardList />

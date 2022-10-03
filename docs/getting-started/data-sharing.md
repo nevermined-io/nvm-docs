@@ -1,6 +1,8 @@
 ---
 sidebar_position: 5
 description: Nevermined allows data sharing between untrusted parties
+sidebar_custom_props:
+  iconStaticFolderPath: nevermined/doc-card-data-sharing.svg
 ---
 
 # Data Sharing

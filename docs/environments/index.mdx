@@ -6,14 +6,14 @@ description: Nevermined Environments
 # Nevermined Public Environments
 
 Nevermined is available in different networks/environments allowing users to make use of this
-infrastructure without the complexity of deploying Smart Contracts or other components of 
+infrastructure without the complexity of deploying Smart Contracts or other components of
 the stack.
 
 The different existing networks have different characteristics related to the underlying blockchain network being used and if they are a production or test environment.
 
 ## Blockchain networks supported
 
-Nevermined Smart Contracts are EVM compatible so they can be deployed in any EVM compatible blockchain network. Currently we maintain deployments on: 
+Nevermined Smart Contracts are EVM compatible so they can be deployed in any EVM compatible blockchain network. Currently we maintain deployments on:
 
 - **Ethereum**
 - **Polygon**
@@ -41,13 +41,10 @@ This means for the same network and environment you could have available the Sma
 
 Tags are different contract deployments for the same network&version. Each tag is independant from the others. Generically we use two different tags:
 
-- `public`: This tag/contracts instane is meant to be used for new integrations, public integrations, etc... It expected to have the latest versions and/or configurations. This is a *shared* environment. *Probably you need to use these environments.*
+- `public`: This tag/contracts instane is meant to be used for new integrations, public integrations, etc... It expected to have the latest versions and/or configurations. This is a _shared_ environment. _Probably you need to use these environments._
 
 - `common`: This tag/contracts instane is used by more "stable" applications. Each application has its own nevermined stack (`gateway` + `markeplace-api`).
 
-
-
-
-import DocCardList from '@theme/DocCardList';
+import DocCardList from '@site/src/components/docCard/docCardList';
 
 <DocCardList />

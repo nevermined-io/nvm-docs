@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+sidebar_custom_props:
+  iconStaticFolderPath: nevermined/doc-card-connecting-devs-to-infrastructure.svg
 description: Connecting Devs to Infrastructure
 ---
 
@@ -7,7 +9,7 @@ description: Connecting Devs to Infrastructure
 
 Nevermined is the missing link for Web3 to become decentralized and interconnected once and for all. Allowing companies to integrate with multiple providers on a single network for speed, reliability, and decentralization to keep innovating towards an infrastructure that can handle mass adoption in the years to come.
 
-There are many ways to commercially leverage Nevermined, including building digital ecosystems geared towards web3  as well as fulfilling specific functions pertaining to governance and tokenization dynamics. These commercialization techniques can be applied at varying levels. Our strategy is to deploy Nevermined in an intra-organizational setting where internal, disparate business units monetize their assets across verticals, chains and entities. This inter-organizational approach within consortium-controlled or open networks will permit non-affiliated actors to share and trade their assets.
+There are many ways to commercially leverage Nevermined, including building digital ecosystems geared towards web3 as well as fulfilling specific functions pertaining to governance and tokenization dynamics. These commercialization techniques can be applied at varying levels. Our strategy is to deploy Nevermined in an intra-organizational setting where internal, disparate business units monetize their assets across verticals, chains and entities. This inter-organizational approach within consortium-controlled or open networks will permit non-affiliated actors to share and trade their assets.
 
 Nevermined is a Web3 decentralized infrastructure provider with a mission to enable greater tokenization and web3 integration possibilities via easy development of data sharing and remote computation mechanisms. Nevermined enables a “Data in situ Computation” solution, meaning that enterprise or infrastructure data remains static whereas the algorithm is flexible to make up for that. It allows data owners or providers to define the conditions for sharing, accessing and using their data without giving direct access to it.
 

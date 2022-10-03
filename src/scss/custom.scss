@@ -7,12 +7,15 @@
 @import './navbar.scss';
 @import './sidebar.scss';
 @import './fonts.scss';
+@import './doc-card.scss';
 
 :root {
   --ifm-background-color: var(--ifm-color-white);
 
   --ifm-breadcrumb-item-background-active: #efedfd;
   --ifm-breadcrumb-item-color-inactive: #bbbac2;
+  --ifm-breadcrumb-separator: url('/nevermined/breadcrumb-arrow.svg');
+  --ifm-breadcrumb-separator-size-multiplier: 2;
 
   --ifm-code-font-size: 14px;
 
@@ -238,21 +241,18 @@ ul.breadcrumbs {
     }
   }
 
-  li:first-child {
-    a {
-      color: var(--ifm-color-primary);
+  .breadcrumbs__item {
+    &:first-child {
+      margin-left: 0;
 
-      &::before {
-        content: 'Nevermined SDK';
+      svg {
+        width: 24px;
+        height: 24px;
       }
     }
 
-    &::after {
-      display: none !important;
-    }
-
-    svg {
-      display: none;
+    &:not(:last-child):after {
+      background: var(--ifm-breadcrumb-separator) center no-repeat;
     }
   }
 }
