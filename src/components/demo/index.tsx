@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import AssetRewards from '@nevermined-io/nevermined-sdk-js/dist/node/models/AssetRewards';
 import { MetaData, Logger, DDO } from '@nevermined-io/nevermined-sdk-js';
