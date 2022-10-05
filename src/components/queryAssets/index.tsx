@@ -112,7 +112,7 @@ const QuerySearchByAdditionalInfo = ({ assetsModule }: { assetsModule: AssetsMod
     <>
       <UiForm>
         <UiFormSelect
-          label='Search by category: (try with Aave)'
+          label='Search by category: '
           value={category}
           options={options.map(o => o.label)}
           onChange={(e) => onSearchByCategory(e as string)}/>
