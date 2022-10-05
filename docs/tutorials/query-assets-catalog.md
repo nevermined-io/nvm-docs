@@ -16,8 +16,8 @@ The [main metadata attributes](../architecture/specs/Spec-METADATA#main-attribut
 
 ### Code
 
-```ts
-const QuerySearchByName = ({ assetsModule }: { assetsModule: AssetsModule}) => {
+```tsx
+const QuerySearchByName = (): => {
   const { assets } = Catalog.useNevermined();
   const [ ddos, setDdos ] = useState<DDO[]>([]);
 
@@ -26,7 +26,7 @@ const QuerySearchByName = ({ assetsModule }: { assetsModule: AssetsModule}) => {
       return;
     }
 
-    const response = await assetsModule.query({
+    const response = await assets.query({
       query: {
         "query_string": {
           query: `*${value}*`,
@@ -43,24 +43,23 @@ const QuerySearchByName = ({ assetsModule }: { assetsModule: AssetsModule}) => {
     <>
       <UiForm>
         <UiFormInput 
-          label='Search by name: (try with Aave)'
+          label='Search by name: (try with Aave) '
           onChange={(e) => onSearchByName(e.target.value)}/>
       </UiForm>
 
       {ddos.map(ddo =>
-        <>
-        <UiDivider line={true}/>
-        <UiLayout>
+        <div key={ddo.id}>
           <UiLayout>
-            <UiText>Asset id: </UiText>
-            <UiText>{ddo.id}</UiText>
+            <UiLayout>
+              <UiText>Asset id: </UiText>
+              <UiText>{ddo.id}</UiText>
+            </UiLayout>
+            <UiLayout>
+              <UiText>Creator id: </UiText>
+              <UiText>{ ddo.proof.creator }</UiText>
+            </UiLayout>
           </UiLayout>
-          <UiLayout>
-            <UiText>Creator id: </UiText>
-            <UiText>{ ddo.proof.creator }</UiText>
-          </UiLayout>
-        </UiLayout>
-        </>
+        </div>
       )}
     </>
 
@@ -73,4 +72,295 @@ const QuerySearchByName = ({ assetsModule }: { assetsModule: AssetsModule}) => {
 
 <BrowserOnly fallback={<div>Loading search assets by name...</div>}>
  {()=> <QueryAssets name={true}/>}
+</BrowserOnly>
+
+## Search by additional information
+The [Additional Information](../architecture/specs/Spec-METADATA.md#additional-attributes) section is an entry into the DDO/Metadata document where users can specify a free range of attributes. They can be domain specific, and the marketplace can be used to search accross them. Things like `categories`:
+
+### Code
+
+```tsx
+const QuerySearchByAdditionalInfo = () => {
+  const { assets } = Catalog.useNevermined();
+  const [ ddos, setDdos ] = useState<DDO[]>([]);
+  const [category, setCategory] = useState('');
+
+  const options = [{
+    label: 'Categories:',
+    value: ''
+
+  }, {
+    label: 'Lending',
+    value: 'ProtocolType:Lending',
+  }, {
+    label: 'Ethereum',
+    value: 'Blockchain:Ethereum',
+  }, {
+    label: 'Liquidations',
+    value: 'EventType:Liquidations',
+  }];
+
+  const onSearchByCategory = async(value: string) => {
+    const categoryChoosen = options.find(o => o.label === value)?.value;
+    setCategory(value);
+
+    if(!categoryChoosen) {
+      setDdos([]);
+      return;
+    }
+
+    const response = await assets.query({
+      query: {
+        match: {
+          "service.attributes.additionalInformation.categories": categoryChoosen
+        }
+      },
+    });
+
+    setDdos(response.results || []);
+  };
+
+  return (
+    <>
+      <UiForm>
+        <UiFormSelect
+          label='Search by category: (try with Aave)'
+          value={category}
+          options={options.map(o => o.label)}
+          onChange={(e) => onSearchByCategory(e as string)}/>
+      </UiForm>
+
+      {ddos.slice(0,3).map(ddo =>
+        <div key={ddo.id}>
+          <UiLayout>
+            <UiLayout>
+              <UiText>Asset id: </UiText>
+              <UiText>{ddo.id}</UiText>
+            </UiLayout>
+            <UiLayout>
+              <UiText>Creator id: </UiText>
+              <UiText>{ ddo.proof.creator }</UiText>
+            </UiLayout>
+          </UiLayout>
+        </div>
+      )}
+    </>
+  )
+};
+```
+
+### Demo
+
+<BrowserOnly fallback={<div>Loading search assets by additional information...</div>}>
+ {()=> <QueryAssets additionalInformation={true}/>}
+</BrowserOnly>
+
+## Search by price range
+
+The price is an attribute that is included in each of the services exposed in an asset. It is included as part of the service.attributes.main object. So to run a search using a range of prices could be something like this:
+
+### Code
+
+```tsx
+const QuerySearchByPriceRange = () => {
+  const { assets } = Catalog.useNevermined();
+  const [ ddos, setDdos ] = useState<DDO[]>([]);
+  const [ gte, setGte ] = useState('');
+  const [ lte, setLte ] = useState('');
+  const [ gteRequired, setGteRequired ] = useState('');
+  const [ lteRequired, setLteRequired ] = useState('');
+
+  useEffect(() => {
+    if(gteRequired || lteRequired) {
+      setTimeout(() => {
+        setGteRequired('');
+        setLteRequired('');
+      }, 3000);
+    }
+  }, [gteRequired, lteRequired]);
+
+  const onSearchByPriceRange = async() => {
+    if(!gte || !lte) {
+      setGteRequired(!gte ? 'gte input is required' : '');
+      setLteRequired(!lte ? 'lte input is required' : '');
+      return;
+    }
+
+    if(gte >= lte && gte) {
+      setGteRequired('gte input cannot be greater than lte input');
+      return;
+    }
+
+    const response = await assets.query({
+      query: {
+        range: {
+          "service.attributes.main.price": {
+            gte,
+            lte,
+          }
+        }
+      },
+    });
+
+    setDdos(response.results || []);
+  };
+
+  return (
+    <>
+      <UiForm>
+        <UiText>Set the price range:</UiText>
+        <UiFormInput 
+          label='gte: '
+          onChange={(e) => setGte(e.target.value)}
+          inputError={gteRequired}/>
+        <UiFormInput 
+          label='lte: '
+          onChange={(e) => setLte(e.target.value)}
+          inputError={lteRequired}/>
+        
+        <UiButton title='Search' type='secondary' onClick={onSearchByPriceRange}>Search</UiButton>
+      </UiForm>
+
+      {ddos.slice(0,3).map(ddo =>
+        <div key={ddo.id}>
+          <UiLayout>
+            <UiLayout>
+              <UiText>Asset id: </UiText>
+              <UiText>{ddo.id}</UiText>
+            </UiLayout>
+            <UiLayout>
+              <UiText>Creator id: </UiText>
+              <UiText>{ ddo.proof.creator }</UiText>
+            </UiLayout>
+          </UiLayout>
+        </div>
+      )}
+    </>
+  )
+}
+```
+
+### Demo
+
+<BrowserOnly fallback={<div>Loading search assets by price range...</div>}>
+ {()=> <QueryAssets priceRange={true}/>}
+</BrowserOnly>
+
+## Sorting and paginating
+
+All the search queries can include sorting and pagination attributes:
+
+### Code
+
+```tsx
+const QuerySearchByFilters = () => {
+  const { assets } = Catalog.useNevermined();
+  const [ ddos, setDdos ] = useState<DDO[]>([]);
+  const [ name, setName ] = useState('');
+  const [ short, setShort] = useState<'asc'|'desc'>('desc');
+  const [ page, setPage ] = useState(1);
+  const [ size, setSize ] = useState(100);
+  const [ nameRequired, setNameRequired ] = useState('');
+  const [ pageRequired, setPageRequired ] = useState('');
+  const [ sizeRequired, setSizeRequired ] = useState('');
+
+  useEffect(() => {
+    if(nameRequired || pageRequired || sizeRequired) {
+      setTimeout(() => {
+        setNameRequired('');
+        setPageRequired('');
+        setSizeRequired('');
+      }, 3000);
+    }
+  }, [nameRequired, pageRequired, sizeRequired]);
+
+  const setMessage = (name: string, value: number) => {
+    return value <= 0 ? `${name} input needs to be greater than 0` : `${name} input is required`
+  };
+
+  const onSearchByFilters = async() => {
+    if(!page || !size || !name) {
+      setNameRequired(!name ? 'name input is required' : '');
+      setPageRequired(!page || page <= 0 ? setMessage('page', page): '');
+      setSizeRequired(!size || size <= 0 ? setMessage('size', size): '');
+
+      return;
+    }
+
+    const response = await assets.query({
+      query: {
+        "query_string": {
+          query: `*${name}*`,
+          fields: ["service.attributes.main.name"]
+        },
+      },
+      offset: size,
+      page,
+      sort: {
+        created: short
+      }
+    });
+
+    setDdos(response.results || []);
+  };
+
+  const getValue = (value: string) => {
+    if(value) {
+      return parseInt(value, 10);
+    }
+
+    return value as undefined;
+  };
+
+  return (
+    <>
+      <UiForm>
+        <UiFormInput 
+          label='Search by name: (try with Aave)'
+          inputError={nameRequired}
+          onChange={(e) => setName(e.target.value)}/>
+        <UiFormInput 
+          label='Page:'
+          type='number'
+          value={page}
+          inputError={pageRequired}
+          onChange={(e) => setPage(getValue(e.target.value))}/>
+        <UiFormInput 
+          label='Page size:'
+          value={size}
+          type='number'
+          inputError={sizeRequired}
+          onChange={(e) => setSize(getValue(e.target.value))}/>
+        <UiFormSelect
+          label='Short by publish date:'
+          value={short}
+          options={['asc', 'desc']}
+          onChange={(e) => setShort(e)}
+        />
+        <UiButton title='Search' type='secondary' onClick={onSearchByFilters}>Search</UiButton>
+      </UiForm>
+
+      {ddos.map(ddo =>
+        <div key={ddo.id}>
+          <UiLayout>
+            <UiLayout>
+              <UiText>Asset id: </UiText>
+              <UiText>{ddo.id}</UiText>
+            </UiLayout>
+            <UiLayout>
+              <UiText>Creator id: </UiText>
+              <UiText>{ ddo.proof.creator }</UiText>
+            </UiLayout>
+          </UiLayout>
+        </div>
+      )}
+    </>
+  )
+};
+```
+
+### Demo
+
+<BrowserOnly fallback={<div>Loading search assets by filters...</div>}>
+ {()=> <QueryAssets filters={true}/>}
 </BrowserOnly>

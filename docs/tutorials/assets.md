@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 description: Building a DApp using Nevermined frameworks 2
 ---
 
@@ -634,8 +634,6 @@ changes the account and when the NFT1155 is bought in order to avoid buy again
         await assets.downloadNFT(ddo.id);
     };
 ```
-
-#### The compleate example
 
 #### The complete example
 

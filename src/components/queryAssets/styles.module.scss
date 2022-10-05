@@ -1,0 +1,24 @@
+@import '~@nevermined-io/styles/lib/cjs/styles/index.scss';
+
+.query-assets {
+  @include component;  
+
+  &__container {
+    padding: 20px;
+    border: 1px solid #B1D3EA;
+    
+    label {
+      margin-right: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  }
+
+  &__item {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #B1D3EA;
+  }
+}
