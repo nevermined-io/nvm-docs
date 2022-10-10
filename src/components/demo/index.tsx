@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import AssetRewards from '@nevermined-io/nevermined-sdk-js/dist/node/models/AssetRewards';
 import { MetaData, Logger, DDO } from '@nevermined-io/nevermined-sdk-js';
 import BigNumber from '@nevermined-io/nevermined-sdk-js/dist/node/utils/BigNumber';
-import { Catalog, AssetService, RoyaltyKind, getCurrentAccount, getRoyaltyScheme, AuthToken } from '@nevermined-io/catalog-core';
+import { Catalog, AssetService, RoyaltyKind, getCurrentAccount, getRoyaltyScheme } from '@nevermined-io/catalog-core';
 import { MetaMask } from '@nevermined-io/catalog-providers';
 import { UiText, UiLayout, BEM, UiButton } from '@nevermined-io/styles';
 import styles from './styles.module.scss';
-import { ethers } from 'ethers';
+import { appConfig } from '../config';
 
 const b = BEM('demo', styles);
 
@@ -217,26 +217,16 @@ const App = ({ gatewayAddress }: {gatewayAddress: string}) => {
 };
 
 const Demo = () => {
-  const appConfig = {
-    web3Provider: typeof window !== 'undefined' ? (window as any).ethereum : new ethers.providers.JsonRpcProvider(),
-    gatewayUri: 'https://defi.v2.gateway.mumbai.nevermined.rocks',
-    faucetUri: 'https://faucet.rinkeby.nevermined.rocks',
-    verbose: true,
-    gatewayAddress: "0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc",
-    graphHttpUri: 'https://api.thegraph.com/subgraphs/name/nevermined-io/common',
-    marketplaceAuthToken: AuthToken.fetchMarketplaceApiTokenFromLocalStorage().token,
-    marketplaceUri: 'https://defi.v2.marketplace-api.mumbai.nevermined.rocks',
-    artifactsFolder: `${location.protocol}//${location.host}/contracts`
-  }
+  const config = appConfig();
 
   return(
-    <Catalog.NeverminedProvider config={appConfig} verbose={true}>
+    <Catalog.NeverminedProvider config={config} verbose={true}>
       <AssetService.AssetPublishProvider>
         <MetaMask.WalletProvider
           correctNetworkId="0x13881"
           nodeUri=""
         >
-          <App gatewayAddress={appConfig.gatewayAddress}/>
+          <App gatewayAddress={config.gatewayAddress}/>
         </MetaMask.WalletProvider>
       </AssetService.AssetPublishProvider>
     </Catalog.NeverminedProvider>

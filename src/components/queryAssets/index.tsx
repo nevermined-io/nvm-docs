@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { AssetsModule, Catalog, DDO, AuthToken } from '@nevermined-io/catalog-core';
+import { AssetsModule, Catalog, DDO } from '@nevermined-io/catalog-core';
 import { UiForm, UiFormInput, UiText, UiLayout, UiFormSelect, UiButton, BEM } from '@nevermined-io/styles';
-import { ethers } from 'ethers';
+import { appConfig } from '../config';
 import styles from './styles.module.scss';
 
 const b = BEM('query-assets', styles);
@@ -354,20 +354,10 @@ const QuerySearch = (searchAssets: SearchAssets) => {
 }
 
 const QueryAssets = (searchAssets: SearchAssets ) => {
-  const appConfig = {
-    web3Provider: typeof window !== 'undefined' ? (window as any).ethereum : new ethers.providers.JsonRpcProvider(),
-    gatewayUri: 'https://defi.v2.gateway.mumbai.nevermined.rocks',
-    faucetUri: 'https://faucet.rinkeby.nevermined.rocks',
-    verbose: true,
-    gatewayAddress: "0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc",
-    graphHttpUri: 'https://api.thegraph.com/subgraphs/name/nevermined-io/common',
-    marketplaceAuthToken: AuthToken.fetchMarketplaceApiTokenFromLocalStorage().token,
-    marketplaceUri: 'https://defi.v2.marketplace-api.mumbai.nevermined.rocks',
-    artifactsFolder: `${location.protocol}//${location.host}/contracts`
-  };
+  const config = appConfig();
 
   return(
-    <Catalog.NeverminedProvider config={appConfig} verbose={true}>
+    <Catalog.NeverminedProvider config={config} verbose={true}>
       <QuerySearch 
         name={searchAssets.name}
         additionalInformation={searchAssets.additionalInformation}  
