@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import AssetRewards from '@nevermined-io/nevermined-sdk-js/dist/node/models/AssetRewards';
 import { MetaData, Logger, DDO } from '@nevermined-io/nevermined-sdk-js';
 import BigNumber from '@nevermined-io/nevermined-sdk-js/dist/node/utils/BigNumber';
-import { Catalog, AssetService, RoyaltyKind, getCurrentAccount, getRoyaltyScheme } from '@nevermined-io/catalog-core';
+import { Catalog, AssetService, RoyaltyKind, getCurrentAccount, getRoyaltyScheme, Config } from '@nevermined-io/catalog-core';
 import { MetaMask } from '@nevermined-io/catalog-providers';
 import { UiText, UiLayout, BEM, UiButton } from '@nevermined-io/styles';
+import { ethers } from 'ethers';
 import styles from './styles.module.scss';
 import { appConfig } from '../config';
 
@@ -217,7 +218,10 @@ const App = ({ gatewayAddress }: {gatewayAddress: string}) => {
 };
 
 const Demo = () => {
-  const config = appConfig();
+  const config: Config = appConfig();
+  config.web3Provider = typeof window !== 'undefined'
+    ? (window as any)?.ethereum
+    : new ethers.providers.JsonRpcProvider('https://matic-mumbai.chainstacklabs.com');
 
   return(
     <Catalog.NeverminedProvider config={config} verbose={true}>
