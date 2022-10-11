@@ -2,8 +2,6 @@ import { ethers } from 'ethers';
 import {AuthToken} from '@nevermined-io/catalog-core';
 
 export const appConfig = () => ({
-  web3Provider: typeof window !== 'undefined' ? (window as any).ethereum :
-    new ethers.providers.JsonRpcProvider('https://matic-mumbai.chainstacklabs.com'),
   nodeUri: 'https://matic-mumbai.chainstacklabs.com',
   gatewayUri: 'https://defi.v2.gateway.mumbai.nevermined.rocks',
   faucetUri: 'https://faucet.rinkeby.nevermined.rocks',
