@@ -3,7 +3,8 @@ sidebar_position: 4
 ---
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import { DemoCatalog } from '@site/src/components/demo';
+import { DemoSDK } from '@site/src/components/demo';
+
 
 # Demo
 This demo is based in the code of the [Example](./example.md) section
@@ -28,5 +29,5 @@ The example in the template covers the most commonsly used functionalities to in
 ## View
 
 <BrowserOnly fallback={<div>Loading demo...</div>}>
- {()=> <DemoCatalog/>}
+ {()=> <DemoSDK/>}
 </BrowserOnly>

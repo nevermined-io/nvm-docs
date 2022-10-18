@@ -190,7 +190,7 @@ const QuerySearchByPriceRange = () => {
       return;
     }
 
-    if(gte >= lte) {
+    if(gte > lte) {
       setGteRequired('gte input cannot be greater than lte input');
       setDdos([]);
 
@@ -207,7 +207,7 @@ const QuerySearchByPriceRange = () => {
     const response = await assetsModule.query({
       query: {
         range: {
-          "service.attributes.main.price": {
+          "service.attributes.additionalInformation.priceHighestDenomination": {
             gte,
             lte
           }
@@ -220,7 +220,7 @@ const QuerySearchByPriceRange = () => {
 
   const getValue = (value: string) => {
     if(value) {
-      return parseInt(value, 10);
+      return parseFloat(value);
     }
 
     return value as undefined;

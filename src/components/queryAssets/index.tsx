@@ -13,14 +13,6 @@ interface SearchAssets {
   filters?: boolean;
 }
 
-const getValue = (value: string) => {
-  if(value) {
-    return parseInt(value, 10);
-  }
-
-  return value as undefined;
-};
-
 const QuerySearchByName = ({ assetsModule }: { assetsModule: AssetsModule}) => {
   const [ ddos, setDdos ] = useState<DDO[]>([]);
 
@@ -156,6 +148,14 @@ const QuerySearchByPriceRange = ({ assetsModule }: { assetsModule: AssetsModule}
     }
   }, [gteRequired, lteRequired]);
 
+  const getValue = (value: string) => {
+    if(value) {
+      return parseFloat(value);
+    }
+  
+    return value as undefined;
+  };
+
   const onSearchByPriceRange = async() => {
     if((!gte && gte !==0 ) || (!lte && lte !==0 )) {
       setGteRequired(!gte ? 'gte input is required' : '');
@@ -165,7 +165,7 @@ const QuerySearchByPriceRange = ({ assetsModule }: { assetsModule: AssetsModule}
       return;
     }
 
-    if(gte >= lte) {
+    if(gte > lte) {
       setGteRequired('gte input cannot be greater than lte input');
       setDdos([]);
 
@@ -182,7 +182,7 @@ const QuerySearchByPriceRange = ({ assetsModule }: { assetsModule: AssetsModule}
     const response = await assetsModule.query({
       query: {
         range: {
-          "service.attributes.main.price": {
+          "service.attributes.additionalInformation.priceHighestDenomination": {
             gte,
             lte
           }
@@ -256,6 +256,14 @@ const QuerySearchByFilters = ({ assetsModule }: { assetsModule: AssetsModule}) =
       }, 3000);
     }
   }, [nameRequired, pageRequired, sizeRequired]);
+
+  const getValue = (value: string) => {
+    if(value) {
+      return parseInt(value, 10);
+    }
+  
+    return value as undefined;
+  };
 
   const setMessage = (name: string, value: number) => {
     return value <= 0 ? `${name} input needs to be greater than 0` : `${name} input is required`

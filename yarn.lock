@@ -2194,12 +2194,12 @@
   resolved "https://registry.npmjs.org/@mdx-js/util/-/util-1.6.22.tgz"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
-"@nevermined-io/catalog-core@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/@nevermined-io/catalog-core/-/catalog-core-0.2.1.tgz"
-  integrity sha512-mXbFuU0H9NzzUhT0JkYZ65aFvcU/460ru9xGQM914P2qjoVoKJHxe+FHYputb+UpDGB/gItUGQOGlgq60wFKdw==
+"@nevermined-io/catalog-core@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@nevermined-io/catalog-core/-/catalog-core-0.3.0.tgz#eb5f313d50ba1509b6c4eaf234d0084ddbb43bd6"
+  integrity sha512-KcnUbgVxGEiYxlB0umlrnrPAwdfhfCfl+9ZKO7WU86+M3ttEyD4kuF6lmWxX4NnKHw/44ql5g6GBjfUqtMA0tQ==
   dependencies:
-    "@nevermined-io/nevermined-sdk-js" "^0.23.5"
+    "@nevermined-io/nevermined-sdk-js" "^0.25.0"
     "@types/jsonwebtoken" "^8.5.8"
     axios "^0.27.2"
     axios-retry "^3.3.1"
@@ -2209,20 +2209,19 @@
     jsonwebtoken "^8.5.1"
     nodemon "^2.0.16"
 
-"@nevermined-io/catalog-providers@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/@nevermined-io/catalog-providers/-/catalog-providers-0.2.1.tgz"
-  integrity sha512-uTX4rysw4Fh0JkNIbW5Bk/iFwC2iH7hdAa+w7rSYADfT4lYKfsFIj2HHTSWhQwYoKhxIsrORfzGXnqPWo24tyA==
+"@nevermined-io/catalog-providers@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@nevermined-io/catalog-providers/-/catalog-providers-0.3.0.tgz#2ae00a49b6d1149614a8fe95fe76ec6967289843"
+  integrity sha512-Ph2+zSj14LRAn89dwm5ym9sNH5evvFY46fENN9iSk75MPp8dK9M22/wKOkhESbHaTFHRKGa0hewTMfKX1dtkWw==
   dependencies:
     ethers "^5.6.9"
     nodemon "^2.0.16"
 
-"@nevermined-io/nevermined-sdk-js@^0.23.5":
-  version "0.23.5"
-  resolved "https://registry.npmjs.org/@nevermined-io/nevermined-sdk-js/-/nevermined-sdk-js-0.23.5.tgz"
-  integrity sha512-GJriSUsmJFYh3uLPS8KnsW71tC7vYVltcCR4WzVkrfeJBoQl/nD6fZCHo6bWcWWZD/n1hGNeC1O1p+wZHh3XCw==
+"@nevermined-io/nevermined-sdk-js@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@nevermined-io/nevermined-sdk-js/-/nevermined-sdk-js-0.25.0.tgz#620a8b9287bc2dcc63360d1104cbf2f618d3add3"
+  integrity sha512-U3qgMBUoKgJgNQ8ZsitvJxmyF9bIkIY28ktXFUBinmDgDc4AsVpJmiVZfCFpeF5/S8iF4sKJ2gjQrqHC/ETCaA==
   dependencies:
-    "@nevermined-io/secret-store-client" "^0.0.16"
     "@nevermined-io/subgraphs" "0.4.1"
     assert "^2.0.0"
     codegen-graph-ts "npm:@nevermined-io/codegen-graph-ts@0.1.4"
@@ -2241,13 +2240,6 @@
     url "^0.11.0"
     uuid "^3.4.0"
     whatwg-url "^7.1.0"
-
-"@nevermined-io/secret-store-client@^0.0.16":
-  version "0.0.16"
-  resolved "https://registry.npmjs.org/@nevermined-io/secret-store-client/-/secret-store-client-0.0.16.tgz"
-  integrity sha512-2YJpxQ38iYToXtOUK3ta8HrAqZL0/sBOxznbZNZO0Dbo6w9e2oKdQivRMnzqkBBFCIyXWFiv3So/cWHGUHa65A==
-  dependencies:
-    node-fetch "^2.6.0"
 
 "@nevermined-io/styles@^0.1.1":
   version "0.1.7"
@@ -6692,6 +6684,11 @@ joi@^17.6.0:
     "@sideway/formula" "^3.0.0"
     "@sideway/pinpoint" "^2.0.0"
 
+jose@^4.10.0:
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/jose/-/jose-4.10.0.tgz#2e0b7bcc80dd0775f8a4588e55beb9460c37d60a"
+  integrity sha512-KEhB/eLGLomWGPTb+/RNbYsTjIyx03JmbqAyIyiXBuNSa7CmNrJd5ysFhblayzs/e/vbOPMUaLnjHUMhGp4yLw==
+
 jose@^4.5.1:
   version "4.9.3"
   resolved "https://registry.npmjs.org/jose/-/jose-4.9.3.tgz"
@@ -7303,7 +7300,7 @@ node-emoji@^1.10.0:
   dependencies:
     lodash "^4.17.21"
 
-node-fetch@2.6.7, node-fetch@^2.6.0, node-fetch@^2.6.1:
+node-fetch@2.6.7, node-fetch@^2.6.1:
   version "2.6.7"
   resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
   integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
