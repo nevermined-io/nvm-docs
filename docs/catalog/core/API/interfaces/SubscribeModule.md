@@ -17,7 +17,7 @@ const Example = () => {
   }
 
   const currentAccount = await getCurrentAccount(sdk);
-  const response = await subscription.buySubscription(ddo.id, currentAccount, owner, 1, 1155);
+  const response = await subscription.buySubscription(ddo.id, currentAccount, owner, BigNumber.from(1), 1155);
  };
 
  const stopLog = () => {
@@ -81,13 +81,13 @@ return the `payment` event with a functionality to unsubscribe
 
 #### Defined in
 
-[types/index.ts:624](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L624)
+[types/index.ts:625](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L625)
 
 ___
 
 ### transferEvents
 
-• **transferEvents**: (`cb`: (`events`: `EventResult`[]) => `void`, `nftType?`: `NftTypes`) => `ContractEventSubscription`
+• **transferEvents**: (`cb`: (`events`: `EventResult`[]) => `void`, `nftType?`: `ERCType`) => `ContractEventSubscription`
 
 #### Type declaration
 
@@ -100,7 +100,7 @@ Subscribe a `transfer` event and execute callbacks once that this event is liste
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `cb` | (`events`: `EventResult`[]) => `void` | Callback to execute |
-| `nftType?` | `NftTypes` | NFT asset type which can be 721 or 1155 |
+| `nftType?` | `ERCType` | NFT asset type which can be 721 or 1155 |
 
 ##### Returns
 
@@ -110,4 +110,4 @@ return the `transfer` event with a functionality to unsubscribe
 
 #### Defined in
 
-[types/index.ts:631](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L631)
+[types/index.ts:632](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L632)

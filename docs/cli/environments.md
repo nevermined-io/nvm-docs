@@ -1,21 +1,21 @@
 ---
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 # Nevermined Environments
 
-Nevermined is a web3 developers framework that allows to deploy and use it in several networks to implement different use cases. This is a list of the most used environments publicly available that you can use via the Nevermined Command Line interface.
+Nevermined is a web3 developers framework that can be deployed and used across multiple chains and networks for the implementation of different use cases pertaining to asset and data tokenization, storage and transfer. This is a list of the most used environments publicly available that you can use via the Nevermined Command Line interface.
 
 ## Environments
 
 
  
 
-## testnet
+## mumbai
 Public testnet environment where users can interact with Nevermined protocol.<br/>
 
  **Testnet** 
-The Native token being used is **MATIC**. This environment is having the network name **mumbai** and the chain id/network id **80001**. <br/>
+The Native token is **MATIC**. This environment has the network name **mumbai** and the chain id/network id **80001**. <br/>
 
 ### Nevermined configuration 
 
@@ -28,10 +28,10 @@ The Gateway can be found on https://gateway.mumbai.public.nevermined.rocks and u
  
 
 ## matic
-Polygon production environment where users can interact with Nevermined protocol.<br/>
+The Polygon production environment where users can interact with Nevermined protocol.<br/>
 
  **Production Environment** 
-The Native token being used is **MATIC**. This environment is having the network name **matic** and the chain id/network id **137**. <br/>
+The Native token is **MATIC**. This environment has the network name **matic** and the chain id/network id **137**. <br/>
 
 ### Nevermined configuration 
 
@@ -44,10 +44,10 @@ The Gateway can be found on https://gateway.public.nevermined.rocks and uses the
  
 
 ## arbitrum-one
-Arbitrum production environment where users can interact with Nevermined protocol.<br/>
+The Arbitrum production environment where users can interact with Nevermined protocol.<br/>
 
  **Production Environment** 
-The Native token being used is **ETH**. This environment is having the network name **matic** and the chain id/network id **42161**. <br/>
+The Native token is **ETH**. This environment has the network name **arbitrum-one** and the chain id/network id **42161**. <br/>
 
 ### Nevermined configuration 
 
@@ -60,10 +60,10 @@ The Gateway can be found on https://gateway.arbitrum-one.public.nevermined.rocks
  
 
 ## goerli
-Ethereum testnet environment where users can interact with Nevermined protocol.<br/>
+The Ethereum testnet environment where users can interact with Nevermined protocol.<br/>
 
  **Testnet** 
-The Native token being used is **ETH**. This environment is having the network name **goerli** and the chain id/network id **5**. <br/>
+The Native token is **ETH**. This environment has the network name **goerli** and the chain id/network id **5**. <br/>
 
 ### Nevermined configuration 
 
@@ -76,10 +76,10 @@ The Gateway can be found on https://gateway.goerli.public.nevermined.rocks and u
  
 
 ## arbitrum-goerli
-Arbitrum testnet environment where users can interact with Nevermined protocol.<br/>
+The Arbitrum testnet environment where users can interact with Nevermined protocol.<br/>
 
  **Testnet** 
-The Native token being used is **ETH**. This environment is having the network name **arbitrum-goerli** and the chain id/network id **421613**. <br/>
+The Native token is **ETH**. This environment has the network name **arbitrum-goerli** and the chain id/network id **421613**. <br/>
 
 ### Nevermined configuration 
 
@@ -92,10 +92,10 @@ The Gateway can be found on https://gateway.arbitrum-goerli.public.nevermined.ro
  
 
 ## geth-localnet
-This environment is used for local development. If you want to have a fully functional environment running in your computer, please visit https://github.com/nevermined-io/tools/<br/>
+This environment is used for local development. If you want to have a fully functional environment running on your computer, please visit https://github.com/nevermined-io/tools/<br/>
 
  **Testnet** 
-The Native token being used is **ETH**. This environment is having the network name **geth-localnet** and the chain id/network id **8996**. <br/>
+The Native token is **ETH**. This environment has the network name **geth-localnet** and the chain id/network id **1337**. <br/>
 
 ### Nevermined configuration 
 

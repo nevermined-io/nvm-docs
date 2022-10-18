@@ -65,7 +65,7 @@ const Example = (props: ExampleProps) => {
 
 #### Defined in
 
-[types/index.ts:272](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L272)
+[types/index.ts:273](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L273)
 
 ___
 
@@ -154,9 +154,9 @@ const Example = () => {
       gatewayAddress: String(appConfig.gatewayAddress),
       assetRewards,
       metadata,
-      nftAmount: 1,
+      nftAmount: BigNumber.from(1),
       preMint: true,
-      cap: 100,
+      cap: BigNumber.from(100),
       royaltyAttributes,
       erc20TokenAddress,
     });
@@ -177,7 +177,7 @@ const Example = () => {
 
 #### Defined in
 
-[types/index.ts:235](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L235)
+[types/index.ts:236](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L236)
 
 ___
 
@@ -189,7 +189,7 @@ True if sdk is loading
 
 #### Defined in
 
-[types/index.ts:51](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L51)
+[types/index.ts:52](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L52)
 
 ___
 
@@ -201,7 +201,7 @@ Nevermined sdk instance which has all the core functionalities
 
 #### Defined in
 
-[types/index.ts:47](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L47)
+[types/index.ts:48](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L48)
 
 ___
 
@@ -213,7 +213,7 @@ Error message from sdk
 
 #### Defined in
 
-[types/index.ts:49](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L49)
+[types/index.ts:50](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L50)
 
 ___
 
@@ -238,7 +238,7 @@ const Example = () => {
   }
 
   const currentAccount = await getCurrentAccount(sdk);
-  const response = await subscription.buySubscription(ddo.id, currentAccount, owner, 1, 1155);
+  const response = await subscription.buySubscription(ddo.id, currentAccount, owner, BigNumber.from(1), 1155);
  };
 
  const stopLog = () => {
@@ -271,7 +271,7 @@ const Example = () => {
 
 #### Defined in
 
-[types/index.ts:131](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L131)
+[types/index.ts:132](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L132)
 
 ___
 
@@ -306,7 +306,7 @@ const BuyAsset = ({ddo}: {ddo: DDO}) => {
    }
  
    const currentAccount = await getCurrentAccount(sdk);
-   const response = await subscription.buySubscription(ddo.id, currentAccount, owner, 1, 1155);
+   const response = await subscription.buySubscription(ddo.id, currentAccount, owner, BigNumber.from(1), 1155);
    setIsBought(response);
  };
  
@@ -334,7 +334,7 @@ const BuyAsset = ({ddo}: {ddo: DDO}) => {
 
 #### Defined in
 
-[types/index.ts:326](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L326)
+[types/index.ts:327](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L327)
 
 ___
 
@@ -387,4 +387,4 @@ const Example = (props: ExampleProps) => {
 
 #### Defined in
 
-[types/index.ts:82](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L82)
+[types/index.ts:83](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L83)

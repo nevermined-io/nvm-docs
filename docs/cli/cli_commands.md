@@ -1,10 +1,10 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 # Commands  Reference
 
-The Nevermined CLI (aka `ncli`) offers multiple options to facilitate the interaction of a user with a Nevermined network.
+The Nevermined CLI (aka `ncli`) offers multiple options to facilitate the interaction with the Nevermined network.
 
 
 ## CLI General Options
@@ -14,8 +14,8 @@ This are the optional parameters that apply to all `ncli` commands:
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **verbose** | `boolean` |  |  `false`  | Run with verbose logging |
-| **network** | `string` |  |  `testnet`  | The network to use |
-| **account** | `string` |  |    | The account to use |
+| **network** | `string` |  |  `mumbai`  | The network to use |
+| **accountIndex** | `string` |  |  `0`  | The index in the derivation path related with the account to use |
 | **json** | `boolean` |  |  `false`  | If provided all the output will be in JSON format |
 
 
@@ -31,8 +31,14 @@ Commands:
 ### list
 List all the pre-configured Nevermined networks<br/>
 
-The `ncli` has a pre-configured list of Nevermined environments in different networks. This command list some basic information about all of these available Nevermined environments.<br/>
+The `ncli` has a pre-configured list of Nevermined environments in different networks. This command lists basic information about all available Nevermined environments.<br/>
 
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **hideInternal** | `string` |  &#x2612;  |  `true`  | If true it doesn&#39;t show internal Nevermined networks |
 
 
 #### Example/s
@@ -47,7 +53,7 @@ ncli network list
 ### status
 List all the information about a Nevermined deployment<br/>
 
-If the `ncli` is connected to a Nevermined network correctly this command will return information about that network. This will include information about the contracts (version, addresses, etc), Gateway, Marketplace API.<br/>
+If the `ncli` is connected to a Nevermined network correctly this command will return information about that specific network. This will include data about the contracts (version, addresses, etc), Gateway, Marketplace API.<br/>
 
 
 
@@ -76,35 +82,30 @@ ncli network get-config
 
 
 
-### set-config [parameter]
-Allows to the governor account to modify the configuration of a running Nevermined blockchain environment<br/>
+### set-config [parameter] [newValue]
+Allows the governor account to modify the configuration of a running Nevermined blockchain environment. The fees need to be applied with 4 decimal numbers, where 25000 represents a 2.5% fee<br/>
 
-If the `ncli` is connected to a Nevermined network correctly this command will allow to modify the on-chain configuration of a deployment. This function only can be executed by a `governor` account.<br/>
+If the `ncli` is connected to a Nevermined network correctly this command will modify the on-chain configuration of a deployment. This function can only be executed by a `governor` account.<br/>
 
 #### Positional Arguments
 
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **parameter** | `string` |  |    | the name of the governance parameter to configure. Existing options: &#39;fees&#39; OR &#39;governor&#39; |
-
-
-#### Optional Arguments
-
-| Name of the Argument | Type | Is required? | Default value | Description |
-|----------------------|------|-------------:|--------------:|-------------|
 | **newValue** | `string` |  &#x2611;  |    | the new value to set |
+
 
 
 #### Example/s
 
 
 ```bash
-ncli network set-config governor 0x12345
+ncli network set-config governor 0x309039F6A4e876bE0a3FCA8c1e32292358D7f07c
 ```
 
 
 ```bash
-ncli network set-config fees 350,0x4569832
+ncli network set-config fees 10000,0x309039F6A4e876bE0a3FCA8c1e32292358D7f07c
 ```
 
 
@@ -122,7 +123,7 @@ Commands:
 ### new
 Creates a new account locally<br/>
 
-Nevermined interact with EVM compatible blockchain networks. To interact with them a user needs to have some local credentials compatible (BIP-44). This command creates a local wallet Etherum compatible that can be used to interact with a Ethereum like network and by extension with Nevermined contracts.<br/>
+Nevermined interacts with EVM compatible blockchain networks. To interact with them a user needs to have compatible local credentials (BIP-44). This command creates a local wallet that is Etherum compatible and can be used to interact with Nevermined contracts.<br/>
 
 
 
@@ -136,15 +137,9 @@ ncli accounts new
 
 
 ### list
-List all accounts<br/>
+List all accounts related with your credentials.<br/>
 
 To work prorperly the `ncli` needs to use a wallet to interact with the blockchain network where the Nevermined Smart Contracts are deployed. This wallet is given to the `ncli` with the **seed phrase** exported into the `MNEMONIC` environment variable. This command list some of the accounts derived from the mnemonic given by the user.<br/>
-
-#### Positional Arguments
-
-| Name of the Argument | Type | Is required? | Default value | Description |
-|----------------------|------|-------------:|--------------:|-------------|
-| **account** | `string` |  |    | the account to retrieve the balance |
 
 
 #### Optional Arguments
@@ -163,8 +158,8 @@ ncli accounts list
 
 
 
-### balance [account]
-Get the balance of a specific account<br/>
+### balance [address]
+Get the balance of a specific address<br/>
 
 Given the public address of an account, this command gets the balance of the Native token where the `ncli` is connected. This is typically `ETH` in Ethereum networks, `MATIC` in Polygon networks, etc.<br/>
 
@@ -172,7 +167,7 @@ Given the public address of an account, this command gets the balance of the Nat
 
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
-| **account** | `string` |  |    | The account to retrieve the balance |
+| **address** | `string` |  |    | The address of the account to retrieve the balance |
 
 
 #### Optional Arguments
@@ -194,7 +189,7 @@ ncli accounts balance 0xe2DD09d719Da89e5a3D0F2549c7E24566e947260
 ### fund [account]
 Funds an account on a testnet<br/>
 
-In the test environments all the tokens are not having a real value. Typically in Nevermined you need to use different type of tokens. The Native token (`ETH`, `MATIC`, etc) to pay for the gas resulting to write into a blockchain network, and optionally with a `ERC20` token to do some payments. This command allows to get some funds in a testnet environment allowing to a user to play in a testnet. Obviously this command will not work in a production environments where the tokens have a real value.<br/>
+In the test environments all tokens lack real value. Typically in Nevermined you need to use different type of tokens. The Native token (`ETH`, `MATIC`, etc) to pay for the gas resulting to write into a blockchain network, and optionally with a `ERC20` token to do some payments. This command allows to get some funds in a testnet environment allowing to a user to run different processes on a testnet. This command will not work in production environments where the tokens have actual value.<br/>
 
 #### Positional Arguments
 
@@ -232,7 +227,7 @@ Commands:
 ### register-asset
 Register a new asset<br/>
 
-This command allows to register a new asset into a Nevermined network. This asset registered will have attached an access service, allowing to the users paying for the price defined by the user to get access to the files attached to the asset.<br/>
+This command registers a new asset on the Nevermined network. This registered asset is attached to an access service, allowing paying users to access the files attached to the asset.<br/>
 
 
 #### Optional Arguments
@@ -262,7 +257,7 @@ ncli assets register-asset --name &quot;My cool artwork&quot; --author &quot;Joh
 ### register-algorithm
 Register a new algorithm<br/>
 
-This command allows to register a new algorithm into a Nevermined network. The algorithm can be the representation of a Notebook, python script, etc. This asset registered will have attached an access service, allowing to the users paying for the price defined by the user to get access to the files attached to the asset.<br/>
+This command registers a new algorithm on the Nevermined network. The algorithm can be the representation of a Notebook, python script, etc. This registered asset is attached to an access service, allowing paying users to access the files attached to the asset.<br/>
 
 
 #### Optional Arguments
@@ -294,13 +289,14 @@ ncli assets register-algorithm --name &quot;Test Algorithm&quot; --author &quot;
 ### import [metadata]
 Import an asset using the metadata in JSON format<br/>
 
-An asset in a Nevermined network can be described by different level of metadata (title, description, tags, etc). This command allows to register a new asset importing all this metadata from a JSON file, instead of adding all the information in the command line. <br/>
+An asset in the Nevermined network can be described by different level of metadata (title, description, tags, etc). This command registers a new asset importing all this metadata from a JSON file, instead of adding all the information in the command line.<br/>
 
 #### Positional Arguments
 
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **metadata** | `string` |  |    | The path to the JSON file including the asset metadata |
+| **price** | `number` |  &#x2611;  |    | The asset price |
 
 
 #### Optional Arguments
@@ -322,7 +318,7 @@ ncli assets import --metadata ./my_artwork_metadata.json
 ### search [query]
 Searching for assets in a Nevermined environment<br/>
 
-All the metadata given by the users registering assets into Nevermined can be used to search and discover that data later. Typically different assets can be organized in independent Marketplaces grouped by topic or domain. This command allows to query one of the Marketplace environments searching for some data using a query provided by the user.<br/>
+All user metadata for registering assets in Nevermined can be searched and indexed later. Typically different assets can be organized in independent Marketplaces grouped by topic or domain. This command allows to query one of the Marketplace environments searching for data using a query provided by the user.<br/>
 
 #### Positional Arguments
 
@@ -337,6 +333,7 @@ All the metadata given by the users registering assets into Nevermined can be us
 |----------------------|------|-------------:|--------------:|-------------|
 | **offset** | `number` |  |  `10`  | The number of elements to obtain from the search query |
 | **page** | `number` |  |  `1`  | The page to show |
+| **onlyMetadata** | `boolean` |  |  `false`  | True if we only want to get metadata |
 
 
 #### Example/s
@@ -351,7 +348,7 @@ ncli assets search &quot;some text&quot;
 ### download [did]
 Download an asset owned by me<br/>
 
-When a user publishes some content into Nevermined this command allows to download the files attached to that asset without going through the service agreements (paying).<br/>
+When a user publishes content on Nevermined this command downloads the files attached to that asset without going through the service agreements (payment).<br/>
 
 #### Positional Arguments
 
@@ -380,7 +377,7 @@ ncli assets download  did:nv:912e7a547bcd675ffbc5d2063ef770e15744029f048f706f6bb
 ### order [did]
 Order an asset given a DID<br/>
 
-This method makes the payment and retrieve a serviceAgreementId that can be used later on to download the files attached to the asset<br/>
+This method makes the payment and retrieve a serviceAgreementId that can be used later or to download the files attached to the asset<br/>
 
 #### Positional Arguments
 
@@ -408,7 +405,7 @@ ncli assets order did:nv:912e7a547bcd675ffbc5d2063ef770e15744029f048f706f6bb0281
 ### get [did]
 Order &amp; download or download directly a previously purchased asset<br/>
 
-This commands is the best entry point to get access to the files attached to a Nevermined asset. Depending on the parameters provided, it allows to order and download the files of an asset, or if this was already purchased, provide the service agreement to download them.<br/>
+This commands is the best entry point to access the files attached to a Nevermined asset. Depending on the parameters provided, it allows to order and download the files of an asset, or if this was already purchased, provides the service agreement to download them.<br/>
 
 #### Positional Arguments
 
@@ -444,7 +441,7 @@ ncli assets get did:nv:912e7a547bcd675ffbc5d2063ef770e15744029f048f706f6bb0281df
 ### resolve [did]
 Resolve an asset metadata using a given DID<br/>
 
-An asset registered into Nevermined is represented by 2 parts. Some metadata stored in a Marketplace and the reference to this into the Smart Contract. The key to resolve this metadata in a specific marketplace uses a unique Decentralize Identifier (DID) for the asset. This command uses that DID to resolve the Metadata in a Marketplace associated to the asset.<br/>
+An asset registered in Nevermined is represented by 2 parts. Metadata stored in a Marketplace and the reference in the Smart Contract. The key to resolve this metadata in a specific marketplace is a unique Decentralize Identifier (DID) for the asset. This command uses that DID to resolve the Metadata in a Marketplace associated to the asset.<br/>
 
 #### Positional Arguments
 
@@ -466,7 +463,7 @@ ncli assets resolve did:nv:912e7a547bcd675ffbc5d2063ef770e15744029f048f706f6bb02
 ### retire [did]
 Retire an asset using a given DID<br/>
 
-This command allows to retire an asset from a Marketplace. Only the owner of the asset has the grants to execute this sucessfully.<br/>
+This command allows to retire an asset from a Marketplace. Only the owner of the asset has the permissions to execute this sucessfully.<br/>
 
 #### Positional Arguments
 
@@ -498,7 +495,7 @@ Commands:
 ### list [did]
 Lists all agreements for given DID<br/>
 
-For an asset published in Nevermined, this command returns all the agreements created as a result of different users interacting with the asset. Typically this will include the purchases made by the users.<br/>
+For an asset published in Nevermined, this command returns all agreements created as a result of different users interacting with the asset. Typically this will include purchases made by users.<br/>
 
 #### Positional Arguments
 
@@ -520,7 +517,7 @@ ncli agreements list did:nv:0cb9c5c66266af85b7fd9af4e14dd95f3a6edc11e503d11e15b1
 ### show [agreementId]
 Shows details about an agreement<br/>
 
-An agreement in Nevermined keep track of the state of the different conditions that need to be fulfilled in order to facilitate some service (access, download, computation, etc). Given a `serviceAgreementId` this command return all the on-chain information referring to the state of that agreement. The conditions associated to it and the general and invididual status of them.<br/>
+An agreement in Nevermined keeps track of the state of the different conditions that need to be fulfilled in order to facilitate some service (access, download, computation, etc). Given a `serviceAgreementId` this command returns all the on-chain information referring to the state of that agreement. The conditions associated with it and their status.<br/>
 
 #### Positional Arguments
 
@@ -552,7 +549,7 @@ Commands:
 ### register [did]
 Registers a provenance event associated to a DID<br/>
 
-The Nevermined provenance record allows to keep track of all the individual events happening in the assets registered in a Nevermined network. This command allows to register a new event in that track record.<br/>
+The Nevermined provenance record keeps track of all the individual events happening in the assets registered in the Nevermined network. This command registers a new event in that record.<br/>
 
 #### Positional Arguments
 
@@ -586,7 +583,7 @@ ncli provenance register did:nv:020283aed6525d815a4bc3f4b5970a7aaa03752d1e3755d7
 ### history [did]
 Given a DID it gets all the provenance history for that asset<br/>
 
-An asset can have associated multiple provenance events associated with it. This will relate to how that asset was used and by who in a Nevermined network. This command fetches that information from the on-chain provenance track record.<br/>
+An asset can be associated with multiple provenance events. This relates to how that asset was used and by whom in a Nevermined network. This command fetches that information from the on-chain provenance track record.<br/>
 
 #### Positional Arguments
 
@@ -654,6 +651,8 @@ A Smart Contract is represented by an ABI file that includes the definition of i
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **params** | `array` |  |    | A list of parameters to be given during the contract initialization |
+| **approve** | `array` |  |    | A list of addresses to be approved to manage the NFT contract |
+| **subscription** | `boolean` |  |  `false`  | The NFT contract allows to mint NFTs as subscriptions |
 
 
 #### Example/s
@@ -673,7 +672,7 @@ ncli nfts721 deploy test/resources/nfts/NFT721SubscriptionUpgradeable.json --par
 ### create [nftAddress]
 Registers a new asset and associates a ERC-721 NFT to it<br/>
 
-Having a previously deployed ERC-721 NFT contract, this command registers a new asset that allows the publisher to provide access to some exclusive contents when users purchase the price of that NFT.<br/>
+Having a previously deployed ERC-721 NFT contract, this command registers a new asset that allows the publisher to provide access to some exclusive contents when users purchase the NFT.<br/>
 
 #### Positional Arguments
 
@@ -691,9 +690,14 @@ Having a previously deployed ERC-721 NFT contract, this command registers a new 
 | **name** | `string` |  |    | The asset name |
 | **author** | `string` |  |    | The author of the file/s |
 | **urls** | `array` |  |    | The asset urls. It can be a comma separated list of urls for multiple files. |
+| **services** | `array` |  |    | The list of services attached to the asset |
 | **license** | `string` |  |    | The asset license (Creative Commons, etc) |
-| **price** | `number` |  |    | The NFT price |
-| **royalties** | `number` |  |  `0`  | The royalties (between 0 and 100%) to reward to the original creator in the secondary market |
+| **price** | `number` |  |  `0`  | The NFT price |
+| **preMint** | `boolean` |  |  `false`  | If true the NFTs will be minted during creation |
+| **subscription** | `boolean` |  |  `false`  | The NFT contract allows to mint NFTs as subscriptions |
+| **transfer** | `boolean` |  |  `true`  | It allows to transfer a NFT when purchased or mint |
+| **duration** | `number` |  |  `0`  | If the asset refers to a subscription, this parameter define the duration of that subscription in blocks |
+| **royalties** | `number` |  |  `0`  | The royalties (between 0 and 100%) to reward to the original creator in the secondary market. |
 | **nftType** | `string` |  |  `721`  | The NFT type |
 
 
@@ -702,6 +706,11 @@ Having a previously deployed ERC-721 NFT contract, this command registers a new 
 
 ```bash
 ncli nfts721 create 0xDef6F10d641BC9d8039365B27f4DF2C5F5eeb041 --name &quot;My NFT&quot; --author &quot;John Doe&quot; --price 1 --urls https://www.apache.org/licenses/LICENSE-2.0 --contentType text/plain
+```
+
+
+```bash
+ncli nfts721 create 0xDef6F10d641BC9d8039365B27f4DF2C5F5eeb041 --metadata test/resources/metadata-subscription.json
 ```
 
 
@@ -800,7 +809,7 @@ ncli nfts721 burn did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf4
 ### order [did]
 Orders an NFT (ERC-721) by paying for it to the escrow<br/>
 
-When a user orders for an asset attached to a NFT, this command purchases that NFT and get it transferred to the wallet making that purchase. This will allow later on to get access to the exclusive contents attached to the asset demonstrating the possesion of that NFT.<br/>
+When a user orders an asset attached to a NFT, this command purchases that NFT and transfers it to the wallet completing that purchase. This will allow later on to get access to the exclusive contents attached to the asset demonstrating the possesion of that NFT.<br/>
 
 #### Positional Arguments
 
@@ -828,7 +837,7 @@ ncli nfts721 order did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf
 ### transfer [agreementId]
 It allows to transfer a NFT (ERC-721) to the account of the buyer<br/>
 
-This command requires a valid `serviceAgreementId` created by the `buyerAccount` that demonstrates that an asset was payed. Having that this command will allow to transfer the asset to the buyer account.<br/>
+This command requires a valid `serviceAgreementId` created by the `buyerAccount` that demonstrates that an asset was bought. The asset is then transferred to the buyer&#39;s account.<br/>
 
 #### Positional Arguments
 
@@ -854,10 +863,46 @@ ncli nfts721 transfer 0x44dba17d62dd4004c109921cb976ac7c5ec6e4c07d24cc82182b0c49
 
 
 
+### access [did] [agreementId]
+Having a serviceAgreementId, it downloads the data associated to a ERC-721 NFT<br/>
+
+Providing a `serviceAgreementId` this command will allow to download the file contents associated to a DID that has a NFT (ERC-721) as access control mechanism. If the account of the user executing this command hold the NFT, it will be able to download the files.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **did** | `string` |  |    | The DID of the asset |
+| **agreementId** | `string` |  |    | The identifier of the agreement created by the buyer |
+| **seller** | `string` |  &#x2611;  |    | The address of the seller (0x123..) |
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **destination** | `string` |  &#x2611;  |    | The destination of the files downloaded |
+| **nftType** | `number` |  |  `721`  | The NFT type |
+
+
+#### Example/s
+
+
+```bash
+ncli nfts721 access did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf452a49be7e 0xb716555c3b40bd01836826e114607d65b1ebb04e8a051977e6d902eca2df750b --destination /tmp/nevemined/ --seller 0xe2DD09d719Da89e5a3D0F2549c7E24566e947260
+```
+
+
+```bash
+ncli nfts721 access did:nv:04c50282c7e297c019cea5368c3d7b9e757dfa5d6e28b3d666dd710572669586 0xf988eca804ed9af51653de290e71564dfbbf40afd0dd0a28b25fc95b18476c77 --seller 0xe2DD09d719Da89e5a3D0F2549c7E24566e947260 --destination /tmp/ --accountIndex 1
+```
+
+
+
 ### download [did]
 As NFT holder this allows to download the files associated to a NFT<br/>
 
-This command will allow to download the file contents associated to a DID that has a NFT (ERC-721) as access control mechanism. If the account of the user executing this command hold the NFT, it will be able to download the files.<br/>
+This command will allow to download the file contents associated to a DID that has a NFT (ERC-721) as access control mechanism. If the account of the user executing this command holds the NFT, it will download the files.<br/>
 
 #### Positional Arguments
 
@@ -907,6 +952,7 @@ This command registers a new asset that allows the publisher to provide access t
 | **name** | `string` |  |    | The asset name |
 | **author** | `string` |  |    | The author of the file/s |
 | **urls** | `array` |  |    | The asset urls. It can be a comma separated list of urls for multiple files. |
+| **services** | `array` |  |    | The list of services attached to the asset |
 | **license** | `string` |  |    | The asset license (Creative Commons, etc) |
 | **price** | `number` |  |    | The NFT price |
 | **cap** | `number` |  |  `0`  | The NFT minting cap (0 means uncapped) |
@@ -1014,7 +1060,7 @@ ncli nfts1155 burn did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf
 ### order [did]
 Orders an NFT (ERC-1155) by paying for it to the escrow<br/>
 
-When a user orders for an asset attached to a NFT, this command purchases that NFT and get it transferred to the wallet making that purchase. This will allow later on to get access to the exclusive contents attached to the asset demonstrating the possesion of that NFT.<br/>
+When a user orders an asset attached to a NFT, this command purchases that NFT and get it transferred to the wallet completing that purchase. This will allow later on to get access to the exclusive contents attached to the asset demonstrating the possesion of that NFT.<br/>
 
 #### Positional Arguments
 
@@ -1089,6 +1135,7 @@ Providing a `serviceAgreementId` this command will allow to download the file co
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **destination** | `string` |  &#x2611;  |    | The destination of the files downloaded |
+| **nftType** | `number` |  |  `1155`  | The NFT type |
 
 
 #### Example/s
@@ -1268,8 +1315,8 @@ Nevermined exposes the Smart Contracts artifacts with their definition. Also Nev
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **networkId** | `string` |  |    | The networkId of the network where Nevermined contracts are deployed and we want to download the artifacts. For example &#39;mumbai&#39; is 80001 |
-| **tag** | `string` |  |  `common`  | The tag name of the contracts artifacts to download |
-| **destination** | `string` |  &#x2611;  |    | The destination folder for the artifacts to download. For example /tmp |
+| **tag** | `string` |  |  `public`  | The tag name of the contracts artifacts to download |
+| **destination** | `string` |  &#x2612;  |    | The destination folder for the artifacts to download. For example /tmp |
 
 
 #### Example/s
@@ -1281,7 +1328,34 @@ ncli utils download-artifacts 2.0.0 --networkId 80001 --destination /tmp
 
 
 ```bash
-ncli utils download-artifacts 2.0.0 --networkId 8001 --tag common --destination /tmp
+ncli utils download-artifacts 2.0.0 --networkId 8001 --tag public --destination /tmp
+```
+
+
+
+### clean-artifacts
+Removes all the previously downloaded and cached artifacts<br/>
+
+The CLI stores a local copy of the Smart Contracts artifacts into a local folder. This command deletes this cached copy.<br/>
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **path** | `string` |  &#x2612;  |    | The folder where are the artifacts to clean. For example /tmp |
+
+
+#### Example/s
+
+
+```bash
+ncli utils clean-artifacts
+```
+
+
+```bash
+ncli utils clean-artifacts --path /tmp
 ```
 
 

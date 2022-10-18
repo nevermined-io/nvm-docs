@@ -6,28 +6,28 @@ description: Nevermined Catalog Core
 
 # Getting started
 
-**Catalog core** includes all the Nevermined functions split between the `Catalog provider` and `Services`.
+**Catalog core** includes all the Nevermined functionalities splitted in the `Catalog provider` and `Services`.
 
 ### Catalog provider
 
-The Catalog provider loads the **Nevermined sdk** in the context of a **React application** and provides some parametes
-and objects to manage it:
+Catalog provider loads the **Nevermined sdk** in the context of a **React application** and provides some parametes
+and objects to handle it:
 
-* account - contains all functions to manage authentications and collections related to an account
-* assets - contains all functions to manage assets, such as retrieve, mint, transfer, order or download asset
-* subscribe - contains all functions to manage events
-* subscription - contains all functions to manage asset subscriptions by payment
+* account - contains all the functionalities to handle authentications and collections belonged to an account
+* assets - contains all the functionalities to handle assets for example get, mint, transfer, order or download asset
+* subscribe - contains all the functionalities to handle events
+* subscription - contains all the functionalities to handle asset subscritions by payment
 
 ### Services
 
-Services include custom react hooks and providers to cover specific scenarios, giving the developer the synthax to implement it and view inside a react application. Currently the services are split in 4 groups:
+The Services includes custom react hooks and providers to cover specific scenarios avoiding to the developer thinking in the logic to implement it and make possible for them focus just in the view in a react application. Currently the services is splitted in 4 groups:
 
-* AccountService - custom hooks for user accounts and profiles
-* AssetService - custom hooks for assets
-* EventService - custom hooks for events
-* SubscribeService - custom hooks for event listeners
+* AccountService - custom hooks and provider to handle user accounts and profiles
+* AssetService - custom hooks to handle assets
+* EventService - custom hooks to operate with events
+* SubscribeService - custom hooks to handle event listeners
 
-## Prerequisites
+## Pre-requisites
 
 The Nevermined Components Catalog is a package built with React and Typescript.
 It requires [Node JS](https://nodejs.org/) v14 or higher. You can find online instructions about [How to install Node JS](https://nodejs.dev/en/learn/how-to-install-nodejs/).

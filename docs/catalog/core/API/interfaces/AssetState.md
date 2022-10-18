@@ -22,7 +22,7 @@ Asset object
 
 #### Defined in
 
-[types/index.ts:640](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L640)
+[types/index.ts:641](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L641)
 
 ___
 
@@ -34,7 +34,7 @@ Error message from some operation with asset
 
 #### Defined in
 
-[types/index.ts:644](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L644)
+[types/index.ts:645](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L645)
 
 ___
 
@@ -46,7 +46,7 @@ True if asset object is loaded
 
 #### Defined in
 
-[types/index.ts:646](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L646)
+[types/index.ts:647](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L647)
 
 ___
 
@@ -58,7 +58,7 @@ Metada of the asset with the basic information
 
 #### Defined in
 
-[types/index.ts:642](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L642)
+[types/index.ts:643](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L643)
 
 ___
 
@@ -70,4 +70,4 @@ Details of the asset agreement
 
 #### Defined in
 
-[types/index.ts:648](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L648)
+[types/index.ts:649](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L649)

@@ -35,7 +35,7 @@ The new generated token
 
 #### Defined in
 
-[types/index.ts:452](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L452)
+[types/index.ts:453](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L453)
 
 ___
 
@@ -63,7 +63,7 @@ List of assets which was bought by the address given as argument
 
 #### Defined in
 
-[types/index.ts:447](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L447)
+[types/index.ts:448](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L448)
 
 ___
 
@@ -91,7 +91,7 @@ List of assets which was published by the address given
 
 #### Defined in
 
-[types/index.ts:441](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L441)
+[types/index.ts:442](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L442)
 
 ___
 
@@ -120,7 +120,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:465](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L465)
+[types/index.ts:466](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L466)
 
 ___
 
@@ -151,7 +151,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:475](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L475)
+[types/index.ts:476](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L476)
 
 ___
 
@@ -182,7 +182,7 @@ true if the user holds the NFT
 
 #### Defined in
 
-[types/index.ts:485](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L485)
+[types/index.ts:486](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L486)
 
 ___
 
@@ -204,4 +204,4 @@ if token is valid it will return true
 
 #### Defined in
 
-[types/index.ts:457](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L457)
+[types/index.ts:458](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L458)

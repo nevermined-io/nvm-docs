@@ -15,13 +15,13 @@ Custom token detail
 
 ### balance
 
-• **balance**: `BigNumber`
+• **balance**: `default`
 
 Amount of tokens holded by the wallet account
 
 #### Defined in
 
-[types/index.ts:426](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L426)
+[types/index.ts:427](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L427)
 
 ___
 
@@ -33,7 +33,7 @@ Decimals of the token
 
 #### Defined in
 
-[types/index.ts:428](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L428)
+[types/index.ts:429](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L429)
 
 ___
 
@@ -45,7 +45,7 @@ Name of the token
 
 #### Defined in
 
-[types/index.ts:424](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L424)
+[types/index.ts:425](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L425)
 
 ___
 
@@ -63,4 +63,4 @@ Ethereum -> ETH
 
 #### Defined in
 
-[types/index.ts:422](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L422)
+[types/index.ts:423](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L423)

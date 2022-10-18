@@ -64,7 +64,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/event.ts:254](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/services/event.ts#L254)
+[services/event.ts:254](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/services/event.ts#L254)
 
 ___
 
@@ -114,7 +114,7 @@ const MyComponent = () => {
 | :------ | :------ | :------ | :------ |
 | `sdk` | `Nevermined` | `undefined` | Nevermined instance |
 | `receiver` | `string` | `undefined` | Transfers receiver address |
-| `nftType` | `NftTypes` | `1155` | Choose the NFT type. Default value 1155 |
+| `nftType` | `ERCType` | `1155` | Choose the NFT type. Default value 1155 |
 
 #### Returns
 
@@ -122,7 +122,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/event.ts:43](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/services/event.ts#L43)
+[services/event.ts:43](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/services/event.ts#L43)
 
 ___
 
@@ -178,7 +178,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/event.ts:114](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/services/event.ts#L114)
+[services/event.ts:114](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/services/event.ts#L114)
 
 ___
 
@@ -236,4 +236,4 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/event.ts:183](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/services/event.ts#L183)
+[services/event.ts:183](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/services/event.ts#L183)

@@ -5,12 +5,12 @@ description: Nevermined Testnet Environments
 
 # Testnet environments
 
-Testnet environments are public nevermined environments deployed in public EVM-compatible testnet networks. Typically we use Polygon Mumbai.
+Testnet environments are public nevermined environments deployed on public EVM-compatible testnet networks. Typically we use Polygon Mumbai.
 Use [Alchemy's Mumbai Faucet](https://mumbaifaucet.com/) or [Polygon's Mumbai faucet](https://faucet.polygon.technology/) for requesting MATIC.
 
 ## Network Fee
 
-The usage of a Nevermined environment requires to pay a fee when a payment is being done through the Smart Contracts. This needs to be configured by the content publisher. You can find more information in the [Network Fees section](network-fees.mdx).
+You need to pay a fee to use a Nevermined environment when a payment is being done through the Smart Contracts. This needs to be configured by the content publisher. You can find more information in the [Network Fees section](network-fees.mdx).
 
 :::info
 
@@ -35,3 +35,4 @@ https://thegraph.com/hosted-service
 For example for Nevermined Polygon Mumbai:
 
 https://thegraph.com/hosted-service/subgraph/nevermined-io/publicmumbaiv2neverminedtoken
+

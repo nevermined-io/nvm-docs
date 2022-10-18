@@ -40,7 +40,12 @@
 
 ### Type Aliases
 
+- [BigNumber](modules.md#bignumber)
 - [DID](modules.md#did)
+
+### Variables
+
+- [BigNumber](modules.md#bignumber-1)
 
 ### Functions
 
@@ -53,6 +58,18 @@
 
 ## Type Aliases
 
+### BigNumber
+
+Ƭ **BigNumber**: `BigNumberUtils`
+
+#### Defined in
+
+[types/index.ts:34](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L34)
+
+[types/index.ts:35](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L35)
+
+___
+
 ### DID
 
 Ƭ **DID**: `string`
@@ -61,7 +78,19 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:354](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L354)
+[types/index.ts:355](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L355)
+
+## Variables
+
+### BigNumber
+
+• `Const` **BigNumber**: typeof `default` = `BigNumberUtils`
+
+#### Defined in
+
+[types/index.ts:34](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L34)
+
+[types/index.ts:35](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L35)
 
 ## Functions
 
@@ -89,7 +118,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:42](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/utils/index.ts#L42)
+[utils/index.ts:43](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/utils/index.ts#L43)
 
 ___
 
@@ -115,7 +144,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:110](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/utils/index.ts#L110)
+[utils/index.ts:111](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/utils/index.ts#L111)
 
 ___
 
@@ -137,7 +166,7 @@ Returns current account registered in SDK
 
 #### Defined in
 
-[utils/index.ts:17](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/utils/index.ts#L17)
+[utils/index.ts:18](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/utils/index.ts#L18)
 
 ___
 
@@ -163,7 +192,7 @@ Return the result data of the request
 
 #### Defined in
 
-[utils/index.ts:139](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/utils/index.ts#L139)
+[utils/index.ts:140](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/utils/index.ts#L140)
 
 ___
 
@@ -187,7 +216,7 @@ Checks if object is empty
 
 #### Defined in
 
-[utils/index.ts:10](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/utils/index.ts#L10)
+[utils/index.ts:11](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/utils/index.ts#L11)
 
 ___
 
@@ -213,4 +242,4 @@ Array of object with the document id of each fullfilled events
 
 #### Defined in
 
-[utils/index.ts:81](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/utils/index.ts#L81)
+[utils/index.ts:82](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/utils/index.ts#L82)

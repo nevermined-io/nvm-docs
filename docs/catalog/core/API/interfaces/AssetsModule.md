@@ -46,7 +46,7 @@ if the NFT is downloaded successfully the method will return a true
 
 #### Defined in
 
-[types/index.ts:560](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L560)
+[types/index.ts:561](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L561)
 
 ___
 
@@ -75,7 +75,7 @@ if the NFT is downloaded successfully the method will return a true
 
 #### Defined in
 
-[types/index.ts:547](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L547)
+[types/index.ts:548](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L548)
 
 ___
 
@@ -101,7 +101,7 @@ Get the asset object by the did given
 
 #### Defined in
 
-[types/index.ts:497](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L497)
+[types/index.ts:498](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L498)
 
 ___
 
@@ -129,7 +129,7 @@ Custom token details
 
 #### Defined in
 
-[types/index.ts:553](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L553)
+[types/index.ts:554](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L554)
 
 ___
 
@@ -157,7 +157,7 @@ Agreement details of the NFT asset
 
 #### Defined in
 
-[types/index.ts:517](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L517)
+[types/index.ts:518](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L518)
 
 ___
 
@@ -186,17 +186,17 @@ which is needed to transfer the asset to the buyer
 
 #### Defined in
 
-[types/index.ts:524](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L524)
+[types/index.ts:525](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L525)
 
 ___
 
 ### orderNFT1155
 
-• **orderNFT1155**: (`did`: `string`) => `Promise`<`string`\>
+• **orderNFT1155**: (`did`: `string`, `amount`: `default`) => `Promise`<`string`\>
 
 #### Type declaration
 
-▸ (`did`): `Promise`<`string`\>
+▸ (`did`, `amount`): `Promise`<`string`\>
 
 This method order a NFT1155 asset to allow after transfer to the buyer (the method only order but not transfer)
 
@@ -205,6 +205,7 @@ This method order a NFT1155 asset to allow after transfer to the buyer (the meth
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `did` | `string` | id of the NFT1155 asset |
+| `amount` | `default` | Amount of NFT1155 assets to order |
 
 ##### Returns
 
@@ -215,7 +216,7 @@ which is needed to transfer the NFT1155 asset to the buyer
 
 #### Defined in
 
-[types/index.ts:540](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L540)
+[types/index.ts:541](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L541)
 
 ___
 
@@ -245,7 +246,7 @@ which is needed to transfer the NFT721 asset to the buyer
 
 #### Defined in
 
-[types/index.ts:532](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L532)
+[types/index.ts:533](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L533)
 
 ___
 
@@ -271,7 +272,7 @@ List of assets according with the query given
 
 #### Defined in
 
-[types/index.ts:503](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L503)
+[types/index.ts:504](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L504)
 
 ___
 
@@ -301,7 +302,7 @@ Return true if asset was transferred successfully
 
 #### Defined in
 
-[types/index.ts:511](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L511)
+[types/index.ts:512](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L512)
 
 ___
 
@@ -330,4 +331,4 @@ The url where is located the file already uploaded
 
 #### Defined in
 
-[types/index.ts:567](https://github.com/nevermined-io/components-catalog/blob/7d4dcdd/lib/src/types/index.ts#L567)
+[types/index.ts:568](https://github.com/nevermined-io/components-catalog/blob/23aab4e/lib/src/types/index.ts#L568)
