@@ -21,6 +21,7 @@ import { Config } from '@nevermined-io/nevermined-sdk-js';
 import { AuthToken } from '@nevermined-io/catalog-core';
 import { ethers } from 'ethers';
 
+export const nodeUri = process.env.REACT_APP_NODE_URI || 'https://matic-mumbai.chainstacklabs.com';
 export const gatewayAddress =
   process.env.REACT_APP_GATEWAY_ADDRESS || '0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc';
 export const gatewayUri =
