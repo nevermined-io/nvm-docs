@@ -122,7 +122,7 @@ export default ChainConfig;
 The example file `src/example/index.tsx` contains all the basic logic to handle a [NFT1155](../architecture/what-can-i-do.md#tokenization-of-assets-via-erc-1155-nfts-aka-nft-sales) as a component. It outlines each functionality and component in detail.
 
 ### SDKInstance
-This component will check if [sdk](../nevermined-sdk/getting-started.mdx) is loaded or not and display the status
+This component will check if [sdk](../nevermined-sdk/getting-started.md) is loaded or not and display the status
 
 ```tsx
 const SDKInstance = () => {

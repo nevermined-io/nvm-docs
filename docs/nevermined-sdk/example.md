@@ -14,7 +14,7 @@ Before you start with this demo you require:
 * [node](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) needs to be installed
 
 ## Let's start with the app config file
-The first file that you need to create is the `config.ts` file which contains all the [options needed](./api-reference/classes/Config.md) to initialize the [Nevermined SDK](./README.mdx).
+The first file that you need to create is the `config.ts` file which contains all the [options needed](./api-reference/classes/Config.md) to initialize the [Nevermined SDK](./intro.md).
 
 ```ts
 import { Config } from '@nevermined-io/nevermined-sdk-js';
@@ -51,7 +51,7 @@ export const appConfig: Config = {
 The example file `src/example/index.tsx` contains all the basic logic to handle a [NFT1155](../architecture/what-can-i-do.md#tokenization-of-assets-via-erc-1155-nfts-aka-nft-sales) as a component. It outlines each functionality and component in detail.
 
 ### Nevermined Instance
-This component will check if [sdk](../nevermined-sdk/getting-started.mdx) is loaded or not and display the status
+This component will check if [sdk](../nevermined-sdk/getting-started.md) is loaded or not and display the status
 
 ### SingleAsset
 It shows the content of the ddo object published
