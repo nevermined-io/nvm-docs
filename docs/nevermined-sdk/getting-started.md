@@ -1,6 +1,5 @@
 ---
-title: Getting Started
-description: Getting started with the Nevermined SDK
+sidebar_position: 2
 ---
 
 import Tabs from '@theme/Tabs';

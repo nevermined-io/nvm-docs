@@ -88,7 +88,7 @@ const config = {
           {
             position: 'left',
             label: 'SDK',
-            to: 'docs/nevermined-sdk/',
+            to: 'docs/nevermined-sdk/getting-started',
           },          
           {
             position: 'left',

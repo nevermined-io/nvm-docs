@@ -1,9 +1,9 @@
 {
-    "label": "Nevermined SDK",
-    "position": 3,
-    "link": {
-      "type": "generated-index",
-      "description": "Nevermined TypeScript/JavaScript sdk"
-    }
+  "label": "Nevermined SDK",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "nevermined-sdk/intro"
   }
+}
   
