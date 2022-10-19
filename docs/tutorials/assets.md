@@ -59,7 +59,6 @@ const Publisher = () => {
             dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
             author: assetPublish?.author,
             license: 'No License Specified',
-            price: String(assetPublish?.price),
             datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
             type: assetPublish?.type,
             files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
@@ -99,7 +98,6 @@ const Publisher = () => {
         dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
         author: assetPublish?.author,
         license: 'No License Specified',
-        price: String(assetPublish?.price),
         datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
         type: assetPublish?.type,
         files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
@@ -271,7 +269,6 @@ const Publisher = () => {
             dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
             author: assetPublish?.author,
             license: 'No License Specified',
-            price: String(assetPublish?.price),
             datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
             type: assetPublish?.type,
             files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
@@ -323,7 +320,6 @@ const Publisher = () => {
         dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
         author: assetPublish?.author,
         license: 'No License Specified',
-        price: String(assetPublish?.price),
         datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
         type: assetPublish?.type,
         files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
@@ -491,7 +487,6 @@ const Publisher = () => {
             dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
             author: assetPublish?.author,
             license: 'No License Specified',
-            price: String(assetPublish?.price),
             datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
             type: assetPublish?.type,
             files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
@@ -518,7 +513,7 @@ const Publisher = () => {
         const result = await publishNFT1155({
               gatewayAddress: String(appConfig.gatewayAddress),
               metadata,
-              cap: 100,
+              cap: BigNumber.from(100),
               royaltyAttributes: royaltyAttributes(sdk)
         });
         setDidDeployed(ddo!.id);
@@ -542,7 +537,6 @@ const Publisher = () => {
             dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
             author: assetPublish?.author,
             license: 'No License Specified',
-            price: String(assetPublish?.price),
             datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
             type: assetPublish?.type,
             files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
@@ -563,7 +557,7 @@ const Publisher = () => {
         const result = await publishNFT1155({
               gatewayAddress: String(appConfig.gatewayAddress),
               metadata,
-              cap: 100,
+              cap: BigNumber.from(100),
               royaltyAttributes: royaltyAttributes(sdk)
         });
         setDidDeployed(ddo!.id);
@@ -626,7 +620,7 @@ changes the account and when the NFT1155 is bought in order to avoid buy again
         }
 
         const currentAccount = await getCurrentAccount(sdk);
-        const response = await subscription.buySubscription(ddo.id, currentAccount, owner, 1, 1155);
+        const response = await subscription.buySubscription(ddo.id, currentAccount, owner, BigNumber(1), 1155);
         setIsBought(Boolean(response));
     };
 
@@ -658,7 +652,7 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
         }
 
         const currentAccount = await getCurrentAccount(sdk);
-        const response = await subscription.buySubscription(ddo.id, currentAccount, owner, 1, 1155);
+        const response = await subscription.buySubscription(ddo.id, currentAccount, owner, BigNumber.from(1), 1155);
         setIsBought(Boolean(response));
     };
 

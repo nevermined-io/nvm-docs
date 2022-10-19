@@ -13,7 +13,7 @@ This demo is based in the code of the [Example](./example.md) section
 
 The example in the template covers the most commonsly used functionalities to interact with NFT1155.
 
-**Requirements:** The account wallet used for the example must have `Matic` and `USDC`
+**Requirements:** The account wallet used for the example must have `Matic` and `USDC`, see [here](../tutorials/faucets.md) how you can get balance.
 
 1. Connect the wallet
 2. Click the `Mint` button, approve the transaction and sign the authorization request in the wallet.
@@ -24,7 +24,9 @@ The example in the template covers the most commonsly used functionalities to in
 7. Upon purchasing the token the `Buy` button will change to `Download NFT`
 8. Repeat step 4
 
-*Warning:* The data is not static, once the browser is reloaded the workflow example will restart.
+::: caution
+The data is not static, once the browser is reloaded the workflow example will restart.
+:::
 
 ## View
 
