@@ -225,7 +225,7 @@ const App = ({config}: {config: Config }) => {
           files: [{
             index: 0,
             contentType: 'application/json',
-            url: 'https://github.com/nevermined-io/docs/blob/master/docs/architecture/specs/metadata/examples/ddo-example.json'
+            url: 'https://github.com/nevermined-io/docs-legacy/blob/master/docs/architecture/specs/metadata/examples/ddo-example.json'
           }],
           type: 'dataset',
           author: '',
