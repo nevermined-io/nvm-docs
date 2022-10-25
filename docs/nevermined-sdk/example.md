@@ -51,7 +51,7 @@ export const appConfig: Config = {
 The example file `src/example/index.tsx` contains all the basic logic to handle a [NFT1155](../architecture/what-can-i-do.md#tokenization-of-assets-via-erc-1155-nfts-aka-nft-sales) as a component. It outlines each functionality and component in detail.
 
 ### loadNeverminedConfigContract
-Firstable, we need a function to load the Nevermined Contract to calculate after [the network fees](../environments/network-fees.mdx) for each purcharse.
+First, we need a function to load the Nevermined Contract to calculate after [the network fees](../environments/network-fees.mdx) for each purchase.
 
 ```tsx
 const getFeesFromBigNumber = (fees: BigNumber): string => {
