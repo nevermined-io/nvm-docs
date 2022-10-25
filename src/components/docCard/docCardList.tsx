@@ -1,23 +1,23 @@
-import React from 'react';
-import clsx from 'clsx';
+import React from 'react'
+import clsx from 'clsx'
 import {
   useCurrentSidebarCategory,
   filterDocCardListItems,
-} from '@docusaurus/theme-common';
-import DocCard from './docCard';
-import type { Props } from '@theme/DocCardList';
+} from '@docusaurus/theme-common'
+import DocCard from './docCard'
+import type { Props } from '@theme/DocCardList'
 
 function DocCardListForCurrentSidebarCategory({ className }: Props) {
-  const category = useCurrentSidebarCategory();
-  return <DocCardList items={category.items} className={className} />;
+  const category = useCurrentSidebarCategory()
+  return <DocCardList items={category.items} className={className} />
 }
 
 export default function DocCardList(props: Props): JSX.Element {
-  const { items, className } = props;
+  const { items, className } = props
   if (!items) {
-    return <DocCardListForCurrentSidebarCategory {...props} />;
+    return <DocCardListForCurrentSidebarCategory {...props} />
   }
-  const filteredItems = filterDocCardListItems(items);
+  const filteredItems = filterDocCardListItems(items)
   return (
     <section className={clsx('row', 'sidebar-item-doc-card__row', className)}>
       {filteredItems.map((item, index) => (
@@ -26,5 +26,5 @@ export default function DocCardList(props: Props): JSX.Element {
         </article>
       ))}
     </section>
-  );
+  )
 }

@@ -1,17 +1,20 @@
-import React from 'react';
-import '@nevermined-io/styles/lib/esm/styles/globals.scss';
-import clsx from 'clsx';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import { Box, BoxItem } from '@site/src/components/box';
-import { UiText } from '@nevermined-io/styles';
-import { BEM } from '@nevermined-io/styles';
-import styles from './index.module.scss';
+import React from 'react'
+import '@nevermined-io/styles/lib/esm/styles/globals.scss'
+import clsx from 'clsx'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import Layout from '@theme/Layout'
+import { Box, BoxItem } from '@site/src/components/box'
+import { UiText } from '@nevermined-io/styles'
+import { BEM } from '@nevermined-io/styles'
+import styles from './index.module.scss'
+import nvmSVGIcon from '@site/static/nevermined/neverminedDocs.svg'
+import integrationDocsSVGIcon from '@site/static/nevermined/integrationDocs.svg'
+import tutorialPNGIcon from '@site/static/nevermined/tutorialsDocs.png'
 
-const b = BEM('nvm', styles);
+const b = BEM('nvm', styles)
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext()
   return (
     <header className={b('banner')}>
       <div className={b('container')}>
@@ -24,7 +27,7 @@ function HomepageHeader() {
         </UiText>
       </div>
     </header>
-  );
+  )
 }
 
 const FeatureList: BoxItem[] = [
@@ -32,7 +35,7 @@ const FeatureList: BoxItem[] = [
     title: 'Nevermined',
     className: clsx(b('box', ['main'])),
     link: 'docs/getting-started',
-    Svg: require('@site/static/nevermined/neverminedDocs.svg').default,
+    Svg: nvmSVGIcon,
     description: (
       <>
         Nevermined in detail about what is it, for what is useful and use cases
@@ -44,7 +47,7 @@ const FeatureList: BoxItem[] = [
     title: 'Integration',
     className: b('box'),
     link: 'docs/catalog/intro',
-    Svg: require('@site/static/nevermined/integrationDocs.svg').default,
+    Svg: integrationDocsSVGIcon,
     description: (
       <>
         All the documentation that you need to start to integrate Nevermined in
@@ -56,7 +59,7 @@ const FeatureList: BoxItem[] = [
     title: 'Tutorials',
     className: b('box'),
     link: 'docs/tutorials',
-    png: require('@site/static/nevermined/tutorialsDocs.png').default,
+    png: tutorialPNGIcon,
     description: (
       <>
         Tutorials which will guide you, step by step, how you can achieve
@@ -64,7 +67,7 @@ const FeatureList: BoxItem[] = [
       </>
     ),
   },
-];
+]
 
 const HomepageFeatures = (): JSX.Element => {
   return (
@@ -89,11 +92,11 @@ const HomepageFeatures = (): JSX.Element => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext()
   return (
     <Layout
       title={`${siteConfig.title} docs`}
@@ -107,5 +110,5 @@ export default function Home(): JSX.Element {
       </div>
       <div className="overlay" />
     </Layout>
-  );
+  )
 }

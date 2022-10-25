@@ -15,7 +15,7 @@ if [[ -z "$NETWORK" ]]; then
   exit 1
 fi
 if [ -z "$TAG" ]; then
-  TAG="common"
+  TAG="public"
 fi
 
 REPO_URL=http://artifacts-nevermined-rocks.s3.amazonaws.com

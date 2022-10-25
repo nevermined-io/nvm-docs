@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { AssetsModule, Catalog, DDO } from '@nevermined-io/catalog-core';
-import { UiForm, UiFormInput, UiText, UiLayout, UiFormSelect, UiButton, BEM } from '@nevermined-io/styles';
-import { appConfig } from '../config';
-import styles from './styles.module.scss';
+import React, { useEffect, useState } from 'react'
+import { AssetsModule, Catalog, DDO } from '@nevermined-io/catalog-core'
+import { UiForm, UiFormInput, UiText, UiLayout, UiFormSelect, UiButton, BEM } from '@nevermined-io/styles'
+import { appConfig } from '../config'
+import styles from './styles.module.scss'
 
-const b = BEM('query-assets', styles);
+const b = BEM('query-assets', styles)
 
 interface SearchAssets {
   name?: boolean;
@@ -14,12 +14,12 @@ interface SearchAssets {
 }
 
 const QuerySearchByName = ({ assetsModule }: { assetsModule: AssetsModule}) => {
-  const [ ddos, setDdos ] = useState<DDO[]>([]);
+  const [ ddos, setDdos ] = useState<DDO[]>([])
 
   const onSearchByName = async(value: string) => {
     if(value.length < 3) {
-      setDdos([]);
-      return;
+      setDdos([])
+      return
     }
 
     const response = await assetsModule.query({
@@ -29,10 +29,10 @@ const QuerySearchByName = ({ assetsModule }: { assetsModule: AssetsModule}) => {
           fields: ["service.attributes.main.name"]
         }
       },
-    });
+    })
 
-    setDdos(response.results || []);
-  };
+    setDdos(response.results || [])
+  }
 
   return (
     <>
@@ -63,8 +63,8 @@ const QuerySearchByName = ({ assetsModule }: { assetsModule: AssetsModule}) => {
 }
 
 const QuerySearchByAdditionalInfo = ({ assetsModule }: { assetsModule: AssetsModule}) => {
-  const [ ddos, setDdos ] = useState<DDO[]>([]);
-  const [category, setCategory] = useState('');
+  const [ ddos, setDdos ] = useState<DDO[]>([])
+  const [category, setCategory] = useState('')
 
   const options = [{
     label: 'Categories:',
@@ -78,15 +78,15 @@ const QuerySearchByAdditionalInfo = ({ assetsModule }: { assetsModule: AssetsMod
   }, {
     label: 'Liquidations',
     value: 'EventType:Liquidations',
-  }];
+  }]
 
   const onSearchByCategory = async(value: string) => {
-    const categoryChoosen = options.find(o => o.label === value)?.value;
-    setCategory(value);
+    const categoryChoosen = options.find(o => o.label === value)?.value
+    setCategory(value)
 
     if(!categoryChoosen) {
-      setDdos([]);
-      return;
+      setDdos([])
+      return
     }
 
     const response = await assetsModule.query({
@@ -95,10 +95,10 @@ const QuerySearchByAdditionalInfo = ({ assetsModule }: { assetsModule: AssetsMod
           "service.attributes.additionalInformation.categories": categoryChoosen
         }
       },
-    });
+    })
 
-    setDdos(response.results || []);
-  };
+    setDdos(response.results || [])
+  }
 
   return (
     <>
@@ -130,53 +130,53 @@ const QuerySearchByAdditionalInfo = ({ assetsModule }: { assetsModule: AssetsMod
       )}
     </>
   )
-};
+}
 
 const QuerySearchByPriceRange = ({ assetsModule }: { assetsModule: AssetsModule}) => {
-  const [ ddos, setDdos ] = useState<DDO[]>([]);
-  const [ gte, setGte ] = useState(0);
-  const [ lte, setLte ] = useState(100);
-  const [ gteRequired, setGteRequired ] = useState('');
-  const [ lteRequired, setLteRequired ] = useState('');
+  const [ ddos, setDdos ] = useState<DDO[]>([])
+  const [ gte, setGte ] = useState(0)
+  const [ lte, setLte ] = useState(100)
+  const [ gteRequired, setGteRequired ] = useState('')
+  const [ lteRequired, setLteRequired ] = useState('')
 
   useEffect(() => {
     if(gteRequired || lteRequired) {
       setTimeout(() => {
-        setGteRequired('');
-        setLteRequired('');
-      }, 3000);
+        setGteRequired('')
+        setLteRequired('')
+      }, 3000)
     }
-  }, [gteRequired, lteRequired]);
+  }, [gteRequired, lteRequired])
 
   const getValue = (value: string) => {
     if(value) {
-      return parseFloat(value);
+      return parseFloat(value)
     }
   
-    return value as undefined;
-  };
+    return value as undefined
+  }
 
   const onSearchByPriceRange = async() => {
     if((!gte && gte !==0 ) || (!lte && lte !==0 )) {
-      setGteRequired(!gte ? 'gte input is required' : '');
-      setLteRequired(!lte ? 'lte input is required' : '');
-      setDdos([]);
+      setGteRequired(!gte ? 'gte input is required' : '')
+      setLteRequired(!lte ? 'lte input is required' : '')
+      setDdos([])
 
-      return;
+      return
     }
 
     if(gte > lte) {
-      setGteRequired('gte input cannot be greater than lte input');
-      setDdos([]);
+      setGteRequired('gte input cannot be greater than lte input')
+      setDdos([])
 
-      return;
+      return
     }
 
     if(gte < 0) {
-      setGteRequired('gte input cannot be less than 0');
-      setDdos([]);
+      setGteRequired('gte input cannot be less than 0')
+      setDdos([])
 
-      return;
+      return
     } 
 
     const response = await assetsModule.query({
@@ -188,10 +188,10 @@ const QuerySearchByPriceRange = ({ assetsModule }: { assetsModule: AssetsModule}
           }
         }
       },
-    });
+    })
 
-    setDdos(response.results || []);
-  };
+    setDdos(response.results || [])
+  }
 
   return (
     <>
@@ -238,45 +238,45 @@ const QuerySearchByPriceRange = ({ assetsModule }: { assetsModule: AssetsModule}
 }
 
 const QuerySearchByFilters = ({ assetsModule }: { assetsModule: AssetsModule}) => {
-  const [ ddos, setDdos ] = useState<DDO[]>([]);
-  const [ name, setName ] = useState('');
-  const [ short, setShort] = useState<'asc'|'desc'>('desc');
-  const [ page, setPage ] = useState(1);
-  const [ size, setSize ] = useState(100);
-  const [ nameRequired, setNameRequired ] = useState('');
-  const [ pageRequired, setPageRequired ] = useState('');
-  const [ sizeRequired, setSizeRequired ] = useState('');
+  const [ ddos, setDdos ] = useState<DDO[]>([])
+  const [ name, setName ] = useState('')
+  const [ short, setShort] = useState<'asc'|'desc'>('desc')
+  const [ page, setPage ] = useState(1)
+  const [ size, setSize ] = useState(100)
+  const [ nameRequired, setNameRequired ] = useState('')
+  const [ pageRequired, setPageRequired ] = useState('')
+  const [ sizeRequired, setSizeRequired ] = useState('')
 
   useEffect(() => {
     if(nameRequired || pageRequired || sizeRequired) {
       setTimeout(() => {
-        setNameRequired('');
-        setPageRequired('');
-        setSizeRequired('');
-      }, 3000);
+        setNameRequired('')
+        setPageRequired('')
+        setSizeRequired('')
+      }, 3000)
     }
-  }, [nameRequired, pageRequired, sizeRequired]);
+  }, [nameRequired, pageRequired, sizeRequired])
 
   const getValue = (value: string) => {
     if(value) {
-      return parseInt(value, 10);
+      return parseInt(value, 10)
     }
   
-    return value as undefined;
-  };
+    return value as undefined
+  }
 
   const setMessage = (name: string, value: number) => {
     return value <= 0 ? `${name} input needs to be greater than 0` : `${name} input is required`
-  };
+  }
 
   const onSearchByFilters = async() => {
     if(!page || !size || !name) {
-      setNameRequired(!name ? 'name input is required' : '');
-      setPageRequired(!page || page <= 0 ? setMessage('page', page): '');
-      setSizeRequired(!size || size <= 0 ? setMessage('size', size): '');
-      setDdos([]);
+      setNameRequired(!name ? 'name input is required' : '')
+      setPageRequired(!page || page <= 0 ? setMessage('page', page): '')
+      setSizeRequired(!size || size <= 0 ? setMessage('size', size): '')
+      setDdos([])
 
-      return;
+      return
     }
 
     const response = await assetsModule.query({
@@ -291,10 +291,10 @@ const QuerySearchByFilters = ({ assetsModule }: { assetsModule: AssetsModule}) =
       sort: {
         created: short
       }
-    });
+    })
 
-    setDdos(response.results || []);
-  }; 
+    setDdos(response.results || [])
+  } 
 
   return (
     <>
@@ -342,10 +342,10 @@ const QuerySearchByFilters = ({ assetsModule }: { assetsModule: AssetsModule}) =
       )}
     </>
   )
-};
+}
 
 const QuerySearch = (searchAssets: SearchAssets) => {
-  const { assets, isLoadingSDK } = Catalog.useNevermined();
+  const { assets, isLoadingSDK } = Catalog.useNevermined()
 
   return (
     <div className={b('container')}>
@@ -362,7 +362,7 @@ const QuerySearch = (searchAssets: SearchAssets) => {
 }
 
 const QueryAssets = (searchAssets: SearchAssets ) => {
-  const config = appConfig();
+  const config = appConfig()
 
   return(
     <Catalog.NeverminedProvider config={config} verbose={true}>
@@ -374,6 +374,6 @@ const QueryAssets = (searchAssets: SearchAssets ) => {
       />
     </Catalog.NeverminedProvider>
   )
-};
+}
 
-export default QueryAssets;
+export default QueryAssets

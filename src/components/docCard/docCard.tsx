@@ -1,25 +1,25 @@
-import React, { type ReactNode, useState, useEffect } from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
+import React, { type ReactNode, useState, useEffect } from 'react'
+import clsx from 'clsx'
+import Link from '@docusaurus/Link'
 import {
   findFirstCategoryLink,
   useDocById,
-} from '@docusaurus/theme-common/internal';
-import isInternalUrl from '@docusaurus/isInternalUrl';
-import { translate } from '@docusaurus/Translate';
-import type { Props } from '@theme/DocCard';
+} from '@docusaurus/theme-common/internal'
+import isInternalUrl from '@docusaurus/isInternalUrl'
+import { translate } from '@docusaurus/Translate'
+import type { Props } from '@theme/DocCard'
 
-import styles from '@docusaurus/theme-classic/lib/theme/DocCard/styles.module.css';
+import styles from '@docusaurus/theme-classic/lib/theme/DocCard/styles.module.css'
 import type {
   PropSidebarItemCategory,
   PropSidebarItemLink,
-} from '@docusaurus/plugin-content-docs';
+} from '@docusaurus/plugin-content-docs'
 
 type CardContainerProps = {
   href: string;
   className?: string | unknown;
   children: ReactNode;
-};
+}
 
 type CardLayoutProps = {
   href: string;
@@ -27,18 +27,18 @@ type CardLayoutProps = {
   title: string;
   description?: string;
   className?: string | unknown;
-};
+}
 
 function Icon({ defaultIcon, iconStaticFolderPath, iconClassName }) {
-  const [image, setImage] = useState();
+  const [image, setImage] = useState()
 
   useEffect(() => {
     if (iconStaticFolderPath) {
       import(`@site/static/${iconStaticFolderPath}`).then((result) =>
         setImage(result.default)
-      );
+      )
     }
-  }, [iconStaticFolderPath]);
+  }, [iconStaticFolderPath])
 
   if (iconStaticFolderPath && image) {
     return (
@@ -48,16 +48,16 @@ function Icon({ defaultIcon, iconStaticFolderPath, iconClassName }) {
           className={clsx('sidebar-item-doc-card__icon', iconClassName)}
         />
       </span>
-    );
+    )
   }
 
   if (!iconStaticFolderPath) {
     return (
       <span className="sidebar-item-doc-card__icon-wrapper">{defaultIcon}</span>
-    );
+    )
   }
 
-  return null;
+  return null
 }
 
 function CardContainer({
@@ -69,7 +69,7 @@ function CardContainer({
     <Link href={href} className={clsx('card', styles.cardContainer, className)}>
       {children}
     </Link>
-  );
+  )
 }
 
 function CardLayout({
@@ -100,7 +100,7 @@ function CardLayout({
         </p>
       )}
     </CardContainer>
-  );
+  )
 }
 
 function CardCategory({
@@ -108,11 +108,11 @@ function CardCategory({
 }: {
   item: PropSidebarItemCategory;
 }): JSX.Element | null {
-  const href = findFirstCategoryLink(item);
+  const href = findFirstCategoryLink(item)
 
   // Unexpected: categories that don't have a link have been filtered upfront
   if (!href) {
-    return null;
+    return null
   }
 
   return (
@@ -141,12 +141,12 @@ function CardCategory({
         item.customProps?.className
       )}
     />
-  );
+  )
 }
 
 function CardLink({ item }: { item: PropSidebarItemLink }): JSX.Element {
-  const defaultIcon = isInternalUrl(item.href) ? '📄️' : '🔗';
-  const doc = useDocById(item.docId ?? undefined);
+  const defaultIcon = isInternalUrl(item.href) ? '📄️' : '🔗'
+  const doc = useDocById(item.docId ?? undefined)
 
   return (
     <CardLayout
@@ -166,16 +166,16 @@ function CardLink({ item }: { item: PropSidebarItemLink }): JSX.Element {
         item.customProps?.className
       )}
     />
-  );
+  )
 }
 
 export default function DocCard({ item }: Props): JSX.Element {
   switch (item.type) {
     case 'link':
-      return <CardLink item={item} />;
+      return <CardLink item={item} />
     case 'category':
-      return <CardCategory item={item} />;
+      return <CardCategory item={item} />
     default:
-      throw new Error(`unknown item type ${JSON.stringify(item)}`);
+      throw new Error(`unknown item type ${JSON.stringify(item)}`)
   }
 }

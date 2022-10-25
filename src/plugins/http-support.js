@@ -1,9 +1,10 @@
-const webpack = require('webpack');
+/* eslint-disable-next-line */
+const webpack = require('webpack')
 
-module.exports = function (context, options) {
+module.exports = function (_context, _options) {
   return {
     name: 'http-support',
-    configureWebpack(config, isServer, utils) {
+    configureWebpack(_config, _isServer, _utils) {
       return {
         plugins: [
           new webpack.ProvidePlugin({
@@ -32,7 +33,7 @@ module.exports = function (context, options) {
             },
           ],
         },
-      };
+      }
     },
-  };
-};
+  }
+}

@@ -1,10 +1,10 @@
-import React from 'react';
-import clsx from 'clsx';
-import { BEM, UiText } from '@nevermined-io/styles';
-import styles from './styles.module.scss';
-import Link from '@docusaurus/Link';
+import React from 'react'
+import clsx from 'clsx'
+import { BEM, UiText } from '@nevermined-io/styles'
+import styles from './styles.module.scss'
+import Link from '@docusaurus/Link'
 
-const b = BEM('box', styles);
+const b = BEM('box', styles)
 
 export type BoxItem = {
   title: string;
@@ -14,7 +14,7 @@ export type BoxItem = {
   description: JSX.Element;
   className?: string;
   overlay?: JSX.Element;
-};
+}
 
 export const Box = ({
   title,
@@ -37,7 +37,7 @@ export const Box = ({
       </div>
       {overlay}
     </div>
-  );
+  )
 
   return (
     <>
@@ -49,5 +49,5 @@ export const Box = ({
         content
       )}
     </>
-  );
-};
+  )
+}

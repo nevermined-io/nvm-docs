@@ -1,14 +1,14 @@
-import React from 'react';
-import { MetaMask } from '@nevermined-io/catalog-providers';
-import { UiButton, UiText, BEM } from '@nevermined-io/styles';
-import styles from './styles.module.scss';
+import React from 'react'
+import { MetaMask } from '@nevermined-io/catalog-providers'
+import { UiButton, UiText, BEM } from '@nevermined-io/styles'
+import styles from './styles.module.scss'
 
 const b = BEM('metamask', styles)
 
 const NODE_URI="https://rpc-mumbai.matic.today"
 
 const LoginMetamask = () => {
-    const { loginMetamask, walletAddress, logout} = MetaMask.useWallet();
+    const { loginMetamask, walletAddress, logout} = MetaMask.useWallet()
 
     return (
         <div className={b('content')}>
@@ -21,8 +21,8 @@ const LoginMetamask = () => {
               </>
             }
         </div>
-    );
-};
+    )
+}
 
 const MetamaskApp = () => (
   <MetaMask.WalletProvider
@@ -31,6 +31,6 @@ const MetamaskApp = () => (
   >
     <LoginMetamask/>
   </MetaMask.WalletProvider>
-);
+)
 
-export default MetamaskApp;
+export default MetamaskApp

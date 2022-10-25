@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import styles from './styles.module.scss';
-import { UiText, BEM } from '@nevermined-io/styles';
-import { convertLinkToGift } from '../../utils';
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import styles from './styles.module.scss'
+import { UiText, BEM } from '@nevermined-io/styles'
+import { convertLinkToGift } from '../../utils'
 
 const b = BEM('blog', styles)
 
@@ -13,20 +13,20 @@ interface Post {
 }
 
 const Blog = () => {
-    const [posts, setPost] = useState<Post[]>([]);
+    const [posts, setPost] = useState<Post[]>([])
 
     const fetchPosts = async () => {
-        let result = await axios.get<{items: Post[]}>('https://api.rss2json.com/v1/api.json', {
+        const result = await axios.get<{items: Post[]}>('https://api.rss2json.com/v1/api.json', {
             params: {
                 'rss_url': 'https://medium.com/feed/nevermined-io'
             }
         })
 
         const items = result.data.items.map(item => {
-            const itemReplaced = {...item};
-            itemReplaced.content = convertLinkToGift(item.content);
+            const itemReplaced = {...item}
+            itemReplaced.content = convertLinkToGift(item.content)
             return itemReplaced
-        });
+        })
 
         setPost([...items])
     }
@@ -48,4 +48,4 @@ const Blog = () => {
     )
 }
 
-export default Blog;
+export default Blog
