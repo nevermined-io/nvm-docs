@@ -28,11 +28,20 @@ const QuerySearchByName = (): => {
 
     const response = await assets.query({
       query: {
-        "query_string": {
-          query: `*${value}*`,
-          fields: ["service.attributes.main.name"]
+        bool: {
+          must: [{
+            nested: {
+              path: ['service'],
+              query: {
+                "query_string": {
+                  query: `*${value}*`,
+                  fields: ["service.attributes.main.name"]
+                }
+              },
+            }
+          }]
         }
-      },
+      }
     });
 
     setDdos(response.results || []);
@@ -111,10 +120,15 @@ const QuerySearchByAdditionalInfo = () => {
 
     const response = await assets.query({
       query: {
-        match: {
-          "service.attributes.additionalInformation.categories": categoryChoosen
+        nested: {
+          path: ['service'],
+          query: {
+            match: {
+              "service.attributes.additionalInformation.categories": categoryChoosen
+            }
+          }
         }
-      },
+      }
     });
 
     setDdos(response.results || []);
@@ -206,13 +220,18 @@ const QuerySearchByPriceRange = () => {
 
     const response = await assetsModule.query({
       query: {
-        range: {
-          "service.attributes.additionalInformation.priceHighestDenomination": {
-            gte,
-            lte
+        nested: {
+          path: ['service'],
+          query: {
+            range: {
+              "service.attributes.additionalInformation.priceHighestDenomination": {
+                gte,
+                lte
+              }
+            }
           }
         }
-      },
+      }
     });
 
     setDdos(response.results || []);

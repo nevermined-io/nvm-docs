@@ -39,12 +39,13 @@ export const appConfig: Config = {
   web3Provider: typeof window !== 'undefined' ? window.ethereum : new ethers.providers.JsonRpcProvider(nodeUri),
   gatewayUri,
   faucetUri,
-  verbose: true,
+  verbose: 2,
   gatewayAddress,
   graphHttpUri,
   marketplaceAuthToken: AuthToken.fetchMarketplaceApiTokenFromLocalStorage().token,
   marketplaceUri,
-  artifactsFolder: `${rootUri}/contracts`
+  artifactsFolder: `${rootUri}/contracts`,
+  newGateway: true,
 }
 ```
 
@@ -120,24 +121,6 @@ export default ChainConfig
 
 ## The example file
 The example file `src/example/index.tsx` contains all the basic logic to handle a [NFT1155](../architecture/what-can-i-do.md#tokenization-of-assets-via-erc-1155-nfts-aka-nft-sales) as a component. It outlines each functionality and component in detail.
-
-### loadNeverminedConfigContract
-First, we need a function to load the Nevermined Contract to calculate after [the network fees](../environments/network-fees.mdx) for each purchase.
-
-```tsx
-const getFeesFromBigNumber = (fees: BigNumber): string => {
-  return (fees.toNumber() / 10000).toPrecision(2).toString()
-}
-```
-
-### getFeesFromBigNumber
-This function will calculate the network fees.
-
-```tsx
-const getFeesFromBigNumber = (fees: BigNumber): string => {
-  return (fees.toNumber() / 10000).toPrecision(2).toString()
-}
-```
 
 ### SDKInstance
 This component will check if [sdk](../nevermined-sdk/getting-started.md) is loaded or not and display the status
@@ -339,15 +322,8 @@ const App = () => {
       const rewardsRecipients: any[] = []
       const assetRewardsMap = constructRewardMap(rewardsRecipients, BigNumber.from(100), publisher.getId())
       const assetRewards = new AssetRewards(assetRewardsMap)
-      const configContract = await loadNeverminedConfigContract(appConfig, publisher)
-      const networkFee = await configContract.getMarketplaceFee()
-      if (networkFee.gt(0)) {
-        assetRewards.addNetworkFees(
-          await configContract.getFeeReceiver(),
-          networkFee
-        )
-        Logger.log(`Network Fees: ${getFeesFromBigNumber(networkFee)}`)
-      }
+
+      assetRewards.addNetworkFees(feeReceiver, BigNumber.from(networkFee))
 
       const royaltyAttributes = {
         royaltyKind: RoyaltyKind.Standard,
@@ -413,22 +389,6 @@ import { MetaMask } from '@nevermined-io/catalog-providers'
 import { UiText, UiLayout, BEM, UiButton } from '@nevermined-io/styles'
 import styles from './example.module.scss'
 import { appConfig, erc20TokenAddress } from './config'
-
-export const getFeesFromBigNumber = (fees: BigNumber): string => {
-  return (fees.toNumber() / 10000).toPrecision(2).toString()
-}
-
-export const loadNeverminedConfigContract = async (config: Config, account: Account): Promise<Contract> => {
-  const abiNvmConfig = `${config.artifactsFolder}/NeverminedConfig.mumbai.json`
-  const contractFetched = await fetch(abiNvmConfig)
-  const nvmConfigAbi = await contractFetched.json()
-
-  return new ethers.Contract(
-    nvmConfigAbi.address,
-    nvmConfigAbi.abi,
-    await account.findSigner(nvmConfigAbi.address),
-  )
-}
 
 const b = BEM('example', styles)
 
@@ -571,11 +531,6 @@ const App = () => {
   const { publishNFT1155 } = AssetService.useAssetPublish()
   const { walletAddress } = MetaMask.useWallet()
   const [ddo, setDDO] = useState<DDO>({} as DDO)
-  const royaltyAttributes = {
-    royaltyKind: RoyaltyKind.Standard,
-    scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
-    amount: 0,
-  }
 
   const metadata: MetaData = {
     main: {
@@ -598,6 +553,10 @@ const App = () => {
       const rewardsRecipients: any[] = []
       const assetRewardsMap = constructRewardMap(rewardsRecipients, BigNumber.from(100), publisher.getId())
       const assetRewards = new AssetRewards(assetRewardsMap)
+      const networkFee = await sdk.keeper.nvmConfig.getNetworkFee()
+      const feeReceiver = await sdk.keeper.nvmConfig.getFeeReceiver()
+      assetRewards.addNetworkFees(feeReceiver, BigNumber.from(networkFee))
+
       const royaltyAttributes = {
         royaltyKind: RoyaltyKind.Standard,
         scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),

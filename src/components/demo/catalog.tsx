@@ -8,7 +8,6 @@ import { UiText, UiLayout, BEM, UiButton } from '@nevermined-io/styles'
 import { ethers } from 'ethers'
 import styles from './styles.module.scss'
 import { appConfig } from '../config'
-import { getFeesFromBigNumber, loadNeverminedConfigContract } from '../utils'
 
 const b = BEM('demo', styles)
 
@@ -176,16 +175,10 @@ const App = ({ config }: {config: Config}) => {
       const rewardsRecipients: any[] = []
       const assetRewardsMap = constructRewardMap(rewardsRecipients, 100, publisher.getId())
       const assetRewards = new AssetRewards(assetRewardsMap)
-      const configContract = await loadNeverminedConfigContract(config, publisher)
-      const networkFee = await configContract.getMarketplaceFee()
+      const networkFee = await sdk.keeper.nvmConfig.getNetworkFee()
+      const feeReceiver = await sdk.keeper.nvmConfig.getFeeReceiver()
 
-      if (networkFee.gt(0)) {
-        assetRewards.addNetworkFees(
-          await configContract.getFeeReceiver(),
-          networkFee
-        )
-        Logger.log(`Network Fees: ${getFeesFromBigNumber(networkFee)}`)
-      }
+      assetRewards.addNetworkFees(feeReceiver, BigNumber.from(networkFee))
 
       const royaltyAttributes = {
         royaltyKind: RoyaltyKind.Standard,
