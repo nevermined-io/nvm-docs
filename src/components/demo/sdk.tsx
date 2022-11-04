@@ -6,7 +6,6 @@ import { UiLayout, UiText, UiButton, BEM } from '@nevermined-io/styles'
 import BigNumber from '@nevermined-io/nevermined-sdk-js/dist/node/utils/BigNumber'
 import { ethers } from 'ethers'
 import { appConfig } from '../config'
-import { getFeesFromBigNumber, loadNeverminedConfigContract } from '../utils'
 import styles from './styles.module.scss'
 
 const b = BEM('demo', styles)
@@ -203,7 +202,7 @@ const App = ({config}: {config: Config }) => {
       royaltyAttributes,
       assetRewards,
       BigNumber.from(1),
-      "0x2058A9D7613eEE744279e3856Ef0eAda5FCbaA7e",
+      "0xe11a86849d99f524cac3e7a0ec1241828e332c62",
       true,
     )
 
@@ -221,16 +220,10 @@ const App = ({config}: {config: Config }) => {
         amount: 0,
       }
 
-      const configContract = await loadNeverminedConfigContract(config, account)
-      const networkFee = await configContract.getMarketplaceFee()
+      const networkFee = await sdk.keeper.nvmConfig.getNetworkFee()
+      const feeReceiver = await sdk.keeper.nvmConfig.getFeeReceiver()
 
-      if (networkFee.gt(0)) {
-        assetRewards.addNetworkFees(
-          await configContract.getFeeReceiver(),
-          networkFee
-        )
-        Logger.log(`Network Fees: ${getFeesFromBigNumber(networkFee)}`)
-      }
+      assetRewards.addNetworkFees(feeReceiver, BigNumber.from(networkFee))
 
       const metadata: MetaData = {
         main: {

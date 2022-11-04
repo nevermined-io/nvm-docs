@@ -186,8 +186,7 @@ const App = ({ config }: {config: Config}) => {
         amount: 0,
       }
 
-      if (!account.isTokenValid()
-        || account.getAddressTokenSigner().toLowerCase() !== publisher.getId().toLowerCase()
+      if (account.getAddressTokenSigner().toLowerCase() !== publisher.getId().toLowerCase()
       ) {
         await account.generateToken()
       }
@@ -200,7 +199,7 @@ const App = ({ config }: {config: Config}) => {
         preMint: true,
         cap: BigNumber.from(100),
         royaltyAttributes,
-        erc20TokenAddress: "0x2058A9D7613eEE744279e3856Ef0eAda5FCbaA7e",
+        erc20TokenAddress: "0xe11a86849d99f524cac3e7a0ec1241828e332c62",
       })
 
       setDDO(response as DDO)

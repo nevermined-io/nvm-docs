@@ -48,18 +48,21 @@ import App from 'app';
 import { ethers } from 'ethers'
 import { Config } from '@nevermined-io/nevermined-sdk-js';
 
+const NODE_URI = "https://matic-mumbai.chainstacklabs.com"
+
 const appConfig: Config = {
-  web3Provider: typeof window !== 'undefined' ? window.ethereum : new ethers.providers.JsonRpcProvider(nodeUri),
-  nodeUri,
-  gatewayUri,
-  faucetUri,
-  verbose,
-  gatewayAddress,
-  secretStoreUri,
-  graphHttpUri,
-  marketplaceAuthToken,
-  marketplaceUri,
-  artifactsFolder
+  web3Provider: typeof window !== "undefined" ? window.ethereum : new ethers.providers.JsonRpcProvider(NODE_URI),
+  nodeUri: NODE_URI,
+  gatewayUri: "https://gateway.mumbai.public.nevermined.network",
+  faucetUri: "https://faucet.rinkeby.nevermined.rocks",
+  verbose: 2,
+  gatewayAddress: "0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc",
+  graphHttpUri: "https://api.thegraph.com/subgraphs/name/nevermined-io/public",
+  marketplaceAuthToken:
+    AuthToken.fetchMarketplaceApiTokenFromLocalStorage().token,
+  marketplaceUri: "https://marketplace-api.mumbai.public.nevermined.network",
+  artifactsFolder: `${location.protocol}//${location.host}/contracts`,
+  newGateway: true,
 };
 
 ReactDOM.render(

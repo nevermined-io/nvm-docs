@@ -363,7 +363,6 @@ const Example = (props: ExampleProps) => {
         gatewayUri,
         faucetUri,
         gatewayAddress,
-        secretStoreUri,
         verbose,
         marketplaceAuthToken: Catalog.fetchMarketplaceApiTokenFromLocalStorage().token || '',
         artifactsFolder,
