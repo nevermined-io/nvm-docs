@@ -26,20 +26,17 @@ export const gatewayAddress =
   process.env.REACT_APP_GATEWAY_ADDRESS || '0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc'
 export const gatewayUri =
   process.env.REACT_APP_GATEWAY_URI || 'https://gateway.mumbai.public.nevermined.network'
-export const faucetUri =
-  process.env.REACT_APP_FAUCET_URI || 'https://faucet.rinkeby.nevermined.rocks'
 export const acceptedChainId = process.env.REACT_APP_ACCEPTED_CHAIN_ID || '80001' // for Mumbai
 export const rootUri = process.env.REACT_APP_ROOT_URI || 'http://localhost:3445'
 export const marketplaceUri = 'https://marketplace-api.mumbai.public.nevermined.network'
 const graphHttpUri = process.env.GRAPH_HTTP_URI ||  'https://api.thegraph.com/subgraphs/name/nevermined-io/public'
+// represent USDC token in mumbai that can be claimed in the faucet https://calibration-faucet.filswan.com/#/dashboard
 export const erc20TokenAddress = process.env.ERC20_TOKEN_ADDRESS || '0xe11a86849d99f524cac3e7a0ec1241828e332c62'
 
 export const appConfig: Config = {
   //@ts-ignore
   web3Provider: typeof window !== 'undefined' ? window.ethereum : new ethers.providers.JsonRpcProvider(nodeUri),
   gatewayUri,
-  faucetUri,
-  verbose: 2,
   gatewayAddress,
   graphHttpUri,
   marketplaceAuthToken: AuthToken.fetchMarketplaceApiTokenFromLocalStorage().token,
@@ -223,7 +220,7 @@ The `BuyAsset` component will display the button `buy` in order to buy the asset
 
 ```tsx
 const BuyAsset = ({ddo}: {ddo: DDO}) => {
-  const { assets, account, isLoadingSDK, subscription, sdk } = Catalog.useNevermined()
+  const { assets, account, isLoadingSDK, nfts, sdk } = Catalog.useNevermined()
   const { walletAddress } = MetaMask.useWallet()
   const [ownNFT1155, setOwnNFT1155] = useState(false)
   const [isBought, setIsBought] = useState(false)
@@ -237,14 +234,7 @@ const BuyAsset = ({ddo}: {ddo: DDO}) => {
   }, [walletAddress, isBought])
 
   const buy = async () => {
-    const currentAccount = await getCurrentAccount(sdk)
-    if (!account.isTokenValid()
-      || account.getAddressTokenSigner().toLowerCase() !== currentAccount.getId().toLowerCase()
-    ) {
-      await account.generateToken()
-    }
-
-    const response = await subscription.buySubscription(ddo.id, currentAccount, owner, BigNumber.from(1), 1155)
+    const response = await nfts.access(ddo.id, owner, BigNumber.from(1), 1155)
     setIsBought(Boolean(response))
   }
 
@@ -329,12 +319,6 @@ const App = () => {
         royaltyKind: RoyaltyKind.Standard,
         scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
         amount: 0,
-      }
-
-      if (!account.isTokenValid()
-        || account.getAddressTokenSigner().toLowerCase() !== publisher.getId().toLowerCase()
-      ) {
-        await account.generateToken()
       }
 
       const response = await publishNFT1155({
@@ -469,7 +453,7 @@ const PublishAsset = ({onPublish}: {onPublish: () => void}) => {
 }
 
 const BuyAsset = ({ddo}: {ddo: DDO}) => {
-  const { assets, account, isLoadingSDK, subscription, sdk } = Catalog.useNevermined()
+  const { assets, account, isLoadingSDK, nfts, sdk } = Catalog.useNevermined()
   const { walletAddress } = MetaMask.useWallet()
   const [ownNFT1155, setOwnNFT1155] = useState(false)
   const [isBought, setIsBought] = useState(false)
@@ -483,14 +467,8 @@ const BuyAsset = ({ddo}: {ddo: DDO}) => {
   }, [walletAddress, isBought])
 
   const buy = async () => {
-    const currentAccount = await getCurrentAccount(sdk)
-    if (!account.isTokenValid()
-      || account.getAddressTokenSigner().toLowerCase() !== currentAccount.getId().toLowerCase()
-    ) {
-      await account.generateToken()
-    }
 
-    const response = await subscription.buySubscription(ddo.id, currentAccount, owner, BigNumber.from(1), 1155)
+    const response = await nfts.access(ddo.id, owner, BigNumber.from(1), 1155)
     setIsBought(Boolean(response))
   }
 
@@ -563,9 +541,6 @@ const App = () => {
         amount: 0,
       }
 
-      if (!account.isTokenValid()) {
-        await account.generateToken()
-      }
       const response = await publishNFT1155({
         gatewayAddress: String(appConfig.gatewayAddress),
         assetRewards,

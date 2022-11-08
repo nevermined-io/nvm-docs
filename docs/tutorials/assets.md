@@ -165,14 +165,6 @@ changes the account and when the assest is bought in order to avoid buy again
 ```typescript
 ...
     const buy = async () => {
-        const currentAccount = await getCurrentAccount(sdk)
-
-        if (!account.isTokenValid()
-            || account.getAddressTokenSigner().toLowerCase() !== publisher.getId().toLowerCase()
-        ) {
-            await account.generateToken()
-        }
-
         const response = await assets.orderAsset(did)
         setIsBought(Boolean(response))
     }
@@ -200,14 +192,6 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
     }, [walletAddress, isBought])
 
     const buy = async () => {
-        const currentAccount = await getCurrentAccount(sdk)
-
-        if (!account.isTokenValid()
-            || account.getAddressTokenSigner().toLowerCase() !== publisher.getId().toLowerCase()
-        ) {
-            await account.generateToken()
-        }
-
         const response = await assets.orderAsset(did)
         setIsBought(Boolean(response))
     }
@@ -404,15 +388,7 @@ changes the account and when the assest is bought in order to avoid buy again
 ```typescript
 ...
     const buy = async () => {
-        const currentAccount = await getCurrentAccount(sdk)
-
-        if (!account.isTokenValid()
-            || account.getAddressTokenSigner().toLowerCase() !== publisher.getId().toLowerCase()
-        ) {
-            await account.generateToken()
-        }
-
-        const response = await subscription.buySubscription(ddo.id, currentAccount, owner, 1, 721)
+        const response = await nfts.access(ddo.id, currentAccount, owner, 1, 721)
         setIsBought(Boolean(response))
     }
 
@@ -425,7 +401,7 @@ changes the account and when the assest is bought in order to avoid buy again
 
 ```tsx
 const Consumer = ({ddo}: {ddo: DDO}) => {
-    const { assets, account, isLoadingSDK, subscription, sdk } = Catalog.useNevermined()
+    const { assets, account, isLoadingSDK, nfts, sdk } = Catalog.useNevermined()
     const { walletAddress } = MetaMask.useWallet()
     const [ownNFT721, setOwnNFT721] = useState(false)
     const [isBought, setIsBought] = useState(false)
@@ -439,15 +415,7 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
     }, [walletAddress, isBought])
 
     const buy = async () => {
-        const currentAccount = await getCurrentAccount(sdk)
-
-        if (!account.isTokenValid()
-            || account.getAddressTokenSigner().toLowerCase() !== publisher.getId().toLowerCase()
-        ) {
-            await account.generateToken()
-        }
-
-        const response = await subscription.buySubscription(ddo.id, currentAccount, owner, 1, 721)
+        const response = await nfts.access(ddo.id, currentAccount, owner, 1, 721)
         setIsBought(Boolean(response))
     }
 
@@ -627,15 +595,7 @@ changes the account and when the NFT1155 is bought in order to avoid buy again
 ```typescript
 ...
     const buy = async () => {
-        const currentAccount = await getCurrentAccount(sdk)
-
-        if (!account.isTokenValid()
-            || account.getAddressTokenSigner().toLowerCase() !== publisher.getId().toLowerCase()
-        ) {
-            await account.generateToken()
-        }
-
-        const response = await subscription.buySubscription(ddo.id, currentAccount, owner, BigNumber(1), 1155)
+        const response = await nfts.access(ddo.id, currentAccount, owner, BigNumber(1), 1155)
         setIsBought(Boolean(response))
     }
 
@@ -648,7 +608,7 @@ changes the account and when the NFT1155 is bought in order to avoid buy again
 
 ```tsx
 const Consumer = ({ddo}: {ddo: DDO}) => {
-    const { assets, account, isLoadingSDK, subscription, sdk } = Catalog.useNevermined()
+    const { assets, account, isLoadingSDK, nfts, sdk } = Catalog.useNevermined()
     const { walletAddress } = MetaMask.useWallet()
     const [ownNFT1155, setOwnNF1155] = useState(false)
     const [isBought, setIsBought] = useState(false)
@@ -662,15 +622,7 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
     }, [walletAddress, isBought])
 
     const buy = async () => {
-        const currentAccount = await getCurrentAccount(sdk)
-
-        if (!account.isTokenValid()
-            || account.getAddressTokenSigner().toLowerCase() !== publisher.getId().toLowerCase()
-        ) {
-            await account.generateToken()
-        }
-
-        const response = await subscription.buySubscription(ddo.id, currentAccount, owner, BigNumber.from(1), 1155)
+        const response = await nfts.access(ddo.id, owner, BigNumber.from(1), 1155)
         setIsBought(Boolean(response))
     }
 

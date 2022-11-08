@@ -54,8 +54,6 @@ const appConfig: Config = {
   web3Provider: typeof window !== "undefined" ? window.ethereum : new ethers.providers.JsonRpcProvider(NODE_URI),
   nodeUri: NODE_URI,
   gatewayUri: "https://gateway.mumbai.public.nevermined.network",
-  faucetUri: "https://faucet.rinkeby.nevermined.rocks",
-  verbose: 2,
   gatewayAddress: "0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc",
   graphHttpUri: "https://api.thegraph.com/subgraphs/name/nevermined-io/public",
   marketplaceAuthToken:
