@@ -88,7 +88,7 @@ const PublishAsset = ({onPublish}: {onPublish: () => void}) => {
 }
 
 const BuyAsset = ({ddo}: {ddo: DDO}) => {
-  const { assets, account, isLoadingSDK, subscription, sdk } = Catalog.useNevermined()
+  const { assets, account, isLoadingSDK, nfts, sdk } = Catalog.useNevermined()
   const { walletAddress } = MetaMask.useWallet()
   const [ownNFT1155, setOwnNFT1155] = useState(false)
   const [isBought, setIsBought] = useState(false)
@@ -102,15 +102,7 @@ const BuyAsset = ({ddo}: {ddo: DDO}) => {
   }, [walletAddress, isBought])
 
   const buy = async () => {
-    const currentAccount = await getCurrentAccount(sdk)
-
-    if (!account.isTokenValid()
-      || account.getAddressTokenSigner().toLowerCase() !== currentAccount.getId().toLowerCase()
-    ) {
-      await account.generateToken()
-    }
-
-    const response = await subscription.buySubscription(ddo.id, currentAccount, owner, BigNumber.from(1), 1155)
+    const response = await nfts.access(ddo.id, owner, BigNumber.from(1), 1155)
     setIsBought(Boolean(response))
   }
 
@@ -148,7 +140,7 @@ const MMWallet = () => {
 }
 
 const App = ({ config }: {config: Config}) => {
-  const { isLoadingSDK, sdk, account } = Catalog.useNevermined()
+  const { isLoadingSDK, sdk } = Catalog.useNevermined()
   const { publishNFT1155 } = AssetService.useAssetPublish()
   const { walletAddress } = MetaMask.useWallet()
   const [ddo, setDDO] = useState<DDO>({} as DDO)
@@ -184,11 +176,6 @@ const App = ({ config }: {config: Config}) => {
         royaltyKind: RoyaltyKind.Standard,
         scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
         amount: 0,
-      }
-
-      if (account.getAddressTokenSigner().toLowerCase() !== publisher.getId().toLowerCase()
-      ) {
-        await account.generateToken()
       }
 
       const response = await publishNFT1155({

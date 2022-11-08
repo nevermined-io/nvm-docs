@@ -2243,12 +2243,12 @@
   resolved "https://registry.npmjs.org/@mdx-js/util/-/util-1.6.22.tgz"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
-"@nevermined-io/catalog-core@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@nevermined-io/catalog-core/-/catalog-core-0.3.1.tgz#d6fbba3315e204d6b93c99bb5b7eb6caadadb29d"
-  integrity sha512-na1ybpfOfGN1jKxSp3VsOB6rHzwJxXvzqaKsmarSTuigWUkIHqJkLZUGMN8DwjTL8at7dTCKQpW9X7ETyeL3Cw==
+"@nevermined-io/catalog-core@0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@nevermined-io/catalog-core/-/catalog-core-0.4.0.tgz#9a2183d4ea848a6a65c7bdc5864ba81f99b3ac7a"
+  integrity sha512-ugy0V8HzpvGlzkQvLxXIuTPt57BRfv5dm5zZ+FBK+R78jB/kKiKIETy/icKp700+DCinTcOY4aQitIqxQ7phtg==
   dependencies:
-    "@nevermined-io/nevermined-sdk-js" "^0.25.0"
+    "@nevermined-io/nevermined-sdk-js" "^0.25.2"
     "@types/jsonwebtoken" "^8.5.8"
     axios "^0.27.2"
     axios-retry "^3.3.1"
@@ -2258,18 +2258,18 @@
     jsonwebtoken "^8.5.1"
     nodemon "^2.0.16"
 
-"@nevermined-io/catalog-providers@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@nevermined-io/catalog-providers/-/catalog-providers-0.3.1.tgz#e922440413f4895de9757c0bbeae6fffd919ef09"
-  integrity sha512-DTDkHWk9SQOcTrzAHyQrDsDaD1b4OuQ8EUVCNyFAT00JDmPQNf1DqPHWgIk9Gr4WnrH2hXiYEPnifvWK2tE33Q==
+"@nevermined-io/catalog-providers@0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@nevermined-io/catalog-providers/-/catalog-providers-0.4.0.tgz#8d0f7f944414d094dc137a0337dea6a79d6aa099"
+  integrity sha512-iqhp0hBJQ5+jvEvzoKAh0b5dy2GioA9PSL3njh8c9Dt0qk3+SzPx4nXkgWi2NRHoEI5I/7GO7i9la9v03vQWbQ==
   dependencies:
     ethers "^5.6.9"
     nodemon "^2.0.16"
 
-"@nevermined-io/nevermined-sdk-js@^0.25.0":
-  version "0.25.0"
-  resolved "https://registry.yarnpkg.com/@nevermined-io/nevermined-sdk-js/-/nevermined-sdk-js-0.25.0.tgz#620a8b9287bc2dcc63360d1104cbf2f618d3add3"
-  integrity sha512-U3qgMBUoKgJgNQ8ZsitvJxmyF9bIkIY28ktXFUBinmDgDc4AsVpJmiVZfCFpeF5/S8iF4sKJ2gjQrqHC/ETCaA==
+"@nevermined-io/nevermined-sdk-js@^0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@nevermined-io/nevermined-sdk-js/-/nevermined-sdk-js-0.25.2.tgz#2eabc65e12abfb8d541b2b53262b9cbf1f28b377"
+  integrity sha512-AiIg1jCEtrexFSY2Z/UU8v9UMPgik6pmbFECrEAWSd/8YbjBgGyMO9djVHtpdnd6jjWakd1mmPGV/bICZYEMlA==
   dependencies:
     "@nevermined-io/subgraphs" "0.4.1"
     assert "^2.0.0"
