@@ -28,6 +28,7 @@ import TabItem from '@theme/TabItem';
 
 ### Connecting to Nevermined
 
+Under the hood Nevermined has a set of Smart Contracts that allows Asset Providers to tokenize their assets and specify different conditions. This creates Service Execution Agreements. Assets could be anything from a JPEG to a music track, from a voting right to a data set.
 To connect to nevermined first we need to download the artifacts that contain the abis of the nevermined contracts from the artifacts repo.
 
 :::caution

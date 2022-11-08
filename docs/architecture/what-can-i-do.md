@@ -14,6 +14,8 @@ Nevermined enforces the delivery of these services in a secure way for
 asset owners/providers and the final users/consumers via the Nevermined
 Smart Contracts. 
 
+Nevermined is an omnichain interoperability protocol for the creation, minting and bridging of digital assets and non-fungible tokens (NFTs). The SDK, Catalogue and other tools it comproses seamlessly beam tokens across blockchains with complete data integrity, including persistent smart contract addresses and token IDs. Omnichain bridging unlocks new and exciting use cases by achieving true asset interactivity. 
+
 :::info
 
 Each asset registered in Nevermined can have associated more than one service.

@@ -30,11 +30,11 @@
 - [GenericOutput](interfaces/GenericOutput.md)
 - [MarketplaceAPIToken](interfaces/MarketplaceAPIToken.md)
 - [NFTDetails](interfaces/NFTDetails.md)
+- [NFTSModule](interfaces/NFTSModule.md)
 - [NeverminedProviderContext](interfaces/NeverminedProviderContext.md)
 - [NeverminedProviderProps](interfaces/NeverminedProviderProps.md)
 - [RegisterEvent](interfaces/RegisterEvent.md)
 - [SubscribeModule](interfaces/SubscribeModule.md)
-- [SubscriptionActions](interfaces/SubscriptionActions.md)
 - [Transfer](interfaces/Transfer.md)
 - [UserProfileParams](interfaces/UserProfileParams.md)
 
@@ -64,9 +64,9 @@
 
 #### Defined in
 
-[types/index.ts:34](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/types/index.ts#L34)
+[types/index.ts:33](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/types/index.ts#L33)
 
-[types/index.ts:35](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/types/index.ts#L35)
+[types/index.ts:34](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/types/index.ts#L34)
 
 ___
 
@@ -78,7 +78,7 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:355](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/types/index.ts#L355)
+[types/index.ts:337](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/types/index.ts#L337)
 
 ## Variables
 
@@ -88,9 +88,9 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:34](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/types/index.ts#L34)
+[types/index.ts:33](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/types/index.ts#L33)
 
-[types/index.ts:35](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/types/index.ts#L35)
+[types/index.ts:34](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/types/index.ts#L34)
 
 ## Functions
 
@@ -118,7 +118,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:43](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/utils/index.ts#L43)
+[utils/index.ts:43](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/utils/index.ts#L43)
 
 ___
 
@@ -144,7 +144,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:111](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/utils/index.ts#L111)
+[utils/index.ts:111](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/utils/index.ts#L111)
 
 ___
 
@@ -166,7 +166,7 @@ Returns current account registered in SDK
 
 #### Defined in
 
-[utils/index.ts:18](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/utils/index.ts#L18)
+[utils/index.ts:18](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/utils/index.ts#L18)
 
 ___
 
@@ -192,7 +192,7 @@ Return the result data of the request
 
 #### Defined in
 
-[utils/index.ts:140](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/utils/index.ts#L140)
+[utils/index.ts:140](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/utils/index.ts#L140)
 
 ___
 
@@ -216,7 +216,7 @@ Checks if object is empty
 
 #### Defined in
 
-[utils/index.ts:11](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/utils/index.ts#L11)
+[utils/index.ts:11](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/utils/index.ts#L11)
 
 ___
 
@@ -242,4 +242,4 @@ Array of object with the document id of each fullfilled events
 
 #### Defined in
 
-[utils/index.ts:82](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/utils/index.ts#L82)
+[utils/index.ts:82](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/utils/index.ts#L82)

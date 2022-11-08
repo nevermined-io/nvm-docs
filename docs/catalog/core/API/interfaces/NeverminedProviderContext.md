@@ -15,10 +15,10 @@ option 2: const { sdk, sdkError, isLoadingSdk, ...others } = Catalog.useNevermin
 - [account](NeverminedProviderContext.md#account)
 - [assets](NeverminedProviderContext.md#assets)
 - [isLoadingSDK](NeverminedProviderContext.md#isloadingsdk)
+- [nfts](NeverminedProviderContext.md#nfts)
 - [sdk](NeverminedProviderContext.md#sdk)
 - [sdkError](NeverminedProviderContext.md#sdkerror)
 - [subscribe](NeverminedProviderContext.md#subscribe)
-- [subscription](NeverminedProviderContext.md#subscription)
 - [updateSDK](NeverminedProviderContext.md#updatesdk)
 
 ## Properties
@@ -38,10 +38,6 @@ const Example = (props: ExampleProps) => {
  const { assets, account, isLoadingSDK } = Catalog.useNevermined();
  
  const buy = async () => {
-   if (!account.isTokenValid()) {
-     await account.generateToken();
-   }
- 
    (...)
  };
 }
@@ -65,7 +61,7 @@ const Example = (props: ExampleProps) => {
 
 #### Defined in
 
-[types/index.ts:273](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/types/index.ts#L273)
+[types/index.ts:260](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/types/index.ts#L260)
 
 ___
 
@@ -147,9 +143,6 @@ const Example = () => {
       amount: 0,
     };
  
-    if (!account.isTokenValid()) {
-      await account.generateToken();
-    }
     const response = await publishNFT1155({
       gatewayAddress: String(appConfig.gatewayAddress),
       assetRewards,
@@ -177,7 +170,7 @@ const Example = () => {
 
 #### Defined in
 
-[types/index.ts:236](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/types/index.ts#L236)
+[types/index.ts:227](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/types/index.ts#L227)
 
 ___
 
@@ -189,7 +182,65 @@ True if sdk is loading
 
 #### Defined in
 
-[types/index.ts:52](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/types/index.ts#L52)
+[types/index.ts:51](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/types/index.ts#L51)
+
+___
+
+### nfts
+
+• **nfts**: [`NFTSModule`](NFTSModule.md)
+
+`nfts` contains all the functionalities to handle nfts by payment
+
+**`Example`**
+
+Buy nfts example
+
+```tsx
+const BuyAsset = ({ddo}: {ddo: DDO}) => {
+ const { assets, account, isLoadingSDK, nfts, sdk } = Catalog.useNevermined();
+ const { walletAddress } = MetaMask.useWallet();
+ const [ownNFT1155, setOwnNFT1155] = useState(false);
+ const [isBought, setIsBought] = useState(false);
+ const [owner, setOwner] = useState('');
+ 
+ useEffect(() => {
+   (async () => {
+     setOwnNFT1155(await account.isNFT1155Holder(ddo.id, walletAddress));
+     setOwner(await sdk.assets.owner(ddo.id))
+   })()
+ }, [walletAddress, isBought])
+ 
+ const buy = async () => {
+   const response = await nfts.access(ddo.id, owner, BigNumber.from(1), 1155);
+   setIsBought(response);
+ };
+ 
+ const download = async () => {
+   await assets.downloadNFT(ddo.id);
+ };
+ 
+ return (
+   <div>
+     {ownNFT1155 ? (
+       <button onClick={download} disabled={isLoadingSDK}>
+         Download NFT
+       </button>
+     ) : (
+       owner !== walletAddress ?
+       <button onClick={buy} disabled={isLoadingSDK}>
+         buy
+       </button>
+       : <span>The owner cannot buy, please change the account to buy the NFT asset</span>
+     )}
+   </div>
+ );
+}
+```
+
+#### Defined in
+
+[types/index.ts:309](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/types/index.ts#L309)
 
 ___
 
@@ -201,7 +252,7 @@ Nevermined sdk instance which has all the core functionalities
 
 #### Defined in
 
-[types/index.ts:48](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/types/index.ts#L48)
+[types/index.ts:47](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/types/index.ts#L47)
 
 ___
 
@@ -213,7 +264,7 @@ Error message from sdk
 
 #### Defined in
 
-[types/index.ts:50](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/types/index.ts#L50)
+[types/index.ts:49](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/types/index.ts#L49)
 
 ___
 
@@ -229,16 +280,11 @@ Subcribe payment event:
 
 ```tsx
 const Example = () => {
- const { subscribe, subscription, account, isLoadingSDK} = Catalog.useNevermined();
+ const { nfts, subscription, account, isLoadingSDK} = Catalog.useNevermined();
  const { paymentEvent, setPaymentEvent } = useState<ContractEventSubscription>();
 
  const buy = async () => {
-  if (!account.isTokenValid()) {
-    await account.generateToken();
-  }
-
-  const currentAccount = await getCurrentAccount(sdk);
-  const response = await subscription.buySubscription(ddo.id, currentAccount, owner, BigNumber.from(1), 1155);
+  const response = await nfts.access(ddo.id, owner, BigNumber.from(1), 1155);
  };
 
  const stopLog = () => {
@@ -271,70 +317,7 @@ const Example = () => {
 
 #### Defined in
 
-[types/index.ts:132](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/types/index.ts#L132)
-
-___
-
-### subscription
-
-• **subscription**: [`SubscriptionActions`](SubscriptionActions.md)
-
-`subscription` contains all the functionalities to handle asset subscritions by payment
-
-**`Example`**
-
-Buy subscription example
-
-```tsx
-const BuyAsset = ({ddo}: {ddo: DDO}) => {
- const { assets, account, isLoadingSDK, subscription, sdk } = Catalog.useNevermined();
- const { walletAddress } = MetaMask.useWallet();
- const [ownNFT1155, setOwnNFT1155] = useState(false);
- const [isBought, setIsBought] = useState(false);
- const [owner, setOwner] = useState('');
- 
- useEffect(() => {
-   (async () => {
-     setOwnNFT1155(await account.isNFT1155Holder(ddo.id, walletAddress));
-     setOwner(await sdk.assets.owner(ddo.id))
-   })()
- }, [walletAddress, isBought])
- 
- const buy = async () => {
-   if (!account.isTokenValid()) {
-     await account.generateToken();
-   }
- 
-   const currentAccount = await getCurrentAccount(sdk);
-   const response = await subscription.buySubscription(ddo.id, currentAccount, owner, BigNumber.from(1), 1155);
-   setIsBought(response);
- };
- 
- const download = async () => {
-   await assets.downloadNFT(ddo.id);
- };
- 
- return (
-   <div>
-     {ownNFT1155 ? (
-       <button onClick={download} disabled={isLoadingSDK}>
-         Download NFT
-       </button>
-     ) : (
-       owner !== walletAddress ?
-       <button onClick={buy} disabled={isLoadingSDK}>
-         buy
-       </button>
-       : <span>The owner cannot buy, please change the account to buy the NFT asset</span>
-     )}
-   </div>
- );
-}
-```
-
-#### Defined in
-
-[types/index.ts:327](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/types/index.ts#L327)
+[types/index.ts:126](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/types/index.ts#L126)
 
 ___
 
@@ -386,4 +369,4 @@ const Example = (props: ExampleProps) => {
 
 #### Defined in
 
-[types/index.ts:83](https://github.com/nevermined-io/components-catalog/blob/2da13f5/lib/src/types/index.ts#L83)
+[types/index.ts:82](https://github.com/nevermined-io/components-catalog/blob/28115b3/lib/src/types/index.ts#L82)
