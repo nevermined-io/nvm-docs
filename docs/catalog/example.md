@@ -242,7 +242,7 @@ The main component of the example, it pulls the rest of the components and also 
 
 ```tsx
 const App = () => {
-  const { isLoadingSDK, sdk, account } = Catalog.useNevermined()
+  const { isLoadingSDK, sdk } = Catalog.useNevermined()
   const { publishNFT1155 } = AssetService.useAssetPublish()
   const { walletAddress } = MetaMask.useWallet()
   const [ddo, setDDO] = useState<DDO>({} as DDO)
@@ -333,14 +333,11 @@ Now let's put everything together.
 ```tsx
 import AssetRewards from '@nevermined-io/nevermined-sdk-js/dist/node/models/AssetRewards'
 import React, { useEffect, useState } from 'react'
-import { MetaData, Logger, DDO } from '@nevermined-io/nevermined-sdk-js'
-import BigNumber from '@nevermined-io/nevermined-sdk-js/dist/node/utils/BigNumber'
-import { Catalog, AssetService, RoyaltyKind } from '@nevermined-io/catalog-core'
-import { getCurrentAccount } from '@nevermined-io/catalog-core'
+import { Catalog, AssetService, RoyaltyKind, BigNumber, getRoyaltyScheme, getCurrentAccount, MetaData, DDO } from '@nevermined-io/catalog-core'
 import { MetaMask } from '@nevermined-io/catalog-providers'
 import { UiText, UiLayout, BEM, UiButton } from '@nevermined-io/styles'
 import styles from './example.module.scss'
-import { appConfig, erc20TokenAddress } from './config'
+import { appConfig } from './config'
 
 const ERC_TOKEN = '0xe11a86849d99f524cac3e7a0ec1241828e332c62'
 
@@ -441,7 +438,7 @@ const MMWallet = () => {
 }
 
 const App = () => {
-  const { isLoadingSDK, sdk, account } = Catalog.useNevermined()
+  const { isLoadingSDK, sdk } = Catalog.useNevermined()
   const { publishNFT1155 } = AssetService.useAssetPublish()
   const { walletAddress } = MetaMask.useWallet()
   const [ddo, setDDO] = useState<DDO>({} as DDO)
@@ -464,7 +461,7 @@ const App = () => {
   const onPublish = async () => {
     try {
       const publisher = await getCurrentAccount(sdk)
-      const assetRewardsMap = const assetRewardsMap = new Map([
+      const assetRewardsMap = new Map([
         [publisher.getId(), BigNumber.from(1)]
       ])
       const assetRewards = new AssetRewards(assetRewardsMap)
