@@ -108,7 +108,7 @@ const MMWallet = () => {
 }
 
 const App = ({ config }: {config: Config}) => {
-  const { isLoadingSDK, sdk, assets } = Catalog.useNevermined()
+  const { isLoadingSDK, sdk } = Catalog.useNevermined()
   const { publishNFT1155 } = AssetService.useAssetPublish()
   const { walletAddress } = MetaMask.useWallet()
   const [ddo, setDDO] = useState<DDO>({} as DDO)
@@ -133,9 +133,8 @@ const App = ({ config }: {config: Config}) => {
     try {
       const publisher = await getCurrentAccount(sdk)
 
-      const ercToken = await assets.getCustomErc20Token(ERC_TOKEN)
       const assetRewardsMap = new Map([
-        [publisher.getId(), BigNumber.parseUnits('1', ercToken.decimals)]
+        [publisher.getId(), BigNumber.from(1)]
       ])
   
       const assetRewards = new AssetRewards(assetRewardsMap)

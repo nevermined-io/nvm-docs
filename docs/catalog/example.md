@@ -242,7 +242,7 @@ The main component of the example, it pulls the rest of the components and also 
 
 ```tsx
 const App = () => {
-  const { isLoadingSDK, sdk, account, assets } = Catalog.useNevermined()
+  const { isLoadingSDK, sdk, account } = Catalog.useNevermined()
   const { publishNFT1155 } = AssetService.useAssetPublish()
   const { walletAddress } = MetaMask.useWallet()
   const [ddo, setDDO] = useState<DDO>({} as DDO)
@@ -270,11 +270,10 @@ const App = () => {
   const onPublish = async () => {
     try {
       const publisher = await getCurrentAccount(sdk)
-      const ercToken = await assets.getCustomErc20Token(ERC_TOKEN) // ERC_TOKEN contains the address token which is used to pay fees, rewards and royalties
 
       // Here we set the rewards that will receive the publisher
       const assetRewardsMap = new Map([
-        [publisher.getId(), BigNumber.parseUnits('1', ercToken.decimals)]
+        [publisher.getId(), BigNumber.from(1)]
       ])
       const assetRewards = new AssetRewards(assetRewardsMap)
 
@@ -442,7 +441,7 @@ const MMWallet = () => {
 }
 
 const App = () => {
-  const { isLoadingSDK, sdk, account, assets } = Catalog.useNevermined()
+  const { isLoadingSDK, sdk, account } = Catalog.useNevermined()
   const { publishNFT1155 } = AssetService.useAssetPublish()
   const { walletAddress } = MetaMask.useWallet()
   const [ddo, setDDO] = useState<DDO>({} as DDO)
@@ -465,9 +464,8 @@ const App = () => {
   const onPublish = async () => {
     try {
       const publisher = await getCurrentAccount(sdk)
-      const ercToken = await assets.getCustomErc20Token(ERC_TOKEN)
       const assetRewardsMap = const assetRewardsMap = new Map([
-        [publisher.getId(), BigNumber.parseUnits('1', ercToken.decimals)]
+        [publisher.getId(), BigNumber.from(1)]
       ])
       const assetRewards = new AssetRewards(assetRewardsMap)
 

@@ -182,11 +182,8 @@ const App = ({config}: {config: Config }) => {
 
   const onPublish = async () => {
     try {
-      const customErc20Token = await sdk.contracts.loadErc20(ERC_TOKEN)
-      const tokeDecimals = await customErc20Token.decimals()
-
       const assetRewardsMap = new Map([
-        [account.getId(), BigNumber.parseUnits('1', tokeDecimals)]
+        [account.getId(), BigNumber.from(1)]
       ])
 
       const assetRewards = new AssetRewards(assetRewardsMap)

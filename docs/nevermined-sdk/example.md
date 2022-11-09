@@ -237,13 +237,9 @@ const App = ({config}: {config: Config }) => {
 
   const onPublish = async () => {
     try {
-      const customErc20Token = await sdk.contracts.loadErc20(ERC_TOKEN) // ERC_TOKEN contains the address token which is used to pay fees, rewards and royalties
-
-      const tokeDecimals = await customErc20Token.decimals()
-
       // Here we set the rewards that will receive the publisher
       const assetRewardsMap = new Map([
-        [account.getId(), BigNumber.parseUnits('1', tokeDecimals)]
+        [account.getId(), BigNumber.from(1)]
       ])
       const assetRewards = new AssetRewards(assetRewardsMap)
 
@@ -499,11 +495,8 @@ const App = ({config}: {config: Config }) => {
 
   const onPublish = async () => {
     try {
-      const customErc20Token = await sdk.contracts.loadErc20(ERC_TOKEN)
-      const tokeDecimals = await customErc20Token.decimals()
-
       const assetRewardsMap = new Map([
-        [account.getId(), BigNumber.parseUnits('1', tokeDecimals)]
+        [account.getId(), BigNumber.from(1)]
       ])
 
       const assetRewards = new AssetRewards(assetRewardsMap)
