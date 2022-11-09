@@ -7,10 +7,11 @@ import styles from './styles.module.scss'
 const b = BEM('query-assets', styles)
 
 interface SearchAssets {
-  name?: boolean;
-  additionalInformation?: boolean;
-  priceRange?: boolean;
-  filters?: boolean;
+  name?: boolean
+  additionalInformation?: boolean
+  priceRange?: boolean
+  filters?: boolean
+  complexSort: boolean
 }
 
 const QuerySearchByName = ({ assetsModule }: { assetsModule: AssetsModule}) => {
@@ -364,6 +365,62 @@ const QuerySearchByFilters = ({ assetsModule }: { assetsModule: AssetsModule}) =
   )
 }
 
+const QuerySearchSortByPrice = ({ assetsModule }: { assetsModule: AssetsModule}) => {
+  const [ ddos, setDdos ] = useState<DDO[]>([])
+
+  useEffect(() => {
+    onSearch({})
+  }, [])
+
+  const onSearch = async(query: unknown) => {
+    const response = await assetsModule.query(query)
+
+    setDdos(response.results || [])
+  }
+
+  return (
+    <>
+      <UiForm>
+        <UiButton title='Search' type='secondary' onClick={() => onSearch({
+          sort: [
+            {
+              'service.attributes.additionalInformation.priceHighestDenomination': {
+                order: 'asc',
+                nested: {
+                  path: 'service'
+                }
+              }
+            }
+          ]
+        })}>Sort</UiButton>
+      </UiForm>
+
+      {ddos.slice(0,3).map(ddo =>
+
+        <UiLayout key={ddo.id} className={b('item')}>
+          <UiLayout>
+            <UiText>Asset name: </UiText>
+            <UiText>{ddo.service[0].attributes.main.name }</UiText>
+          </UiLayout>
+          <UiLayout>
+            <UiText>Asset id: </UiText>
+            <UiText>{ddo.id}</UiText>
+          </UiLayout>
+          <UiLayout>
+            <UiText>Creator id: </UiText>
+            <UiText>{ ddo.proof.creator }</UiText>
+          </UiLayout>
+          <UiLayout>
+            <UiText>Price: </UiText>
+            <UiText>{ ddo.service[2].attributes.additionalInformation.priceHighestDenomination }</UiText>
+          </UiLayout>
+        </UiLayout>
+        
+      )}
+    </>
+  )
+}
+
 const QuerySearch = (searchAssets: SearchAssets) => {
   const { assets, isLoadingSDK } = Catalog.useNevermined()
 
@@ -375,6 +432,7 @@ const QuerySearch = (searchAssets: SearchAssets) => {
           {searchAssets.additionalInformation && <QuerySearchByAdditionalInfo assetsModule={assets}/>}
           {searchAssets.priceRange && <QuerySearchByPriceRange assetsModule={assets}/>}
           {searchAssets.filters && <QuerySearchByFilters assetsModule={assets}/>}
+          {searchAssets.complexSort && <QuerySearchSortByPrice assetsModule={assets}/>}
         </>
       )}
     </div>
@@ -391,6 +449,7 @@ const QueryAssets = (searchAssets: SearchAssets ) => {
         additionalInformation={searchAssets.additionalInformation}  
         priceRange={searchAssets.priceRange}
         filters={searchAssets.filters}
+        complexSort={searchAssets.complexSort}
       />
     </Catalog.NeverminedProvider>
   )

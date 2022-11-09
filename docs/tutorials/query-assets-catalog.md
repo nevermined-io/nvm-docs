@@ -409,11 +409,82 @@ const QuerySearchByFilters = () => {
       )}
     </>
   )
-};
+}
 ```
 
 ### Demo
 
 <BrowserOnly fallback={<div>Loading search assets by filters...</div>}>
  {()=> <QueryAssets filters={true}/>}
+</BrowserOnly>
+
+## Sort in big objects
+
+We can sort by prop included under several levels of an object:
+
+### Code
+
+```tsx
+const QuerySearchSortByPrice = () => {
+  const { assets } = Catalog.useNevermined()
+  const [ ddos, setDdos ] = useState<DDO[]>([])
+
+  useEffect(() => {
+    onSearch({})
+  }, [])
+
+  const onSearch = async(query: unknown) => {
+    const response = await assetsModule.query(query)
+
+    setDdos(response.results || [])
+  }
+
+  return (
+    <>
+      <UiForm>
+        <UiButton title='Search' type='secondary' onClick={() => onSearch({
+          sort: [
+            {
+              'service.attributes.additionalInformation.priceHighestDenomination': {
+                order: 'asc',
+                nested: {
+                  path: 'service'
+                }
+              }
+            }
+          ]
+        })}>Sort</UiButton>
+      </UiForm>
+
+      {ddos.slice(0,3).map(ddo =>
+
+        <UiLayout key={ddo.id} className={b('item')}>
+          <UiLayout>
+            <UiText>Asset name: </UiText>
+            <UiText>{ddo.service[0].attributes.main.name }</UiText>
+          </UiLayout>
+          <UiLayout>
+            <UiText>Asset id: </UiText>
+            <UiText>{ddo.id}</UiText>
+          </UiLayout>
+          <UiLayout>
+            <UiText>Creator id: </UiText>
+            <UiText>{ ddo.proof.creator }</UiText>
+          </UiLayout>
+          <UiLayout>
+            <UiText>Price: </UiText>
+            <UiText>{ ddo.service[2].attributes.additionalInformation.priceHighestDenomination }</UiText>
+          </UiLayout>
+        </UiLayout>
+        
+      )}
+    </>
+  )
+}
+```
+
+### Demo
+
+<BrowserOnly fallback={<div>Loading search assets sorting in big objects...</div>}>
+ {()=> <QueryAssets complexSort={true}/>}
 </BrowserOnly>
