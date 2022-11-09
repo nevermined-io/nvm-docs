@@ -9,6 +9,8 @@ import { ethers } from 'ethers'
 import styles from './styles.module.scss'
 import { appConfig } from '../config'
 
+const ERC_TOKEN = '0xe11a86849d99f524cac3e7a0ec1241828e332c62'
+
 const b = BEM('demo', styles)
 
 const SDKInstance = () => {
@@ -39,40 +41,6 @@ const SingleAsset = ({ddo}: {ddo: DDO}) => {
       <UiText className={b('ddo')} variants={['detail']}>{JSON.stringify(ddo)}</UiText>
     </>
   )
-}
-
-const constructRewardMap = (
-  recipientsData: any[],
-  priceWithoutFee: number,
-  ownerWalletAddress: string
-): Map<string, BigNumber> => {
-  const rewardMap: Map<string, BigNumber> = new Map()
-  let recipients: any = []
-  if (recipientsData.length === 1 && recipientsData[0].split === 0) {
-    recipients = [
-      {
-        name: ownerWalletAddress,
-        split: 100,
-        walletAddress: ownerWalletAddress
-      }
-    ]
-  }
-  let totalWithoutUser = 0
-
-  recipients.forEach((recipient: any) => {
-    if (recipient.split && recipient.split > 0) {
-      const ownSplit = ((priceWithoutFee * recipient.split) / 100).toFixed()
-      rewardMap.set(recipient.walletAddress, BigNumber.from(+ownSplit))
-      totalWithoutUser += recipient.split
-    }
-  })
-
-  if (!rewardMap.has(ownerWalletAddress)) {
-    const ownSplitReinforced = +((priceWithoutFee * (100 - totalWithoutUser)) / 100).toFixed()
-    rewardMap.set(ownerWalletAddress, BigNumber.from(ownSplitReinforced))
-  }
-
-  return rewardMap
 }
 
 const PublishAsset = ({onPublish}: {onPublish: () => void}) => {
@@ -140,7 +108,7 @@ const MMWallet = () => {
 }
 
 const App = ({ config }: {config: Config}) => {
-  const { isLoadingSDK, sdk } = Catalog.useNevermined()
+  const { isLoadingSDK, sdk, assets } = Catalog.useNevermined()
   const { publishNFT1155 } = AssetService.useAssetPublish()
   const { walletAddress } = MetaMask.useWallet()
   const [ddo, setDDO] = useState<DDO>({} as DDO)
@@ -164,8 +132,12 @@ const App = ({ config }: {config: Config}) => {
   const onPublish = async () => {
     try {
       const publisher = await getCurrentAccount(sdk)
-      const rewardsRecipients: any[] = []
-      const assetRewardsMap = constructRewardMap(rewardsRecipients, 100, publisher.getId())
+
+      const ercToken = await assets.getCustomErc20Token(ERC_TOKEN)
+      const assetRewardsMap = new Map([
+        [publisher.getId(), BigNumber.parseUnits('1', ercToken.decimals)]
+      ])
+  
       const assetRewards = new AssetRewards(assetRewardsMap)
       const networkFee = await sdk.keeper.nvmConfig.getNetworkFee()
       const feeReceiver = await sdk.keeper.nvmConfig.getFeeReceiver()
@@ -186,7 +158,7 @@ const App = ({ config }: {config: Config}) => {
         preMint: true,
         cap: BigNumber.from(100),
         royaltyAttributes,
-        erc20TokenAddress: "0xe11a86849d99f524cac3e7a0ec1241828e332c62",
+        erc20TokenAddress: ERC_TOKEN,
       })
 
       setDDO(response as DDO)
@@ -216,6 +188,7 @@ const App = ({ config }: {config: Config}) => {
 export const DemoCatalog = () => {
   const config: Config = appConfig()
   config.web3Provider = typeof window !== 'undefined'
+  // eslint-disable-next-line
     ? (window as any)?.ethereum
     : new ethers.providers.JsonRpcProvider('https://matic-mumbai.chainstacklabs.com')
 

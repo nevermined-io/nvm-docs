@@ -159,45 +159,6 @@ const SingleAsset = ({ddo}: {ddo: DDO}) => {
 }
 ```
 
-### constructRewardMap
-This function builds the logic of the rewards which the owner will receive after selling the NFT1155
-
-```tsx
-const constructRewardMap = (
-  recipientsData: any[],
-  priceWithoutFee: number,
-  ownerWalletAddress: string
-): Map<string, BigNumber> => {
-  const rewardMap: Map<string, BigNumber> = new Map()
-  let recipients: any = []
-  if (recipientsData.length === 1 && recipientsData[0].split === 0) {
-    recipients = [
-      {
-        name: ownerWalletAddress,
-        split: 100,
-        walletAddress: ownerWalletAddress
-      }
-    ]
-  }
-  let totalWithoutUser = 0
-
-  recipients.forEach((recipient: any) => {
-    if (recipient.split && recipient.split > 0) {
-      const ownSplit = ((priceWithoutFee * recipient.split) / 100).toFixed()
-      rewardMap.set(recipient.walletAddress, BigNumber.from(+ownSplit))
-      totalWithoutUser += recipient.split
-    }
-  })
-
-  if (!rewardMap.has(ownerWalletAddress)) {
-    const ownSplitReinforced = +((priceWithoutFee * (100 - totalWithoutUser)) / 100).toFixed()
-    rewardMap.set(ownerWalletAddress, BigNumber.from(ownSplitReinforced))
-  }
-
-  return rewardMap
-}
-```
-
 ### PublishAsset
 It renders a button used to publish a new [NFT](../architecture/specs/Spec-NFT.md)
 
@@ -281,7 +242,7 @@ The main component of the example, it pulls the rest of the components and also 
 
 ```tsx
 const App = () => {
-  const { isLoadingSDK, sdk, account } = Catalog.useNevermined()
+  const { isLoadingSDK, sdk, account, assets } = Catalog.useNevermined()
   const { publishNFT1155 } = AssetService.useAssetPublish()
   const { walletAddress } = MetaMask.useWallet()
   const [ddo, setDDO] = useState<DDO>({} as DDO)
@@ -309,12 +270,20 @@ const App = () => {
   const onPublish = async () => {
     try {
       const publisher = await getCurrentAccount(sdk)
-      const rewardsRecipients: any[] = []
-      const assetRewardsMap = constructRewardMap(rewardsRecipients, BigNumber.from(100), publisher.getId())
+      const ercToken = await assets.getCustomErc20Token(ERC_TOKEN) // ERC_TOKEN contains the address token which is used to pay fees, rewards and royalties
+
+      // Here we set the rewards that will receive the publisher
+      const assetRewardsMap = new Map([
+        [publisher.getId(), BigNumber.parseUnits('1', ercToken.decimals)]
+      ])
       const assetRewards = new AssetRewards(assetRewardsMap)
 
+      // We need to set network fees
+      const networkFee = await sdk.keeper.nvmConfig.getNetworkFee()
+      const feeReceiver = await sdk.keeper.nvmConfig.getFeeReceiver()
       assetRewards.addNetworkFees(feeReceiver, BigNumber.from(networkFee))
 
+      // This set the royalties that will receive for each sold
       const royaltyAttributes = {
         royaltyKind: RoyaltyKind.Standard,
         scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
@@ -374,6 +343,8 @@ import { UiText, UiLayout, BEM, UiButton } from '@nevermined-io/styles'
 import styles from './example.module.scss'
 import { appConfig, erc20TokenAddress } from './config'
 
+const ERC_TOKEN = '0xe11a86849d99f524cac3e7a0ec1241828e332c62'
+
 const b = BEM('example', styles)
 
 const SDKInstance = () => {
@@ -404,40 +375,6 @@ const SingleAsset = ({ddo}: {ddo: DDO}) => {
       <UiText className={b('ddo')} variants={['detail']}>{JSON.stringify(ddo)}</UiText>
     </>
   )
-}
-
-const constructRewardMap = (
-  recipientsData: any[],
-  priceWithoutFee: number,
-  ownerWalletAddress: string
-): Map<string, BigNumber> => {
-  const rewardMap: Map<string, BigNumber> = new Map()
-  let recipients: any = []
-  if (recipientsData.length === 1 && recipientsData[0].split === 0) {
-    recipients = [
-      {
-        name: ownerWalletAddress,
-        split: 100,
-        walletAddress: ownerWalletAddress
-      }
-    ]
-  }
-  let totalWithoutUser = 0
-
-  recipients.forEach((recipient: any) => {
-    if (recipient.split && recipient.split > 0) {
-      const ownSplit = ((priceWithoutFee * recipient.split) / 100).toFixed()
-      rewardMap.set(recipient.walletAddress, BigNumber.from(+ownSplit))
-      totalWithoutUser += recipient.split
-    }
-  })
-
-  if (!rewardMap.has(ownerWalletAddress)) {
-    const ownSplitReinforced = +((priceWithoutFee * (100 - totalWithoutUser)) / 100).toFixed()
-    rewardMap.set(ownerWalletAddress, BigNumber.from(ownSplitReinforced))
-  }
-
-  return rewardMap
 }
 
 const PublishAsset = ({onPublish}: {onPublish: () => void}) => {
@@ -505,7 +442,7 @@ const MMWallet = () => {
 }
 
 const App = () => {
-  const { isLoadingSDK, sdk, account } = Catalog.useNevermined()
+  const { isLoadingSDK, sdk, account, assets } = Catalog.useNevermined()
   const { publishNFT1155 } = AssetService.useAssetPublish()
   const { walletAddress } = MetaMask.useWallet()
   const [ddo, setDDO] = useState<DDO>({} as DDO)
@@ -528,9 +465,12 @@ const App = () => {
   const onPublish = async () => {
     try {
       const publisher = await getCurrentAccount(sdk)
-      const rewardsRecipients: any[] = []
-      const assetRewardsMap = constructRewardMap(rewardsRecipients, BigNumber.from(100), publisher.getId())
+      const ercToken = await assets.getCustomErc20Token(ERC_TOKEN)
+      const assetRewardsMap = const assetRewardsMap = new Map([
+        [publisher.getId(), BigNumber.parseUnits('1', ercToken.decimals)]
+      ])
       const assetRewards = new AssetRewards(assetRewardsMap)
+
       const networkFee = await sdk.keeper.nvmConfig.getNetworkFee()
       const feeReceiver = await sdk.keeper.nvmConfig.getFeeReceiver()
       assetRewards.addNetworkFees(feeReceiver, BigNumber.from(networkFee))

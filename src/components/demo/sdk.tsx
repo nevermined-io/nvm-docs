@@ -8,6 +8,8 @@ import { ethers } from 'ethers'
 import { appConfig } from '../config'
 import styles from './styles.module.scss'
 
+const ERC_TOKEN = '0xe11a86849d99f524cac3e7a0ec1241828e332c62'
+
 const b = BEM('demo', styles)
 
 Logger.setLevel(3)
@@ -15,40 +17,6 @@ Logger.setLevel(3)
 const loginMarketplace = async (sdk: Nevermined, account: Account) => {
   const clientAssertion = await sdk.utils.jwt.generateClientAssertion(account)
   await sdk.marketplace.login(clientAssertion)
-}
-
-const constructRewardMap = (
-  recipientsData: any[],
-  priceWithoutFee: number,
-  ownerWalletAddress: string
-): Map<string, BigNumber> => {
-  const rewardMap: Map<string, BigNumber> = new Map()
-  let recipients: any = []
-  if (recipientsData.length === 1 && recipientsData[0].split === 0) {
-    recipients = [
-      {
-        name: ownerWalletAddress,
-        split: 100,
-        walletAddress: ownerWalletAddress
-      }
-    ]
-  }
-  let totalWithoutUser = 0
-
-  recipients.forEach((recipient: any) => {
-    if (recipient.split && recipient.split > 0) {
-      const ownSplit = ((priceWithoutFee * recipient.split) / 100).toFixed()
-      rewardMap.set(recipient.walletAddress, BigNumber.from(+ownSplit))
-      totalWithoutUser += recipient.split
-    }
-  })
-
-  if (!rewardMap.has(ownerWalletAddress)) {
-    const ownSplitReinforced = +((priceWithoutFee * (100 - totalWithoutUser)) / 100).toFixed()
-    rewardMap.set(ownerWalletAddress, BigNumber.from(ownSplitReinforced))
-  }
-
-  return rewardMap
 }
 
 const PublishAsset = ({onPublish, }: {onPublish: () => void }) => {
@@ -139,6 +107,7 @@ const App = ({config}: {config: Config }) => {
   const [walletAddress, setWalletAddress] = useState('')
 
   const loginMetamask = async () => {
+    // eslint-disable-next-line
     const response = await (window as any)?.ethereum?.request?.({
       method: "eth_requestAccounts",
     })
@@ -147,6 +116,7 @@ const App = ({config}: {config: Config }) => {
   }
 
   useEffect(() => {
+    // eslint-disable-next-line
     (window as any)?.ethereum?.on("accountsChanged", (newAccount: string[]) => {
       if (newAccount && newAccount.length > 0) {
           setWalletAddress(
@@ -159,6 +129,7 @@ const App = ({config}: {config: Config }) => {
     });
 
     (async() => {
+      // eslint-disable-next-line
       const provider = new ethers.providers.Web3Provider((window as any).ethereum)
       const accounts = await provider.listAccounts()
       setWalletAddress(
@@ -202,7 +173,7 @@ const App = ({config}: {config: Config }) => {
       royaltyAttributes,
       assetRewards,
       BigNumber.from(1),
-      "0xe11a86849d99f524cac3e7a0ec1241828e332c62",
+      ERC_TOKEN,
       true,
     )
 
@@ -211,8 +182,13 @@ const App = ({config}: {config: Config }) => {
 
   const onPublish = async () => {
     try {
-      const rewardsRecipients: any[] = []
-      const assetRewardsMap = constructRewardMap(rewardsRecipients, 100, account.getId())
+      const customErc20Token = await sdk.contracts.loadErc20(ERC_TOKEN)
+      const tokeDecimals = await customErc20Token.decimals()
+
+      const assetRewardsMap = new Map([
+        [account.getId(), BigNumber.parseUnits('1', tokeDecimals)]
+      ])
+
       const assetRewards = new AssetRewards(assetRewardsMap)
       const royaltyAttributes = {
         royaltyKind: RoyaltyKind.Standard,
@@ -281,6 +257,7 @@ const App = ({config}: {config: Config }) => {
 export const DemoSDK = () => {
   const config: Config = appConfig()
   config.web3Provider = typeof window !== 'undefined'
+  // eslint-disable-next-line
   ? (window as any)?.ethereum
   : new ethers.providers.JsonRpcProvider('https://matic-mumbai.chainstacklabs.com')
 
