@@ -258,7 +258,7 @@ const App = () => {
       files: [{
         index: 0,
         contentType: 'application/json',
-        url: 'https://github.com/nevermined-io/docs/blob/master/docs/architecture/specs/metadata/examples/ddo-example.json'
+        url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg'
       }],
       type: 'dataset',
       author: '',
@@ -269,11 +269,9 @@ const App = () => {
 
   const onPublish = async () => {
     try {
-      const publisher = await getCurrentAccount(sdk)
-
       // Here we set the rewards that will receive the publisher
       const assetRewardsMap = new Map([
-        [publisher.getId(), BigNumber.from(1)]
+        [walletAddress, BigNumber.from(1)]
       ])
       const assetRewards = new AssetRewards(assetRewardsMap)
 
@@ -333,7 +331,7 @@ Now let's put everything together.
 ```tsx
 import AssetRewards from '@nevermined-io/nevermined-sdk-js/dist/node/models/AssetRewards'
 import React, { useEffect, useState } from 'react'
-import { Catalog, AssetService, RoyaltyKind, BigNumber, getRoyaltyScheme, getCurrentAccount, MetaData, DDO } from '@nevermined-io/catalog-core'
+import { Catalog, AssetService, RoyaltyKind, BigNumber, getRoyaltyScheme, MetaData, DDO } from '@nevermined-io/catalog-core'
 import { MetaMask } from '@nevermined-io/catalog-providers'
 import { UiText, UiLayout, BEM, UiButton } from '@nevermined-io/styles'
 import styles from './example.module.scss'
@@ -449,7 +447,7 @@ const App = () => {
       files: [{
         index: 0,
         contentType: 'application/json',
-        url: 'https://github.com/nevermined-io/docs/blob/master/docs/architecture/specs/metadata/examples/ddo-example.json'
+        url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg'
       }],
       type: 'dataset',
       author: '',
@@ -460,9 +458,8 @@ const App = () => {
 
   const onPublish = async () => {
     try {
-      const publisher = await getCurrentAccount(sdk)
       const assetRewardsMap = new Map([
-        [publisher.getId(), BigNumber.from(1)]
+        [walletAddress, BigNumber.from(1)]
       ])
       const assetRewards = new AssetRewards(assetRewardsMap)
 
