@@ -35,13 +35,13 @@ parameters:
           description: The amount of NFTs to transfer.
 responses:
   200:
-    description: The gateway successfuly transfered the NFT
+    description: The node successfuly transfered the NFT
   400:
     description: The asset associated with the agreementId does not contain an NFT Sales service.
   402:
     description: The nftReceiver has not locked the payment.
   405:
-    description: The nftHolder has not approved the gateway to perform the NFT transfer.
+    description: The nftHolder has not approved the node to perform the NFT transfer.
   406:
     description: The nftHolder does not have enough nfts to transfer.
   500:

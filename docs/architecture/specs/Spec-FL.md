@@ -99,10 +99,10 @@ to execute
 
 1. The CONSUMER / Data Scientist locks the payment for the service
 1. The CONSUMER / Data scientist provides a DID for the workflow to execute
-   - The gateway could potentially provide specific endpoints for this since the
+   - The Node could potentially provide specific endpoints for this since the
    workflow is always the same. The only thing that changes is the parameters to
     configure the coordinator
-1. The Gateway checks if the CONSUMER / Data scientist as the permissions to
+1. The Node checks if the CONSUMER / Data scientist as the permissions to
   start a new coordinator
 1. The Nevermined compute stack starts a new coordinator
 1. The url to connect to the coordinator is published (need to figure out how)
@@ -147,7 +147,7 @@ The main requirements are:
 
 1. The CONSUMER / Data Scientist locks the payment
 1. The CONSUMER / Data Scientist requests the execution of the participant
-1. The Gateway checks if the CONSUMER / Data Scientist has the permissions to
+1. The NODE checks if the CONSUMER / Data Scientist has the permissions to
    execute the participant on the data
 1. The Nevermined compute sets up the environment
 1. The participants access the data and performs the machine learning task
@@ -293,7 +293,7 @@ The main information that needs to be provided is:
     {
       "type": "fl-coordinator",
       "index": 2,
-      "serviceEndpoint": "http://mygateway.org/api/v1/gateway/services/execute",
+      "serviceEndpoint": "http://mygateway.org/api/v1/node/services/execute",
       "templateId": "804932804923850985093485039850349850439583409583404534231321131a",
       "attributes": {
         "main": {

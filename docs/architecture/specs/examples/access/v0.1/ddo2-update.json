@@ -36,12 +36,12 @@
       {
          "type":"Access",
          "index":0,
-         "serviceEndpoint":"http://mygateway.org/api/v1/gateway/services/consume?pubKey=${pubKey}&serviceId={serviceId}&url={url}"
+         "serviceEndpoint":"http://mygateway.org/api/v1/node/services/consume?pubKey=${pubKey}&serviceId={serviceId}&url={url}"
       },
       {
          "type":"Compute",
          "index":1,
-         "serviceEndpoint":"http://mygateway.org/api/v1/gateway/services/compute?pubKey=${pubKey}&serviceId={serviceId}&algo={algo}&container={container}"
+         "serviceEndpoint":"http://mygateway.org/api/v1/node/services/compute?pubKey=${pubKey}&serviceId={serviceId}&algo={algo}&container={container}"
       },
       {
          "type":"metadata",

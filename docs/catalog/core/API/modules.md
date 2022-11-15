@@ -132,7 +132,7 @@ Order transfer asset to a new owner
 | :------ | :------ | :------ |
 | `orderParams` | `Object` |  |
 | `orderParams.ddo` | `DDO` | Asset object |
-| `orderParams.gatewayAddress` | `string` | Address of gateway to allow handle the asset transaction |
+| `orderParams.nodeAddress` | `string` | Address of the Nevermiend Node to allow handle the asset transaction |
 | `orderParams.newOwner` | `default` | Address of the new owner who will be transferred the asset |
 | `orderParams.sdk` | `Nevermined` | Instance of SDK object |
 

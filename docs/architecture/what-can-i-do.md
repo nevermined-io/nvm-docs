@@ -42,7 +42,7 @@ the `access` service. Everything I have to specify is:
 
 * The Metadata of the asset. That will help to discover the asset.
 * The payment conditions. What's the price, what token will be used (erc20 or native), etc.
-* The URLs where the asset/s are. The URLs needs to be resolvable by the gateway. URLs can be 
+* The URLs where the asset/s are. The URLs needs to be resolvable by the Nevermined Node. URLs can be 
   regular http urls, or reference CIDs on IPFS and/or Filecoin networks.
 
 :::info
@@ -94,34 +94,34 @@ This service works as follows:
 3. The rewards are transferred to the seller.
 
 
-### Tokenization of assets via ERC-1155 NFTs (aka "nft-sales")
+### Tokenization of assets via ERC-1155 NFTs
 
 This service works like the previous one with the difference it uses a ERC-1155 NFT.
 The difference between the different NFTs standards are the ERC-721 are non-fungible and 
 ERC-1155 semi-fungible. In the first one each NFT minted is unique, but in the ERC-1155 there
 is the possibility for minting multiple editions of the same NFT.
 
-### Exclusive access for ERC-721 NFTs holders (aka "nft721-access")
+### Exclusive access for ERC-721 NFTs holders
 
 This service allows asset owners to create access control mechanisms to contents where only the 
 holders of specific ERC-721 NFTs can access. 
 
 This service protects contents implementing a NFT access control system that is enforced by the 
-Nevermined Gateway, that works as a guard of the asset contents checking on-chain if the user
+Nevermined Node, that works as a guard of the asset contents checking on-chain if the user
 has a specific NFT.
 
 :::info
 
-This service works perfectlly in combination with the **nft721-sales** service. The Sales service allows
+This service works perfectlly in combination with the **nft-sales** service. The Sales service allows
 to sell NFTs associated to an asset, and for all the buyers you allow to get access to exclusive contents
-with the **nft721-access** service.
+with the **nft-access** service.
 
 :::
 
 ![Service: NFT ERC-721 Access](images/service_nft721-access.png)
 
 
-### Exclusive access for ERC-1155 NFTs holders (aka "nft-access")
+### Exclusive access for ERC-1155 NFTs holders
 
 This service works like the previous one with the difference it uses a ERC-1155 NFT.
 The difference between the different NFTs standards are the ERC-721 are non-fungible and 

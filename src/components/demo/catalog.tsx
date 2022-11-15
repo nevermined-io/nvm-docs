@@ -148,7 +148,7 @@ const App = ({ config }: {config: Config}) => {
       }
 
       const response = await publishNFT1155({
-        gatewayAddress: config.gatewayAddress,
+        nodeAddress: config.nodeAddress,
         assetRewards,
         metadata,
         nftAmount: BigNumber.from(1),

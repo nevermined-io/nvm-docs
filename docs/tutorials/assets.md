@@ -491,7 +491,7 @@ const Publisher = () => {
     ...
     async function handleOnSubmit() {
         const result = await publishNFT1155({
-              gatewayAddress: String(appConfig.gatewayAddress),
+              nodeAddress: String(appConfig.nodeAddress),
               metadata,
               cap: BigNumber.from(100),
               royaltyAttributes: royaltyAttributes(sdk)
@@ -535,7 +535,7 @@ const Publisher = () => {
 
     async function handleOnSubmit() {
         const result = await publishNFT1155({
-              gatewayAddress: String(appConfig.gatewayAddress),
+              nodeAddress: String(appConfig.nodeAddress),
               metadata,
               cap: BigNumber.from(100),
               royaltyAttributes: royaltyAttributes(sdk)

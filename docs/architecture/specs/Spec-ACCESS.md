@@ -52,10 +52,7 @@ The following technical components are involved with the publishing flow or the 
     data engineers.
 * [SMART CONTRACTS](https://github.com/nevermined-io/contracts) - Solidity Smart Contracts providing the Service
   Agreements business logic.
-* [SECRET STORE](https://wiki.parity.io/Secret-Store) - Included as part of the Parity Ethereum client.
-  Allows the PUBLISHER to encrypt the asset URL. Integrates with the SA to authorize (on-chain) the decryption of the
-  asset URL by the CONSUMER.
-* [GATEWAY](https://github.com/nevermined-io/gateway) - Microservice to be executed by PUBLISHERS. It exposes an
+* [NEVERMINED NODE](https://github.com/nevermined-io/node) - Microservice to be executed by PUBLISHERS. It exposes an
   HTTP REST API permitting access to PUBLISHER assets or additional services such as computation.
 * [MARKETPLACE-API](https://github.com/nevermined-io/marketplace-api) - Microservice to be executed by MARKETPLACES.
   Facilitates   creating, updating, deleting and searching the asset metadata registered by the PUBLISHERS.
@@ -327,11 +324,11 @@ Steps for leveraging SDK:
 
 This signature is used to correlate events and to prevent the PUBLISHER from instantiating multiple Service Agreements from a single request.
 
-1. The CONSUMER sends `(did, serviceAgreementId, serviceDefinitionId, signature, consumerAddress)` to the service endpoint (GATEWAY).
+1. The CONSUMER sends `(did, serviceAgreementId, serviceDefinitionId, signature, consumerAddress)` to the service endpoint (NODE).
 `serviceDefinitionId` tells the PUBLISHER where to find the preimage to verify the signature. The DID tells the PUBLISHER which asset to serve under these terms.
 
 ```
-HTTP POST /api/v1/GATEWAY/services/access/initialize
+HTTP POST /api/v1/node/services/access/initialize
 
 {
  "did": "did:nv:08a429b8529856d59867503f8056903a680935a76950bb9649785cc97869a43d",
@@ -344,17 +341,17 @@ HTTP POST /api/v1/GATEWAY/services/access/initialize
 
 The execution of this endpoint should return a `HTTP 201` if everything goes okay. Satisfactory conditions include:
 
-   - When GATEWAY receives a signature from the service endpoint and verifies the signature.
+   - When NODE receives a signature from the service endpoint and verifies the signature.
 
-   - Having the `did`, GATEWAY fetches the DDO related with this `did`.
+   - Having the `did`, NODE fetches the DDO related with this `did`.
 
-   - GATEWAY records the `serviceAgreementId` as corresponding to the given `did`.
+   - NODE records the `serviceAgreementId` as corresponding to the given `did`.
 
-   - GATEWAY executes the Service Agreement by calling `EscrowAccessSecretStoreTemplate.createAgreement`, providing it with the agreementId and all the agreement values
+   - NODE executes the Service Agreement by calling `EscrowAccessSecretStoreTemplate.createAgreement`, providing it with the agreementId and all the agreement values
 
-   - GATEWAY starts listening for the `publisher` events from the events section of the service definition.
+   - NODE starts listening for the `publisher` events from the events section of the service definition.
 
-1. After receiving the HTTP response confirmation from GATEWAY, the CONSUMER starts listening for the `AgreementCreated` events specified in the corresponding service definition, filtering them by `agreementId`.
+1. After receiving the HTTP response confirmation from NODE, the CONSUMER starts listening for the `AgreementCreated` events specified in the corresponding service definition, filtering them by `agreementId`.
 
 ### Execution of the service agreement
 
@@ -398,7 +395,7 @@ If everything goes right, it will emit `LockPaymentCondition.Fulfilled` and thus
 
 #### Grant Access Condition
 
-PUBLISHER (via GATEWAY) listens for `LockPaymentCondition.Fulfilled` event filtered by `agreementId` to confirm the reward was locked by the CONSUMER.
+PUBLISHER (via NODE) listens for `LockPaymentCondition.Fulfilled` event filtered by `agreementId` to confirm the reward was locked by the CONSUMER.
 
 ```
 "conditions": [{
@@ -424,7 +421,7 @@ If everything goes right, the Smart Contract will emit the `AccessCondition.Fulf
 
 #### Release Payment Condition
 
-PUBLISHER (via GATEWAY) listens for `AccessCondition.Fulfilled` event to transfer tokens to PUBLISHER's account.
+PUBLISHER (via NODE) listens for `AccessCondition.Fulfilled` event to transfer tokens to PUBLISHER's account.
 
 ```
 "conditions": [{
@@ -469,24 +466,24 @@ The following are steps that have to be performed by the CONSUMER to receive the
 1. CONSUMER decrypts the URL using the SDK. This only requires the encryptedUrl existing in the DDO and the DID.
    A Parity EVM client (local or remote) and SECRET STORE cluster can be used for that.
 
-1. CONSUMER retrieves data by calling the dedicated GATEWAY endpoint (`serviceEndpoint` in the service definition)
+1. CONSUMER retrieves data by calling the dedicated NODE endpoint (`serviceEndpoint` in the service definition)
 providing it with Consumer ethereum address, service agreement ID, and decrypted URL.
 
 The consume URL may look like:
 
 ```
-HTTP GET /api/v1/GATEWAY/services/access/consume?consumerAddress=${consumerAddress}&serviceAgreementId={serviceAgreementId}&url={url}`
+HTTP GET /api/v1/node/services/access/consume?consumerAddress=${consumerAddress}&serviceAgreementId={serviceAgreementId}&url={url}`
 ```
 
 This method will return a HTTP 200 status code if everything was okay and the data file.
 
-When CONSUMER requests purchased data, GATEWAY gets 3 parameters:
+When CONSUMER requests purchased data, NODE gets 3 parameters:
 
 * Consumer ethereum address: `consumerAddress`
 * Service Agreement ID: `serviceAgreementId`
-* Decrypted URL: `url`. This URL is only valid if GATEWAY acts as a gateway. CONSUMER cannot download using the URL if it's not done through GATEWAY.
+* Decrypted URL: `url`. This URL is only valid if NODE acts as a NODE. CONSUMER cannot download using the URL if it's not done through NODE.
 
-Using those parameters, GATEWAY does the following things:
+Using those parameters, NODE does the following things:
 
 * Find the `did` by the given `serviceAgreementId`
 
@@ -499,19 +496,19 @@ Using those parameters, GATEWAY does the following things:
 ### Consuming without direct integration of Secret Store
 
 If the CONSUMER (via SDK) can't integrate directly SECRET STORE for decryption (nevermined-sdk-js using Metamask can't
-provide the account password), it's possible to call GATEWAY with an alternative `consume` method.
+provide the account password), it's possible to call NODE with an alternative `consume` method.
 
-In this scenario, the GATEWAY is in charge of decrypting the content in behalf of the CONSUMER.
+In this scenario, the NODE is in charge of decrypting the content in behalf of the CONSUMER.
 
 The consume URL may look like:
 
 ```
-HTTP GET /api/v1/gateway/services/access/consume?pubKey=${pubKey}&serviceAgreementId={serviceAgreementId}&signature={signature}&index={index}`
+HTTP GET /api/v1/node/services/access/consume?pubKey=${pubKey}&serviceAgreementId={serviceAgreementId}&signature={signature}&index={index}`
 ```
 
 This method will return an HTTP 200 status code if everything was okay, plus the URL required to get access to the data.
 
-When CONSUMER requests purchased data, GATEWAY gets 3 parameters:
+When CONSUMER requests purchased data, NODE gets 3 parameters:
 
 * Consumer public key: `pubKey`
 * Service Agreement ID: `serviceAgreementId`
@@ -634,13 +631,13 @@ The SECRET STORE cluster to use during the encryption and decryption is specifie
 More information about the integration of a SECRET STORE can be found
 [Parity Secret Store page](https://wiki.parity.io/Secret-Store).
 
-#### Using the Data Gateway
+#### Using the Data NODE
 
-For those clients not able to integrate SECRET STORE directly, GATEWAY will support an encryption endpoint supporting
+For those clients not able to integrate SECRET STORE directly, NODE will support an encryption endpoint supporting
 the following parameters:
 
 ```http
-HTTP POST /api/v1/gateway/services/encrypt
+HTTP POST /api/v1/node/services/encrypt
 
 {
  "id": "did:nv:08a429b8529856d59867503f8056903a680935a76950bb9649785cc97869a43d",
@@ -665,15 +662,15 @@ HTTP POST /api/v1/gateway/services/encrypt
 
 That is, the value of `document` should be the `attributes.main.files` array.
 
-This endpoint will return the content encrypted using the GATEWAY account.
+This endpoint will return the content encrypted using the NODE account.
 
-The GATEWAY will expose the public keys using for encryption in the following endpoint:
+The NODE will expose the public keys using for encryption in the following endpoint:
 
 ```
 http://0.0.0.0:8030/
 ```
 
-In the JSON returned there will be the `*-public-key` entries with the different public keys enabled in the GATEWAY:
+In the JSON returned there will be the `*-public-key` entries with the different public keys enabled in the NODE:
 ```json
 {
 ...
@@ -694,10 +691,10 @@ In a DDO definition, can be defined a Pre-Shared ECDSA mechanism using the follo
     "attributes": {
         "main": {
           "service": "PSK-ECDSA",
-          "publicKey": "0xaaaa" // ECDSA Public Key of the Gateway
+          "publicKey": "0xaaaa" // ECDSA Public Key of the NODE
         }
     },
-    "serviceEndpoint": "http://mygateway.net/"
+    "serviceEndpoint": "http://mynode.net/"
   },
   …
 ]
@@ -714,10 +711,10 @@ In a DDO definition, can be defined a Pre-Shared RSA mechanism using the followi
     "attributes": {
         "main": {
           "service": "PSK-RSA",
-          "publicKey": "0xaaaa" // RSA Public Key of the Gateway
+          "publicKey": "0xaaaa" // RSA Public Key of the NODE
         }
     },
-    "serviceEndpoint": "http://mygateway.net/"
+    "serviceEndpoint": "http://mynode.net/"
   },
   …
 ]

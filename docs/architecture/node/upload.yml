@@ -1,5 +1,5 @@
 Uploads a file to a storage backend (Filecoin, IPFS, Amazon S3, etc).
-This could be disabled by the gateway operator and depends on the backends supported.
+This could be disabled by the Node operator and depends on the backends supported.
 ---
 tags:
   - services

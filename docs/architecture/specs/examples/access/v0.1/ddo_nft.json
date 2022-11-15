@@ -123,7 +123,7 @@
 		{
 			"type": "nft-sales",
 			"index": 6,
-			"serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/nft",
+			"serviceEndpoint": "http://localhost:8030/api/v1/node/services/nft",
 			"templateId": "0xaabb",
 			"attributes": {
 				"main": {
@@ -317,7 +317,7 @@
 		{
 			"type": "nft-access",
 			"index": 7,
-			"serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/nft-access",
+			"serviceEndpoint": "http://localhost:8030/api/v1/node/services/nft-access",
 			"templateId": "0xccdd",
 			"attributes": {
 				"main": {

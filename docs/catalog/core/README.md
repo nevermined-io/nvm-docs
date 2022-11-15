@@ -51,10 +51,10 @@ import { Config } from '@nevermined-io/nevermined-sdk-js';
 const appConfig: Config = {
   web3Provider: typeof window !== 'undefined' ? window.ethereum : new ethers.providers.JsonRpcProvider(nodeUri),
   nodeUri,
-  gatewayUri,
+  neverminedNodeUri,
   faucetUri,
   verbose,
-  gatewayAddress,
+  nodeAddress,
   secretStoreUri,
   graphHttpUri,
   marketplaceAuthToken,

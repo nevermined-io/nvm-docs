@@ -144,7 +144,7 @@ const Example = () => {
     };
 
     const response = await publishNFT1155({
-      gatewayAddress: String(appConfig.gatewayAddress),
+      nodeAddress: String(appConfig.nodeAddress),
       assetRewards,
       metadata,
       nftAmount: BigNumber.from(1),
@@ -341,11 +341,11 @@ const Example = (props: ExampleProps) => {
  const reloadSdk = async() => {
     const config = {
         web3Provider: window.ethereum,
-        nodeUri: network,
+        web3ProviderUri: network,
         marketplaceUri,
-        gatewayUri,
+        neverminedNodeUri,
         faucetUri,
-        gatewayAddress,
+        nodeAddress,
         secretStoreUri,
         verbose,
         marketplaceAuthToken: Catalog.fetchMarketplaceApiTokenFromLocalStorage().token || '',

@@ -280,7 +280,7 @@
 				}
 			},
 			"index": 3,
-			"serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/access",
+			"serviceEndpoint": "http://localhost:8030/api/v1/node/services/access",
 			"templateId": "0xB4d05b7D929dD241b79e06FF1AeA033159693931",
 			"type": "access"
 		}

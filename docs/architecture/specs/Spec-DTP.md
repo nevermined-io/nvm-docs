@@ -22,7 +22,7 @@ This enables using public file storage for encrypted assets and data.
 ## Motivation
 
 Nevermined manages access control over digital assets. The core of the protocol is to authenticate and authorize Asset Consumers to get access to assets created and registered into an ecosystem by an Asset Publisher.
-When this access control needs to be implemented on top of storage solutions with some authorization mechanism (like Amazon S3 or similar) it's easy. The Nevermined gateway ensures that only authorized users can get access.
+When this access control needs to be implemented on top of storage solutions with some authorization mechanism (like Amazon S3 or similar) it's easy. The Nevermined node ensures that only authorized users can get access.
 But when you want to use a storage solution without any access control capabilities (like in IPFS or Filecoin), it's more complicated. Whoever has access to the URL can get access to the file, bypassing any access control mechanism that Nevermined provides. 
 
 In this kind of scenario, the only way to protect this content is to encrypt it and only allow decryption when the user meets certain conditions. This SPEC is about the defition of the Nevermined solution, which allows to build robust and scalable access control on top of publicly available data.
@@ -52,7 +52,7 @@ To save resources, instead of showing that all the data is transferred, we assum
 To set up the asset metadata:
 
 The first file represents the key and `url` attribute, containing the plain text key (probably have to change).
-These metadata are encrypted so they won't show up publicly when querying the gateway.
+These metadata are encrypted so they won't show up publicly when querying the node.
 
 The public parts that have to be added to `additionalInformation` are
 
@@ -90,12 +90,12 @@ The flow below describes how to manage a dispute resolution, in case there's an 
 
 ![Data Transfer Proofs Deal Flow](images/dtp/data-transfer-proof-dispute-resolution.png)
 
-### Accessing from gateway
+### Accessing from node
 
-In this scenario, the gateway acts as a PROVIDER. This is useful when the PUBLISHER doesn't want to be on-line running a service for responding to CONSUMER requests.
+In this scenario, the node acts as a PROVIDER. This is useful when the PUBLISHER doesn't want to be on-line running a service for responding to CONSUMER requests.
 This means the PUBLISHER delegates the ability of releasing the decryption key to the CONSUMER when the conditions are fulfilled to the PROVIDER.
 
-Accessing documents using the gateway mostly works the same way as in a normal flow, but the Consumer has to send his Babyjubjub public key too. The data must be checked so that the gateway won't send invalid proofs to the net (it's possible to get the key from the calldata of the fulfill method if they have the corresponding key).
-Additionally we can check that the Eth-address corresponds to the Babyjubjub public key. This isn't absolutely necessary, but is needed if we want the gateway to return the data transfer key (or perhaps the data as plain text).
+Accessing documents using the node mostly works the same way as in a normal flow, but the Consumer has to send his Babyjubjub public key too. The data must be checked so that the node won't send invalid proofs to the net (it's possible to get the key from the calldata of the fulfill method if they have the corresponding key).
+Additionally we can check that the Eth-address corresponds to the Babyjubjub public key. This isn't absolutely necessary, but is needed if we want the node to return the data transfer key (or perhaps the data as plain text).
 
 ![Data Transfer Proofs Deal Flow](images/dtp/data-transfer-proof-gateway-uploader.png)

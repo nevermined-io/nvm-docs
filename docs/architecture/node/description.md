@@ -1,20 +1,20 @@
 ---
 sidebar_position: 1
-description: Nevermined Gateway
+description: Nevermined Node
 ---
 
 # Description
 
-In the Nevermined ecosystem, the [Gateway](https://github.com/nevermined-io/gateway-ts/) is 
+In the Nevermined ecosystem, the [Nevermined Node](https://github.com/nevermined-io/node/) is 
 the technical component executed by the Publishers allowing them to provide extended data 
 services (e.g. storage and compute).
 
-Nevermined Gateway, as part of the Publisher ecosystem, includes the credentials to interact
+Nevermined Node, as part of the Publisher ecosystem, includes the credentials to interact
 with the infrastructure (initially cloud, but could be on-premise).
 
 <!-- Generator: Widdershins v4.0.1 -->
 
-<h1 id="nevermined-gateway">Nevermined Gateway v0.1.5</h1>
+<h1 id="nevermined-node">Nevermined Node v0.1.5</h1>
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
@@ -24,7 +24,7 @@ Base URLs:
 
 - HTTP Authentication, scheme: bearer 
 
-<h1 id="nevermined-gateway-info">Info</h1>
+<h1 id="nevermined-node-info">Info</h1>
 
 ## InfoController_getInfo
 
@@ -194,7 +194,7 @@ Get API info
 This operation does not require authentication
 </aside>
 
-<h1 id="nevermined-gateway-encrypt">Encrypt</h1>
+<h1 id="nevermined-node-encrypt">Encrypt</h1>
 
 ## EncryptController_doEncrypt
 
@@ -204,14 +204,14 @@ This operation does not require authentication
 
 ```shell
 # You can also use wget
-curl -X POST /api/v1/gateway/services/encrypt \
+curl -X POST /api/v1/node/services/encrypt \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
 
 ```
 
 ```http
-POST /api/v1/gateway/services/encrypt HTTP/1.1
+POST /api/v1/node/services/encrypt HTTP/1.1
 
 Content-Type: application/json
 Accept: application/json
@@ -228,7 +228,7 @@ const headers = {
   'Accept':'application/json'
 };
 
-fetch('/api/v1/gateway/services/encrypt',
+fetch('/api/v1/node/services/encrypt',
 {
   method: 'POST',
   body: inputBody,
@@ -251,7 +251,7 @@ headers = {
   'Accept' => 'application/json'
 }
 
-result = RestClient.post '/api/v1/gateway/services/encrypt',
+result = RestClient.post '/api/v1/node/services/encrypt',
   params: {
   }, headers: headers
 
@@ -266,7 +266,7 @@ headers = {
   'Accept': 'application/json'
 }
 
-r = requests.post('/api/v1/gateway/services/encrypt', headers = headers)
+r = requests.post('/api/v1/node/services/encrypt', headers = headers)
 
 print(r.json())
 
@@ -288,7 +288,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','/api/v1/gateway/services/encrypt', array(
+    $response = $client->request('POST','/api/v1/node/services/encrypt', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -305,7 +305,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("/api/v1/gateway/services/encrypt");
+URL obj = new URL("/api/v1/node/services/encrypt");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -337,7 +337,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "/api/v1/gateway/services/encrypt", data)
+    req, err := http.NewRequest("POST", "/api/v1/node/services/encrypt", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -347,7 +347,7 @@ func main() {
 
 ```
 
-`POST /api/v1/gateway/services/encrypt`
+`POST /api/v1/node/services/encrypt`
 
 *Public*
 
@@ -386,7 +386,7 @@ Encrypt
 This operation does not require authentication
 </aside>
 
-<h1 id="nevermined-gateway-access">Access</h1>
+<h1 id="nevermined-node-access">Access</h1>
 
 ## AccessController_doAccess
 
@@ -396,14 +396,14 @@ This operation does not require authentication
 
 ```shell
 # You can also use wget
-curl -X GET /api/v1/gateway/services/access/{agreement_id}/{index} \
+curl -X GET /api/v1/node/services/access/{agreement_id}/{index} \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access-token}'
 
 ```
 
 ```http
-GET /api/v1/gateway/services/access/{agreement_id}/{index} HTTP/1.1
+GET /api/v1/node/services/access/{agreement_id}/{index} HTTP/1.1
 
 Accept: application/json
 
@@ -416,7 +416,7 @@ const headers = {
   'Authorization':'Bearer {access-token}'
 };
 
-fetch('/api/v1/gateway/services/access/{agreement_id}/{index}',
+fetch('/api/v1/node/services/access/{agreement_id}/{index}',
 {
   method: 'GET',
 
@@ -439,7 +439,7 @@ headers = {
   'Authorization' => 'Bearer {access-token}'
 }
 
-result = RestClient.get '/api/v1/gateway/services/access/{agreement_id}/{index}',
+result = RestClient.get '/api/v1/node/services/access/{agreement_id}/{index}',
   params: {
   }, headers: headers
 
@@ -454,7 +454,7 @@ headers = {
   'Authorization': 'Bearer {access-token}'
 }
 
-r = requests.get('/api/v1/gateway/services/access/{agreement_id}/{index}', headers = headers)
+r = requests.get('/api/v1/node/services/access/{agreement_id}/{index}', headers = headers)
 
 print(r.json())
 
@@ -476,7 +476,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','/api/v1/gateway/services/access/{agreement_id}/{index}', array(
+    $response = $client->request('GET','/api/v1/node/services/access/{agreement_id}/{index}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -493,7 +493,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("/api/v1/gateway/services/access/{agreement_id}/{index}");
+URL obj = new URL("/api/v1/node/services/access/{agreement_id}/{index}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -525,7 +525,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "/api/v1/gateway/services/access/{agreement_id}/{index}", data)
+    req, err := http.NewRequest("GET", "/api/v1/node/services/access/{agreement_id}/{index}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -535,7 +535,7 @@ func main() {
 
 ```
 
-`GET /api/v1/gateway/services/access/{agreement_id}/{index}`
+`GET /api/v1/node/services/access/{agreement_id}/{index}`
 
 *Public*
 
@@ -574,14 +574,14 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X GET /api/v1/gateway/services/access-proof/{agreement_id}/{index} \
+curl -X GET /api/v1/node/services/access-proof/{agreement_id}/{index} \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access-token}'
 
 ```
 
 ```http
-GET /api/v1/gateway/services/access-proof/{agreement_id}/{index} HTTP/1.1
+GET /api/v1/node/services/access-proof/{agreement_id}/{index} HTTP/1.1
 
 Accept: application/json
 
@@ -594,7 +594,7 @@ const headers = {
   'Authorization':'Bearer {access-token}'
 };
 
-fetch('/api/v1/gateway/services/access-proof/{agreement_id}/{index}',
+fetch('/api/v1/node/services/access-proof/{agreement_id}/{index}',
 {
   method: 'GET',
 
@@ -617,7 +617,7 @@ headers = {
   'Authorization' => 'Bearer {access-token}'
 }
 
-result = RestClient.get '/api/v1/gateway/services/access-proof/{agreement_id}/{index}',
+result = RestClient.get '/api/v1/node/services/access-proof/{agreement_id}/{index}',
   params: {
   }, headers: headers
 
@@ -632,7 +632,7 @@ headers = {
   'Authorization': 'Bearer {access-token}'
 }
 
-r = requests.get('/api/v1/gateway/services/access-proof/{agreement_id}/{index}', headers = headers)
+r = requests.get('/api/v1/node/services/access-proof/{agreement_id}/{index}', headers = headers)
 
 print(r.json())
 
@@ -654,7 +654,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','/api/v1/gateway/services/access-proof/{agreement_id}/{index}', array(
+    $response = $client->request('GET','/api/v1/node/services/access-proof/{agreement_id}/{index}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -671,7 +671,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("/api/v1/gateway/services/access-proof/{agreement_id}/{index}");
+URL obj = new URL("/api/v1/node/services/access-proof/{agreement_id}/{index}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -703,7 +703,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "/api/v1/gateway/services/access-proof/{agreement_id}/{index}", data)
+    req, err := http.NewRequest("GET", "/api/v1/node/services/access-proof/{agreement_id}/{index}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -713,7 +713,7 @@ func main() {
 
 ```
 
-`GET /api/v1/gateway/services/access-proof/{agreement_id}/{index}`
+`GET /api/v1/node/services/access-proof/{agreement_id}/{index}`
 
 *Public*
 
@@ -752,14 +752,14 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X GET /api/v1/gateway/services/nft-access/{agreement_id}/{index} \
+curl -X GET /api/v1/node/services/nft-access/{agreement_id}/{index} \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access-token}'
 
 ```
 
 ```http
-GET /api/v1/gateway/services/nft-access/{agreement_id}/{index} HTTP/1.1
+GET /api/v1/node/services/nft-access/{agreement_id}/{index} HTTP/1.1
 
 Accept: application/json
 
@@ -772,7 +772,7 @@ const headers = {
   'Authorization':'Bearer {access-token}'
 };
 
-fetch('/api/v1/gateway/services/nft-access/{agreement_id}/{index}',
+fetch('/api/v1/node/services/nft-access/{agreement_id}/{index}',
 {
   method: 'GET',
 
@@ -795,7 +795,7 @@ headers = {
   'Authorization' => 'Bearer {access-token}'
 }
 
-result = RestClient.get '/api/v1/gateway/services/nft-access/{agreement_id}/{index}',
+result = RestClient.get '/api/v1/node/services/nft-access/{agreement_id}/{index}',
   params: {
   }, headers: headers
 
@@ -810,7 +810,7 @@ headers = {
   'Authorization': 'Bearer {access-token}'
 }
 
-r = requests.get('/api/v1/gateway/services/nft-access/{agreement_id}/{index}', headers = headers)
+r = requests.get('/api/v1/node/services/nft-access/{agreement_id}/{index}', headers = headers)
 
 print(r.json())
 
@@ -832,7 +832,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','/api/v1/gateway/services/nft-access/{agreement_id}/{index}', array(
+    $response = $client->request('GET','/api/v1/node/services/nft-access/{agreement_id}/{index}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -849,7 +849,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("/api/v1/gateway/services/nft-access/{agreement_id}/{index}");
+URL obj = new URL("/api/v1/node/services/nft-access/{agreement_id}/{index}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -881,7 +881,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "/api/v1/gateway/services/nft-access/{agreement_id}/{index}", data)
+    req, err := http.NewRequest("GET", "/api/v1/node/services/nft-access/{agreement_id}/{index}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -891,7 +891,7 @@ func main() {
 
 ```
 
-`GET /api/v1/gateway/services/nft-access/{agreement_id}/{index}`
+`GET /api/v1/node/services/nft-access/{agreement_id}/{index}`
 
 *Public*
 
@@ -930,13 +930,13 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X POST /api/v1/gateway/services/nft-transfer \
+curl -X POST /api/v1/node/services/nft-transfer \
   -H 'Content-Type: application/json'
 
 ```
 
 ```http
-POST /api/v1/gateway/services/nft-transfer HTTP/1.1
+POST /api/v1/node/services/nft-transfer HTTP/1.1
 
 Content-Type: application/json
 
@@ -954,7 +954,7 @@ const headers = {
   'Content-Type':'application/json'
 };
 
-fetch('/api/v1/gateway/services/nft-transfer',
+fetch('/api/v1/node/services/nft-transfer',
 {
   method: 'POST',
   body: inputBody,
@@ -976,7 +976,7 @@ headers = {
   'Content-Type' => 'application/json'
 }
 
-result = RestClient.post '/api/v1/gateway/services/nft-transfer',
+result = RestClient.post '/api/v1/node/services/nft-transfer',
   params: {
   }, headers: headers
 
@@ -990,7 +990,7 @@ headers = {
   'Content-Type': 'application/json'
 }
 
-r = requests.post('/api/v1/gateway/services/nft-transfer', headers = headers)
+r = requests.post('/api/v1/node/services/nft-transfer', headers = headers)
 
 print(r.json())
 
@@ -1011,7 +1011,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','/api/v1/gateway/services/nft-transfer', array(
+    $response = $client->request('POST','/api/v1/node/services/nft-transfer', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1028,7 +1028,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("/api/v1/gateway/services/nft-transfer");
+URL obj = new URL("/api/v1/node/services/nft-transfer");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -1059,7 +1059,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "/api/v1/gateway/services/nft-transfer", data)
+    req, err := http.NewRequest("POST", "/api/v1/node/services/nft-transfer", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -1069,7 +1069,7 @@ func main() {
 
 ```
 
-`POST /api/v1/gateway/services/nft-transfer`
+`POST /api/v1/node/services/nft-transfer`
 
 *Public*
 
@@ -1111,14 +1111,14 @@ This operation does not require authentication
 
 ```shell
 # You can also use wget
-curl -X GET /api/v1/gateway/services/download/{index} \
+curl -X GET /api/v1/node/services/download/{index} \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access-token}'
 
 ```
 
 ```http
-GET /api/v1/gateway/services/download/{index} HTTP/1.1
+GET /api/v1/node/services/download/{index} HTTP/1.1
 
 Accept: application/json
 
@@ -1131,7 +1131,7 @@ const headers = {
   'Authorization':'Bearer {access-token}'
 };
 
-fetch('/api/v1/gateway/services/download/{index}',
+fetch('/api/v1/node/services/download/{index}',
 {
   method: 'GET',
 
@@ -1154,7 +1154,7 @@ headers = {
   'Authorization' => 'Bearer {access-token}'
 }
 
-result = RestClient.get '/api/v1/gateway/services/download/{index}',
+result = RestClient.get '/api/v1/node/services/download/{index}',
   params: {
   }, headers: headers
 
@@ -1169,7 +1169,7 @@ headers = {
   'Authorization': 'Bearer {access-token}'
 }
 
-r = requests.get('/api/v1/gateway/services/download/{index}', headers = headers)
+r = requests.get('/api/v1/node/services/download/{index}', headers = headers)
 
 print(r.json())
 
@@ -1191,7 +1191,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','/api/v1/gateway/services/download/{index}', array(
+    $response = $client->request('GET','/api/v1/node/services/download/{index}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1208,7 +1208,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("/api/v1/gateway/services/download/{index}");
+URL obj = new URL("/api/v1/node/services/download/{index}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -1240,7 +1240,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "/api/v1/gateway/services/download/{index}", data)
+    req, err := http.NewRequest("GET", "/api/v1/node/services/download/{index}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -1250,7 +1250,7 @@ func main() {
 
 ```
 
-`GET /api/v1/gateway/services/download/{index}`
+`GET /api/v1/node/services/download/{index}`
 
 *Public*
 
@@ -1289,13 +1289,13 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X POST /api/v1/gateway/services/upload/{backend} \
+curl -X POST /api/v1/node/services/upload/{backend} \
   -H 'Content-Type: application/json'
 
 ```
 
 ```http
-POST /api/v1/gateway/services/upload/{backend} HTTP/1.1
+POST /api/v1/node/services/upload/{backend} HTTP/1.1
 
 Content-Type: application/json
 
@@ -1309,7 +1309,7 @@ const headers = {
   'Content-Type':'application/json'
 };
 
-fetch('/api/v1/gateway/services/upload/{backend}',
+fetch('/api/v1/node/services/upload/{backend}',
 {
   method: 'POST',
   body: inputBody,
@@ -1331,7 +1331,7 @@ headers = {
   'Content-Type' => 'application/json'
 }
 
-result = RestClient.post '/api/v1/gateway/services/upload/{backend}',
+result = RestClient.post '/api/v1/node/services/upload/{backend}',
   params: {
   }, headers: headers
 
@@ -1345,7 +1345,7 @@ headers = {
   'Content-Type': 'application/json'
 }
 
-r = requests.post('/api/v1/gateway/services/upload/{backend}', headers = headers)
+r = requests.post('/api/v1/node/services/upload/{backend}', headers = headers)
 
 print(r.json())
 
@@ -1366,7 +1366,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','/api/v1/gateway/services/upload/{backend}', array(
+    $response = $client->request('POST','/api/v1/node/services/upload/{backend}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1383,7 +1383,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("/api/v1/gateway/services/upload/{backend}");
+URL obj = new URL("/api/v1/node/services/upload/{backend}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -1414,7 +1414,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "/api/v1/gateway/services/upload/{backend}", data)
+    req, err := http.NewRequest("POST", "/api/v1/node/services/upload/{backend}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -1424,7 +1424,7 @@ func main() {
 
 ```
 
-`POST /api/v1/gateway/services/upload/{backend}`
+`POST /api/v1/node/services/upload/{backend}`
 
 *Public*
 
@@ -1455,7 +1455,7 @@ Access asset
 This operation does not require authentication
 </aside>
 
-<h1 id="nevermined-gateway-auth">Auth</h1>
+<h1 id="nevermined-ndoe-auth">Auth</h1>
 
 ## AuthController_token
 
@@ -1465,14 +1465,14 @@ This operation does not require authentication
 
 ```shell
 # You can also use wget
-curl -X POST /api/v1/gateway/services/oauth/token \
+curl -X POST /api/v1/node/services/oauth/token \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
 
 ```
 
 ```http
-POST /api/v1/gateway/services/oauth/token HTTP/1.1
+POST /api/v1/node/services/oauth/token HTTP/1.1
 
 Content-Type: application/json
 Accept: application/json
@@ -1489,7 +1489,7 @@ const headers = {
   'Accept':'application/json'
 };
 
-fetch('/api/v1/gateway/services/oauth/token',
+fetch('/api/v1/node/services/oauth/token',
 {
   method: 'POST',
   body: inputBody,
@@ -1512,7 +1512,7 @@ headers = {
   'Accept' => 'application/json'
 }
 
-result = RestClient.post '/api/v1/gateway/services/oauth/token',
+result = RestClient.post '/api/v1/node/services/oauth/token',
   params: {
   }, headers: headers
 
@@ -1527,7 +1527,7 @@ headers = {
   'Accept': 'application/json'
 }
 
-r = requests.post('/api/v1/gateway/services/oauth/token', headers = headers)
+r = requests.post('/api/v1/node/services/oauth/token', headers = headers)
 
 print(r.json())
 
@@ -1549,7 +1549,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','/api/v1/gateway/services/oauth/token', array(
+    $response = $client->request('POST','/api/v1/node/services/oauth/token', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1566,7 +1566,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("/api/v1/gateway/services/oauth/token");
+URL obj = new URL("/api/v1/node/services/oauth/token");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -1598,7 +1598,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "/api/v1/gateway/services/oauth/token", data)
+    req, err := http.NewRequest("POST", "/api/v1/node/services/oauth/token", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -1608,7 +1608,7 @@ func main() {
 
 ```
 
-`POST /api/v1/gateway/services/oauth/token`
+`POST /api/v1/node/services/oauth/token`
 
 *Public*
 

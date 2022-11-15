@@ -154,16 +154,16 @@ const App = ({config}: {config: Config }) => {
     }
   }, [walletAddress])
 
-  const publishNFT1155 = async (gatewayAddress: string, accountWallet: Account, metadata: MetaData, royaltyAttributes: RoyaltyAttributes, assetRewards: AssetRewards) => {
+  const publishNFT1155 = async (nodeAddress: string, accountWallet: Account, metadata: MetaData, royaltyAttributes: RoyaltyAttributes, assetRewards: AssetRewards) => {
     const transferNftCondition = sdk.keeper.conditions.transferNftCondition
 
     const transferNftConditionContractReceipt = await sdk.nfts.setApprovalForAll(transferNftCondition.address, true, accountWallet)
 
     Logger.log(`Contract Receipt for approved transfer NFT: ${transferNftConditionContractReceipt}`)
 
-    const gateawayContractReceipt = await sdk.nfts.setApprovalForAll(gatewayAddress, true, accountWallet)
+    const gateawayContractReceipt = await sdk.nfts.setApprovalForAll(nodeAddress, true, accountWallet)
 
-    Logger.log(`Contract Receipt for approved gateway: ${gateawayContractReceipt}`)
+    Logger.log(`Contract Receipt for approved Node: ${gateawayContractReceipt}`)
 
 
     const ddo = await sdk.nfts.createWithRoyalties(
@@ -215,7 +215,7 @@ const App = ({config}: {config: Config }) => {
 
       await loginMarketplace(sdk, account)
       
-      const response = await publishNFT1155(config.gatewayAddress, account, metadata, royaltyAttributes, assetRewards)
+      const response = await publishNFT1155(config.nodeAddress, account, metadata, royaltyAttributes, assetRewards)
 
       setDDO(response as DDO)
     } catch (error) {

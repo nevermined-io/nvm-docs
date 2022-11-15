@@ -89,7 +89,7 @@
               "output": {
                 "metadataUrl": "https://localhost:5000/api/v1/metadata/assets/ddo/",
                 "secretStoreUrl": "http://localhost:12001",
-                "accessProxyUrl": "https://localhost:8030/api/v1/gateway/",
+                "accessProxyUrl": "https://localhost:8030/api/v1/node/",
                 "metadata": {}
               }
             }, {
@@ -112,7 +112,7 @@
               "output": {
                 "metadataUrl": "https://metadata.net:5000/api/v1/metadata/assets/ddo/",
                 "secretStoreUrl": "http://secretstore.org:12001",
-                "accessProxyUrl": "https://gateway.net:8030/api/v1/gateway/",
+                "accessProxyUrl": "https://node.net:8030/api/v1/node/",
                 "metadata": {}
               }
             }]

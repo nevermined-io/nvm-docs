@@ -35,7 +35,7 @@
   }, {
     "type": "authorization",
     "index": 2,
-    "serviceEndpoint": "https://gateway.vitadao.nevermined.rocks",
+    "serviceEndpoint": "https://Node.vitadao.nevermined.rocks",
     "attributes": {
       "main": {
         "publicKey": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDXd7hiI/2WEuCALfrWEaVLrKtrJAWaF+RWyM3/yCVrhMpSMoEJ/tj8umFmfLe8BPc7B85eL7x8oSxlF1OLevHuVXPjz6WhKSx/oQ/Au0rbyp7f9qY3DX7lkzoguDmyUYlnrU+kCJe4Y4KhZNrxkSnmJJHfXnVHBWd/EsTuFL+etQIDAQAB",
@@ -46,7 +46,7 @@
   }, {
     "type": "nft-sales",
     "index": 8,
-    "serviceEndpoint": "https://gateway.vitadao.nevermined.rocks/api/v1/gateway/services/nft721",
+    "serviceEndpoint": "https://Node.vitadao.nevermined.rocks/api/v1/node/services/nft721",
     "templateId": "0x28cF27f693930A24A979458a5C28177250BEE285",
     "attributes": {
       "main": {
@@ -212,7 +212,7 @@
   }, {
     "type": "nft-access",
     "index": 9,
-    "serviceEndpoint": "https://gateway.vitadao.nevermined.rocks/api/v1/gateway/services/nft-access",
+    "serviceEndpoint": "https://Node.vitadao.nevermined.rocks/api/v1/node/services/nft-access",
     "templateId": "0x96C556063aF9C2a8386e1b25DB0b42f8A0d414ee",
     "attributes": {
       "main": {

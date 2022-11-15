@@ -25,7 +25,7 @@ The network fee in Nevermined testnets is **1%** and the receiver of that fee is
 
 | Environment | Network | Contracts Version | Tag | Component | URL | Comments |
 |-------------|---------|-------------------|-----|-----------|-----|----------|
-| public-v2-mumbai | Mumbai | 2.1.0 | public | Gateway | https://gateway.mumbai.public.nevermined.network | |
+| public-v2-mumbai | Mumbai | 2.1.0 | public | Node | https://node.mumbai.public.nevermined.network | |
 | public-v2-mumbai | Mumbai | 2.1.0 | public | Marketplace API | https://marketplace-api.mumbai.public.nevermined.network | |
 
 All the contract events are exposed via [The Graph](https://thegraph.com/). You can find all the `Polygon Mumbai` Nevermined Subgraphs here (search by Nevermined):
