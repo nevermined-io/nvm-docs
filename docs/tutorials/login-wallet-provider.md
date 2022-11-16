@@ -7,8 +7,8 @@ import ProvidersApp from '@site/src/components/providers'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Login with wallet
-In this tutorial you will learn how you can integrate Metamask provider from the Catalog in your dapp and implement operations like login and logout
+# Login with Wallet Provider
+In this tutorial you will learn how you can integrate Wallet Provider from the Catalog in your dapp and implement operations like login and logout
 
 ## Requirements
 For the tutorial you will need:
@@ -36,29 +36,28 @@ npm install --save @nevermined-io/catalog-providers
 </Tabs>
 
 ## Add the wallet provider
-Now in our app we need to add the Metamask provider as a parent of all the components that will use functionalities from it
+Now in our app we need to add the Wallet Provider as a parent of all the components that will use functionalities from it. The `WalletProvider` has a prop call `client` where we need to pass the instance of the [Wagmi client](https://wagmi.sh/docs/client), the good news is that we have `getClient` from `@nevermined-io/catalog-providers` which will return a client already configured
 
 ```tsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Example from 'examples';
-import { MetaMask } from '@nevermined-io/catalog-providers';
+import { WalletProvider } from '@nevermined-io/catalog-providers';
 
 ReactDOM.render(
     <div>
-        <MetaMask.WalletProvider
-            correctNetworkId="0x13881"
-            nodeUri="https://matic-mumbai.chainstacklabs.com"
+        <WalletProvider
+          client={getClient(ChainsConfig)}
         >
-            ...
-        </MetaMask.WalletProvider>
+          <Login/>
+        </WalletProvider>
     </div>,
     document.getElementById("root") as HTMLElement
 );
 ```
 
 ## Add login component
-Let's create a component that contains a login button, which will login to the wallet once that it is clicked, and other button to logout
+Let's create a component that contains a login button for each provider, and other button to logout.
 
 ```tsx
 const Login = () => {
@@ -80,8 +79,8 @@ const Login = () => {
   )
 }
 ```
-
-In this component we have the `loginMetamask` and `logout` functions and the `walletAddress` state, if `walletAddress` is not empty means that the metamask is connected and will show the address and logout button otherwise will show the button to connect
+In this component we have the `login` and `logout` functions and the `walletAddress` state, if `walletAddress` is not empty means that the wallet is connected and will show the address and logout button otherwise will show the button to connect.
+How you can see, we also have `getConnectors` which includes all the providers available to connect.
 
 ## Config your network (optional)
 At least that you need to set differents networks for your dapp than [polygon](https://polygon.technology/) chains config is not needed, anyway here we show you how should look the config object.
@@ -114,7 +113,7 @@ In order to finish we need to call this component inside of the providers, this 
 
 ```tsx
 import React from 'react'
-import { WalletProvider, getClient, useWallet } from '@nevermined-io/catalog-providers'
+import { WalletProvider, getClient, useWallet, Wagmi } from '@nevermined-io/catalog-providers'
 import { UiButton, UiText, BEM } from '@nevermined-io/styles'
 import styles from './styles.module.scss'
 
@@ -161,7 +160,7 @@ const Login = () => {
 ReactDOM.render(
     <div>
         <WalletProvider
-          client={getClient(ChainsConfig)}
+          client={getClient('My Nevermined App', true, ChainConfig)}
         >
           <Login/>
         </WalletProvider>

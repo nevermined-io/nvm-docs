@@ -46,72 +46,30 @@ export const appConfig: Config = {
 }
 ```
 
-## Setting the networks for web3 providers
+## Setting the networks for web3 providers (optional)
 The next step is setting differents networks for the dapp [polygon](https://polygon.technology/) which does not require this file. However, we have included it in the example as it contains the networks settings for web3 providers.
 
 ```ts
-import { zeroX } from '@nevermined-io/nevermined-sdk-js/dist/node/utils'
-import { acceptedChainId } from 'config'
+import { Wagmi } from '@nevermined-io/catalog-providers'
 
-const acceptedChainIdHex = zeroX((+acceptedChainId).toString(16))
-const spreeChainId = zeroX((8996).toString(16))
-const polygonLocalnetChainId = zeroX((8997).toString(16))
-export const mumbaiChainId = zeroX((80001).toString(16))
-const mainnetChainId = zeroX((137).toString(16))
-
-const ChainConfig = {
-  development: {
-    chainId: acceptedChainIdHex === spreeChainId ? spreeChainId : polygonLocalnetChainId,
-    chainName: 'Localhost development',
+const ChainsConfig: Chain[] = [
+  Wagmi.chain.polygon,
+  Wagmi.chain.polygonMumbai,
+  {
+    id: 1337,
+    name: "Localhost development",
+    network: "spree",
     nativeCurrency: {
-      name: 'Ethereum',
-      symbol: 'ETH',
-      decimals: 18
+      name: "Ethereum",
+      symbol: "ETH",
+      decimals: 18,
     },
-    rpcUrls: ['http://localhost:8545'],
-    blockExplorerUrls: [''],
-    iconUrls: ['https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png']
-  },
-  mumbai: {
-    chainId: mumbaiChainId,
-    chainName: 'Polygon Testnet Mumbai',
-    nativeCurrency: {
-      name: 'Matic',
-      symbol: 'MATIC',
-      decimals: 18
+    rpcUrls: {
+      default: "http://localhost:8545"
     },
-    rpcUrls: [
-      'https://matic-mumbai.chainstacklabs.com',
-      'https://rpc-endpoints.superfluid.dev/mumbai'
-    ],
-    blockExplorerUrls: ['https://mumbai.polygonscan.com/'],
-    iconUrls: ['https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png']
+    testnet: true
   },
-  mainnet: {
-    chainId: mainnetChainId,
-    chainName: 'Polygon Mainnet',
-    nativeCurrency: {
-      name: 'Matic',
-      symbol: 'MATIC',
-      decimals: 18
-    },
-    rpcUrls: ['https://polygon-rpc.com'],
-    blockExplorerUrls: ['https://polygonscan.com/'],
-    iconUrls: ['https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png']
-  },
-  returnConfig: (chainIdHex: string) => {
-    if (chainIdHex === spreeChainId || chainIdHex === polygonLocalnetChainId) {
-      return ChainConfig.development
-    }
-    if (chainIdHex === mumbaiChainId) {
-      return ChainConfig.mumbai
-    }
-    if (chainIdHex === mainnetChainId) {
-      return ChainConfig.mainnet
-    }
-    return ChainConfig.development
-  }
-}
+]
 
 export default ChainConfig
 ```
@@ -225,12 +183,13 @@ const BuyAsset = ({ddo}: {ddo: DDO}) => {
 An important component for connecting to the wallet. Upon connecting, the app will display the address account. Otherwise it will render a button to connect to it.
 
 ```tsx
-  const { loginMetamask, walletAddress } = MetaMask.useWallet()
+const MMWallet = () => {
+  const { login, walletAddress, getConnectors } = useWallet()
   return (
     <UiLayout>
       <UiText variants={['bold']} className={b('detail')}>Wallet address:</UiText>
       <UiText>{walletAddress}</UiText>
-      {!walletAddress && <UiButton onClick={loginMetamask}>Connect To MM</UiButton>}
+      {!walletAddress && <UiButton type='secondary' onClick={() => login(getConnectors()[0])}>Connect To MM</UiButton>}
     </UiLayout>
   )
 }
@@ -244,7 +203,7 @@ The main component of the example, it pulls the rest of the components and also 
 const App = () => {
   const { isLoadingSDK, sdk } = Catalog.useNevermined()
   const { publishNFT1155 } = AssetService.useAssetPublish()
-  const { walletAddress } = MetaMask.useWallet()
+  const { walletAddress } = useWallet()
   const [ddo, setDDO] = useState<DDO>({} as DDO)
   const royaltyAttributes = {
     royaltyKind: RoyaltyKind.Standard,
@@ -332,7 +291,7 @@ Now let's put everything together.
 import AssetRewards from '@nevermined-io/nevermined-sdk-js/dist/node/models/AssetRewards'
 import React, { useEffect, useState } from 'react'
 import { Catalog, AssetService, RoyaltyKind, BigNumber, getRoyaltyScheme, MetaData, DDO } from '@nevermined-io/catalog-core'
-import { MetaMask } from '@nevermined-io/catalog-providers'
+import { useWallet } from '@nevermined-io/catalog-providers'
 import { UiText, UiLayout, BEM, UiButton } from '@nevermined-io/styles'
 import styles from './example.module.scss'
 import { appConfig } from './config'
@@ -425,12 +384,12 @@ const BuyAsset = ({ddo}: {ddo: DDO}) => {
 }
 
 const MMWallet = () => {
-  const { loginMetamask, walletAddress } = MetaMask.useWallet()
+  const { login, walletAddress, getConnectors } = useWallet()
   return (
     <UiLayout>
       <UiText variants={['bold']} className={b('detail')}>Wallet address:</UiText>
       <UiText>{walletAddress}</UiText>
-      {!walletAddress && <UiButton onClick={loginMetamask}>Connect To MM</UiButton>}
+      {!walletAddress && <UiButton type='secondary' onClick={() => login(getConnectors()[0])}>Connect To MM</UiButton>}
     </UiLayout>
   )
 }
@@ -438,7 +397,7 @@ const MMWallet = () => {
 const App = () => {
   const { isLoadingSDK, sdk } = Catalog.useNevermined()
   const { publishNFT1155 } = AssetService.useAssetPublish()
-  const { walletAddress } = MetaMask.useWallet()
+  const { walletAddress } = useWallet()
   const [ddo, setDDO] = useState<DDO>({} as DDO)
 
   const metadata: MetaData = {
@@ -474,7 +433,7 @@ const App = () => {
       }
 
       const response = await publishNFT1155({
-        nodeAddress: String(appConfig.nodeAddress),
+        neverminedNodeAddress: String(appConfig.neverminedNodeAddress),
         assetRewards,
         metadata,
         nftAmount: BigNumber.from(1),
@@ -549,21 +508,19 @@ import ReactDOM from 'react-dom'
 import { Catalog, AssetService } from '@nevermined-io/catalog-core'
 import { appConfig } from './config'
 import Example from 'examples'
-import { MetaMask } from '@nevermined-io/catalog-providers'
-import chainConfig, { mumbaiChainId } from './chain_config'
+import { WalletProvider, getClient } from '@nevermined-io/catalog-providers'
+import ChainConfig from './chain_config'
 
 
 ReactDOM.render(
   <div>
     <Catalog.NeverminedProvider config={appConfig} verbose={true}>
       <AssetService.AssetPublishProvider>
-        <MetaMask.WalletProvider
-          externalChainConfig={chainConfig}
-          correctNetworkId={mumbaiChainId}
-          nodeUri={String(appConfig.nodeUri)}
+        <WalletProvider
+          client={getClient('My Nevermined App', true, ChainConfig)}
         >
-          <Example />
-        </MetaMask.WalletProvider>
+          <App config={ config }/>
+        </WalletProvider>
       </AssetService.AssetPublishProvider>
     </Catalog.NeverminedProvider>
   </div>,

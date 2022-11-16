@@ -45,7 +45,7 @@ import { Config } from '@nevermined-io/nevermined-sdk-js';
 // URL where run the app
 export const serviceUri = process.env.REACT_APP_SERVICE_URI || 'http://localhost:3445';
 // Ethereum address own by the node.
-export const nodeAddress = process.env.REACT_APP_GATEWAY_ADDRESS || '0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc';
+export const neverminedNodeAddress = process.env.REACT_APP_GATEWAY_ADDRESS || '0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc';
 // Node service
 export const neverminedNodeUri = process.env.REACT_APP_GATEWAY_URI || 'https://node.mumbai.public.nevermined.network';
 // Fauce uri to get some tokens.
@@ -61,12 +61,12 @@ export const marketplaceUri = process.env.REACT_APP_MARKETPLACE_URI || 'https://
 
 export const appConfig: Config = {
   //@ts-ignore
-  web3Provider: typeof window !== 'undefined' ? window.ethereum : new ethers.providers.JsonRpcProvider(nodeUri),
-  nodeUri,
+  web3Provider: typeof window !== 'undefined' ? window.ethereum : new ethers.providers.JsonRpcProvider(web3ProviderUri),
+  web3ProviderUri,
   neverminedNodeUri,
   faucetUri,
   verbose: 2,
-  nodeAddress,
+  neverminedNodeAddress,
   graphHttpUri: '',
   marketplaceAuthToken: typeof window !== 'undefined' ? AuthToken.fetchMarketplaceApiTokenFromLocalStorage().token : '',
   marketplaceUri,
@@ -163,122 +163,47 @@ function App() {
 export default App;
 ```
 
-### Login with Metamask
+### Login with different providers
 
-After see how it is possible list some data coming from the blockchain let's see how you can login with your Nevermined dApp using our catalog integration with Metamask.
-
-:::info
-
-Metamask is a popular cryptowallet that is easy to integrate with a plugin in your browser. Visit the [documentation](https://docs.metamask.io/guide/#why-metamask) to learn more and [download](https://metamask.io/) it for your favourite browser.
-
-:::
+After see how it is possible list some data coming from the blockchain let's see how you can login with your Nevermined dApp using our catalog integration with different providers.
 
 1. Run `yarn add @nevermined-io/catalog-providers` or `npm install --save @nevermined-io/catalog-providers` depending of your favourite package manager. This library plan to give support to more wallet providers in near future. Stay tunned.
 
 2. As before, add the WalletProvider in `index.tsx`.
 
 ```tsx
-import ChainConfig from './ChainConfig';
+import {getClient, WalletProvider } from '@nevermined-io/catalog-providers'
 
 ...
-      <MetaMask.WalletProvider nodeUri={appConfig.nodeUri!} correctNetworkId='0x13881' externalChainConfig={ChainConfig}>
+      <WalletProvider client={getClient()}>
         <App />
-      </MetaMask.WalletProvider>
-```
-
-*Note - `externalChainConfig` is optional, if you don't provide it the component will set a default chain configuration. In case that you don't need a specific configuration and your dapp will work only in Polygon network you can jump the next step*
-
-3. Copy and paste this in `ChainConfig.ts` in your `src` folder. It contains blockchain networks information:
-
-```ts
-import { zeroX } from '@nevermined-io/nevermined-sdk-js/dist/node/utils'
-
-const spreeChainId = zeroX((1337).toString(16))
-const polygonLocalnetChainId = zeroX((8997).toString(16))
-const mumbaiChainId = zeroX((80001).toString(16))
-const mainnetChainId = zeroX((137).toString(16))
-
-const ChainConfig = {
-  development: {
-    chainId: spreeChainId,
-    chainName: 'Localhost development',
-    nativeCurrency: {
-      name: 'Ethereum',
-      symbol: 'ETH',
-      decimals: 18
-    },
-    rpcUrls: ['http://localhost:8545'],
-    blockExplorerUrls: [''],
-    iconUrls: ['https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png']
-  },
-  mumbai: {
-    chainId: mumbaiChainId,
-    chainName: 'Polygon Testnet Mumbai',
-    nativeCurrency: {
-      name: 'Matic',
-      symbol: 'MATIC',
-      decimals: 18
-    },
-    rpcUrls: [
-      'https://matic-mumbai.chainstacklabs.com',
-      'https://rpc-endpoints.superfluid.dev/mumbai'
-    ],
-    blockExplorerUrls: ['https://mumbai.polygonscan.com/'],
-    iconUrls: ['https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png']
-  },
-  mainnet: {
-    chainId: mainnetChainId,
-    chainName: 'Polygon Mainnet',
-    nativeCurrency: {
-      name: 'Matic',
-      symbol: 'MATIC',
-      decimals: 18
-    },
-    rpcUrls: ['https://polygon-rpc.com'],
-    blockExplorerUrls: ['https://polygonscan.com/'],
-    iconUrls: ['https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png']
-  },
-  returnConfig: (chainIdHex: string) => {
-    if (chainIdHex === spreeChainId || chainIdHex === polygonLocalnetChainId) {
-      return ChainConfig.development
-    }
-    if (chainIdHex === mumbaiChainId) {
-      return ChainConfig.mumbai
-    }
-    if (chainIdHex === mainnetChainId) {
-      return ChainConfig.mainnet
-    }
-    return ChainConfig.development
-  }
-}
-
-export default ChainConfig
+      </WalletProvider>
 ```
 
 4. Modify `App.tsx` to create a login button.
 
 ```tsx
-import { MetaMask } from '@nevermined-io/catalog-providers'
+import { useWallet } from '@nevermined-io/catalog-providers'
 import React from 'react'
 
-function App() {
-  const { loginMetamask, walletAddress, logout, checkIsLogged } = MetaMask.useWallet();
-  
-  return (
-    <div className="App">
-      <header className="App-header">
-             {!walletAddress ? <button onClick={loginMetamask}>Login</button> : <button onClick={logout}>logout</button>}
-             {walletAddress ? 
-               <>
-                   <div className="nav-item">{walletAddress}</div>
-               </>
-              : <></>
-             }
-      </header>
-    </div>
-  );
-}
+const Login = () => {
+  const { login, walletAddress, logout, getConnectors} = useWallet()
 
+  return (
+    <div className='app'>
+      {!walletAddress ?
+        getConnectors().map(c => 
+          <button onClick={() => login(c)}>Connect to {c.name}</button>
+        )
+        :
+        <>
+          <p>{walletAddress}</UiText>
+          <button onClick={logout}>Logout</button>
+        </>
+      }
+    </div>
+  )
+}
 export default App;
 ```
 

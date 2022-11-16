@@ -17,6 +17,6 @@ The Catalog simplifies the creation of web3 applications for React developers. W
 * [Subscribe events](https://docs.nevermined.io/docs/catalog/core/API/modules/SubscribeService)
 * [Check if the wallet address is a holder](https://docs.nevermined.io/docs/catalog/core/API/modules/AccountService#useisnft1155holder)
 * [Manage user profiles and user authentications](https://docs.nevermined.io/docs/catalog/core/API/modules/AccountService#useisnft1155holder)
-* [Manage a wallet from different providers](https://docs.nevermined.io/docs/catalog/providers/API/modules/MetaMask#walletprovider) (Currently we only support Metamask, more providers will come soon)
+* [Manage a wallet from different providers](./providers/API/modules.md) 
 
 One of Nevermined's and the Catalog's key characteristics is that we are non-custodial. Users retain full ownership of their private keys and credentials. This allows us to achieve complete decentralization, enabling the design and deployment of use cases via the Catalog that support peer to peer interaction between content providers/producers and end users without a central entity.

@@ -9,7 +9,7 @@ import { ethers } from 'ethers'
 import styles from './styles.module.scss'
 import { appConfig } from '../config'
 
-const ERC_TOKEN = '0xe11a86849d99f524cac3e7a0ec1241828e332c62'
+const ERC_TOKEN = '0xe097d6b3100777dc31b34dc2c58fb524c2e76921'
 
 const b = BEM('demo', styles)
 
@@ -148,7 +148,7 @@ const App = ({ config }: {config: Config}) => {
       }
 
       const response = await publishNFT1155({
-        nodeAddress: config.nodeAddress,
+        neverminedNodeAddress: config.neverminedNodeAddress,
         assetRewards,
         metadata,
         nftAmount: BigNumber.from(1),
