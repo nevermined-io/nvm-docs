@@ -115,15 +115,15 @@ const config = {
             items: [
               {
                 label: 'Getting Started',
-                to: '/docs/getting-started/index',
+                to: '/docs/getting-started',
               },
               {
                 label: 'Architecture',
-                to: '/docs/architecture/index',
+                to: '/docs/architecture',
               },
               {
                 label: 'Tutorials',
-                to: 'docs/tutorials/index',
+                to: 'docs/tutorials',
               },
             ],
           },
