@@ -83,8 +83,8 @@ const inputBody = '{
     },
     {
       "index": 1,
-      "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
-      "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+      "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
+      "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
       "type": "access"
     },
     {
@@ -304,8 +304,8 @@ Create a asset entry
     },
     {
       "index": 1,
-      "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
-      "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+      "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
+      "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
       "type": "access"
     },
     {
@@ -407,8 +407,8 @@ Create a asset entry
     },
     {
       "index": 1,
-      "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
-      "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+      "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
+      "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
       "type": "access"
     },
     {
@@ -671,8 +671,8 @@ Get DDO of all assets
       },
       {
         "index": 1,
-        "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
-        "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+        "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
+        "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
         "type": "access"
       },
       {
@@ -1338,8 +1338,8 @@ Get a list of DDOs that match with the given text
       },
       {
         "index": 1,
-        "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
-        "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+        "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
+        "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
         "type": "access"
       },
       {
@@ -1725,8 +1725,8 @@ Get a list of DDOs that match with the executed query.
       },
       {
         "index": 1,
-        "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
-        "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+        "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
+        "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
         "type": "access"
       },
       {
@@ -2078,8 +2078,8 @@ Get DDO of a particular asset
     },
     {
       "index": 1,
-      "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
-      "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+      "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
+      "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
       "type": "access"
     },
     {
@@ -2202,8 +2202,8 @@ const inputBody = '{
     },
     {
       "index": 1,
-      "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
-      "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+      "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
+      "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
       "type": "access"
     },
     {
@@ -2421,8 +2421,8 @@ Update DDO of an existing asset
     },
     {
       "index": 1,
-      "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
-      "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+      "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
+      "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
       "type": "access"
     },
     {
@@ -2525,8 +2525,8 @@ Update DDO of an existing asset
     },
     {
       "index": 1,
-      "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
-      "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+      "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
+      "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
       "type": "access"
     },
     {
@@ -4521,10 +4521,10 @@ This operation does not require authentication
 ```json
 {
   "index": 0,
-  "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+  "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
   "type": "access",
   "service": "SecretStore",
-  "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
+  "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
   "attributes": {
     "additionalInformation": {},
     "curation": {
@@ -4684,8 +4684,8 @@ This operation does not require authentication
     },
     {
       "index": 1,
-      "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
-      "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+      "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
+      "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
       "type": "access"
     },
     {
@@ -4797,8 +4797,8 @@ This operation does not require authentication
     },
     {
       "index": 1,
-      "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
-      "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+      "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
+      "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
       "type": "access"
     },
     {
@@ -4939,8 +4939,8 @@ This operation does not require authentication
     },
     {
       "index": 1,
-      "purchaseEndpoint": "http://localhost:8030/api/v1/gateway/services/access/initialize",
-      "serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+      "purchaseEndpoint": "http://localhost:8030/api/v1/node/services/access/initialize",
+      "serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
       "type": "access"
     },
     {

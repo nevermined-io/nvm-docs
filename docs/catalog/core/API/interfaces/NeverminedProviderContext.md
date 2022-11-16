@@ -61,7 +61,7 @@ const Example = (props: ExampleProps) => {
 
 #### Defined in
 
-[types/index.ts:262](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L262)
+[types/index.ts:230](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L230)
 
 ___
 
@@ -97,45 +97,13 @@ const Example = () => {
    }
  };
 
- const constructRewardMap = (
-   recipientsData: any[],
-   priceWithoutFee: number,
-   ownerWalletAddress: string
- ): Map<string, BigNumber> => {
-   const rewardMap: Map<string, BigNumber> = new Map();
-   let recipients: any = [];
-   if (recipientsData.length === 1 && recipientsData[0].split === 0) {
-     recipients = [
-       {
-         name: ownerWalletAddress,
-         split: 100,
-         walletAddress: ownerWalletAddress
-       }
-     ];
-   }
-   let totalWithoutUser = 0;
-
-   recipients.forEach((recipient: any) => {
-     if (recipient.split && recipient.split > 0) {
-       const ownSplit = ((priceWithoutFee * recipient.split) / 100).toFixed();
-       rewardMap.set(recipient.walletAddress, BigNumber.from(+ownSplit));
-       totalWithoutUser += recipient.split;
-     }
-   });
-
-   if (!rewardMap.has(ownerWalletAddress)) {
-     const ownSplitReinforced = +((priceWithoutFee * (100 - totalWithoutUser)) / 100).toFixed();
-     rewardMap.set(ownerWalletAddress, BigNumber.from(ownSplitReinforced));
-   }
-
-   return rewardMap;
- };
-
  const onPublish = async () => {
   try {
     const publisher = await getCurrentAccount(sdk);
     const rewardsRecipients: any[] = [];
-    const assetRewardsMap = constructRewardMap(rewardsRecipients, 100, publisher.getId());
+    const assetRewardsMap = new Map([
+       [walletAddress, BigNumber.from(1)]
+    ])
     const assetRewards = new AssetRewards(assetRewardsMap);
     const royaltyAttributes = {
       royaltyKind: RoyaltyKind.Standard,
@@ -144,7 +112,7 @@ const Example = () => {
     };
 
     const response = await publishNFT1155({
-      gatewayAddress: String(appConfig.gatewayAddress),
+      neverminedNodeAddress: String(appConfig.neverminedNodeAddress),
       assetRewards,
       metadata,
       nftAmount: BigNumber.from(1),
@@ -170,7 +138,7 @@ const Example = () => {
 
 #### Defined in
 
-[types/index.ts:229](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L229)
+[types/index.ts:197](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L197)
 
 ___
 
@@ -182,7 +150,7 @@ True if sdk is loading
 
 #### Defined in
 
-[types/index.ts:53](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L53)
+[types/index.ts:53](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L53)
 
 ___
 
@@ -240,7 +208,7 @@ const BuyAsset = ({ddo}: {ddo: DDO}) => {
 
 #### Defined in
 
-[types/index.ts:311](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L311)
+[types/index.ts:279](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L279)
 
 ___
 
@@ -252,7 +220,7 @@ Nevermined sdk instance which has all the core functionalities
 
 #### Defined in
 
-[types/index.ts:49](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L49)
+[types/index.ts:49](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L49)
 
 ___
 
@@ -264,7 +232,7 @@ Error message from sdk
 
 #### Defined in
 
-[types/index.ts:51](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L51)
+[types/index.ts:51](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L51)
 
 ___
 
@@ -317,7 +285,7 @@ const Example = () => {
 
 #### Defined in
 
-[types/index.ts:128](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L128)
+[types/index.ts:128](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L128)
 
 ___
 
@@ -341,11 +309,11 @@ const Example = (props: ExampleProps) => {
  const reloadSdk = async() => {
     const config = {
         web3Provider: window.ethereum,
-        nodeUri: network,
-        marketplaceUri,
-        gatewayUri,
+        web3ProviderUri: network,
+        web3ProviderUri,
+        neverminedNodeUri,
+        neverminedNodeAddress,
         faucetUri,
-        gatewayAddress,
         secretStoreUri,
         verbose,
         marketplaceAuthToken: Catalog.fetchMarketplaceApiTokenFromLocalStorage().token || '',
@@ -370,4 +338,4 @@ const Example = (props: ExampleProps) => {
 
 #### Defined in
 
-[types/index.ts:84](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L84)
+[types/index.ts:84](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L84)

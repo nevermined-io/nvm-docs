@@ -10,6 +10,7 @@ which allow to handle Metamask, WalletConnect and Coinbase without needing to se
 - [checkIsChainCorrect](WalletProviderState.md#checkischaincorrect)
 - [client](WalletProviderState.md#client)
 - [getAllAvailableChains](WalletProviderState.md#getallavailablechains)
+- [getConnectors](WalletProviderState.md#getconnectors)
 - [getProvider](WalletProviderState.md#getprovider)
 - [getStatus](WalletProviderState.md#getstatus)
 - [login](WalletProviderState.md#login)
@@ -34,7 +35,7 @@ If chain is between the available networks supported
 
 #### Defined in
 
-[src/client.tsx:92](https://github.com/nevermined-io/components-catalog/blob/830d916/providers/src/client.tsx#L92)
+[src/client.tsx:99](https://github.com/nevermined-io/components-catalog/blob/5d4b912/providers/src/client.tsx#L99)
 
 ___
 
@@ -50,7 +51,7 @@ All the wagmi client functionalities
 
 #### Defined in
 
-[src/client.tsx:78](https://github.com/nevermined-io/components-catalog/blob/830d916/providers/src/client.tsx#L78)
+[src/client.tsx:83](https://github.com/nevermined-io/components-catalog/blob/5d4b912/providers/src/client.tsx#L83)
 
 ___
 
@@ -70,7 +71,27 @@ Get all the available chains
 
 #### Defined in
 
-[src/client.tsx:86](https://github.com/nevermined-io/components-catalog/blob/830d916/providers/src/client.tsx#L86)
+[src/client.tsx:93](https://github.com/nevermined-io/components-catalog/blob/5d4b912/providers/src/client.tsx#L93)
+
+___
+
+### getConnectors
+
+• **getConnectors**: () => `Connector`<`any`, `any`, `any`\>[]
+
+#### Type declaration
+
+▸ (): `Connector`<`any`, `any`, `any`\>[]
+
+Get all the connectors available
+
+##### Returns
+
+`Connector`<`any`, `any`, `any`\>[]
+
+#### Defined in
+
+[src/client.tsx:87](https://github.com/nevermined-io/components-catalog/blob/5d4b912/providers/src/client.tsx#L87)
 
 ___
 
@@ -90,7 +111,7 @@ Metamask provider for example web3 or ethers
 
 #### Defined in
 
-[src/client.tsx:80](https://github.com/nevermined-io/components-catalog/blob/830d916/providers/src/client.tsx#L80)
+[src/client.tsx:85](https://github.com/nevermined-io/components-catalog/blob/5d4b912/providers/src/client.tsx#L85)
 
 ___
 
@@ -110,27 +131,33 @@ Get the status of the wallet
 
 #### Defined in
 
-[src/client.tsx:84](https://github.com/nevermined-io/components-catalog/blob/830d916/providers/src/client.tsx#L84)
+[src/client.tsx:91](https://github.com/nevermined-io/components-catalog/blob/5d4b912/providers/src/client.tsx#L91)
 
 ___
 
 ### login
 
-• **login**: () => `undefined` \| `Promise`<`Required`<`ConnectorData`<`any`\>\>\>
+• **login**: (`connector`: `Connector`<`any`, `any`, `any`\>) => `void`
 
 #### Type declaration
 
-▸ (): `undefined` \| `Promise`<`Required`<`ConnectorData`<`any`\>\>\>
+▸ (`connector`): `void`
 
 Login in Provider
 
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `connector` | `Connector`<`any`, `any`, `any`\> |
+
 ##### Returns
 
-`undefined` \| `Promise`<`Required`<`ConnectorData`<`any`\>\>\>
+`void`
 
 #### Defined in
 
-[src/client.tsx:90](https://github.com/nevermined-io/components-catalog/blob/830d916/providers/src/client.tsx#L90)
+[src/client.tsx:97](https://github.com/nevermined-io/components-catalog/blob/5d4b912/providers/src/client.tsx#L97)
 
 ___
 
@@ -150,7 +177,7 @@ Logout from the wallet
 
 #### Defined in
 
-[src/client.tsx:82](https://github.com/nevermined-io/components-catalog/blob/830d916/providers/src/client.tsx#L82)
+[src/client.tsx:89](https://github.com/nevermined-io/components-catalog/blob/5d4b912/providers/src/client.tsx#L89)
 
 ___
 
@@ -162,4 +189,4 @@ The address of the wallet account
 
 #### Defined in
 
-[src/client.tsx:88](https://github.com/nevermined-io/components-catalog/blob/830d916/providers/src/client.tsx#L88)
+[src/client.tsx:95](https://github.com/nevermined-io/components-catalog/blob/5d4b912/providers/src/client.tsx#L95)

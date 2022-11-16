@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[catalog.tsx:533](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/catalog.tsx#L533)
+[catalog.tsx:532](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/catalog.tsx#L532)
 
 ## Functions
 
@@ -45,13 +45,11 @@ import chainConfig, { mumbaiChainId } from './chain_config';
 ReactDOM.render(
   <div>
     <Catalog.NeverminedProvider config={appConfig} verbose={true}>
-      <MetaMask.WalletProvider
-        externalChainConfig={chainConfig}
-        correctNetworkId={mumbaiChainId}
-        nodeUri={String(appConfig.nodeUri)}
+      <WalletProvider
+         client={getClient()}
       >
         <Example />
-      </MetaMask.WalletProvider>
+      </WalletProvider>
     </Catalog.NeverminedProvider>
   </div>,
   document.getElementById('root') as HTMLElement
@@ -86,7 +84,7 @@ const SDKInstance = () => {
 
 #### Defined in
 
-[catalog.tsx:120](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/catalog.tsx#L120)
+[catalog.tsx:118](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/catalog.tsx#L118)
 
 ___
 
@@ -106,7 +104,7 @@ ___
 
 #### Defined in
 
-[catalog.tsx:53](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/catalog.tsx#L53)
+[catalog.tsx:53](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/catalog.tsx#L53)
 
 ___
 
@@ -120,4 +118,4 @@ ___
 
 #### Defined in
 
-[catalog.tsx:535](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/catalog.tsx#L535)
+[catalog.tsx:534](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/catalog.tsx#L534)

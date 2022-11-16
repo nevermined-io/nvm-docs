@@ -1,6 +1,6 @@
 {
     "label": "Marketplace API",
-    "position": 6,
+    "position": 7,
     "link": {
       "type": "doc",
       "id": "architecture/marketplace-api/index"

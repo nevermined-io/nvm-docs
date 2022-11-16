@@ -54,7 +54,7 @@ The following command will run the main components of a Nevermined deployment:
 
 * A local Ethereum node using Geth with the Nevermined [Smart Contracts](../architecture/contracts/) deployed on it
 * An instance of the [Marketplace API](../architecture/marketplace-api/) allowing to register assets Metadata
-* An instance of the [Gateway](../architecture/gateway/) giving access to off-chain data and services
+* An instance of the [Node](../architecture/node/) giving access to off-chain data and services
 * An instance of a [Faucet](https://github.com/nevermined-io/faucet/) that can be used to get some ETH in the local network
 * An instance of a [SubGraph](https://github.com/nevermined-io/subgraph) node indexing all the events emitted by the Smart Contracts and exposing them via GraphQL
 

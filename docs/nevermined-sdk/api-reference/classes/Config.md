@@ -18,8 +18,8 @@
 - [faucetUri](Config.md#fauceturi)
 - [feeReceiver](Config.md#feereceiver)
 - [gasMultiplier](Config.md#gasmultiplier)
-- [gatewayAddress](Config.md#gatewayaddress)
-- [gatewayUri](Config.md#gatewayuri)
+- [nodeAddress](Config.md#nodeAddress)
+- [neverminedNodeUri](Config.md#neverminedNodeUri)
 - [graphHttpUri](Config.md#graphhttpuri)
 - [marketplaceAuthToken](Config.md#marketplaceauthtoken)
 - [marketplaceUri](Config.md#marketplaceuri)
@@ -131,9 +131,9 @@ Can be used to speed up the transactions.
 
 ___
 
-### gatewayAddress
+### nodeAddress
 
-• `Optional` **gatewayAddress**: `string`
+• `Optional` **nodeAddress**: `string`
 
 Address of Gateway.
 
@@ -143,11 +143,11 @@ Address of Gateway.
 
 ___
 
-### gatewayUri
+### neverminedNodeUri
 
-• **gatewayUri**: `string`
+• **neverminedNodeUri**: `string`
 
-Gateway URL.
+Node URL.
 
 #### Defined in
 

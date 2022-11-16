@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # What is the Nevermined SDK?
 
-The Nevermined SDK is a low level library which does the intermediate between the client and the diffent backend services like [Marketplace API](../architecture/marketplace-api/index.md), [Gateway](../architecture/gateway/index.md), [Smart Contracts](../architecture/contracts/index.md), etc...
+The Nevermined SDK is a low level library which does the intermediate between the client and the diffent backend services like [Marketplace API](../architecture/marketplace-api/index.md), [Node](../architecture/node/index.md), [Smart Contracts](../architecture/contracts/index.md), etc...
 
 # When should I use Nevermined SDK?
 

@@ -6,16 +6,16 @@
 
 ### Properties
 
-- [gateway](PlatformVersions.md#gateway)
+- [node](PlatformVersions.md#node)
 - [metadata](PlatformVersions.md#metadata)
 - [sdk](PlatformVersions.md#sdk)
 - [status](PlatformVersions.md#status)
 
 ## Properties
 
-### gateway
+### node
 
-• **gateway**: [`PlatformKeeperTech`](PlatformKeeperTech.md)
+• **node**: [`PlatformKeeperTech`](PlatformKeeperTech.md)
 
 #### Defined in
 

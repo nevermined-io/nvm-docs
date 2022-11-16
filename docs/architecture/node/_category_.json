@@ -1,0 +1,9 @@
+{
+    "label": "Nevermined Node",
+    "position": 8,
+    "link": {
+      "type": "doc",
+      "id": "architecture/node/index"
+    }
+  }
+  

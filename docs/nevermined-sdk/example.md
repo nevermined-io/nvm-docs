@@ -21,11 +21,11 @@ The first file that you need to create is the `config.ts` file which contains al
 import { Config } from '@nevermined-io/nevermined-sdk-js'
 import { ethers } from 'ethers'
 
-export const nodeUri = process.env.REACT_APP_NODE_URI || 'https://matic-mumbai.chainstacklabs.com'
-export const gatewayAddress =
+export const web3ProviderUri = process.env.REACT_APP_NODE_URI || 'https://matic-mumbai.chainstacklabs.com'
+export const nodeAddress =
   process.env.REACT_APP_GATEWAY_ADDRESS || '0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc'
-export const gatewayUri =
-  process.env.REACT_APP_GATEWAY_URI || 'https://gateway.mumbai.public.nevermined.network'
+export const neverminedNodeUri =
+  process.env.REACT_APP_GATEWAY_URI || 'https://node.mumbai.public.nevermined.network'
 export const acceptedChainId = process.env.REACT_APP_ACCEPTED_CHAIN_ID || '80001' // for Mumbai
 export const rootUri = process.env.REACT_APP_ROOT_URI || 'http://localhost:3445'
 export const marketplaceUri = 'https://marketplace-api.mumbai.public.nevermined.network'
@@ -36,8 +36,8 @@ export const erc20TokenAddress = process.env.ERC20_TOKEN_ADDRESS || '0xe11a86849
 export const appConfig: Config = {
   //@ts-ignore
   web3Provider: typeof window !== 'undefined' ? window.ethereum : new ethers.providers.JsonRpcProvider(nodeUri),
-  gatewayUri,
-  gatewayAddress,
+  neverminedNodeUri,
+  nodeAddress,
   graphHttpUri,
   marketplaceAuthToken: localStorage.getItem('marketplaceApiToken'),
   marketplaceUri,
@@ -209,14 +209,14 @@ const App = ({config}: {config: Config }) => {
     }
   }, [walletAddress])
 
-  const publishNFT1155 = async (gatewayAddress: string, accountWallet: Account, metadata: MetaData, royaltyAttributes: RoyaltyAttributes, assetRewards: AssetRewards) => {
+  const publishNFT1155 = async (nodeAddress: string, accountWallet: Account, metadata: MetaData, royaltyAttributes: RoyaltyAttributes, assetRewards: AssetRewards) => {
     const transferNftCondition = sdk.keeper.conditions.transferNftCondition
 
     const transferNftConditionContractReceipt = await sdk.nfts.setApprovalForAll(transferNftCondition.address, true, accountWallet)
 
     Logger.log(`Contract Receipt for approved transfer NFT: ${transferNftConditionContractReceipt}`)
 
-    const gateawayContractReceipt = await sdk.nfts.setApprovalForAll(gatewayAddress, true, accountWallet)
+    const gateawayContractReceipt = await sdk.nfts.setApprovalForAll(nodeAddress, true, accountWallet)
 
     Logger.log(`Contract Receipt for approved gateway: ${gateawayContractReceipt}`)
 
@@ -273,7 +273,7 @@ const App = ({config}: {config: Config }) => {
 
       await loginMarketplace(sdk, account)
       
-      const response = await publishNFT1155(config.gatewayAddress, account, metadata, royaltyAttributes, assetRewards)
+      const response = await publishNFT1155(config.nodeAddress, account, metadata, royaltyAttributes, assetRewards)
 
       setDDO(response as DDO)
     } catch (error) {
@@ -467,14 +467,14 @@ const App = ({config}: {config: Config }) => {
     }
   }, [walletAddress])
 
-  const publishNFT1155 = async (gatewayAddress: string, accountWallet: Account, metadata: MetaData, royaltyAttributes: RoyaltyAttributes, assetRewards: AssetRewards) => {
+  const publishNFT1155 = async (nodeAddress: string, accountWallet: Account, metadata: MetaData, royaltyAttributes: RoyaltyAttributes, assetRewards: AssetRewards) => {
     const transferNftCondition = sdk.keeper.conditions.transferNftCondition
 
     const transferNftConditionContractReceipt = await sdk.nfts.setApprovalForAll(transferNftCondition.address, true, accountWallet)
 
     Logger.log(`Contract Receipt for approved transfer NFT: ${transferNftConditionContractReceipt}`)
 
-    const gateawayContractReceipt = await sdk.nfts.setApprovalForAll(gatewayAddress, true, accountWallet)
+    const gateawayContractReceipt = await sdk.nfts.setApprovalForAll(nodeAddress, true, accountWallet)
 
     Logger.log(`Contract Receipt for approved gateway: ${gateawayContractReceipt}`)
 
@@ -528,7 +528,7 @@ const App = ({config}: {config: Config }) => {
 
       await loginMarketplace(sdk, account)
       
-      const response = await publishNFT1155(config.gatewayAddress, account, metadata, royaltyAttributes, assetRewards)
+      const response = await publishNFT1155(config.nodeAddress, account, metadata, royaltyAttributes, assetRewards)
 
       setDDO(response as DDO)
     } catch (error) {

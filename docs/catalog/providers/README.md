@@ -6,9 +6,13 @@ description: Nevermined Catalog Providers API Reference
 
 # Getting started
 
-The Catalog exposes a package facilitating the interaction with Web3 providers like Metamask.
+The Catalog exposes a package facilitating the interaction with Web3 providers like Metamask. You can see more about in the [documentation](https://docs.nevermined.io/docs/catalog/intro)
 
-**Note**: Currently `Catalog providers` only support Metamask but more providers will be supported soon.
+## Providers supported
+
+* Metamask
+* WalletConnect
+* Coinbase Wallet
 
 ## Pre-requisites
 
@@ -26,23 +30,16 @@ npm install --save @nevermined-io/catalog-providers
 ## How to integrate ?
 
 ```typescript
-import { MetaMask } from "@nevermined-io/catalog-providers";
+import { WalletProvider, getClient, useWallet } from "@nevermined-io/catalog-providers";
 import App from "app";
-import { Config } from "@nevermined-io/nevermined-sdk-js";
-
-const appConfig: Config = {
-    nodeUri,
-};
 
 ReactDOM.render(
     <div>
-        <MetaMask.WalletProvider
-            chainConfig={chainConfig}
-            correctNetworkId={correctNetworkId}
-            nodeUri={String(appConfig.nodeUri)}
+        <WalletProvider
+            client={getClient()}
         >
             <App />
-        </MetaMask.WalletProvider>
+        </WalletProvider>
     </div>,
     document.getElementById("root") as HTMLElement
 );
@@ -52,15 +49,17 @@ ReactDOM.render(
 
 ```typescript
 const ConnectToMetaMask = () => {
-    const { loginMetamask, walletAddress } = MetaMask.useWallet();
+    const { login, walletAddress, getConnectors } = useWallet();
 
     return (
         <>
             <div> {walletAddress}</div>
             {!walletAddress && (
-                <button onClick={loginMetamask}>Connect To MM</button>
+                <button onClick={() => login(getConnectors()[0])}>Connect To MM</button>
             )}
         </>
     );
 };
 ```
+
+Here you can find [here a complete example](https://docs.nevermined.io/docs/catalog/example)

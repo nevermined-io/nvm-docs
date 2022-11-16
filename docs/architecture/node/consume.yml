@@ -18,8 +18,8 @@ parameters:
     type: string
   - name: url
     in: query
-    description: This URL is only valid if Nevermined Gateway acts as a proxy.
-                 Consumer can't download using the URL if it's not through Nevermined Gateway.
+    description: This URL is only valid if Nevermined Node acts as a proxy.
+                 Consumer can't download using the URL if it's not through Nevermined Node.
     required: true
     type: string
   - name: signature

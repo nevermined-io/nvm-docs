@@ -119,7 +119,7 @@
 		{
 			"type": "access",
 			"index": 1,
-			"serviceEndpoint": "http://localhost:8030/api/v1/gateway/services/consume",
+			"serviceEndpoint": "http://localhost:8030/api/v1/node/services/consume",
 			"templateId": "",
 			"attributes": {
 				"main": {

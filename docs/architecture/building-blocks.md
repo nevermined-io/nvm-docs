@@ -57,16 +57,16 @@ easy integration and deployment in cloud providers and Kubernetes clusters.
 
 
 
-### Gateway
+### Nevermined Node
 
-The [Nevermined Gateway](https://github.com/nevermined-io/gateway-ts) is an
-Open Source micro-service in the Nevermined ecosystem. The Gateway is the
+The [Nevermined Node](https://github.com/nevermined-io/node) is an
+Open Source micro-service in the Nevermined ecosystem. The Node is the
 technical component executed by Data/Compute Providers allowing them to provide
-extended data services (e.g. storage and compute). The Nevermined Gateway, as
+extended data services (e.g. storage and compute). The Nevermined Node, as
 part of the Publisher ecosystem, includes the credentials to interact with the
 infrastructure (initially cloud, but could be on-premise).
 
-The Gateway allows also the encryption and decryption of content via:
+The Node allows also the encryption and decryption of content via:
 
 * RSA
 * ECDSA
@@ -85,7 +85,7 @@ The [Nevermined Compute API](https://github.com/nevermined-io/compute-api)
  In Nevermined the Data/Compute Providers can publish services saying they offer
   compute capabilities to the network on top of their data under some conditions
    for a given price. The Compute API is in charge of, after all the
-   verifications made by the Gateway, to manage all the infrastructure to move
+   verifications made by the Nevermined Node, to manage all the infrastructure to move
    the algorithm where the data is and track the execution of these ephemeral
    environments.
 
@@ -171,3 +171,16 @@ This approach allows to:
   networks used for testing
 - Connect to remote blockchain networks from your local environment
 
+
+## Dictionary of Terms and Components
+
+### Components
+
+* `Nevermined Node` or `Node`
+* `Smart Contracts` or `Contracts`
+
+
+### Configuration
+
+* `web3ProviderUri` or `web3ProviderUrl` - The JSON-RPC or WS url to the blockchain provider. Typically Infura or Alchemy (localhost on local environments)
+ 

@@ -13,10 +13,10 @@ At Nevermined, we approach the Web3 transaction lifecycle with several critical 
 
 - Digital marketplaces with a full framework for payment processing, digital asset registration, listing and minting, secondary market trading, royalties distribution, and NFTs-as-collateral functionality.
 - Tokenization engine for a broad array of NFTs that facilitates the launch, distribution and integration of non-transferrable NFTs, proof of attendance NFTs, subscription NFTs, Login NFTs for decentralized access control and semi-fungible NFTs.
-- Decentralized Access Control mechanisms for easy deployment and maintenance of gateways, smart contracts, bridges and data storage pools across a wide range of blockchains
+- Decentralized Access Control mechanisms for easy deployment and maintenance of Nodes, smart contracts, bridges and data storage pools across a wide range of blockchains
 - Data Sharing framework for instantly connecting to any API endpoint of blockchains and protocols to supercharge enterprise wallet, CEX, DEX and other Dapps
 
-Together, these components form the Nevermined-as-a-Service offering that allows us to become a critical infrastructure provider for the Web3 stack and blockchain integrations. We make data transferable and easily accessible while retaining security at the infrastructure layer to decrease dependence on centralized points of access, institutions and gateways.
+Together, these components form the Nevermined-as-a-Service offering that allows us to become a critical infrastructure provider for the Web3 stack and blockchain integrations. We make data transferable and easily accessible while retaining security at the infrastructure layer to decrease dependence on centralized points of access, institutions and Nodes.
 
 Nevermined’s model transitions enterprises and developers to more distributed and resilient systems reliant on blockchains and smart contracts where they can build and integrate Dapps, NFTs and smart contracts without unexpected downtimes, single points of failure, or threat of censorship.
 

@@ -156,11 +156,11 @@ The main requirements used to designed the solution are:
 ###  Identity Management
 
 The proposed solution involves the deployment of a component called
-**Identity Gateway**. Each Domain Controller in the Ecosystem needs to provide
-one Identity Gateway in charge of bridge the internals domain authorization
+**Identity NODE**. Each Domain Controller in the Ecosystem needs to provide
+one Identity NODE in charge of bridge the internals domain authorization
 policies with the rest of the world. So it’s assumed for each independent Domain
  Controller available in the network, there should be at least one Identity
- Gateway resolving for the Domain Controller policies.
+ NODE resolving for the Domain Controller policies.
 
  ![W3C Actors in Verifiable Credentials](images/idm/identity_management_with_onchain_acl.png)
 
@@ -170,7 +170,7 @@ domain. The only actions that are done by the Domain Controllers are:
 * They identify users as in part of the domain
 * They identify users as part of a group within the domain
 * They are network isolated and respond to authorization queries to the
-  associated Identity Gateway
+  associated Identity NODE
 
 #### Verifiable Credentials associated with Nevermined assets
 
@@ -243,7 +243,7 @@ In this architecture document, all the JWT messages sent from a client to a
 server are using the HTTP Authorization header with the Bearer scheme. Example:
 
 ```http
-HTTP GET /api/v1/gateway/resource
+HTTP GET /api/v1/node/resource
 
 Authorization: Bearer eyJhbGciOiJIUzI1NiIXVCJ9TJV...r7E20RMHrHDcEfxjoYZgeFONFh7HgQ
 ```
@@ -284,7 +284,7 @@ In our case the payload will have the following attributes:
 
 * `iss` - Issuer. address of the holder
 * `sub` - Subject, id of the service agreement
-* `aud` - Audience, address of the gateway
+* `aud` - Audience, address of the node
 
 Here an example of the payload:
 
@@ -296,9 +296,9 @@ Here an example of the payload:
 }
 ```
 
-### Identity Gateways
+### Identity Nodes
 
-In this architecture the Identity Gateway is in charge of:
+In this architecture the Identity Node is in charge of:
 
 * Expose to the network the interface allowing to ask for the details of a
   Domain Controller.
@@ -327,7 +327,7 @@ The different steps are:
 
 1. The Holder presents a credentials request related to a subject
   ```http
-   HTTP GET /api/v1/gateway/services/oauth2/token
+   HTTP GET /api/v1/node/services/oauth2/token
 
    Authorization: Bearer eyJhbGciOiJIUzI1NiIXVCJ9TJV...r7E20RMHrHDcEfxjoYZgeFONFh7HgQ
   ```
@@ -337,23 +337,23 @@ The different steps are:
    {
      "iss": "0x123456", // address of the holder
      "sub": "0xabcde", // id of the service agreement
-     "aud": "0xffffff" // address of the gateway
+     "aud": "0xffffff" // address of the Nevermined Node
    }
   ```
 
-2. The Gateway decodes the JWT message, and validates the identity of the Holder
+2. The Node decodes the JWT message, and validates the identity of the Holder
    checking the signature and the issuer address provided
-3. The Gateway queries the domain controller checking the access permissions of
-   the Holder for a specific Subject. The identity Gateway could integrate
+3. The Node queries the domain controller checking the access permissions of
+   the Holder for a specific Subject. The identity Node could integrate
    different kinds of backends like Active Directory, LDAP, databases, etc.
    The verifiable credentials can include user or group types of
-   credentials subjects. The identity gateway must validate if the user just
+   credentials subjects. The identity Node must validate if the user just
    authenticated fulfill any of the following:
    - If is a user part of the Domain Controller
    - If the user is part of any of the credential groups within the Domain
 
 4. If the Domain Controller validates the Holder has access permissions, the
-   Identity Gateway will generate and sign a credential
+   Identity Node will generate and sign a credential
 5. The credential is issued to the Holder in the JWT format included in the
    `access_token` response parameter:
 
@@ -378,17 +378,17 @@ The different steps are:
   (when the token is expiring).
 
 6. The Holder can present the credentials to a Smart Contract or Optionally the
-   Identity Gateway could present the credentials to a Smart Contract on behalf
+   Identity Node could present the credentials to a Smart Contract on behalf
    of the Holder.
 
 
-### Gateway JWT implementation
+### Node JWT implementation
 
-The gateway implements the [RFC6749: The OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6749) framework using [JWTs as Authorization Grants](https://tools.ietf.org/html/rfc7523) and [JWTs as Access Tokens](https://tools.ietf.org/html/draft-ietf-oauth-access-token-jwt-10)
+The Node implements the [RFC6749: The OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6749) framework using [JWTs as Authorization Grants](https://tools.ietf.org/html/rfc7523) and [JWTs as Access Tokens](https://tools.ietf.org/html/draft-ietf-oauth-access-token-jwt-10)
 
 #### JWT Authorization Grants
 
-The claims that should be contained in a JWT Authorization Grant depend on the action that we want to perform on the gateway. The claims validation follow [RFC7523](https://tools.ietf.org/html/rfc7523#section-3). Overall the claim options look like this:
+The claims that should be contained in a JWT Authorization Grant depend on the action that we want to perform on the Node. The claims validation follow [RFC7523](https://tools.ietf.org/html/rfc7523#section-3). Overall the claim options look like this:
 
 **Registered name claims**
 
@@ -399,10 +399,10 @@ The claims that should be contained in a JWT Authorization Grant depend on the a
   "aud": {
     "essential": true,
       "values": [
-        "/api/v1/gateway/services/access",
-        "/api/v1/gateway/services/compute",
-        "/api/v1/gateway/services/download",
-        "/api/v1/gateway/services/execute"
+        "/api/v1/node/services/access",
+        "/api/v1/node/services/compute",
+        "/api/v1/node/services/download",
+        "/api/v1/node/services/execute"
       ],
     },
     "exp": {"essential": true},
@@ -440,26 +440,26 @@ For examples JWT Grant tokens check [Examples of JWT Grant Tokens](#examples-of-
 
 The administrator of the Domain typically uses the Domain Controller as a unique
  source of truth for the access control of users and groups. Because the
- identity gateway asks the Domain Controller for the belonging of users and
+ identity Node asks the Domain Controller for the belonging of users and
  groups as part of the domain, any modification of the permissions in the Domain
   Controller policies will be extended automatically to the new authorization
-  queries responded by the Identity Gateway.
+  queries responded by the Identity Node.
 
 For the cases where an access token was already given to a user, this will be
 valid during the lifetime of the credentials assigned to the user. During that
 period of time, the credentials will be valid for access to the resources
-granted. Because of that it is recommended to configure the identity gateway to
+granted. Because of that it is recommended to configure the identity Node to
 not emit credentials with very long expiration time.
 
-To complement this, the Identity Gateway could integrate a cache system to keep
+To complement this, the Identity Node could integrate a cache system to keep
 track of the credentials granted during their life-cycle, and expose a method
 for revoking credentials immediately. In that scenario if a Domain Account needs
  to revoke some credentials related to a Holder and a Subject, it should send a
- request to the Identity Gateway using the following format:
+ request to the Identity Node using the following format:
 
 
 ```http
- HTTP DELETE /api/v1/gateway/services/domain/credentials
+ HTTP DELETE /api/v1/node/services/domain/credentials
 
  Authorization: Bearer eyJhbGciOiJIUzI1NiIXVCJ9TJV...r7E20RMHrHDcEfxjoYZgeFONFh7HgQ
 ```
@@ -469,19 +469,19 @@ for revoking credentials immediately. In that scenario if a Domain Account needs
  {
    "iss": "0x123456", // address of the domain controller
    "sub": "0xabcd", // id of the service agreement
-   "aud": "0xffffff" // address of the gateway
+   "aud": "0xffffff" // address of the Node
  }
 ```
 
-For this request the Identity Gateway needs to authenticate the Domain Account
-via the signature. If all the validations are correct the Identity Gateway needs
+For this request the Identity Node needs to authenticate the Domain Account
+via the signature. If all the validations are correct the Identity Node needs
  to send a revoke request to the Smart Contract keeping the authorization
  permissions on-chain.
 
-This scenario is valid when the Identity Gateway integrates a DLT network to
-backup the authorization permissions. If the Identity Gateway performs the
+This scenario is valid when the Identity Node integrates a DLT network to
+backup the authorization permissions. If the Identity Node performs the
 validation for each request, this revocation won’t be necessary because the next
- authorization request via the Gateway will query the Domain Controller that
+ authorization request via the Node will query the Domain Controller that
  should have already revoked the authorization permissions.
 
 
@@ -506,7 +506,7 @@ serialize fragments of DID Documents is as follows:
 
 ### Examples of JWT Grant Tokens
 
-**`/api/v1/gateway/services/access`**
+**`/api/v1/node/services/access`**
 
 ```json
 // header
@@ -518,7 +518,7 @@ serialize fragments of DID Documents is as follows:
 // assertion
 {
   "iss": "0x068Ed00cF0441e4829D9784fCBe7b9e26D4BD8d0",
-  "aud": "/api/v1/gateway/services/access",
+  "aud": "/api/v1/node/services/access",
   "sub": "0xf527a6bbc35547f782dda34d64bb9070e743531107994899b1f97d4451aacbe1",
   "iat": 1607967375,
   "exp": 1607970975,
@@ -526,7 +526,7 @@ serialize fragments of DID Documents is as follows:
 }
 ```
 
-**`/api/v1/gateway/services/compute`**
+**`/api/v1/node/services/compute`**
 
 ```json
 // header
@@ -538,7 +538,7 @@ serialize fragments of DID Documents is as follows:
 // assertion
 {
   "iss": "0x068Ed00cF0441e4829D9784fCBe7b9e26D4BD8d0",
-  "aud": "/api/v1/gateway/services/compute",
+  "aud": "/api/v1/node/services/compute",
   "sub": "0x3228c55d6e444cdc87bd5425896d5cdfa1e42e0734d04866a6c4386ef4f20144",
   "iat": 1607968935,
   "exp": 1607972535,
@@ -546,7 +546,7 @@ serialize fragments of DID Documents is as follows:
 }
 ```
 
-**`/api/v1/gateway/services/download`**
+**`/api/v1/node/services/download`**
 ```json
 // header
 {
@@ -557,14 +557,14 @@ serialize fragments of DID Documents is as follows:
 // assertion
 {
   "iss": "0x00Bd138aBD70e2F00903268F3Db08f2D25677C9e",
-  "aud": "/api/v1/gateway/services/download",
+  "aud": "/api/v1/node/services/download",
   "iat": 1607969122,
   "exp": 1607972722,
   "did": "did:nv:2379d3e2d03f25b8e5fb2fae6e6adeb45cd7674d20905fc172d84915ff68cc73"
 }
 ```
 
-**`/api/v1/gateway/services/execute`**
+**`/api/v1/node/services/execute`**
 ```json
 // header
 {
@@ -575,7 +575,7 @@ serialize fragments of DID Documents is as follows:
 // assertion
 {
   "iss": "0x068Ed00cF0441e4829D9784fCBe7b9e26D4BD8d0",
-  "aud": "/api/v1/gateway/services/execute",
+  "aud": "/api/v1/node/services/execute",
   "sub": "0x715954fd8a9b48968983ae9b9813e169b4be0d861ccb4bbd8489298cda59c6a9",
   "iat": 1607969247,
   "exp": 1607972847,

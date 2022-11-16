@@ -36,7 +36,7 @@ The new generated token
 
 #### Defined in
 
-[types/index.ts:437](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L437)
+[types/index.ts:405](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L405)
 
 ___
 
@@ -58,7 +58,7 @@ The address token signer
 
 #### Defined in
 
-[types/index.ts:447](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L447)
+[types/index.ts:415](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L415)
 
 ___
 
@@ -86,7 +86,7 @@ List of assets which was bought by the address given as argument
 
 #### Defined in
 
-[types/index.ts:432](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L432)
+[types/index.ts:400](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L400)
 
 ___
 
@@ -114,7 +114,7 @@ List of assets which was published by the address given
 
 #### Defined in
 
-[types/index.ts:426](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L426)
+[types/index.ts:394](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L394)
 
 ___
 
@@ -143,7 +143,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:455](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L455)
+[types/index.ts:423](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L423)
 
 ___
 
@@ -174,7 +174,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:465](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L465)
+[types/index.ts:433](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L433)
 
 ___
 
@@ -205,7 +205,7 @@ true if the user holds the NFT
 
 #### Defined in
 
-[types/index.ts:475](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L475)
+[types/index.ts:443](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L443)
 
 ___
 
@@ -227,4 +227,4 @@ if token is valid it will return true
 
 #### Defined in
 
-[types/index.ts:442](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L442)
+[types/index.ts:410](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L410)

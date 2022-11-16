@@ -24,7 +24,7 @@ The network fee in Nevermined production environments is **1%** and the receiver
 
 | Environment | Network | Contracts Version | Tag | Component | URL | Comments |
 |-------------|---------|-------------------|-----|-----------|-----|----------|
-| public-nvm-v2-matic | Polygon Matic | 2.1.0 | public | Gateway | https://gateway.matic.public.nevermined.network | |
+| public-nvm-v2-matic | Polygon Matic | 2.1.0 | public | Node | https://node.matic.public.nevermined.network | |
 | public-nvm-v2-matic | Polygon Matic | 2.1.0 | public | Marketplace API | https://marketplace-api.matic.public.nevermined.network | |
 
 All the contract events are exposed via [The Graph](https://thegraph.com/). You can find all the `Polygon Matic` Nevermined Subgraphs here (search by Nevermined):
@@ -40,6 +40,6 @@ https://thegraph.com/hosted-service/subgraph/nevermined-io/publicmaticv2nevermin
 
 | Environment | Network | Contracts Version | Tag | Component | URL | Comments |
 |-------------|---------|-------------------|-----|-----------|-----|----------|
-| public-v2-mumbai | Mumbai | 2.0.5 | public | Gateway | https://gateway.public.nevermined.rocks | |
+| public-v2-mumbai | Mumbai | 2.0.5 | public | Node | https://node.public.nevermined.rocks | |
 | public-v2-mumbai | Mumbai | 2.0.5 | public | Marketplace API | https://marketplace-api.public.nevermined.rocks | |
 | public-v2-mumbai | Mumbai | 2.0.5 | public | GraphNode | https://api.thegraph.com/subgraphs/name/nevermined-io/public | Use with sdk >= 0.21.0 |

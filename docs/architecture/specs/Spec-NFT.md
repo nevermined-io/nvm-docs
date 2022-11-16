@@ -105,7 +105,7 @@ Nevermined is based in the following building blocks:
 * [Decentralized Identifiers (DID)](Spec-DID.md) - To identify items across on-chain and off-chain networks
 * [Access Control](Spec-ACCESS.md) - To control who can do what and under what conditions
 * [Provenance](Spec-PROVENANCE.md) - To track all the actions associated with every registered asset
-* [Tokenized Payment Gateway](Spec-ACCESS.md#lock-payment-condition) - To allow direct payment
+* [Tokenized Payment Node](Spec-ACCESS.md#lock-payment-condition) - To allow direct payment
 * [Integrity](Spec-DID.md#integrity) - To provide proof that everything is correct
 * [Identity Management](Spec-IDM.md) - To allow to define fine access control policies
 

@@ -66,9 +66,9 @@
 
 #### Defined in
 
-[types/index.ts:35](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L35)
+[types/index.ts:35](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L35)
 
-[types/index.ts:36](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L36)
+[types/index.ts:36](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L36)
 
 ___
 
@@ -78,9 +78,9 @@ ___
 
 #### Defined in
 
-[types/index.ts:33](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L33)
+[types/index.ts:33](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L33)
 
-[types/index.ts:34](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L34)
+[types/index.ts:34](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L34)
 
 ___
 
@@ -92,7 +92,7 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:339](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L339)
+[types/index.ts:307](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L307)
 
 ## Variables
 
@@ -102,9 +102,9 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:35](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L35)
+[types/index.ts:35](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L35)
 
-[types/index.ts:36](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L36)
+[types/index.ts:36](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L36)
 
 ___
 
@@ -114,9 +114,9 @@ ___
 
 #### Defined in
 
-[types/index.ts:33](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L33)
+[types/index.ts:33](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L33)
 
-[types/index.ts:34](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/types/index.ts#L34)
+[types/index.ts:34](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L34)
 
 ## Functions
 
@@ -132,7 +132,7 @@ Order transfer asset to a new owner
 | :------ | :------ | :------ |
 | `orderParams` | `Object` |  |
 | `orderParams.ddo` | `DDO` | Asset object |
-| `orderParams.gatewayAddress` | `string` | Address of gateway to allow handle the asset transaction |
+| `orderParams.neverminedNodeAddress` | `string` | Address of Node to allow handle the asset transaction |
 | `orderParams.newOwner` | `default` | Address of the new owner who will be transferred the asset |
 | `orderParams.sdk` | `Nevermined` | Instance of SDK object |
 
@@ -144,7 +144,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:43](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/utils/index.ts#L43)
+[utils/index.ts:43](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/utils/index.ts#L43)
 
 ___
 
@@ -170,7 +170,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:111](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/utils/index.ts#L111)
+[utils/index.ts:111](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/utils/index.ts#L111)
 
 ___
 
@@ -192,7 +192,7 @@ Returns current account registered in SDK
 
 #### Defined in
 
-[utils/index.ts:18](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/utils/index.ts#L18)
+[utils/index.ts:18](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/utils/index.ts#L18)
 
 ___
 
@@ -218,7 +218,7 @@ Return the result data of the request
 
 #### Defined in
 
-[utils/index.ts:140](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/utils/index.ts#L140)
+[utils/index.ts:140](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/utils/index.ts#L140)
 
 ___
 
@@ -242,7 +242,7 @@ Checks if object is empty
 
 #### Defined in
 
-[utils/index.ts:11](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/utils/index.ts#L11)
+[utils/index.ts:11](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/utils/index.ts#L11)
 
 ___
 
@@ -268,4 +268,4 @@ Array of object with the document id of each fullfilled events
 
 #### Defined in
 
-[utils/index.ts:82](https://github.com/nevermined-io/components-catalog/blob/830d916/lib/src/utils/index.ts#L82)
+[utils/index.ts:82](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/utils/index.ts#L82)

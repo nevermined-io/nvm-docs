@@ -205,7 +205,7 @@ Access the files associated with an NFT.
 
 **`Remarks`**
 
-This function will call the gateway that will check if all the access conditions where fulfilled
+This function will call the Node that will check if all the access conditions where fulfilled
 before providing the files.
 
 **`Example`**
@@ -1075,13 +1075,13 @@ ___
 
 ▸ **transferForDelegate**(`agreementId`, `nftHolder`, `nftReceiver`, `nftAmount`, `ercType?`): `Promise`<`boolean`\>
 
-Asks the gateway to transfer the NFT on behalf of the publisher.
+Asks the Node to transfer the NFT on behalf of the publisher.
 
 **`Remarks`**
 
 This is useful when the consumer does not want to wait for the publisher
 to transfer the NFT once the payment is made. Assuming the publisher delegated
-transfer permissions to the gateway.
+transfer permissions to the Node.
 
 One example would be a marketplace where the user wants to get access to the NFT
 as soon as the payment is made

@@ -62,7 +62,7 @@ The following technical components are involved in an end-to-end publishing and 
     integrated with back-end applications. The primary users are data scientists.
 * [SMART CONTRACTS](https://github.com/nevermined-io/contracts) - Solidity Smart Contracts providing the Service
   Agreements business logic.
-* [GATEWAY](https://github.com/nevermined-io/gateway) - Microservice to be executed by PUBLISHERS. It exposes an
+* [NODE](https://github.com/nevermined-io/node) - Microservice to be executed by PUBLISHERS. It exposes an
   HTTP REST API permitting access to PUBLISHER assets or additional services such as computation.
 * [MARKETPLACE-API](https://github.com/nevermined-io/marketplace-api) - Microservice to be executed by MARKETPLACES.
   Facilitates   creating, updating, deleting and searching the asset metadata registered by the PUBLISHERS.
@@ -282,7 +282,7 @@ Below you can find a small fraction of this:
   "service": [{
 		"type": "compute",
 		"serviceDefinitionId": "2",
-		"serviceEndpoint": "http://mygateway.org/api/v1/gateway/services/execute",
+		"serviceEndpoint": "http://mynode.org/api/v1/node/services/execute",
 		"templateId": "804932804923850985093485039850349850439583409583404534231321131a",
 
 		"attributes": {
@@ -513,7 +513,7 @@ The `services_description` attribute includes the different services (like compu
 
 #### Consuming Asset
 
-During this phase, through the CONSUMER and the PROVIDER (via GATEWAY) negotiation,
+During this phase, through the CONSUMER and the PROVIDER (via NODE) negotiation,
 the Service Execution Agreement (SEA) is created and initialized.
 
 Using the SDK, a CONSUMER can discover, purchase and use the PROVIDER Compute services.
@@ -543,35 +543,35 @@ The complete flow for setting up the SEA is:
 
 1. The CONSUMER locks the payment on-chain through the `LockPaymentCondition` Smart Contract
 
-1. The PROVIDER via GATEWAY, receives the `LockPayment.Fulfilled` event where he/she is the provider for this agreement
+1. The PROVIDER via NODE, receives the `LockPayment.Fulfilled` event where he/she is the provider for this agreement
 
 1. The PROVIDER grants the execution permissions for the computation on-chain calling the
    `executeComputeCondition.Fullfill` method  
 
 1. The CONSUMER gets the `executeComputeCondition.Fullfilled` event. When he/she receives the event,
-   can call the GATEWAY `serviceEndpoint` url added in the DDO to start the execution of the computation workflow.
-   Typically: `HTTP POST /api/v1/gateway/services/exec`
+   can call the NODE `serviceEndpoint` url added in the DDO to start the execution of the computation workflow.
+   Typically: `HTTP POST /api/v1/node/services/exec`
 
-1. The GATEWAY receives the CONSUMER request, and calls the `checkPermissions` method to validate if the CONSUMER
+1. The NODE receives the CONSUMER request, and calls the `checkPermissions` method to validate if the CONSUMER
    address is granted to execute the service.
-   If user is granted, the GATEWAY triggers the Execute Algorithm action in the infrastructure
+   If user is granted, the NODE triggers the Execute Algorithm action in the infrastructure
 
 
 
 ### Execution phase
 
 During this phase, if and only if the CONSUMER is granted, the CONSUMER can request the start of the Computation in
-the PUBLISHER infrastructure via GATEWAY.
+the PUBLISHER infrastructure via NODE.
 
 The complete flow for the Execution phase is:
 
-1. The GATEWAY after receiving the `execution` request from CONSUMER, validates the permissions using the
+1. The GATENODEWAY after receiving the `execution` request from CONSUMER, validates the permissions using the
    `checkPermissions` function
 
-1. If the CONSUMER is authorized, the GATEWAY resolves the DID of the Workflow associated with the Service Agreement.
+1. If the CONSUMER is authorized, the NODE resolves the DID of the Workflow associated with the Service Agreement.
    The workflow includes the details of the pipeline to execute, including the different stages, inputs and outputs.
 
-1. The GATEWAY starts the communicates with the OPERATOR SERVICE, this register a new
+1. The NODE starts the communicates with the OPERATOR SERVICE, this register a new
    execution in the PROVIDER INFRASTRUCTURE (cloud or on-premise). The  sends a "Workflow Registration" HTTP REST
    request to the Infrastructure Operator (aka OPERATOR SERVICE).
    This request must include the serviceAgreementId and the Workflow (JSON)
@@ -605,7 +605,7 @@ The complete flow for the Execution phase is:
 
 1. The CONSUMER receives an event including the DID of the new ASSET created
 
-1. The GATEWAY or any other user may requests the `releasePayment` through the SMART CONTRACTS.
+1. The NODE or any other user may requests the `releasePayment` through the SMART CONTRACTS.
     It commits on-chain the HASH of the receipt ticket collected from the INFRASTRUCTURE provider.
 
 
@@ -614,7 +614,7 @@ The complete flow for the Execution phase is:
 
 ## Infrastructure Orchestration
 
-To facilitate the infrastructure orchestration the GATEWAY integrates with Kubernetes (aka K8s) via the OPERATOR
+To facilitate the infrastructure orchestration the NODE integrates with Kubernetes (aka K8s) via the OPERATOR
 component. The OPERATOR allows to abstract the execution of Docker containers with compute services independently of
 the backend (Amazon, Azure, On-Premise).
 To support that OPERATOR includes the kubernetes driver allowing to wrap the complete execution including:
@@ -651,14 +651,14 @@ The services provided by the OPERATOR are:
 The compute scenario requires a complete orchestration of different stages in order to provide an end to end flow.
 The steps included in this scenario are:
 
-1. The CONSUMER send a request to the GATEWAY using the **compute/exec** method in order to trigger the Workflow
+1. The CONSUMER send a request to the NODE using the **compute/exec** method in order to trigger the Workflow
    execution
 
-1. The GATEWAY receives this request and check on-chain via SMART CONTRACTS if the CONSUMER has grants to execute the
+1. The NODE receives this request and check on-chain via SMART CONTRACTS if the CONSUMER has grants to execute the
    Workflow. If the CONSUMER has grants will continue the Infrastructure Operation integration, if not will return an
    error message.
 
-1. The GATEWAY calls the Infrastructure Operator (aka OPERATOR SERVICE) giving the Workflow that needs to be executed
+1. The NODE calls the Infrastructure Operator (aka OPERATOR SERVICE) giving the Workflow that needs to be executed
 
 1. The OPERATOR SERVICE communicates with the K8s cluster to register the Workflow in Kubernetes
 

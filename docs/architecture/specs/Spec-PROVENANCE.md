@@ -363,7 +363,7 @@ Acme Corp. (Manufacturer) has created some goods that need to be delivered to Jo
 
 * Identify unequivocally the good created within the supply chain network. This associates a unique Decentralized Identifier (DID) to the good and identifies Acme Corp. as the unique manufacturer of the good, providing the genesis of the goods lineage.
 * Register some metadata related with the good created, including date of manufacturing, description, conditions, etc. This metadata is hashed and becomes part of the DID created, avoiding further modifications (like date of manufacturing tamper) without breaking the integrity check of the DID.
-* Register the data files as part of the metadata. Typically these files will be stored as part of Acme Corp. SCM system. Nevermined provides a gateway that can integrate different backends. These files registered, equally to the metadata are part of the Nevermined integrity check.
+* Register the data files as part of the metadata. Typically these files will be stored as part of Acme Corp. SCM system. Nevermined provides a Node that can integrate different backends. These files registered, equally to the metadata are part of the Nevermined integrity check.
 
 #### Handover to Carrier
 

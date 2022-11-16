@@ -27,7 +27,7 @@ Main interface for Nevermined Protocol.
 - [contracts](Nevermined.md#contracts)
 - [faucet](Nevermined.md#faucet)
 - [files](Nevermined.md#files)
-- [gateway](Nevermined.md#gateway)
+- [node](Nevermined.md#node)
 - [keeper](Nevermined.md#keeper)
 - [marketplace](Nevermined.md#marketplace)
 - [metadata](Nevermined.md#metadata)
@@ -192,11 +192,11 @@ Files submodule
 
 ___
 
-### gateway
+### Node
 
-• **gateway**: `Gateway`
+• **Node**: `Node`
 
-Gateway instance.
+Node instance.
 
 #### Defined in
 

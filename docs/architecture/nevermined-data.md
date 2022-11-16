@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 4
 description: What information is available in Nevermined, and how to find it
 ---
 

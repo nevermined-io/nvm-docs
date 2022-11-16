@@ -56,7 +56,7 @@ This will download the artifacts for the latest contracts in _mumbai_ and store 
   const config: Config = {
       nodeUri: 'https://rpc-mumbai.maticvigil.com',
       marketplaceUri: 'https://marketplace-api.mumbai.public.nevermined.rocks',
-      gatewayUri: 'https://gateway.mumbai.public.nevermined.rocks',
+      neverminedNodeUri: 'https://node.mumbai.public.nevermined.rocks',
       marketplaceAuthToken: '',
       artifactsFolder: './artifacts',
   }
@@ -71,7 +71,7 @@ This will download the artifacts for the latest contracts in _mumbai_ and store 
   const config: Config = {
       nodeUri: 'https://rpc-mainnet.maticvigil.com',
       marketplaceUri: 'https://marketplace-api.public.nevermined.rocks',
-      gatewayUri: 'https://gateway.public.nevermined.rocks',
+      neverminedNodeUri: 'https://node.public.nevermined.rocks',
       marketplaceAuthToken: '',
       artifactsFolder: './artifacts',
   }
