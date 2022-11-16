@@ -1,7 +1,11 @@
-.metamask {
+.providers {
   &__content {
     border: 1px solid #B1D3EA;
     padding: 20px;
+
+    &--connector {
+      margin-right: 10px;
+    }
 
     p {
       color: #000;

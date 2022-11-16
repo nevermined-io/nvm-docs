@@ -3,7 +3,7 @@ import AssetRewards from '@nevermined-io/nevermined-sdk-js/dist/node/models/Asse
 import { MetaData, Logger, DDO } from '@nevermined-io/nevermined-sdk-js'
 import BigNumber from '@nevermined-io/nevermined-sdk-js/dist/node/utils/BigNumber'
 import { Catalog, AssetService, RoyaltyKind, getRoyaltyScheme, Config } from '@nevermined-io/catalog-core'
-import { MetaMask } from '@nevermined-io/catalog-providers'
+import { WalletProvider, useWallet, getClient } from '@nevermined-io/catalog-providers'
 import { UiText, UiLayout, BEM, UiButton } from '@nevermined-io/styles'
 import { ethers } from 'ethers'
 import styles from './styles.module.scss'
@@ -57,7 +57,7 @@ const PublishAsset = ({onPublish}: {onPublish: () => void}) => {
 
 const BuyAsset = ({ddo}: {ddo: DDO}) => {
   const { assets, account, isLoadingSDK, nfts, sdk } = Catalog.useNevermined()
-  const { walletAddress } = MetaMask.useWallet()
+  const { walletAddress } = useWallet()
   const [ownNFT1155, setOwnNFT1155] = useState(false)
   const [isBought, setIsBought] = useState(false)
   const [owner, setOwner] = useState('')
@@ -97,12 +97,12 @@ const BuyAsset = ({ddo}: {ddo: DDO}) => {
 }
 
 const MMWallet = () => {
-  const { loginMetamask, walletAddress } = MetaMask.useWallet()
+  const { login, walletAddress, getConnectors } = useWallet()
   return (
     <UiLayout>
       <UiText variants={['bold']} className={b('detail')}>Wallet address:</UiText>
       <UiText>{walletAddress}</UiText>
-      {!walletAddress && <UiButton type='secondary' onClick={loginMetamask}>Connect To MM</UiButton>}
+      {!walletAddress && <UiButton type='secondary' onClick={() => login(getConnectors()[0])}>Connect To MM</UiButton>}
     </UiLayout>
   )
 }
@@ -110,7 +110,7 @@ const MMWallet = () => {
 const App = ({ config }: {config: Config}) => {
   const { isLoadingSDK, sdk } = Catalog.useNevermined()
   const { publishNFT1155 } = AssetService.useAssetPublish()
-  const { walletAddress } = MetaMask.useWallet()
+  const { walletAddress } = useWallet()
   const [ddo, setDDO] = useState<DDO>({} as DDO)
   Logger.setLevel(3)
 
@@ -192,12 +192,11 @@ export const DemoCatalog = () => {
   return(
     <Catalog.NeverminedProvider config={config} verbose={true}>
       <AssetService.AssetPublishProvider>
-        <MetaMask.WalletProvider
-          correctNetworkId="0x13881"
-          nodeUri=""
+        <WalletProvider
+          client={getClient()}
         >
           <App config={ config }/>
-        </MetaMask.WalletProvider>
+        </WalletProvider>
       </AssetService.AssetPublishProvider>
     </Catalog.NeverminedProvider>
   )

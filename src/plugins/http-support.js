@@ -16,6 +16,7 @@ module.exports = function (_context, _options) {
           fallback: {
             http: require.resolve('stream-http'),
             proccess: require.resolve('process'),
+            'process/browser': require.resolve('process/browser'),
             https: require.resolve('https-browserify'),
             timers: require.resolve('timers-browserify'),
             url: require.resolve('url/'),
