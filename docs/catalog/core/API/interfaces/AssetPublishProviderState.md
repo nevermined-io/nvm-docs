@@ -30,7 +30,7 @@ Handle publish asset message
 
 #### Defined in
 
-[types/index.ts:715](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L715)
+[types/index.ts:715](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L715)
 
 ___
 
@@ -42,7 +42,7 @@ All the parameters needed to publish an asset
 
 #### Defined in
 
-[types/index.ts:721](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L721)
+[types/index.ts:721](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L721)
 
 ___
 
@@ -54,7 +54,7 @@ Handle error publish asset message
 
 #### Defined in
 
-[types/index.ts:713](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L713)
+[types/index.ts:713](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L713)
 
 ___
 
@@ -81,7 +81,7 @@ Update asset parameters when some input changes
 
 #### Defined in
 
-[types/index.ts:732](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L732)
+[types/index.ts:732](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L732)
 
 ___
 
@@ -93,7 +93,7 @@ If the asset is publishing
 
 #### Defined in
 
-[types/index.ts:719](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L719)
+[types/index.ts:719](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L719)
 
 ___
 
@@ -105,7 +105,7 @@ If the asset was published correctly
 
 #### Defined in
 
-[types/index.ts:717](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L717)
+[types/index.ts:717](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L717)
 
 ___
 
@@ -145,7 +145,7 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:755](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L755)
+[types/index.ts:755](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L755)
 
 ___
 
@@ -190,7 +190,7 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:852](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L852)
+[types/index.ts:852](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L852)
 
 ___
 
@@ -235,7 +235,7 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:800](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L800)
+[types/index.ts:800](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L800)
 
 ___
 
@@ -261,7 +261,7 @@ Reset all the parameters of the asset
 
 #### Defined in
 
-[types/index.ts:736](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L736)
+[types/index.ts:736](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L736)
 
 ___
 
@@ -273,7 +273,7 @@ Set asset message
 
 #### Defined in
 
-[types/index.ts:725](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L725)
+[types/index.ts:725](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L725)
 
 ___
 
@@ -285,7 +285,7 @@ Set parameters needed to publish an asset
 
 #### Defined in
 
-[types/index.ts:723](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L723)
+[types/index.ts:723](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L723)
 
 ___
 
@@ -297,4 +297,4 @@ Set error asset message
 
 #### Defined in
 
-[types/index.ts:727](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L727)
+[types/index.ts:727](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L727)

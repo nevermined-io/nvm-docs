@@ -21,7 +21,7 @@ Agreement Id of the asset
 
 #### Defined in
 
-[types/index.ts:686](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L686)
+[types/index.ts:686](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L686)
 
 ___
 
@@ -33,7 +33,7 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:684](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L684)
+[types/index.ts:684](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L684)
 
 ___
 
@@ -45,7 +45,7 @@ Which account receive the asset
 
 #### Defined in
 
-[types/index.ts:688](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L688)
+[types/index.ts:688](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L688)
 
 ___
 
@@ -57,4 +57,4 @@ Id of the transfer event
 
 #### Defined in
 
-[types/index.ts:682](https://github.com/nevermined-io/components-catalog/blob/5d4b912/lib/src/types/index.ts#L682)
+[types/index.ts:682](https://github.com/nevermined-io/components-catalog/blob/0aa351b/lib/src/types/index.ts#L682)

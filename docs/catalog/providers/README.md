@@ -37,6 +37,13 @@ ReactDOM.render(
     <div>
         <WalletProvider
             client={getClient()}
+            correctNetworkId={80001}
+            connectKitProps={
+                {
+                    theme: 'auto',
+                    mode: 'dark',
+                }
+            }
         >
             <App />
         </WalletProvider>
@@ -62,4 +69,4 @@ const ConnectToMetaMask = () => {
 };
 ```
 
-Here you can find [here a complete example](https://docs.nevermined.io/docs/catalog/example)
+You can find [here a example](https://docs.nevermined.io/docs/catalog/example)
