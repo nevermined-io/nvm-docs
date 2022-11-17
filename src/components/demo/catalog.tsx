@@ -194,6 +194,7 @@ export const DemoCatalog = () => {
       <AssetService.AssetPublishProvider>
         <WalletProvider
           client={getClient()}
+          correctNetworkId={80001}
         >
           <App config={ config }/>
         </WalletProvider>

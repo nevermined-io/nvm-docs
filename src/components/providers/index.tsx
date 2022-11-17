@@ -27,6 +27,13 @@ const Login = () => {
 const ProvidersApp = () => (
   <WalletProvider
     client={getClient('Login')}
+    correctNetworkId={80001}
+    connectKitProps={
+      {
+        theme: 'auto',
+        mode: 'dark',
+      }
+    }
   >
     <Login/>
   </WalletProvider>

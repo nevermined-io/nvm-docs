@@ -36,7 +36,8 @@ npm install --save @nevermined-io/catalog-providers
 </Tabs>
 
 ## Add the wallet provider
-Now in our app we need to add the Wallet Provider as a parent of all the components that will use functionalities from it. The `WalletProvider` has a prop call `client` where we need to pass the instance of the [Wagmi client](https://wagmi.sh/docs/client), the good news is that we have `getClient` from `@nevermined-io/catalog-providers` which will return a client already configured
+Now in our app we need to add the Wallet Provider as a parent of all the components that will use functionalities from it. The `WalletProvider` has a prop call `client` where we need to pass the instance of the [Wagmi client](https://wagmi.sh/docs/client), the good news is that we have `getClient` from `@nevermined-io/catalog-providers` which will return a client already configured.
+Optionally we can pass the `correctNetworkId` which will request to the wallet to change to the set network when the current one is not supported, and `connectKitProps` that includes all the customization option of `ConnectKit`, see options [here](https://docs.family.co/connectkit/customization)
 
 ```tsx
 import React from 'react';
@@ -48,6 +49,13 @@ ReactDOM.render(
     <div>
         <WalletProvider
           client={getClient(ChainsConfig)}
+          correctNetworkId={80001}
+          connectKitProps={
+            {
+              theme: 'auto',
+              mode: 'dark',
+            }
+          }
         >
           <Login/>
         </WalletProvider>
@@ -161,6 +169,13 @@ ReactDOM.render(
     <div>
         <WalletProvider
           client={getClient('My Nevermined App', true, ChainConfig)}
+          correctNetworkId={80001}
+          connectKitProps={
+            {
+              theme: 'auto',
+              mode: 'dark',
+            }
+          }
         >
           <Login/>
         </WalletProvider>
