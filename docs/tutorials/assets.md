@@ -21,12 +21,11 @@ Import the provider in your index.tsx from the Catalog is needed in order to sta
 <BrowserRouter>
     <Catalog.NeverminedProvider config={appConfig}>
         <Catalog.AssetPublishProvider>
-            <MetaMask.WalletProvider
-                nodeUri={appConfig.nodeUri!}
-                correctNetworkId="0x13881"
+            <WalletProvider
+                client={getClient()}
             >
                 <App />
-            </MetaMask.WalletProvider>
+            </WalletProvider>
         </Catalog.AssetPublishProvider>
     </Catalog.NeverminedProvider>
 </BrowserRouter>
@@ -146,7 +145,7 @@ changes the account and when the assest is bought in order to avoid buy again
 
 ```typescript
 ...
-    const { walletAddress } = MetaMask.useWallet()
+    const { walletAddress } = useWallet()
     const [ownAsset, setOwnAsset] = useState(false)
     const [isBought, setIsBought] = useState(false)
     const [owner, setOwner] = useState('')
@@ -179,7 +178,7 @@ changes the account and when the assest is bought in order to avoid buy again
 ```tsx
 const Consumer = ({ddo}: {ddo: DDO}) => {
     const { assets, account, isLoadingSDK, sdk } = Catalog.useNevermined()
-    const { walletAddress } = MetaMask.useWallet()
+    const { walletAddress } = useWallet()
     const [ownAsset, setOwnAsset] = useState(false)
     const [isBought, setIsBought] = useState(false)
     const [owner, setOwner] = useState('')
@@ -369,7 +368,7 @@ changes the account and when the assest is bought in order to avoid buy again
 
 ```typescript
 ...
-    const { walletAddress } = MetaMask.useWallet()
+    const { walletAddress } = useWallet()
     const [ownNFT721, setOwnNFT721] = useState(false)
     const [isBought, setIsBought] = useState(false)
     const [owner, setOwner] = useState('')
@@ -402,7 +401,7 @@ changes the account and when the assest is bought in order to avoid buy again
 ```tsx
 const Consumer = ({ddo}: {ddo: DDO}) => {
     const { assets, account, isLoadingSDK, nfts, sdk } = Catalog.useNevermined()
-    const { walletAddress } = MetaMask.useWallet()
+    const { walletAddress } = useWallet()
     const [ownNFT721, setOwnNFT721] = useState(false)
     const [isBought, setIsBought] = useState(false)
     const [owner, setOwner] = useState('')
@@ -491,7 +490,7 @@ const Publisher = () => {
     ...
     async function handleOnSubmit() {
         const result = await publishNFT1155({
-              nodeAddress: String(appConfig.nodeAddress),
+              neverminedNodeAddress: String(appConfig.neverminedNodeAddress),
               metadata,
               cap: BigNumber.from(100),
               royaltyAttributes: royaltyAttributes(sdk)
@@ -535,7 +534,7 @@ const Publisher = () => {
 
     async function handleOnSubmit() {
         const result = await publishNFT1155({
-              nodeAddress: String(appConfig.nodeAddress),
+              neverminedNodeAddress: String(appConfig.neverminedNodeAddress),
               metadata,
               cap: BigNumber.from(100),
               royaltyAttributes: royaltyAttributes(sdk)
@@ -576,7 +575,7 @@ changes the account and when the NFT1155 is bought in order to avoid buy again
 
 ```typescript
 ...
-    const { walletAddress } = MetaMask.useWallet()
+    const { walletAddress } = useWallet()
     const [ownNFT1155, setOwnNFT1155] = useState(false)
     const [isBought, setIsBought] = useState(false)
     const [owner, setOwner] = useState('')
@@ -609,7 +608,7 @@ changes the account and when the NFT1155 is bought in order to avoid buy again
 ```tsx
 const Consumer = ({ddo}: {ddo: DDO}) => {
     const { assets, account, isLoadingSDK, nfts, sdk } = Catalog.useNevermined()
-    const { walletAddress } = MetaMask.useWallet()
+    const { walletAddress } = useWallet()
     const [ownNFT1155, setOwnNF1155] = useState(false)
     const [isBought, setIsBought] = useState(false)
     const [owner, setOwner] = useState('')
