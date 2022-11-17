@@ -507,7 +507,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Catalog, AssetService } from '@nevermined-io/catalog-core'
 import { appConfig } from './config'
-import Example from 'examples'
+import App from 'examples'
 import { WalletProvider, getClient } from '@nevermined-io/catalog-providers'
 import ChainConfig from './chain_config'
 
@@ -519,7 +519,7 @@ ReactDOM.render(
         <WalletProvider
           client={getClient('My Nevermined App', true, ChainConfig)}
         >
-          <App config={ config }/>
+          <App/>
         </WalletProvider>
       </AssetService.AssetPublishProvider>
     </Catalog.NeverminedProvider>
