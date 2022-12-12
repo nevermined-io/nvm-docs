@@ -1,4 +1,5 @@
 import { AuthToken, Config } from "@nevermined-io/catalog-core"
+import { Wagmi } from "@nevermined-io/catalog-providers"
 
 export const appConfig = (): Config => ({
   web3ProviderUri: "https://matic-mumbai.chainstacklabs.com",
@@ -12,3 +13,7 @@ export const appConfig = (): Config => ({
   artifactsFolder: `${location.protocol}//${location.host}/contracts`,
   newGateway: true,
 })
+
+export const ChainsConfig: Wagmi.Chain[] = [
+  Wagmi.chain.polygonMumbai,
+]

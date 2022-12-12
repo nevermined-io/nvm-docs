@@ -2,6 +2,7 @@ import React from 'react'
 import { WalletProvider, getClient, useWallet } from '@nevermined-io/catalog-providers'
 import { UiButton, UiText, BEM } from '@nevermined-io/styles'
 import styles from './styles.module.scss'
+import { ChainsConfig } from '../config'
 
 const b = BEM('providers', styles)
 
@@ -26,7 +27,7 @@ const Login = () => {
 
 const ProvidersApp = () => (
   <WalletProvider
-    client={getClient('Login')}
+    client={getClient('Login', true, ChainsConfig)}
     correctNetworkId={80001}
     connectKitProps={
       {

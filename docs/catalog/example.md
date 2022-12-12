@@ -52,7 +52,7 @@ The next step is setting differents networks for the dapp [polygon](https://poly
 ```ts
 import { Wagmi } from '@nevermined-io/catalog-providers'
 
-const ChainsConfig: Chain[] = [
+const ChainsConfig: Wagmi.Chain[] = [
   Wagmi.chain.polygon,
   Wagmi.chain.polygonMumbai,
   {

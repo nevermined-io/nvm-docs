@@ -7,7 +7,7 @@ import { WalletProvider, useWallet, getClient } from '@nevermined-io/catalog-pro
 import { UiText, UiLayout, BEM, UiButton } from '@nevermined-io/styles'
 import { ethers } from 'ethers'
 import styles from './styles.module.scss'
-import { appConfig } from '../config'
+import { appConfig, ChainsConfig } from '../config'
 
 const ERC_TOKEN = '0xe097d6b3100777dc31b34dc2c58fb524c2e76921'
 
@@ -193,7 +193,7 @@ export const DemoCatalog = () => {
     <Catalog.NeverminedProvider config={config} verbose={true}>
       <AssetService.AssetPublishProvider>
         <WalletProvider
-          client={getClient()}
+          client={getClient('demo', true, ChainsConfig)}
           correctNetworkId={80001}
         >
           <App config={ config }/>
