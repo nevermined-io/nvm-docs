@@ -123,9 +123,9 @@ Nevermined registers some internal attributes in the asset metadata. They allow 
 
 The attributes included at that section are:
 
-* `userId` - The unique identifier of the user owning the DDO. This attribute will be used to authorize metadata changes.
-* `appId` - The unique identifier of the application where this DDO has a meaning.
-* `versions` - Array representing the list of changes made to the DDO
+- `userId` - The unique identifier of the user owning the DDO. This attribute will be used to authorize metadata changes.
+- `appId` - The unique identifier of the application where this DDO has a meaning.
+- `versions` - Array representing the list of changes made to the DDO.
 
 ##### User Id
 
@@ -157,18 +157,27 @@ It's stored under the attribute `versions`. The `versions` list stores the refer
 
 The `versions` attribute will be an array of objects storing the sorted list of all the different changes.
 
+Each version also can contain the location of each DDO version in a decentralized immutable storage:
+
+- `immutableUrl` - The unique identifier of the DDO in an immutable storage like Filecoin or IPFS.
+- `immutableBackend` - The immutable backend where the DDO is store. Can be _filecoin_ or _ipfs_.
+
 ```json
 {
   "versions": [
     {
       "id": 1,
       "updated": "2020-01-01T19:13:24Z",
-      "checksum": "89328493849328493284932"
+      "checksum": "89328493849328493284932",
+      "immutableUrl": "cid://QmYYLZuLWye8ERcUPT2jyoEonsj6LmTnD3kqH8mF9Gt6R1",
+      "immutableBackend": "ipfs"
     },
     {
       "id": 2,
       "updated": "2021-02-21T20:13:24Z",
-      "checksum": "045328094852309483203443"
+      "checksum": "045328094852309483203443",
+      "immutableUrl": "cid://QmPZQvVKr86n7CyRtQVfimghgw7MFNV7a5T26kNKNB9e9p",
+      "immutableBackend": "ipfs"
     }
   ]
 }
@@ -189,12 +198,16 @@ Here we put together all the changes included at the `_nvm` section:
       {
         "id": 1,
         "updated": "2020-01-01T19:13:24Z",
-        "checksum": "89328493849328493284932"
+        "checksum": "89328493849328493284932",
+        "immutableUrl": "cid://QmYYLZuLWye8ERcUPT2jyoEonsj6LmTnD3kqH8mF9Gt6R1",
+        "immutableBackend": "ipfs"
       },
       {
         "id": 2,
         "updated": "2021-02-21T20:13:24Z",
-        "checksum": "045328094852309483203443"
+        "checksum": "045328094852309483203443",
+        "immutableUrl": "cid://QmPZQvVKr86n7CyRtQVfimghgw7MFNV7a5T26kNKNB9e9p",
+        "immutableBackend": "ipfs"
       }
     ]
   }
