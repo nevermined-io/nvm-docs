@@ -207,7 +207,7 @@ Example of a Workflow:
 ```
 
 A Workflow is a new type of Asset (a part of datasets, algorithms, etc.).  
-You can find a complete DDO of type workflow in the [ddo.workflow.json example file](examples/compute/v0.1/ddo.workflow.json).
+You can find a complete DDO of type workflow in the [ddo-workflow.json example file](examples/ddos/ddo-workflow.json).
 
 As a new kind of asset, the workflow details will be persisted inside a DDO as part of the "Metadata" service where
 the **type** is **workflow**.
@@ -267,13 +267,13 @@ The complete flow of publishing an asset with a compute service attached is:
    A service of type "compute" contains one endpoint:
    - **serviceEndpoint** - A URL to call when the CONSUMER request the execution of a workflow
 
-    An example of a complete DDO can be found [here](examples/compute/v0.1/ddo.workflow.json). Please do note that the condition's
+    An example of a complete DDO can be found [here](examples/ddos/ddo-workflow.json). Please do note that the condition's
     order in the DID document should reflect the same order in on-chain service agreement.
 
 1. PUBLISHER publishes the DDO in the [MARKETPLACE-API](https://github.com/nevermined-io/marketplace-api).
    This DDO must include at least one service of type "compute".
 
-[here](examples/compute/v0.1/ddo.computing.json) you have an example of the DDO including a Compute service.
+[here](examples/ddos/ddo-compute.json) you have an example of the DDO including a Compute service.
 Below you can find a small fraction of this:
 
 "container":

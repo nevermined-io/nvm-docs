@@ -382,7 +382,7 @@ Here you can find an example of the `transferNFT` DDO condition:
           }
 ```
 
-And [here](examples/nft/ddo_nft721.json) the whole example.
+And [here](examples/ddos/ddo-nft.json) the whole example.
 
 
 

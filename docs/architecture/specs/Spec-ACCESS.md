@@ -228,7 +228,7 @@ An asset DDO is a [DID Document](https://w3c-ccg.github.io/did-spec/#did-documen
    * **serviceEndpoint** - A URL to initialize the Service Agreement
    * **consumeEndpoint** - A URL to fetch data decryption keys from
 
-    An example of a complete DDO can be found [here](examples/access/v0.1/ddo1.json). Please do note that the condition's order in the DID document should reflect the same order in on-chain service agreement.
+    An example of a complete DDO can be found [here](examples/ddos/ddo-dataset.json). Please do note that the condition's order in the DID document should reflect the same order in on-chain service agreement.
 
 1. PUBLISHER registers the DID, associating the asset DID to the METADATA API link that resolves the DID to a DDO.
 To do that, the SDK needs to integrate the `DIDRegistry` contract using the `registerAttribute` method.
