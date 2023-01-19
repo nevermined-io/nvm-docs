@@ -15,7 +15,6 @@ editor:         Sami Mäkelä <sami@nevermined.io>
 contributors:   Aitor Argomaniz <aitor@nevermined.io>
 ```
 
-
 This SPEC describes an addition to [ACCESS SPEC](https://docs.nevermined.io/docs/architecture/specs/Spec-ACCESS), introducing new flows with improved guarantees about data transfer.
 This enables using public file storage for encrypted assets and data.
 
@@ -23,7 +22,7 @@ This enables using public file storage for encrypted assets and data.
 
 Nevermined manages access control over digital assets. The core of the protocol is to authenticate and authorize Asset Consumers to get access to assets created and registered into an ecosystem by an Asset Publisher.
 When this access control needs to be implemented on top of storage solutions with some authorization mechanism (like Amazon S3 or similar) it's easy. The Nevermined node ensures that only authorized users can get access.
-But when you want to use a storage solution without any access control capabilities (like in IPFS or Filecoin), it's more complicated. Whoever has access to the URL can get access to the file, bypassing any access control mechanism that Nevermined provides. 
+But when you want to use a storage solution without any access control capabilities (like in IPFS or Filecoin), it's more complicated. Whoever has access to the URL can get access to the file, bypassing any access control mechanism that Nevermined provides.
 
 In this kind of scenario, the only way to protect this content is to encrypt it and only allow decryption when the user meets certain conditions. This SPEC is about the defition of the Nevermined solution, which allows to build robust and scalable access control on top of publicly available data.
 
@@ -64,9 +63,9 @@ When the asset files are encrypted, the DDO will include under `main` the attrib
 * `dtp` - It means the file/s are encrypted via Data Transfer Proofs
 * `none` - The files are not encrypted. This is the default behavior if the parameter is not defined
 
-### Service agreement
+### Access Service agreement
 
-For the service agreement, the following data are needed:
+For the access service agreement, the following data are needed:
 
 * Address of Provider and Consumer.
 * Asset ID.
@@ -86,7 +85,7 @@ Here is the complete flow including the different actors:
 
 ![Data Transfer Proofs Deal Flow](images/dtp/data-transfer-proof-deal-flow.png)
 
-The flow below describes how to manage a dispute resolution, in case there's an issue. 
+The flow below describes how to manage a dispute resolution, in case there's an issue.
 
 ![Data Transfer Proofs Deal Flow](images/dtp/data-transfer-proof-dispute-resolution.png)
 
@@ -99,3 +98,12 @@ Accessing documents using the node mostly works the same way as in a normal flow
 Additionally we can check that the Eth-address corresponds to the Babyjubjub public key. This isn't absolutely necessary, but is needed if we want the node to return the data transfer key (or perhaps the data as plain text).
 
 ![Data Transfer Proofs Deal Flow](images/dtp/data-transfer-proof-gateway-uploader.png)
+
+### NFT Sales with access agreement
+
+If an NFT is used for accessing an asset, it is safest to grant access when making the NFT sale. In this case, the access is granted when
+the payment is made. The NFT Sales with access agreement is the same as normal NFT sales flow, but there is an additional condition for granting
+the access.
+
+To handle this flow with node, `nft-sales-proof` endpoint has to be used instead of `nft-sales`. The `nft-sales` endpoint can be used to make sales,
+but then access has to be granted with another agreement.
