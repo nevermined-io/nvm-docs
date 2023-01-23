@@ -35,7 +35,7 @@ An extension of the ERC-721 standard that allows you to add credits attached to 
 _Why is it important?_ <br />
 This adds Web3 utility to any system where you can earn/spend credits. <br />
 
-Discover our [SDK](https://docs.nevermined.io/docs/nevermined-sdk/getting-started) for more.<br />
+Discover our [SDK](../../getting-started/) for more.<br />
 <br />
 
 **Access Utility 4 - File Access NFTs** <br />

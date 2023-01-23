@@ -16,7 +16,7 @@ Building on Nevermined will give you the benefit of being able to integrate prod
 
 Currently, Nevermined is available in two ways, for different development approaches:
 
-- All advanced functionalities are available via our [SDK](https://docs.nevermined.io/docs/nevermined-sdk/getting-started/ 'SDK')
-- For apps made in React, we have functionalities available as a [Catalog](https://docs.nevermined.io/docs/catalog/intro/ 'Catalog').
+- All advanced functionalities are available via our [SDK](../nevermined-sdk/intro)
+- For apps made in React, we have functionalities available as a [Catalog](../catalog/intro).
 
 We’re also working on packaging our components in SaaS-solutions.

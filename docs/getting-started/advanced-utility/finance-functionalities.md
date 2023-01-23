@@ -7,7 +7,7 @@ description: Finance functionalities
 
 The current financial model for NFTs and digital assets is too one-dimensional: basically only buy or sell. <br />
 
-NVM Finance Functionalities help you to develop more advanced revenue models and marketplaces. These are functionalities that allow you to implement Web3-compatible monetization into NFT and digital assets. We currently have 5 different utilities, all available via our [SDK](https://docs.nevermined.io/docs/nevermined-sdk/getting-started). <br />
+NVM Finance Functionalities help you to develop more advanced revenue models and marketplaces. These are functionalities that allow you to implement Web3-compatible monetization into NFT and digital assets. We currently have 5 different utilities, all available via our [SDK](../../getting-started/). <br />
 <br />
 
 **Finance Utility 1 - Secondary Market Royalties**<br />
@@ -18,7 +18,7 @@ The user registering an asset can specify the royalties that are rewarding the o
 _Why use this?_<br />
 We have seen many examples where the payout of royalties depends on the goodwill of a marketplace. With this functionality, the royalty conditions are ‘embedded’ in the NFT and will be executed upon.<br />
 
-Discover our [SDK](https://docs.nevermined.io/docs/nevermined-sdk/getting-started) for more.<br />
+Discover our [SDK](../../getting-started/) for more.<br />
 <br />
 
 **Finance Utility 2 - Rewards**<br />
@@ -29,7 +29,7 @@ A feature that allows you to use tokens, including your native token, to reward 
 _Why use this?_ <br />
 This allows asset producers and content creators to recognize and reward the contributions made by other participants and to stimulate collaborative growth and creation.<br />
 
-Discover our [SDK](https://docs.nevermined.io/docs/nevermined-sdk/getting-started) for more.<br />
+Discover our [SDK](../../getting-started/) for more.<br />
 <br />
 
 **Finance Utility 3 - Dynamic Pricing Framework**<br />
@@ -39,7 +39,7 @@ A feature that allows you to define on-chain and off-chain conditions that influ
 _Why use this?_<br />
 This allows asset producers to go beyond the one-dimensional pricing strategies. The template comes with a curve model, but the framework allows devs to integrate their own dynamic pricing conditions, e.g. supply/demand, external oracle data,...<br />
 
-Discover our [SDK](https://docs.nevermined.io/docs/nevermined-sdk/getting-started) for more.<br />
+Discover our [SDK](../../getting-started/) for more.<br />
 <br />
 
 **Finance Utility 4 - Marketplace Framework**<br />
@@ -49,7 +49,7 @@ A framework to create your own NFT Marketplace.<br />
 _Why use this?_<br />
 Rather than build a marketplace from scratch, this allows you to manage all the typical metadata required to build a marketplace.<br />
 
-Dig into [Specs](https://docs.nevermined.io/docs/architecture/specs/Spec-MKT/#secondary-market) of the Marketplace API.<br />
+Dig into [Specs](../../architecture/specs/Spec-MKT/#secondary-market) of the Marketplace API.<br />
 <br />
 
 **Finance Utility 5 - NFT Collateralization**<br />

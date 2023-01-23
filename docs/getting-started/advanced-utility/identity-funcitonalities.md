@@ -16,7 +16,7 @@ A feature that builds on the POAP standard, where a token can be claimed, under 
 _Why use this?_<br />
 This proves the attendance of a certain event and by creating POAPs in Nevermined, they can be combined with other functionalities from the Nevermined stack.<br />
 
-Discover our [SDK](https://docs.nevermined.io/docs/nevermined-sdk/getting-started) for more.<br />
+Discover our [SDK](../../getting-started) for more.<br />
 <br />
 
 **Identity Utility 2 - Non-Transferrable Tokens**<br />
@@ -26,5 +26,5 @@ A feature that makes Non-Fungible Tokens also non-transferrable. This feature ca
 _Why use this?_<br />
 These tokens prove the provenance of certain individual traits, achievements,... and cannot be transferred to other wallets. Combining this with other Nevermined features opens the door for Identity-related use cases.<br />
 
-Discover our [SDK](https://docs.nevermined.io/docs/nevermined-sdk/getting-started) for more.<br />
+Discover our [SDK](../../getting-started) for more.<br />
 <br />
