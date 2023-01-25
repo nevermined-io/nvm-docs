@@ -155,14 +155,6 @@ Example of a Workflow:
           "stages": [{
 						"index": 0,
 						"stageType": "Filtering",
-						"requirements": {
-							"serverInstances": 1,
-							"container": {
-								"image": "tensorflow/tensorflow",
-								"tag": "latest",
-								"checksum": "sha256:cb57ecfa6ebbefd8ffc7f75c0f00e57a7fa739578a429b6f72a0df19315deadc"
-							}
-						},
 						"input": [{
 							"index": 0,
 							"id": "did:nv:12345"
@@ -177,14 +169,6 @@ Example of a Workflow:
 					}, {
 						"index": 1,
 						"stageType": "Transformation",
-						"requirements": {
-							"serverInstances": 1,
-							"container": {
-								"image": "tensorflow/tensorflow",
-								"tag": "latest",
-								"checksum": "sha256:cb57ecfa6ebbefd8ffc7f75c0f00e57a7fa739578a429b6f72a0df19315deadc"
-							}
-						},
 						"input": [{
 							"index": 0,
 							"previousStage": 0
@@ -565,15 +549,14 @@ the PUBLISHER infrastructure via NODE.
 
 The complete flow for the Execution phase is:
 
-1. The GATENODEWAY after receiving the `execution` request from CONSUMER, validates the permissions using the
+1. The NODE after receiving the `execution` request from CONSUMER, validates the permissions using the
    `checkPermissions` function
 
 1. If the CONSUMER is authorized, the NODE resolves the DID of the Workflow associated with the Service Agreement.
    The workflow includes the details of the pipeline to execute, including the different stages, inputs and outputs.
 
-1. The NODE starts the communicates with the OPERATOR SERVICE, this register a new
-   execution in the PROVIDER INFRASTRUCTURE (cloud or on-premise). The  sends a "Workflow Registration" HTTP REST
-   request to the Infrastructure Operator (aka OPERATOR SERVICE).
+1. The NODE starts the Infrastructure Operator (aka OPERATOR SERVICE), to register a new
+   execution in the PROVIDER INFRASTRUCTURE (cloud or on-premise). The NODE sends a "Workflow Registration" HTTP REST request to the OPERATOR SERVICE.
    This request must include the serviceAgreementId and the Workflow (JSON)
 
 1. The OPERATOR SERVICE receives a "Workflow Registration" request and:
