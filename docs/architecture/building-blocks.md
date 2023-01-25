@@ -19,7 +19,7 @@ The complete technical solution includes the following components:
 
 ## Smart Contracts
 
-[Nevermined Smart Contracts](https://github.com/nevermined-io/contracts/)
+[Nevermined Smart Contracts](https://github.com/nevermined-io/contracts/)https://github.com/nevermined-io/docs.githttps://github.com/nevermined-io/docs.gitk
 provide the core of the Data Ecosystem. Using an Ethereum network and
 implemented in Solidity, the Smart Contracts allow the creation of complex interaction between parties around digital assets.
 
@@ -75,22 +75,21 @@ Nevermined provides the package and automation of the micro-service allowing an
 easy integration and deployment in cloud providers and Kubernetes clusters.
 
 
-### Compute API
+#### Compute Endpoints
 
-The [Nevermined Compute API](https://github.com/nevermined-io/compute-api)
- is an Open Source micro-service in the Nevermined ecosystem. It’s a component
- in charge of orchestrating the execution of compute jobs in the premises of
+The [Nevermined Node](https://github.com/nevermined-io/node) is also in charge of
+ orchestrating the execution of compute jobs in the premises of
  the Data/Compute Providers.
 
  In Nevermined the Data/Compute Providers can publish services saying they offer
   compute capabilities to the network on top of their data under some conditions
-   for a given price. The Compute API is in charge of, after all the
-   verifications made by the Nevermined Node, to manage all the infrastructure to move
+   for a given price. The Nevermined Node is in charge of, after run all the
+   verifications needed, to manage all the infrastructure to move
    the algorithm where the data is and track the execution of these ephemeral
    environments.
 
-The Compute API is a generic service exposing a REST API that can plugs
-different compute backends. At this point in time the Compute API integrates
+The Nevermined Node exposes a set of endpoints in its REST API, that can plugs
+different compute backends. At this point in time, integrates
 2 different backends:
 
 * **Kubernetes backend** - It allows the orchestration of Kubernetes clusters
@@ -99,8 +98,6 @@ for setting up compute workflows in cloud or on-premise environments.
 different federated environments. It starts the coordinator and an aggregator
 tasks doing the management of the participants as part of a federated job and
 the secure aggregation of the trained models.
-
-Nevermined provides the package and automation of the micro-service allowing an easy integration and deployment in cloud providers and Kubernetes clusters.
 
 
 ### Software Development Kits (SDK's)
