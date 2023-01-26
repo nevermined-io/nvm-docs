@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
-description: Indentity Functionalities
+description: Identity Functionalities
 ---
 
-# Indentity Functionalities
+# Identity Functionalities
 
 Personal identity and data privacy is at the core of the Web3 vision.<br />
 NVM Identity Functionalities help you turn identity-related data into Web3 assets, thus unlocking a whole new set of utilities.<br />
