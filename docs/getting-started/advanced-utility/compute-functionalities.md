@@ -13,7 +13,7 @@ NVM Compute Functionalities help you turn datasets into Web3-ready assets throug
 **Compute Utility 1 - Federated Computation**<br />
 
 _What is it?_<br />
-The ability to deploy algorithms and compute on disparate, or “federated” datasets. Support for multiple Federated Learning frameworks, including Google’s FL framework.<br />
+The ability to deploy algorithms and compute on disparate, or “federated” datasets. We support multiple Federated Learning frameworks, including Google’s FL framework.<br />
 
 _Why use this?_<br />
 Federated Learning enables algorithmic training and model deployment to decentralized assets without the need to consolidate those assets into centralized repositories. The result is that users can utilize machine learning remotely without the need to move data.<br />
