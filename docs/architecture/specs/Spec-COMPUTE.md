@@ -55,11 +55,9 @@ The following technical components are involved in an end-to-end publishing and 
 * **MARKETPLACE** - Exposes a web interface allowing the users to publish and purchase assets and services associated to
   these assets. It also facilitates the discovery of assets.
 * **SDK** - Software library encapsulating the Nevermined business logic. It's used to interact with all the
-  components & APIs of the system. It's currently implemented in the following packages:
+  components & APIs of the system. It's currently implemented in the following package:
   - [nevermined-sdk-js](https://github.com/nevermined-io/sdk-js) - JavaScript version of the Nevermined SDK to be
     integrated with front-end applications.
-  - [nevermined-sdk-py](https://github.com/nevermined-io/sdk-py) - Python version of the Nevermined SDK to be
-    integrated with back-end applications. The primary users are data scientists.
 * [SMART CONTRACTS](https://github.com/nevermined-io/contracts) - Solidity Smart Contracts providing the Service
   Agreements business logic.
 * [NODE](https://github.com/nevermined-io/node) - Microservice to be executed by PUBLISHERS. It exposes an
