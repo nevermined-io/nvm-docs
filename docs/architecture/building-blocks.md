@@ -19,7 +19,7 @@ The complete technical solution includes the following components:
 
 ## Smart Contracts
 
-[Nevermined Smart Contracts](https://github.com/nevermined-io/contracts/)https://github.com/nevermined-io/docs.githttps://github.com/nevermined-io/docs.gitk
+[Nevermined Smart Contracts](https://github.com/nevermined-io/contracts/)
 provide the core of the Data Ecosystem. Using an Ethereum network and
 implemented in Solidity, the Smart Contracts allow the creation of complex interaction between parties around digital assets.
 
