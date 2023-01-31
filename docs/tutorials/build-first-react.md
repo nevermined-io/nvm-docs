@@ -5,7 +5,7 @@ description: Building a DApp using Nevermined frameworks
 
 # How to build a React application integrated with Nevermined
 
-The idea of this tutorial is give a quick go through about using the [Nevermined Catalog](https://github.com/nevermined-io/components-catalog) of React components to support the development of dApps using the Nevermined environment. Nevermined Catalog is a library that provides some React components to make it easier the integration with Nevermined technologies. You can find more info in the [documentation](../catalog/intro.md).
+The idea of this tutorial is to give a quick go through about using the [Nevermined Catalog](https://github.com/nevermined-io/components-catalog) of React components to support the development of dApps using the Nevermined environment. Nevermined Catalog is a library that provides some React components to make it easier the integration with Nevermined technologies. You can find more info in the [documentation](../catalog/intro.md).
 
 ## Prerequisites
 
@@ -30,12 +30,12 @@ Instructions for following along locally using your preferred text editor.
 
 Once the react app is running and you have your catalog dependency, the next step will be to setup the configuration:
 
-1. Donwload [Nevermined abi](http://artifacts-nevermined-rocks.s3.amazonaws.com/80001/public/contracts_v2.0.0.tar.gz) and store them in a folder named contracts in the public folder. These abis are the interface to iteract with Nevermined contracts deployed on the blockchain. Visit [ABI specification](https://docs.soliditylang.org/en/develop/abi-spec.html) to learn more about.
+1. Download [Nevermined abi](http://artifacts-nevermined-rocks.s3.amazonaws.com/80001/public/contracts_v2.0.0.tar.gz) and store them in a folder named contracts in the public folder. These ABIs are the interface to interact with Nevermined contracts deployed on the blockchain. Visit [ABI specification](https://docs.soliditylang.org/en/develop/abi-spec.html) to learn more about it.
 2. Create a `config.ts` file and provide the Nevermined config as follow:
 
 :::tip
 
-For the `REACT_APP_NODE_URI` you can connect to a [QuickNode](https://www.quicknode.com/) or [Infura](https://infura.io/) puclic Node. Both services allow to connect your dApp to different blockchain networks. You will need to connect to iteract with Nevermined contracts.
+For the `REACT_APP_NODE_URI` you can connect to a [QuickNode](https://www.quicknode.com/) or [Infura](https://infura.io/) puclic Node. Both services allow to connect your dApp to different blockchain networks. You will need to connect to interact with Nevermined contracts.
 
 :::
 
@@ -165,9 +165,9 @@ export default App;
 
 ### Login with different providers
 
-After see how it is possible list some data coming from the blockchain let's see how you can login with your Nevermined dApp using our catalog integration with different providers.
+After seeing how it is possible to list some data coming from the blockchain let's see how you can login with your Nevermined dApp using our catalog integration with different providers.
 
-1. Run `yarn add @nevermined-io/catalog-providers` or `npm install --save @nevermined-io/catalog-providers` depending of your favourite package manager. This library plan to give support to more wallet providers in near future. Stay tunned.
+1. Run `yarn add @nevermined-io/catalog-providers` or `npm install --save @nevermined-io/catalog-providers` depending of your favourite package manager. This library plan to give support to more wallet providers in near future. Stay tuned.
 
 2. As before, add the WalletProvider in `index.tsx`.
 

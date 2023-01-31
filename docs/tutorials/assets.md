@@ -10,7 +10,7 @@ Following with our series, this is going to continue showing how to unblock Neve
 
 ## Prerequisites
 
-The tutorial assumes your familiarity with blockchain, and general programming. If is your first time using the Nevermined catalog don't hesitate to go back and take a look to the [previous chapter](../tutorials/running-locally.md).
+The tutorial assumes your familiarity with blockchain, and general programming. If it's your first time using the Nevermined catalog don't hesitate to go back and take a look at the [previous chapter](../tutorials/running-locally.md).
 
 ### For all the assets type
 
@@ -83,7 +83,7 @@ const Publisher = () => {
 
 4. After sign a message with your wallet provider and pay the fees you will be publishing your first asset. Check that appear in the assets list after some seconds.
 
-#### The compleate example
+#### The complete example
 
 ```tsx
     
@@ -141,7 +141,7 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
 
 2. You need to check if you are the owner of the asset, if it is the case you don't need to buy before to consume it
 otherwise you will need to buy first, then in this point you need an `useEffect` that check it every time that the wallet
-changes the account and when the assest is bought in order to avoid buy again
+changes the account and when the asset is bought in order to avoid buy again
 
 ```typescript
 ...
@@ -221,7 +221,7 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
 
 What is an NFT?
 
-An NFT non-fungible-token is a token that represent the value of any digital asset that lives on the blockchain. Currently there are to mayor standards ERC721 and ERC1155  
+An NFT non-fungible-token is a token that represents the value of any digital asset that lives on the blockchain. Currently there are two major standards ERC721 and ERC1155  
 
 :::
 
@@ -293,7 +293,7 @@ const Publisher = () => {
 
 4. After sign a message with your wallet provider and pay the fees you will be publishing your first asset. Check that appear in the assets list after some seconds.
 
-#### The compleate example
+#### The complete example
 
 ```tsx
 import { AssetService } from '@nevermined-io/catalog-core'
@@ -364,7 +364,7 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
 
 2. You need to check if you are the owner of the NFT721, if it is the case you don't need to buy before to consume it
 otherwise you will need to buy first, then in this point you need an `useEffect` that check it every time that the wallet
-changes the account and when the assest is bought in order to avoid buy again
+changes the account and when the asset is bought in order to avoid buy again
 
 ```typescript
 ...
@@ -502,7 +502,7 @@ const Publisher = () => {
 
 4. After sign a message with your wallet provider and pay the fees you will be publishing your first NFT1155 asset. Check that appear in the assets list after some seconds.
 
-#### The compleate example
+#### The complete example
 
 ```tsx
     

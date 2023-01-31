@@ -13,7 +13,7 @@ This tutorial will show some of the basics about how to use the `ncli` and get q
 
 ## Getting Started
 
-You can find more details in the [`ncli` documentation page](../cli/getting-started.md), but basically what we need is to install the `ncli` software packaged in `NPM` format. This means you can installed easilly in your environment running one of the following commands:
+You can find more details in the [`ncli` documentation page](../cli/getting-started.md), but basically what we need is to install the `ncli` software packaged in `NPM` format. This means you can install it easily in your environment running one of the following commands:
 
 ```
 npm install -g @nevermined-io/cli
@@ -109,7 +109,7 @@ By default Nevermined `ncli` uses the `testnet` network that is connected to `Po
 
 ## Registering an asset tokenized via NFTs
 
-Nevermiend allows the tokenization of assets via the association of them with a NFT contract based on a `ERC-721` or `ERC-1155` (see more about the [differences between the different NFT token standards](https://www.rfox.finance/blogs/erc-721-vs-erc-1155-tokens-a-comparison-guide-of-ethereum-nft-standards)).
+Nevermined allows the tokenization of assets via the association of them with a NFT contract based on a `ERC-721` or `ERC-1155` (see more about the [differences between the different NFT token standards](https://www.rfox.finance/blogs/erc-721-vs-erc-1155-tokens-a-comparison-guide-of-ethereum-nft-standards)).
 
 You have some information about how to do this using a `ERC-721` in the [CLI documentation](../cli/using-cli.md#nfts), so for this tutorial we are gonna use NFTs based on `ERC-1155` to have a different example.
 
@@ -183,7 +183,7 @@ Price (NFT-1155): 180000000000000000000 USDC
 
 :::info Nevermined doesn't store your data
 
-Nevermined never stores your files in any way. In most of the cases these are stored in a marketplace, your own infrastructure or a public netwkork. Nevermined just store internal ids and metadata to allow the transactions between parties to happen.
+Nevermined never stores your files in any way. In most of the cases these are stored in a marketplace, your own infrastructure or a public network. Nevermined just stores internal ids and metadata to allow the transactions between parties to happen.
 
 :::
 
