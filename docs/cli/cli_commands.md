@@ -187,7 +187,7 @@ ncli accounts balance 0xe2DD09d719Da89e5a3D0F2549c7E24566e947260
 
 
 ### fund [account]
-Funds an account on a testnet<br/>
+Funds an account with ERC20 tokens on a testnet<br/>
 
 In the test environments all tokens lack real value. Typically in Nevermined you need to use different type of tokens. The Native token (`ETH`, `MATIC`, etc) to pay for the gas resulting to write into a blockchain network, and optionally with a `ERC20` token to do some payments. This command allows to get some funds in a testnet environment allowing to a user to run different processes on a testnet. This command will not work in production environments where the tokens have actual value.<br/>
 
@@ -197,12 +197,6 @@ In the test environments all tokens lack real value. Typically in Nevermined you
 |----------------------|------|-------------:|--------------:|-------------|
 | **account** | `string` |  |    | The account to fund |
 
-
-#### Optional Arguments
-
-| Name of the Argument | Type | Is required? | Default value | Description |
-|----------------------|------|-------------:|--------------:|-------------|
-| **token** | `string` |  |  `both`  | What kind of tokens you want to fund the account (native, erc20 or both) |
 
 
 #### Example/s
@@ -242,6 +236,7 @@ This command registers a new asset on the Nevermined network. This registered as
 | **contentType** | `string` |  &#x2611;  |    | Files content type. Example: application/csv |
 | **license** | `string` |  |  `undefined`  | The asset license |
 | **password** | `string` |  |    | The password for encrypted files |
+| **publishMetadata** | `string` |  |  `metadata-api`  | Allows to store the metadata in the Metadata API only (metadata-api) or in IPFS too (passing ipfs as value here). |
 | **assetType** | `string` |  |  `dataset`  | The type of the asset to register |
 
 
@@ -274,6 +269,7 @@ This command registers a new algorithm on the Nevermined network. The algorithm 
 | **language** | `string` |  &#x2611;  |    | The programing language of the algorithm |
 | **entrypoint** | `string` |  &#x2611;  |    | The entrypoint for running the algorithm. Example: python word_count.py |
 | **container** | `string` |  &#x2611;  |    | The docker container where the algorithm can be executed. Example: python:3.8-alpine |
+| **publishMetadata** | `string` |  |  `metadata-api`  | Allows to store the metadata in the Metadata API only (metadata-api) or in IPFS too (passing ipfs as value here). |
 | **assetType** | `string` |  |  `algorithm`  | The type of the asset to register |
 
 
@@ -304,6 +300,7 @@ An asset in the Nevermined network can be described by different level of metada
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **encrypt** | `boolean` |  |  `false`  | Use encrypted service endpoint |
+| **publishMetadata** | `string` |  |  `metadata-api`  | Allows to store the metadata in the Metadata API only (metadata-api) or in IPFS too (passing ipfs as value here). |
 
 
 #### Example/s
@@ -680,9 +677,13 @@ A Smart Contract is represented by an ABI file that includes the definition of i
 
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
-| **params** | `array` |  |    | A list of parameters to be given during the contract initialization |
+| **name** | `string` |  |  `NVM NFT`  | The nft contract name |
+| **symbol** | `string` |  |  `NVM`  | The nft contract symbol |
+| **uri** | `string` |  |    | The nft metadata uri |
+| **cap** | `number` |  |  `0`  | The max number of tokens created in this NFT contract. If 0 means unlimitted |
 | **approve** | `array` |  |    | A list of addresses to be approved to manage the NFT contract |
-| **addMinter** | `boolean` |  |  `true`  | If true adds the Nevermined Transfer condition with permissions to mint NFTs |
+| **addOperator** | `boolean` |  |  `true`  | If true adds the Nevermined Transfer condition with permissions to mint NFTs |
+| **nftType** | `number` |  |  `721`  | The NFT type |
 
 
 #### Example/s
@@ -695,6 +696,39 @@ ncli nfts721 deploy test/resources/nfts/TestNFT721.json
 
 ```bash
 ncli nfts721 deploy test/resources/nfts/NFT721SubscriptionUpgradeable.json --params &quot;Token Name&quot; --params &quot;SYMBOL&quot;
+```
+
+
+
+### clone [nftAddress]
+It clones an existing NFT (ERC-721) contract<br/>
+
+Nevermined Smart Contracts are deployed in a blockchain, with this command it&#39;s possible to clone the implementation of an already deployed Smart Contract. The new contract clonned will be owned by the user doing that clonning action.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **nftAddress** | `string` |  |    | The address of an already deployed ERC-721 NFT contract |
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **name** | `string` |  |  `NVM ERC-721`  | The nft contract name |
+| **symbol** | `string` |  |  `NVM`  | The nft contract symbol |
+| **uri** | `string` |  |    | The nft metadata uri |
+| **cap** | `number` |  |  `0`  | The max number of tokens created in this NFT contract. If 0 means unlimitted |
+| **operators** | `array` |  |    | A list of addresses to be approved to operate the NFT contract |
+| **nftType** | `number` |  |  `721`  | The NFT type |
+
+
+#### Example/s
+
+
+```bash
+ncli nfts721 clone 0x37BB53e3d293494DE59fBe1FF78500423dcFd43B --params &quot;Token Name&quot; --params &quot;SYMBOL&quot;
 ```
 
 
@@ -720,6 +754,7 @@ Having a previously deployed ERC-721 NFT contract, this command registers a new 
 | **name** | `string` |  |    | The asset name |
 | **author** | `string` |  |    | The author of the file/s |
 | **urls** | `array` |  |    | The asset urls. It can be a comma separated list of urls for multiple files. |
+| **providers** | `array` |  |    | Public addresses of Node providers that user delegates some permissions. |
 | **services** | `array` |  |    | The list of services attached to the asset |
 | **license** | `string` |  |    | The asset license (Creative Commons, etc) |
 | **price** | `number` |  |  `0`  | The NFT price |
@@ -728,7 +763,8 @@ Having a previously deployed ERC-721 NFT contract, this command registers a new 
 | **transfer** | `boolean` |  |  `true`  | It allows to transfer a NFT when purchased or mint |
 | **duration** | `number` |  |  `0`  | If the asset refers to a subscription, this parameter define the duration of that subscription in blocks |
 | **royalties** | `number` |  |  `0`  | The royalties (between 0 and 100%) to reward to the original creator in the secondary market. |
-| **nftType** | `string` |  |  `721`  | The NFT type |
+| **publishMetadata** | `string` |  |  `metadata-api`  | Allows to store the metadata in the Metadata API only (metadata-api) or in IPFS too (passing ipfs as value here). |
+| **nftType** | `number` |  |  `721`  | The NFT type |
 
 
 #### Example/s
@@ -793,7 +829,7 @@ This command allows to check if an address is a holder of a specific NFT wrapped
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **address** | `string` |  |    | The address of the account to validate as holder |
-| **nftType** | `string` |  |  `721`  | The NFT type |
+| **nftType** | `number` |  |  `721`  | The NFT type |
 
 
 #### Example/s
@@ -824,7 +860,7 @@ This command allows to the owner of an asset to mint a ERC-721 based NFT<br/>
 | **nftAddress** | `string` |  |    | The address of the NFT (ERC-721) contract |
 | **uri** | `string` |  |    | The token uri for the Asset Metadata |
 | **receiver** | `string` |  |    | The address of the receiver of the NFT, if not given will be the minter address |
-| **nftType** | `string` |  |  `721`  | The NFT type |
+| **nftType** | `number` |  |  `721`  | The NFT type |
 
 
 #### Example/s
@@ -845,7 +881,7 @@ It allows to a ERC-721 NFT owner to burn it<br/>
 
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
-| **did** | `string` |  |    | The DID to burn |
+| **did** | `string` |  |    | The identifier of the asset |
 | **nftAddress** | `string` |  |    | The address of the NFT (ERC-721) contract |
 
 
@@ -853,7 +889,8 @@ It allows to a ERC-721 NFT owner to burn it<br/>
 
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
-| **nftType** | `string` |  |  `721`  | The NFT type |
+| **tokenId** | `string` |  |    | The token Id to burn |
+| **nftType** | `number` |  |  `721`  | The NFT type |
 
 
 #### Example/s
@@ -881,7 +918,7 @@ When a user orders an asset attached to a NFT, this command purchases that NFT a
 
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
-| **nftType** | `string` |  |  `721`  | The NFT type |
+| **nftType** | `number` |  |  `721`  | The NFT type |
 
 
 #### Example/s
@@ -911,7 +948,7 @@ This command requires a valid `serviceAgreementId` and the `sellerAddress` that 
 |----------------------|------|-------------:|--------------:|-------------|
 | **sellerAddress** | `string` |  |    | The address of the seller (0x123..) |
 | **buyerAddress** | `string` |  |    | The address of the account who will receive the NFT |
-| **nftType** | `string` |  |  `721`  | The NFT type |
+| **nftType** | `number` |  |  `721`  | The NFT type |
 
 
 #### Example/s
@@ -976,6 +1013,7 @@ This command will allow to download the file contents associated to a DID that h
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **destination** | `string` |  &#x2611;  |    | The destination of the files |
+| **nftType** | `number` |  |  `721`  | The NFT type |
 
 
 #### Example/s
@@ -997,6 +1035,76 @@ Create and manage NFTs (ERC-1155) attached to Nevermined assets<br/>
 
 Commands:
 
+### deploy [abiPath]
+It deploys a new NFT (ERC-1155) contract<br/>
+
+A Smart Contract is represented by an ABI file that includes the definition of it interfaces and the bytecode of the contract. Having that file, this command allows to deploy a new instance of a ERC-721 contract in the network where the `ncli` is connected. As a result the `ncli` will return the address where the contract was deployed allowing further interaction with it.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **abiPath** | `string` |  |    | The path to the ABI representing the ERC-1155 contract |
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **name** | `string` |  |  `NVM NFT`  | The nft contract name |
+| **symbol** | `string` |  |  `NVM`  | The nft contract symbol |
+| **uri** | `string` |  |    | The nft metadata uri |
+| **approve** | `array` |  |    | A list of addresses to be approved to manage the NFT contract |
+| **addOperator** | `boolean` |  |  `true`  | If true adds the Nevermined Transfer condition with permissions to mint NFTs |
+| **nftType** | `number` |  |  `1155`  | The NFT type |
+
+
+#### Example/s
+
+
+```bash
+ncli nfts1155 deploy NFT1155.json
+```
+
+
+```bash
+ncli nfts1155 deploy test/resources/nfts/NFT1155.json --params &quot;Token Name&quot; --params &quot;SYMBOL&quot;
+```
+
+
+
+### clone [nftAddress]
+It clones an existing NFT (ERC-1155) contract<br/>
+
+Nevermined Smart Contracts are deployed in a blockchain, with this command it&#39;s possible to clone the implementation of an already deployed Smart Contract. The new contract clonned will be owned by the user doing that clonning action.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **nftAddress** | `string` |  |    | The address of an already deployed ERC-1155 NFT contract |
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **name** | `string` |  |  `NVM ERC-721`  | The nft contract name |
+| **symbol** | `string` |  |  `NVM`  | The nft contract symbol |
+| **uri** | `string` |  |    | The nft metadata uri |
+| **operators** | `array` |  |    | A list of addresses to be approved to operate the NFT contract |
+| **nftType** | `number` |  |  `1155`  | The NFT type |
+
+
+#### Example/s
+
+
+```bash
+ncli nfts1155 clone 0x37BB53e3d293494DE59fBe1FF78500423dcFd43B --params &quot;Token Name&quot; --params &quot;SYMBOL&quot;
+```
+
+
+
 ### create
 Registers a new asset and associates a NFT (ERC-1155) to it<br/>
 
@@ -1012,13 +1120,16 @@ This command registers a new asset that allows the publisher to provide access t
 | **name** | `string` |  |    | The asset name |
 | **author** | `string` |  |    | The author of the file/s |
 | **urls** | `array` |  |    | The asset urls. It can be a comma separated list of urls for multiple files. |
+| **providers** | `array` |  |    | Public addresses of Node providers that user delegates some permissions. |
 | **services** | `array` |  |    | The list of services attached to the asset |
 | **license** | `string` |  |    | The asset license (Creative Commons, etc) |
 | **price** | `number` |  |    | The NFT price |
 | **cap** | `number` |  |  `0`  | The NFT minting cap (0 means uncapped) |
 | **preMint** | `boolean` |  |  `false`  | If true the NFTs will be minted during creation |
+| **transfer** | `boolean` |  |  `true`  | It allows to transfer a NFT when purchased or mint |
 | **royalties** | `number` |  |  `0`  | The royalties (between 0 and 100%) to reward to the original creator in the secondary market |
-| **nftType** | `string` |  |  `1155`  | The NFT type |
+| **publishMetadata** | `string` |  |  `metadata-api`  | Allows to store the metadata in the Metadata API only (metadata-api) or in IPFS too (passing ipfs as value here). |
+| **nftType** | `number` |  |  `1155`  | The NFT type |
 
 
 #### Example/s
@@ -1076,7 +1187,7 @@ This command allows to check if an address is a holder of a specific NFT wrapped
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **address** | `string` |  |    | The address of the account to validate as holder |
-| **nftType** | `string` |  |  `1155`  | The NFT type |
+| **nftType** | `number` |  |  `1155`  | The NFT type |
 
 
 #### Example/s
@@ -1105,7 +1216,7 @@ This command allows to the owner of an asset to mint a ERC-1155 based NFT<br/>
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **amount** | `number` |  |  `1`  | The number of NFTs (ERC-1155) to mint |
-| **nftType** | `string` |  |  `1155`  | The NFT type |
+| **nftType** | `number` |  |  `1155`  | The NFT type |
 
 
 #### Example/s
@@ -1134,7 +1245,7 @@ It allows to a ERC-1155 NFT owner to burn it<br/>
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **amount** | `number` |  |  `1`  | The number of NFTs (ERC-1155) to burn |
-| **nftType** | `string` |  |  `1155`  | The NFT type |
+| **nftType** | `number` |  |  `1155`  | The NFT type |
 
 
 #### Example/s
@@ -1163,7 +1274,7 @@ When a user orders an asset attached to a NFT, this command purchases that NFT a
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **amount** | `number` |  |  `1`  | The number of NFTs (ERC-1155) to burn |
-| **nftType** | `string` |  |  `1155`  | The NFT type |
+| **nftType** | `number` |  |  `1155`  | The NFT type |
 
 
 #### Example/s
@@ -1194,7 +1305,7 @@ This command requires a valid `serviceAgreementId` created by the `buyerAccount`
 | **sellerAddress** | `string` |  |    | The address of the seller (0x123..) |
 | **buyerAddress** | `string` |  |    | The address of the account who will receive the NFT |
 | **amount** | `number` |  |  `1`  | The number of NFTs (ERC-1155) to transfer |
-| **nftType** | `string` |  |  `1155`  | The NFT type |
+| **nftType** | `number` |  |  `1155`  | The NFT type |
 
 
 #### Example/s
@@ -1253,6 +1364,7 @@ This command will allow to purchase a NFT and download the file contents associa
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **destination** | `string` |  &#x2611;  |    | The destination of the files |
+| **nftType** | `number` |  |  `1155`  | The NFT type |
 
 
 #### Example/s

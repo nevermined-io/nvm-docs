@@ -19,10 +19,10 @@ The Native token is **MATIC**. This environment has the network name **mumbai** 
 
 ### Nevermined configuration 
 
- The Nevermined contracts deployed have the version: **2.1.0**  The Nevermined contracts are labeled with the tag name: **public** 
+ The Nevermined contracts deployed have the version: **3.0.0**  The Nevermined contracts are labeled with the tag name: **public** 
 The Marketplace API used can be found on https://marketplace-api.mumbai.public.nevermined.network. <br/>
 The Nevermined Node can be found on https://node.mumbai.public.nevermined.network and uses the public address **0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc**.<br/>
- There is deployed a faucet on https://faucet.mumbai.public.nevermined.rocks .<br/> The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
+ The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
 
 
  
@@ -70,7 +70,7 @@ The Native token is **ETH**. This environment has the network name **goerli** an
  The Nevermined contracts deployed have the version: **2.1.0**  The Nevermined contracts are labeled with the tag name: **public** 
 The Marketplace API used can be found on https://marketplace-api.goerli.public.nevermined.rocks. <br/>
 The Nevermined Node can be found on https://node.goerli.public.nevermined.rocks and uses the public address **0xB82dc620BB4dE6712376055a5cfc0DF11112D442**.<br/>
- There is deployed a faucet on https://faucet.goerli.public.nevermined.rocks .<br/> The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
+ The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
 
 
  
@@ -86,7 +86,7 @@ The Native token is **ETH**. This environment has the network name **arbitrum-go
  The Nevermined contracts deployed have the version: **2.1.0**  The Nevermined contracts are labeled with the tag name: **public** 
 The Marketplace API used can be found on https://marketplace-api.arbitrum-goerli.public.nevermined.rocks. <br/>
 The Nevermined Node can be found on https://node.arbitrum-goerli.public.nevermined.rocks and uses the public address **0xB82dc620BB4dE6712376055a5cfc0DF11112D442**.<br/>
- There is deployed a faucet on https://faucet.arbitrum-goerli.public.nevermined.rocks .<br/> The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
+ The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
 
 
  
@@ -100,9 +100,9 @@ The Native token is **ETH**. This environment has the network name **geth-localn
 ### Nevermined configuration 
 
  The Nevermined contracts deployed have the version: **undefined**  The Nevermined contracts are labeled with the tag name: **undefined** 
-The Marketplace API used can be found on http://172.17.0.1:3100. <br/>
-The Nevermined Node can be found on http://localhost:8030 and uses the public address **0x068ed00cf0441e4829d9784fcbe7b9e26d4bd8d0**.<br/>
- There is deployed a faucet on http://localhost:3001 .<br/> The subgraphs to fetch contracts events can be found on http://localhost:9000/subgraphs/name/nevermined-io/development .<br/>
+The Marketplace API used can be found on http://marketplace.nevermined.localnet. <br/>
+The Nevermined Node can be found on http://node.nevermined.localnet and uses the public address **0x068ed00cf0441e4829d9784fcbe7b9e26d4bd8d0**.<br/>
+ The subgraphs to fetch contracts events can be found on http://localhost:9000/subgraphs/name/nevermined-io/development .<br/>
 
 
 
