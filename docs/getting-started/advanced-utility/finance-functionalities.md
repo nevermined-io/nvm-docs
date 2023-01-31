@@ -1,22 +1,22 @@
 ---
 sidebar_position: 2
-description: Finance functionalities
+description: Finance Functionalities
 ---
 
-# Finance functionalities
+# Finance Functionalities
 
-The current financial model for NFTs and digital assets is too one-dimensional: basically only buy or sell. <br />
+The current financial model for fungible and non-fungible digital assets is too one-dimensional: basically, only buy or sell. <br />
 
-NVM Finance Functionalities help you to develop more advanced revenue models and marketplaces. These are functionalities that allow you to implement Web3-compatible monetization into NFT and digital assets. We currently have 5 different utilities, all available via our [SDK](../../getting-started/). <br />
+NVM Finance Functionalities help you to develop more advanced revenue models and marketplaces. These are functionalities that allow you to implement Web3-compatible monetization into digital assets and NFTs. We currently have 5 different utilities, all available via our [SDK](../../getting-started/). <br />
 <br />
 
 **Finance Utility 1 - Secondary Market Royalties**<br />
 
 _What is it?_<br />
-The user registering an asset can specify the royalties that are rewarding the original creator in the secondary market. These royalties must be between 0 and 100 percent. The royalties can not be changed after they are initialized. This protects the buyers of a NFT to have to pay for a different commission to the one agreed during the purchase of a NFT.<br />
+The user registering an asset can specify the royalties that are rewarding the original creator in the secondary market. These royalties must be between 0 and 100 percent. The royalties can not be changed after they are initialized. This protects the buyers of an asset to have to pay for a different commission to the one agreed during the purchase.<br />
 
 _Why use this?_<br />
-We have seen many examples where the payout of royalties depends on the goodwill of a marketplace. With this functionality, the royalty conditions are ‘embedded’ in the NFT and will be executed upon.<br />
+We have seen many examples where the payout of royalties depends on the goodwill of a marketplace. With this functionality, the royalty conditions are ‘embedded’ in the asset and will be executed upon.<br />
 
 Discover our [SDK](../../getting-started/) for more.<br />
 <br />
@@ -44,7 +44,7 @@ Discover our [SDK](../../getting-started/) for more.<br />
 
 **Finance Utility 4 - Marketplace Framework**<br />
 _What is it?_<br />
-A framework to create your own NFT Marketplace.<br />
+A framework to create your own Marketplace for digital assets.<br />
 
 _Why use this?_<br />
 Rather than build a marketplace from scratch, this allows you to manage all the typical metadata required to build a marketplace.<br />
