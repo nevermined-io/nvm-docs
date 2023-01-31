@@ -179,11 +179,11 @@ const workflowAttributes = AssetAttributes.getInstance({
 workflowDdo = await nevermined.assets.create(workflowAttributes, publisher)
 ```
 
-## Order the Workflow Asset
+## Order the Compute Asset
 
 Until now we have published the assets acting as a *publisher*. To show how to run a compute job, now we will take a *consumer* role 
 
-The first step for the consumer is to order the compute data. Nevermined will create a Service Agreement between the publisher and the consumer, and the ammount of tokens indicated in the asset price will be transfer from the consumer account to the publisher one.
+The first step for the consumer is to order the compute data. Nevermined will create a Service Agreement between the publisher and the consumer, and the ammount of tokens indicated in the asset price will be transfered from the consumer account to the publisher one.
 ```ts
 agreementId = await nevermined.compute.order(computeDdo.id, consumer)
 ```
