@@ -30,7 +30,7 @@ const nvmFeeReceiverTest = '0x309039F6A4e876bE0a3FCA8c1e32292358D7f07c'
 // Nevermined Fee receiver address in production environments
 const nvmFeeReceiverProd = '0x35aFA2408BB4f479996fafb2bB3A183ec064C265'
 
-const assetRewards = new AssetRewards(
+const assetPrice = new AssetPrice(
     new Map([
         [creatorAddress, nvmFeeReceiverProd],
         [198, 2] // 99% of the payment goes to the `creatorAddress` and 1% to `nvmFeeReceiverProd`
@@ -38,17 +38,13 @@ const assetRewards = new AssetRewards(
 )
 
 // We register a NFT-721 Asset using the payment distribution defined in the `assetRewards` variable
-const assetDDO = await nevermined.assets.createNft721(
+const nftAttributes = NFTAttributes.getNFT721Instance({
     metadata,
-    artist,
-    assetRewards,
-    'PSK-RSA',
-    nft.address,
-    token.getAddress(),
-    true,
-    [],
-    royaltyAttributes
-)
+    price: assetPrice,
+    serviceTypes: ['nft-sales', 'nft-access'],
+    nftContractAddress: nftContract.address
+})
+ddo = await nevermined.nfts721.create(nftAttributes, creatorAddress)
 
 ```
 
