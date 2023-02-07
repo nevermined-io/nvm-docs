@@ -49,7 +49,7 @@ export const neverminedNodeAddress = process.env.REACT_APP_GATEWAY_ADDRESS || '0
 // Node service
 export const neverminedNodeUri = process.env.REACT_APP_GATEWAY_URI || 'https://node.mumbai.public.nevermined.network';
 // Fauce uri to get some tokens.
-export const faucetUri = process.env.REACT_APPREACT_APP_FAUCET_URI_FAUCET_URI || 'https://faucet.mumbai.public.nevermined.rocks';
+export const faucetUri = process.env.REACT_APPREACT_APP_FAUCET_URI_FAUCET_URI || 'https://faucet.mumbai.public.nevermined.network';
 // Blockchain node
 export const web3ProviderUri = process.env.REACT_APP_NODE_URI || 'https://matic-mumbai.chainstacklabs.com';
 // Chain id of your network

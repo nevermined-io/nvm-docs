@@ -18,12 +18,12 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
-    "@docusaurus/core": "2.1.0",
-    "@docusaurus/plugin-google-analytics": "2.1.0",
-    "@docusaurus/preset-classic": "2.1.0",
-    "@docusaurus/theme-classic": "2.1.0",
-    "@docusaurus/theme-common": "2.1.0",
-    "@docusaurus/theme-search-algolia": "2.1.0",
+    "@docusaurus/core": "^2.3.1",
+    "@docusaurus/plugin-google-analytics": "^2.3.1",
+    "@docusaurus/preset-classic": "^2.3.1",
+    "@docusaurus/theme-classic": "^2.3.1",
+    "@docusaurus/theme-common": "^2.3.1",
+    "@docusaurus/theme-search-algolia": "^2.3.1",
     "@mdx-js/react": "^1.6.22",
     "@nevermined-io/catalog-core": "^0.6.1",
     "@nevermined-io/catalog-providers": "^0.6.1",
@@ -43,7 +43,7 @@
     "sass": "^1.52.3"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.1.0",
+    "@docusaurus/module-type-aliases": "^2.3.1",
     "@tsconfig/docusaurus": "^1.0.5",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",

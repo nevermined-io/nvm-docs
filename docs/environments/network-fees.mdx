@@ -22,19 +22,28 @@ To execute a transaction using the Nevermined Smart Contracts it is necessary to
 
 This typically can be done when a content creator defines how payments are distributed during asset registration.
 
-```js
+```typescript
+// The fee receiver in each network can be fetched from the Nevermined Config Smart Contract
+const feeReceiver = await nevermined.keeper.nvmConfig.getFeeReceiver()
 
-// Nevermined Fee receiver address in testnet environments
-const nvmFeeReceiverTest = '0x309039F6A4e876bE0a3FCA8c1e32292358D7f07c'
-
-// Nevermined Fee receiver address in production environments
-const nvmFeeReceiverProd = '0x35aFA2408BB4f479996fafb2bB3A183ec064C265'
+// The Network fees amount can be fetched on-chain too
+const networkFee = await nevermined.keeper.nvmConfig.getNetworkFee()
 
 const assetPrice = new AssetPrice(
     new Map([
-        [creatorAddress, nvmFeeReceiverProd],
-        [198, 2] // 99% of the payment goes to the `creatorAddress` and 1% to `nvmFeeReceiverProd`
+        [creatorAddress, feeReceiver],
+        [198, 2] // 99% of the payment goes to the `creatorAddress` and 1% to `feeReceiver`
     ])
+)
+
+// Also network fees can be added with the `addNetworkFees` method
+const assetPriceWithFees = new AssetPrice(
+  johnDoeAddress, 
+  BigNumber.from(5), 
+  zeroAddress
+).addNetworkFees(
+  nvmFeeReceiverProd,
+  BigNumber.from(networkFee)
 )
 
 // We register a NFT-721 Asset using the payment distribution defined in the `assetRewards` variable

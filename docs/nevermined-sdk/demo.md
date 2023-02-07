@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
@@ -7,6 +7,7 @@ import { DemoSDK } from '@site/src/components/demo';
 
 
 # Demo
+
 This demo is based in the code of the [Example](./example.md) section
 
 ## Workflow example

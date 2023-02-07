@@ -38,6 +38,6 @@ Nevermined Functionalities: Marketplace Framework
 The asset was: DeFi data sets <br />
 Nevermined Functionalities: Subscription NFTs, Marketplace Framework
 
-- [Arcadia](https://arcadia.nevermined.rocks/) (AI animation maker) <br />
+- [Arcadia](https://arcadia.nevermined.network/) (AI animation maker) <br />
 The asset was: Text prompts and AI <br />
 Nevermined Functionalities: Royalties, Remote Computation
