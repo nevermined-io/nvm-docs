@@ -8,10 +8,11 @@ description: How Nevermined NFTs work
 ## What's a NFT
 
 NFTs represent ownership of digital assets in a decentralized manner. They allow that assets you own in a digital environment belong to you and not to a third-party.
-In digital environments where assets don't live in a physical world, the ownership of them is more faith than a reality. Faith in infrastructure where these assets live, and faith in the owners of that infrastucture.
-It's quite common to think you own that character you purchased to play a video game, that subscription to a streaming service, etc. But in reality these are just entries in a company database. These assets you "own" and probably you paid for, tomorrow can be updated or deleted (accidentaly or not) by the entity running the infrastructure where these digital assets exists, your account can be "banned", etc. In any of these situations all your digital assets just evaporate. And good luck claiming for them.
+In digital environments where assets don't live in a physical world, the ownership of them is more faith than a reality. Faith in infrastructure where these assets live, and faith in the owners of that infrastructure.
 
-NFTs are good to remove that dependency on any third-party. They live in a blockchain not owned by anyone directly, and their code (the NFT Smart Contract code) who owns them and what can be done with them and what not. Something so "simple" has massive implications because gravitates the "real ownership" and responsibility of the asset to the final user.
+It's quite common to think you own that character you purchased to play a video game, that subscription to a streaming service, etc. But in reality these are just entries in a company database. These assets you "own" and probably you paid for, tomorrow can be updated or deleted (accidentally or not) by the entity running the infrastructure where these digital assets exist, your account can be "banned", etc. In any of these situations all your digital assets just evaporate. And good luck claiming for them.
+
+NFTs are good to remove that dependency on any third-party. They live in a blockchain not owned by anyone directly, and their code (the NFT Smart Contract code) who owns them and what can be done with them and what not. Something so "simple" has massive implications because it gravitates the "real ownership" and responsibility of the asset to the final user.
 
 ### New generation of NFTs
 
@@ -22,10 +23,10 @@ As any new technology, in the short history of NFTs they went through the typica
 During 2021 and 2022 we lived the infancy of the NFTs technology. Many digital assets were put online and traded. With a bigger focus in the speculative factor of the new thing, the first age of NFTs had some characteristics:
 
 * The concept of ownership was not enforced, the NFT content creator didn't "own" the asset but a small
-* From a users point of view, most of the NFTs didn't represent any real benefit vs traditional assets. Term & conditions made that very clear.
+* From a users point of view, most of the NFTs didn't represent any real benefit vs traditional assets. Terms & conditions made that very clear.
 * No attribution, no provenance, no utility, just static pictures
 
-Beyond the fun of playing with a new technology, first age of NFTs didn't provide any real value to content creators or users. There is an obvious disenchanment because they didn't provide any real improvement.
+Beyond the fun of playing with a new technology, the first age of NFTs didn't provide any real value to content creators or users. There is an obvious disenchantment because they didn't provide any real improvement.
 
 But with the lower hype came also more clarity and thinking on the benefits NFTs technology can bring to a digital world and their users. A second age of NFTs is coming with a different direction:
 
@@ -38,7 +39,7 @@ More information in the post: [Facilitating asset tokenization with NFTs](https:
 
 ### Utility
 
-In a digital world assets need to be represented somehow. We spoke above about the ownership of them. But also NFTs are useful to describe the digital asset, what are their properties and how that asset can be used. This is important because on top of the "ownership" concept we can build the "utility" concept. That means how the asset can be used and what under what conditions.
+In a digital world assets need to be represented somehow. We spoke about the ownership of them. But also NFTs are useful to describe the digital asset, what are their properties and how that asset can be used. This is important because on top of the "ownership" concept we can build the "utility" concept. That means how the asset can be used and under what conditions.
 
 The utility allows that asset owners can define things like:
 
@@ -48,7 +49,7 @@ The utility allows that asset owners can define things like:
 * Or lended
 * etc, etc
 
-There is a big terrotory to explore where between content owners and developers can design and activate different kind of utilities on this new kind of digital assets.
+There is a big territory to explore where content owners and developers can design and activate different kinds of utilities on this new kind of digital assets.
 
 ### ERC-721 vs ERC-1155
 
@@ -61,7 +62,7 @@ Each of these standards are usful and fit better depending on the use case.
 
 ## What extras are provided by Nevermined NFTs?
 
-In Nevermined [we constructed](https://github.com/nevermined-io/contracts/tree/master/contracts/token) some additional features on top of both standards that can be used to deliver more powerful use cases.
+In Nevermined [we built](https://github.com/nevermined-io/contracts/tree/master/contracts/token) some additional features on top of both standards that can be used to deliver more powerful use cases.
 Some of these extra features are the following:
 
 ### Selling and Purchasing assets
@@ -70,11 +71,11 @@ Via the Nevermined Service Execution Agreements, content creators and their user
 
 ### Access Control
 
-Nevermined includes an access control piece that allows to content creators to provide special access to certain assets or services under some circunstances. This enable powerful use cases like exclusive access, enabling the users holding some NFTs to get access to something is exclusive and unique.
+Nevermined includes an access control piece that allows content creators to provide special access to certain assets or services under some circumstances. This enables powerful use cases like exclusive access, enabling the users holding some NFTs to get access to something exclusive and unique.
 
 ### Royalties and Secondary Markets
 
-When content creators sell NFTs associated to their creations the lost control of who owns what. Nevermined enforces royalties in sales in secondary markets, allowing to content creators to define upfront the royalties they want to receive, and collect them if there is a secondary market sale.
+When content creators sell NFTs associated with their creations they lose control of who owns what. Nevermined enforces royalties in sales in secondary markets, allowing content creators to define upfront the royalties they want to receive, and collect them if there is a secondary market sale.
 
 ### Search and Discovery
 
@@ -90,11 +91,11 @@ Nevermined allows content creators to control the access to exclusive stuff to u
 
 ### Proof of Attendance (POAP)
 
-Proof of Attendance are special case of ERC-721 NFTs that are useful to repesent that a user was in a specific place in a specific moment. Only the users meeting these conditions can claim that specific POAP NFT. POAPs are very interesting for use cases that want to build loyalty around live events.
+Proof of Attendance are special cases of ERC-721 NFTs that are useful to represent that a user was in a specific place in a specific moment. Only the users meeting these conditions can claim that specific POAP NFT. POAPs are very interesting for use cases that want to build loyalty around live events.
 
 You can read more about it in [this post about Alities network](https://medium.com/nevermined-io/built-on-nevermined-alities-is-an-nft-community-for-artist-and-collectors-f6b08f00f18c).
 
-### Soul Bound or Non-Transferable NFTs 
+### Soul Bound or Non-Transferable NFTs
 
 As stands in the name, Non-Transferable Tokens (NTT) are a special kind of NFTs that can be transferred. Once they are minted and are owned by a user they can not sent to anyone else. This is useful for usecases that wan to represent personal achievements or similar characteristics that are directly tied to the identity of the owner of that NFT.
 
