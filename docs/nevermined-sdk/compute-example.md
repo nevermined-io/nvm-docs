@@ -1,11 +1,11 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Compute Example
 
-
 ## Introduction
+
 In this example we will introduce you to Nevermined compute capabilities (Nvm DISC), using Nevermined SDK. You will see how easy is to publish the assets needed to define a compute workflow and to run an algorithm over a set of data,
 
 ## Requirements

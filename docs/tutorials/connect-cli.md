@@ -152,7 +152,7 @@ Storing DDO did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac
 DDO stored
 Asset registred
 Asset with DID created: did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211
-Created DID: did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211 with NFT associated and endpoint: https://marketplace-api.mumbai.public.nevermined.rocks/api/v1/metadata/assets/ddo/did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211
+Created DID: did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211 with NFT associated and endpoint: https://marketplace-api.mumbai.public.nevermined.network/api/v1/metadata/assets/ddo/did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211
 Now please mint the token on the NFT Contract!
 
 ```
@@ -165,7 +165,7 @@ $ ncli nfts1155 show did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58
 Loading information of NFTs attached to the DID: 'did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211'
 ====== Nevermined ======
 ====== did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211 ======
-Url: https://marketplace-api.mumbai.public.nevermined.rocks/api/v1/metadata/assets/ddo/did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211
+Url: https://marketplace-api.mumbai.public.nevermined.network/api/v1/metadata/assets/ddo/did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211
 Name: Badass fractal
 Author: John Doe
 License: 
@@ -195,7 +195,7 @@ We didn't mint any edition during the NFT creation (that is possible using the `
 $ ncli nfts1155 mint did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211 --amount 10
 
 Minting NFT: 'did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211'
-Minting NFT with service Endpoint! https://marketplace-api.mumbai.public.nevermined.rocks/api/v1/metadata/assets/ddo/did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211
+Minting NFT with service Endpoint! https://marketplace-api.mumbai.public.nevermined.network/api/v1/metadata/assets/ddo/did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211
 Minted  10' NFTs (ERC-1155) 'did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211'!
 
 ```
@@ -249,7 +249,7 @@ Search using query: Fractal
 Total Results: [object Object] - Total Pages: 1
 Page: 1
 ---------------------------
-dataset > Name: Badass fractal - Url: https://marketplace-api.mumbai.public.nevermined.rocks/api/v1/metadata/assets/ddo/did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211
+dataset > Name: Badass fractal - Url: https://marketplace-api.mumbai.public.nevermined.network/api/v1/metadata/assets/ddo/did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211
 ---------------------------
 
 ```
@@ -262,7 +262,7 @@ Cannot load optional contract CurveRoyalties
 Loading information of NFTs attached to the DID: 'did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211'
 ====== Nevermined ======
 ====== did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211 ======
-Url: https://marketplace-api.mumbai.public.nevermined.rocks/api/v1/metadata/assets/ddo/did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211
+Url: https://marketplace-api.mumbai.public.nevermined.network/api/v1/metadata/assets/ddo/did:nv:e4cd0187b8d8d0db4a03e31fbdda2cf088d28789c93b24bf2f58bc9763bac211
 Name: Badass fractal
 Author: John Doe
 License: 

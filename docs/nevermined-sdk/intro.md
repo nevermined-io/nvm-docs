@@ -13,3 +13,4 @@ You should use Nevermined SDK if your project isn't developed using [React](http
 import DocCardList from '@site/src/components/docCard/docCardList';
 
 <DocCardList />
+

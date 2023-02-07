@@ -2,12 +2,14 @@
 sidebar_position: 3
 ---
 
-# Example
+# How to use the SDK?
 
 ## Before to start
+
 If you project is using `React` we recommend to use [Catalog](../catalog/intro.md) to make everything much easier, SDK is the low level of it.
 
 ## Requirements
+
 Before you start with this demo you require:
 
 * An extension of [Metamask](https://metamask.io/) installed in your browser

@@ -40,6 +40,6 @@ https://thegraph.com/hosted-service/subgraph/nevermined-io/publicmaticv2nevermin
 
 | Environment | Network | Contracts Version | Tag | Component | URL | Comments |
 |-------------|---------|-------------------|-----|-----------|-----|----------|
-| public-v2-mumbai | Mumbai | 2.0.5 | public | Node | https://node.public.nevermined.rocks | |
-| public-v2-mumbai | Mumbai | 2.0.5 | public | Marketplace API | https://marketplace-api.public.nevermined.rocks | |
+| public-v2-mumbai | Mumbai | 2.0.5 | public | Node | https://node.public.nevermined.network | |
+| public-v2-mumbai | Mumbai | 2.0.5 | public | Marketplace API | https://marketplace-api.public.nevermined.network | |
 | public-v2-mumbai | Mumbai | 2.0.5 | public | GraphNode | https://api.thegraph.com/subgraphs/name/nevermined-io/public | Use with sdk >= 0.21.0 |
