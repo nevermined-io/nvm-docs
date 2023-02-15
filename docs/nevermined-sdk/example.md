@@ -20,35 +20,49 @@ Before you start with this demo you require:
 The first file that you need to create is the `config.ts` file which contains all the [options needed](./api-reference/classes/Config.md) to initialize the [Nevermined SDK](./intro.md).
 
 ```ts
-import { Config } from '@nevermined-io/nevermined-sdk-js'
+import { NeverminedOptions } from '@nevermined-io/sdk'
 import { ethers } from 'ethers'
 
+// The web3 endpoint of the blockchain network to connect to, could be an Infura endpoint, Quicknode, or any other web3 provider
 export const web3ProviderUri = process.env.REACT_APP_NODE_URI || 'https://matic-mumbai.chainstacklabs.com'
-export const nodeAddress =
-  process.env.REACT_APP_GATEWAY_ADDRESS || '0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc'
+
+// The url to a Nevermined node. It could be your own if you run a Nevermined Node
 export const neverminedNodeUri =
   process.env.REACT_APP_GATEWAY_URI || 'https://node.mumbai.public.nevermined.network'
-export const acceptedChainId = process.env.REACT_APP_ACCEPTED_CHAIN_ID || '80001' // for Mumbai
-export const rootUri = process.env.REACT_APP_ROOT_URI || 'http://localhost:3445'
+
+// The public address of the above Node
+export const neverminedNodeAddress =
+  process.env.REACT_APP_GATEWAY_ADDRESS || '0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc'
+
+// The url of the marketplace api if you connect to one. It could be your own service if you run a Marketplace API
 export const marketplaceUri = 'https://marketplace-api.mumbai.public.nevermined.network'
+
+// The url of the The Graph deployment of Nevermined
 const graphHttpUri = process.env.GRAPH_HTTP_URI ||  'https://api.thegraph.com/subgraphs/name/nevermined-io/public'
+
 // represent USDC token in mumbai that can be claimed in the faucet https://calibration-faucet.filswan.com/#/dashboard 
 export const erc20TokenAddress = process.env.ERC20_TOKEN_ADDRESS || '0xe11a86849d99f524cac3e7a0ec1241828e332c62'
 
-export const appConfig: Config = {
+// The Chain Id of the network where we are connecting
+export const acceptedChainId = process.env.REACT_APP_ACCEPTED_CHAIN_ID || '80001' // for Mumbai
+
+// The React application URL
+export const rootUri = process.env.REACT_APP_ROOT_URI || 'http://localhost:3445'
+
+export const appConfig: NeverminedOptions = {
   //@ts-ignore
-  web3Provider: typeof window !== 'undefined' ? window.ethereum : new ethers.providers.JsonRpcProvider(nodeUri),
+  web3ProviderUri: typeof window !== 'undefined' ? window.ethereum : new ethers.providers.JsonRpcProvider(nodeUri),
   neverminedNodeUri,
-  nodeAddress,
+  neverminedNodeAddress,
   graphHttpUri,
   marketplaceAuthToken: localStorage.getItem('marketplaceApiToken'),
   marketplaceUri,
   artifactsFolder: `${rootUri}/contracts`,
-  newGateway: true,
 }
 ```
 
 ## The example file
+
 The example file `src/example/index.tsx` contains all the basic logic to handle a [NFT1155](../architecture/what-can-i-do.md#tokenization-of-assets-via-erc-1155-nfts-aka-nft-sales) as a component. It outlines each functionality and component in detail.
 
 ### SingleAsset

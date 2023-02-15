@@ -21,11 +21,17 @@ The network fee in Nevermined testnets is **1%** and the receiver of that fee is
 
 ## Polygon - Mumbai
 
-- *`public-v2-mumbai`*: Polygon public testing environment (`mumbai`). Using `public` contract tag. Use this if you want to integrate with Nevermined in a Polygon Testnet.
+### Public Mumbai deployment (v3)
+
+This is a **public** network deployment (`TAG_NAME=public`) of the Nevermined Contracts v3 in the Polygon Mumbai network. You can use this network if you want to integrate with Nevermined in a Polygon Testnet.
+
+The **addresses** of the Nevermined Contracts can be found here: https://artifacts.nevermined.network/80001/public/contracts_v3.0.0.json
+
+The **ABIs of the contracts** to connect via SDK can be download from here: https://artifacts.nevermined.network/80001/public/contracts_v3.0.0.tar.gz
 
 | Environment | Network | Contracts Version | Tag | Component | URL | Comments |
 |-------------|---------|-------------------|-----|-----------|-----|----------|
-| public-v3-mumbai | Mumbai | 3.0.0 | public | Node | https://node.mumbai.public.nevermined.network | |
+| [public-v3-mumbai](https://artifacts.nevermined.network/80001/public/contracts_v3.0.0.json) | Mumbai | 3.0.0 | public | Node | https://node.mumbai.public.nevermined.network | |
 | public-v3-mumbai | Mumbai | - | public | Marketplace API | https://marketplace-api.mumbai.public.nevermined.network | |
 
 All the contract events are exposed via [The Graph](https://thegraph.com/). You can find all the `Polygon Mumbai` Nevermined Subgraphs here (search by Nevermined):
