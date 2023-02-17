@@ -4,6 +4,8 @@ title: Getting started
 description: Nevermined Catalog Providers API Reference
 ---
 
+This library was generated with [Nx](https://nx.dev).
+
 # Getting started
 
 The Catalog exposes a package facilitating the interaction with Web3 providers like Metamask. You can see more about in the [documentation](https://docs.nevermined.io/docs/catalog/intro)
@@ -22,15 +24,15 @@ It requires [Node JS](https://nodejs.org/) v14 or higher. You can find online in
 ## How to install ?
 
 ```
-yarn add @nevermined-io/catalog-providers
+yarn add @nevermined-io/providers
 or
-npm install --save @nevermined-io/catalog-providers
+npm install --save @nevermined-io/providers
 ```
 
 ## How to integrate ?
 
 ```typescript
-import { WalletProvider, getClient, useWallet } from "@nevermined-io/catalog-providers";
+import { WalletProvider, getClient, useWallet } from "@nevermined-io/providers";
 import App from "app";
 
 ReactDOM.render(
@@ -70,3 +72,7 @@ const ConnectToMetaMask = () => {
 ```
 
 You can find [here a example](https://docs.nevermined.io/docs/catalog/example)
+
+## Running unit tests
+
+Run `nx test:unit provider`
