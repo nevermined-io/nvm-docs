@@ -1,5 +1,5 @@
 import React from 'react'
-import { WalletProvider, getClient, useWallet } from '@nevermined-io/catalog-providers'
+import { WalletProvider, getClient, useWallet } from '@nevermined-io/providers'
 import { UiButton, UiText, BEM } from '@nevermined-io/styles'
 import styles from './styles.module.scss'
 import { ChainsConfig } from '../config'

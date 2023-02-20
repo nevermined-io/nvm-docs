@@ -13,6 +13,10 @@ module.exports = function (_context, _options) {
           }),
         ],
         resolve: {
+          alias: {
+            "react/jsx-dev-runtime": "react/jsx-dev-runtime.js",
+            "react/jsx-runtime": "react/jsx-runtime.js"
+          },
           fallback: {
             http: require.resolve('stream-http'),
             proccess: require.resolve('process'),
@@ -24,6 +28,9 @@ module.exports = function (_context, _options) {
             path: require.resolve('path-browserify'),
             crypto: require.resolve('crypto-browserify'),
             stream: require.resolve('stream-browserify'),
+            os: require.resolve('os-browserify'),
+            constants: require.resolve('constants-browserify'),
+            fs: false,
           },
         },
         module: {

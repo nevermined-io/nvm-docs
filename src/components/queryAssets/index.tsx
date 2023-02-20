@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { AssetsModule, Catalog, DDO } from '@nevermined-io/catalog-core'
+import { AssetsModule, Catalog, DDO } from '@nevermined-io/catalog'
 import { UiForm, UiFormInput, UiText, UiLayout, UiFormSelect, UiButton, BEM } from '@nevermined-io/styles'
 import { appConfig } from '../config'
 import styles from './styles.module.scss'
