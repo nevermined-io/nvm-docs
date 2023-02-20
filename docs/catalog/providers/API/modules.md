@@ -1,4 +1,4 @@
-# @nevermined-io/catalog-providers
+# @nevermined-io/providers
 
 ## Table of contents
 
@@ -50,7 +50,7 @@
 
 #### Defined in
 
-[src/types.ts:4](https://github.com/nevermined-io/components-catalog/blob/296299b/providers/src/types.ts#L4)
+[providers/src/types.ts:4](https://github.com/nevermined-io/components-catalog/blob/4f74426/providers/src/types.ts#L4)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[src/types.ts:21](https://github.com/nevermined-io/components-catalog/blob/296299b/providers/src/types.ts#L21)
+[providers/src/types.ts:21](https://github.com/nevermined-io/components-catalog/blob/4f74426/providers/src/types.ts#L21)
 
 ## Variables
 
@@ -80,23 +80,23 @@ ___
 
 #### Defined in
 
-[src/client.tsx:103](https://github.com/nevermined-io/components-catalog/blob/296299b/providers/src/client.tsx#L103)
+[providers/src/client.tsx:107](https://github.com/nevermined-io/components-catalog/blob/4f74426/providers/src/client.tsx#L107)
 
 ## Functions
 
 ### ClientComp
 
-▸ **ClientComp**(`__namedParameters`): `Element`
+▸ **ClientComp**(`«destructured»`): `Element`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | `Object` |
-| `__namedParameters.children` | `ReactElement`<`any`, `string` \| `JSXElementConstructor`<`any`\>\> |
-| `__namedParameters.client` | `Client`<`any`, `WebSocketProvider`\> |
-| `__namedParameters.connectKitProps?` | [`ConnectKitProviderProps`](modules.md#connectkitproviderprops) |
-| `__namedParameters.correctNetworkId?` | `number` |
+| `«destructured»` | `Object` |
+| › `children` | `ReactElement`<`any`, `string` \| `JSXElementConstructor`<`any`\>\> |
+| › `client` | `Client`<`Provider`, `WebSocketProvider`\> |
+| › `connectKitProps?` | [`ConnectKitProviderProps`](modules.md#connectkitproviderprops) |
+| › `correctNetworkId?` | `number` |
 
 #### Returns
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/client.tsx:105](https://github.com/nevermined-io/components-catalog/blob/296299b/providers/src/client.tsx#L105)
+[providers/src/client.tsx:109](https://github.com/nevermined-io/components-catalog/blob/4f74426/providers/src/client.tsx#L109)
 
 ___
 
@@ -126,10 +126,10 @@ Start wallet provider example:
 ```tsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Catalog } from '@nevermined-io/catalog-core';
+import { Catalog } from '@nevermined-io/catalog';
 import { appConfig } from './config';
 import Example from 'examples';
-import { WalletProvider, getClient } from '@nevermined-io/catalog-providers';
+import { WalletProvider, getClient } from '@nevermined-io/providers';
 import chainConfig from './chain_config';
 
 ReactDOM.render(
@@ -164,13 +164,13 @@ All the functionalities to handle the wallet in dapp
 
 #### Defined in
 
-[src/providers.tsx:43](https://github.com/nevermined-io/components-catalog/blob/296299b/providers/src/providers.tsx#L43)
+[providers/src/providers.tsx:43](https://github.com/nevermined-io/components-catalog/blob/4f74426/providers/src/providers.tsx#L43)
 
 ___
 
 ### getClient
 
-▸ **getClient**(`appName?`, `autoConnect?`, `chainsConfig?`): `Client`<`FallbackProvider` & {} & `JsonRpcProvider` & `FallbackProviderConfig` & {}, `WebSocketProvider`\> & {}
+▸ **getClient**(`appName?`, `autoConnect?`, `chainsConfig?`): `Client`<`Object`, `WebSocketProvider`\> & {}
 
 function that build and return the wagmi client
 
@@ -184,11 +184,11 @@ function that build and return the wagmi client
 
 #### Returns
 
-`Client`<`FallbackProvider` & {} & `JsonRpcProvider` & `FallbackProviderConfig` & {}, `WebSocketProvider`\> & {}
+`Client`<`Object`, `WebSocketProvider`\> & {}
 
 #### Defined in
 
-[src/client.tsx:34](https://github.com/nevermined-io/components-catalog/blob/296299b/providers/src/client.tsx#L34)
+[providers/src/client.tsx:30](https://github.com/nevermined-io/components-catalog/blob/4f74426/providers/src/client.tsx#L30)
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 #### Defined in
 
-[src/client.tsx:188](https://github.com/nevermined-io/components-catalog/blob/296299b/providers/src/client.tsx#L188)
+[providers/src/client.tsx:194](https://github.com/nevermined-io/components-catalog/blob/4f74426/providers/src/client.tsx#L194)
 
 ___
 
@@ -222,4 +222,4 @@ ___
 
 #### Defined in
 
-[src/utils/index.ts:1](https://github.com/nevermined-io/components-catalog/blob/296299b/providers/src/utils/index.ts#L1)
+[providers/src/utils/index.ts:1](https://github.com/nevermined-io/components-catalog/blob/4f74426/providers/src/utils/index.ts#L1)
