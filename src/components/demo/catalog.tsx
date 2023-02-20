@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { AssetPrice, MetaData, Logger, DDO, BigNumber } from '@nevermined-io/sdk'
 import { Catalog, AssetService, RoyaltyKind, getRoyaltyScheme, NeverminedOptions, NFTAttributes } from '@nevermined-io/catalog'
-import { WalletProvider, useWallet, getClient } from '@nevermined-io/providers'
+import { WalletProvider, useWallet, Wagmi, ConnectKit } from '@nevermined-io/providers'
 import { UiText, UiLayout, BEM, UiButton } from '@nevermined-io/styles'
 import { ethers } from 'ethers'
 import styles from './styles.module.scss'
 import { appConfig, ChainsConfig } from '../config'
 
-const ERC_TOKEN = '0xe097d6b3100777dc31b34dc2c58fb524c2e76921'
+const ERC_TOKEN = '0x2058A9D7613eEE744279e3856Ef0eAda5FCbaA7e'
 
 const b = BEM('demo', styles)
 
@@ -196,11 +196,19 @@ export const DemoCatalog = () => {
     ? (window as any)?.ethereum
     : new ethers.providers.JsonRpcProvider('https://matic-mumbai.chainstacklabs.com')
 
+  const client = Wagmi.createClient(
+    ConnectKit.getDefaultClient({
+      appName: 'demo',
+      chains: ChainsConfig,
+      autoConnect: true
+    })
+  )
+
   return(
     <Catalog.NeverminedProvider config={config} verbose={true}>
       <AssetService.AssetPublishProvider>
         <WalletProvider
-          client={getClient('demo', true, ChainsConfig)}
+          client={client}
           correctNetworkId={80001}
         >
           <App config={ config }/>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { WalletProvider, getClient, useWallet } from '@nevermined-io/providers'
+import { WalletProvider, useWallet, Wagmi, ConnectKit } from '@nevermined-io/providers'
 import { UiButton, UiText, BEM } from '@nevermined-io/styles'
 import styles from './styles.module.scss'
 import { ChainsConfig } from '../config'
@@ -25,19 +25,29 @@ const Login = () => {
   )
 }
 
-const ProvidersApp = () => (
-  <WalletProvider
-    client={getClient('Login', true, ChainsConfig)}
-    correctNetworkId={80001}
-    connectKitProps={
-      {
-        theme: 'auto',
-        mode: 'dark',
+const ProvidersApp = () =>{
+  const client = Wagmi.createClient(
+    ConnectKit.getDefaultClient({
+      appName: 'Login',
+      chains: ChainsConfig,
+      autoConnect: true
+    })
+  )
+
+  return (
+    <WalletProvider
+      client={client}
+      correctNetworkId={80001}
+      connectKitProps={
+        {
+          theme: 'auto',
+          mode: 'dark',
+        }
       }
-    }
-  >
-    <Login/>
-  </WalletProvider>
+    >
+      <Login/>
+    </WalletProvider>
 )
+}
 
 export default ProvidersApp

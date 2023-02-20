@@ -2,9 +2,9 @@
 sidebar_position: 2
 ---
 
-# What can I do with the catalog?
+# What can I do with the Nevermined React Components?
 
-The Catalog simplifies the creation of web3 applications for React developers. With this library the developers will be able to do theses actions with assets, NFT721 and NFT1155:
+The Nevermined React Components simplifies the creation of web3 applications for React developers. With this library the developers will be able to do theses actions with assets, NFT721 and NFT1155:
 
 * [Publish](https://docs.nevermined.io/docs/tutorials/assets#how-to-create-an-nft-erc1155)
 * [Buy](https://docs.nevermined.io/docs/tutorials/assets#how-to-consume-an-nft-erc1155)

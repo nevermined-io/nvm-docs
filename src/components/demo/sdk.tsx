@@ -5,7 +5,7 @@ import { ethers } from 'ethers'
 import { appConfig } from '../config'
 import styles from './styles.module.scss'
 
-const ERC_TOKEN = '0xe097d6b3100777dc31b34dc2c58fb524c2e76921'
+const ERC_TOKEN = '0x2058A9D7613eEE744279e3856Ef0eAda5FCbaA7e'
 
 const b = BEM('demo', styles)
 

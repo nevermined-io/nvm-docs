@@ -17,7 +17,7 @@ For the tutorial you will need:
 - [node](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) need to be installed
 
 ## How to install Catalog Provider
-Firstable to install [Catalog Provider](../catalog/providers/README.md) you just need to run:
+Firstable to install [Catalog Provider](../react-components/providers/README.md) you just need to run:
 
 <Tabs>
   <TabItem label="yarn" value="yarn" default>
@@ -30,20 +30,20 @@ yarn add @nevermined-io/catalog-providers
   <TabItem label="npm" value="npm">
 
 ```bash
-npm install --save @nevermined-io/catalog-providers
+npm install --save @nevermined-io/providers
 ```
   </TabItem>
 </Tabs>
 
 ## Add the wallet provider
-Now in our app we need to add the Wallet Provider as a parent of all the components that will use functionalities from it. The `WalletProvider` has a prop call `client` where we need to pass the instance of the [Wagmi client](https://wagmi.sh/docs/client), the good news is that we have `getClient` from `@nevermined-io/catalog-providers` which will return a client already configured.
+Now in our app we need to add the Wallet Provider as a parent of all the components that will use functionalities from it. The `WalletProvider` has a prop call `client` where we need to pass the instance of the [Wagmi client](https://wagmi.sh/docs/client), the good news is that we have `getClient` from `@nevermined-io/providers` which will return a client already configured.
 Optionally we can pass the `correctNetworkId` which will request to the wallet to change to the set network when the current one is not supported, and `connectKitProps` that includes all the customization option of `ConnectKit`, see options [here](https://docs.family.co/connectkit/customization)
 
 ```tsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Example from 'examples';
-import { WalletProvider } from '@nevermined-io/catalog-providers';
+import { WalletProvider } from '@nevermined-io/providers';
 
 ReactDOM.render(
     <div>
@@ -168,7 +168,13 @@ const Login = () => {
 ReactDOM.render(
     <div>
         <WalletProvider
-          client={getClient('My Nevermined App', true, ChainConfig)}
+          client={Wagmi.createClient(
+            ConnectKit.getDefaultClient({
+              appName: 'Login',
+              chains: ChainsConfig,
+              autoConnect: true
+            })
+          )}
           correctNetworkId={80001}
           connectKitProps={
             {

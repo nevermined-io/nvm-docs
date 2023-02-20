@@ -6,7 +6,7 @@ description: Building a DApp using Nevermined frameworks 2
 
 # How to create and consume your first assets in a React application integrated with Nevermined
 
-Following with our series, this is going to continue showing how to unblock Nevermined features using [Nevermined Catalog](https://github.com/nevermined-io/components-catalog).
+Following with our series, this is going to continue showing how to unblock Nevermined features using [Nevermined Components](https://github.com/nevermined-io/components-catalog).
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ This section will guide you to the creation of your first Nevermined asset.
         
 ```typescript
 
-import { AssetService } from '@nevermined-io/catalog-core'
+import { AssetService } from '@nevermined-io/catalog'
 
 const Publisher = () => {
     const { publishAsset, assetPublish, setAssetPublish } = AssetService.useAssetPublish()

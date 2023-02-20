@@ -86,8 +86,8 @@ const config = {
           },
           {
             position: 'left',
-            label: 'Catalog',
-            to: 'docs/catalog/intro',
+            label: 'React Components',
+            to: 'docs/react-components/intro',
           },
           {
             position: 'left',
