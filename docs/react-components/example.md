@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# How to use Catalog
+# How to use React Components
 
 ## Requirements
 Before you start with this demo you require:

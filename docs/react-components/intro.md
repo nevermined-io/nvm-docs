@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# What is the Nevermined React Components?
+# What are Nevermined React Components?
 
 The Nevermined React Components is a library of packaged Nevermined functions, tools and commands making easier to add web3 capabilities to any existing React application.
 
