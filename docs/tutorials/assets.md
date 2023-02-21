@@ -6,7 +6,7 @@ description: Building a DApp using Nevermined frameworks 2
 
 # How to create and consume your first assets in a React application integrated with Nevermined
 
-Following with our series, this is going to continue showing how to unblock Nevermined features using [Nevermined Components](https://github.com/nevermined-io/components-catalog).
+Following with our series, this is going to continue showing how to unblock Nevermined features using [Nevermined Components](https://github.com/nevermined-io/react-components).
 
 ## Prerequisites
 
@@ -54,19 +54,18 @@ const Publisher = () => {
     ...
     const metadata: MetaData = {
         main: {
-            name: assetPublish?.name,
-            dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-            author: assetPublish?.author,
-            license: 'No License Specified',
-            datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-            type: assetPublish?.type,
-            files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
-        },
-        additionalInformation: {
-            description: assetPublish?.description,
-            categories: []
+        name: '',
+        files: [{
+            index: 0,
+            contentType: 'application/json',
+            url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg'
+        }],
+        type: 'dataset',
+        author: '',
+        license: '',
+        dateCreated: new Date().toISOString(),
         }
-    } as MetaData
+    }
     ...
 ```
 
@@ -75,8 +74,14 @@ const Publisher = () => {
 ```ts
     ...
     async function handleOnSubmit() {
-        const ddo = await publishAsset({metadata: metadata})
-        setDidDeployed(ddo!.id)
+        const assetAttributes = AssetAttributes.getInstance({
+            metadata,
+        })
+        const ddo = await publishAsset({
+            assetAttributes,
+        })
+
+        setDidDeployed(ddo.id)
     }
     ...
 ```
@@ -92,23 +97,28 @@ const Publisher = () => {
     const { isLoadingSDK } = Catalog.useNevermined()
 
     const metadata: MetaData = {
-    main: {
-        name: assetPublish?.name,
-        dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-        author: assetPublish?.author,
-        license: 'No License Specified',
-        datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-        type: assetPublish?.type,
-        files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
-        },
-        additionalInformation: {
-            description: assetPublish?.description,
-            categories: []
+        main: {
+        name: '',
+        files: [{
+            index: 0,
+            contentType: 'application/json',
+            url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg'
+        }],
+        type: 'dataset',
+        author: '',
+        license: '',
+        dateCreated: new Date().toISOString(),
         }
-    } as MetaData
+    }
 
     async function handleOnSubmit() {
-        const ddo = await publishAsset({metadata: metadata})
+        const assetAttributes = AssetAttributes.getInstance({
+            metadata,
+        })
+        const ddo = await publishAsset({
+            assetAttributes,
+        })
+
         setDidDeployed(ddo!.id)
     }
 
@@ -169,7 +179,7 @@ changes the account and when the asset is bought in order to avoid buy again
     }
 
     const download = async () => {
-        await assets.downloadAsset(ddo.id)
+        await assets.downloadAsset({ did: ddo.id })
     }
 ```
 
@@ -196,7 +206,7 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
     }
 
     const download = async () => {
-        await assets.downloadAsset(ddo.id)
+        await assets.downloadAsset({ did: ddo.id })
     }
 
     return (
@@ -254,19 +264,18 @@ const Publisher = () => {
     ...
     const metadata: MetaData = {
         main: {
-            name: assetPublish?.name,
-            dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-            author: assetPublish?.author,
-            license: 'No License Specified',
-            datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-            type: assetPublish?.type,
-            files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
-        },
-        additionalInformation: {
-            description: assetPublish?.description,
-            categories: []
+        name: '',
+        files: [{
+            index: 0,
+            contentType: 'application/json',
+            url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg'
+        }],
+        type: 'dataset',
+        author: '',
+        license: '',
+        dateCreated: new Date().toISOString(),
         }
-    } as MetaData
+    }
 
     const royaltyAttributes = {
         royaltyKind: RoyaltyKind.Standard,
@@ -304,20 +313,19 @@ const Publisher = () => {
     const { sdk } = Catalog.useNevermined()
 
     const metadata: MetaData = {
-    main: {
-        name: assetPublish?.name,
-        dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-        author: assetPublish?.author,
-        license: 'No License Specified',
-        datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-        type: assetPublish?.type,
-        files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
-        },
-        additionalInformation: {
-            description: assetPublish?.description,
-            categories: []
+        main: {
+        name: '',
+        files: [{
+            index: 0,
+            contentType: 'application/json',
+            url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg'
+        }],
+        type: 'dataset',
+        author: '',
+        license: '',
+        dateCreated: new Date().toISOString(),
         }
-    } as MetaData
+    }
 
     const royaltyAttributes = {
         royaltyKind: RoyaltyKind.Standard,
@@ -325,13 +333,17 @@ const Publisher = () => {
         amount: 0,
     }
 
+    const nftAttributes = NFTAttributes.getNFT721Instance({
+        metadata,
+        providers: [appConfig.neverminedNodeAddress],
+        royaltyAttributes,
+    })
+
     async function handleOnSubmit() {
         const ddo = await publishNFT721({
-            nftAddress,
-            metadata,
-            royaltyAttributes,
+            nftAttributes
         })
-        setDidDeployed(ddo!.id)
+        setDidDeployed(ddo.id)
     }
 
     return (
@@ -376,7 +388,7 @@ changes the account and when the asset is bought in order to avoid buy again
     useEffect(() => {
     (async () => {
         setOwnNFT721(await account.isNFT721Holder(ddo.id, walletAddress))
-        setOwner(await sdk.nft.ownerOf(ddo.id))
+        setOwner(await sdk.nft721.ownerOf(ddo.id))
     })()
     }, [walletAddress, isBought])
 ...
@@ -387,12 +399,21 @@ changes the account and when the asset is bought in order to avoid buy again
 ```typescript
 ...
     const buy = async () => {
-        const response = await nfts.access(ddo.id, currentAccount, owner, 1, 721)
+        const response = await nfts.access({
+           did: ddo.id,
+           nftHolder: owner,
+           nftAmount: 1,
+           ercType: 721
+        })
+
         setIsBought(Boolean(response))
     }
 
     const download = async () => {
-        await assets.downloadNFT(ddo.id)
+        await assets.downloadNFT({ 
+            did: ddo.id,
+            ercType: 721,
+        })
     }
 ```
 
@@ -409,17 +430,25 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
     useEffect(() => {
         (async () => {
         setOwnNFT721(await account.isNFT721Holder(ddo.id, walletAddress))
-        setOwner(await sdk.nft.ownerOf(ddo.id))
+        setOwner(await sdk.nft721.ownerOf(ddo.id))
         })()
     }, [walletAddress, isBought])
 
     const buy = async () => {
-        const response = await nfts.access(ddo.id, currentAccount, owner, 1, 721)
+        const response = await nfts.access({
+           did: ddo.id,
+           nftHolder: owner,
+           nftAmount: 1,
+           ercType: 721
+        })
         setIsBought(Boolean(response))
     }
 
     const download = async () => {
-        await assets.downloadNFT(ddo.id)
+        await assets.downloadNFT({ 
+            did: ddo.id,
+            ercType: 721,
+        })
     }
 
     return (
@@ -462,40 +491,42 @@ const Publisher = () => {
     ...
     const metadata: MetaData = {
         main: {
-            name: assetPublish?.name,
-            dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-            author: assetPublish?.author,
-            license: 'No License Specified',
-            datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-            type: assetPublish?.type,
-            files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
-        },
-        additionalInformation: {
-            description: assetPublish?.description,
-            categories: []
+        name: '',
+        files: [{
+            index: 0,
+            contentType: 'application/json',
+            url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg'
+        }],
+        type: 'dataset',
+        author: '',
+        license: '',
+        dateCreated: new Date().toISOString(),
         }
-    } as MetaData
+    }
 
     const royaltyAttributes = {
         royaltyKind: RoyaltyKind.Standard,
         scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
         amount: 0,
     }
+
+    const nftAttributes = NFTAttributes.getNFT1155Instance({
+        metadata,
+        providers: [appConfig.neverminedNodeAddress]
+        royaltyAttributes,
+    })
     ...
 ```
 
-3. Call the function in your code. Creating a button that publish when you click and send the `metadata` object, the amount of nft to mint, the royalty and the [royalty type](../catalog/core/API/enums/RoyaltyKind.md).
+3. Call the function in your code. Creating a button that publish when you click and send the `metadata` object, the amount of nft to mint, the royalty and the royalty kind.
 
 ```ts
     ...
     async function handleOnSubmit() {
-        const result = await publishNFT1155({
-              neverminedNodeAddress: String(appConfig.neverminedNodeAddress),
-              metadata,
-              cap: BigNumber.from(100),
-              royaltyAttributes: royaltyAttributes(sdk)
+        const ddo = await publishNFT1155({
+            nftAttributes
         })
-        setDidDeployed(ddo!.id)
+        setDidDeployed(ddo.id)
     }
     ...
 ```
@@ -512,19 +543,18 @@ const Publisher = () => {
 
     const metadata: MetaData = {
         main: {
-            name: assetPublish?.name,
-            dateCreated: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-            author: assetPublish?.author,
-            license: 'No License Specified',
-            datePublished: new Date().toISOString().replace(/\.[0-9]{3}/, ''),
-            type: assetPublish?.type,
-            files: [{ url: assetPublish?.file, contentType: 'text/markdown' }]
-            },
-            additionalInformation: {
-                description: assetPublish?.description,
-                categories: []
-            }
-    } as MetaData
+        name: '',
+        files: [{
+            index: 0,
+            contentType: 'application/json',
+            url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg'
+        }],
+        type: 'dataset',
+        author: '',
+        license: '',
+        dateCreated: new Date().toISOString(),
+        }
+    }
 
     const royaltyAttributes = {
         royaltyKind: RoyaltyKind.Standard,
@@ -532,12 +562,15 @@ const Publisher = () => {
         amount: 0,
     }
 
+    const nftAttributes = NFTAttributes.getNFT1155Instance({
+        metadata,
+        providers: [appConfig.neverminedNodeAddress]
+        royaltyAttributes,
+    })
+
     async function handleOnSubmit() {
         const result = await publishNFT1155({
-              neverminedNodeAddress: String(appConfig.neverminedNodeAddress),
-              metadata,
-              cap: BigNumber.from(100),
-              royaltyAttributes: royaltyAttributes(sdk)
+              nftAttributes
         })
         setDidDeployed(ddo!.id)
     }
@@ -594,12 +627,17 @@ changes the account and when the NFT1155 is bought in order to avoid buy again
 ```typescript
 ...
     const buy = async () => {
-        const response = await nfts.access(ddo.id, currentAccount, owner, BigNumber(1), 1155)
+        const response = await nfts.access({
+            did:ddo.id, 
+            nftHolder: owner, 
+            nftAmount: BigNumber(1), 
+            ercType: 1155,
+        )
         setIsBought(Boolean(response))
     }
 
     const download = async () => {
-        await assets.downloadNFT(ddo.id)
+        await assets.downloadNFT({ did: ddo.id })
     }
 ```
 
@@ -621,12 +659,20 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
     }, [walletAddress, isBought])
 
     const buy = async () => {
-        const response = await nfts.access(ddo.id, owner, BigNumber.from(1), 1155)
+        const response = await nfts.access({
+            did:ddo.id, 
+            nftHolder: owner, 
+            nftAmount: BigNumber(1), 
+            ercType: 1155,
+        )
+
         setIsBought(Boolean(response))
     }
 
     const download = async () => {
-        await assets.downloadNFT(ddo.id)
+        await assets.downloadNFT({
+            did: ddo.id
+        })
     }
 
     return (

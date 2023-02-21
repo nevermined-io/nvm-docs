@@ -556,3 +556,43 @@ ReactDOM.render(
 )
 ```
 
+## Publish and buy encrypted assets with DTP (Data transfer proof)
+
+It is possible to encrypt assets and giving access by password using DTP, using `Catalog` such approach is quite simple, for publish just is needed to set the crypto config and adding the password and the cripto config in the publish method:
+
+```ts
+const nodeInfo = await sdk.services.node.getNeverminedNodeInfo()
+const cryptoConfig = {
+    provider_key: nodeInfo['babyjub-public-key'],
+    provider_password: password,
+    provider_rsa_public: nodeInfo['rsa-public-key'],
+    provider_rsa_private: '',
+}
+
+...
+
+const response = await publishNFT1155({
+  nftAttributes,
+  password,
+  cryptoConfig
+})
+```
+
+And to access and download the asset only pass the password is needed:
+
+```ts
+const agreementId = await nfts.access({
+  did: ddo.id,
+  nftHolder: owner,
+  nftAmount: BigNumber.from(1),
+  ercType: 1155,
+  password,
+})
+
+const result = await assets.downloadNFT({
+  did: ddo.id,
+  ercType: 1155,
+  password
+})
+```
+

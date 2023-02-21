@@ -8,7 +8,7 @@ import QueryAssets from '@site/src/components/queryAssets';
 
 # How to query assets with Catalog
 
-With Catalog is possible to search specific assets by using the [`query`](../catalog/core/API/interfaces/AssetsModule.md#query) method from [`AssetsModule`](../catalog/core/API/interfaces/AssetsModule.md). Here there are some examples to show how to use it
+With Catalog is possible to search specific assets by using the [`query`](../react-components/catalog/API/interfaces/AssetsModule.md#query) method from [`AssetsModule`](../react-components/catalog/API/interfaces/AssetsModule.md). Here there are some examples to show how to use it
 
 ## Search by asset name
 

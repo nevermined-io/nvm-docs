@@ -48,7 +48,7 @@ const FeatureList: BoxItem[] = [
   {
     title: 'SDK',
     className: b('box'),
-    link: 'docs/catalog/intro',
+    link: 'docs/react-components/intro',
     Svg: integrationDocsSVGIcon,
     description: (
       <>

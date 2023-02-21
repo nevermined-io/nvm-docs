@@ -8,7 +8,7 @@ The Nevermined SDK is a low level library which functions as an intermediate bet
 
 # When should I use the Nevermined SDK?
 
-You should use Nevermined SDK if your project isn't developed using [React](https://reactjs.org/). If you do use React, we recommend to use [Nevermined Catalog](../catalog/intro.md). As we mentioned before, the **SDK** is a low level library and **Catalog** makes developing dApps in React easier.  
+You should use Nevermined SDK if your project isn't developed using [React](https://reactjs.org/). If you do use React, we recommend to use [Nevermined React Components](../react-components/intro.md). As we mentioned before, the **SDK** is a low level library and **Catalog** makes developing dApps in React easier.  
 
 import DocCardList from '@site/src/components/docCard/docCardList';
 

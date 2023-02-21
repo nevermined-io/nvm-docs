@@ -5,7 +5,7 @@ description: Building a DApp using Nevermined frameworks
 
 # How to build a React application integrated with Nevermined
 
-The idea of this tutorial is to give a quick go through about using the [Nevermined Catalog](https://github.com/nevermined-io/components-catalog) of React components to support the development of dApps using the Nevermined environment. Nevermined Catalog is a library that provides some React components to make it easier the integration with Nevermined technologies. You can find more info in the [documentation](../catalog/intro.md).
+The idea of this tutorial is to give a quick go through about using the [Nevermined React Components](https://github.com/nevermined-io/react-components) of React components to support the development of dApps using the Nevermined environment. Nevermined Catalog is a library that provides some React components to make it easier the integration with Nevermined technologies. You can find more info in the [documentation](../react-components/intro.md).
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ Instructions for following along locally using your preferred text editor.
 1. Make sure you have a recent version of [Node.js](https://nodejs.org/en/) installed.
 2. Follow the [installation instructions for Create React App](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to make a new project. Or simply run `npx create-react-app my-nevermined-app --template typescript`.
 3. Move to the my-nevermined-app directory `cd my-nevermined-app`.
-4. Run `yarn add @nevermined-io/catalog-core` or `npm install --save @nevermined-io/catalog-core` depending of your favourite package manager.
+4. Run `yarn add @nevermined-io/catalog` or `npm install --save @nevermined-io/catalog` depending of your favourite package manager.
 5. Run `yarn run start` and open <http://localhost:3000> and you will see the progress.
 
 ![image](https://user-images.githubusercontent.com/3496824/179922422-82411749-0c62-4a2b-8969-cbd35611ffa9.png)
@@ -71,7 +71,6 @@ export const appConfig: Config = {
   marketplaceAuthToken: typeof window !== 'undefined' ? AuthToken.fetchMarketplaceApiTokenFromLocalStorage().token : '',
   marketplaceUri,
   artifactsFolder: `${rootUri}/contracts`,
-  newGateway: true
 };
 
 ```
@@ -84,7 +83,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Catalog from '@nevermined-io/catalog-core';
+import { Catalog } from '@nevermined-io/catalog';
 import { appConfig } from './config';
 
 const root = ReactDOM.createRoot(
@@ -104,22 +103,36 @@ reportWebVitals();
 4. After that you will be able to iteract with the Nevermined ecosystem. List did assets deployed updating your `App.tsx`
 
 ```tsx
-import Catalog from '@nevermined-io/catalog-core'
+import { AssetService } from '@nevermined-io/catalog'
 import React, { useEffect, useState } from 'react'
 
 function App() {
 
-  const query = {
+  const response = await assetsModule.query({
+    query: {
+      bool: {
+        must: [{
+          nested: {
+            path: ['service'],
+            query: {
+              "query_string": {
+                query: 'NFT*',
+                fields: ["service.attributes.main.name"]
+              },
+            },
+          }
+        }]
+      }
+    },
     offset: 150,
     page: 1,
-    query: {},
     sort: {
       created: 'desc'
     }
-  };
+  })
 
   const MultipleAssets = () => {
-    const { isLoading: isLoadingAssets, result } = Catalog.useAssets(query)
+    const { isLoading: isLoadingAssets, result } = AssetService.useAssets(query)
     const [dids, setDids] = useState<string[]>()
 
     useEffect(() => {
@@ -167,15 +180,25 @@ export default App;
 
 After seeing how it is possible to list some data coming from the blockchain let's see how you can login with your Nevermined dApp using our catalog integration with different providers.
 
-1. Run `yarn add @nevermined-io/catalog-providers` or `npm install --save @nevermined-io/catalog-providers` depending of your favourite package manager. This library plan to give support to more wallet providers in near future. Stay tuned.
+1. Run `yarn add @nevermined-io/providers` or `npm install --save @nevermined-io/providers` depending of your favourite package manager. This library plan to give support to more wallet providers in near future. Stay tuned.
 
 2. As before, add the WalletProvider in `index.tsx`.
 
 ```tsx
-import {getClient, WalletProvider } from '@nevermined-io/catalog-providers'
+import {getClient, WalletProvider } from '@nevermined-io/providers'
 
 ...
-      <WalletProvider client={getClient()}>
+const client = Wagmi.createClient(
+  ConnectKit.getDefaultClient({
+    appName: 'Login',
+    chains: ChainsConfig,
+    autoConnect: true
+  })
+)
+
+...
+...
+      <WalletProvider client={client}>
         <App />
       </WalletProvider>
 ```
@@ -207,4 +230,3 @@ const Login = () => {
 export default App;
 ```
 
-You can find the source code in [github](https://github.com/nevermined-io/tutorials/tree/main/catalog).

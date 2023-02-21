@@ -1,14 +1,14 @@
 ---
 sidebar_position: 1
 title: Getting started
-description: Nevermined Catalog Providers API Reference
+description: Nevermined Providers API Reference
 ---
 
 This library was generated with [Nx](https://nx.dev).
 
 # Getting started
 
-The Catalog exposes a package facilitating the interaction with Web3 providers like Metamask. You can see more about in the [documentation](https://docs.nevermined.io/docs/catalog/intro)
+The  exposes a package facilitating the interaction with Web3 providers like Metamask. You can see more about in the [documentation](https://docs.nevermined.io/docs/react-components/intro)
 
 ## Providers supported
 

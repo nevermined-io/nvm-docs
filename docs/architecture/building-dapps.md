@@ -12,12 +12,12 @@ Nevermined ships different [technical components](building-blocks.md) to make th
 To facilitate the utilization of Nevermined and the orchestration of all the different components, we provide the following components:
 
 * The [Nevermined SDK](../nevermined-sdk/intro)
-* The [Nevermined Catalog](../catalog/intro)
+* The [Nevermined React Components](../react-components/intro)
 
 
 :::info Which one to use
 
-If you are building a **React application** our recommendation is to use the [Nevermined Catalog](../catalog/intro), but if not to use the [Nevermined SDK](../nevermined-sdk/intro).
+If you are building a **React application** our recommendation is to use the [Nevermined React Components](../react-components/intro), but if not to use the [Nevermined SDK](../nevermined-sdk/intro).
 
 :::
 
@@ -40,9 +40,9 @@ Nevermined provides the following core features that can be used to build differ
 
 The existence of these features allow application developers to build use cases touching one or many of the above. The best way to do that is using any of the existing libraries provided.
 
-### Nevermined Catalog
+### Nevermined React Components
 
-The [Nevermined Catalog](../catalog/intro) is also a **NPM** library of packaged Nevermined functionalities making easier to add web3 capabilities to any existing **React application**. The Catalog uses the SDK under the hood.
+The [Nevermined React Components](../react-components/intro) is also a **NPM** library of packaged Nevermined functionalities making easier to add web3 capabilities to any existing **React application**. The Catalog uses the SDK under the hood.
 
 ### Nevermined SDK
 
