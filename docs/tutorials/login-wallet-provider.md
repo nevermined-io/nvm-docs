@@ -48,7 +48,13 @@ import { WalletProvider } from '@nevermined-io/providers';
 ReactDOM.render(
     <div>
         <WalletProvider
-          client={getClient(ChainsConfig)}
+          client={Wagmi.createClient(
+            ConnectKit.getDefaultClient({
+              appName: 'Login',
+              chains: ChainsConfig,
+              autoConnect: true
+            })
+          )}
           correctNetworkId={80001}
           connectKitProps={
             {
