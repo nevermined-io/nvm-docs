@@ -48,7 +48,7 @@ const FeatureList: BoxItem[] = [
   {
     title: 'SDK',
     className: b('box'),
-    link: 'docs/react-components/intro',
+    link: 'docs/nevermined-sdk/intro',
     Svg: integrationDocsSVGIcon,
     description: (
       <>
@@ -60,7 +60,7 @@ const FeatureList: BoxItem[] = [
   {
     title: 'React Catalog',
     className: b('box'),
-    link: 'docs/tutorials',
+    link: 'docs/react-components/intro',
     png: tutorialPNGIcon,
     description: (
       <>
