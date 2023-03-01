@@ -9,7 +9,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const config = {
   title: 'Nevermined Documentation',
   tagline:
-    'Nevermined provides developer tools and templates to create Web3-ready assets with embedded utility.',
+    'Nevermined champions open Data and AI to lower the barrier of entry for AI adoption and advancement and opposes the centralization of AI development and training data',
   url: 'https://docs.nevermined.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -17,7 +17,7 @@ const config = {
   favicon: 'img/favicon.ico',
   plugins: ['docusaurus-plugin-sass', './src/plugins/http-support'],
   customFields: {
-    subtitle: 'Utility Unleashed',
+    subtitle: 'Your Data & AI Unchained',
   },
 
   // GitHub pages deployment config.
