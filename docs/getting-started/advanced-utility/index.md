@@ -1,35 +1,32 @@
 ---
 sidebar_position: 1
-description: Advanced utility? What do I get?
+description: So what does Nevermined offer?
 ---
 
-# Advanced utility? What do I get?
+# So what does Nevermined offer to unchain my Data and AI?
 
-At the core of Nevermined are a broad range of functionalities that can be added to digital assets, fungible or non-fungible. They can be used independently or combined to make super powerful products.
+At the core of Nevermined are 3 components, each with a set of functionalities that can be used to make Data and AI Web3-compatible.
 
-[ACCESS FUNCTIONALITIES](./access-functionalities)
+[DECENTRALIZED ACCESS CONTROL](./access-functionalities)
 
-- Login With NFTs (Token gating)
-- Subscription NFTs
-- Credit Token NFT
+- Tokengating Data
+- Subscription NFT
+- Access Credits
 - File Access NFT
 - Decentralized Storage Encryption
 
-[FINANCE FUNCTIONALITIES](./finance-functionalities)
+
+[DATA IN SITU COMPUTATION](./compute-functionalities)
+
+- Federated Computation
+- ML & AI Model Royalties
+- AI & ML Industrialization
+
+
+[DATA & AI INCENTIVES](./finance-functionalities)
 
 - Secondary Market Royalties
 - Rewards
 - Dynamic Pricing Framework
 - Marketplace Framework
-- NFTs as loan collateral (via Aave integration)
-
-[IDENTITY FUNCTIONALITIES](./identity-funcitonalities)
-
-- POAPs
-- Non-Transferrable / Soul-Bound Tokens
-
-[COMPUTE FUNCTIONALITIES](./compute-functionalities)
-
-- Federated Computation
-- Distributed Computation using analytics frameworks
-- ML & AI Model Royalties
+- Collateralization (via Aave integration)
