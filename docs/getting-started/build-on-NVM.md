@@ -5,39 +5,30 @@ description: What can you build on Nevermined
 
 # What can you build on Nevermined
 
-Nevermined is use-case agnostic. 
+Nevermined is use-case agnostic and can be applied to any project or ecosystem looking to bring Web3 utility to Data and/or AI. 
 
-We focus on 3 concepts that you can build and deploy use cases on: 
-- IP as an Asset
-- Creativity as an Asset
-- Data as an Asset 
+Nevermined can be useful for any project that can benefit from any of these: 
+
+- DATA AVAILABILITY TOOLS
+NVM allows organizations to register, tokenize and transform data so that it can be used in analytics by algorithms and AIs.
+
+- OPEN AI & COMPUTE SERVICES
+NVM facilitates the use of our native AI services, as well as “Bring your own model” to be trained on NVM’s ecosystem of data, or to be tokenized. 
+
+- ARTIFACT MANAGEMENT & INCENTIVES
+NVM has designed a scalable way to monetize walled / siloed data by tracking data provenance while attributing sources and collecting royalties
 
 
-To give you an idea of the broad applicability, projects that have been built on Nevermined include: 
-- [VitaDAO](https://www.vitadao.com/) (IP NFT of scientific research) <br />
-In this case the asset was: the IP of scientific research <br />
-Nevermined Functionalities: File-access NFT
+To give you an idea of the broad applicability, projects that have used Nevermined include: 
+ 
+- [DeFi Data Marketplace](https://defi.public.nevermined.network/)
+Giving analysts access to structured data sets from unstructured DeFi platforms <br />
 
-- [Invluencer](https://invluencer.com/) (Tokenized access to data reports on start-ups) <br />
-The asset was: a visual asset + login rights to the data reports <br />
-Nevermined Functionalities: Tokengating NFT
+- [HairDAO](https://www.hairdao.xyz/) 
+Giving DeSci access to private medical data<br />
 
-- [Autonomies](https://www.autonomies.io/) (Music NFT marketplace/DAO) <br />
-The asset was: limited edition music tracks <br />
-Nevermined Functionalities: Royalties, Marketplace Framework
+- [VitaDAO](https://www.vitadao.com/)
+Tokenizing Intellectual Property rights of scientific research aka IP NFT<br />
 
-- [Alities](https://alities.io/) (Art NFT marketplace) <br />
-The asset was: visual art <br />
-Nevermined Functionalities: Marketplace Framework, Royalties, POAPs
-
-- Project X - a P2P Carbon Credit marketplace for a global energy company we can’t talk about just yet  <br />
-The asset was: Carbon Credits <br />
-Nevermined Functionalities: Marketplace Framework
-
-- [DeFi data marketplace](https://defi.public.nevermined.network/) <br />
-The asset was: DeFi data sets <br />
-Nevermined Functionalities: Subscription NFTs, Marketplace Framework
-
-- [Arcadia](https://arcadia.nevermined.network/) (AI animation maker) <br />
-The asset was: Text prompts and AI <br />
-Nevermined Functionalities: Royalties, Remote Computation
+- [Arcadia](https://arcadia.nevermined.network/) 
+AI animation maker with on-chain attribution
