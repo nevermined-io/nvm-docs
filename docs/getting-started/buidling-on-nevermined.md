@@ -5,16 +5,25 @@ description: Why we are building Nevermined
 
 # Why we are building Nevermined
 
-We believe that the killer feature of Web3 is digital assets with embedded conditions and verifiable provenance. This is the atomic unit of value. 
+Nevermined champions open Data and AI to lower the barrier of entry for AI adoption and advancement. This is running counter to the centralization of AI development and the control of training data.
 
-Building on Nevermined caters to the formation of Digital Ecosystems around Creators and their asset(s), with different participants helping to create and share value.
+Two critical concepts that will define AI adoption are:
+- Data Availability
+- AI Precision & Trust
 
-We believe that this approach is necessary to establish the true utility of all digital assets, and from this utility will emerge agency for all assets and their creators. Without this evolution, we also believe there’s a danger we get stuck in Web2 mechanics. 
+To develop the big AI Models, a company needs plenty of data. But developing such AIs is not cheap, not fast, not democratic and definitely not sustainable. 
 
-In Web2, the unit of value is data. 
-Data in itself isn’t valuable. It’s what Data Consumers do with it: combine it, analyze it, enrich it, slice and dice it, etc. That gives an asset relevance and, therefore, value
+That explains the trend towards more precision-focused techniques, like Transfer Learning or Federated Machine Learning, which can create hyper-relevant improvements, based on small data samples. 
 
-In Web3, the unit of value is the digital asset.
-Some digital assets may have inherent value, but it’s really what Asset Consumers will do with it that will generate the real value.
+Specialized Precision AI models are incredibly valuable as they allow organizations to solve specific problems and optimize processes within their industry. The result is significant cost savings and improved efficiency based on accurate outputs that organizations can trust.
 
-The opportunity for Nevermined lies in unlocking and enabling the real value of digital assets!
+However, the need to boost speed, cost efficiency, accuracy and model reliability will need to be balanced with data access, privacy, data movement and sustainability.
+
+So, funnily enough, the bottleneck is data. The precision of these AI techniques will be defined by the access it has to relevant data. 
+
+However… 🥁🥁
+
+That relevant data typically doesn’t sit within one organization, but with partners, competitors, global teams or even clients. So, the arms race for walled data will be fierce, involving trust and incentives.
+
+We believe that Web3 tech is the key enabler to unlock this walled data and to create an open ecosystem approach to how AI and Data develop and interact.   
+
