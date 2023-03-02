@@ -23,7 +23,7 @@ At the core of Nevermined are 3 components, each with a set of functionalities t
 - AI & ML Industrialization
 
 
-[DATA & AI INCENTIVES](./finance-functionalities)
+[DATA & AI INCENTIVES](./incentive-functionalities)
 
 - Secondary Market Royalties
 - Rewards
