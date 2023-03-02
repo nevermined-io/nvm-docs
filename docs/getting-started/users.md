@@ -5,18 +5,17 @@ description: Who can use Nevermined
 
 # Who can use Nevermined
 
-Nevermined is designed by Web3 builders for Web3 builders: those who are working with digital assets and NFT technology, but want to add advanced utility to these assets.
+Nevermined is for teams and organizations that are working with data, AI or Web3/NFT technology. 
 
-In other words, every Web3 developer. 😂
+That’s a huge amount of people. 😂
 
-Maybe you’re building a platform, a dApp, a marketplace or a DAO.
-Maybe you work directly for an Asset Creator (a musician, a data team, a real estate company,...), who’s looking for new ways to create value with their assets.
+The desire to share data across silos and geographic boundaries is not new for data scientists. The desire to keep AI as open and accessible as possible and to be able to stand on the shoulders of giants, for the common good, is not new. 
 
-Building on Nevermined will give you the benefit of being able to integrate production-ready and hardened components into your stack and your existing smart contracts.
+So any team, organization or individual that sees Data and AI as economic assets, with incentives, IP rights,... can benefit from using Nevermined. 
 
-Currently, Nevermined is available in two ways, for different development approaches:
+Currently, Nevermined is geared towards developers and is available in two ways, for different development approaches. 
 
-- All advanced functionalities are available via our [SDK](../nevermined-sdk/intro)
-- For apps made in React, we have functionalities available as a [React Components](../react-components/intro).
+- If you want to use a low-level library, you can use our [SDK](../nevermined-sdk/intro)
+- For apps made in React, we have functionalities available as [React Components](../react-components/intro).
 
 We’re also working on packaging our components in SaaS-solutions.
