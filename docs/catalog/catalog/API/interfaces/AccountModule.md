@@ -36,7 +36,7 @@ The new generated token
 
 #### Defined in
 
-[types/index.ts:398](https://github.com/nevermined-io/react-components/blob/9a583d0/catalog/src/types/index.ts#L398)
+[types/index.ts:398](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L398)
 
 ___
 
@@ -58,7 +58,7 @@ The address token signer
 
 #### Defined in
 
-[types/index.ts:408](https://github.com/nevermined-io/react-components/blob/9a583d0/catalog/src/types/index.ts#L408)
+[types/index.ts:408](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L408)
 
 ___
 
@@ -86,7 +86,7 @@ List of assets which was bought by the address given as argument
 
 #### Defined in
 
-[types/index.ts:393](https://github.com/nevermined-io/react-components/blob/9a583d0/catalog/src/types/index.ts#L393)
+[types/index.ts:393](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L393)
 
 ___
 
@@ -114,7 +114,7 @@ List of assets which was published by the address given
 
 #### Defined in
 
-[types/index.ts:387](https://github.com/nevermined-io/react-components/blob/9a583d0/catalog/src/types/index.ts#L387)
+[types/index.ts:387](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L387)
 
 ___
 
@@ -143,7 +143,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:416](https://github.com/nevermined-io/react-components/blob/9a583d0/catalog/src/types/index.ts#L416)
+[types/index.ts:416](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L416)
 
 ___
 
@@ -174,7 +174,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:426](https://github.com/nevermined-io/react-components/blob/9a583d0/catalog/src/types/index.ts#L426)
+[types/index.ts:426](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L426)
 
 ___
 
@@ -205,7 +205,7 @@ true if the user holds the NFT
 
 #### Defined in
 
-[types/index.ts:436](https://github.com/nevermined-io/react-components/blob/9a583d0/catalog/src/types/index.ts#L436)
+[types/index.ts:436](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L436)
 
 ___
 
@@ -227,4 +227,4 @@ if token is valid it will return true
 
 #### Defined in
 
-[types/index.ts:403](https://github.com/nevermined-io/react-components/blob/9a583d0/catalog/src/types/index.ts#L403)
+[types/index.ts:403](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L403)
