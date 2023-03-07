@@ -50,7 +50,7 @@
 
 #### Defined in
 
-[providers/src/types.ts:4](https://github.com/nevermined-io/react-components/blob/30ea341/providers/src/types.ts#L4)
+[providers/src/types.ts:4](https://github.com/nevermined-io/react-components/blob/30dad8d/providers/src/types.ts#L4)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[providers/src/types.ts:21](https://github.com/nevermined-io/react-components/blob/30ea341/providers/src/types.ts#L21)
+[providers/src/types.ts:21](https://github.com/nevermined-io/react-components/blob/30dad8d/providers/src/types.ts#L21)
 
 ## Variables
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[providers/src/client.tsx:108](https://github.com/nevermined-io/react-components/blob/30ea341/providers/src/client.tsx#L108)
+[providers/src/client.tsx:108](https://github.com/nevermined-io/react-components/blob/30dad8d/providers/src/client.tsx#L108)
 
 ## Functions
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[providers/src/client.tsx:110](https://github.com/nevermined-io/react-components/blob/30ea341/providers/src/client.tsx#L110)
+[providers/src/client.tsx:110](https://github.com/nevermined-io/react-components/blob/30dad8d/providers/src/client.tsx#L110)
 
 ___
 
@@ -164,7 +164,7 @@ All the functionalities to handle the wallet in dapp
 
 #### Defined in
 
-[providers/src/providers.tsx:43](https://github.com/nevermined-io/react-components/blob/30ea341/providers/src/providers.tsx#L43)
+[providers/src/providers.tsx:43](https://github.com/nevermined-io/react-components/blob/30dad8d/providers/src/providers.tsx#L43)
 
 ___
 
@@ -192,7 +192,7 @@ use `Wagmi.createClient` instead, [see here](https://docs.nevermined.io/docs/tut
 
 #### Defined in
 
-[providers/src/client.tsx:31](https://github.com/nevermined-io/react-components/blob/30ea341/providers/src/client.tsx#L31)
+[providers/src/client.tsx:31](https://github.com/nevermined-io/react-components/blob/30dad8d/providers/src/client.tsx#L31)
 
 ___
 
@@ -206,7 +206,7 @@ ___
 
 #### Defined in
 
-[providers/src/client.tsx:195](https://github.com/nevermined-io/react-components/blob/30ea341/providers/src/client.tsx#L195)
+[providers/src/client.tsx:195](https://github.com/nevermined-io/react-components/blob/30dad8d/providers/src/client.tsx#L195)
 
 ___
 
@@ -226,4 +226,4 @@ ___
 
 #### Defined in
 
-[providers/src/utils/index.ts:1](https://github.com/nevermined-io/react-components/blob/30ea341/providers/src/utils/index.ts#L1)
+[providers/src/utils/index.ts:1](https://github.com/nevermined-io/react-components/blob/30dad8d/providers/src/utils/index.ts#L1)

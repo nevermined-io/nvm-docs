@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[catalog.tsx:623](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/catalog.tsx#L623)
+[catalog.tsx:651](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/catalog.tsx#L651)
 
 ## Functions
 
@@ -84,7 +84,7 @@ const SDKInstance = () => {
 
 #### Defined in
 
-[catalog.tsx:119](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/catalog.tsx#L119)
+[catalog.tsx:120](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/catalog.tsx#L120)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[catalog.tsx:54](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/catalog.tsx#L54)
+[catalog.tsx:55](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/catalog.tsx#L55)
 
 ___
 
@@ -118,4 +118,4 @@ ___
 
 #### Defined in
 
-[catalog.tsx:625](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/catalog.tsx#L625)
+[catalog.tsx:653](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/catalog.tsx#L653)

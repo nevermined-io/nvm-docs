@@ -10,6 +10,7 @@ under 'account' object
 - [generateToken](AccountModule.md#generatetoken)
 - [getAddressTokenSigner](AccountModule.md#getaddresstokensigner)
 - [getCollection](AccountModule.md#getcollection)
+- [getPublishedSubscriptions](AccountModule.md#getpublishedsubscriptions)
 - [getReleases](AccountModule.md#getreleases)
 - [isAssetHolder](AccountModule.md#isassetholder)
 - [isNFT1155Holder](AccountModule.md#isnft1155holder)
@@ -36,7 +37,7 @@ The new generated token
 
 #### Defined in
 
-[types/index.ts:398](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L398)
+[types/index.ts:403](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L403)
 
 ___
 
@@ -58,7 +59,7 @@ The address token signer
 
 #### Defined in
 
-[types/index.ts:408](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L408)
+[types/index.ts:413](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L413)
 
 ___
 
@@ -86,7 +87,33 @@ List of assets which was bought by the address given as argument
 
 #### Defined in
 
-[types/index.ts:393](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L393)
+[types/index.ts:393](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L393)
+
+___
+
+### getPublishedSubscriptions
+
+• **getPublishedSubscriptions**: (`address`: `string`) => `Promise`<[`PublishedSubscriptions`](PublishedSubscriptions.md)[]\>
+
+#### Type declaration
+
+▸ (`address`): `Promise`<[`PublishedSubscriptions`](PublishedSubscriptions.md)[]\>
+
+Get all the published subscription from the wallet address passed
+
+##### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `address` | `string` | the address which published the subscription returned |
+
+##### Returns
+
+`Promise`<[`PublishedSubscriptions`](PublishedSubscriptions.md)[]\>
+
+#### Defined in
+
+[types/index.ts:398](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L398)
 
 ___
 
@@ -114,7 +141,7 @@ List of assets which was published by the address given
 
 #### Defined in
 
-[types/index.ts:387](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L387)
+[types/index.ts:387](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L387)
 
 ___
 
@@ -143,7 +170,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:416](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L416)
+[types/index.ts:421](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L421)
 
 ___
 
@@ -174,7 +201,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:426](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L426)
+[types/index.ts:431](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L431)
 
 ___
 
@@ -205,7 +232,7 @@ true if the user holds the NFT
 
 #### Defined in
 
-[types/index.ts:436](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L436)
+[types/index.ts:441](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L441)
 
 ___
 
@@ -227,4 +254,4 @@ if token is valid it will return true
 
 #### Defined in
 
-[types/index.ts:403](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L403)
+[types/index.ts:408](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L408)

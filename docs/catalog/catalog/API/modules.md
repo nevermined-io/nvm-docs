@@ -34,6 +34,7 @@
 - [NFTSModule](interfaces/NFTSModule.md)
 - [NeverminedProviderContext](interfaces/NeverminedProviderContext.md)
 - [NeverminedProviderProps](interfaces/NeverminedProviderProps.md)
+- [PublishedSubscriptions](interfaces/PublishedSubscriptions.md)
 - [RegisterEvent](interfaces/RegisterEvent.md)
 - [SubscribeModule](interfaces/SubscribeModule.md)
 - [Transfer](interfaces/Transfer.md)
@@ -62,7 +63,7 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:300](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L300)
+[types/index.ts:300](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L300)
 
 ## Functions
 
@@ -91,7 +92,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:40](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/utils/index.ts#L40)
+[utils/index.ts:40](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/utils/index.ts#L40)
 
 ___
 
@@ -117,7 +118,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:116](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/utils/index.ts#L116)
+[utils/index.ts:116](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/utils/index.ts#L116)
 
 ___
 
@@ -140,7 +141,7 @@ Returns current account registered in SDK
 
 #### Defined in
 
-[utils/index.ts:17](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/utils/index.ts#L17)
+[utils/index.ts:17](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/utils/index.ts#L17)
 
 ___
 
@@ -166,7 +167,7 @@ Return the result data of the request
 
 #### Defined in
 
-[utils/index.ts:145](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/utils/index.ts#L145)
+[utils/index.ts:145](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/utils/index.ts#L145)
 
 ___
 
@@ -190,7 +191,7 @@ Checks if object is empty
 
 #### Defined in
 
-[utils/index.ts:11](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/utils/index.ts#L11)
+[utils/index.ts:11](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/utils/index.ts#L11)
 
 ___
 
@@ -216,4 +217,4 @@ Array of object with the document id of each fullfilled events
 
 #### Defined in
 
-[utils/index.ts:87](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/utils/index.ts#L87)
+[utils/index.ts:87](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/utils/index.ts#L87)

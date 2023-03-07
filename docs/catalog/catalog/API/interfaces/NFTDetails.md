@@ -26,7 +26,7 @@ The block number from blockchain where the asset was updated
 
 #### Defined in
 
-[types/index.ts:315](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L315)
+[types/index.ts:315](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L315)
 
 ___
 
@@ -38,7 +38,7 @@ The last checksum generated to verify the sources
 
 #### Defined in
 
-[types/index.ts:309](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L309)
+[types/index.ts:309](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L309)
 
 ___
 
@@ -50,7 +50,7 @@ The modification of the asset
 
 #### Defined in
 
-[types/index.ts:313](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L313)
+[types/index.ts:313](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L313)
 
 ___
 
@@ -62,7 +62,7 @@ The amount limit of nft which can be minted
 
 #### Defined in
 
-[types/index.ts:321](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L321)
+[types/index.ts:321](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L321)
 
 ___
 
@@ -74,7 +74,7 @@ The amount of ntfs that are in circulation
 
 #### Defined in
 
-[types/index.ts:319](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L319)
+[types/index.ts:319](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L319)
 
 ___
 
@@ -86,7 +86,7 @@ The owner of the asset
 
 #### Defined in
 
-[types/index.ts:307](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L307)
+[types/index.ts:307](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L307)
 
 ___
 
@@ -98,7 +98,7 @@ Which services provide the asset
 
 #### Defined in
 
-[types/index.ts:317](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L317)
+[types/index.ts:317](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L317)
 
 ___
 
@@ -110,7 +110,7 @@ The rewards that the owner can get for every sale
 
 #### Defined in
 
-[types/index.ts:323](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L323)
+[types/index.ts:323](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L323)
 
 ___
 
@@ -122,4 +122,4 @@ Url where is located the asset
 
 #### Defined in
 
-[types/index.ts:311](https://github.com/nevermined-io/react-components/blob/30ea341/catalog/src/types/index.ts#L311)
+[types/index.ts:311](https://github.com/nevermined-io/react-components/blob/30dad8d/catalog/src/types/index.ts#L311)
