@@ -20,7 +20,7 @@ This provider require children elements
 
 #### Defined in
 
-[types/index.ts:281](https://github.com/nevermined-io/react-components/blob/9f2a180/catalog/src/types/index.ts#L281)
+[types/index.ts:281](https://github.com/nevermined-io/react-components/blob/4840188/catalog/src/types/index.ts#L281)
 
 ___
 
@@ -32,7 +32,7 @@ Show Catalog logs in console logs if it sets to `true`
 
 #### Defined in
 
-[types/index.ts:285](https://github.com/nevermined-io/react-components/blob/9f2a180/catalog/src/types/index.ts#L285)
+[types/index.ts:285](https://github.com/nevermined-io/react-components/blob/4840188/catalog/src/types/index.ts#L285)
 
 ___
 
@@ -44,4 +44,4 @@ The config needed to build Nevermined SDK
 
 #### Defined in
 
-[types/index.ts:283](https://github.com/nevermined-io/react-components/blob/9f2a180/catalog/src/types/index.ts#L283)
+[types/index.ts:283](https://github.com/nevermined-io/react-components/blob/4840188/catalog/src/types/index.ts#L283)
