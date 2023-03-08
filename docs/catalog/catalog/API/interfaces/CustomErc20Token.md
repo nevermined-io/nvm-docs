@@ -21,7 +21,7 @@ Amount of tokens holded by the wallet account
 
 #### Defined in
 
-[types/index.ts:381](https://github.com/nevermined-io/react-components/blob/01310ab/catalog/src/types/index.ts#L381)
+[types/index.ts:382](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L382)
 
 ___
 
@@ -33,7 +33,7 @@ Decimals of the token
 
 #### Defined in
 
-[types/index.ts:383](https://github.com/nevermined-io/react-components/blob/01310ab/catalog/src/types/index.ts#L383)
+[types/index.ts:384](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L384)
 
 ___
 
@@ -45,7 +45,7 @@ Name of the token
 
 #### Defined in
 
-[types/index.ts:379](https://github.com/nevermined-io/react-components/blob/01310ab/catalog/src/types/index.ts#L379)
+[types/index.ts:380](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L380)
 
 ___
 
@@ -63,4 +63,4 @@ Ethereum -> ETH
 
 #### Defined in
 
-[types/index.ts:377](https://github.com/nevermined-io/react-components/blob/01310ab/catalog/src/types/index.ts#L377)
+[types/index.ts:378](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L378)
