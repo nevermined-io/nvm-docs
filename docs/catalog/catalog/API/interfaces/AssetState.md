@@ -22,7 +22,7 @@ Asset object
 
 #### Defined in
 
-[types/index.ts:656](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L656)
+[types/index.ts:656](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L656)
 
 ___
 
@@ -34,7 +34,7 @@ Error message from some operation with asset
 
 #### Defined in
 
-[types/index.ts:660](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L660)
+[types/index.ts:660](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L660)
 
 ___
 
@@ -46,7 +46,7 @@ True if asset object is loaded
 
 #### Defined in
 
-[types/index.ts:662](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L662)
+[types/index.ts:662](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L662)
 
 ___
 
@@ -58,7 +58,7 @@ Metada of the asset with the basic information
 
 #### Defined in
 
-[types/index.ts:658](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L658)
+[types/index.ts:658](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L658)
 
 ___
 
@@ -70,4 +70,4 @@ Details of the asset agreement
 
 #### Defined in
 
-[types/index.ts:664](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L664)
+[types/index.ts:664](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L664)

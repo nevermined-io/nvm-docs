@@ -30,7 +30,7 @@ The block number from blockchain where the asset was updated
 
 #### Defined in
 
-[types/index.ts:317](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L317)
+[types/index.ts:317](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L317)
 
 ___
 
@@ -42,7 +42,7 @@ The last checksum generated to verify the sources
 
 #### Defined in
 
-[types/index.ts:311](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L311)
+[types/index.ts:311](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L311)
 
 ___
 
@@ -54,7 +54,7 @@ The modification of the asset
 
 #### Defined in
 
-[types/index.ts:315](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L315)
+[types/index.ts:315](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L315)
 
 ___
 
@@ -66,7 +66,7 @@ The amount limit of nft which can be minted
 
 #### Defined in
 
-[types/index.ts:329](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L329)
+[types/index.ts:329](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L329)
 
 ___
 
@@ -78,7 +78,7 @@ Contract NFT address which was created the NFT asset
 
 #### Defined in
 
-[types/index.ts:323](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L323)
+[types/index.ts:323](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L323)
 
 ___
 
@@ -90,7 +90,7 @@ When the NFT asset was initialized
 
 #### Defined in
 
-[types/index.ts:325](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L325)
+[types/index.ts:325](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L325)
 
 ___
 
@@ -102,7 +102,7 @@ The amount of ntfs that are in circulation
 
 #### Defined in
 
-[types/index.ts:321](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L321)
+[types/index.ts:321](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L321)
 
 ___
 
@@ -114,7 +114,7 @@ Uri of the NFT
 
 #### Defined in
 
-[types/index.ts:327](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L327)
+[types/index.ts:327](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L327)
 
 ___
 
@@ -126,7 +126,7 @@ The owner of the asset
 
 #### Defined in
 
-[types/index.ts:309](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L309)
+[types/index.ts:309](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L309)
 
 ___
 
@@ -138,7 +138,7 @@ Which services provide the asset
 
 #### Defined in
 
-[types/index.ts:319](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L319)
+[types/index.ts:319](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L319)
 
 ___
 
@@ -150,7 +150,7 @@ The rewards that the owner can get for every sale
 
 #### Defined in
 
-[types/index.ts:331](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L331)
+[types/index.ts:331](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L331)
 
 ___
 
@@ -162,7 +162,7 @@ Royalty scheme of the NFT asset
 
 #### Defined in
 
-[types/index.ts:333](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L333)
+[types/index.ts:333](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L333)
 
 ___
 
@@ -174,4 +174,4 @@ Url where is located the asset
 
 #### Defined in
 
-[types/index.ts:313](https://github.com/nevermined-io/react-components/blob/9cf205d/catalog/src/types/index.ts#L313)
+[types/index.ts:313](https://github.com/nevermined-io/react-components/blob/cbb6826/catalog/src/types/index.ts#L313)
