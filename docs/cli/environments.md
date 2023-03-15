@@ -109,8 +109,18 @@ The Nevermined Node can be found on http://node.nevermined.localnet and uses the
 
 
 
+ 
 
+## oneMumbai
+Nevermined One testnet environment where users can interact with Nevermined protocol.<br/>
 
+ **Testnet** 
+The Native token is **MATIC**. This environment has the network name **mumbai** and the chain id/network id **80001**. <br/>
 
+### Nevermined configuration 
 
+ The Nevermined contracts deployed have the version: **3.0.0**  The Nevermined contracts are labeled with the tag name: **public** 
+The Marketplace API used can be found on https://marketplace-api.mumbai.nevermined.one. <br/>
+The Nevermined Node can be found on https://node.mumbai.nevermined.one/ and uses the public address **0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc**.<br/>
+ The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
 

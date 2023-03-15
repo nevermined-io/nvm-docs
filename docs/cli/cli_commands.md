@@ -231,13 +231,16 @@ This command registers a new asset on the Nevermined network. This registered as
 | **name** | `string` |  &#x2611;  |    | The asset name |
 | **author** | `string` |  &#x2611;  |    | The author of the asset |
 | **dateCreated** | `string` |  |    | When the asset was created |
-| **price** | `number` |  &#x2611;  |    | The asset price |
+| **access** | `string` |  |  `direct`  | The type of access control associated to the asset. If `direct` the asset will allow direct payment, if `susbcription` it will allow access via NFT susbcription, if both it will configure both methods. |
+| **price** | `number` |  |  `0`  | The asset price |
 | **urls** | `array` |  &#x2611;  |    | The asset urls. It can be a comma separated list of urls for multiple files |
 | **contentType** | `string` |  &#x2611;  |    | Files content type. Example: application/csv |
 | **license** | `string` |  |  `undefined`  | The asset license |
 | **password** | `string` |  |    | The password for encrypted files |
 | **publishMetadata** | `string` |  |  `metadata-api`  | Allows to store the metadata in the Metadata API only (metadata-api) or in IPFS too (passing ipfs as value here). |
 | **assetType** | `string` |  |  `dataset`  | The type of the asset to register |
+| **subscriptionNFT** | `string` |  |    | The address of the subscription NFT used to protect the access to the asset |
+| **nftType** | `number` |  |  `721`  | The NFT type |
 
 
 #### Example/s
@@ -262,7 +265,8 @@ This command registers a new algorithm on the Nevermined network. The algorithm 
 | **name** | `string` |  &#x2611;  |    | The asset name |
 | **author** | `string` |  &#x2611;  |    | The author of the asset |
 | **dateCreated** | `string` |  |    | When the asset was created |
-| **price** | `number` |  &#x2611;  |    | The asset price |
+| **access** | `string` |  |  `direct`  | The type of access control associated to the asset. If `direct` the asset will allow direct payment, if `susbcription` it will allow access via NFT susbcription, if both it will configure both methods. |
+| **price** | `number` |  |  `0`  | The asset price |
 | **urls** | `array` |  &#x2611;  |    | The asset urls. It can be a comma separated list of urls for multiple files |
 | **contentType** | `string` |  &#x2611;  |    | Files content type. Example: application/csv |
 | **license** | `string` |  |  `undefined`  | The asset license |
@@ -271,6 +275,8 @@ This command registers a new algorithm on the Nevermined network. The algorithm 
 | **container** | `string` |  &#x2611;  |    | The docker container where the algorithm can be executed. Example: python:3.8-alpine |
 | **publishMetadata** | `string` |  |  `metadata-api`  | Allows to store the metadata in the Metadata API only (metadata-api) or in IPFS too (passing ipfs as value here). |
 | **assetType** | `string` |  |  `algorithm`  | The type of the asset to register |
+| **subscriptionNFT** | `string` |  |    | The address of the subscription NFT used to protect the access to the asset |
+| **nftType** | `number` |  |  `721`  | The NFT type |
 
 
 #### Example/s
@@ -278,6 +284,38 @@ This command registers a new algorithm on the Nevermined network. The algorithm 
 
 ```bash
 ncli assets register-algorithm --name &quot;Test Algorithm&quot; --author &quot;John Doe&quot; --price 0 --language python --entrypoint &quot;python word_count.py&quot; --container python:3.8-alpine --urls https://www.apache.org/licenses/LICENSE-2.0 --contentType text/plain
+```
+
+
+
+### register-service
+Register a new web service<br/>
+
+This command registers a new web service on the Nevermined network. The service can be the representation of any regular Web Service (REST, JSON-RPC, etc).<br/>
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **name** | `string` |  &#x2611;  |    | The asset name |
+| **author** | `string` |  &#x2611;  |    | The author of the asset |
+| **dateCreated** | `string` |  |    | When the asset was created |
+| **access** | `string` |  |  `subscription`  | The type of access control associated to the asset. If `direct` the asset will allow direct payment, if `susbcription` it will allow access via NFT susbcription, if both it will configure both methods. |
+| **price** | `number` |  |  `0`  | The asset price |
+| **urls** | `array` |  &#x2611;  |    | The asset urls. It can be a comma separated list of urls for multiple files |
+| **authToken** | `string` |  &#x2612;  |    | Authorization token of the service |
+| **publishMetadata** | `string` |  |  `metadata-api`  | Allows to store the metadata in the Metadata API only (metadata-api) or in IPFS too (passing ipfs as value here). |
+| **assetType** | `string` |  |  `service`  | The type of the asset to register |
+| **subscriptionNFT** | `string` |  |    | The address of the subscription NFT used to protect the access to the asset |
+| **nftType** | `number` |  |  `721`  | The NFT type |
+
+
+#### Example/s
+
+
+```bash
+ncli assets  --name &quot;My Open AI&quot; --author &quot;John Doe&quot; --subscriptionNFT 0x736DCC96D89cB2F9E2316cD826668f4E1c4861B0 --urls https://api.openai.com/v1/completions --authToken sk-xxxxxx
 ```
 
 
@@ -301,6 +339,7 @@ An asset in the Nevermined network can be described by different level of metada
 |----------------------|------|-------------:|--------------:|-------------|
 | **encrypt** | `boolean` |  |  `false`  | Use encrypted service endpoint |
 | **publishMetadata** | `string` |  |  `metadata-api`  | Allows to store the metadata in the Metadata API only (metadata-api) or in IPFS too (passing ipfs as value here). |
+| **access** | `string` |  |  `direct`  | The type of access control associated to the asset. If `direct` the asset will allow direct payment, if `susbcription` it will allow access via NFT susbcription, if both it will configure both methods. |
 
 
 #### Example/s
@@ -1021,6 +1060,28 @@ This command will allow to download the file contents associated to a DID that h
 
 ```bash
 ncli nfts721 download  did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf452a49be7e --destination /tmp/nevemined/
+```
+
+
+
+### get-jwt [did]
+It returns a JWT access token related with a subscription NFT<br/>
+
+This command allows to get a JWT token that gives access through the proxy to certain services that only can be accessed via subscription NFT<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **did** | `string` |  |    | The DID of the service to be accessed |
+
+
+
+#### Example/s
+
+
+```bash
+ncli nfts721 get-jwt did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf452a49be7e
 ```
 
 
