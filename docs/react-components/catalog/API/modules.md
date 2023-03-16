@@ -50,6 +50,7 @@
 - [executeWithProgressEvent](modules.md#executewithprogressevent)
 - [getAgreementId](modules.md#getagreementid)
 - [getCurrentAccount](modules.md#getcurrentaccount)
+- [getNewSdkInstance](modules.md#getnewsdkinstance)
 - [getSubscriptionsAndServices](modules.md#getsubscriptionsandservices)
 - [handlePostRequest](modules.md#handlepostrequest)
 - [isEmptyObject](modules.md#isemptyobject)
@@ -65,7 +66,7 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:303](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L303)
+[types/index.ts:303](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L303)
 
 ## Functions
 
@@ -94,7 +95,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:40](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/utils/index.ts#L40)
+[utils/index.ts:46](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/utils/index.ts#L46)
 
 ___
 
@@ -121,7 +122,7 @@ ___
 
 #### Defined in
 
-[utils/index.ts:183](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/utils/index.ts#L183)
+[utils/index.ts:189](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/utils/index.ts#L189)
 
 ___
 
@@ -147,7 +148,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:116](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/utils/index.ts#L116)
+[utils/index.ts:122](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/utils/index.ts#L122)
 
 ___
 
@@ -170,7 +171,28 @@ Returns current account registered in SDK
 
 #### Defined in
 
-[utils/index.ts:17](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/utils/index.ts#L17)
+[utils/index.ts:23](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/utils/index.ts#L23)
+
+___
+
+### getNewSdkInstance
+
+▸ **getNewSdkInstance**(`config`, `tokenData`): `Promise`<`Nevermined`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `config` | `NeverminedOptions` |
+| `tokenData` | [`MarketplaceAPIToken`](interfaces/MarketplaceAPIToken.md) |
+
+#### Returns
+
+`Promise`<`Nevermined`\>
+
+#### Defined in
+
+[utils/index.ts:204](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/utils/index.ts#L204)
 
 ___
 
@@ -191,7 +213,7 @@ ___
 
 #### Defined in
 
-[utils/index.ts:170](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/utils/index.ts#L170)
+[utils/index.ts:176](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/utils/index.ts#L176)
 
 ___
 
@@ -217,7 +239,7 @@ Return the result data of the request
 
 #### Defined in
 
-[utils/index.ts:145](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/utils/index.ts#L145)
+[utils/index.ts:151](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/utils/index.ts#L151)
 
 ___
 
@@ -241,7 +263,7 @@ Checks if object is empty
 
 #### Defined in
 
-[utils/index.ts:11](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/utils/index.ts#L11)
+[utils/index.ts:17](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/utils/index.ts#L17)
 
 ___
 
@@ -267,4 +289,4 @@ Array of object with the document id of each fullfilled events
 
 #### Defined in
 
-[utils/index.ts:87](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/utils/index.ts#L87)
+[utils/index.ts:93](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/utils/index.ts#L93)

@@ -30,7 +30,7 @@ Handle publish asset message
 
 #### Defined in
 
-[types/index.ts:798](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L798)
+[types/index.ts:798](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L798)
 
 ___
 
@@ -42,7 +42,7 @@ All the parameters needed to publish an asset
 
 #### Defined in
 
-[types/index.ts:804](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L804)
+[types/index.ts:804](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L804)
 
 ___
 
@@ -54,7 +54,7 @@ Handle error publish asset message
 
 #### Defined in
 
-[types/index.ts:796](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L796)
+[types/index.ts:796](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L796)
 
 ___
 
@@ -81,7 +81,7 @@ Update asset parameters when some input changes
 
 #### Defined in
 
-[types/index.ts:815](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L815)
+[types/index.ts:815](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L815)
 
 ___
 
@@ -93,7 +93,7 @@ If the asset is publishing
 
 #### Defined in
 
-[types/index.ts:802](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L802)
+[types/index.ts:802](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L802)
 
 ___
 
@@ -105,7 +105,7 @@ If the asset was published correctly
 
 #### Defined in
 
-[types/index.ts:800](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L800)
+[types/index.ts:800](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L800)
 
 ___
 
@@ -143,7 +143,7 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:835](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L835)
+[types/index.ts:835](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L835)
 
 ___
 
@@ -183,13 +183,13 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:900](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L900)
+[types/index.ts:903](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L903)
 
 ___
 
 ### publishNFT721
 
-• **publishNFT721**: (`nft721`: { `cryptoConfig?`: `CryptoConfig` ; `method?`: `EncryptionMethod` ; `nftAttributes`: `NFTAttributes` ; `onEvent?`: (`next`: `CreateProgressStep`) => `void` ; `password?`: `string` ; `publishMetadata?`: `PublishMetadata` ; `txParameters?`: `TxParameters`  }) => `Promise`<`undefined` \| `DDO`\>
+• **publishNFT721**: (`nft721`: { `cryptoConfig?`: `CryptoConfig` ; `method?`: `EncryptionMethod` ; `nftAddress`: `string` ; `nftAttributes`: `NFTAttributes` ; `onEvent?`: (`next`: `CreateProgressStep`) => `void` ; `password?`: `string` ; `publishMetadata?`: `PublishMetadata` ; `txParameters?`: `TxParameters`  }) => `Promise`<`undefined` \| `DDO`\>
 
 #### Type declaration
 
@@ -208,6 +208,7 @@ It will create a new digital asset associated to a ERC-721 NFT contract
 | `nft721` | `Object` |  |
 | `nft721.cryptoConfig?` | `CryptoConfig` | Setting for encrypting asset |
 | `nft721.method?` | `EncryptionMethod` | - |
+| `nft721.nftAddress` | `string` | NFT721 contract address to load |
 | `nft721.nftAttributes` | `NFTAttributes` | The attribute object discribing the asset (metadata, price, encryption method, etc...) |
 | `nft721.onEvent?` | (`next`: `CreateProgressStep`) => `void` | A callback to handle progress events |
 | `nft721.password?` | `string` | Password to encrypt metadata |
@@ -222,7 +223,7 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:867](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L867)
+[types/index.ts:868](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L868)
 
 ___
 
@@ -248,7 +249,7 @@ Reset all the parameters of the asset
 
 #### Defined in
 
-[types/index.ts:819](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L819)
+[types/index.ts:819](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L819)
 
 ___
 
@@ -260,7 +261,7 @@ Set asset message
 
 #### Defined in
 
-[types/index.ts:808](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L808)
+[types/index.ts:808](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L808)
 
 ___
 
@@ -272,7 +273,7 @@ Set parameters needed to publish an asset
 
 #### Defined in
 
-[types/index.ts:806](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L806)
+[types/index.ts:806](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L806)
 
 ___
 
@@ -284,4 +285,4 @@ Set error asset message
 
 #### Defined in
 
-[types/index.ts:810](https://github.com/nevermined-io/react-components/blob/799d5c9/catalog/src/types/index.ts#L810)
+[types/index.ts:810](https://github.com/nevermined-io/react-components/blob/68ff983/catalog/src/types/index.ts#L810)
