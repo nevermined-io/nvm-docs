@@ -19,7 +19,6 @@ const config = {
   customFields: {
     subtitle: 'Your Data & AI Unchained',
   },
-
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'nevermined-io', // Usually your GitHub org/user name.
@@ -59,10 +58,17 @@ const config = {
           editUrl: 'https://github.com/nevermined-io/docs/tree/main/blog/',
         },
         theme: {
-          customCss: require.resolve('./src/scss/custom.scss'),
+          customCss: [require.resolve('./src/scss/custom.scss')],
         },
       }),
     ],
+  ],
+
+  stylesheets: [
+    {
+      href: '/lib/nvm-one-widget.css',
+      type: 'text/css',
+    },
   ],
 
   themeConfig:
