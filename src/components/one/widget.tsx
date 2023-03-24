@@ -4,7 +4,7 @@ import {insertWidgetScriptBefore} from '../../utils'
 export const Widget = () => {
   const onWidgetElementMounted = (widgetElement: HTMLElement | null) => {
     if (widgetElement) {
-      insertWidgetScriptBefore('http://localhost:3000/lib/nvm-service-widget-loader.js', widgetElement)
+      insertWidgetScriptBefore('https://widgets.mumbai.nevermined.one/nvm-service-widget-loader.js', widgetElement)
     }
   }
 
