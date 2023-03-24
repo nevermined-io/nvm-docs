@@ -2354,13 +2354,13 @@
     "@motionone/dom" "^10.15.5"
     tslib "^2.3.1"
 
-"@nevermined-io/catalog@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@nevermined-io/catalog/-/catalog-1.0.0.tgz#756599a388aeaac2abd9191e4b204a5a6b9ee67f"
-  integrity sha512-XJ1Pdu/5X80BZ9X7VQUkQh9y1iUO9W5kW2mANT3meb4rSZxNxfg4QswAcy2C9VEfkGYw55ISsXyAN0p45qsBPQ==
+"@nevermined-io/catalog@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@nevermined-io/catalog/-/catalog-1.2.0.tgz#766294b09063f0dc6ce3046ca99120c585c9f07d"
+  integrity sha512-HRQoCj97pmcScUb+FNCZWs/rGBBDSf66epweaHyQrhRLm21m/BIxgtZBsnAjOynBOVRoZAzbk1zMFgDIrhyBzA==
   dependencies:
-    "@nevermined-io/sdk" "^1.0.0"
-    "@nevermined-io/sdk-dtp" "^0.3.0"
+    "@nevermined-io/sdk" "^1.2.0"
+    "@nevermined-io/sdk-dtp" "^0.4.1"
     "@types/jsonwebtoken" "^8.5.8"
     axios "^0.27.2"
     axios-retry "^3.3.1"
@@ -2368,22 +2368,22 @@
     js-file-download "^0.4.12"
     jsonwebtoken "^8.5.1"
 
-"@nevermined-io/providers@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@nevermined-io/providers/-/providers-1.0.0.tgz#37fd8b4c57605fda463cfa47d808153729b0eb5e"
-  integrity sha512-0XiTUjX8ziGhuq7EIkPsEwCnxSPCH05q/xQwWgzb86j0Ayvo3+BNbkBPGYMZgmWU5ZJQlZfYM3iHupepauZo/A==
+"@nevermined-io/providers@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@nevermined-io/providers/-/providers-1.2.0.tgz#7def347cbbe5c874c7de9c9c8457539668c883a9"
+  integrity sha512-qlt9V44NVXhELUX4/o1gXZcHcvPFEK4o20afkmQ1COauJXVJFDusXEIzsarJ5y9GDHe2dafWGjTJdOqf9EAZcw==
   dependencies:
     "@wagmi/core" "^0.8.15"
     connectkit "^1.1.1"
     ethers "^5.7.2"
     wagmi "^0.10.11"
 
-"@nevermined-io/sdk-dtp@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@nevermined-io/sdk-dtp/-/sdk-dtp-0.3.0.tgz#2cc003bf6ea35b40e1385895a72030fd00ac6402"
-  integrity sha512-4X6JZCIOTEaEEPlJ9wtQQZ1lZ50nVOQuzH8z/8bdduAIMy05KlMwLJsiu8LlMcPly96d7zkmQR4AQ+P0bUwGEA==
+"@nevermined-io/sdk-dtp@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@nevermined-io/sdk-dtp/-/sdk-dtp-0.4.1.tgz#a04c622f3b5d4cb1a9480adec86f01631157abab"
+  integrity sha512-RjEWMx1OWwFYSq5jZXM/3n9WEoyaG1nwrXM/sK+/zpBMOwyScvfWZf3wpJKaVfshMH30FNOqcQrGYbcM8/5o7g==
   dependencies:
-    "@nevermined-io/sdk" "1.0.0"
+    "@nevermined-io/sdk" "1.2.0"
     circomlibjs "^0.1.1"
     eciesjs "^0.3.15"
     ffjavascript "^0.2.55"
@@ -2391,10 +2391,10 @@
     snarkjs "^0.4.26"
     web3-utils "^1.7.4"
 
-"@nevermined-io/sdk@1.0.0", "@nevermined-io/sdk@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@nevermined-io/sdk/-/sdk-1.0.0.tgz#fa1ceb831e842f0387f504a0561137b3a0a61eb5"
-  integrity sha512-vaqx1WXRafjXpW4OcyBExR+Fl9QNE7B+5JLyCzTjuFKY35MmaTbwRgfw8r1JiSOiQgXiBVqrXMKi4+QsKL5IYg==
+"@nevermined-io/sdk@1.2.0", "@nevermined-io/sdk@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@nevermined-io/sdk/-/sdk-1.2.0.tgz#5e11927eaf88c113c95abb19c61ca0682c2e584d"
+  integrity sha512-RqbBvZD0MEoYyl98x42qQfg85qcNrDQbFONF/cdVuPaPjmTsf64vImA/t5VwlLUMRGRH/OXKNnVuSw9r3C5VxA==
   dependencies:
     "@nevermined-io/subgraphs" "0.5.0"
     assert "^2.0.0"
