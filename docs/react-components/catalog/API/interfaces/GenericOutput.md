@@ -27,7 +27,7 @@ Data from the promise
 
 #### Defined in
 
-[types/index.ts:295](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L295)
+[types/index.ts:295](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L295)
 
 ___
 
@@ -39,7 +39,7 @@ If the promise throw an error
 
 #### Defined in
 
-[types/index.ts:297](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L297)
+[types/index.ts:297](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L297)
 
 ___
 
@@ -51,4 +51,4 @@ If the promise resolve was success
 
 #### Defined in
 
-[types/index.ts:299](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L299)
+[types/index.ts:299](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L299)

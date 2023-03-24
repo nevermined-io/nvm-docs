@@ -9,11 +9,14 @@ under 'account' object
 
 - [generateToken](AccountModule.md#generatetoken)
 - [getAddressTokenSigner](AccountModule.md#getaddresstokensigner)
+- [getAssociatedDatasets](AccountModule.md#getassociateddatasets)
 - [getAssociatedServices](AccountModule.md#getassociatedservices)
 - [getCollection](AccountModule.md#getcollection)
 - [getPublishedSubscriptions](AccountModule.md#getpublishedsubscriptions)
+- [getPublishedSubscriptionsAndDatasets](AccountModule.md#getpublishedsubscriptionsanddatasets)
 - [getPublishedSubscriptionsAndServices](AccountModule.md#getpublishedsubscriptionsandservices)
 - [getPurchasedSubscriptions](AccountModule.md#getpurchasedsubscriptions)
+- [getPurchasedSubscriptionsAndDatasets](AccountModule.md#getpurchasedsubscriptionsanddatasets)
 - [getPurchasedSubscriptionsAndServices](AccountModule.md#getpurchasedsubscriptionsandservices)
 - [getReleases](AccountModule.md#getreleases)
 - [isAssetHolder](AccountModule.md#isassetholder)
@@ -41,7 +44,7 @@ The new generated token
 
 #### Defined in
 
-[types/index.ts:440](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L440)
+[types/index.ts:457](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L457)
 
 ___
 
@@ -63,7 +66,35 @@ The address token signer
 
 #### Defined in
 
-[types/index.ts:450](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L450)
+[types/index.ts:467](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L467)
+
+___
+
+### getAssociatedDatasets
+
+• **getAssociatedDatasets**: (`did`: `string`) => `Promise`<`DDO`[]\>
+
+#### Type declaration
+
+▸ (`did`): `Promise`<`DDO`[]\>
+
+Get all the datasets associated to a subscription
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `did` | `string` |
+
+##### Returns
+
+`Promise`<`DDO`[]\>
+
+associated datasets to subscriptions
+
+#### Defined in
+
+[types/index.ts:422](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L422)
 
 ___
 
@@ -75,7 +106,7 @@ ___
 
 ▸ (`did`): `Promise`<`DDO`[]\>
 
-Get all the services associated
+Get all the services associated a subscription
 
 ##### Parameters
 
@@ -91,7 +122,7 @@ associated services to subscriptions
 
 #### Defined in
 
-[types/index.ts:416](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L416)
+[types/index.ts:416](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L416)
 
 ___
 
@@ -119,7 +150,7 @@ List of assets which was bought by the address given as argument
 
 #### Defined in
 
-[types/index.ts:404](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L404)
+[types/index.ts:404](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L404)
 
 ___
 
@@ -147,7 +178,35 @@ published subscriptions
 
 #### Defined in
 
-[types/index.ts:410](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L410)
+[types/index.ts:410](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L410)
+
+___
+
+### getPublishedSubscriptionsAndDatasets
+
+• **getPublishedSubscriptionsAndDatasets**: (`address`: `string`) => `Promise`<[`SubscriptionsAndDatasetsDDOs`](SubscriptionsAndDatasetsDDOs.md)[]\>
+
+#### Type declaration
+
+▸ (`address`): `Promise`<[`SubscriptionsAndDatasetsDDOs`](SubscriptionsAndDatasetsDDOs.md)[]\>
+
+Get all the published subscriptions and datasets associated from the wallet address passed
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `address` | `string` |
+
+##### Returns
+
+`Promise`<[`SubscriptionsAndDatasetsDDOs`](SubscriptionsAndDatasetsDDOs.md)[]\>
+
+published subscriptions and its datasets
+
+#### Defined in
+
+[types/index.ts:434](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L434)
 
 ___
 
@@ -160,7 +219,6 @@ ___
 ▸ (`address`): `Promise`<[`SubscriptionsAndServicesDDOs`](SubscriptionsAndServicesDDOs.md)[]\>
 
 Get all the published subscriptions and services associated from the wallet address passed
-Get only published Subscriptions
 
 ##### Parameters
 
@@ -176,7 +234,7 @@ published subscriptions and service
 
 #### Defined in
 
-[types/index.ts:423](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L423)
+[types/index.ts:428](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L428)
 
 ___
 
@@ -204,7 +262,35 @@ purchased subscriptions
 
 #### Defined in
 
-[types/index.ts:429](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L429)
+[types/index.ts:440](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L440)
+
+___
+
+### getPurchasedSubscriptionsAndDatasets
+
+• **getPurchasedSubscriptionsAndDatasets**: (`address`: `string`) => `Promise`<[`SubscriptionsAndDatasetsDDOs`](SubscriptionsAndDatasetsDDOs.md)[]\>
+
+#### Type declaration
+
+▸ (`address`): `Promise`<[`SubscriptionsAndDatasetsDDOs`](SubscriptionsAndDatasetsDDOs.md)[]\>
+
+Get all the purchased subscriptions and datasets associated from the wallet address passed
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `address` | `string` |
+
+##### Returns
+
+`Promise`<[`SubscriptionsAndDatasetsDDOs`](SubscriptionsAndDatasetsDDOs.md)[]\>
+
+purchased subscriptions and its datasets
+
+#### Defined in
+
+[types/index.ts:452](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L452)
 
 ___
 
@@ -232,7 +318,7 @@ purchased subscriptions and services
 
 #### Defined in
 
-[types/index.ts:435](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L435)
+[types/index.ts:446](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L446)
 
 ___
 
@@ -260,7 +346,7 @@ List of assets which was published by the address given
 
 #### Defined in
 
-[types/index.ts:398](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L398)
+[types/index.ts:398](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L398)
 
 ___
 
@@ -289,7 +375,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:458](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L458)
+[types/index.ts:475](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L475)
 
 ___
 
@@ -320,7 +406,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:468](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L468)
+[types/index.ts:485](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L485)
 
 ___
 
@@ -351,7 +437,7 @@ true if the user holds the NFT
 
 #### Defined in
 
-[types/index.ts:478](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L478)
+[types/index.ts:495](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L495)
 
 ___
 
@@ -373,4 +459,4 @@ if token is valid it will return true
 
 #### Defined in
 
-[types/index.ts:445](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L445)
+[types/index.ts:462](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L462)

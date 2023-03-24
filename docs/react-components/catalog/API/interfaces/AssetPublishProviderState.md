@@ -30,7 +30,7 @@ Handle publish asset message
 
 #### Defined in
 
-[types/index.ts:819](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L819)
+[types/index.ts:836](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L836)
 
 ___
 
@@ -42,7 +42,7 @@ All the parameters needed to publish an asset
 
 #### Defined in
 
-[types/index.ts:825](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L825)
+[types/index.ts:842](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L842)
 
 ___
 
@@ -54,7 +54,7 @@ Handle error publish asset message
 
 #### Defined in
 
-[types/index.ts:817](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L817)
+[types/index.ts:834](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L834)
 
 ___
 
@@ -81,7 +81,7 @@ Update asset parameters when some input changes
 
 #### Defined in
 
-[types/index.ts:836](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L836)
+[types/index.ts:853](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L853)
 
 ___
 
@@ -93,7 +93,7 @@ If the asset is publishing
 
 #### Defined in
 
-[types/index.ts:823](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L823)
+[types/index.ts:840](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L840)
 
 ___
 
@@ -105,7 +105,7 @@ If the asset was published correctly
 
 #### Defined in
 
-[types/index.ts:821](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L821)
+[types/index.ts:838](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L838)
 
 ___
 
@@ -143,7 +143,7 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:856](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L856)
+[types/index.ts:873](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L873)
 
 ___
 
@@ -183,7 +183,7 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:924](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L924)
+[types/index.ts:941](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L941)
 
 ___
 
@@ -223,7 +223,7 @@ The DDO object including the asset metadata and the DID
 
 #### Defined in
 
-[types/index.ts:889](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L889)
+[types/index.ts:906](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L906)
 
 ___
 
@@ -249,7 +249,7 @@ Reset all the parameters of the asset
 
 #### Defined in
 
-[types/index.ts:840](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L840)
+[types/index.ts:857](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L857)
 
 ___
 
@@ -261,7 +261,7 @@ Set asset message
 
 #### Defined in
 
-[types/index.ts:829](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L829)
+[types/index.ts:846](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L846)
 
 ___
 
@@ -273,7 +273,7 @@ Set parameters needed to publish an asset
 
 #### Defined in
 
-[types/index.ts:827](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L827)
+[types/index.ts:844](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L844)
 
 ___
 
@@ -285,4 +285,4 @@ Set error asset message
 
 #### Defined in
 
-[types/index.ts:831](https://github.com/nevermined-io/react-components/blob/8680a5c/catalog/src/types/index.ts#L831)
+[types/index.ts:848](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L848)
