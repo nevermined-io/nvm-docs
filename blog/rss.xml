@@ -4,7 +4,7 @@
         <title>Nevermined Documentation Blog</title>
         <link>https://docs.nevermined.io/blog</link>
         <description>Nevermined Documentation Blog</description>
-        <lastBuildDate>Mon, 20 Mar 2023 13:29:11 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Mar 2023 14:46:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[The last 10 posts of Nevermined Medium]]></title>
             <link>https://docs.nevermined.io/blog/index</link>
             <guid>https://docs.nevermined.io/blog/index</guid>
-            <pubDate>Mon, 20 Mar 2023 13:29:11 GMT</pubDate>
+            <pubDate>Fri, 24 Mar 2023 14:46:52 GMT</pubDate>
             <description><![CDATA[Blog Posts]]></description>
             <content:encoded><![CDATA[<div></div>]]></content:encoded>
         </item>
