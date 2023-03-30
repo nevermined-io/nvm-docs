@@ -22822,6 +22822,71 @@ function _msgSender() internal view virtual returns (address ret)
 function _msgData() internal view virtual returns (bytes ret)
 ```
 
+## NFT1155SubscriptionUpgradeable
+
+### MintedTokens
+
+```solidity
+struct MintedTokens {
+  uint256 amountMinted;
+  uint256 expirationBlock;
+  uint256 mintBlock;
+}
+```
+
+### _tokens
+
+```solidity
+mapping(bytes32 => struct NFT1155SubscriptionUpgradeable.MintedTokens[]) _tokens
+```
+
+### mint
+
+```solidity
+function mint(address to, uint256 tokenId, uint256 amount, uint256 expirationBlock, bytes data) public virtual
+```
+
+_This mint function allows to define when the tokenId of the NFT expires. 
+The minter should calculate this block number depending on the network velocity_
+
+### burn
+
+```solidity
+function burn(uint256 id, uint256 amount) public
+```
+
+### burn
+
+```solidity
+function burn(address to, uint256 id, uint256 amount) public
+```
+
+### balanceOf
+
+```solidity
+function balanceOf(address account, uint256 tokenId) public view virtual returns (uint256)
+```
+
+_See {NFT1155Upgradeableable-balanceOf}._
+
+### whenWasMinted
+
+```solidity
+function whenWasMinted(address owner, uint256 tokenId) public view returns (uint256[])
+```
+
+### getMintedEntries
+
+```solidity
+function getMintedEntries(address owner, uint256 tokenId) public view returns (struct NFT1155SubscriptionUpgradeable.MintedTokens[])
+```
+
+### _getTokenKey
+
+```solidity
+function _getTokenKey(address account, uint256 tokenId) internal pure returns (bytes32)
+```
+
 ## NFT1155Upgradeable
 
 _Implementation of the basic standard multi-token.
@@ -22880,13 +22945,13 @@ function mint(address to, uint256 id, uint256 amount, bytes data) public
 ### burn
 
 ```solidity
-function burn(uint256 id, uint256 amount) public
+function burn(uint256 id, uint256 amount) public virtual
 ```
 
 ### burn
 
 ```solidity
-function burn(address to, uint256 id, uint256 amount) public
+function burn(address to, uint256 id, uint256 amount) public virtual
 ```
 
 ### uri
@@ -22971,6 +23036,22 @@ _It protects NFT transfers to force going through service agreements and enforce
 
 ## NFT721SubscriptionUpgradeable
 
+### MintedTokens
+
+```solidity
+struct MintedTokens {
+  uint256 tokenId;
+  uint256 expirationBlock;
+  uint256 mintBlock;
+}
+```
+
+### _tokens
+
+```solidity
+mapping(address => struct NFT721SubscriptionUpgradeable.MintedTokens[]) _tokens
+```
+
 ### mint
 
 ```solidity
@@ -22982,6 +23063,15 @@ The minter should calculate this block number depending on the network velocity
 
 TransferNFT721Condition needs to have the `NVM_OPERATOR_ROLE`_
 
+### burn
+
+```solidity
+function burn(uint256 tokenId) public
+```
+
+_Burning tokens does not decrement the counter of tokens minted!
+     This is by design._
+
 ### balanceOf
 
 ```solidity
@@ -22989,6 +23079,18 @@ function balanceOf(address owner) public view returns (uint256)
 ```
 
 _See {IERC721-balanceOf}._
+
+### whenWasMinted
+
+```solidity
+function whenWasMinted(address owner) public view returns (uint256[])
+```
+
+### getMintedEntries
+
+```solidity
+function getMintedEntries(address owner) public view returns (struct NFT721SubscriptionUpgradeable.MintedTokens[])
+```
 
 ## NFT721Upgradeable
 
@@ -23051,7 +23153,7 @@ function getHowManyMinted() public view returns (uint256)
 ### burn
 
 ```solidity
-function burn(uint256 tokenId) public
+function burn(uint256 tokenId) public virtual
 ```
 
 _Burning tokens does not decrement the counter of tokens minted!
