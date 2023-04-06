@@ -28,7 +28,7 @@ Files to download after buy the asset
 
 #### Defined in
 
-[types/index.ts:748](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L748)
+[types/index.ts:748](https://github.com/nevermined-io/react-components/blob/099fc1a/catalog/src/types/index.ts#L748)
 
 ___
 
@@ -40,7 +40,7 @@ Who create the asset
 
 #### Defined in
 
-[types/index.ts:738](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L738)
+[types/index.ts:738](https://github.com/nevermined-io/react-components/blob/099fc1a/catalog/src/types/index.ts#L738)
 
 ___
 
@@ -52,7 +52,7 @@ The category that belong the asset
 
 #### Defined in
 
-[types/index.ts:744](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L744)
+[types/index.ts:744](https://github.com/nevermined-io/react-components/blob/099fc1a/catalog/src/types/index.ts#L744)
 
 ___
 
@@ -64,7 +64,7 @@ Description about what is the utility of the asset
 
 #### Defined in
 
-[types/index.ts:740](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L740)
+[types/index.ts:740](https://github.com/nevermined-io/react-components/blob/099fc1a/catalog/src/types/index.ts#L740)
 
 ___
 
@@ -76,7 +76,7 @@ Name of the asset
 
 #### Defined in
 
-[types/index.ts:736](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L736)
+[types/index.ts:736](https://github.com/nevermined-io/react-components/blob/099fc1a/catalog/src/types/index.ts#L736)
 
 ___
 
@@ -88,7 +88,7 @@ Price of the asset
 
 #### Defined in
 
-[types/index.ts:746](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L746)
+[types/index.ts:746](https://github.com/nevermined-io/react-components/blob/099fc1a/catalog/src/types/index.ts#L746)
 
 ___
 
@@ -100,4 +100,4 @@ The type of the asset
 
 #### Defined in
 
-[types/index.ts:742](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L742)
+[types/index.ts:742](https://github.com/nevermined-io/react-components/blob/099fc1a/catalog/src/types/index.ts#L742)

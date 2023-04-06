@@ -23,7 +23,7 @@ File title
 
 #### Defined in
 
-[types/index.ts:728](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L728)
+[types/index.ts:728](https://github.com/nevermined-io/react-components/blob/099fc1a/catalog/src/types/index.ts#L728)
 
 ___
 
@@ -35,4 +35,4 @@ File type: json, txt, etc...
 
 #### Defined in
 
-[types/index.ts:726](https://github.com/nevermined-io/react-components/blob/f13a3b1/catalog/src/types/index.ts#L726)
+[types/index.ts:726](https://github.com/nevermined-io/react-components/blob/099fc1a/catalog/src/types/index.ts#L726)
