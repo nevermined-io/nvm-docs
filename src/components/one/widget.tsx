@@ -13,7 +13,7 @@ export const Widget = () => {
       ref={onWidgetElementMounted}
       id="nvm-service-widget"
       {...{
-        ["nvm-did"]: 'did:nv:e8f4339f28567ef65b94fa1b5ef8f88d202fa4ea2180e307ac2040cecabf8383'
+        ["nvm-did"]: 'did:nv:fca684cd08d1a8abac14ea40ff6a9dfc690694987c1a918c02c118f433d47756'
       }}
     />
   )
