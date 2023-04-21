@@ -39,4 +39,4 @@ It is successfully completed will return the `agreementId`
 
 #### Defined in
 
-[types/index.ts:810](https://github.com/nevermined-io/react-components/blob/fb52fe4/catalog/src/types/index.ts#L810)
+[types/index.ts:810](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L810)
