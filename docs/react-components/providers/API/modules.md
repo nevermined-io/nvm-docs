@@ -49,7 +49,7 @@
 
 #### Defined in
 
-[types.ts:4](https://github.com/nevermined-io/react-components/blob/0b67473/providers/src/types.ts#L4)
+[types.ts:4](https://github.com/nevermined-io/react-components/blob/a0badcf/providers/src/types.ts#L4)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[types.ts:21](https://github.com/nevermined-io/react-components/blob/0b67473/providers/src/types.ts#L21)
+[types.ts:21](https://github.com/nevermined-io/react-components/blob/a0badcf/providers/src/types.ts#L21)
 
 ## Variables
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[client.tsx:43](https://github.com/nevermined-io/react-components/blob/0b67473/providers/src/client.tsx#L43)
+[client.tsx:43](https://github.com/nevermined-io/react-components/blob/a0badcf/providers/src/client.tsx#L43)
 
 ## Functions
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[client.tsx:45](https://github.com/nevermined-io/react-components/blob/0b67473/providers/src/client.tsx#L45)
+[client.tsx:45](https://github.com/nevermined-io/react-components/blob/a0badcf/providers/src/client.tsx#L45)
 
 ___
 
@@ -163,7 +163,7 @@ All the functionalities to handle the wallet in dapp
 
 #### Defined in
 
-[providers.tsx:43](https://github.com/nevermined-io/react-components/blob/0b67473/providers/src/providers.tsx#L43)
+[providers.tsx:43](https://github.com/nevermined-io/react-components/blob/a0badcf/providers/src/providers.tsx#L43)
 
 ___
 
@@ -177,7 +177,7 @@ ___
 
 #### Defined in
 
-[client.tsx:130](https://github.com/nevermined-io/react-components/blob/0b67473/providers/src/client.tsx#L130)
+[client.tsx:130](https://github.com/nevermined-io/react-components/blob/a0badcf/providers/src/client.tsx#L130)
 
 ___
 
@@ -197,4 +197,4 @@ ___
 
 #### Defined in
 
-[utils/index.ts:1](https://github.com/nevermined-io/react-components/blob/0b67473/providers/src/utils/index.ts#L1)
+[utils/index.ts:1](https://github.com/nevermined-io/react-components/blob/a0badcf/providers/src/utils/index.ts#L1)

@@ -21,7 +21,7 @@ The block number of the blockchain which the asset was updated
 
 #### Defined in
 
-[types/index.ts:782](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L782)
+[types/index.ts:807](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L807)
 
 ___
 
@@ -33,7 +33,7 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:776](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L776)
+[types/index.ts:801](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L801)
 
 ___
 
@@ -45,7 +45,7 @@ The last modification of the asset
 
 #### Defined in
 
-[types/index.ts:780](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L780)
+[types/index.ts:805](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L805)
 
 ___
 
@@ -57,4 +57,4 @@ Owner of the asset
 
 #### Defined in
 
-[types/index.ts:778](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L778)
+[types/index.ts:803](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L803)

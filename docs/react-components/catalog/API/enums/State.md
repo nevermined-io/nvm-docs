@@ -18,7 +18,7 @@ Entity created
 
 #### Defined in
 
-[types/index.ts:343](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L343)
+[types/index.ts:357](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L357)
 
 ___
 
@@ -30,7 +30,7 @@ Entity disable or not available
 
 #### Defined in
 
-[types/index.ts:339](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L339)
+[types/index.ts:353](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L353)
 
 ___
 
@@ -42,4 +42,4 @@ Entity not validated yet or incomplete
 
 #### Defined in
 
-[types/index.ts:341](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L341)
+[types/index.ts:355](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L355)

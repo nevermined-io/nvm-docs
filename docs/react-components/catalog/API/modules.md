@@ -35,6 +35,7 @@
 - [NeverminedProviderContext](interfaces/NeverminedProviderContext.md)
 - [NeverminedProviderProps](interfaces/NeverminedProviderProps.md)
 - [RegisterEvent](interfaces/RegisterEvent.md)
+- [SearchOptions](interfaces/SearchOptions.md)
 - [SubscribeModule](interfaces/SubscribeModule.md)
 - [SubscriptionsAndDatasetsDDOs](interfaces/SubscriptionsAndDatasetsDDOs.md)
 - [SubscriptionsAndServicesDDOs](interfaces/SubscriptionsAndServicesDDOs.md)
@@ -68,7 +69,7 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:303](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L303)
+[types/index.ts:317](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L317)
 
 ## Functions
 
@@ -97,7 +98,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:46](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/utils/index.ts#L46)
+[utils/index.ts:47](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/utils/index.ts#L47)
 
 ___
 
@@ -124,7 +125,7 @@ ___
 
 #### Defined in
 
-[utils/index.ts:202](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/utils/index.ts#L202)
+[utils/index.ts:223](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/utils/index.ts#L223)
 
 ___
 
@@ -150,7 +151,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:122](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/utils/index.ts#L122)
+[utils/index.ts:123](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/utils/index.ts#L123)
 
 ___
 
@@ -173,7 +174,7 @@ Returns current account registered in SDK
 
 #### Defined in
 
-[utils/index.ts:23](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/utils/index.ts#L23)
+[utils/index.ts:24](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/utils/index.ts#L24)
 
 ___
 
@@ -194,13 +195,13 @@ ___
 
 #### Defined in
 
-[utils/index.ts:217](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/utils/index.ts#L217)
+[utils/index.ts:238](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/utils/index.ts#L238)
 
 ___
 
 ### getSubscriptionsAndDatasets
 
-▸ **getSubscriptionsAndDatasets**(`subscriptionsDDOs`, `sdk`): `Promise`<{ `datasets`: `DDO`[] = query.results; `subscription`: `DDO` = ddo }[]\>
+▸ **getSubscriptionsAndDatasets**(`subscriptionsDDOs`, `sdk`, `searchOptions?`): `Promise`<{ `datasets`: `DDO`[] = query.results; `subscription`: `DDO` = ddo }[]\>
 
 #### Parameters
 
@@ -208,6 +209,7 @@ ___
 | :------ | :------ |
 | `subscriptionsDDOs` | `DDO`[] |
 | `sdk` | `Nevermined` |
+| `searchOptions?` | [`SearchOptions`](interfaces/SearchOptions.md) |
 
 #### Returns
 
@@ -215,13 +217,13 @@ ___
 
 #### Defined in
 
-[utils/index.ts:189](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/utils/index.ts#L189)
+[utils/index.ts:200](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/utils/index.ts#L200)
 
 ___
 
 ### getSubscriptionsAndServices
 
-▸ **getSubscriptionsAndServices**(`subscriptionsDDOs`, `sdk`): `Promise`<{ `services`: `DDO`[] = query.results; `subscription`: `DDO` = ddo }[]\>
+▸ **getSubscriptionsAndServices**(`subscriptionsDDOs`, `sdk`, `searchOptions?`): `Promise`<{ `services`: `DDO`[] = query.results; `subscription`: `DDO` = ddo }[]\>
 
 #### Parameters
 
@@ -229,6 +231,7 @@ ___
 | :------ | :------ |
 | `subscriptionsDDOs` | `DDO`[] |
 | `sdk` | `Nevermined` |
+| `searchOptions?` | [`SearchOptions`](interfaces/SearchOptions.md) |
 
 #### Returns
 
@@ -236,7 +239,7 @@ ___
 
 #### Defined in
 
-[utils/index.ts:176](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/utils/index.ts#L176)
+[utils/index.ts:177](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/utils/index.ts#L177)
 
 ___
 
@@ -262,7 +265,7 @@ Return the result data of the request
 
 #### Defined in
 
-[utils/index.ts:151](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/utils/index.ts#L151)
+[utils/index.ts:152](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/utils/index.ts#L152)
 
 ___
 
@@ -286,7 +289,7 @@ Checks if object is empty
 
 #### Defined in
 
-[utils/index.ts:17](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/utils/index.ts#L17)
+[utils/index.ts:18](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/utils/index.ts#L18)
 
 ___
 
@@ -312,4 +315,4 @@ Array of object with the document id of each fullfilled events
 
 #### Defined in
 
-[utils/index.ts:93](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/utils/index.ts#L93)
+[utils/index.ts:94](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/utils/index.ts#L94)

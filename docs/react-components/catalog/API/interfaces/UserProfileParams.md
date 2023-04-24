@@ -26,7 +26,7 @@ Additional information of the user like picture, profesional profire, etc...
 
 #### Defined in
 
-[types/index.ts:370](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L370)
+[types/index.ts:384](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L384)
 
 ___
 
@@ -38,7 +38,7 @@ When the user was created
 
 #### Defined in
 
-[types/index.ts:366](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L366)
+[types/index.ts:380](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L380)
 
 ___
 
@@ -50,7 +50,7 @@ The email of the user
 
 #### Defined in
 
-[types/index.ts:364](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L364)
+[types/index.ts:378](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L378)
 
 ___
 
@@ -62,7 +62,7 @@ The user can be shown
 
 #### Defined in
 
-[types/index.ts:356](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L356)
+[types/index.ts:370](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L370)
 
 ___
 
@@ -74,7 +74,7 @@ The real name of the user
 
 #### Defined in
 
-[types/index.ts:362](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L362)
+[types/index.ts:376](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L376)
 
 ___
 
@@ -86,7 +86,7 @@ The nickname of the user
 
 #### Defined in
 
-[types/index.ts:360](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L360)
+[types/index.ts:374](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L374)
 
 ___
 
@@ -98,7 +98,7 @@ The state of the user account
 
 #### Defined in
 
-[types/index.ts:358](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L358)
+[types/index.ts:372](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L372)
 
 ___
 
@@ -110,7 +110,7 @@ When was the last user profile updated
 
 #### Defined in
 
-[types/index.ts:368](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L368)
+[types/index.ts:382](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L382)
 
 ___
 
@@ -122,4 +122,4 @@ Id of the user
 
 #### Defined in
 
-[types/index.ts:354](https://github.com/nevermined-io/react-components/blob/0b67473/catalog/src/types/index.ts#L354)
+[types/index.ts:368](https://github.com/nevermined-io/react-components/blob/a0badcf/catalog/src/types/index.ts#L368)
