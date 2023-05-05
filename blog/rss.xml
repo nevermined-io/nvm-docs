@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>Nevermined Documentation Blog</title>
+        <title>Nevermined Core Protocol Documentation Blog</title>
         <link>https://docs.nevermined.io/blog</link>
-        <description>Nevermined Documentation Blog</description>
-        <lastBuildDate>Tue, 02 May 2023 14:56:49 GMT</lastBuildDate>
+        <description>Nevermined Core Protocol Documentation Blog</description>
+        <lastBuildDate>Fri, 05 May 2023 10:50:51 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[The last 10 posts of Nevermined Medium]]></title>
             <link>https://docs.nevermined.io/blog/index</link>
             <guid>https://docs.nevermined.io/blog/index</guid>
-            <pubDate>Tue, 02 May 2023 14:56:49 GMT</pubDate>
+            <pubDate>Fri, 05 May 2023 10:50:51 GMT</pubDate>
             <description><![CDATA[Blog Posts]]></description>
             <content:encoded><![CDATA[<div></div>]]></content:encoded>
         </item>

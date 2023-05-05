@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
-  <ShortName>Nevermined Documentation</ShortName>
-  <Description>Search Nevermined Documentation</Description>
+  <ShortName>Nevermined Core Protocol Documentation</ShortName>
+  <Description>Search Nevermined Core Protocol Documentation</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <Image width="16" height="16" type="image/x-icon">https://docs.nevermined.io/img/favicon.ico</Image>
   <Url type="text/html" method="get" template="https://docs.nevermined.io/search?q={searchTerms}"/>
