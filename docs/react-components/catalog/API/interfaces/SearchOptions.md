@@ -21,7 +21,7 @@ If app to search have an id
 
 #### Defined in
 
-[types/index.ts:313](https://github.com/nevermined-io/react-components/blob/109ddcb/catalog/src/types/index.ts#L313)
+[types/index.ts:313](https://github.com/nevermined-io/react-components/blob/62199b1/catalog/src/types/index.ts#L313)
 
 ___
 
@@ -33,7 +33,7 @@ Number of results per page
 
 #### Defined in
 
-[types/index.ts:307](https://github.com/nevermined-io/react-components/blob/109ddcb/catalog/src/types/index.ts#L307)
+[types/index.ts:307](https://github.com/nevermined-io/react-components/blob/62199b1/catalog/src/types/index.ts#L307)
 
 ___
 
@@ -45,7 +45,7 @@ Number of page
 
 #### Defined in
 
-[types/index.ts:309](https://github.com/nevermined-io/react-components/blob/109ddcb/catalog/src/types/index.ts#L309)
+[types/index.ts:309](https://github.com/nevermined-io/react-components/blob/62199b1/catalog/src/types/index.ts#L309)
 
 ___
 
@@ -57,4 +57,4 @@ result order
 
 #### Defined in
 
-[types/index.ts:311](https://github.com/nevermined-io/react-components/blob/109ddcb/catalog/src/types/index.ts#L311)
+[types/index.ts:311](https://github.com/nevermined-io/react-components/blob/62199b1/catalog/src/types/index.ts#L311)
