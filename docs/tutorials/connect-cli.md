@@ -117,7 +117,7 @@ Let's define first what is our use case:
 
 :::note Use Case
 
-As a content creator I want to tokenize a fractal I created. I want to make available **10 editions** of it, and sell them for **100 USDC** each of them. Whoever owning one of these editions will be able to have **exclusive access** to the fractal file.
+As a content creator I want to tokenize a fractal I created. I want to make available **10 editions** of it, and sell them for **100 USDC** each of them. Whoever owns one of these editions will be able to have **exclusive access** to the fractal file.
 
 :::
 
