@@ -13,11 +13,11 @@ In this tutorial you will learn how you can integrate Wallet Provider from the C
 ## Requirements
 For the tutorial you will need:
 
-- A extension of [Metamask](https://metamask.io/) installed in the browser
+- An extension of [Metamask](https://metamask.io/) installed in the browser
 - [node](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) need to be installed
 
 ## How to install Catalog Provider
-Firstable to install [Catalog Provider](../react-components/providers/README.md) you just need to run:
+First to install [Catalog Provider](../react-components/providers/README.md) you just need to run:
 
 <Tabs>
   <TabItem label="yarn" value="yarn" default>
@@ -97,7 +97,7 @@ In this component we have the `login` and `logout` functions and the `walletAddr
 How you can see, we also have `getConnectors` which includes all the providers available to connect.
 
 ## Config your network (optional)
-At least that you need to set differents networks for your dapp than [polygon](https://polygon.technology/) chains config is not needed, anyway here we show you how should look the config object.
+At least that you need to set different networks for your dapp than [polygon](https://polygon.technology/) chains config is not needed, anyway here we show you how should look the config object.
 
 ```ts
 const ChainsConfig: Chain[] = [
