@@ -56,7 +56,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/account.ts:76](https://github.com/nevermined-io/react-components/blob/98af18d/catalog/src/services/account.ts#L76)
+[services/account.ts:76](https://github.com/nevermined-io/react-components/blob/b3fb28e/catalog/src/services/account.ts#L76)
 
 ___
 
@@ -103,7 +103,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/account.ts:32](https://github.com/nevermined-io/react-components/blob/98af18d/catalog/src/services/account.ts#L32)
+[services/account.ts:32](https://github.com/nevermined-io/react-components/blob/b3fb28e/catalog/src/services/account.ts#L32)
 
 ___
 
@@ -132,7 +132,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[services/account.ts:495](https://github.com/nevermined-io/react-components/blob/98af18d/catalog/src/services/account.ts#L495)
+[services/account.ts:498](https://github.com/nevermined-io/react-components/blob/b3fb28e/catalog/src/services/account.ts#L498)
 
 ___
 
@@ -163,7 +163,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[services/account.ts:530](https://github.com/nevermined-io/react-components/blob/98af18d/catalog/src/services/account.ts#L530)
+[services/account.ts:533](https://github.com/nevermined-io/react-components/blob/b3fb28e/catalog/src/services/account.ts#L533)
 
 ___
 
@@ -194,7 +194,7 @@ true if the user holds the NFT
 
 #### Defined in
 
-[services/account.ts:566](https://github.com/nevermined-io/react-components/blob/98af18d/catalog/src/services/account.ts#L566)
+[services/account.ts:569](https://github.com/nevermined-io/react-components/blob/b3fb28e/catalog/src/services/account.ts#L569)
 
 ___
 
@@ -415,8 +415,8 @@ export const UserProfile: NextPage = () => {
 | `submitUserProfile` | () => `Promise`<`void`\> | Submit user profile |
 | `successMessage` | `string` | Success messages |
 | `userProfile` | `Partial`<[`UserProfileParams`](../interfaces/UserProfileParams.md)\> | User profile parameters |
-| `userProfileLoadingStatus` | ``null`` \| ``"loading"`` \| ``"loaded"`` \| ``"failed"`` | Indicates current user profile loading status |
+| `userProfileLoadingStatus` | ``null`` \| ``"loading"`` \| ``"loaded"`` \| ``"failed"`` \| ``"notSigned"`` | Indicates current user profile loading status |
 
 #### Defined in
 
-[services/account.ts:288](https://github.com/nevermined-io/react-components/blob/98af18d/catalog/src/services/account.ts#L288)
+[services/account.ts:288](https://github.com/nevermined-io/react-components/blob/b3fb28e/catalog/src/services/account.ts#L288)

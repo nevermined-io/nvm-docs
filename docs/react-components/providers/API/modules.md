@@ -2,8 +2,13 @@
 
 ## Table of contents
 
+### Enumerations
+
+- [ProviderStatus](enums/ProviderStatus.md)
+
 ### Interfaces
 
+- [DataStatus](interfaces/DataStatus.md)
 - [WalletProviderState](interfaces/WalletProviderState.md)
 
 ### Type Aliases
@@ -49,7 +54,7 @@
 
 #### Defined in
 
-[types.ts:4](https://github.com/nevermined-io/react-components/blob/98af18d/providers/src/types.ts#L4)
+[types.ts:4](https://github.com/nevermined-io/react-components/blob/b3fb28e/providers/src/types.ts#L4)
 
 ___
 
@@ -69,7 +74,7 @@ ___
 
 #### Defined in
 
-[types.ts:21](https://github.com/nevermined-io/react-components/blob/98af18d/providers/src/types.ts#L21)
+[types.ts:21](https://github.com/nevermined-io/react-components/blob/b3fb28e/providers/src/types.ts#L21)
 
 ## Variables
 
@@ -79,7 +84,7 @@ ___
 
 #### Defined in
 
-[client.tsx:43](https://github.com/nevermined-io/react-components/blob/98af18d/providers/src/client.tsx#L43)
+[client.tsx:45](https://github.com/nevermined-io/react-components/blob/b3fb28e/providers/src/client.tsx#L45)
 
 ## Functions
 
@@ -103,7 +108,7 @@ ___
 
 #### Defined in
 
-[client.tsx:45](https://github.com/nevermined-io/react-components/blob/98af18d/providers/src/client.tsx#L45)
+[client.tsx:47](https://github.com/nevermined-io/react-components/blob/b3fb28e/providers/src/client.tsx#L47)
 
 ___
 
@@ -163,7 +168,7 @@ All the functionalities to handle the wallet in dapp
 
 #### Defined in
 
-[providers.tsx:43](https://github.com/nevermined-io/react-components/blob/98af18d/providers/src/providers.tsx#L43)
+[providers.tsx:43](https://github.com/nevermined-io/react-components/blob/b3fb28e/providers/src/providers.tsx#L43)
 
 ___
 
@@ -177,7 +182,7 @@ ___
 
 #### Defined in
 
-[client.tsx:130](https://github.com/nevermined-io/react-components/blob/98af18d/providers/src/client.tsx#L130)
+[client.tsx:158](https://github.com/nevermined-io/react-components/blob/b3fb28e/providers/src/client.tsx#L158)
 
 ___
 
@@ -197,4 +202,4 @@ ___
 
 #### Defined in
 
-[utils/index.ts:1](https://github.com/nevermined-io/react-components/blob/98af18d/providers/src/utils/index.ts#L1)
+[utils/index.ts:1](https://github.com/nevermined-io/react-components/blob/b3fb28e/providers/src/utils/index.ts#L1)
