@@ -56,7 +56,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/account.ts:77](https://github.com/nevermined-io/react-components/blob/7688b12/catalog/src/services/account.ts#L77)
+[services/account.ts:77](https://github.com/nevermined-io/react-components/blob/9a55105/catalog/src/services/account.ts#L77)
 
 ___
 
@@ -103,7 +103,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/account.ts:33](https://github.com/nevermined-io/react-components/blob/7688b12/catalog/src/services/account.ts#L33)
+[services/account.ts:33](https://github.com/nevermined-io/react-components/blob/9a55105/catalog/src/services/account.ts#L33)
 
 ___
 
@@ -132,7 +132,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[services/account.ts:501](https://github.com/nevermined-io/react-components/blob/7688b12/catalog/src/services/account.ts#L501)
+[services/account.ts:508](https://github.com/nevermined-io/react-components/blob/9a55105/catalog/src/services/account.ts#L508)
 
 ___
 
@@ -163,7 +163,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[services/account.ts:536](https://github.com/nevermined-io/react-components/blob/7688b12/catalog/src/services/account.ts#L536)
+[services/account.ts:543](https://github.com/nevermined-io/react-components/blob/9a55105/catalog/src/services/account.ts#L543)
 
 ___
 
@@ -194,7 +194,7 @@ true if the user holds the NFT
 
 #### Defined in
 
-[services/account.ts:572](https://github.com/nevermined-io/react-components/blob/7688b12/catalog/src/services/account.ts#L572)
+[services/account.ts:579](https://github.com/nevermined-io/react-components/blob/9a55105/catalog/src/services/account.ts#L579)
 
 ___
 
@@ -411,6 +411,7 @@ export const UserProfile: NextPage = () => {
 | `isUpdated` | `boolean` | If profile is updated |
 | `newAddress` | `string` | New address to add in the user profile |
 | `reloadUserProfile` | () => `void` | Reload current user profile |
+| `resetUserProfileLoadingStatus` | () => `void` | Reset loading status |
 | `setUserProfile` | `Dispatch`<`SetStateAction`<`Partial`<[`UserProfileParams`](../interfaces/UserProfileParams.md)\>\>\> | Set parameters to user profile |
 | `submitUserProfile` | () => `Promise`<`void`\> | Submit user profile |
 | `successMessage` | `string` | Success messages |
@@ -419,4 +420,4 @@ export const UserProfile: NextPage = () => {
 
 #### Defined in
 
-[services/account.ts:289](https://github.com/nevermined-io/react-components/blob/7688b12/catalog/src/services/account.ts#L289)
+[services/account.ts:289](https://github.com/nevermined-io/react-components/blob/9a55105/catalog/src/services/account.ts#L289)
