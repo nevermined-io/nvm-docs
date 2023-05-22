@@ -15,7 +15,7 @@
 
 #### Defined in
 
-[types/index.ts:986](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L986)
+[types/index.ts:987](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L987)
 
 ___
 
@@ -25,4 +25,4 @@ ___
 
 #### Defined in
 
-[types/index.ts:985](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L985)
+[types/index.ts:986](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L986)

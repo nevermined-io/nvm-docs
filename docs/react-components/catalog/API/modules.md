@@ -46,6 +46,10 @@
 
 - [DID](modules.md#did)
 
+### Variables
+
+- [emptyQueryResult](modules.md#emptyqueryresult)
+
 ### Functions
 
 - [conductOrder](modules.md#conductorder)
@@ -69,7 +73,17 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:317](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L317)
+[types/index.ts:318](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L318)
+
+## Variables
+
+### emptyQueryResult
+
+• `Const` **emptyQueryResult**: `QueryResult`
+
+#### Defined in
+
+[utils/index.ts:246](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/utils/index.ts#L246)
 
 ## Functions
 
@@ -98,7 +112,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:47](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/utils/index.ts#L47)
+[utils/index.ts:48](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/utils/index.ts#L48)
 
 ___
 
@@ -125,7 +139,7 @@ ___
 
 #### Defined in
 
-[utils/index.ts:223](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/utils/index.ts#L223)
+[utils/index.ts:224](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/utils/index.ts#L224)
 
 ___
 
@@ -151,7 +165,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:123](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/utils/index.ts#L123)
+[utils/index.ts:124](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/utils/index.ts#L124)
 
 ___
 
@@ -174,7 +188,7 @@ Returns current account registered in SDK
 
 #### Defined in
 
-[utils/index.ts:24](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/utils/index.ts#L24)
+[utils/index.ts:25](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/utils/index.ts#L25)
 
 ___
 
@@ -195,13 +209,13 @@ ___
 
 #### Defined in
 
-[utils/index.ts:238](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/utils/index.ts#L238)
+[utils/index.ts:239](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/utils/index.ts#L239)
 
 ___
 
 ### getSubscriptionsAndDatasets
 
-▸ **getSubscriptionsAndDatasets**(`subscriptionsDDOs`, `sdk`, `searchOptions?`): `Promise`<{ `datasets`: `DDO`[] = query.results; `subscription`: `DDO` = ddo }[]\>
+▸ **getSubscriptionsAndDatasets**(`subscriptionsDDOs`, `sdk`, `searchOptions?`): `Promise`<{ `datasets`: `QueryResult` = query; `subscription`: `DDO` = ddo }[]\>
 
 #### Parameters
 
@@ -213,17 +227,17 @@ ___
 
 #### Returns
 
-`Promise`<{ `datasets`: `DDO`[] = query.results; `subscription`: `DDO` = ddo }[]\>
+`Promise`<{ `datasets`: `QueryResult` = query; `subscription`: `DDO` = ddo }[]\>
 
 #### Defined in
 
-[utils/index.ts:200](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/utils/index.ts#L200)
+[utils/index.ts:201](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/utils/index.ts#L201)
 
 ___
 
 ### getSubscriptionsAndServices
 
-▸ **getSubscriptionsAndServices**(`subscriptionsDDOs`, `sdk`, `searchOptions?`): `Promise`<{ `services`: `DDO`[] = query.results; `subscription`: `DDO` = ddo }[]\>
+▸ **getSubscriptionsAndServices**(`subscriptionsDDOs`, `sdk`, `searchOptions?`): `Promise`<{ `services`: `QueryResult` = query; `subscription`: `DDO` = ddo }[]\>
 
 #### Parameters
 
@@ -235,11 +249,11 @@ ___
 
 #### Returns
 
-`Promise`<{ `services`: `DDO`[] = query.results; `subscription`: `DDO` = ddo }[]\>
+`Promise`<{ `services`: `QueryResult` = query; `subscription`: `DDO` = ddo }[]\>
 
 #### Defined in
 
-[utils/index.ts:177](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/utils/index.ts#L177)
+[utils/index.ts:178](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/utils/index.ts#L178)
 
 ___
 
@@ -265,7 +279,7 @@ Return the result data of the request
 
 #### Defined in
 
-[utils/index.ts:152](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/utils/index.ts#L152)
+[utils/index.ts:153](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/utils/index.ts#L153)
 
 ___
 
@@ -289,7 +303,7 @@ Checks if object is empty
 
 #### Defined in
 
-[utils/index.ts:18](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/utils/index.ts#L18)
+[utils/index.ts:19](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/utils/index.ts#L19)
 
 ___
 
@@ -315,4 +329,4 @@ Array of object with the document id of each fullfilled events
 
 #### Defined in
 
-[utils/index.ts:94](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/utils/index.ts#L94)
+[utils/index.ts:95](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/utils/index.ts#L95)

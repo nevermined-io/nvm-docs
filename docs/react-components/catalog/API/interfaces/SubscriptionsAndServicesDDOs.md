@@ -11,11 +11,11 @@
 
 ### services
 
-• **services**: `DDO`[]
+• **services**: `QueryResult`
 
 #### Defined in
 
-[types/index.ts:991](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L991)
+[types/index.ts:992](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L992)
 
 ___
 
@@ -25,4 +25,4 @@ ___
 
 #### Defined in
 
-[types/index.ts:990](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L990)
+[types/index.ts:991](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L991)

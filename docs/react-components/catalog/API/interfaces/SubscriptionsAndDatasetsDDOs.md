@@ -11,11 +11,11 @@
 
 ### datasets
 
-• **datasets**: `DDO`[]
+• **datasets**: `QueryResult`
 
 #### Defined in
 
-[types/index.ts:996](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L996)
+[types/index.ts:997](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L997)
 
 ___
 
@@ -25,4 +25,4 @@ ___
 
 #### Defined in
 
-[types/index.ts:995](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L995)
+[types/index.ts:996](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L996)

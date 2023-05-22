@@ -22,13 +22,13 @@ Asset parameters needed to publish
 
 ### assetFiles
 
-• **assetFiles**: [`AssetFile`](AssetFile.md)[]
+• **assetFiles**: `MetaDataExternalResource`[]
 
 Files to download after buy the asset
 
 #### Defined in
 
-[types/index.ts:773](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L773)
+[types/index.ts:774](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L774)
 
 ___
 
@@ -40,7 +40,7 @@ Who create the asset
 
 #### Defined in
 
-[types/index.ts:763](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L763)
+[types/index.ts:764](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L764)
 
 ___
 
@@ -52,7 +52,7 @@ The category that belong the asset
 
 #### Defined in
 
-[types/index.ts:769](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L769)
+[types/index.ts:770](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L770)
 
 ___
 
@@ -64,7 +64,7 @@ Description about what is the utility of the asset
 
 #### Defined in
 
-[types/index.ts:765](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L765)
+[types/index.ts:766](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L766)
 
 ___
 
@@ -76,7 +76,7 @@ Name of the asset
 
 #### Defined in
 
-[types/index.ts:761](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L761)
+[types/index.ts:762](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L762)
 
 ___
 
@@ -88,7 +88,7 @@ Price of the asset
 
 #### Defined in
 
-[types/index.ts:771](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L771)
+[types/index.ts:772](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L772)
 
 ___
 
@@ -100,4 +100,4 @@ The type of the asset
 
 #### Defined in
 
-[types/index.ts:767](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L767)
+[types/index.ts:768](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L768)

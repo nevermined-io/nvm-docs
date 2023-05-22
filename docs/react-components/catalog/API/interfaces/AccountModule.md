@@ -44,7 +44,7 @@ The new generated token
 
 #### Defined in
 
-[types/index.ts:482](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L482)
+[types/index.ts:483](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L483)
 
 ___
 
@@ -66,17 +66,17 @@ The address token signer
 
 #### Defined in
 
-[types/index.ts:492](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L492)
+[types/index.ts:493](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L493)
 
 ___
 
 ### getAssociatedDatasets
 
-• **getAssociatedDatasets**: (`did`: `string`, `searchOptions?`: [`SearchOptions`](SearchOptions.md)) => `Promise`<`DDO`[]\>
+• **getAssociatedDatasets**: (`did`: `string`, `searchOptions?`: [`SearchOptions`](SearchOptions.md)) => `Promise`<`QueryResult`\>
 
 #### Type declaration
 
-▸ (`did`, `searchOptions?`): `Promise`<`DDO`[]\>
+▸ (`did`, `searchOptions?`): `Promise`<`QueryResult`\>
 
 Get all the datasets associated to a subscription
 
@@ -89,23 +89,23 @@ Get all the datasets associated to a subscription
 
 ##### Returns
 
-`Promise`<`DDO`[]\>
+`Promise`<`QueryResult`\>
 
 associated datasets to subscriptions
 
 #### Defined in
 
-[types/index.ts:439](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L439)
+[types/index.ts:440](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L440)
 
 ___
 
 ### getAssociatedServices
 
-• **getAssociatedServices**: (`did`: `string`, `searchOptions?`: [`SearchOptions`](SearchOptions.md)) => `Promise`<`DDO`[]\>
+• **getAssociatedServices**: (`did`: `string`, `searchOptions?`: [`SearchOptions`](SearchOptions.md)) => `Promise`<`QueryResult`\>
 
 #### Type declaration
 
-▸ (`did`, `searchOptions?`): `Promise`<`DDO`[]\>
+▸ (`did`, `searchOptions?`): `Promise`<`QueryResult`\>
 
 Get all the services associated a subscription
 
@@ -118,13 +118,13 @@ Get all the services associated a subscription
 
 ##### Returns
 
-`Promise`<`DDO`[]\>
+`Promise`<`QueryResult`\>
 
 associated services to subscriptions
 
 #### Defined in
 
-[types/index.ts:432](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L432)
+[types/index.ts:433](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L433)
 
 ___
 
@@ -152,17 +152,17 @@ List of assets which was bought by the address given as argument
 
 #### Defined in
 
-[types/index.ts:418](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L418)
+[types/index.ts:419](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L419)
 
 ___
 
 ### getPublishedSubscriptions
 
-• **getPublishedSubscriptions**: (`searchOptions?`: [`SearchOptions`](SearchOptions.md)) => `Promise`<`DDO`[]\>
+• **getPublishedSubscriptions**: (`searchOptions?`: [`SearchOptions`](SearchOptions.md)) => `Promise`<`QueryResult`\>
 
 #### Type declaration
 
-▸ (`searchOptions?`): `Promise`<`DDO`[]\>
+▸ (`searchOptions?`): `Promise`<`QueryResult`\>
 
 Get only published Subscriptions
 
@@ -174,13 +174,13 @@ Get only published Subscriptions
 
 ##### Returns
 
-`Promise`<`DDO`[]\>
+`Promise`<`QueryResult`\>
 
 published subscriptions
 
 #### Defined in
 
-[types/index.ts:425](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L425)
+[types/index.ts:426](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L426)
 
 ___
 
@@ -208,7 +208,7 @@ published subscriptions and its datasets
 
 #### Defined in
 
-[types/index.ts:453](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L453)
+[types/index.ts:454](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L454)
 
 ___
 
@@ -236,17 +236,17 @@ published subscriptions and service
 
 #### Defined in
 
-[types/index.ts:445](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L445)
+[types/index.ts:446](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L446)
 
 ___
 
 ### getPurchasedSubscriptions
 
-• **getPurchasedSubscriptions**: (`searchOptions?`: [`SearchOptions`](SearchOptions.md)) => `Promise`<`DDO`[]\>
+• **getPurchasedSubscriptions**: (`searchOptions?`: [`SearchOptions`](SearchOptions.md)) => `Promise`<`QueryResult`\>
 
 #### Type declaration
 
-▸ (`searchOptions?`): `Promise`<`DDO`[]\>
+▸ (`searchOptions?`): `Promise`<`QueryResult`\>
 
 Get only purchased Subscriptions
 
@@ -258,13 +258,13 @@ Get only purchased Subscriptions
 
 ##### Returns
 
-`Promise`<`DDO`[]\>
+`Promise`<`QueryResult`\>
 
 purchased subscriptions
 
 #### Defined in
 
-[types/index.ts:461](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L461)
+[types/index.ts:462](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L462)
 
 ___
 
@@ -292,7 +292,7 @@ purchased subscriptions and its datasets
 
 #### Defined in
 
-[types/index.ts:475](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L475)
+[types/index.ts:476](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L476)
 
 ___
 
@@ -320,7 +320,7 @@ purchased subscriptions and services
 
 #### Defined in
 
-[types/index.ts:467](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L467)
+[types/index.ts:468](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L468)
 
 ___
 
@@ -348,7 +348,7 @@ List of assets which was published by the address given
 
 #### Defined in
 
-[types/index.ts:412](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L412)
+[types/index.ts:413](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L413)
 
 ___
 
@@ -377,7 +377,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:500](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L500)
+[types/index.ts:501](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L501)
 
 ___
 
@@ -408,7 +408,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:510](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L510)
+[types/index.ts:511](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L511)
 
 ___
 
@@ -439,7 +439,7 @@ true if the user holds the NFT
 
 #### Defined in
 
-[types/index.ts:520](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L520)
+[types/index.ts:521](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L521)
 
 ___
 
@@ -461,4 +461,4 @@ if token is valid it will return true
 
 #### Defined in
 
-[types/index.ts:487](https://github.com/nevermined-io/react-components/blob/aeff03c/catalog/src/types/index.ts#L487)
+[types/index.ts:488](https://github.com/nevermined-io/react-components/blob/0a1c805/catalog/src/types/index.ts#L488)
