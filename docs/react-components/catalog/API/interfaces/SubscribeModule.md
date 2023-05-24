@@ -82,7 +82,7 @@ return the `payment` event with a functionality to unsubscribe
 
 #### Defined in
 
-[types/index.ts:708](https://github.com/nevermined-io/react-components/blob/baaf4c1/catalog/src/types/index.ts#L708)
+[types/index.ts:708](https://github.com/nevermined-io/react-components/blob/a00d087/catalog/src/types/index.ts#L708)
 
 ___
 
@@ -111,4 +111,4 @@ return the `transfer` event with a functionality to unsubscribe
 
 #### Defined in
 
-[types/index.ts:715](https://github.com/nevermined-io/react-components/blob/baaf4c1/catalog/src/types/index.ts#L715)
+[types/index.ts:715](https://github.com/nevermined-io/react-components/blob/a00d087/catalog/src/types/index.ts#L715)
