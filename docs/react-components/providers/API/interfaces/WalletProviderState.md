@@ -36,7 +36,7 @@ If chain is between the available networks supported
 
 #### Defined in
 
-[client.tsx:40](https://github.com/nevermined-io/react-components/blob/a00d087/providers/src/client.tsx#L40)
+[client.tsx:40](https://github.com/nevermined-io/react-components/blob/cc28a85/providers/src/client.tsx#L40)
 
 ___
 
@@ -52,7 +52,7 @@ All the wagmi client functionalities
 
 #### Defined in
 
-[client.tsx:24](https://github.com/nevermined-io/react-components/blob/a00d087/providers/src/client.tsx#L24)
+[client.tsx:24](https://github.com/nevermined-io/react-components/blob/cc28a85/providers/src/client.tsx#L24)
 
 ___
 
@@ -64,7 +64,7 @@ get data status including message
 
 #### Defined in
 
-[client.tsx:42](https://github.com/nevermined-io/react-components/blob/a00d087/providers/src/client.tsx#L42)
+[client.tsx:42](https://github.com/nevermined-io/react-components/blob/cc28a85/providers/src/client.tsx#L42)
 
 ___
 
@@ -84,7 +84,7 @@ Get all the available chains
 
 #### Defined in
 
-[client.tsx:34](https://github.com/nevermined-io/react-components/blob/a00d087/providers/src/client.tsx#L34)
+[client.tsx:34](https://github.com/nevermined-io/react-components/blob/cc28a85/providers/src/client.tsx#L34)
 
 ___
 
@@ -104,7 +104,7 @@ Get all the connectors available
 
 #### Defined in
 
-[client.tsx:28](https://github.com/nevermined-io/react-components/blob/a00d087/providers/src/client.tsx#L28)
+[client.tsx:28](https://github.com/nevermined-io/react-components/blob/cc28a85/providers/src/client.tsx#L28)
 
 ___
 
@@ -124,7 +124,7 @@ Metamask provider for example web3 or ethers
 
 #### Defined in
 
-[client.tsx:26](https://github.com/nevermined-io/react-components/blob/a00d087/providers/src/client.tsx#L26)
+[client.tsx:26](https://github.com/nevermined-io/react-components/blob/cc28a85/providers/src/client.tsx#L26)
 
 ___
 
@@ -144,7 +144,7 @@ Get the status of the wallet
 
 #### Defined in
 
-[client.tsx:32](https://github.com/nevermined-io/react-components/blob/a00d087/providers/src/client.tsx#L32)
+[client.tsx:32](https://github.com/nevermined-io/react-components/blob/cc28a85/providers/src/client.tsx#L32)
 
 ___
 
@@ -170,7 +170,7 @@ Login in Provider
 
 #### Defined in
 
-[client.tsx:38](https://github.com/nevermined-io/react-components/blob/a00d087/providers/src/client.tsx#L38)
+[client.tsx:38](https://github.com/nevermined-io/react-components/blob/cc28a85/providers/src/client.tsx#L38)
 
 ___
 
@@ -190,7 +190,7 @@ Logout from the wallet
 
 #### Defined in
 
-[client.tsx:30](https://github.com/nevermined-io/react-components/blob/a00d087/providers/src/client.tsx#L30)
+[client.tsx:30](https://github.com/nevermined-io/react-components/blob/cc28a85/providers/src/client.tsx#L30)
 
 ___
 
@@ -202,4 +202,4 @@ The address of the wallet account
 
 #### Defined in
 
-[client.tsx:36](https://github.com/nevermined-io/react-components/blob/a00d087/providers/src/client.tsx#L36)
+[client.tsx:36](https://github.com/nevermined-io/react-components/blob/cc28a85/providers/src/client.tsx#L36)
