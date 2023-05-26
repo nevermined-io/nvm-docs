@@ -107,10 +107,6 @@ The Nevermined Node can be found on http://node.nevermined.localnet and uses the
 
 
 
-
-
-
-
  
 
 ## appMumbai
@@ -125,4 +121,52 @@ The Native token is **MATIC**. This environment has the network name **mumbai** 
 The Marketplace API used can be found on https://marketplace-api.mumbai.nevermined.app. <br/>
 The Nevermined Node can be found on https://node.mumbai.nevermined.app and uses the public address **0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc**.<br/>
  The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
+
+
+ 
+
+## appMatic
+The Polygon production environment where users can interact with Nevermined protocol.<br/>
+
+ **Production Environment** 
+The Native token is **MATIC**. This environment has the network name **matic** and the chain id/network id **137**. <br/>
+
+### Nevermined configuration 
+
+ The Nevermined contracts deployed have the version: **3.2.1**  The Nevermined contracts are labeled with the tag name: **public** 
+The Marketplace API used can be found on https://marketplace-api.matic.nevermined.app. <br/>
+The Nevermined Node can be found on https://node.matic.nevermined.app and uses the public address **0x824dbcE5E9C96C5b8ce2A35a25a5ab87eD1D00b1**.<br/>
+ The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
+
+
+ 
+
+## appGnosis
+The Gnosis production environment where users can interact with Nevermined protocol.<br/>
+
+ **Production Environment** 
+The Native token is **xDAI**. This environment has the network name **gnosis** and the chain id/network id **100**. <br/>
+
+### Nevermined configuration 
+
+ The Nevermined contracts deployed have the version: **3.2.1**  The Nevermined contracts are labeled with the tag name: **public** 
+The Marketplace API used can be found on https://marketplace-api.gnosis.nevermined.app. <br/>
+The Nevermined Node can be found on https://node.gnosis.nevermined.app and uses the public address **0x824dbcE5E9C96C5b8ce2A35a25a5ab87eD1D00b1**.<br/>
+ The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
+
+
+ 
+
+## appChiado
+Nevermined App Chiado (Gnosis) testnet environment where users can interact with Nevermined protocol.<br/>
+
+ **Testnet** 
+The Native token is **xDAI**. This environment has the network name **chiado** and the chain id/network id **10200**. <br/>
+
+### Nevermined configuration 
+
+ The Nevermined contracts deployed have the version: **3.2.1**  The Nevermined contracts are labeled with the tag name: **public** 
+The Marketplace API used can be found on https://marketplace-api.chiado.nevermined.app. <br/>
+The Nevermined Node can be found on https://node.chiado.nevermined.app and uses the public address **0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc**.<br/>
+
 

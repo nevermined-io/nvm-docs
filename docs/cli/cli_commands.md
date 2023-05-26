@@ -126,12 +126,42 @@ Creates a new account locally<br/>
 Nevermined interacts with EVM compatible blockchain networks. To interact with them a user needs to have compatible local credentials (BIP-44). This command creates a local wallet that is Etherum compatible and can be used to interact with Nevermined contracts.<br/>
 
 
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **destination** | `string` |  |  `./account.json`  | The json encrypted file destination. By default ./account.json |
+| **password** | `string` |  |    | Password to encrypt the new wallet |
+
 
 #### Example/s
 
 
 ```bash
 ncli accounts new
+```
+
+
+
+### export
+Export the account to a private key file<br/>
+
+Nevermined interacts with EVM compatible blockchain networks. To interact with them a user needs to have compatible local credentials (BIP-44). This command creates a local wallet that is Etherum compatible and can be used to interact with Nevermined contracts.<br/>
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **destination** | `string` |  |  `./account.json`  | The json encrypted file destination. By default ./account.json |
+| **password** | `string` |  |    | Password to encrypt the new wallet |
+
+
+#### Example/s
+
+
+```bash
+ncli accounts export
 ```
 
 
