@@ -62,7 +62,7 @@ const Example = (props: ExampleProps) => {
 
 #### Defined in
 
-[types/index.ts:223](https://github.com/nevermined-io/react-components/blob/9f27b18/catalog/src/types/index.ts#L223)
+[types/index.ts:223](https://github.com/nevermined-io/react-components/blob/25aa521/catalog/src/types/index.ts#L223)
 
 ___
 
@@ -141,7 +141,7 @@ const Example = () => {
 
 #### Defined in
 
-[types/index.ts:190](https://github.com/nevermined-io/react-components/blob/9f27b18/catalog/src/types/index.ts#L190)
+[types/index.ts:190](https://github.com/nevermined-io/react-components/blob/25aa521/catalog/src/types/index.ts#L190)
 
 ___
 
@@ -153,7 +153,7 @@ Config object used to initialize Nevermined
 
 #### Defined in
 
-[types/index.ts:43](https://github.com/nevermined-io/react-components/blob/9f27b18/catalog/src/types/index.ts#L43)
+[types/index.ts:43](https://github.com/nevermined-io/react-components/blob/25aa521/catalog/src/types/index.ts#L43)
 
 ___
 
@@ -165,7 +165,7 @@ True if sdk is loading
 
 #### Defined in
 
-[types/index.ts:45](https://github.com/nevermined-io/react-components/blob/9f27b18/catalog/src/types/index.ts#L45)
+[types/index.ts:45](https://github.com/nevermined-io/react-components/blob/25aa521/catalog/src/types/index.ts#L45)
 
 ___
 
@@ -227,7 +227,7 @@ const BuyAsset = ({ddo}: {ddo: DDO}) => {
 
 #### Defined in
 
-[types/index.ts:276](https://github.com/nevermined-io/react-components/blob/9f27b18/catalog/src/types/index.ts#L276)
+[types/index.ts:276](https://github.com/nevermined-io/react-components/blob/25aa521/catalog/src/types/index.ts#L276)
 
 ___
 
@@ -239,7 +239,7 @@ Nevermined sdk instance which has all the core functionalities
 
 #### Defined in
 
-[types/index.ts:39](https://github.com/nevermined-io/react-components/blob/9f27b18/catalog/src/types/index.ts#L39)
+[types/index.ts:39](https://github.com/nevermined-io/react-components/blob/25aa521/catalog/src/types/index.ts#L39)
 
 ___
 
@@ -251,7 +251,7 @@ Error message from sdk
 
 #### Defined in
 
-[types/index.ts:41](https://github.com/nevermined-io/react-components/blob/9f27b18/catalog/src/types/index.ts#L41)
+[types/index.ts:41](https://github.com/nevermined-io/react-components/blob/25aa521/catalog/src/types/index.ts#L41)
 
 ___
 
@@ -304,7 +304,7 @@ const Example = () => {
 
 #### Defined in
 
-[types/index.ts:119](https://github.com/nevermined-io/react-components/blob/9f27b18/catalog/src/types/index.ts#L119)
+[types/index.ts:119](https://github.com/nevermined-io/react-components/blob/25aa521/catalog/src/types/index.ts#L119)
 
 ___
 
@@ -356,4 +356,4 @@ const Example = (props: ExampleProps) => {
 
 #### Defined in
 
-[types/index.ts:75](https://github.com/nevermined-io/react-components/blob/9f27b18/catalog/src/types/index.ts#L75)
+[types/index.ts:75](https://github.com/nevermined-io/react-components/blob/25aa521/catalog/src/types/index.ts#L75)
