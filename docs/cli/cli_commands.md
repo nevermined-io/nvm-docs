@@ -635,6 +635,28 @@ ncli agreements show 0xf29bebaeacf865b4f57373aeb84635cc68c7719761607aec2802f1ad8
 
 
 
+### abort [agreementId]
+Abort an agreement that is timed out<br/>
+
+An agreement in Nevermined keeps track of the state of the different conditions that need to be fulfilled in order to facilitate some service (access, download, computation, etc). Given a `serviceAgreementId` this command aborts an expired agreement on-chain. When the agreement is aborted this command will release any payment locked as part of the agreement.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **agreementId** | `string` |  |    | The agreement id |
+
+
+
+#### Example/s
+
+
+```bash
+ncli agreements abort 0xf29bebaeacf865b4f57373aeb84635cc68c7719761607aec2802f1ad87213777
+```
+
+
+
 
 
 
@@ -1735,6 +1757,50 @@ ncli utils clean-artifacts
 
 ```bash
 ncli utils clean-artifacts --path /tmp
+```
+
+
+
+### encode-did [did]
+Encode a DID in base36 format<br/>
+
+This command allows to encode a DID in base36 format. That format is used to shorten the DID, specially for web services.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **did** | `string` |  |    | The DID to encode |
+
+
+
+#### Example/s
+
+
+```bash
+ncli utils encode-did did:nv:3fc08573160370d81ee075c80b800ae90d87eb5dd458b96febd11a0dac02baf5
+```
+
+
+
+### decode-did [encoded]
+Decoded a DID previosly encoded in base36 format<br/>
+
+This command allows to decode a DID that is encoded in base36 format.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **encoded** | `string` |  |    | The encoded DID in base36 format |
+
+
+
+#### Example/s
+
+
+```bash
+ncli utils decode-did nhf7kkweh295qelv1zuy8lc1fre7ojla0nuuhrg4wqp9zuo89
 ```
 
 
