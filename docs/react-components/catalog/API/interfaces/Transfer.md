@@ -21,7 +21,7 @@ Agreement Id of the asset
 
 #### Defined in
 
-[types/index.ts:828](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L828)
+[types/index.ts:828](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L828)
 
 ___
 
@@ -33,7 +33,7 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:826](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L826)
+[types/index.ts:826](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L826)
 
 ___
 
@@ -45,7 +45,7 @@ Which account receive the asset
 
 #### Defined in
 
-[types/index.ts:830](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L830)
+[types/index.ts:830](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L830)
 
 ___
 
@@ -57,4 +57,4 @@ Id of the transfer event
 
 #### Defined in
 
-[types/index.ts:824](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L824)
+[types/index.ts:824](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L824)

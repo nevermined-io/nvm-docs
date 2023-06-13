@@ -22,7 +22,7 @@ If app to search have an id
 
 #### Defined in
 
-[types/index.ts:316](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L316)
+[types/index.ts:316](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L316)
 
 ___
 
@@ -34,7 +34,7 @@ custom nested queries to add in the search
 
 #### Defined in
 
-[types/index.ts:308](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L308)
+[types/index.ts:308](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L308)
 
 ___
 
@@ -46,7 +46,7 @@ Number of results per page
 
 #### Defined in
 
-[types/index.ts:310](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L310)
+[types/index.ts:310](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L310)
 
 ___
 
@@ -58,7 +58,7 @@ Number of page
 
 #### Defined in
 
-[types/index.ts:312](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L312)
+[types/index.ts:312](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L312)
 
 ___
 
@@ -70,4 +70,4 @@ result order
 
 #### Defined in
 
-[types/index.ts:314](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L314)
+[types/index.ts:314](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L314)

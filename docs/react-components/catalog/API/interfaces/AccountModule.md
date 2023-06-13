@@ -44,7 +44,7 @@ The new generated token
 
 #### Defined in
 
-[types/index.ts:493](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L493)
+[types/index.ts:493](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L493)
 
 ___
 
@@ -66,7 +66,7 @@ The address token signer
 
 #### Defined in
 
-[types/index.ts:503](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L503)
+[types/index.ts:503](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L503)
 
 ___
 
@@ -95,7 +95,7 @@ associated datasets to subscriptions
 
 #### Defined in
 
-[types/index.ts:442](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L442)
+[types/index.ts:442](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L442)
 
 ___
 
@@ -124,7 +124,7 @@ associated services to subscriptions
 
 #### Defined in
 
-[types/index.ts:435](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L435)
+[types/index.ts:435](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L435)
 
 ___
 
@@ -152,7 +152,7 @@ List of assets which was bought by the address given as argument
 
 #### Defined in
 
-[types/index.ts:421](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L421)
+[types/index.ts:421](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L421)
 
 ___
 
@@ -180,7 +180,7 @@ published subscriptions
 
 #### Defined in
 
-[types/index.ts:428](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L428)
+[types/index.ts:428](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L428)
 
 ___
 
@@ -209,7 +209,7 @@ published subscriptions and its datasets
 
 #### Defined in
 
-[types/index.ts:459](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L459)
+[types/index.ts:459](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L459)
 
 ___
 
@@ -238,7 +238,7 @@ published subscriptions and service
 
 #### Defined in
 
-[types/index.ts:449](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L449)
+[types/index.ts:449](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L449)
 
 ___
 
@@ -266,7 +266,7 @@ purchased subscriptions
 
 #### Defined in
 
-[types/index.ts:468](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L468)
+[types/index.ts:468](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L468)
 
 ___
 
@@ -295,7 +295,7 @@ purchased subscriptions and its datasets
 
 #### Defined in
 
-[types/index.ts:485](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L485)
+[types/index.ts:485](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L485)
 
 ___
 
@@ -324,7 +324,7 @@ purchased subscriptions and services
 
 #### Defined in
 
-[types/index.ts:475](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L475)
+[types/index.ts:475](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L475)
 
 ___
 
@@ -352,7 +352,7 @@ List of assets which was published by the address given
 
 #### Defined in
 
-[types/index.ts:415](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L415)
+[types/index.ts:415](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L415)
 
 ___
 
@@ -381,7 +381,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:511](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L511)
+[types/index.ts:511](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L511)
 
 ___
 
@@ -412,7 +412,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:521](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L521)
+[types/index.ts:521](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L521)
 
 ___
 
@@ -443,7 +443,7 @@ true if the user holds the NFT
 
 #### Defined in
 
-[types/index.ts:531](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L531)
+[types/index.ts:531](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L531)
 
 ___
 
@@ -465,4 +465,4 @@ if token is valid it will return true
 
 #### Defined in
 
-[types/index.ts:498](https://github.com/nevermined-io/react-components/blob/f4befd5/catalog/src/types/index.ts#L498)
+[types/index.ts:498](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L498)
