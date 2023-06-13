@@ -23,7 +23,7 @@ under 'assets' object
 
 ### downloadAsset
 
-• **downloadAsset**: (`asset`: { `accountIndex?`: `number` ; `did`: `string` ; `fileIndex?`: `number` ; `password?`: `string` ; `path?`: `string`  }) => `Promise`<`boolean`\>
+• **downloadAsset**: (`asset`: { `consumer`: `Account` ; `did`: `string` ; `fileIndex?`: `number` ; `password?`: `string` ; `path?`: `string`  }) => `Promise`<`boolean`\>
 
 #### Type declaration
 
@@ -37,7 +37,7 @@ if the user is the owner of the asset
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `asset` | `Object` |  |
-| `asset.accountIndex?` | `number` | account index of the account list wallet, it is used for testing purpose |
+| `asset.consumer` | `Account` | Account of the consumer |
 | `asset.did` | `string` | id of the NFT (721 & 1155) asset |
 | `asset.fileIndex?` | `number` | The file to download. If not given or is -1 it will download all of them |
 | `asset.password?` | `string` | Password to download a encrypted NFT |
@@ -51,13 +51,13 @@ if the NFT is downloaded successfully the method will return a true
 
 #### Defined in
 
-[types/index.ts:641](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L641)
+[types/index.ts:669](https://github.com/nevermined-io/react-components/blob/916db15/catalog/src/types/index.ts#L669)
 
 ___
 
 ### downloadNFT
 
-• **downloadNFT**: (`nft`: { `accountIndex?`: `number` ; `did`: `string` ; `ercType?`: `ERCType` ; `fileIndex?`: `number` ; `password?`: `string` ; `path?`: `string`  }) => `Promise`<`string` \| `boolean`\>
+• **downloadNFT**: (`nft`: { `consumer`: `Account` ; `did`: `string` ; `ercType?`: `ERCType` ; `fileIndex?`: `number` ; `password?`: `string` ; `path?`: `string`  }) => `Promise`<`string` \| `boolean`\>
 
 #### Type declaration
 
@@ -71,7 +71,7 @@ if the user is the owner of the asset
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `nft` | `Object` |  |
-| `nft.accountIndex?` | `number` | account index of the account list wallet, it is used for testing purpose |
+| `nft.consumer` | `Account` | Account of the consumer |
 | `nft.did` | `string` | id of the NFT (721 & 1155) asset |
 | `nft.ercType?` | `ERCType` | NFT type. By default 1155 |
 | `nft.fileIndex?` | `number` | The file to download. If not given or is -1 it will download all of them |
@@ -86,7 +86,7 @@ if the NFT is downloaded successfully the method will return a true
 
 #### Defined in
 
-[types/index.ts:609](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L609)
+[types/index.ts:633](https://github.com/nevermined-io/react-components/blob/916db15/catalog/src/types/index.ts#L633)
 
 ___
 
@@ -112,17 +112,17 @@ Get the asset object by the did given
 
 #### Defined in
 
-[types/index.ts:543](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L543)
+[types/index.ts:561](https://github.com/nevermined-io/react-components/blob/916db15/catalog/src/types/index.ts#L561)
 
 ___
 
 ### getCustomErc20Token
 
-• **getCustomErc20Token**: (`customErc20TokenAddress`: `string`) => `Promise`<[`CustomErc20Token`](CustomErc20Token.md)\>
+• **getCustomErc20Token**: (`customErc20TokenAddress`: `string`, `address`: `string`) => `Promise`<[`CustomErc20Token`](CustomErc20Token.md)\>
 
 #### Type declaration
 
-▸ (`customErc20TokenAddress`): `Promise`<[`CustomErc20Token`](CustomErc20Token.md)\>
+▸ (`customErc20TokenAddress`, `address`): `Promise`<[`CustomErc20Token`](CustomErc20Token.md)\>
 
 Get all the details about a custom erc20 token
 
@@ -131,6 +131,7 @@ Get all the details about a custom erc20 token
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `customErc20TokenAddress` | `string` | The custom token address |
+| `address` | `string` | Wallet address of the user |
 
 ##### Returns
 
@@ -140,7 +141,7 @@ Custom token details
 
 #### Defined in
 
-[types/index.ts:629](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L629)
+[types/index.ts:654](https://github.com/nevermined-io/react-components/blob/916db15/catalog/src/types/index.ts#L654)
 
 ___
 
@@ -169,17 +170,17 @@ Agreement details of the NFT asset
 
 #### Defined in
 
-[types/index.ts:573](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L573)
+[types/index.ts:594](https://github.com/nevermined-io/react-components/blob/916db15/catalog/src/types/index.ts#L594)
 
 ___
 
 ### orderAsset
 
-• **orderAsset**: (`did`: `string`) => `Promise`<`string`\>
+• **orderAsset**: (`did`: `string`, `consumer`: `Account`) => `Promise`<`string`\>
 
 #### Type declaration
 
-▸ (`did`): `Promise`<`string`\>
+▸ (`did`, `consumer`): `Promise`<`string`\>
 
 This method order a asset to allow after transfer to the buyer (the method only order but not transfer)
 
@@ -188,6 +189,7 @@ This method order a asset to allow after transfer to the buyer (the method only 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `did` | `string` | id of the asset |
+| `consumer` | `Account` | Account of the consumer |
 
 ##### Returns
 
@@ -198,17 +200,17 @@ which is needed to transfer the asset to the buyer
 
 #### Defined in
 
-[types/index.ts:580](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L580)
+[types/index.ts:602](https://github.com/nevermined-io/react-components/blob/916db15/catalog/src/types/index.ts#L602)
 
 ___
 
 ### orderNFT1155
 
-• **orderNFT1155**: (`did`: `string`, `amount`: `BigNumber`) => `Promise`<`string`\>
+• **orderNFT1155**: (`did`: `string`, `amount`: `BigNumber`, `consumer`: `Account`) => `Promise`<`string`\>
 
 #### Type declaration
 
-▸ (`did`, `amount`): `Promise`<`string`\>
+▸ (`did`, `amount`, `consumer`): `Promise`<`string`\>
 
 This method order a NFT1155 asset to allow after transfer to the buyer (the method only order but not transfer)
 
@@ -218,6 +220,7 @@ This method order a NFT1155 asset to allow after transfer to the buyer (the meth
 | :------ | :------ | :------ |
 | `did` | `string` | id of the NFT1155 asset |
 | `amount` | `BigNumber` | Amount of NFT1155 assets to order |
+| `consumer` | `Account` | Account of the consumer |
 
 ##### Returns
 
@@ -228,17 +231,17 @@ which is needed to transfer the NFT1155 asset to the buyer
 
 #### Defined in
 
-[types/index.ts:596](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L596)
+[types/index.ts:620](https://github.com/nevermined-io/react-components/blob/916db15/catalog/src/types/index.ts#L620)
 
 ___
 
 ### orderNFT721
 
-• **orderNFT721**: (`did`: `string`, `nftTokenAddress`: `string`) => `Promise`<`string`\>
+• **orderNFT721**: (`did`: `string`, `consumer`: `Account`, `nftTokenAddress`: `string`) => `Promise`<`string`\>
 
 #### Type declaration
 
-▸ (`did`, `nftTokenAddress`): `Promise`<`string`\>
+▸ (`did`, `consumer`, `nftTokenAddress`): `Promise`<`string`\>
 
 This method order a NFT721 asset to allow after transfer to the buyer (the method only order but not transfer)
 
@@ -247,6 +250,7 @@ This method order a NFT721 asset to allow after transfer to the buyer (the metho
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `did` | `string` | id of the NFT721 asset |
+| `consumer` | `Account` | - |
 | `nftTokenAddress` | `string` | - |
 
 ##### Returns
@@ -258,7 +262,7 @@ which is needed to transfer the NFT721 asset to the buyer
 
 #### Defined in
 
-[types/index.ts:588](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L588)
+[types/index.ts:611](https://github.com/nevermined-io/react-components/blob/916db15/catalog/src/types/index.ts#L611)
 
 ___
 
@@ -284,13 +288,13 @@ List of assets according with the query given
 
 #### Defined in
 
-[types/index.ts:549](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L549)
+[types/index.ts:567](https://github.com/nevermined-io/react-components/blob/916db15/catalog/src/types/index.ts#L567)
 
 ___
 
 ### transfer
 
-• **transfer**: (`assetInfo`: { `amount`: `number` ; `did`: `string` ; `ercType`: `ERCType`  }) => `Promise`<`boolean`\>
+• **transfer**: (`assetInfo`: { `amount`: `number` ; `did`: `string` ; `ercType`: `ERCType` ; `newOwner`: `Account`  }) => `Promise`<`boolean`\>
 
 #### Type declaration
 
@@ -306,6 +310,7 @@ Transfer the ownership of the asset to other account
 | `assetInfo.amount` | `number` | The amount of asset to transfer |
 | `assetInfo.did` | `string` | The id of the asset |
 | `assetInfo.ercType` | `ERCType` | NFT asset type which can be 721 or 1155 |
+| `assetInfo.newOwner` | `Account` | Account of the owner |
 
 ##### Returns
 
@@ -315,7 +320,7 @@ Return true if asset was transferred successfully
 
 #### Defined in
 
-[types/index.ts:558](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L558)
+[types/index.ts:577](https://github.com/nevermined-io/react-components/blob/916db15/catalog/src/types/index.ts#L577)
 
 ___
 
@@ -344,4 +349,4 @@ The url where is located the file already uploaded
 
 #### Defined in
 
-[types/index.ts:660](https://github.com/nevermined-io/react-components/blob/05f5c9b/catalog/src/types/index.ts#L660)
+[types/index.ts:688](https://github.com/nevermined-io/react-components/blob/916db15/catalog/src/types/index.ts#L688)
