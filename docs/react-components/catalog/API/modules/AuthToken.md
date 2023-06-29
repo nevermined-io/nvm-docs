@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[utils/marketplace_token.ts:5](https://github.com/nevermined-io/react-components/blob/fb2f21e/catalog/src/utils/marketplace_token.ts#L5)
+[utils/marketplace_token.ts:5](https://github.com/nevermined-io/react-components/blob/7d21a2a/catalog/src/utils/marketplace_token.ts#L5)
 
 ## Functions
 
@@ -40,7 +40,7 @@ Auth token object which generated from Marketplace API
 
 #### Defined in
 
-[utils/marketplace_token.ts:25](https://github.com/nevermined-io/react-components/blob/fb2f21e/catalog/src/utils/marketplace_token.ts#L25)
+[utils/marketplace_token.ts:25](https://github.com/nevermined-io/react-components/blob/7d21a2a/catalog/src/utils/marketplace_token.ts#L25)
 
 ___
 
@@ -58,7 +58,7 @@ The address token signer
 
 #### Defined in
 
-[utils/marketplace_token.ts:85](https://github.com/nevermined-io/react-components/blob/fb2f21e/catalog/src/utils/marketplace_token.ts#L85)
+[utils/marketplace_token.ts:93](https://github.com/nevermined-io/react-components/blob/7d21a2a/catalog/src/utils/marketplace_token.ts#L93)
 
 ___
 
@@ -76,13 +76,13 @@ Return `true` if token is valid
 
 #### Defined in
 
-[utils/marketplace_token.ts:63](https://github.com/nevermined-io/react-components/blob/fb2f21e/catalog/src/utils/marketplace_token.ts#L63)
+[utils/marketplace_token.ts:71](https://github.com/nevermined-io/react-components/blob/7d21a2a/catalog/src/utils/marketplace_token.ts#L71)
 
 ___
 
 ### newMarketplaceApiToken
 
-▸ **newMarketplaceApiToken**(`sdk`, `account`): `Promise`<[`MarketplaceAPIToken`](../interfaces/MarketplaceAPIToken.md)\>
+▸ **newMarketplaceApiToken**(`sdk`, `account`, `message?`): `Promise`<[`MarketplaceAPIToken`](../interfaces/MarketplaceAPIToken.md)\>
 
 Generate new Marketplace API API token
 
@@ -91,7 +91,8 @@ Generate new Marketplace API API token
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `sdk` | `Nevermined` | Instance of SDK object |
-| `account` | `Account` | - |
+| `account` | `Account` | The account requesting the token |
+| `message?` | `string` | Optional message to be included. Usually to be displayed in metamask |
 
 #### Returns
 
@@ -101,7 +102,7 @@ Auth token object which generated from Marketplace API
 
 #### Defined in
 
-[utils/marketplace_token.ts:47](https://github.com/nevermined-io/react-components/blob/fb2f21e/catalog/src/utils/marketplace_token.ts#L47)
+[utils/marketplace_token.ts:51](https://github.com/nevermined-io/react-components/blob/7d21a2a/catalog/src/utils/marketplace_token.ts#L51)
 
 ___
 
@@ -123,4 +124,4 @@ Save Marketplace API token to local storage
 
 #### Defined in
 
-[utils/marketplace_token.ts:11](https://github.com/nevermined-io/react-components/blob/fb2f21e/catalog/src/utils/marketplace_token.ts#L11)
+[utils/marketplace_token.ts:11](https://github.com/nevermined-io/react-components/blob/7d21a2a/catalog/src/utils/marketplace_token.ts#L11)
