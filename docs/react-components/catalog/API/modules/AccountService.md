@@ -56,7 +56,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/account.ts:77](https://github.com/nevermined-io/react-components/blob/7d21a2a/catalog/src/services/account.ts#L77)
+[services/account.ts:77](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/services/account.ts#L77)
 
 ___
 
@@ -103,7 +103,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/account.ts:33](https://github.com/nevermined-io/react-components/blob/7d21a2a/catalog/src/services/account.ts#L33)
+[services/account.ts:33](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/services/account.ts#L33)
 
 ___
 
@@ -132,7 +132,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[services/account.ts:512](https://github.com/nevermined-io/react-components/blob/7d21a2a/catalog/src/services/account.ts#L512)
+[services/account.ts:513](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/services/account.ts#L513)
 
 ___
 
@@ -163,7 +163,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[services/account.ts:547](https://github.com/nevermined-io/react-components/blob/7d21a2a/catalog/src/services/account.ts#L547)
+[services/account.ts:548](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/services/account.ts#L548)
 
 ___
 
@@ -194,13 +194,13 @@ true if the user holds the NFT
 
 #### Defined in
 
-[services/account.ts:583](https://github.com/nevermined-io/react-components/blob/7d21a2a/catalog/src/services/account.ts#L583)
+[services/account.ts:584](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/services/account.ts#L584)
 
 ___
 
 ### useUserProfile
 
-▸ **useUserProfile**(`walletAddress`): `Object`
+▸ **useUserProfile**(`walletAddress`, `signMessage?`): `Object`
 
 Custom hook to handle User Profile: login, profile description, add new accounts, etc...
 
@@ -395,6 +395,7 @@ export const UserProfile: NextPage = () => {
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `walletAddress` | `string` | Address of the wallet account |
+| `signMessage?` | `string` | - |
 
 #### Returns
 
@@ -420,4 +421,4 @@ export const UserProfile: NextPage = () => {
 
 #### Defined in
 
-[services/account.ts:289](https://github.com/nevermined-io/react-components/blob/7d21a2a/catalog/src/services/account.ts#L289)
+[services/account.ts:289](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/services/account.ts#L289)
