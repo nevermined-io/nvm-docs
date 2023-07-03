@@ -54,8 +54,8 @@
 
 - [conductOrder](modules.md#conductorder)
 - [executeWithProgressEvent](modules.md#executewithprogressevent)
+- [getAccountObject](modules.md#getaccountobject)
 - [getAgreementId](modules.md#getagreementid)
-- [getCurrentAccount](modules.md#getcurrentaccount)
 - [getNewSdkInstance](modules.md#getnewsdkinstance)
 - [getSubscriptionsAndDatasets](modules.md#getsubscriptionsanddatasets)
 - [getSubscriptionsAndServices](modules.md#getsubscriptionsandservices)
@@ -73,7 +73,7 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:321](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/types/index.ts#L321)
+[types/index.ts:321](https://github.com/nevermined-io/react-components/blob/663e47a/catalog/src/types/index.ts#L321)
 
 ## Variables
 
@@ -83,7 +83,7 @@ Id of the asset
 
 #### Defined in
 
-[utils/index.ts:248](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/utils/index.ts#L248)
+[utils/index.ts:244](https://github.com/nevermined-io/react-components/blob/663e47a/catalog/src/utils/index.ts#L244)
 
 ## Functions
 
@@ -112,7 +112,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:48](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/utils/index.ts#L48)
+[utils/index.ts:44](https://github.com/nevermined-io/react-components/blob/663e47a/catalog/src/utils/index.ts#L44)
 
 ___
 
@@ -139,7 +139,30 @@ ___
 
 #### Defined in
 
-[utils/index.ts:226](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/utils/index.ts#L226)
+[utils/index.ts:222](https://github.com/nevermined-io/react-components/blob/663e47a/catalog/src/utils/index.ts#L222)
+
+___
+
+### getAccountObject
+
+▸ **getAccountObject**(`sdk`, `accountAddress`): `Promise`<`Account`\>
+
+Returns account object by passing an account address
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `sdk` | `Nevermined` | Instance of SDK object |
+| `accountAddress` | `string` | Account address |
+
+#### Returns
+
+`Promise`<`Account`\>
+
+#### Defined in
+
+[utils/index.ts:26](https://github.com/nevermined-io/react-components/blob/663e47a/catalog/src/utils/index.ts#L26)
 
 ___
 
@@ -165,30 +188,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:124](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/utils/index.ts#L124)
-
-___
-
-### getCurrentAccount
-
-▸ **getCurrentAccount**(`sdk`, `index?`): `Promise`<`Account`\>
-
-Returns current account registered in SDK
-
-#### Parameters
-
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `sdk` | `Nevermined` | `undefined` | Instance of SDK object |
-| `index` | `number` | `0` | - |
-
-#### Returns
-
-`Promise`<`Account`\>
-
-#### Defined in
-
-[utils/index.ts:25](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/utils/index.ts#L25)
+[utils/index.ts:120](https://github.com/nevermined-io/react-components/blob/663e47a/catalog/src/utils/index.ts#L120)
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 #### Defined in
 
-[utils/index.ts:241](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/utils/index.ts#L241)
+[utils/index.ts:237](https://github.com/nevermined-io/react-components/blob/663e47a/catalog/src/utils/index.ts#L237)
 
 ___
 
@@ -231,7 +231,7 @@ ___
 
 #### Defined in
 
-[utils/index.ts:202](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/utils/index.ts#L202)
+[utils/index.ts:198](https://github.com/nevermined-io/react-components/blob/663e47a/catalog/src/utils/index.ts#L198)
 
 ___
 
@@ -253,7 +253,7 @@ ___
 
 #### Defined in
 
-[utils/index.ts:178](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/utils/index.ts#L178)
+[utils/index.ts:174](https://github.com/nevermined-io/react-components/blob/663e47a/catalog/src/utils/index.ts#L174)
 
 ___
 
@@ -279,7 +279,7 @@ Return the result data of the request
 
 #### Defined in
 
-[utils/index.ts:153](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/utils/index.ts#L153)
+[utils/index.ts:149](https://github.com/nevermined-io/react-components/blob/663e47a/catalog/src/utils/index.ts#L149)
 
 ___
 
@@ -303,7 +303,7 @@ Checks if object is empty
 
 #### Defined in
 
-[utils/index.ts:19](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/utils/index.ts#L19)
+[utils/index.ts:19](https://github.com/nevermined-io/react-components/blob/663e47a/catalog/src/utils/index.ts#L19)
 
 ___
 
@@ -329,4 +329,4 @@ Array of object with the document id of each fullfilled events
 
 #### Defined in
 
-[utils/index.ts:95](https://github.com/nevermined-io/react-components/blob/d91af20/catalog/src/utils/index.ts#L95)
+[utils/index.ts:91](https://github.com/nevermined-io/react-components/blob/663e47a/catalog/src/utils/index.ts#L91)
