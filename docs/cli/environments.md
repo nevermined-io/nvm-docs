@@ -73,6 +73,20 @@ The Nevermined Node can be found on http://node.nevermined.localnet and uses the
  The subgraphs to fetch contracts events can be found on http://localhost:9000/subgraphs/name/nevermined-io/development .<br/>
 
 
+ 
+
+## oneStaging
+Nevermined One internal environment where Nevermined developers can integrate new versions of the application.<br/>
+
+ **Testnet** 
+The Native token is **ETH**. This environment has the network name **arbitrum-goerli** and the chain id/network id **421613**. <br/>
+
+### Nevermined configuration 
+
+ The Nevermined contracts deployed have the version: **3.2.2**  The Nevermined contracts are labeled with the tag name: **public** 
+The Marketplace API used can be found on https://marketplace-api.goerli.nevermined.one. <br/>
+The Nevermined Node can be found on https://node.goerli.nevermined.one and uses the public address **0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc**.<br/>
+
 
 
  
