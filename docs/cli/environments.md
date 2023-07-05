@@ -43,22 +43,6 @@ The Nevermined Node can be found on https://node.matic.public.nevermined.network
 
  
 
-## arbitrum-one
-The Arbitrum production environment where users can interact with Nevermined protocol.<br/>
-
- **Production Environment** 
-The Native token is **ETH**. This environment has the network name **arbitrum-one** and the chain id/network id **42161**. <br/>
-
-### Nevermined configuration 
-
- The Nevermined contracts deployed have the version: **2.1.0**  The Nevermined contracts are labeled with the tag name: **public** 
-The Marketplace API used can be found on https://marketplace-api.arbitrum-one.public.nevermined.rocks. <br/>
-The Nevermined Node can be found on https://node.arbitrum-one.public.nevermined.rocks and uses the public address **0xD1bF18059D590dE610D3E2D0F43Dd63C0eB2aA86**.<br/>
- The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
-
-
- 
-
 ## goerli
 The Ethereum testnet environment where users can interact with Nevermined protocol.<br/>
 
@@ -70,22 +54,6 @@ The Native token is **ETH**. This environment has the network name **goerli** an
  The Nevermined contracts deployed have the version: **2.1.0**  The Nevermined contracts are labeled with the tag name: **public** 
 The Marketplace API used can be found on https://marketplace-api.goerli.public.nevermined.rocks. <br/>
 The Nevermined Node can be found on https://node.goerli.public.nevermined.rocks and uses the public address **0xB82dc620BB4dE6712376055a5cfc0DF11112D442**.<br/>
- The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
-
-
- 
-
-## arbitrum-goerli
-The Arbitrum testnet environment where users can interact with Nevermined protocol.<br/>
-
- **Testnet** 
-The Native token is **ETH**. This environment has the network name **arbitrum-goerli** and the chain id/network id **421613**. <br/>
-
-### Nevermined configuration 
-
- The Nevermined contracts deployed have the version: **2.1.0**  The Nevermined contracts are labeled with the tag name: **public** 
-The Marketplace API used can be found on https://marketplace-api.arbitrum-goerli.public.nevermined.rocks. <br/>
-The Nevermined Node can be found on https://node.arbitrum-goerli.public.nevermined.rocks and uses the public address **0xB82dc620BB4dE6712376055a5cfc0DF11112D442**.<br/>
  The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
 
 
@@ -136,6 +104,38 @@ The Native token is **MATIC**. This environment has the network name **matic** a
  The Nevermined contracts deployed have the version: **3.2.1**  The Nevermined contracts are labeled with the tag name: **public** 
 The Marketplace API used can be found on https://marketplace-api.matic.nevermined.app. <br/>
 The Nevermined Node can be found on https://node.matic.nevermined.app and uses the public address **0x824dbcE5E9C96C5b8ce2A35a25a5ab87eD1D00b1**.<br/>
+ The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
+
+
+ 
+
+## appGoerli
+Nevermined App Goerli (Arbitrum) testnet environment where users can interact with Nevermined protocol.<br/>
+
+ **Testnet** 
+The Native token is **ETH**. This environment has the network name **arbitrum-goerli** and the chain id/network id **421613**. <br/>
+
+### Nevermined configuration 
+
+ The Nevermined contracts deployed have the version: **3.2.2**  The Nevermined contracts are labeled with the tag name: **public** 
+The Marketplace API used can be found on https://marketplace-api.goerli.nevermined.app. <br/>
+The Nevermined Node can be found on https://node.goerli.nevermined.app and uses the public address **0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc**.<br/>
+
+
+
+ 
+
+## appArbitrum
+The Arbitrum One production environment where users can interact with Nevermined protocol.<br/>
+
+ **Production Environment** 
+The Native token is **ETH**. This environment has the network name **arbitrum-one** and the chain id/network id **42161**. <br/>
+
+### Nevermined configuration 
+
+ The Nevermined contracts deployed have the version: **3.2.2**  The Nevermined contracts are labeled with the tag name: **public** 
+The Marketplace API used can be found on https://marketplace-api.arbitrum.nevermined.app. <br/>
+The Nevermined Node can be found on https://node.arbitrum.nevermined.app and uses the public address **0x824dbcE5E9C96C5b8ce2A35a25a5ab87eD1D00b1**.<br/>
  The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
 
 
