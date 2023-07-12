@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[utils/marketplace_token.ts:5](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/marketplace_token.ts#L5)
+[utils/marketplace_token.ts:5](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/marketplace_token.ts#L5)
 
 ## Functions
 
@@ -40,7 +40,7 @@ Auth token object which generated from Marketplace API
 
 #### Defined in
 
-[utils/marketplace_token.ts:25](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/marketplace_token.ts#L25)
+[utils/marketplace_token.ts:25](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/marketplace_token.ts#L25)
 
 ___
 
@@ -58,7 +58,7 @@ The address token signer
 
 #### Defined in
 
-[utils/marketplace_token.ts:93](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/marketplace_token.ts#L93)
+[utils/marketplace_token.ts:93](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/marketplace_token.ts#L93)
 
 ___
 
@@ -76,7 +76,7 @@ Return `true` if token is valid
 
 #### Defined in
 
-[utils/marketplace_token.ts:71](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/marketplace_token.ts#L71)
+[utils/marketplace_token.ts:71](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/marketplace_token.ts#L71)
 
 ___
 
@@ -102,7 +102,7 @@ Auth token object which generated from Marketplace API
 
 #### Defined in
 
-[utils/marketplace_token.ts:51](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/marketplace_token.ts#L51)
+[utils/marketplace_token.ts:51](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/marketplace_token.ts#L51)
 
 ___
 
@@ -124,4 +124,4 @@ Save Marketplace API token to local storage
 
 #### Defined in
 
-[utils/marketplace_token.ts:11](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/marketplace_token.ts#L11)
+[utils/marketplace_token.ts:11](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/marketplace_token.ts#L11)

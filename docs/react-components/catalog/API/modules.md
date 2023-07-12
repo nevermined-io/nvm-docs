@@ -73,7 +73,7 @@ Id of the asset
 
 #### Defined in
 
-[types/index.ts:321](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/types/index.ts#L321)
+[types/index.ts:321](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L321)
 
 ## Variables
 
@@ -83,7 +83,7 @@ Id of the asset
 
 #### Defined in
 
-[utils/index.ts:242](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/index.ts#L242)
+[utils/index.ts:242](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/index.ts#L242)
 
 ## Functions
 
@@ -112,7 +112,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:44](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/index.ts#L44)
+[utils/index.ts:44](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/index.ts#L44)
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 #### Defined in
 
-[utils/index.ts:220](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/index.ts#L220)
+[utils/index.ts:220](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/index.ts#L220)
 
 ___
 
@@ -162,7 +162,7 @@ Returns account object by passing an account address
 
 #### Defined in
 
-[utils/index.ts:26](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/index.ts#L26)
+[utils/index.ts:26](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/index.ts#L26)
 
 ___
 
@@ -188,7 +188,7 @@ Agreement id generated after order an asset
 
 #### Defined in
 
-[utils/index.ts:119](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/index.ts#L119)
+[utils/index.ts:119](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/index.ts#L119)
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 #### Defined in
 
-[utils/index.ts:235](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/index.ts#L235)
+[utils/index.ts:235](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/index.ts#L235)
 
 ___
 
@@ -231,7 +231,7 @@ ___
 
 #### Defined in
 
-[utils/index.ts:196](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/index.ts#L196)
+[utils/index.ts:196](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/index.ts#L196)
 
 ___
 
@@ -253,7 +253,7 @@ ___
 
 #### Defined in
 
-[utils/index.ts:172](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/index.ts#L172)
+[utils/index.ts:172](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/index.ts#L172)
 
 ___
 
@@ -279,7 +279,7 @@ Return the result data of the request
 
 #### Defined in
 
-[utils/index.ts:147](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/index.ts#L147)
+[utils/index.ts:147](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/index.ts#L147)
 
 ___
 
@@ -303,7 +303,7 @@ Checks if object is empty
 
 #### Defined in
 
-[utils/index.ts:19](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/index.ts#L19)
+[utils/index.ts:19](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/index.ts#L19)
 
 ___
 
@@ -329,4 +329,4 @@ Array of object with the document id of each fullfilled events
 
 #### Defined in
 
-[utils/index.ts:91](https://github.com/nevermined-io/react-components/blob/a8236f6/catalog/src/utils/index.ts#L91)
+[utils/index.ts:91](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/index.ts#L91)
