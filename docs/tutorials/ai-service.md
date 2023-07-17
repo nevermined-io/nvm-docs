@@ -389,6 +389,4 @@ curl -H "Authorization: $NVM_TOKEN" -X POST "https://5shbhhycwqvkqxjix1ubwnfss6f
 --data '{"param1": "value1", "param2": "value2"} '
 ```
 
-Obviously using curl is not mandatory to call your AI Service, it can be integrated into an Application implemented with Python, Java, Javascript, [Typescript](https://docs.nevermined.app/docs/tutorials/webservice-integration/#3b-using-typescript-to-integrate-the-web-service) , etc
-
-
+Obviously using curl is not mandatory to call your AI Service, it can be integrated into an Application implemented with Python, Java, Javascript, Typescript... [Check the documentation](https://docs.nevermined.app/docs/tutorials/webservice-integration/)
