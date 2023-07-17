@@ -21,7 +21,7 @@ ___
 
 ### status
 
-• **status**: [`ProviderStatus`](../enums/ProviderStatus.md)
+• **status**: [`ProviderStatus`](../../enums/ProviderStatus.md)
 
 #### Defined in
 
