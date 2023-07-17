@@ -4,7 +4,7 @@
 
 ### Enumerations
 
-- [ProviderStatus](enums/ProviderStatus.md)
+- [ProviderStatus](../enums/ProviderStatus.md)
 
 ### Interfaces
 
