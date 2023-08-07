@@ -995,6 +995,38 @@ ncli nfts721 mint did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf4
 
 
 
+### mint-subscription [nftAddress]
+Mints a ERC-721 Subscription NFT<br/>
+
+This command allows to the owner of an asset to mint a ERC-721 Subscription NFT<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **nftAddress** | `string` |  |    | The address of the NFT (ERC-721) contract |
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **tokenId** | `string` |  |    | The token id to mint |
+| **receiver** | `string` |  |    | The address of the receiver of the NFT, if not given will be the minter address |
+| **abiPath** | `string` |  |    | The subscription NFT Abi path |
+| **duration** | `string` |  |  `0`  | The duration of the subscription in blocks |
+| **nftType** | `number` |  |  `721`  | The NFT type |
+
+
+#### Example/s
+
+
+```bash
+ncli nfts721 mint-subscription 0xaaa6F10d641BC9d8039365B27f4DF2C5F5eebbbb --receiver 0xDef6F10d641BC9d8039365B27f4DF2C5F5eeb041 --tokenId 1
+```
+
+
+
 ### burn [did] [nftAddress]
 It Burns a ERC-721 NFT<br/>
 
