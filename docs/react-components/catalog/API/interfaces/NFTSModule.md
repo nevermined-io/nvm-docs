@@ -10,7 +10,7 @@
 
 ### access
 
-• **access**: (`access`: { `buyer`: `Account` ; `did`: `string` ; `ercType`: `ERCType` ; `nftAmount`: `BigNumber` ; `nftHolder`: `string` ; `onEvent?`: (`next`: `OrderProgressStep`) => `void` ; `password?`: `string`  }) => `Promise`<`string`\>
+• **access**: (`access`: { `buyer`: `Account` ; `chainId`: `number` ; `did`: `string` ; `ercType?`: `ERCType` ; `messageAuth?`: `string` ; `nftAmount`: `BigNumber` ; `nftHolder`: `string` ; `onEvent?`: (`next`: `OrderProgressStep`) => `void` ; `password?`: `string`  }) => `Promise`<`string`\>
 
 #### Type declaration
 
@@ -24,8 +24,10 @@ Order a NFT asset and transfer and delegate it to the buyer
 | :------ | :------ | :------ |
 | `access` | `Object` |  |
 | `access.buyer` | `Account` | Account of the buyer |
+| `access.chainId` | `number` | - |
 | `access.did` | `string` | Id of the NFT to subscribe |
-| `access.ercType` | `ERCType` | NFT asset type which can be `721` or `1155` |
+| `access.ercType?` | `ERCType` | NFT asset type which can be `721` or `1155` |
+| `access.messageAuth?` | `string` | Message auth in case that the token is expired |
 | `access.nftAmount` | `BigNumber` | The amount of NFT asset to buy |
 | `access.nftHolder` | `string` | The owner of the NFT asset |
 | `access.onEvent?` | (`next`: `OrderProgressStep`) => `void` | - |
@@ -39,4 +41,4 @@ It is successfully completed will return the `agreementId`
 
 #### Defined in
 
-[types/index.ts:877](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L877)
+[types/index.ts:875](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L875)

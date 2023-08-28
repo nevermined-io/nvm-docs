@@ -18,37 +18,53 @@
 
 ### MARKETPLACE\_API\_TOKEN
 
-• `Const` **MARKETPLACE\_API\_TOKEN**: ``"marketplaceApiToken"``
+• `Const` **MARKETPLACE\_API\_TOKEN**: ``"marketplaceAPIToken"``
 
 #### Defined in
 
-[utils/marketplace_token.ts:5](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/marketplace_token.ts#L5)
+[utils/marketplace_token.ts:4](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/utils/marketplace_token.ts#L4)
 
 ## Functions
 
 ### fetchMarketplaceApiTokenFromLocalStorage
 
-▸ **fetchMarketplaceApiTokenFromLocalStorage**(): [`MarketplaceAPIToken`](../interfaces/MarketplaceAPIToken.md)
+▸ **fetchMarketplaceApiTokenFromLocalStorage**(`«destructured»`): ``null`` \| `string`
 
 Get Marketplace API token to local storage
 
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `address` | `string` |
+| › `chainId` | `number` |
+
 #### Returns
 
-[`MarketplaceAPIToken`](../interfaces/MarketplaceAPIToken.md)
+``null`` \| `string`
 
 Auth token object which generated from Marketplace API
 
 #### Defined in
 
-[utils/marketplace_token.ts:25](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/marketplace_token.ts#L25)
+[utils/marketplace_token.ts:12](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/utils/marketplace_token.ts#L12)
 
 ___
 
 ### getAddressTokenSigner
 
-▸ **getAddressTokenSigner**(): `undefined` \| `string`
+▸ **getAddressTokenSigner**(`«destructured»`): `undefined` \| `string`
 
 Return the address that sign the token
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `address` | `string` |
+| › `chainId` | `number` |
 
 #### Returns
 
@@ -58,15 +74,21 @@ The address token signer
 
 #### Defined in
 
-[utils/marketplace_token.ts:93](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/marketplace_token.ts#L93)
+[utils/marketplace_token.ts:96](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/utils/marketplace_token.ts#L96)
 
 ___
 
 ### isTokenValid
 
-▸ **isTokenValid**(): `boolean`
+▸ **isTokenValid**(`«destructured»`): `boolean`
 
-Check if Marketplace API Token is valid
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `address` | `string` |
+| › `chainId` | `number` |
 
 #### Returns
 
@@ -76,33 +98,35 @@ Return `true` if token is valid
 
 #### Defined in
 
-[utils/marketplace_token.ts:71](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/marketplace_token.ts#L71)
+[utils/marketplace_token.ts:76](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/utils/marketplace_token.ts#L76)
 
 ___
 
 ### newMarketplaceApiToken
 
-▸ **newMarketplaceApiToken**(`sdk`, `account`, `message?`): `Promise`<[`MarketplaceAPIToken`](../interfaces/MarketplaceAPIToken.md)\>
+▸ **newMarketplaceApiToken**(`«destructured»`): `Promise`<`boolean`\>
 
 Generate new Marketplace API API token
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `sdk` | `Nevermined` | Instance of SDK object |
-| `account` | `Account` | The account requesting the token |
-| `message?` | `string` | Optional message to be included. Usually to be displayed in metamask |
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `address` | `string` |
+| › `chainId` | `number` |
+| › `message?` | `string` |
+| › `sdk` | `Nevermined` |
 
 #### Returns
 
-`Promise`<[`MarketplaceAPIToken`](../interfaces/MarketplaceAPIToken.md)\>
+`Promise`<`boolean`\>
 
 Auth token object which generated from Marketplace API
 
 #### Defined in
 
-[utils/marketplace_token.ts:51](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/marketplace_token.ts#L51)
+[utils/marketplace_token.ts:37](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/utils/marketplace_token.ts#L37)
 
 ___
 
@@ -116,7 +140,10 @@ Save Marketplace API token to local storage
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `i` | [`MarketplaceAPIToken`](../interfaces/MarketplaceAPIToken.md) | Auth token object which is generated from Marketplace API |
+| `i` | `Object` | Auth token object which is generated from Marketplace API |
+| `i.address` | `string` | - |
+| `i.chainId` | `number` | - |
+| `i.token` | `string` | - |
 
 #### Returns
 
@@ -124,4 +151,4 @@ Save Marketplace API token to local storage
 
 #### Defined in
 
-[utils/marketplace_token.ts:11](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/utils/marketplace_token.ts#L11)
+[utils/marketplace_token.ts:119](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/utils/marketplace_token.ts#L119)

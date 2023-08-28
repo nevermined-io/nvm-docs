@@ -8,7 +8,6 @@ under 'account' object
 ### Properties
 
 - [generateToken](AccountModule.md#generatetoken)
-- [getAddressTokenSigner](AccountModule.md#getaddresstokensigner)
 - [getAssociatedDatasets](AccountModule.md#getassociateddatasets)
 - [getAssociatedServices](AccountModule.md#getassociatedservices)
 - [getCollection](AccountModule.md#getcollection)
@@ -28,52 +27,32 @@ under 'account' object
 
 ### generateToken
 
-• **generateToken**: (`account`: `Account`, `message?`: `string`) => `Promise`<[`MarketplaceAPIToken`](MarketplaceAPIToken.md)\>
+• **generateToken**: (`__namedParameters`: { `address`: `string` ; `chainId`: `number` ; `message?`: `string`  }) => `Promise`<`string`\>
 
 #### Type declaration
 
-▸ (`account`, `message?`): `Promise`<[`MarketplaceAPIToken`](MarketplaceAPIToken.md)\>
+▸ (`«destructured»`): `Promise`<`string`\>
 
 Generate a token for authentication in the Marketplace API
 
 ##### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `account` | `Account` | Account of the user |
-| `message?` | `string` | Optional message to be included. Usually to be displayed in metamask |
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `address` | `string` |
+| › `chainId` | `number` |
+| › `message?` | `string` |
 
 ##### Returns
 
-`Promise`<[`MarketplaceAPIToken`](MarketplaceAPIToken.md)\>
+`Promise`<`string`\>
 
 The new generated token
 
 #### Defined in
 
-[types/index.ts:514](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L514)
-
-___
-
-### getAddressTokenSigner
-
-• **getAddressTokenSigner**: () => `string`
-
-#### Type declaration
-
-▸ (): `string`
-
-Return the address that sign the token
-
-##### Returns
-
-`string`
-
-The address token signer
-
-#### Defined in
-
-[types/index.ts:524](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L524)
+[types/index.ts:515](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L515)
 
 ___
 
@@ -102,7 +81,7 @@ associated datasets to subscriptions
 
 #### Defined in
 
-[types/index.ts:446](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L446)
+[types/index.ts:446](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L446)
 
 ___
 
@@ -131,7 +110,7 @@ associated services to subscriptions
 
 #### Defined in
 
-[types/index.ts:439](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L439)
+[types/index.ts:439](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L439)
 
 ___
 
@@ -159,7 +138,7 @@ List of assets which was bought by the address given as argument
 
 #### Defined in
 
-[types/index.ts:422](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L422)
+[types/index.ts:422](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L422)
 
 ___
 
@@ -188,7 +167,7 @@ published subscriptions
 
 #### Defined in
 
-[types/index.ts:429](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L429)
+[types/index.ts:429](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L429)
 
 ___
 
@@ -218,7 +197,7 @@ published subscriptions and its datasets
 
 #### Defined in
 
-[types/index.ts:466](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L466)
+[types/index.ts:466](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L466)
 
 ___
 
@@ -248,7 +227,7 @@ published subscriptions and service
 
 #### Defined in
 
-[types/index.ts:454](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L454)
+[types/index.ts:454](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L454)
 
 ___
 
@@ -277,7 +256,7 @@ purchased subscriptions
 
 #### Defined in
 
-[types/index.ts:478](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L478)
+[types/index.ts:478](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L478)
 
 ___
 
@@ -307,7 +286,7 @@ purchased subscriptions and its datasets
 
 #### Defined in
 
-[types/index.ts:501](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L501)
+[types/index.ts:501](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L501)
 
 ___
 
@@ -337,7 +316,7 @@ purchased subscriptions and services
 
 #### Defined in
 
-[types/index.ts:489](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L489)
+[types/index.ts:489](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L489)
 
 ___
 
@@ -365,7 +344,7 @@ List of assets which was published by the address given
 
 #### Defined in
 
-[types/index.ts:416](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L416)
+[types/index.ts:416](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L416)
 
 ___
 
@@ -394,7 +373,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:532](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L532)
+[types/index.ts:538](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L538)
 
 ___
 
@@ -425,7 +404,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[types/index.ts:542](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L542)
+[types/index.ts:548](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L548)
 
 ___
 
@@ -456,19 +435,26 @@ true if the user holds the NFT
 
 #### Defined in
 
-[types/index.ts:552](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L552)
+[types/index.ts:558](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L558)
 
 ___
 
 ### isTokenValid
 
-• **isTokenValid**: () => `boolean`
+• **isTokenValid**: (`address`: `string`, `chainId`: `number`) => `boolean`
 
 #### Type declaration
 
-▸ (): `boolean`
+▸ (`address`, `chainId`): `boolean`
 
 check if the token for Marketplace API is valid
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `address` | `string` |
+| `chainId` | `number` |
 
 ##### Returns
 
@@ -478,4 +464,4 @@ if token is valid it will return true
 
 #### Defined in
 
-[types/index.ts:519](https://github.com/nevermined-io/react-components/blob/9c24121/catalog/src/types/index.ts#L519)
+[types/index.ts:530](https://github.com/nevermined-io/react-components/blob/c920e0b/catalog/src/types/index.ts#L530)
