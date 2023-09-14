@@ -22,7 +22,7 @@ Asset object
 
 #### Defined in
 
-[types/index.ts:773](https://github.com/nevermined-io/react-components/blob/f2bb80f/catalog/src/types/index.ts#L773)
+[types/index.ts:773](https://github.com/nevermined-io/react-components/blob/8c90aef/catalog/src/types/index.ts#L773)
 
 ___
 
@@ -34,7 +34,7 @@ Error message from some operation with asset
 
 #### Defined in
 
-[types/index.ts:777](https://github.com/nevermined-io/react-components/blob/f2bb80f/catalog/src/types/index.ts#L777)
+[types/index.ts:777](https://github.com/nevermined-io/react-components/blob/8c90aef/catalog/src/types/index.ts#L777)
 
 ___
 
@@ -46,7 +46,7 @@ True if asset object is loaded
 
 #### Defined in
 
-[types/index.ts:779](https://github.com/nevermined-io/react-components/blob/f2bb80f/catalog/src/types/index.ts#L779)
+[types/index.ts:779](https://github.com/nevermined-io/react-components/blob/8c90aef/catalog/src/types/index.ts#L779)
 
 ___
 
@@ -58,7 +58,7 @@ Metada of the asset with the basic information
 
 #### Defined in
 
-[types/index.ts:775](https://github.com/nevermined-io/react-components/blob/f2bb80f/catalog/src/types/index.ts#L775)
+[types/index.ts:775](https://github.com/nevermined-io/react-components/blob/8c90aef/catalog/src/types/index.ts#L775)
 
 ___
 
@@ -70,4 +70,4 @@ Details of the asset agreement
 
 #### Defined in
 
-[types/index.ts:781](https://github.com/nevermined-io/react-components/blob/f2bb80f/catalog/src/types/index.ts#L781)
+[types/index.ts:781](https://github.com/nevermined-io/react-components/blob/8c90aef/catalog/src/types/index.ts#L781)
