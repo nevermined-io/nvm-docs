@@ -56,7 +56,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/account.ts:79](https://github.com/nevermined-io/react-components/blob/8c90aef/catalog/src/services/account.ts#L79)
+[services/account.ts:79](https://github.com/nevermined-io/react-components/blob/c6636b1/catalog/src/services/account.ts#L79)
 
 ___
 
@@ -103,7 +103,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/account.ts:35](https://github.com/nevermined-io/react-components/blob/8c90aef/catalog/src/services/account.ts#L35)
+[services/account.ts:35](https://github.com/nevermined-io/react-components/blob/c6636b1/catalog/src/services/account.ts#L35)
 
 ___
 
@@ -132,7 +132,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[services/account.ts:516](https://github.com/nevermined-io/react-components/blob/8c90aef/catalog/src/services/account.ts#L516)
+[services/account.ts:517](https://github.com/nevermined-io/react-components/blob/c6636b1/catalog/src/services/account.ts#L517)
 
 ___
 
@@ -163,7 +163,7 @@ true if the user owns at least one edition of the NFT
 
 #### Defined in
 
-[services/account.ts:551](https://github.com/nevermined-io/react-components/blob/8c90aef/catalog/src/services/account.ts#L551)
+[services/account.ts:552](https://github.com/nevermined-io/react-components/blob/c6636b1/catalog/src/services/account.ts#L552)
 
 ___
 
@@ -194,7 +194,7 @@ true if the user holds the NFT
 
 #### Defined in
 
-[services/account.ts:587](https://github.com/nevermined-io/react-components/blob/8c90aef/catalog/src/services/account.ts#L587)
+[services/account.ts:588](https://github.com/nevermined-io/react-components/blob/c6636b1/catalog/src/services/account.ts#L588)
 
 ___
 
@@ -422,4 +422,4 @@ export const UserProfile: NextPage = () => {
 
 #### Defined in
 
-[services/account.ts:291](https://github.com/nevermined-io/react-components/blob/8c90aef/catalog/src/services/account.ts#L291)
+[services/account.ts:291](https://github.com/nevermined-io/react-components/blob/c6636b1/catalog/src/services/account.ts#L291)
