@@ -64,7 +64,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/event.ts:258](https://github.com/nevermined-io/react-components/blob/c6636b1/catalog/src/services/event.ts#L258)
+[services/event.ts:258](https://github.com/nevermined-io/react-components/blob/6de295e/catalog/src/services/event.ts#L258)
 
 ___
 
@@ -122,7 +122,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/event.ts:49](https://github.com/nevermined-io/react-components/blob/c6636b1/catalog/src/services/event.ts#L49)
+[services/event.ts:49](https://github.com/nevermined-io/react-components/blob/6de295e/catalog/src/services/event.ts#L49)
 
 ___
 
@@ -178,7 +178,7 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/event.ts:120](https://github.com/nevermined-io/react-components/blob/c6636b1/catalog/src/services/event.ts#L120)
+[services/event.ts:120](https://github.com/nevermined-io/react-components/blob/6de295e/catalog/src/services/event.ts#L120)
 
 ___
 
@@ -236,4 +236,4 @@ const MyComponent = () => {
 
 #### Defined in
 
-[services/event.ts:188](https://github.com/nevermined-io/react-components/blob/c6636b1/catalog/src/services/event.ts#L188)
+[services/event.ts:188](https://github.com/nevermined-io/react-components/blob/6de295e/catalog/src/services/event.ts#L188)
