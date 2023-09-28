@@ -71,6 +71,12 @@ function getTrustedForwarder() public view virtual returns (address)
 
 Implement IERC2771Recipient
 
+### hasNVMOperatorRole
+
+```solidity
+function hasNVMOperatorRole(address a) public view virtual returns (bool)
+```
+
 ### isTrustedForwarder
 
 ```solidity
@@ -1063,6 +1069,482 @@ checkPermissions is called by Parity secret store
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | permissionGranted | bool | true if the access was granted |
+
+## G1Point
+
+```solidity
+struct G1Point {
+  uint256 x;
+  uint256 y;
+}
+```
+
+## DleqProof
+
+```solidity
+struct DleqProof {
+  uint256 e;
+  uint256 f;
+}
+```
+
+## AccessDLEQCondition
+
+_Implementation of the Access Condition with transfer proof (DLEQ).
+The idea is that actors are able to share decryption keys, also there are proofs that
+correct keys have been shared.
+The system has three actors:
+ - Network (can be several actors with threshold signature)
+ - Data provider: encrypts the original data, sends decryption key to network
+ - Data consumer: gets a decryption key from the network
+
+The network has secret y, and public key yG = Y
+
+Data provider view
+- Will first need to generate password (256 bits, or probably a bit less)
+- The data has to be encrypted and the encrypted data is made publicly available
+- Then will have to generate a secret key x
+- Public key xG: identifier for the secret
+- The shared secret will then be xyG (ecdh)
+- The password is encrypted with the shared secret (just xor)
+- The encrypted password and corresponding public key xG are stored by the network
+- There could be a ZK-SNARK that gives knowledge of the hash of the password, but it depends on the curve if it’s efficient
+- Data provider can forget the secret key (it shouldn’t be used again)
+- In theory could forget the password, but probably the network will have to change the key like once in a year, so it will have to be resent
+
+Consumer view
+- First can download the encrypted data
+- Can get the corresponding encrypted password and xG from network / smart contracts
+- Will have to generate a secret key z
+- So the agreement will include xG and yG, also encrypted password and zG
+- The network will send y(xG+zG) to fulfill the agreement. There will probably have to be some way to send a reward to the network (re-encrytion)
+- The consumer will get the shared secret by: y(xG+zG) - yzG = xyG
+- Now the consumer will get the password with xor and can decrypt the downloaded data
+
+Correctness guarantees (DLEQ proof that reencryption was correct)
+
+Making sure that the network sends the correct result (DLEQ; discrete logarithm equality)
+
+DLEQ basic description
+- Given points G, H
+- Send points X, Y
+- DLEQ proves that there exists x such that X = xG and Y = xH
+- In other words, G/X = H/Y
+- This is a ZK proof
+
+Proving that re-encryption is correct
+- We have points G and xG+zG
+- Send points Y, R (Y is the previously known public key Y=yG)
+- Will prove that R = y(xG+zG)
+- So just DLEQ is enough to prove the correctness_
+
+### CONDITION_TYPE
+
+```solidity
+bytes32 CONDITION_TYPE
+```
+
+### agreementStoreManager
+
+```solidity
+contract AgreementStoreManager agreementStoreManager
+```
+
+### Fulfilled
+
+```solidity
+event Fulfilled(bytes32 _agreementId, uint256 _cipher, uint256[2] _secretId, uint256[2] _buyer, uint256[2] _provider, uint256[2] _reencrypt, uint256[2] _proof, bytes32 _conditionId)
+```
+
+### lockPaymentCondition
+
+```solidity
+contract LockPaymentCondition lockPaymentCondition
+```
+
+### accessCondition
+
+```solidity
+contract AccessDLEQCondition accessCondition
+```
+
+### rewardCondition
+
+```solidity
+contract EscrowPaymentCondition rewardCondition
+```
+
+### Authorized
+
+```solidity
+event Authorized(uint256[2] secret, uint256[2] buyer, bytes32 agreementId, bytes32 label)
+```
+
+### initialize
+
+```solidity
+function initialize(address _owner, address _conditionStoreManagerAddress, address _agreementStoreManagerAddress, address payable _lock, address payable _escrow) external
+```
+
+initialize init the 
+      contract with the following parameters
+
+_this function is called only once during the contract
+      initialization._
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| _owner | address | contract's owner account address |
+| _conditionStoreManagerAddress | address | condition store manager address |
+| _agreementStoreManagerAddress | address | agreement store manager address |
+| _lock | address payable |  |
+| _escrow | address payable |  |
+
+### hashValues
+
+```solidity
+function hashValues(uint256 _cipher, uint256[2] _secretId, uint256[2] _provider, uint256[2] _buyer) public pure returns (bytes32)
+```
+
+hashValues generates the hash of condition inputs 
+       with the following parameters
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| _cipher | uint256 | is the encrypted key |
+| _secretId | uint256[2] | public key for the secret used in encryption |
+| _provider | uint256[2] | provider public key |
+| _buyer | uint256[2] | buyer public key |
+
+#### Return Values
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | bytes32 | bytes32 hash of all these values |
+
+### fulfill
+
+```solidity
+function fulfill(bytes32 _agreementId, uint256 _cipher, uint256[2] _secretId, uint256[2] _provider, uint256[2] _buyer, uint256[2] _reencrypt, uint256[2] _proof) public returns (enum ConditionStoreLibrary.ConditionState)
+```
+
+fulfill key transfer
+
+_The key with hash _origHash is transferred to the _buyer from _provider. See the decription of the class for more details._
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| _agreementId | bytes32 | associated agreement |
+| _cipher | uint256 | encrypted version of the key |
+| _secretId | uint256[2] |  |
+| _provider | uint256[2] | provider public key |
+| _buyer | uint256[2] | buyer public key |
+| _reencrypt | uint256[2] | Re-encryption key from provider to buyer |
+| _proof | uint256[2] | DLEQ proof of correctness |
+
+#### Return Values
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | enum ConditionStoreLibrary.ConditionState | condition state (Fulfilled/Aborted) |
+
+### Params
+
+```solidity
+struct Params {
+  bytes32 _agreementId;
+  uint256 _cipher;
+  uint256[2] _secretId;
+  uint256[2] _provider;
+  uint256[2] _buyer;
+  bool ready;
+}
+```
+
+### authorized
+
+```solidity
+mapping(bytes32 => mapping(bytes32 => bool)) authorized
+```
+
+### authorizedParams
+
+```solidity
+mapping(bytes32 => struct AccessDLEQCondition.Params) authorizedParams
+```
+
+### prices
+
+```solidity
+mapping(bytes32 => struct AccessDLEQCondition.SecretPrice[]) prices
+```
+
+### network
+
+```solidity
+uint256[2] network
+```
+
+### secretOwner
+
+```solidity
+mapping(bytes32 => address) secretOwner
+```
+
+### AddSecret
+
+```solidity
+event AddSecret(bytes32 h, uint256[2] secretId)
+```
+
+### SecretPrice
+
+```solidity
+struct SecretPrice {
+  uint256 num;
+  address token;
+  uint256 tokenType;
+}
+```
+
+### setNetworkPublicKey
+
+```solidity
+function setNetworkPublicKey(uint256[2] point) public
+```
+
+Set network public key
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| point | uint256[2] | Public key (bn256 curve point) |
+
+### pointId
+
+```solidity
+function pointId(uint256[2] point) public pure returns (bytes32)
+```
+
+Hash bn256 point to get an ID
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| point | uint256[2] | Bn256 curve point |
+
+### addSecret
+
+```solidity
+function addSecret(uint256[2] point) public
+```
+
+Add a secret to the contract. The sendre will be it's owner.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| point | uint256[2] | Public key for the secret |
+
+### addPrice
+
+```solidity
+function addPrice(bytes32 id, uint256 price, address token, uint256 tokenType) public
+```
+
+Add price information for a secret
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | bytes32 | ID for the secret |
+| price | uint256 | Price that will be accepted for the secret |
+| token | address | Price token |
+| tokenType | uint256 | Token type, currently ERC-20 |
+
+### fulfillFromNetwork
+
+```solidity
+function fulfillFromNetwork(bytes32 agreementId, uint256[2] reencrypt, uint256[2] proof) public
+```
+
+fulfill key transfer (by network)
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| agreementId | bytes32 | associated agreement |
+| reencrypt | uint256[2] | Re-encryption key from provider to buyer |
+| proof | uint256[2] | DLEQ proof of correctness |
+
+### fulfilled
+
+```solidity
+function fulfilled(bytes32 agreementId) public view returns (bool)
+```
+
+check if has already been fulfilled
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| agreementId | bytes32 | associated agreement |
+
+### auth
+
+```solidity
+function auth(uint256 secretId1, uint256 secretId2, bytes[] _params, bytes32[2] id) internal
+```
+
+### authorizeAccessTemplate
+
+```solidity
+function authorizeAccessTemplate(bytes32 id, bytes[] _params, uint256 priceIdx) public
+```
+
+Validate agreement for fulfillment by network
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | bytes32 | Agreement Id |
+| _params | bytes[] | Params fot the agreement |
+| priceIdx | uint256 | Price index to use |
+
+### checkParamsLock
+
+```solidity
+function checkParamsLock(bytes[] _params, bytes32 sid, uint256 priceIdx) internal view
+```
+
+### checkParamsEscrow
+
+```solidity
+function checkParamsEscrow(bytes[] _params, bytes32 lockPaymentId, bytes32 transferId) internal pure
+```
+
+### g1p
+
+```solidity
+function g1p(uint256[2] p) internal pure returns (struct G1Point)
+```
+
+g1p Convert array to point.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| p | uint256[2] | array [x,y] |
+
+### P
+
+```solidity
+uint256 P
+```
+
+### G1X
+
+```solidity
+uint256 G1X
+```
+
+_Gets generator of G1 group.
+     Taken from go-ethereum/crypto/bn256/cloudflare/curve.go_
+
+### G1Y
+
+```solidity
+uint256 G1Y
+```
+
+### R
+
+```solidity
+uint256 R
+```
+
+### dleqverify
+
+```solidity
+function dleqverify(struct G1Point _g1, struct G1Point _g2, struct G1Point _rg1, struct G1Point _rg2, struct DleqProof _proof, bytes32 _label) internal view returns (bool)
+```
+
+dleqverify verify DLEQ proof
+
+_The key with hash _origHash is transferred to the _buyer from _provider. See the decription of the class for more details._
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| _g1 | struct G1Point | First base point |
+| _g2 | struct G1Point | Second base point |
+| _rg1 | struct G1Point | First base point multiplied by the secret |
+| _rg2 | struct G1Point | Second base point multiplied by the secret |
+| _proof | struct DleqProof |  |
+| _label | bytes32 | Identifier for the proof (added to transcript) |
+
+#### Return Values
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | bool | true if the proof was correct |
+
+### scalarMultiply
+
+```solidity
+function scalarMultiply(struct G1Point p1, uint256 scalar) internal view returns (struct G1Point p2)
+```
+
+_Wraps the scalar point multiplication pre-compile introduced in
+     Byzantium. The result of a point from G1 multiplied by a scalar
+     should match the point added to itself the same number of times.
+     Revert if the provided point isn't on the curve._
+
+### g1Add
+
+```solidity
+function g1Add(struct G1Point a, struct G1Point b) internal view returns (struct G1Point c)
+```
+
+### isG1PointOnCurve
+
+```solidity
+function isG1PointOnCurve(struct G1Point point) internal view returns (bool)
+```
+
+_Returns true if G1 point is on the curve._
+
+### g1
+
+```solidity
+function g1() public pure returns (struct G1Point)
+```
+
+_Returns the base point._
+
+### modExp
+
+```solidity
+function modExp(uint256 base, uint256 exponent, uint256 p) internal view returns (uint256 o)
+```
+
+_Wraps the modular exponent pre-compile introduced in Byzantium.
+    Returns base^exponent mod p._
 
 ## IDisputeManager
 
@@ -2670,63 +3152,6 @@ function fulfillMarked(bytes32 _agreementId, bytes32 _did, address _lockAddress,
 event Fulfilled(bytes32 _agreementId, bytes32 _did, address _receiver, uint256 _amount, bytes32 _conditionId, address _contract)
 ```
 
-### hashValues
-
-```solidity
-function hashValues(bytes32 _did, address _nftHolder, address _nftReceiver, uint256 _nftAmount, bytes32 _lockCondition, address _contract, bool _transfer) external pure returns (bytes32)
-```
-
-hashValues generates the hash of condition inputs 
-       with the following parameters
-
-#### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| _did | bytes32 | refers to the DID in which secret store will issue the decryption keys |
-| _nftHolder | address |  |
-| _nftReceiver | address | is the address of the granted user or the DID provider |
-| _nftAmount | uint256 | amount of NFTs to transfer |
-| _lockCondition | bytes32 | lock condition identifier |
-| _contract | address |  |
-| _transfer | bool | Indicates if the NFT will be transferred (true) or minted (false) |
-
-#### Return Values
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| [0] | bytes32 | bytes32 hash of all these values |
-
-### fulfill
-
-```solidity
-function fulfill(bytes32 _agreementId, bytes32 _did, address _nftReceiver, uint256 _nftAmount, bytes32 _lockPaymentCondition, address _contract, bool _transfer) external returns (enum ConditionStoreLibrary.ConditionState)
-```
-
-fulfill the transfer NFT condition
-
-_Fulfill method transfer a certain amount of NFTs 
-      to the _nftReceiver address. 
-      When true then fulfill the condition_
-
-#### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| _agreementId | bytes32 | agreement identifier |
-| _did | bytes32 | refers to the DID in which secret store will issue the decryption keys |
-| _nftReceiver | address | is the address of the account to receive the NFT |
-| _nftAmount | uint256 | amount of NFTs to transfer |
-| _lockPaymentCondition | bytes32 | lock payment condition identifier |
-| _contract | address |  |
-| _transfer | bool | Indicates if the NFT will be transferred (true) or minted (false) |
-
-#### Return Values
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| [0] | enum ConditionStoreLibrary.ConditionState | condition state (Fulfilled/Aborted) |
-
 ### getNFTDefaultAddress
 
 ```solidity
@@ -3959,10 +4384,41 @@ _Fulfill method transfer a certain amount of NFTs
 | ---- | ---- | ----------- |
 | [0] | enum ConditionStoreLibrary.ConditionState | condition state (Fulfilled/Aborted) |
 
+### fulfill
+
+```solidity
+function fulfill(bytes32 _agreementId, bytes32 _did, address _nftReceiver, uint256 _nftAmount, bytes32 _lockPaymentCondition, address _nftContractAddress, bool _transfer, uint256 _expirationBlock) public returns (enum ConditionStoreLibrary.ConditionState)
+```
+
+fulfill the transfer NFT condition
+
+_Fulfill method transfer a certain amount of NFTs 
+      to the _nftReceiver address. 
+      When true then fulfill the condition_
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| _agreementId | bytes32 | agreement identifier |
+| _did | bytes32 | refers to the DID in which secret store will issue the decryption keys |
+| _nftReceiver | address | is the address of the account to receive the NFT |
+| _nftAmount | uint256 | amount of NFTs to transfer |
+| _lockPaymentCondition | bytes32 | lock payment condition identifier |
+| _nftContractAddress | address | NFT contract to use |
+| _transfer | bool | Indicates if the NFT will be transferred (true) or minted (false) |
+| _expirationBlock | uint256 | Block in which the token expires. If zero means no expiration |
+
+#### Return Values
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | enum ConditionStoreLibrary.ConditionState | condition state (Fulfilled/Aborted) |
+
 ### fulfillInternal
 
 ```solidity
-function fulfillInternal(address _account, bytes32 _agreementId, bytes32 _did, address _nftReceiver, uint256 _nftAmount, bytes32 _lockPaymentCondition, address _nftContractAddress, bool _transfer) internal returns (enum ConditionStoreLibrary.ConditionState)
+function fulfillInternal(address _account, bytes32 _agreementId, bytes32 _did, address _nftReceiver, uint256 _nftAmount, bytes32 _lockPaymentCondition, address _nftContractAddress, bool _transfer, uint256 _expirationBlock) internal returns (enum ConditionStoreLibrary.ConditionState)
 ```
 
 ### fulfillForDelegate
@@ -3998,7 +4454,7 @@ _Fulfill method transfer a certain amount of NFTs
 ### fulfillForDelegate
 
 ```solidity
-function fulfillForDelegate(bytes32 _agreementId, bytes32 _did, address _nftHolder, address _nftReceiver, uint256 _nftAmount, bytes32 _lockPaymentCondition, address _nftContractAddress, bool _transfer) public returns (enum ConditionStoreLibrary.ConditionState)
+function fulfillForDelegate(bytes32 _agreementId, bytes32 _did, address _nftHolder, address _nftReceiver, uint256 _nftAmount, bytes32 _lockPaymentCondition, address _nftContractAddress, bool _transfer, uint256 _expirationBlock) public returns (enum ConditionStoreLibrary.ConditionState)
 ```
 
 fulfill the transfer NFT condition
@@ -4017,8 +4473,9 @@ _Fulfill method transfer a certain amount of NFTs
 | _nftReceiver | address | is the address of the account to receive the NFT |
 | _nftAmount | uint256 | amount of NFTs to transfer |
 | _lockPaymentCondition | bytes32 | lock payment condition identifier |
-| _nftContractAddress | address | the address of the ERC-721 NFT contract |
+| _nftContractAddress | address | the address of the ERC-1155 NFT contract |
 | _transfer | bool | if yes it does a transfer if false it mints the NFT |
+| _expirationBlock | uint256 | Block in which the token expires. If zero means no expiration |
 
 #### Return Values
 
@@ -5859,7 +6316,41 @@ Returns true if provenance should be stored in storage
 function getTrustedForwarder() external view virtual returns (address)
 ```
 
+Returns the address of OpenGSN forwarder contract
+
+#### Return Values
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | address | a address of OpenGSN forwarder contract |
+
+### hasNVMOperatorRole
+
+```solidity
+function hasNVMOperatorRole(address _address) external view virtual returns (bool)
+```
+
+Indicates if an address is a having the OPERATOR role
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| _address | address | The address to validate |
+
+#### Return Values
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | bool | true if is a governor |
+
 ## NeverminedConfig
+
+### NVM_OPERATOR_ROLE
+
+```solidity
+bytes32 NVM_OPERATOR_ROLE
+```
 
 ### marketplaceFee
 
@@ -5942,6 +6433,38 @@ Indicates if an address is a having the GOVERNOR role
 | ---- | ---- | ----------- |
 | [0] | bool | true if is a governor |
 
+### grantNVMOperatorRole
+
+```solidity
+function grantNVMOperatorRole(address _address) external
+```
+
+### revokeNVMOperatorRole
+
+```solidity
+function revokeNVMOperatorRole(address _address) external
+```
+
+### hasNVMOperatorRole
+
+```solidity
+function hasNVMOperatorRole(address _address) external view returns (bool)
+```
+
+Indicates if an address is a having the OPERATOR role
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| _address | address | The address to validate |
+
+#### Return Values
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | bool | true if is a governor |
+
 ### getMarketplaceFee
 
 ```solidity
@@ -5989,6 +6512,14 @@ Returns true if provenance should be stored in storage
 ```solidity
 function getTrustedForwarder() external view virtual returns (address)
 ```
+
+Returns the address of OpenGSN forwarder contract
+
+#### Return Values
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | address | a address of OpenGSN forwarder contract |
 
 ### setTrustedForwarder
 
@@ -7541,6 +8072,115 @@ function safeApprove(contract IERC20 token, address spender, uint256 value) inte
 ```solidity
 function callOptionalReturn(contract IERC20 token, bytes data) private
 ```
+
+## G1Point
+
+```solidity
+struct G1Point {
+  uint256 x;
+  uint256 y;
+}
+```
+
+## DleqProof
+
+```solidity
+struct DleqProof {
+  uint256 f;
+  uint256 e;
+}
+```
+
+## Bn128
+
+_Implementations of common elliptic curve operations on Ethereum's
+     alt_bn128 curve. Whenever possible, use post-Byzantium
+     pre-compiled contracts to offset gas costs._
+
+### P
+
+```solidity
+uint256 P
+```
+
+### G1X
+
+```solidity
+uint256 G1X
+```
+
+_Gets generator of G1 group.
+     Taken from go-ethereum/crypto/bn256/cloudflare/curve.go_
+
+### G1Y
+
+```solidity
+uint256 G1Y
+```
+
+### R
+
+```solidity
+uint256 R
+```
+
+### dleqverify
+
+```solidity
+function dleqverify(struct G1Point _g1, struct G1Point _g2, struct G1Point _rg1, struct G1Point _rg2, struct DleqProof _proof, bytes32 _label) internal view returns (bool)
+```
+
+### g1Zero
+
+```solidity
+function g1Zero() internal pure returns (struct G1Point)
+```
+
+### scalarMultiply
+
+```solidity
+function scalarMultiply(struct G1Point p1, uint256 scalar) internal view returns (struct G1Point p2)
+```
+
+_Wraps the scalar point multiplication pre-compile introduced in
+     Byzantium. The result of a point from G1 multiplied by a scalar
+     should match the point added to itself the same number of times.
+     Revert if the provided point isn't on the curve._
+
+### g1Add
+
+```solidity
+function g1Add(struct G1Point a, struct G1Point b) internal view returns (struct G1Point c)
+```
+
+_Wraps the point addition pre-compile introduced in Byzantium.
+     Returns the sum of two points on G1. Revert if the provided points
+     are not on the curve._
+
+### isG1PointOnCurve
+
+```solidity
+function isG1PointOnCurve(struct G1Point point) internal view returns (bool)
+```
+
+_Returns true if G1 point is on the curve._
+
+### g1
+
+```solidity
+function g1() public pure returns (struct G1Point)
+```
+
+## ModUtils
+
+### modExp
+
+```solidity
+function modExp(uint256 base, uint256 exponent, uint256 p) internal view returns (uint256 o)
+```
+
+_Wraps the modular exponent pre-compile introduced in Byzantium.
+     Returns base^exponent mod p._
 
 ## CloneFactory
 
@@ -10139,6 +10779,59 @@ Updates the nevermined fee for this type of agreement
 function changeCreditVaultLibrary(address _vaultLibrary) public
 ```
 
+## AccessDLEQTemplate
+
+_Implementation of Access Agreement Template_
+
+### didRegistry
+
+```solidity
+contract DIDRegistry didRegistry
+```
+
+### accessCondition
+
+```solidity
+contract AccessDLEQCondition accessCondition
+```
+
+### lockCondition
+
+```solidity
+contract LockPaymentCondition lockCondition
+```
+
+### escrowReward
+
+```solidity
+contract EscrowPaymentCondition escrowReward
+```
+
+### initialize
+
+```solidity
+function initialize(address _owner, address _agreementStoreManagerAddress, address _didRegistryAddress, address _accessConditionAddress, address _lockConditionAddress, address payable _escrowConditionAddress) external
+```
+
+initialize init the 
+      contract with the following parameters.
+
+_this function is called only once during the contract
+      initialization. It initializes the ownable feature, and 
+      set push the required condition types including 
+      access , lock payment and escrow payment conditions._
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| _owner | address | contract's owner account address |
+| _agreementStoreManagerAddress | address | agreement store manager contract address |
+| _didRegistryAddress | address | DID registry contract address |
+| _accessConditionAddress | address | access condition address |
+| _lockConditionAddress | address | lock reward condition contract address |
+| _escrowConditionAddress | address payable | escrow reward contract address |
+
 ## AccessProofTemplate
 
 _Implementation of Access Agreement Template_
@@ -10420,7 +11113,7 @@ function _initAgreement(bytes32 _idSeed, bytes32 _did, uint256[] _timeLocks, uin
 ### getAgreementData
 
 ```solidity
-function getAgreementData(bytes32 _id) external view returns (address accessConsumer, address accessProvider)
+function getAgreementData(bytes32 _id) external view returns (address accessConsumer, address accessProvider, bytes32 did)
 ```
 
 getAgreementData return the agreement Data
@@ -10437,6 +11130,7 @@ getAgreementData return the agreement Data
 | ---- | ---- | ----------- |
 | accessConsumer | address | the agreement consumer |
 | accessProvider | address | the provider addresses |
+| did | bytes32 |  |
 
 ## DIDSalesTemplate
 
@@ -10668,6 +11362,10 @@ _this function is called only once during the contract
 function name() public pure returns (string)
 ```
 
+## NFT721AccessDLEQTemplate
+
+_Implementation of NFT721 Access Proof Template_
+
 ## NFT721AccessProofTemplate
 
 _Implementation of NFT721 Access Proof Template_
@@ -10682,7 +11380,69 @@ _Implementation of NFT Access Template_
 
 _Implementation of NFT Sales Template_
 
+## NFT721SalesWithDLEQTemplate
+
 ## NFT721SalesWithAccessTemplate
+
+## NFTAccessDLEQTemplate
+
+_Implementation of NFT Access Template
+
+     The NFT Access template is use case specific template.
+     Anyone (consumer/provider/publisher) can use this template in order
+     to setup an agreement allowing NFT holders to get access to Nevermined services. 
+     The template is a composite of 2 basic conditions: 
+     - NFT Holding Condition
+     - Access Condition
+
+     Once the agreement is created, the consumer can demonstrate is holding a NFT
+     for a specific DID. If that's the case the Access condition can be fulfilled
+     by the asset owner or provider and all the agreement is fulfilled.
+     This can be used in scenarios where a data or services owner, can allow 
+     users to get access to exclusive services only when they demonstrate the 
+     are holding a specific number of NFTs of a DID.
+     This is very useful in use cases like arts._
+
+### didRegistry
+
+```solidity
+contract DIDRegistry didRegistry
+```
+
+### nftHolderCondition
+
+```solidity
+contract INFTHolder nftHolderCondition
+```
+
+### accessCondition
+
+```solidity
+contract AccessDLEQCondition accessCondition
+```
+
+### initialize
+
+```solidity
+function initialize(address _owner, address _agreementStoreManagerAddress, address _nftHolderConditionAddress, address _accessConditionAddress) external
+```
+
+initialize init the 
+      contract with the following parameters.
+
+_this function is called only once during the contract
+      initialization. It initializes the ownable feature, and 
+      set push the required condition types including 
+      access secret store, lock reward and escrow reward conditions._
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| _owner | address | contract's owner account address |
+| _agreementStoreManagerAddress | address | agreement store manager contract address |
+| _nftHolderConditionAddress | address | lock reward condition contract address |
+| _accessConditionAddress | address | access condition contract address |
 
 ## NFTAccessProofTemplate
 
@@ -11051,6 +11811,79 @@ _this function is called only once during the contract
 | _escrowPaymentAddress | address payable | escrow reward condition contract address |
 | _accessCondition | address |  |
 
+## NFTSalesWithDLEQTemplate
+
+_Implementation of NFT Sales Template
+
+     The NFT Sales template supports an scenario where a NFT owner
+     can sell that asset to a new Owner.
+     Anyone (consumer/provider/publisher) can use this template in order
+     to setup an agreement allowing a NFT owner to transfer the asset ownership
+     after some payment. 
+     The template is a composite of 3 basic conditions: 
+     - Lock Payment Condition
+     - Transfer NFT Condition
+     - Escrow Reward Condition
+
+     This scenario takes into account royalties for original creators in the secondary market.
+     Once the agreement is created, the consumer after payment can request the transfer of the NFT
+     from the current owner for a specific DID._
+
+### didRegistry
+
+```solidity
+contract DIDRegistry didRegistry
+```
+
+### lockPaymentCondition
+
+```solidity
+contract LockPaymentCondition lockPaymentCondition
+```
+
+### transferCondition
+
+```solidity
+contract ITransferNFT transferCondition
+```
+
+### rewardCondition
+
+```solidity
+contract EscrowPaymentCondition rewardCondition
+```
+
+### accessCondition
+
+```solidity
+contract AccessDLEQCondition accessCondition
+```
+
+### initialize
+
+```solidity
+function initialize(address _owner, address _agreementStoreManagerAddress, address _lockPaymentConditionAddress, address _transferConditionAddress, address payable _escrowPaymentAddress, address _accessCondition) external
+```
+
+initialize init the 
+      contract with the following parameters.
+
+_this function is called only once during the contract
+      initialization. It initializes the ownable feature, and 
+      set push the required condition types including 
+      access secret store, lock reward and escrow reward conditions._
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| _owner | address | contract's owner account address |
+| _agreementStoreManagerAddress | address | agreement store manager contract address |
+| _lockPaymentConditionAddress | address | lock reward condition contract address |
+| _transferConditionAddress | address | transfer NFT condition contract address |
+| _escrowPaymentAddress | address payable | escrow reward condition contract address |
+| _accessCondition | address |  |
+
 ## TemplateStoreLibrary
 
 _Implementation of the Template Store Library.
@@ -11302,6 +12135,227 @@ _getNvmConfigAddress get the address of the NeverminedConfig contract_
 
 ```solidity
 function setNvmConfigAddress(address _addr) external
+```
+
+## IForwarder
+
+### ForwardRequest
+
+```solidity
+struct ForwardRequest {
+  address from;
+  address to;
+  uint256 value;
+  uint256 gas;
+  uint256 nonce;
+  bytes data;
+  uint256 validUntil;
+}
+```
+
+### DomainRegistered
+
+```solidity
+event DomainRegistered(bytes32 domainSeparator, bytes domainValue)
+```
+
+### RequestTypeRegistered
+
+```solidity
+event RequestTypeRegistered(bytes32 typeHash, string typeStr)
+```
+
+### getNonce
+
+```solidity
+function getNonce(address from) external view returns (uint256)
+```
+
+### verify
+
+```solidity
+function verify(struct IForwarder.ForwardRequest forwardRequest, bytes32 domainSeparator, bytes32 requestTypeHash, bytes suffixData, bytes signature) external view
+```
+
+verify the transaction would execute.
+validate the signature and the nonce of the request.
+revert if either signature or nonce are incorrect.
+also revert if domainSeparator or requestTypeHash are not registered.
+
+### execute
+
+```solidity
+function execute(struct IForwarder.ForwardRequest forwardRequest, bytes32 domainSeparator, bytes32 requestTypeHash, bytes suffixData, bytes signature) external payable returns (bool success, bytes ret)
+```
+
+execute a transaction
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| forwardRequest | struct IForwarder.ForwardRequest | - all transaction parameters |
+| domainSeparator | bytes32 | - domain used when signing this request |
+| requestTypeHash | bytes32 | - request type used when signing this request. |
+| suffixData | bytes | - the extension data used when signing this request. |
+| signature | bytes | - signature to validate. the transaction is verified, and then executed. the success and ret of "call" are returned. This method would revert only verification errors. target errors are reported using the returned "success" and ret string |
+
+### registerRequestType
+
+```solidity
+function registerRequestType(string typeName, string typeSuffix) external
+```
+
+Register a new Request typehash.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| typeName | string | - the name of the request type. |
+| typeSuffix | string | - any extra data after the generic params.  (must add at least one param. The generic ForwardRequest type is always registered by the constructor) |
+
+### registerDomainSeparator
+
+```solidity
+function registerDomainSeparator(string name, string version) external
+```
+
+Register a new domain separator.
+The domain separator must have the following fields: name,version,chainId, verifyingContract.
+the chainId is the current network's chainId, and the verifyingContract is this forwarder.
+This method is given the domain name and version to create and register the domain separator value.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | string | the domain's display name |
+| version | string | the domain/protocol version |
+
+## Forwarder
+
+### GENERIC_PARAMS
+
+```solidity
+string GENERIC_PARAMS
+```
+
+### EIP712_DOMAIN_TYPE
+
+```solidity
+string EIP712_DOMAIN_TYPE
+```
+
+### typeHashes
+
+```solidity
+mapping(bytes32 => bool) typeHashes
+```
+
+### domains
+
+```solidity
+mapping(bytes32 => bool) domains
+```
+
+### nonces
+
+```solidity
+mapping(address => uint256) nonces
+```
+
+### receive
+
+```solidity
+receive() external payable
+```
+
+### getNonce
+
+```solidity
+function getNonce(address from) public view returns (uint256)
+```
+
+### constructor
+
+```solidity
+constructor() public
+```
+
+### verify
+
+```solidity
+function verify(struct IForwarder.ForwardRequest req, bytes32 domainSeparator, bytes32 requestTypeHash, bytes suffixData, bytes sig) external view
+```
+
+### execute
+
+```solidity
+function execute(struct IForwarder.ForwardRequest req, bytes32 domainSeparator, bytes32 requestTypeHash, bytes suffixData, bytes sig) external payable returns (bool success, bytes ret)
+```
+
+### _verifyNonce
+
+```solidity
+function _verifyNonce(struct IForwarder.ForwardRequest req) internal view
+```
+
+### _verifyAndUpdateNonce
+
+```solidity
+function _verifyAndUpdateNonce(struct IForwarder.ForwardRequest req) internal
+```
+
+### registerRequestType
+
+```solidity
+function registerRequestType(string typeName, string typeSuffix) external
+```
+
+Register a new Request typehash.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| typeName | string | - the name of the request type. |
+| typeSuffix | string | - any extra data after the generic params.  (must add at least one param. The generic ForwardRequest type is always registered by the constructor) |
+
+### registerDomainSeparator
+
+```solidity
+function registerDomainSeparator(string name, string version) external
+```
+
+Register a new domain separator.
+The domain separator must have the following fields: name,version,chainId, verifyingContract.
+the chainId is the current network's chainId, and the verifyingContract is this forwarder.
+This method is given the domain name and version to create and register the domain separator value.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | string | the domain's display name |
+| version | string | the domain/protocol version |
+
+### registerRequestTypeInternal
+
+```solidity
+function registerRequestTypeInternal(string requestType) internal
+```
+
+### _verifySig
+
+```solidity
+function _verifySig(struct IForwarder.ForwardRequest req, bytes32 domainSeparator, bytes32 requestTypeHash, bytes suffixData, bytes sig) internal view
+```
+
+### _getEncoded
+
+```solidity
+function _getEncoded(struct IForwarder.ForwardRequest req, bytes32 requestTypeHash, bytes suffixData) public pure returns (bytes)
 ```
 
 ## IPNFT
@@ -11635,6 +12689,12 @@ function grantOperatorRole(address account) public virtual
 function revokeOperatorRole(address account) public virtual
 ```
 
+### renounceOperatorRole
+
+```solidity
+function renounceOperatorRole() public virtual
+```
+
 ### isOperator
 
 ```solidity
@@ -11653,6 +12713,12 @@ function _msgSender() internal view virtual returns (address ret)
 function _msgData() internal view virtual returns (bytes ret)
 ```
 
+### nftType
+
+```solidity
+function nftType() external pure virtual returns (bytes32)
+```
+
 ## NFT1155SubscriptionUpgradeable
 
 ### MintedTokens
@@ -11669,6 +12735,24 @@ struct MintedTokens {
 
 ```solidity
 mapping(bytes32 => struct NFT1155SubscriptionUpgradeable.MintedTokens[]) _tokens
+```
+
+### nftType
+
+```solidity
+bytes32 nftType
+```
+
+### initialize
+
+```solidity
+function initialize(address owner, address didRegistryAddress, string name_, string symbol_, string uri_, address nvmConfig_) public virtual
+```
+
+### mint
+
+```solidity
+function mint(address to, uint256 tokenId, uint256 amount, bytes data) public virtual
 ```
 
 ### mint
@@ -11744,7 +12828,19 @@ contract IExternalRegistry nftRegistry
 ### initialize
 
 ```solidity
-function initialize(address owner, address didRegistryAddress, string name_, string symbol_, string uri_) public virtual
+function initialize(address owner, address didRegistryAddress, string name_, string symbol_, string uri_, address nvmConfig_) public virtual
+```
+
+### __NFT1155Upgradeable_init
+
+```solidity
+function __NFT1155Upgradeable_init(address owner, address didRegistryAddress, string name_, string symbol_, string uri_, address nvmConfig_) public virtual
+```
+
+### __NFT1155Upgradeable_unchained
+
+```solidity
+function __NFT1155Upgradeable_unchained(address owner, address didRegistryAddress, string name_, string symbol_, string uri_, address nvmConfig_) public virtual
 ```
 
 ### createClone
@@ -11770,7 +12866,7 @@ function mint(uint256 id, uint256 amount) public
 ### mint
 
 ```solidity
-function mint(address to, uint256 id, uint256 amount, bytes data) public
+function mint(address to, uint256 id, uint256 amount, bytes data) public virtual
 ```
 
 ### burn
@@ -11865,6 +12961,12 @@ function _beforeTokenTransfer(address operator, address from, address to, uint25
 
 _It protects NFT transfers to force going through service agreements and enforce royalties_
 
+### nftType
+
+```solidity
+function nftType() external pure virtual returns (bytes32)
+```
+
 ## NFT721SubscriptionUpgradeable
 
 ### MintedTokens
@@ -11881,6 +12983,18 @@ struct MintedTokens {
 
 ```solidity
 mapping(address => struct NFT721SubscriptionUpgradeable.MintedTokens[]) _tokens
+```
+
+### nftType
+
+```solidity
+bytes32 nftType
+```
+
+### initialize
+
+```solidity
+function initialize(address owner, address didRegistryAddress, string name, string symbol, string uri, uint256 cap, address nvmConfig_) public
 ```
 
 ### mint
@@ -11948,7 +13062,19 @@ struct CountersUpgradeable.Counter _counterMinted
 ### initialize
 
 ```solidity
-function initialize(address owner, address didRegistryAddress, string name, string symbol, string uri, uint256 cap) public virtual
+function initialize(address owner, address didRegistryAddress, string name, string symbol, string uri, uint256 cap, address nvmConfig_) public virtual
+```
+
+### __NFT721Upgradeable_init
+
+```solidity
+function __NFT721Upgradeable_init(address owner, address didRegistryAddress, string name, string symbol, string uri, uint256 cap, address nvmConfig_) internal
+```
+
+### __NFT721Upgradeable_unchained
+
+```solidity
+function __NFT721Upgradeable_unchained(address owner, address didRegistryAddress, string uri, uint256 cap, address nvmConfig_) internal
 ```
 
 ### createClone
@@ -12065,12 +13191,30 @@ function _beforeTokenTransfer(address from, address to, uint256, uint256 batchSi
 
 _It protects NFT transfers to force going through service agreements and enforce royalties_
 
+### nftType
+
+```solidity
+function nftType() external pure virtual returns (bytes32)
+```
+
 ## POAPUpgradeable
 
 ### _tokenEvent
 
 ```solidity
 mapping(uint256 => uint256) _tokenEvent
+```
+
+### nftType
+
+```solidity
+bytes32 nftType
+```
+
+### initialize
+
+```solidity
+function initialize(address owner, address didRegistryAddress, string name, string symbol, string uri, uint256 cap, address nvmConfig_) public
 ```
 
 ### mint
@@ -12174,6 +13318,18 @@ function _msgData() internal view virtual returns (bytes ret)
 ```
 
 ## SoulBoundUpgradeable
+
+### nftType
+
+```solidity
+bytes32 nftType
+```
+
+### initialize
+
+```solidity
+function initialize(address owner, address didRegistryAddress, string name, string symbol, string uri, uint256 cap, address nvmConfig_) public
+```
 
 ### _beforeTokenTransfer
 
