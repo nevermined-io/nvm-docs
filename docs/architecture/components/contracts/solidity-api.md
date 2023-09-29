@@ -23897,6 +23897,7 @@ struct MintedTokens {
   uint256 amountMinted;
   uint256 expirationBlock;
   uint256 mintBlock;
+  bool isMintOps;
 }
 ```
 
