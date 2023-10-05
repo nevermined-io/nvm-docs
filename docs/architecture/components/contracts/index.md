@@ -12803,6 +12803,18 @@ function getMintedEntries(address owner, uint256 tokenId) public view returns (s
 function _getTokenKey(address account, uint256 tokenId) internal pure returns (bytes32)
 ```
 
+### mintBatch
+
+```solidity
+function mintBatch(address to, uint256[] ids, uint256[] amounts, uint256[] expirations, bytes data) external
+```
+
+### burnBatch
+
+```solidity
+function burnBatch(address from, uint256[] ids, uint256[] amounts) external
+```
+
 ## NFT1155Upgradeable
 
 _Implementation of the basic standard multi-token.
