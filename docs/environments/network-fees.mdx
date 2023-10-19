@@ -5,22 +5,27 @@ description: Network Fees
 
 # Network Fees
 
-Nevermined provides the infrastructure to content creators and users to negotiate around their digital assets in a secure a trustless manner. All the software required to make that happen is available under an Open Source License. 
+Nevermined provides the infrastructure to content creators and users to negotiate around their
+digital assets in a secure a trustless manner. All the software required to make that happen is
+available under an Open Source License.
 
-To continue to provide this service, the Nevermined Smart Contracts charge a **1 % fee** on all monetary transactions. This fee is included in the distribution of rewards, when an NFT is sold.
-
+To continue to provide this service, the Nevermined Smart Contracts charge a **1 % fee** on all
+monetary transactions. This fee is included in the distribution of rewards, when an NFT is sold.
 
 :::info
 
-There is no minimum fee, so if the asset is traded for free, it's not necessary to factor in payment.
+There is no minimum fee, so if the asset is traded for free, it's not necessary to factor in
+payment.
 
 :::
 
 ## How to setup the network fees?
 
-To execute a transaction using the Nevermined Smart Contracts it is necessary to include a comission in the reward payment. This comission goes to the **Nevermined Fee Receiver**.
+To execute a transaction using the Nevermined Smart Contracts it is necessary to include a comission
+in the reward payment. This comission goes to the **Nevermined Fee Receiver**.
 
-This typically can be done when a content creator defines how payments are distributed during asset registration.
+This typically can be done when a content creator defines how payments are distributed during asset
+registration.
 
 ```typescript
 // The fee receiver in each network can be fetched from the Nevermined Config Smart Contract
@@ -30,31 +35,25 @@ const feeReceiver = await nevermined.keeper.nvmConfig.getFeeReceiver()
 const networkFee = await nevermined.keeper.nvmConfig.getNetworkFee()
 
 const assetPrice = new AssetPrice(
-    new Map([
-        [creatorAddress, feeReceiver],
-        [198, 2] // 99% of the payment goes to the `creatorAddress` and 1% to `feeReceiver`
-    ])
+  new Map([
+    [creatorAddress, feeReceiver],
+    [198, 2], // 99% of the payment goes to the `creatorAddress` and 1% to `feeReceiver`
+  ]),
 )
 
 // Also network fees can be added with the `addNetworkFees` method
 const assetPriceWithFees = new AssetPrice(
-  johnDoeAddress, 
-  BigNumber.from(5), 
-  zeroAddress
-).addNetworkFees(
-  nvmFeeReceiverProd,
-  BigNumber.from(networkFee)
-)
+  johnDoeAddress,
+  BigNumber.from(5),
+  zeroAddress,
+).addNetworkFees(nvmFeeReceiverProd, BigNumber.from(networkFee))
 
 // We register a NFT-721 Asset using the payment distribution defined in the `assetRewards` variable
 const nftAttributes = NFTAttributes.getNFT721Instance({
-    metadata,
-    price: assetPrice,
-    serviceTypes: ['nft-sales', 'nft-access'],
-    nftContractAddress: nftContract.address
+  metadata,
+  price: assetPrice,
+  serviceTypes: ['nft-sales', 'nft-access'],
+  nftContractAddress: nftContract.address,
 })
 ddo = await nevermined.nfts721.create(nftAttributes, creatorAddress)
-
 ```
-
-

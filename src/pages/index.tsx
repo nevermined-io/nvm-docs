@@ -72,11 +72,6 @@ const HomepageFeatures = (): JSX.Element => {
                 <Box {...FeatureList[1]} />
               </div>
             </div>
-            <div className="row">
-              <div className="col">
-                <Box {...FeatureList[2]} />
-              </div>
-            </div>
           </div>
         </div>
       </div>
