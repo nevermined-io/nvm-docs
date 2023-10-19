@@ -84,7 +84,7 @@ const QuerySearchByName = (): => {
 </BrowserOnly>
 
 ## Search by additional information
-The [Additional Information](../architecture/specs/Spec-METADATA.md#additional-attributes) section is an entry into the DDO/Metadata document where users can specify a free range of attributes. They can be domain specific, and the marketplace can be used to search accross them. Things like `categories`:
+The [Additional Information](../architecture/specs/Spec-METADATA.md#additional-attributes) section is an entry into the DDO/Metadata document where users can specify a free range of attributes. They can be domain specific, and the marketplace can be used to search across them. Things like `categories`:
 
 ### Code
 

@@ -35,7 +35,7 @@ Once the react app is running and you have your catalog dependency, the next ste
 
 :::tip
 
-For the `REACT_APP_NODE_URI` you can connect to a [QuickNode](https://www.quicknode.com/) or [Infura](https://infura.io/) puclic Node. Both services allow to connect your dApp to different blockchain networks. You will need to connect to interact with Nevermined contracts.
+For the `REACT_APP_NODE_URI` you can connect to a [QuickNode](https://www.quicknode.com/) or [Infura](https://infura.io/) public Node. Both services allow to connect your dApp to different blockchain networks. You will need to connect to interact with Nevermined contracts.
 
 :::
 
@@ -100,7 +100,7 @@ root.render(
 reportWebVitals();
 ```
 
-4. After that you will be able to iteract with the Nevermined ecosystem. List did assets deployed updating your `App.tsx`
+4. After that you will be able to interact with the Nevermined ecosystem. List did assets deployed updating your `App.tsx`
 
 ```tsx
 import { AssetService } from '@nevermined-io/catalog'
