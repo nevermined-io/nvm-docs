@@ -9,7 +9,6 @@ import { BEM } from '@nevermined-io/styles'
 import styles from './index.module.scss'
 import nvmSVGIcon from '@site/static/nevermined/neverminedDocs.svg'
 import integrationDocsSVGIcon from '@site/static/nevermined/integrationDocs.svg'
-import tutorialPNGIcon from '@site/static/nevermined/tutorialsDocs.png'
 
 const b = BEM('nvm', styles)
 
