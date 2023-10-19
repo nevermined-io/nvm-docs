@@ -4,19 +4,16 @@ sidebar_position: 3
 
 # How to use the SDK?
 
-## Before to start
-
-If you project is using `React` we recommend to use [Catalog](../react-components/intro.md) to make everything much easier, SDK is the low level of it.
-
 ## Requirements
 
 Before you start with this demo you require:
 
-* An extension of [Metamask](https://metamask.io/) installed in your browser
-* [node](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) needs to be installed
-* The Nevermined artifacts, you can find the script [here](https://github.com/nevermined-io/create-nevermined-react/blob/main/scripts/download-artifacts.sh). To use the script run `./download-artifacts.sh [VERSION OF THE CONTRACT] [NETWORK]`
+- An extension of [Metamask](https://metamask.io/) installed in your browser
+- [node](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) needs to be installed
+- The Nevermined artifacts, you can find the script [here](https://github.com/nevermined-io/create-nevermined-react/blob/main/scripts/download-artifacts.sh). To use the script run `./download-artifacts.sh [VERSION OF THE CONTRACT] [NETWORK]`
 
 ## Let's start with the app config file
+
 The first file that you need to create is the `config.ts` file which contains all the [options needed](./api-reference/classes/Config.md) to initialize the [Nevermined SDK](./intro.md).
 
 ```ts
@@ -24,7 +21,8 @@ import { NeverminedOptions } from '@nevermined-io/sdk'
 import { ethers } from 'ethers'
 
 // The web3 endpoint of the blockchain network to connect to, could be an Infura endpoint, Quicknode, or any other web3 provider
-export const web3ProviderUri = process.env.REACT_APP_NODE_URI || 'https://matic-mumbai.chainstacklabs.com'
+export const web3ProviderUri =
+  process.env.REACT_APP_NODE_URI || 'https://matic-mumbai.chainstacklabs.com'
 
 // The url to a Nevermined node. It could be your own if you run a Nevermined Node
 export const neverminedNodeUri =
@@ -38,10 +36,12 @@ export const neverminedNodeAddress =
 export const marketplaceUri = 'https://marketplace-api.mumbai.public.nevermined.network'
 
 // The url of the The Graph deployment of Nevermined
-const graphHttpUri = process.env.GRAPH_HTTP_URI ||  'https://api.thegraph.com/subgraphs/name/nevermined-io/public'
+const graphHttpUri =
+  process.env.GRAPH_HTTP_URI || 'https://api.thegraph.com/subgraphs/name/nevermined-io/public'
 
-// represent USDC token in mumbai that can be claimed in the faucet https://calibration-faucet.filswan.com/#/dashboard 
-export const erc20TokenAddress = process.env.ERC20_TOKEN_ADDRESS || '0xe11a86849d99f524cac3e7a0ec1241828e332c62'
+// represent USDC token in mumbai that can be claimed in the faucet https://calibration-faucet.filswan.com/#/dashboard
+export const erc20TokenAddress =
+  process.env.ERC20_TOKEN_ADDRESS || '0xe11a86849d99f524cac3e7a0ec1241828e332c62'
 
 // The Chain Id of the network where we are connecting
 export const acceptedChainId = process.env.REACT_APP_ACCEPTED_CHAIN_ID || '80001' // for Mumbai
@@ -51,7 +51,8 @@ export const rootUri = process.env.REACT_APP_ROOT_URI || 'http://localhost:3445'
 
 export const appConfig: NeverminedOptions = {
   //@ts-ignore
-  web3ProviderUri: typeof window !== 'undefined' ? window.ethereum : new ethers.providers.JsonRpcProvider(nodeUri),
+  web3ProviderUri:
+    typeof window !== 'undefined' ? window.ethereum : new ethers.providers.JsonRpcProvider(nodeUri),
   neverminedNodeUri,
   neverminedNodeAddress,
   graphHttpUri,
@@ -66,29 +67,35 @@ export const appConfig: NeverminedOptions = {
 The example file `src/example/index.tsx` contains all the basic logic to handle a [NFT1155](../architecture/what-can-i-do.md#tokenization-of-assets-via-erc-1155-nfts-aka-nft-sales) as a component. It outlines each functionality and component in detail.
 
 ### SingleAsset
+
 It shows the content of the ddo object published
 
 ```tsx
-const SingleAsset = ({ddo}: {ddo: DDO}) => {
+const SingleAsset = ({ ddo }: { ddo: DDO }) => {
   return (
     <>
       <UiLayout>
-        <UiText className={b('detail')} variants={['bold']}>Asset {ddo.id.slice(0, 10)}...:</UiText>
+        <UiText className={b('detail')} variants={['bold']}>
+          Asset {ddo.id.slice(0, 10)}...:
+        </UiText>
       </UiLayout>
-      <UiText className={b('ddo')} variants={['detail']}>{JSON.stringify(ddo)}</UiText>
+      <UiText className={b('ddo')} variants={['detail']}>
+        {JSON.stringify(ddo)}
+      </UiText>
     </>
   )
 }
 ```
 
 ### PublishAsset
+
 It renders a button used to publish a new [NFT](../architecture/specs/Spec-NFT.md)
 
 ```tsx
-const PublishAsset = ({onPublish, }: {onPublish: () => void }) => {
+const PublishAsset = ({ onPublish }: { onPublish: () => void }) => {
   return (
     <>
-      <UiButton className={b('mint')} type='secondary' onClick={onPublish}>
+      <UiButton className={b('mint')} type="secondary" onClick={onPublish}>
         mint
       </UiButton>
     </>
@@ -97,6 +104,7 @@ const PublishAsset = ({onPublish, }: {onPublish: () => void }) => {
 ```
 
 ### loginMetamask
+
 We need a function to login to metamask when it isn't yet
 
 ```tsx
@@ -107,23 +115,23 @@ const loginMarketplace = async (sdk: Nevermined, account: Account) => {
 ```
 
 ### BuyAsset
+
 The `BuyAsset` component will display the button `buy` in order to buy the asset if the wallet account is not a NFT1155 holder. Otherwise, the owner will display a download button to download the NFT asset
 
 ```tsx
-const BuyAsset = ({ddo, sdk, account}: {ddo: DDO, sdk: Nevermined, account: Account}) => {
+const BuyAsset = ({ ddo, sdk, account }: { ddo: DDO; sdk: Nevermined; account: Account }) => {
   const [ownNFT1155, setOwnNFT1155] = useState(false)
   const [isBought, setIsBought] = useState(false)
   const [owner, setOwner] = useState('')
-  
+
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       const balance = await sdk.nfts1155.balance(ddo.id, account)
-      const nftBalance =  BigNumber.from(balance).toNumber()
+      const nftBalance = BigNumber.from(balance).toNumber()
       setOwnNFT1155(nftBalance > 0)
       setOwner(await sdk.assets.owner(ddo.id))
     })()
   }, [account, isBought])
-
 
   const onBuy = async () => {
     await loginMarketplace(sdk, account)
@@ -137,7 +145,7 @@ const BuyAsset = ({ddo, sdk, account}: {ddo: DDO, sdk: Nevermined, account: Acco
         BigNumber.from(1),
         1155,
       )
-      
+
       setIsBought(Boolean(transferResult))
     } catch (error) {
       Logger.error(error)
@@ -155,15 +163,15 @@ const BuyAsset = ({ddo, sdk, account}: {ddo: DDO, sdk: Nevermined, account: Acco
   return (
     <UiLayout className={b('buy')}>
       {ownNFT1155 ? (
-        <UiButton type='secondary' onClick={onDownload}>
+        <UiButton type="secondary" onClick={onDownload}>
           Download NFT
         </UiButton>
-      ) : (
-        owner !== account.getId() ?
-        <UiButton type='secondary' onClick={onBuy}>
+      ) : owner !== account.getId() ? (
+        <UiButton type="secondary" onClick={onBuy}>
           buy
         </UiButton>
-        : <span>The owner cannot buy, please change the account to buy the NFT asset</span>
+      ) : (
+        <span>The owner cannot buy, please change the account to buy the NFT asset</span>
       )}
     </UiLayout>
   )
@@ -171,10 +179,11 @@ const BuyAsset = ({ddo, sdk, account}: {ddo: DDO, sdk: Nevermined, account: Acco
 ```
 
 ### App
+
 The main component of the example, it pulls the rest of the components and also includes the function `onPublish` with the logic to publish a NFT1155 which is transferred as a parameter to the component [PublisAsset](#publishasset)
 
 ```tsx
-const App = ({config}: {config: Config }) => {
+const App = ({ config }: { config: Config }) => {
   const [sdk, setSdk] = useState<Nevermined>({} as Nevermined)
   const [account, setAccount] = useState<Account>(undefined as Account)
   const [ddo, setDDO] = useState<DDO>({} as DDO)
@@ -182,50 +191,50 @@ const App = ({config}: {config: Config }) => {
 
   const loginMetamask = async () => {
     const response = await (window as any)?.ethereum?.request?.({
-      method: "eth_requestAccounts",
+      method: 'eth_requestAccounts',
     })
-  
+
     setWalletAddress(ethers.utils.getAddress(response[0]))
   }
 
   useEffect(() => {
-    (window as any)?.ethereum?.on("accountsChanged", (newAccount: string[]) => {
+    ;(window as any)?.ethereum?.on('accountsChanged', (newAccount: string[]) => {
       if (newAccount && newAccount.length > 0) {
-          setWalletAddress(
-              ethers.utils.getAddress(newAccount[0])
-          )
+        setWalletAddress(ethers.utils.getAddress(newAccount[0]))
       } else {
-          setWalletAddress("")
-          console.log("No Account found!")
+        setWalletAddress('')
+        console.log('No Account found!')
       }
-    })
-
-    (async() => {
+    })(async () => {
       const provider = new ethers.providers.Web3Provider((window as any).ethereum)
       const accounts = await provider.listAccounts()
-      setWalletAddress(
-          accounts?.length ? ethers.utils.getAddress(accounts[0]) : ""
-      )
+      setWalletAddress(accounts?.length ? ethers.utils.getAddress(accounts[0]) : '')
     })()
   }, [])
 
   useEffect(() => {
-    if(walletAddress) {
-      (async () => {
+    if (walletAddress) {
+      ;(async () => {
         try {
           const nvm = await Nevermined.getInstance(config)
           const accounts = await nvm.accounts.list()
 
           setAccount(accounts[0])
           setSdk(nvm)
-        } catch(error) {
+        } catch (error) {
           console.log(error)
         }
       })()
     }
   }, [walletAddress])
 
-  const publishNFT1155 = async (nodeAddress: string, accountWallet: Account, metadata: MetaData, royaltyAttributes: RoyaltyAttributes, assetPrice: AssetPrice) => {
+  const publishNFT1155 = async (
+    nodeAddress: string,
+    accountWallet: Account,
+    metadata: MetaData,
+    royaltyAttributes: RoyaltyAttributes,
+    assetPrice: AssetPrice,
+  ) => {
     const nftAttributes = NFTAttributes.getNFT1155Instance({
       metadata,
       serviceTypes: ['nft-sales', 'nft-access'],
@@ -235,7 +244,7 @@ const App = ({config}: {config: Config }) => {
       preMint: true,
       nftContractAddress: sdk.nfts1155.nftContract.address,
       providers: [nodeAddress],
-      price: assetPrice
+      price: assetPrice,
     })
 
     const ddo = await sdk.nfts1155.create(nftAttributes, accountWallet)
@@ -245,9 +254,7 @@ const App = ({config}: {config: Config }) => {
 
   const onPublish = async () => {
     try {
-      const assetPriceMap = new Map([
-        [account.getId(), BigNumber.from(1)]
-      ])
+      const assetPriceMap = new Map([[account.getId(), BigNumber.from(1)]])
 
       const assetPrice = new AssetPrice(assetPriceMap)
       const royaltyAttributes = {
@@ -265,21 +272,29 @@ const App = ({config}: {config: Config }) => {
       const metadata: MetaData = {
         main: {
           name: '',
-          files: [{
-            index: 0,
-            contentType: 'application/json',
-            url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg'
-          }],
+          files: [
+            {
+              index: 0,
+              contentType: 'application/json',
+              url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg',
+            },
+          ],
           type: 'dataset',
           author: '',
           license: '',
           dateCreated: new Date().toISOString(),
-        }
+        },
       }
 
       await loginMarketplace(sdk, account)
-      
-      const response = await publishNFT1155(config.neverminedNodeAddress, account, metadata, royaltyAttributes, assetPrice)
+
+      const response = await publishNFT1155(
+        config.neverminedNodeAddress,
+        account,
+        metadata,
+        royaltyAttributes,
+        assetPrice,
+      )
 
       setDDO(response as DDO)
     } catch (error) {
@@ -290,25 +305,27 @@ const App = ({config}: {config: Config }) => {
   return (
     <div className={b('container')}>
       <UiLayout>
-        {account ? 
+        {account ? (
           <>
-            <UiText variants={['bold']} className={b('detail')}>Wallet address:</UiText>
+            <UiText variants={['bold']} className={b('detail')}>
+              Wallet address:
+            </UiText>
             <UiText>{account.getId()}</UiText>
-          </> : 
-          <UiButton type='secondary' onClick={loginMetamask}>Connect To MM</UiButton>
-        }
-
-        {walletAddress && !ddo.id && (
-          <PublishAsset onPublish={onPublish} />
+          </>
+        ) : (
+          <UiButton type="secondary" onClick={loginMetamask}>
+            Connect To MM
+          </UiButton>
         )}
+
+        {walletAddress && !ddo.id && <PublishAsset onPublish={onPublish} />}
 
         {ddo?.id && (
           <>
-              <SingleAsset ddo={ddo}/>
-              <BuyAsset ddo={ddo} sdk={sdk} account={account}/>
+            <SingleAsset ddo={ddo} />
+            <BuyAsset ddo={ddo} sdk={sdk} account={account} />
           </>
         )}
-
       </UiLayout>
     </div>
   )
@@ -318,11 +335,25 @@ export default App
 ```
 
 ### Complete example file
+
 Now let's put everything together.
 
 ```tsx
-import React, {useEffect, useState} from 'react'
-import { Nevermined, Account, NeverminedOptions, Logger, DDO, MetaData, AssetPrice, RoyaltyKind, getRoyaltyScheme, RoyaltyAttributes, BigNumber, NFTAttributes } from '@nevermined-io/sdk'
+import React, { useEffect, useState } from 'react'
+import {
+  Nevermined,
+  Account,
+  NeverminedOptions,
+  Logger,
+  DDO,
+  MetaData,
+  AssetPrice,
+  RoyaltyKind,
+  getRoyaltyScheme,
+  RoyaltyAttributes,
+  BigNumber,
+  NFTAttributes,
+} from '@nevermined-io/sdk'
 import { UiLayout, UiText, UiButton, BEM } from '@nevermined-io/styles'
 import { ethers } from 'ethers'
 import { appConfig } from './config'
@@ -338,41 +369,44 @@ const loginMarketplace = async (sdk: Nevermined, account: Account) => {
   await sdk.services.marketplace.login(clientAssertion)
 }
 
-const PublishAsset = ({onPublish, }: {onPublish: () => void }) => {
+const PublishAsset = ({ onPublish }: { onPublish: () => void }) => {
   return (
     <>
-      <UiButton className={b('mint')} type='secondary' onClick={onPublish}>
+      <UiButton className={b('mint')} type="secondary" onClick={onPublish}>
         mint
       </UiButton>
     </>
   )
 }
 
-const SingleAsset = ({ddo}: {ddo: DDO}) => {
+const SingleAsset = ({ ddo }: { ddo: DDO }) => {
   return (
     <>
       <UiLayout>
-        <UiText className={b('detail')} variants={['bold']}>Asset {ddo.id.slice(0, 10)}...:</UiText>
+        <UiText className={b('detail')} variants={['bold']}>
+          Asset {ddo.id.slice(0, 10)}...:
+        </UiText>
       </UiLayout>
-      <UiText className={b('ddo')} variants={['detail']}>{JSON.stringify(ddo)}</UiText>
+      <UiText className={b('ddo')} variants={['detail']}>
+        {JSON.stringify(ddo)}
+      </UiText>
     </>
   )
 }
 
-const BuyAsset = ({ddo, sdk, account}: {ddo: DDO, sdk: Nevermined, account: Account}) => {
+const BuyAsset = ({ ddo, sdk, account }: { ddo: DDO; sdk: Nevermined; account: Account }) => {
   const [ownNFT1155, setOwnNFT1155] = useState(false)
   const [isBought, setIsBought] = useState(false)
   const [owner, setOwner] = useState('')
-  
+
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       const balance = await sdk.nfts1155.balance(ddo.id, account)
-      const nftBalance =  BigNumber.from(balance).toNumber()
+      const nftBalance = BigNumber.from(balance).toNumber()
       setOwnNFT1155(nftBalance > 0)
       setOwner(await sdk.assets.owner(ddo.id))
     })()
   }, [account, isBought])
-
 
   const onBuy = async () => {
     await loginMarketplace(sdk, account)
@@ -386,7 +420,7 @@ const BuyAsset = ({ddo, sdk, account}: {ddo: DDO, sdk: Nevermined, account: Acco
         BigNumber.from(1),
         1155,
       )
-      
+
       setIsBought(Boolean(transferResult))
     } catch (error) {
       Logger.error(error)
@@ -404,22 +438,21 @@ const BuyAsset = ({ddo, sdk, account}: {ddo: DDO, sdk: Nevermined, account: Acco
   return (
     <UiLayout className={b('buy')}>
       {ownNFT1155 ? (
-        <UiButton type='secondary' onClick={onDownload}>
+        <UiButton type="secondary" onClick={onDownload}>
           Download NFT
         </UiButton>
-      ) : (
-        owner !== account.getId() ?
-        <UiButton type='secondary' onClick={onBuy}>
+      ) : owner !== account.getId() ? (
+        <UiButton type="secondary" onClick={onBuy}>
           buy
         </UiButton>
-        : <span>The owner cannot buy, please change the account to buy the NFT asset</span>
+      ) : (
+        <span>The owner cannot buy, please change the account to buy the NFT asset</span>
       )}
     </UiLayout>
   )
 }
 
-
-const App = ({config}: {config: NeverminedOptions }) => {
+const App = ({ config }: { config: NeverminedOptions }) => {
   const [sdk, setSdk] = useState<Nevermined>({} as Nevermined)
   const [account, setAccount] = useState<Account>(undefined as Account)
   const [ddo, setDDO] = useState<DDO>({} as DDO)
@@ -428,52 +461,54 @@ const App = ({config}: {config: NeverminedOptions }) => {
   const loginMetamask = async () => {
     // eslint-disable-next-line
     const response = await (window as any)?.ethereum?.request?.({
-      method: "eth_requestAccounts",
+      method: 'eth_requestAccounts',
     })
-  
+
     setWalletAddress(ethers.utils.getAddress(response[0]))
   }
 
   useEffect(() => {
     // eslint-disable-next-line
-    (window as any)?.ethereum?.on("accountsChanged", (newAccount: string[]) => {
+    ;(window as any)?.ethereum?.on('accountsChanged', (newAccount: string[]) => {
       if (newAccount && newAccount.length > 0) {
-          setWalletAddress(
-              ethers.utils.getAddress(newAccount[0])
-          )
+        setWalletAddress(ethers.utils.getAddress(newAccount[0]))
       } else {
-          setWalletAddress("")
-          console.log("No Account found!")
+        setWalletAddress('')
+        console.log('No Account found!')
       }
-    });
+    })
 
-    (async() => {
+    ;(async () => {
       // eslint-disable-next-line
       const provider = new ethers.providers.Web3Provider((window as any).ethereum)
       const accounts = await provider.listAccounts()
-      setWalletAddress(
-          accounts?.length ? ethers.utils.getAddress(accounts[0]) : ""
-      )
+      setWalletAddress(accounts?.length ? ethers.utils.getAddress(accounts[0]) : '')
     })()
   }, [])
 
   useEffect(() => {
-    if(walletAddress) {
-      (async () => {
+    if (walletAddress) {
+      ;(async () => {
         try {
           const nvm = await Nevermined.getInstance(config)
           const accounts = await nvm.accounts.list()
 
           setAccount(accounts[0])
           setSdk(nvm)
-        } catch(error) {
+        } catch (error) {
           console.log(error)
         }
       })()
     }
   }, [walletAddress])
 
-  const publishNFT1155 = async (nodeAddress: string, accountWallet: Account, metadata: MetaData, royaltyAttributes: RoyaltyAttributes, assetPrice: AssetPrice) => {
+  const publishNFT1155 = async (
+    nodeAddress: string,
+    accountWallet: Account,
+    metadata: MetaData,
+    royaltyAttributes: RoyaltyAttributes,
+    assetPrice: AssetPrice,
+  ) => {
     const nftAttributes = NFTAttributes.getNFT1155Instance({
       metadata,
       serviceTypes: ['nft-sales', 'nft-access'],
@@ -483,7 +518,7 @@ const App = ({config}: {config: NeverminedOptions }) => {
       preMint: true,
       nftContractAddress: sdk.nfts1155.nftContract.address,
       providers: [nodeAddress],
-      price: assetPrice
+      price: assetPrice,
     })
 
     const ddo = await sdk.nfts1155.create(nftAttributes, accountWallet)
@@ -493,9 +528,7 @@ const App = ({config}: {config: NeverminedOptions }) => {
 
   const onPublish = async () => {
     try {
-      const assetPriceMap = new Map([
-        [account.getId(), BigNumber.from(1)]
-      ])
+      const assetPriceMap = new Map([[account.getId(), BigNumber.from(1)]])
 
       const assetPrice = new AssetPrice(assetPriceMap)
       const royaltyAttributes = {
@@ -513,21 +546,29 @@ const App = ({config}: {config: NeverminedOptions }) => {
       const metadata: MetaData = {
         main: {
           name: '',
-          files: [{
-            index: 0,
-            contentType: 'application/json',
-            url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg'
-          }],
+          files: [
+            {
+              index: 0,
+              contentType: 'application/json',
+              url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg',
+            },
+          ],
           type: 'dataset',
           author: '',
           license: '',
           dateCreated: new Date().toISOString(),
-        }
+        },
       }
 
       await loginMarketplace(sdk, account)
-      
-      const response = await publishNFT1155(config.neverminedNodeAddress, account, metadata, royaltyAttributes, assetPrice)
+
+      const response = await publishNFT1155(
+        config.neverminedNodeAddress,
+        account,
+        metadata,
+        royaltyAttributes,
+        assetPrice,
+      )
 
       setDDO(response as DDO)
     } catch (error) {
@@ -538,25 +579,27 @@ const App = ({config}: {config: NeverminedOptions }) => {
   return (
     <div className={b('container')}>
       <UiLayout>
-        {account ? 
+        {account ? (
           <>
-            <UiText variants={['bold']} className={b('detail')}>Wallet address:</UiText>
+            <UiText variants={['bold']} className={b('detail')}>
+              Wallet address:
+            </UiText>
             <UiText>{account.getId()}</UiText>
-          </> : 
-          <UiButton type='secondary' onClick={loginMetamask}>Connect To MM</UiButton>
-        }
-
-        {walletAddress && !ddo.id && (
-          <PublishAsset onPublish={onPublish} />
+          </>
+        ) : (
+          <UiButton type="secondary" onClick={loginMetamask}>
+            Connect To MM
+          </UiButton>
         )}
+
+        {walletAddress && !ddo.id && <PublishAsset onPublish={onPublish} />}
 
         {ddo?.id && (
           <>
-              <SingleAsset ddo={ddo}/>
-              <BuyAsset ddo={ddo} sdk={sdk} account={account}/>
+            <SingleAsset ddo={ddo} />
+            <BuyAsset ddo={ddo} sdk={sdk} account={account} />
           </>
         )}
-
       </UiLayout>
     </div>
   )
@@ -566,12 +609,11 @@ export default App
 ```
 
 ## Styling
+
 In the path `src/examples/example.module.scss` you will find some styles to improve the UI of the app.
 
 ```scss
-@import '~@nevermined-io/styles/lib/cjs/styles/index.scss'
-
-.example {
+@import '~@nevermined-io/styles/lib/cjs/styles/index.scss' .example {
   @include component;
 
   &__container {
@@ -597,6 +639,7 @@ In the path `src/examples/example.module.scss` you will find some styles to impr
 ```
 
 ## The index file
+
 The `src/indes.tsx` file call the `App` component with the configurations set
 
 ```tsx
@@ -607,5 +650,5 @@ import ReactDOM from 'react-dom'
 import { appConfig } from './config'
 import App from './app'
 
-ReactDOM.render(<App config={appConfig}/>, document.getElementById('root') as HTMLElement)
+ReactDOM.render(<App config={appConfig} />, document.getElementById('root') as HTMLElement)
 ```

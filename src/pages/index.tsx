@@ -52,20 +52,8 @@ const FeatureList: BoxItem[] = [
     Svg: integrationDocsSVGIcon,
     description: (
       <>
-        Everything you need to know about using Nevermined via our SDK. For
-        developers who want to use a low-level library.
-      </>
-    ),
-  },
-  {
-    title: 'React Catalog',
-    className: b('box'),
-    link: 'docs/react-components/intro',
-    png: tutorialPNGIcon,
-    description: (
-      <>
-        Everything you need to know about using Nevermined via our Catalog. For
-        developers who are using React.
+        Everything you need to know about using Nevermined via our SDK. For developers who want to
+        use a low-level library.
       </>
     ),
   },

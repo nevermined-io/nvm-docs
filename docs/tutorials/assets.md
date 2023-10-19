@@ -3,10 +3,9 @@ sidebar_position: 4
 description: Building a DApp using Nevermined frameworks 2
 ---
 
-
 # How to create and consume your first assets in a React application integrated with Nevermined
 
-Following with our series, this is going to continue showing how to unblock Nevermined features using [Nevermined Components](https://github.com/nevermined-io/react-components).
+Following with our series, this is going to continue showing how to unblock Nevermined features using our [SDK](../nevermined-sdk/intro).
 
 ## Prerequisites
 
@@ -15,19 +14,17 @@ The tutorial assumes your familiarity with blockchain, and general programming. 
 ### For all the assets type
 
 Import the provider in your index.tsx from the Catalog is needed in order to start to develop.
-   *Note that our application is growing and now has some routes in order to handle properly endpoints.*
+_Note that our application is growing and now has some routes in order to handle properly endpoints._
 
 ```tsx
 <BrowserRouter>
-    <Catalog.NeverminedProvider config={appConfig}>
-        <Catalog.AssetPublishProvider>
-            <WalletProvider
-                client={getClient()}
-            >
-                <App />
-            </WalletProvider>
-        </Catalog.AssetPublishProvider>
-    </Catalog.NeverminedProvider>
+  <Catalog.NeverminedProvider config={appConfig}>
+    <Catalog.AssetPublishProvider>
+      <WalletProvider client={getClient()}>
+        <App />
+      </WalletProvider>
+    </Catalog.AssetPublishProvider>
+  </Catalog.NeverminedProvider>
 </BrowserRouter>
 ```
 
@@ -36,7 +33,7 @@ Import the provider in your index.tsx from the Catalog is needed in order to sta
 This section will guide you to the creation of your first Nevermined asset.
 
 1. Import the function from the AssetService.
-        
+
 ```typescript
 
 import { AssetService } from '@nevermined-io/catalog'
@@ -91,57 +88,57 @@ const Publisher = () => {
 #### The complete example
 
 ```tsx
-    
 const Publisher = () => {
-    const { publishAsset, assetPublish, setAssetPublish } = AssetService.useAssetPublish()
-    const { isLoadingSDK } = Catalog.useNevermined()
+  const { publishAsset, assetPublish, setAssetPublish } = AssetService.useAssetPublish()
+  const { isLoadingSDK } = Catalog.useNevermined()
 
-    const metadata: MetaData = {
-        main: {
-        name: '',
-        files: [{
-            index: 0,
-            contentType: 'application/json',
-            url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg'
-        }],
-        type: 'dataset',
-        author: '',
-        license: '',
-        dateCreated: new Date().toISOString(),
-        }
-    }
+  const metadata: MetaData = {
+    main: {
+      name: '',
+      files: [
+        {
+          index: 0,
+          contentType: 'application/json',
+          url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg',
+        },
+      ],
+      type: 'dataset',
+      author: '',
+      license: '',
+      dateCreated: new Date().toISOString(),
+    },
+  }
 
-    async function handleOnSubmit() {
-        const assetAttributes = AssetAttributes.getInstance({
-            metadata,
-        })
-        const ddo = await publishAsset({
-            assetAttributes,
-        })
+  async function handleOnSubmit() {
+    const assetAttributes = AssetAttributes.getInstance({
+      metadata,
+    })
+    const ddo = await publishAsset({
+      assetAttributes,
+    })
 
-        setDidDeployed(ddo!.id)
-    }
+    setDidDeployed(ddo!.id)
+  }
 
-    return (
-        <div>
-            <button onClick={handleOnSubmit} disabled={isLoadingSDK}>
-                Publish Asset
-            </button>
-        </div>
-    )
+  return (
+    <div>
+      <button onClick={handleOnSubmit} disabled={isLoadingSDK}>
+        Publish Asset
+      </button>
+    </div>
+  )
 }
-
 ```
 
 ### How to consume an asset
 
 This section will show how to consume an asset already published using Nevermined.
 
-1. Create and component that accept as parameter a [ddo](../nevermined-sdk/api-reference/classes/DDO.md)  and import from the Catalog all the functionalities needed for this purpose
+1. Create and component that accept as parameter a [ddo](../nevermined-sdk/api-reference/classes/DDO.md) and import from the Catalog all the functionalities needed for this purpose
 
 ```ts
 import { AssetService } from '@nevermined-io/catalog-core'
-    
+
 const Consumer = ({ddo}: {ddo: DDO}) => {
     const { assets, account, sdk } = Catalog.useNevermined()
 
@@ -150,8 +147,8 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
 ```
 
 2. You need to check if you are the owner of the asset, if it is the case you don't need to buy before to consume it
-otherwise you will need to buy first, then in this point you need an `useEffect` that check it every time that the wallet
-changes the account and when the asset is bought in order to avoid buy again
+   otherwise you will need to buy first, then in this point you need an `useEffect` that check it every time that the wallet
+   changes the account and when the asset is bought in order to avoid buy again
 
 ```typescript
 ...
@@ -186,52 +183,52 @@ changes the account and when the asset is bought in order to avoid buy again
 #### The complete example
 
 ```tsx
-const Consumer = ({ddo}: {ddo: DDO}) => {
-    const { assets, account, isLoadingSDK, sdk } = Catalog.useNevermined()
-    const { walletAddress } = useWallet()
-    const [ownAsset, setOwnAsset] = useState(false)
-    const [isBought, setIsBought] = useState(false)
-    const [owner, setOwner] = useState('')
-    
-    useEffect(() => {
-        (async () => {
-        setOwnAsset(await account.isAssetHolder(ddo.id, walletAddress))
-        setOwner(await sdk.assets.owner(ddo.id))
-        })()
-    }, [walletAddress, isBought])
+const Consumer = ({ ddo }: { ddo: DDO }) => {
+  const { assets, account, isLoadingSDK, sdk } = Catalog.useNevermined()
+  const { walletAddress } = useWallet()
+  const [ownAsset, setOwnAsset] = useState(false)
+  const [isBought, setIsBought] = useState(false)
+  const [owner, setOwner] = useState('')
 
-    const buy = async () => {
-        const response = await assets.orderAsset(did)
-        setIsBought(Boolean(response))
-    }
+  useEffect(() => {
+    ;(async () => {
+      setOwnAsset(await account.isAssetHolder(ddo.id, walletAddress))
+      setOwner(await sdk.assets.owner(ddo.id))
+    })()
+  }, [walletAddress, isBought])
 
-    const download = async () => {
-        await assets.downloadAsset({ did: ddo.id })
-    }
+  const buy = async () => {
+    const response = await assets.orderAsset(did)
+    setIsBought(Boolean(response))
+  }
 
-    return (
-        <div>
-        {ownAsset ? (
-            <button onClick={download} disabled={isLoadingSDK}>
-            Download Asset
-            </button>
-        ) : (
-            owner !== walletAddress ?
-            <button onClick={buy} disabled={isLoadingSDK}>
-            buy
-            </button>
-            : <span>The owner cannot buy, please change the account to buy the asset</span>
-        )}
-        </div>
-    )
-}    
+  const download = async () => {
+    await assets.downloadAsset({ did: ddo.id })
+  }
+
+  return (
+    <div>
+      {ownAsset ? (
+        <button onClick={download} disabled={isLoadingSDK}>
+          Download Asset
+        </button>
+      ) : owner !== walletAddress ? (
+        <button onClick={buy} disabled={isLoadingSDK}>
+          buy
+        </button>
+      ) : (
+        <span>The owner cannot buy, please change the account to buy the asset</span>
+      )}
+    </div>
+  )
+}
 ```
 
 :::info
 
 What is an NFT?
 
-An NFT non-fungible-token is a token that represents the value of any digital asset that lives on the blockchain. Currently there are two major standards ERC721 and ERC1155  
+An NFT non-fungible-token is a token that represents the value of any digital asset that lives on the blockchain. Currently there are two major standards ERC721 and ERC1155
 
 :::
 
@@ -243,9 +240,8 @@ This section will guide you to the creation of your first Nevermined NFT ERC721.
 
 First you need to deploy the contract address of the nft ERC-721, you can use the `cli` for it, [see more here](../cli/using-cli.md#nfts)
 
-
 1. Import the function from the AssetService and the contract NFT token address, also we will need the sdk.
-        
+
 ```typescript
 
 import { AssetService } from '@nevermined-io/catalog-core'
@@ -307,66 +303,67 @@ const Publisher = () => {
 ```tsx
 import { AssetService } from '@nevermined-io/catalog-core'
 import { NFTTokenAddress } from './config'
-    
+
 const Publisher = () => {
-    const { publishNFT721, assetPublish, setAssetPublish } = AssetService.useAssetPublish()
-    const { sdk } = Catalog.useNevermined()
+  const { publishNFT721, assetPublish, setAssetPublish } = AssetService.useAssetPublish()
+  const { sdk } = Catalog.useNevermined()
 
-    const metadata: MetaData = {
-        main: {
-        name: '',
-        files: [{
-            index: 0,
-            contentType: 'application/json',
-            url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg'
-        }],
-        type: 'dataset',
-        author: '',
-        license: '',
-        dateCreated: new Date().toISOString(),
-        }
-    }
+  const metadata: MetaData = {
+    main: {
+      name: '',
+      files: [
+        {
+          index: 0,
+          contentType: 'application/json',
+          url: 'https://uploads5.wikiart.org/00268/images/william-holbrook-beard/the-bear-dance-1870.jpg',
+        },
+      ],
+      type: 'dataset',
+      author: '',
+      license: '',
+      dateCreated: new Date().toISOString(),
+    },
+  }
 
-    const royaltyAttributes = {
-        royaltyKind: RoyaltyKind.Standard,
-        scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
-        amount: 0,
-    }
+  const royaltyAttributes = {
+    royaltyKind: RoyaltyKind.Standard,
+    scheme: getRoyaltyScheme(sdk, RoyaltyKind.Standard),
+    amount: 0,
+  }
 
-    const nftAttributes = NFTAttributes.getNFT721Instance({
-        metadata,
-        providers: [appConfig.neverminedNodeAddress],
-        royaltyAttributes,
+  const nftAttributes = NFTAttributes.getNFT721Instance({
+    metadata,
+    providers: [appConfig.neverminedNodeAddress],
+    royaltyAttributes,
+  })
+
+  async function handleOnSubmit() {
+    const ddo = await publishNFT721({
+      nftAttributes,
     })
+    setDidDeployed(ddo.id)
+  }
 
-    async function handleOnSubmit() {
-        const ddo = await publishNFT721({
-            nftAttributes
-        })
-        setDidDeployed(ddo.id)
-    }
-
-    return (
-        <div>
-            <button onClick={handleOnSubmit} disabled={isLoadingSDK}>
-                Publish Asset
-            </button>
-        </div>
-    )
+  return (
+    <div>
+      <button onClick={handleOnSubmit} disabled={isLoadingSDK}>
+        Publish Asset
+      </button>
+    </div>
+  )
 }
-
 ```
 
 ### How to consume an NFT ERC721
 
 This section will show how to consume an asset already published using Nevermined.
 
-1. Create and component that accept as parameter a [ddo](../nevermined-sdk/api-reference/classes/DDO.md)  and import from the Catalog all the functionalities needed for this purpose
+1. Create and component that accept as parameter a [ddo](../nevermined-sdk/api-reference/classes/DDO.md) and import from the Catalog all the functionalities needed for this purpose
 
 ```ts
 import { AssetService } from '@nevermined-io/catalog-core'
 import { NFTTokenAddress } from './config'
-    
+
 const Consumer = ({ddo}: {ddo: DDO}) => {
     const { assets, account, sdk } = Catalog.useNevermined()
 
@@ -375,8 +372,8 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
 ```
 
 2. You need to check if you are the owner of the NFT721, if it is the case you don't need to buy before to consume it
-otherwise you will need to buy first, then in this point you need an `useEffect` that check it every time that the wallet
-changes the account and when the asset is bought in order to avoid buy again
+   otherwise you will need to buy first, then in this point you need an `useEffect` that check it every time that the wallet
+   changes the account and when the asset is bought in order to avoid buy again
 
 ```typescript
 ...
@@ -410,7 +407,7 @@ changes the account and when the asset is bought in order to avoid buy again
     }
 
     const download = async () => {
-        await assets.downloadNFT({ 
+        await assets.downloadNFT({
             did: ddo.id,
             ercType: 721,
         })
@@ -420,60 +417,61 @@ changes the account and when the asset is bought in order to avoid buy again
 #### The complete example
 
 ```tsx
-const Consumer = ({ddo}: {ddo: DDO}) => {
-    const { assets, account, isLoadingSDK, nfts, sdk } = Catalog.useNevermined()
-    const { walletAddress } = useWallet()
-    const [ownNFT721, setOwnNFT721] = useState(false)
-    const [isBought, setIsBought] = useState(false)
-    const [owner, setOwner] = useState('')
-    
-    useEffect(() => {
-        (async () => {
-        setOwnNFT721(await account.isNFT721Holder(ddo.id, walletAddress))
-        setOwner(await sdk.nft721.ownerOf(ddo.id))
-        })()
-    }, [walletAddress, isBought])
+const Consumer = ({ ddo }: { ddo: DDO }) => {
+  const { assets, account, isLoadingSDK, nfts, sdk } = Catalog.useNevermined()
+  const { walletAddress } = useWallet()
+  const [ownNFT721, setOwnNFT721] = useState(false)
+  const [isBought, setIsBought] = useState(false)
+  const [owner, setOwner] = useState('')
 
-    const buy = async () => {
-        const response = await nfts.access({
-           did: ddo.id,
-           nftHolder: owner,
-           nftAmount: 1,
-           ercType: 721
-        })
-        setIsBought(Boolean(response))
-    }
+  useEffect(() => {
+    ;(async () => {
+      setOwnNFT721(await account.isNFT721Holder(ddo.id, walletAddress))
+      setOwner(await sdk.nft721.ownerOf(ddo.id))
+    })()
+  }, [walletAddress, isBought])
 
-    const download = async () => {
-        await assets.downloadNFT({ 
-            did: ddo.id,
-            ercType: 721,
-        })
-    }
+  const buy = async () => {
+    const response = await nfts.access({
+      did: ddo.id,
+      nftHolder: owner,
+      nftAmount: 1,
+      ercType: 721,
+    })
+    setIsBought(Boolean(response))
+  }
 
-    return (
-        <div>
-        {ownNFT721 ? (
-            <button onClick={download} disabled={isLoadingSDK}>
-            Download NFT
-            </button>
-        ) : (
-            owner !== walletAddress ?
-            <button onClick={buy} disabled={isLoadingSDK}>
-            buy
-            </button>
-            : <span>The owner cannot buy, please change the account to buy the NFT asset</span>
-        )}
-        </div>
-    )
-}    
+  const download = async () => {
+    await assets.downloadNFT({
+      did: ddo.id,
+      ercType: 721,
+    })
+  }
+
+  return (
+    <div>
+      {ownNFT721 ? (
+        <button onClick={download} disabled={isLoadingSDK}>
+          Download NFT
+        </button>
+      ) : owner !== walletAddress ? (
+        <button onClick={buy} disabled={isLoadingSDK}>
+          buy
+        </button>
+      ) : (
+        <span>The owner cannot buy, please change the account to buy the NFT asset</span>
+      )}
+    </div>
+  )
+}
 ```
 
 ### How to create an NFT ERC1155
+
 This section will guide you to the creation of your first Nevermined NFT ERC1155 asset.
 
 1. Import the functions from the AssetService and the sdk.
-        
+
 ```typescript
 
 import { AssetService } from '@nevermined-io/catalog-core'
@@ -536,7 +534,7 @@ const Publisher = () => {
 #### The complete example
 
 ```tsx
-    
+
 const Publisher = () => {
     const { publishAsset, assetPublish, setAssetPublish } = AssetService.useAssetPublish()
     const { isLoadingSDK, sdk } = Catalog.useNevermined()
@@ -590,11 +588,11 @@ const Publisher = () => {
 
 This section will show how to consume an NFT1155 already published using Nevermined.
 
-1. Create and component that accept as parameter a [ddo](../nevermined-sdk/api-reference/classes/DDO.md)  and import from the Catalog all the functionalities needed for this purpose
+1. Create and component that accept as parameter a [ddo](../nevermined-sdk/api-reference/classes/DDO.md) and import from the Catalog all the functionalities needed for this purpose
 
 ```ts
 import { AssetService } from '@nevermined-io/catalog-core'
-    
+
 const Consumer = ({ddo}: {ddo: DDO}) => {
     const { assets, account, sdk } = Catalog.useNevermined()
 
@@ -603,8 +601,8 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
 ```
 
 2. You need to check if you are the owner of the NFT1155, if it is the case you don't need to buy before to consume it
-otherwise you will need to buy first, then in this point you need an `useEffect` that check it every time that the wallet
-changes the account and when the NFT1155 is bought in order to avoid buy again
+   otherwise you will need to buy first, then in this point you need an `useEffect` that check it every time that the wallet
+   changes the account and when the NFT1155 is bought in order to avoid buy again
 
 ```typescript
 ...
@@ -628,9 +626,9 @@ changes the account and when the NFT1155 is bought in order to avoid buy again
 ...
     const buy = async () => {
         const response = await nfts.access({
-            did:ddo.id, 
-            nftHolder: owner, 
-            nftAmount: BigNumber(1), 
+            did:ddo.id,
+            nftHolder: owner,
+            nftAmount: BigNumber(1),
             ercType: 1155,
         )
         setIsBought(Boolean(response))
@@ -650,7 +648,7 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
     const [ownNFT1155, setOwnNF1155] = useState(false)
     const [isBought, setIsBought] = useState(false)
     const [owner, setOwner] = useState('')
-    
+
     useEffect(() => {
     (async () => {
         setOwnNFT1155(await account.isNFT1155Holder(ddo.id, walletAddress))
@@ -660,9 +658,9 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
 
     const buy = async () => {
         const response = await nfts.access({
-            did:ddo.id, 
-            nftHolder: owner, 
-            nftAmount: BigNumber(1), 
+            did:ddo.id,
+            nftHolder: owner,
+            nftAmount: BigNumber(1),
             ercType: 1155,
         )
 
@@ -690,5 +688,5 @@ const Consumer = ({ddo}: {ddo: DDO}) => {
         )}
         </div>
     )
-}    
+}
 ```
