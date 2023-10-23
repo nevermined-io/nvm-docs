@@ -5,7 +5,7 @@ description: Building a DApp using Nevermined frameworks
 
 # How to build a React application integrated with Nevermined
 
-The idea of this tutorial is to give a quick go through about using the [Nevermined React Components](https://github.com/nevermined-io/react-components) of React components to support the development of dApps using the Nevermined environment. Nevermined Catalog is a library that provides some React components to make it easier the integration with Nevermined technologies. You can find more info in the [documentation](../react-components/intro.md).
+The idea of this tutorial is to give a quick go through about using the [SDK](../nevermined-sdk/intro) to support the development of dApps using the Nevermined environment.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ Instructions for following along locally using your preferred text editor.
 5. Run `yarn run start` and open <http://localhost:3000> and you will see the progress.
 
 ![image](https://user-images.githubusercontent.com/3496824/179922422-82411749-0c62-4a2b-8969-cbd35611ffa9.png)
-*Screenshot of the current application status.*
+_Screenshot of the current application status._
 
 ### Create your Nevermined dApp
 
@@ -40,64 +40,72 @@ For the `REACT_APP_NODE_URI` you can connect to a [QuickNode](https://www.quickn
 :::
 
 ```ts
-import { Config } from '@nevermined-io/nevermined-sdk-js';
+import { Config } from '@nevermined-io/nevermined-sdk-js'
 
 // URL where run the app
-export const serviceUri = process.env.REACT_APP_SERVICE_URI || 'http://localhost:3445';
+export const serviceUri = process.env.REACT_APP_SERVICE_URI || 'http://localhost:3445'
 // Ethereum address own by the node.
-export const neverminedNodeAddress = process.env.REACT_APP_GATEWAY_ADDRESS || '0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc';
+export const neverminedNodeAddress =
+  process.env.REACT_APP_GATEWAY_ADDRESS || '0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc'
 // Node service
-export const neverminedNodeUri = process.env.REACT_APP_GATEWAY_URI || 'https://node.mumbai.public.nevermined.network';
+export const neverminedNodeUri =
+  process.env.REACT_APP_GATEWAY_URI || 'https://node.mumbai.public.nevermined.network'
 // Fauce uri to get some tokens.
-export const faucetUri = process.env.REACT_APPREACT_APP_FAUCET_URI_FAUCET_URI || 'https://faucet.mumbai.public.nevermined.network';
+export const faucetUri =
+  process.env.REACT_APPREACT_APP_FAUCET_URI_FAUCET_URI ||
+  'https://faucet.mumbai.public.nevermined.network'
 // Blockchain node
-export const web3ProviderUri = process.env.REACT_APP_NODE_URI || 'https://matic-mumbai.chainstacklabs.com';
+export const web3ProviderUri =
+  process.env.REACT_APP_NODE_URI || 'https://matic-mumbai.chainstacklabs.com'
 // Chain id of your network
-export const acceptedChainId = process.env.REACT_APP_ACCEPTED_CHAIN_ID || '80001'; // for Mumbai
+export const acceptedChainId = process.env.REACT_APP_ACCEPTED_CHAIN_ID || '80001' // for Mumbai
 //URL where run the root of the app is. Important to find public folder with abis.
-export const rootUri = process.env.REACT_APP_ROOT_URI || 'http://localhost:3445';
+export const rootUri = process.env.REACT_APP_ROOT_URI || 'http://localhost:3445'
 // Marketplace API uri to store metadata.
-export const marketplaceUri = process.env.REACT_APP_MARKETPLACE_URI || 'https://marketplace-api.mumbai.public.nevermined.network';
+export const marketplaceUri =
+  process.env.REACT_APP_MARKETPLACE_URI ||
+  'https://marketplace-api.mumbai.public.nevermined.network'
 
 export const appConfig: Config = {
   //@ts-ignore
-  web3Provider: typeof window !== 'undefined' ? window.ethereum : new ethers.providers.JsonRpcProvider(web3ProviderUri),
+  web3Provider:
+    typeof window !== 'undefined'
+      ? window.ethereum
+      : new ethers.providers.JsonRpcProvider(web3ProviderUri),
   web3ProviderUri,
   neverminedNodeUri,
   faucetUri,
   verbose: 2,
   neverminedNodeAddress,
   graphHttpUri: '',
-  marketplaceAuthToken: typeof window !== 'undefined' ? AuthToken.fetchMarketplaceApiTokenFromLocalStorage().token : '',
+  marketplaceAuthToken:
+    typeof window !== 'undefined' ? AuthToken.fetchMarketplaceApiTokenFromLocalStorage().token : '',
   marketplaceUri,
   artifactsFolder: `${rootUri}/contracts`,
-};
-
+}
 ```
 
 3. Go to `index.tsx` and add the `NeverminedProvider`
 
 ```tsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { Catalog } from '@nevermined-io/catalog';
-import { appConfig } from './config';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import App from './App'
+import reportWebVitals from './reportWebVitals'
+import { Catalog } from '@nevermined-io/catalog'
+import { appConfig } from './config'
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <Catalog.NeverminedProvider config={appConfig}>
       <App />
     </Catalog.NeverminedProvider>
-  </React.StrictMode>
-);
+  </React.StrictMode>,
+)
 
-reportWebVitals();
+reportWebVitals()
 ```
 
 4. After that you will be able to iteract with the Nevermined ecosystem. List did assets deployed updating your `App.tsx`
@@ -107,28 +115,29 @@ import { AssetService } from '@nevermined-io/catalog'
 import React, { useEffect, useState } from 'react'
 
 function App() {
-
   const response = await assetsModule.query({
     query: {
       bool: {
-        must: [{
-          nested: {
-            path: ['service'],
-            query: {
-              "query_string": {
-                query: 'NFT*',
-                fields: ["service.attributes.main.name"]
+        must: [
+          {
+            nested: {
+              path: ['service'],
+              query: {
+                query_string: {
+                  query: 'NFT*',
+                  fields: ['service.attributes.main.name'],
+                },
               },
             },
-          }
-        }]
-      }
+          },
+        ],
+      },
     },
     offset: 150,
     page: 1,
     sort: {
-      created: 'desc'
-    }
+      created: 'desc',
+    },
   })
 
   const MultipleAssets = () => {
@@ -136,15 +145,15 @@ function App() {
     const [dids, setDids] = useState<string[]>()
 
     useEffect(() => {
-      setDids(result?.results?.map(asset => asset.id))
+      setDids(result?.results?.map((asset) => asset.id))
     }, [result])
 
-    const [filterQuery, setQuery] = useState("")
+    const [filterQuery, setQuery] = useState('')
 
     function filterItems(query: string) {
-       setQuery(query)
-       setDids(result?.results?.map(asset => asset.id)?.filter(item => item.includes(query)))
-     }
+      setQuery(query)
+      setDids(result?.results?.map((asset) => asset.id)?.filter((item) => item.includes(query)))
+    }
 
     return (
       <>
@@ -159,21 +168,25 @@ function App() {
         />
         <div>Assets: </div>
         <div>
-          <ul>{!isLoadingAssets ? dids?.map(asset => <li key={asset}>{asset}</li>) : "Loading assets..."}</ul>
+          <ul>
+            {!isLoadingAssets
+              ? dids?.map((asset) => <li key={asset}>{asset}</li>)
+              : 'Loading assets...'}
+          </ul>
         </div>
       </>
     )
-}
+  }
   return (
     <div className="App">
       <header className="App-header">
         <MultipleAssets />
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
 ```
 
 ### Login with different providers
@@ -215,7 +228,7 @@ const Login = () => {
   return (
     <div className='app'>
       {!walletAddress ?
-        getConnectors().map(c => 
+        getConnectors().map(c =>
           <button onClick={() => login(c)}>Connect to {c.name}</button>
         )
         :
@@ -229,4 +242,3 @@ const Login = () => {
 }
 export default App;
 ```
-
