@@ -15,7 +15,7 @@ In a Nevermined network we pre-deploy some NFT implementations but typically you
 
 ### Cloning a previously deployed contract
 
-Via clonning you can make a copy of an already deploy contract bytecode and deploy it again in a new address. This clone will be a copy of the Smart Contract but not of the state of it. The new contract clonned will be owned by the account clonning the contract.
+Via clonning you can make a copy of an already deploy contract bytecode and deploy it again in a new address. This clone will be a copy of the Smart Contract but not of the state of it. The new contract clonned will be owned by the account clonning the contract. 
 
 :::tip Clonning saves gas
 
@@ -30,12 +30,12 @@ Here an example of how you clone a Nevermined ERC-721 contract:
 
 ```typescript
 const cloneAddress = await nevermined.nfts721.getContract.createClone(
-  'My New NFT 721',
-  'SYM',
-  'http://nft.metadata',
-  BigNumber.from(0), // Uncapped
-  [], // Add here any address to be added as a NFT operator
-  deployerAccount,
+    'My New NFT 721', 
+    'SYM', 
+    'http://nft.metadata',
+    BigNumber.from(0), // Uncapped
+    [], // Add here any address to be added as a NFT operator
+    deployerAccount
 )
 ```
 
@@ -46,11 +46,11 @@ Here an example of how you clone a Nevermined ERC-1155 contract:
 
 ```typescript
 const cloneAddress = await nevermined.nfts1155.getContract.createClone(
-  'My New NFT 1155',
-  'SYM',
-  'http://nft.metadata',
-  [], // Add here any address to be added as a NFT operator
-  deployerAccount,
+    'My New NFT 1155', 
+    'SYM', 
+    'http://nft.metadata',
+    [], // Add here any address to be added as a NFT operator
+    deployerAccount
 )
 ```
 
@@ -129,16 +129,20 @@ Let's say John Doe wants to get 5 USDC:
 ```typescript
 const usdcDecimals = 18
 const assetPrice = new AssetPrice(
-  johnDoeAddress,
-  BigNumber.from(10).pow(usdcDecimals).mul(5),
-  usdcERC20Address,
+  johnDoeAddress, 
+  BigNumber.from(10).pow(usdcDecimals).mul(5), 
+  usdcERC20Address
 )
 ```
 
 In the next example John Doe wants to receive 5 wei of ETH. When the token address provided is the zero address (`0x0000000000000000000000000000000000000000`) Nevermined will use as payment the native token of the network where the Smart Contracts are deployed. It means ETH for Ethereum networks, MATIC for Polygon, etc.
 
 ```typescript
-const assetPrice = new AssetPrice(johnDoeAddress, BigNumber.from(5), zeroAddress)
+const assetPrice = new AssetPrice(
+  johnDoeAddress, 
+  BigNumber.from(5), 
+  zeroAddress
+)
 ```
 
 In the following example John Doe will split the rewards with the marketplace where is selling his NFT. In this case John Doe will get 90 wei of ETH and the marketplace will get 10 wei of ETH:
@@ -148,16 +152,20 @@ const assetPrice = new AssetPrice(
   new Map([
     [johnDoeAddress, BigNumber.from(90)],
     [marketplaceAddress, BigNumber.from(90)],
-  ]),
+  ])
 ).setTokenAddress(zeroAddress)
 ```
 
 And finally let's see how to add the network fees. In Nevermined the Smart Contracts charge a fee for any monetary transaction. This fee needs to be added in the assets price object in this way:
 
 ```typescript
-const assetPrice = new AssetPrice(johnDoeAddress, BigNumber.from(5), zeroAddress).addNetworkFees(
+const assetPrice = new AssetPrice(
+  johnDoeAddress, 
+  BigNumber.from(5), 
+  zeroAddress
+).addNetworkFees(
   neverminedFeesReceiver,
-  BigNumber.from(10000), // 1% fee
+  BigNumber.from(10000) // 1% fee
 )
 ```
 
@@ -173,7 +181,7 @@ If as a content creator you want to receive royalties in the secondary market, y
 const royaltyAttributes = getRoyaltyAttributes(
   nevermined,
   RoyaltyKind.Standard,
-  10000, // It means 1% royalties
+  10000 // It means 1% royalties
 )
 ```
 
@@ -184,7 +192,7 @@ Nevermined supports different kind of royalties schemes where the static scheme 
 The trading between seller and buyer in a Nevermined ecosystem can be done directly between them in a peer to peer fashion. But to finalize all the transactions both users need to be online to accept the asset transactions. Because of that, it is convenient to delegate some permissions to a Nevermined Node (aka Node). The Node is an element in the Nevermined architecture that facilitates the usage. Nodes can be executed by Nevermined or anyone else and have a limited permissions to trigger some transactions.
 
 During the registration of an asset this permissions can be granted adding a one or many Nodes addresses to the providers option.
-The addition or removal of permissions to a Node or group of Nodes can be done during the registration or afterwards.
+The addition or removal of permissions to a Node or group of Nodes can be done during the registration or afterwards. 
 
 ### Backing up the metadata in immutable storage
 
@@ -199,18 +207,24 @@ This option can be achieved by giving the `PublishMetadata` option to the create
 
 As you can see Nevermined is very flexible in the way that allows to configure several options that are convinient depending on different use cases. Let's put all of this together:
 
+
 <Tabs>
   <TabItem label="erc-721" value="erc-721" default>
 
 Registering a Nevermined NFT (ERC-721):
 
 ```typescript
+
 const nftAttributes = NFTAttributes.getNFT721Instance({
-  metadata,
-  serviceTypes: ['nft-sales', 'nft-access'],
-  nftContractAddress: myERC721Contract.address,
+    metadata,
+    serviceTypes: ['nft-sales', 'nft-access'],
+    nftContractAddress: myERC721Contract.address
 })
-const ddo = await nevermined.nfts721.create(nftAttributes, johnDoeAccount)
+const ddo = await nevermined.nfts721.create(
+  nftAttributes, 
+  johnDoeAccount
+)
+
 ```
 
   </TabItem>
@@ -219,31 +233,32 @@ const ddo = await nevermined.nfts721.create(nftAttributes, johnDoeAccount)
 Registering a Nevermined NFT (ERC-1155):
 
 ```typescript
+
 const royaltyAttributes = getRoyaltyAttributes(
   nevermined,
   RoyaltyKind.Standard,
-  100000, // 10% royalties in the secondary market
+  100000 // 10% royalties in the secondary market
 )
 
 const assetAttributes = AssetAttributes.getInstance({
   metadata, // Some asset metadata
   price: assetPrice, // As we defined before
   serviceTypes: ['nft-sales', 'nft-access'],
-  providers: [config.neverminedNodeAddress], // The address of the Nevermined Node with permissions to interact with the asset
+  providers: [config.neverminedNodeAddress] // The address of the Nevermined Node with permissions to interact with the asset
 })
 
 const nftAttributes = NFTAttributes.getNFT1155Instance({
   ...assetAttributes,
   nftContractAddress: myERC1155Contract, // The address of the NFT Contract attached to the asset
   amount: numberEditions,
-  royaltyAttributes,
-})
+  royaltyAttributes
+})            
 
 const ddo = await nevermined.nfts1155.create(
-  nftAttributes,
-  johnDoeAccount, // The account of the user registering the asset
-  PublishMetadata.IPFS,
-)
+    nftAttributes,
+    johnDoeAccount, // The account of the user registering the asset
+    PublishMetadata.IPFS
+) 
 ```
 
   </TabItem>
@@ -263,7 +278,10 @@ If we want to get the metadata we use the resolve method:
 const metadata = await nevermined.assets.resolve(ddo.id)
 
 // Here we force to fetch the Metadata from IPFS
-const metadata = await nevermined.assets.resolve(ddo.id, DIDResolvePolicy.ImmutableFirst)
+const metadata = await nevermined.assets.resolve(
+  ddo.id, 
+  DIDResolvePolicy.ImmutableFirst
+)
 ```
 
 The resolve method accepts an optional parameter in the second position. That is the policy used to resolve the metadata for a DID given. Remember before we spoke about the option of storing the Metadata off-chain and on-chain, with this option we can specify how we prioritize the resolution of the metadata. Depending on the use case that gives us the option to try to resolve that metadata from the immutable data store first (like IPFS), the Metadata API or force only one of these options.
@@ -289,10 +307,10 @@ const details = await nevermined.nfts1155.details(ddo.id)
 
 The `details` method of the NFT apis will provide information about:
 
-- The mint cap
-- The total supply of the nft
-- The royalties scheme and amount
-- The owner of the NFT contract
+* The mint cap
+* The total supply of the nft
+* The royalties scheme and amount
+* The owner of the NFT contract
 
 ## How a buyer can order a NFT
 
@@ -309,12 +327,13 @@ const agreementId = await nevermined.nfts721.order(ddo.id, buyerAccount)
   <TabItem label="erc-1155" value="erc-1155" default>
 
 ```typescript
-const numberEditions = BigNumber.from(1) // Higher if we want to purchase more than 1 edition
+const numberEditions= BigNumber.from(1) // Higher if we want to purchase more than 1 edition
 const agreementId = await nevermined.nfts1155.order(ddo.id, numberEditions, buyerAccount)
 ```
 
   </TabItem>
 </Tabs>
+
 
 The order method will return an `agreementId`. This is a unique identifier associated with this purchase transaction. The `agreementId` can be used later to fetch on-chain information about the status of the order.
 
@@ -326,7 +345,11 @@ If everything went well during the `order` step, the buyer can claim for the NFT
   <TabItem label="erc-721" value="erc-721" default>
 
 ```typescript
-const result = await nevermined.nfts721.claim(agreementId, publisherAddress, buyerAddress)
+const result = await nevermined.nfts721.claim(
+    agreementId,
+    publisherAddress,
+    buyerAddress
+)
 ```
 
   </TabItem>
@@ -334,10 +357,10 @@ const result = await nevermined.nfts721.claim(agreementId, publisherAddress, buy
 
 ```typescript
 const result = await nevermined.nfts1155.claim(
-  agreementId,
-  publisherAddress,
-  buyerAddress,
-  numberEditions,
+    agreementId,
+    publisherAddress,
+    buyerAddress,
+    numberEditions
 )
 ```
 
@@ -351,14 +374,22 @@ Because the buyer is now a NFT holder, if the asset has associated some exclusiv
   <TabItem label="erc-721" value="erc-721" default>
 
 ```typescript
-await nevermined.nfts721.access(ddo.id, user, '/tmp/my-files')
+await nevermined.nfts721.access(
+    ddo.id,
+    user,
+    '/tmp/my-files'
+)
 ```
 
   </TabItem>
   <TabItem label="erc-1155" value="erc-1155" default>
 
 ```typescript
-await nevermined.nfts1155.access(ddo.id, buyerAccount, '/tmp/my-files')
+await nevermined.nfts1155.access(
+    ddo.id,
+    buyerAccount,
+    '/tmp/my-files'
+)
 ```
 
   </TabItem>
@@ -374,14 +405,19 @@ Any user can interact directly with the NFT contracts directly to get contract b
   <TabItem label="erc-721" value="erc-721" default>
 
 ```typescript
-const balance = await nevermined.nfts721.balance(johnDoeAddress)
+const balance = await nevermined.nfts721.balance(
+  johnDoeAddress
+)
 ```
 
   </TabItem>
   <TabItem label="erc-1155" value="erc-1155" default>
 
 ```typescript
-const balance = await nevermined.nfts1155.balance(ddo.id, johnDoeAddress)
+const balance = await nevermined.nfts1155.balance(
+  ddo.id, 
+  johnDoeAddress
+)
 ```
 
   </TabItem>

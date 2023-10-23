@@ -92,6 +92,11 @@ const config = {
           },
           {
             position: 'left',
+            label: 'React Components',
+            to: 'docs/react-components/intro',
+          },
+          {
+            position: 'left',
             label: 'SDK',
             to: 'docs/nevermined-sdk/getting-started',
           },
