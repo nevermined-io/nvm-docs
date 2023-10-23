@@ -9,6 +9,7 @@ import { BEM } from '@nevermined-io/styles'
 import styles from './index.module.scss'
 import nvmSVGIcon from '@site/static/nevermined/neverminedDocs.svg'
 import integrationDocsSVGIcon from '@site/static/nevermined/integrationDocs.svg'
+import tutorialPNGIcon from '@site/static/nevermined/tutorialsDocs.png'
 
 const b = BEM('nvm', styles)
 
@@ -51,8 +52,20 @@ const FeatureList: BoxItem[] = [
     Svg: integrationDocsSVGIcon,
     description: (
       <>
-        Everything you need to know about using Nevermined via our SDK. For developers who want to
-        use a low-level library.
+        Everything you need to know about using Nevermined via our SDK. For
+        developers who want to use a low-level library.
+      </>
+    ),
+  },
+  {
+    title: 'React Catalog',
+    className: b('box'),
+    link: 'docs/react-components/intro',
+    png: tutorialPNGIcon,
+    description: (
+      <>
+        Everything you need to know about using Nevermined via our Catalog. For
+        developers who are using React.
       </>
     ),
   },
@@ -70,6 +83,11 @@ const HomepageFeatures = (): JSX.Element => {
             <div className={clsx('row', b('gutter'))}>
               <div className="col">
                 <Box {...FeatureList[1]} />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <Box {...FeatureList[2]} />
               </div>
             </div>
           </div>
