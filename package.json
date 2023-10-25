@@ -27,7 +27,7 @@
     "@mdx-js/react": "^1.6.22",
     "@nevermined-io/catalog": "^1.2.0",
     "@nevermined-io/providers": "^1.2.0",
-    "@nevermined-io/sdk": "^1.2.0",
+    "@nevermined-io/sdk": "^2.0.0",
     "@nevermined-io/styles": "^0.1.1",
     "axios": "^0.27.2",
     "bem-helpers": "^1.1.0",

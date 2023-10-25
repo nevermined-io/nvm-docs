@@ -9,14 +9,14 @@ This tutorial demonstrates a basic example of using the Nevermined SDK to intera
 Ensure you have the following installed:
 
 - Node.js
-- npm (Node Package Manager)
+- yarn (Node Package Manager)
 
 ## Setup
 
 1. Install the Nevermined SDK package:
 
-   ```bash
-   npm install @nevermined-io/sdk
+   ```
+   yarn && yarn add @nevermined-io/sdk
 
 2. Create a TypeScript file (e.g., main.ts) and paste the following code:
     ```ts
@@ -45,15 +45,16 @@ Ensure you have the following installed:
     main().then(() => process.exit(0))
     ```
 
-3. Download the artifacts in the same folder:
+3. From the root folder run:
     ```
-    wget -c https://artifacts.nevermined.network/421613/public/contracts_v3.5.2.tar.gz -O -| tar -xz --one-top-level=./artifacts
+    mkdir artifacts && cd artifacts && wget -c https://artifacts.nevermined.network/421613/public/contracts_v3.5.2.tar.gz && tar -xzvf contracts_v3.5.2.tar.gz
     ```
+    This will create an "artifacts" folder and download in it the Nevermined smart contract artifacts.
 
 ## Running the Code
 Execute the following command to run the TypeScript file:
 
-    npm install @nevermined-io/sdk
+    yarn start
 
 
 This will initialize the Nevermined SDK, configure it with the specified options, and output information about SDK versions.
