@@ -19,7 +19,7 @@ Ensure you have the following installed:
    npm install @nevermined-io/sdk
 
 2. Create a TypeScript file (e.g., main.ts) and paste the following code:
-    ```bash
+    ```ts
     import { Nevermined, NeverminedOptions } from '@nevermined-io/sdk'
 
     const main = async () => {
