@@ -45,9 +45,11 @@ Ensure you have the following installed:
     main().then(() => process.exit(0))
     ```
 
-3. Download the artifacts in the same folder of a:
-    ```wget -c https://artifacts.nevermined.network/421613/public/contracts_v3.5.2.tar.gz -O -| tar -xz --one-top-level=./artifacts```
-    
+3. Download the artifacts in the same folder:
+    ```
+    wget -c https://artifacts.nevermined.network/421613/public/contracts_v3.5.2.tar.gz -O -| tar -xz --one-top-level=./artifacts
+    ```
+
 ## Running the Code
 Execute the following command to run the TypeScript file:
 
