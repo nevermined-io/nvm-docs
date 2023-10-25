@@ -3,6 +3,7 @@
 ## Overview
 
 This tutorial demonstrates a basic example of using the Nevermined SDK to interact with the Nevermined network. The provided code, written in TypeScript, initializes the SDK, configures it, and retrieves information about SDK versions.
+You can find [here](https://github.com/nevermined-io/docs/tree/getting-started-md/tutorials/code/getting-started) the code for this tutorial 
 
 ## Prerequisites
 
