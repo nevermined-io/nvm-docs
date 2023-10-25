@@ -23,3 +23,5 @@ package-lock.json
 
 # Contracts
 /static/contracts
+*/**/node_modules
+*/**/artifacts
