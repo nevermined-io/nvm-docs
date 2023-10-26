@@ -17,7 +17,7 @@ Ensure you have the following installed:
 1. Install the Nevermined SDK package:
 
    ```
-   yarn && yarn add @nevermined-io/sdk
+   yarn add @nevermined-io/sdk
 
 2. Create a TypeScript file (e.g., main.ts) and paste the following code:
     ```ts
@@ -52,10 +52,6 @@ Ensure you have the following installed:
     ```
     This will create an "artifacts" folder and download in it the Nevermined smart contract artifacts.
 
-## Running the Code
-Execute the following command to run the TypeScript file:
-
-    yarn start
 
 
 This will initialize the Nevermined SDK, configure it with the specified options, and output information about SDK versions.
