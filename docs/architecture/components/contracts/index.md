@@ -7767,6 +7767,12 @@ function used(bytes32 _provId, bytes32 _did, address _agentId, bytes32 _activity
 function getDIDOwner(bytes32 _did) external view returns (address didOwner)
 ```
 
+### isDIDProvider
+
+```solidity
+function isDIDProvider(bytes32 _did, address _provider) external view returns (bool)
+```
+
 ## IList
 
 ### has
