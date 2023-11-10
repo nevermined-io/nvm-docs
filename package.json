@@ -29,7 +29,7 @@
     "@nevermined-io/providers": "^1.2.0",
     "@nevermined-io/sdk": "^1.2.0",
     "@nevermined-io/styles": "^0.1.1",
-    "axios": "^0.27.2",
+    "axios": "^1.6.0",
     "bem-helpers": "^1.1.0",
     "clsx": "^1.1.1",
     "docusaurus-plugin-sass": "^0.2.2",
