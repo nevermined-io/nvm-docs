@@ -216,7 +216,7 @@ ncli accounts balance 0xe2DD09d719Da89e5a3D0F2549c7E24566e947260
 
 
 
-### fund [account]
+### fund [addressToFund]
 Funds an account with ERC20 tokens on a testnet<br/>
 
 In the test environments all tokens lack real value. Typically in Nevermined you need to use different type of tokens. The Native token (`ETH`, `MATIC`, etc) to pay for the gas resulting to write into a blockchain network, and optionally with a `ERC20` token to do some payments. This command allows to get some funds in a testnet environment allowing to a user to run different processes on a testnet. This command will not work in production environments where the tokens have actual value.<br/>
@@ -225,7 +225,7 @@ In the test environments all tokens lack real value. Typically in Nevermined you
 
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
-| **account** | `string` |  |    | The account to fund |
+| **addressToFund** | `string` |  |    | The account address to fund |
 
 
 
@@ -497,6 +497,74 @@ This method makes the payment and retrieve a serviceAgreementId that can be used
 
 ```bash
 ncli assets order did:nv:912e7a547bcd675ffbc5d2063ef770e15744029f048f706f6bb0281df4f4700f
+```
+
+
+
+### get-providers [did]
+Gets the list of provider addresses granted to an asset<br/>
+
+This method gest the complete list of providers granted to an asset<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **did** | `string` |  |    | The asset DID |
+
+
+
+#### Example/s
+
+
+```bash
+ncli assets get-providers did:nv:912e7a547bcd675ffbc5d2063ef770e15744029f048f706f6bb0281df4f4700f
+```
+
+
+
+### grant-provider [did] [providerAddress]
+Grant an address as provider of an asset<br/>
+
+This method adds an address as provider of an asset<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **did** | `string` |  |    | The asset DID |
+| **providerAddress** | `string` |  |    | The provider address |
+
+
+
+#### Example/s
+
+
+```bash
+ncli assets grant-provider did:nv:912e7a547bcd675ffbc5d2063ef770e15744029f048f706f6bb0281df4f4700f 0x736DCC96D89cB2F9E2316cD826668f4E1c4861B0
+```
+
+
+
+### revoke-provider [did] [providerAddress]
+Revokes an address as provider of an asset<br/>
+
+This method revokes an address as provider of an asset<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **did** | `string` |  |    | The asset DID |
+| **providerAddress** | `string` |  |    | The provider address |
+
+
+
+#### Example/s
+
+
+```bash
+ncli assets revoke-provider did:nv:912e7a547bcd675ffbc5d2063ef770e15744029f048f706f6bb0281df4f4700f 0x736DCC96D89cB2F9E2316cD826668f4E1c4861B0
 ```
 
 
