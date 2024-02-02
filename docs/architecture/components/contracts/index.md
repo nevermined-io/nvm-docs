@@ -7773,6 +7773,12 @@ function getDIDOwner(bytes32 _did) external view returns (address didOwner)
 function isDIDProvider(bytes32 _did, address _provider) external view returns (bool)
 ```
 
+### isDIDProviderOrOwner
+
+```solidity
+function isDIDProviderOrOwner(bytes32 _did, address _provider) external view returns (bool)
+```
+
 ## IList
 
 ### has
@@ -12783,6 +12789,12 @@ function burn(uint256 id, uint256 amount) public
 function burn(address to, uint256 id, uint256 amount) public
 ```
 
+### burn
+
+```solidity
+function burn(address to, uint256 id, uint256 amount, uint256 seed) public
+```
+
 ### balanceOf
 
 ```solidity
@@ -12898,6 +12910,12 @@ function burn(uint256 id, uint256 amount) public virtual
 
 ```solidity
 function burn(address to, uint256 id, uint256 amount) public virtual
+```
+
+### burn
+
+```solidity
+function burn(address to, uint256 id, uint256 amount, uint256 seed) public virtual
 ```
 
 ### uri
