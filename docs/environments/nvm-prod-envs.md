@@ -15,17 +15,27 @@ The network fee in Nevermined production environments is **1%** and the receiver
 
 :::
 
-## Public Polygon environment
 
-- *`public-v2-mumbai`*: Public environment in Polygon. Use this if you want to integrate with Nevermined in Polygon for production.
+## Arbitrum environment
 
 
-### Version 2.1.0
+### Version 3.5.6
 
 | Environment | Network | Contracts Version | Tag | Component | URL | Comments |
 |-------------|---------|-------------------|-----|-----------|-----|----------|
-| public-nvm-v2-matic | Polygon Matic | 2.1.0 | public | Node | https://node.matic.public.nevermined.network | |
-| public-nvm-v2-matic | Polygon Matic | 2.1.0 | public | Marketplace API | https://marketplace-api.matic.public.nevermined.network | |
+| public-nvm-v3-arbitrum | Arbitrum One | 3.5.6 | public | Node | https://node.arbitrum.nevermined.app | |
+| public-nvm-v3-matic | Arbitrum | 3.5.6 | public | Marketplace API | https://marketplace-api.arbitrum.nevermined.app | |
+
+All the contract events are exposed via [The Graph](https://thegraph.com/). You can find all the `Polygon Matic` Nevermined Subgraphs here (search by Nevermined):
+
+## Polygon environment
+
+### Version 3.5.6
+
+| Environment | Network | Contracts Version | Tag | Component | URL | Comments |
+|-------------|---------|-------------------|-----|-----------|-----|----------|
+| public-nvm-v3-matic | Polygon Matic | 3.5.6 | public | Node | https://node.matic.nevermined.app | |
+| public-nvm-v3-matic | Polygon Matic | 3.5.6 | public | Marketplace API | https://marketplace-api.matic.nevermined.app | |
 
 All the contract events are exposed via [The Graph](https://thegraph.com/). You can find all the `Polygon Matic` Nevermined Subgraphs here (search by Nevermined):
 
@@ -34,12 +44,3 @@ https://thegraph.com/hosted-service
 For example for Nevermined Polygon Matic:
 
 https://thegraph.com/hosted-service/subgraph/nevermined-io/publicmaticv2neverminedtoken
-
-
-### Version 2.0.5
-
-| Environment | Network | Contracts Version | Tag | Component | URL | Comments |
-|-------------|---------|-------------------|-----|-----------|-----|----------|
-| public-v2-mumbai | Mumbai | 2.0.5 | public | Node | https://node.public.nevermined.network | |
-| public-v2-mumbai | Mumbai | 2.0.5 | public | Marketplace API | https://marketplace-api.public.nevermined.network | |
-| public-v2-mumbai | Mumbai | 2.0.5 | public | GraphNode | https://api.thegraph.com/subgraphs/name/nevermined-io/public | Use with sdk >= 0.21.0 |
