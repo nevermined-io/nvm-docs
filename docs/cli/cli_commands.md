@@ -14,7 +14,7 @@ This are the optional parameters that apply to all `ncli` commands:
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **verbose** | `boolean` |  |  `false`  | Run with verbose logging |
-| **network** | `string` |  |  `mumbai`  | The network to use |
+| **network** | `string` |  |  `appTesting`  | The network to use |
 | **accountIndex** | `string` |  |  `0`  | The index in the derivation path related with the account to use |
 | **json** | `boolean` |  |  `false`  | If provided all the output will be in JSON format |
 
