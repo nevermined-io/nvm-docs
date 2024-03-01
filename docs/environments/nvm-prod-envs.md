@@ -24,7 +24,7 @@ The network fee in Nevermined production environments is **1%** and the receiver
 | Environment | Network | Contracts Version | Tag | Component | URL | Comments |
 |-------------|---------|-------------------|-----|-----------|-----|----------|
 | public-nvm-v3-arbitrum | Arbitrum One | 3.5.6 | public | Node | https://node.arbitrum.nevermined.app | |
-| public-nvm-v3-matic | Arbitrum | 3.5.6 | public | Marketplace API | https://marketplace-api.arbitrum.nevermined.app | |
+| public-nvm-v3-arbitrum | Arbitrum | 3.5.6 | public | Marketplace API | https://marketplace-api.arbitrum.nevermined.app | |
 
 All the contract events are exposed via [The Graph](https://thegraph.com/). You can find all the `Polygon Matic` Nevermined Subgraphs here (search by Nevermined):
 
@@ -44,3 +44,24 @@ https://thegraph.com/hosted-service
 For example for Nevermined Polygon Matic:
 
 https://thegraph.com/hosted-service/subgraph/nevermined-io/publicmaticv2neverminedtoken
+
+## Gnosis
+
+The `v3.5.6` contracts are also deployed in the **Gnosis** network:
+
+* Smart Contract addresses can be found [here](https://artifacts.nevermined.network/100/public/contracts_v3.5.6.json)
+* The ABIs of the contracts to connect via SDK can be downloaded from [here](https://artifacts.nevermined.network/100/public/contracts_v3.5.6.tar.gz)
+
+## Optimism
+
+The `v3.5.6` contracts are also deployed in the **Optimism Mainnet** network:
+
+* Smart Contract addresses can be found [here](https://artifacts.nevermined.network/10/public/contracts_v3.5.6.json)
+* The ABIs of the contracts to connect via SDK can be downloaded from [here](https://artifacts.nevermined.network/10/public/contracts_v3.5.6.tar.gz)
+
+## Celo
+
+The `v3.5.6` contracts are also deployed in the **Celo Mainnet** network:
+
+* Smart Contract addresses can be found [here](https://artifacts.nevermined.network/42220/public/contracts_v3.5.6.json)
+* The ABIs of the contracts to connect via SDK can be downloaded from [here](https://artifacts.nevermined.network/42220/public/contracts_v3.5.6.tar.gz)
