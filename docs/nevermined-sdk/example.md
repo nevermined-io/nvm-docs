@@ -4,10 +4,6 @@ sidebar_position: 3
 
 # How to use the SDK?
 
-## Before to start
-
-If you project is using `React` we recommend to use [Catalog](../react-components/intro.md) to make everything much easier, SDK is the low level of it.
-
 ## Requirements
 
 Before you start with this demo you require:

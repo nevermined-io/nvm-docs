@@ -13,9 +13,6 @@ The desire to share data across silos and geographic boundaries is not new for d
 
 So any team, organization or individual that sees Data and AI as economic assets, with incentives, IP rights,... can benefit from using Nevermined. 
 
-Currently, Nevermined is geared towards developers and is available in two ways, for different development approaches. 
-
-- If you want to use a low-level library, you can use our [SDK](../nevermined-sdk/intro)
-- For apps made in React, we have functionalities available as [React Components](../react-components/intro).
+Currently, Nevermined is geared towards developers and is available via our [SDK](../nevermined-sdk/intro).
 
 We’re also working on packaging our components in SaaS-solutions.

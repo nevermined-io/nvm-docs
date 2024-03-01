@@ -3,12 +3,9 @@ sidebar_position: 4
 description: What information is available in Nevermined, and how to find it
 ---
 
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import QueryAssets from '@site/src/components/queryAssets';
 
-# How to query assets with Catalog
 
-With Catalog is possible to search specific assets by using the [`query`](../react-components/catalog/API/interfaces/AssetsModule.md#query) method from [`AssetsModule`](../react-components/catalog/API/interfaces/AssetsModule.md). Here there are some examples to show how to use it
+# Searching assets
 
 ## Search by asset name
 

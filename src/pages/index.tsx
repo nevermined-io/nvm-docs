@@ -57,18 +57,6 @@ const FeatureList: BoxItem[] = [
       </>
     ),
   },
-  {
-    title: 'React Catalog',
-    className: b('box'),
-    link: 'docs/react-components/intro',
-    png: tutorialPNGIcon,
-    description: (
-      <>
-        Everything you need to know about using Nevermined via our Catalog. For
-        developers who are using React.
-      </>
-    ),
-  },
 ]
 
 const HomepageFeatures = (): JSX.Element => {
