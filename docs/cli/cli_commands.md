@@ -1906,3 +1906,274 @@ ncli utils decode-did nhf7kkweh295qelv1zuy8lc1fre7ojla0nuuhrg4wqp9zuo89
 
 
 
+
+
+## Module: app
+Interacts with the Nevermined App - https://nevermined.app/<br/>
+
+**Usage**: $0 app &lt;command&gt; parameters [options]<br/>
+
+Commands:
+
+### create-time-plan
+Registers a new Time Plan<br/>
+
+This command registers a new Time based plan on the Nevermined App. This plan will be used to allow users to access to some exclusive contents for a period of time.<br/>
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **name** | `string` |  |    | The plan name |
+| **author** | `string` |  |    | The author of the file/s |
+| **duration** | `number` |  |  `0`  | The duration of the subscription. This attribute must be configured with the period attribute |
+| **period** | `string` |  |  `forever`  | The duration of the subscription (hours, days, months, years, forever). This attribute must be configured with the duration attribute |
+| **tag** | `array` |  &#x2612;  |    | Tag |
+| **coverImage** | `string` |  &#x2612;  |    | Url to the cover image of the plan |
+| **price** | `number` |  |    | The plan price |
+| **token** | `string` |  |    | The address of the token to be used to pay for the plan. If the zero address is given native token will be used. |
+| **planType** | `string` |  |  `time`  | The plan type: (time, credits) |
+
+
+#### Example/s
+
+
+```bash
+ncli app create-time-plan --name &quot;One Month Premium Plan&quot; --author &quot;John Doe&quot; --duration 1 --period months --price 1 
+```
+
+
+
+### create-credits-plan
+Registers a new Credits Plan<br/>
+
+This command registers a new Credits based plan on the Nevermined App. This plan will be used to allow users to access to some exclusive contents while the user has credits.<br/>
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **name** | `string` |  |    | The plan name |
+| **author** | `string` |  |    | The author of the file/s |
+| **credits** | `number` |  |  `0`  | Number of credits included as part of the plan |
+| **period** | `string` |  |  `forever`  | The duration of the subscription. This attribute must be configured with the duration attribute |
+| **tag** | `array` |  &#x2612;  |    | Tag |
+| **coverImage** | `string` |  &#x2612;  |    | Url to the cover image of the plan |
+| **price** | `number` |  |    | The plan price |
+| **token** | `string` |  |    | The address of the token to be used to pay for the plan. If the zero address is given native token will be used. |
+| **planType** | `string` |  |  `credits`  | The plan type: (time, credits) |
+
+
+#### Example/s
+
+
+```bash
+ncli app create-credits-plan --name &quot;AI Premium Plan&quot; --author &quot;John Doe&quot; --credits 100 --price 1
+```
+
+
+
+### show [did]
+Retrieves information about an Asset<br/>
+
+For a given DID this command displays information about the asset <br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **did** | `string` |  |    | The DID associated with the Asset |
+
+
+
+#### Example/s
+
+
+```bash
+ncli app show did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf452a49be7e
+```
+
+
+
+### register-agent [subscriptionDid]
+Registers a new AI Agent/Service in the Nevermined App<br/>
+
+This command allows to register a new AI Agent/Service in the Nevermined App. This will allow to offer that service to the Nevermined ecosystem.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **subscriptionDid** | `string` |  |    | The DID of the subscription |
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **name** | `string` |  |    | The name of the agent |
+| **description** | `string` |  |    | The description of the agent |
+| **tag** | `array` |  &#x2612;  |    | Tag |
+| **coverImage** | `string` |  &#x2612;  |    | Url to the cover image of the plan |
+| **openApiUrl** | `string` |  &#x2612;  |    | OpenAPI full URL with description of the service |
+| **authType** | `string` |  &#x2612;  |  `none`  | Type of authentication required to access the service. Possible values are: none, basic, bearer |
+| **credentials** | `string` |  &#x2612;  |    | Authentication credentials to access the service. If authType is basic, the format is username:password. If authType is bearer, the format is the access token |
+| **endpoint** | `array` |  &#x2611;  |    | Endpoint where the agent is available. The format is method@url. Example: --endpoint GET@http://example.com/get/(.*) |
+| **dynamicCost** | `boolean` |  &#x2612;  |  `false`  | Indicates if the agent has dynamic cost |
+| **cost** | `number` |  &#x2612;  |  `1`  | The cost in credits of using the service |
+| **maxCost** | `number` |  &#x2612;  |    | The capped cost in credits of using the service. This parameter is only used if dynamicCost is true |
+
+
+#### Example/s
+
+
+```bash
+ncli app register-agent did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf452a49be7e --name &quot;My AI Agent&quot;
+```
+
+
+
+### register-files [subscriptionDid]
+Registers file assests in the Nevermined App<br/>
+
+This command allows to register new file assets (datasets, models, algorithmls, etc) in the Nevermined App. This will allow the download of them the Nevermined ecosystem.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **subscriptionDid** | `string` |  |    | The DID of the subscription |
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **name** | `string` |  |    | The name of the agent |
+| **description** | `string` |  |    | The description of the agent |
+| **tag** | `array` |  &#x2612;  |    | Tag |
+| **coverImage** | `string` |  &#x2612;  |    | Url to the cover image of the plan |
+| **url** | `array` |  &#x2611;  |    | The full URL where the file is available. |
+| **cost** | `number` |  &#x2611;  |  `1`  | The cost in credits of using the service |
+
+
+#### Example/s
+
+
+```bash
+ncli app register-files did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf452a49be7e --name &quot;My Model&quot; 
+```
+
+
+
+### order [did]
+Orders and pays for a subscription<br/>
+
+When a user orders an asset attached to a NFT, this command purchases that NFT and get it transferred to the wallet completing that purchase. This will allow later on to get access to the exclusive contents attached to the asset demonstrating the possesion of that NFT.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **did** | `string` |  |    | The DID of the plan |
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **agreementId** | `string` |  &#x2612;  |    | The identifier of the agreement created by the buyer |
+
+
+#### Example/s
+
+
+```bash
+ncli app order did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf452a49be7e 
+```
+
+
+
+### balance [did]
+It gets the balance of a user for a specific plan<br/>
+
+This command allows to check if a user is a subscriber of a specific plan<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **did** | `string` |  |    | The asset DID |
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **address** | `string` |  |    | The address of the account to get the balance |
+
+
+#### Example/s
+
+
+```bash
+ncli app balance did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf452a49be7e
+```
+
+
+
+### get-token [did]
+Gets the access token for an agent<br/>
+
+When a user is a subscriber for a plan that includes access to an agent, this command gets the access token to use that agent.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **did** | `string` |  |    | The DID of the agent |
+
+
+
+#### Example/s
+
+
+```bash
+ncli app access-token did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf452a49be7e 
+```
+
+
+
+### download [did]
+As subscriber this command allows to download the files associated to a NFT<br/>
+
+This command will allow to download the file contents associated to a DID that has a NFT (ERC-721) as access control mechanism. If the account of the user executing this command hold the NFT, it will be able to download the files.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **did** | `string` |  |    | The DID asset identifier that works as tokenId for the NFT |
+
+
+#### Optional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **agreementId** | `string` |  &#x2611;  |    | The identifier of the agreement created by the buyer |
+| **destination** | `string` |  &#x2611;  |    | The destination of the files |
+| **nftType** | `number` |  |  `1155`  | The NFT type |
+
+
+#### Example/s
+
+
+```bash
+ncli app download did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf452a49be7e --destination /tmp/nevemined/
+```
+
+
+
+
