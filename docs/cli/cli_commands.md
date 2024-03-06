@@ -2020,7 +2020,7 @@ This command allows to register a new AI Agent/Service in the Nevermined App. Th
 | **openApiUrl** | `string` |  &#x2612;  |    | OpenAPI full URL with description of the service |
 | **authType** | `string` |  &#x2612;  |  `none`  | Type of authentication required to access the service. Possible values are: none, basic, bearer |
 | **credentials** | `string` |  &#x2612;  |    | Authentication credentials to access the service. If authType is basic, the format is username:password. If authType is bearer, the format is the access token |
-| **endpoint** | `array` |  &#x2611;  |    | Endpoint where the agent is available. The format is method@url. Example: --endpoint GET@http://example.com/get/(.*) |
+| **endpoint** | `array` |  &#x2611;  |  ``  | Endpoint where the agent is available. The format is method@url. Example: --endpoint GET@http://example.com/get/(.*) |
 | **dynamicCost** | `boolean` |  &#x2612;  |  `false`  | Indicates if the agent has dynamic cost |
 | **cost** | `number` |  &#x2612;  |  `1`  | The cost in credits of using the service |
 | **maxCost** | `number` |  &#x2612;  |    | The capped cost in credits of using the service. This parameter is only used if dynamicCost is true |
