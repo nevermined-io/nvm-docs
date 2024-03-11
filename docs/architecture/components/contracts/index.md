@@ -12792,7 +12792,7 @@ function burn(address to, uint256 id, uint256 amount) public
 ### burn
 
 ```solidity
-function burn(address to, uint256 id, uint256 amount, uint256 seed) public
+function burn(address to, uint256 id, uint256 amount, uint256 _seed) public
 ```
 
 ### balanceOf
