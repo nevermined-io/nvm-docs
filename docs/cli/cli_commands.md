@@ -843,7 +843,7 @@ A Smart Contract is represented by an ABI file that includes the definition of i
 | **symbol** | `string` |  |  `NVM`  | The nft contract symbol |
 | **uri** | `string` |  |    | The nft metadata uri |
 | **cap** | `number` |  |  `0`  | The max number of tokens created in this NFT contract. If 0 means unlimitted |
-| **approve** | `array` |  |    | A list of addresses to be approved to manage the NFT contract |
+| **operators** | `array` |  &#x2612;  |  ``  | A list of addresses to be approved to manage the NFT contract |
 | **addOperator** | `boolean` |  |  `true`  | If true adds the Nevermined Transfer condition with permissions to mint NFTs |
 | **nftType** | `number` |  |  `721`  | The NFT type |
 
@@ -1299,7 +1299,7 @@ A Smart Contract is represented by an ABI file that includes the definition of i
 | **name** | `string` |  |  `NVM NFT`  | The nft contract name |
 | **symbol** | `string` |  |  `NVM`  | The nft contract symbol |
 | **uri** | `string` |  |    | The nft metadata uri |
-| **approve** | `array` |  |    | A list of addresses to be approved to manage the NFT contract |
+| **operators** | `array` |  &#x2612;  |    | A list of addresses to be approved to manage the NFT contract |
 | **addOperator** | `boolean` |  |  `true`  | If true adds the Nevermined Transfer condition with permissions to mint NFTs |
 | **nftType** | `number` |  |  `1155`  | The NFT type |
 
@@ -1691,57 +1691,6 @@ ncli utils upload README.md
 
 
 
-### decrypt [file]
-Decrypt a file<br/>
-
-It decrypts a previously encrypted file using the password provided.<br/>
-
-#### Positional Arguments
-
-| Name of the Argument | Type | Is required? | Default value | Description |
-|----------------------|------|-------------:|--------------:|-------------|
-| **file** | `string` |  |    | The path to the file to decrypt |
-| **password** | `string` |  |    | The password to be used to decrypt the file |
-
-
-
-#### Example/s
-
-
-```bash
-ncli utils decrypt README.md --password 12345678
-```
-
-
-
-### encrypt [file]
-Encrypt a file<br/>
-
-It encrypts a file using the password provided.<br/>
-
-#### Positional Arguments
-
-| Name of the Argument | Type | Is required? | Default value | Description |
-|----------------------|------|-------------:|--------------:|-------------|
-| **file** | `string` |  |    | The path to the file to encrypt |
-
-
-#### Optional Arguments
-
-| Name of the Argument | Type | Is required? | Default value | Description |
-|----------------------|------|-------------:|--------------:|-------------|
-| **password** | `string` |  |    | The password to be used to encrypt the file. If empty, a new password will be generated |
-
-
-#### Example/s
-
-
-```bash
-ncli utils encrypt README.md --password 12345678
-```
-
-
-
 ### publish-nft-metadata
 It publish the metadata associated to a NFT into external storage<br/>
 
@@ -2085,6 +2034,7 @@ When a user orders an asset attached to a NFT, this command purchases that NFT a
 | Name of the Argument | Type | Is required? | Default value | Description |
 |----------------------|------|-------------:|--------------:|-------------|
 | **agreementId** | `string` |  &#x2612;  |    | The identifier of the agreement created by the buyer |
+| **numCredits** | `number` |  &#x2612;  |    | The number of credits to order |
 
 
 #### Example/s
