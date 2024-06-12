@@ -30,6 +30,7 @@ module.exports = function (_context, _options) {
             stream: require.resolve('stream-browserify'),
             os: require.resolve('os-browserify'),
             constants: require.resolve('constants-browserify'),
+            zlib: require.resolve('browserify-zlib'),
             fs: false,
           },
         },
