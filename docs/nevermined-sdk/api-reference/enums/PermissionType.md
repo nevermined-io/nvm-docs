@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / PermissionType
+[@nevermined-io/sdk](../code-reference.md) / PermissionType
 
 # Enumeration: PermissionType
 
@@ -15,38 +15,38 @@
 
 ### Admin
 
-• **Admin** = ``"admin"``
+• **Admin** = `"admin"`
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:5](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L5)
+[src/types/MetadataTypes.ts:90](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L90)
 
-___
+---
 
 ### Delete
 
-• **Delete** = ``"delete"``
+• **Delete** = `"delete"`
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:4](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L4)
+[src/types/MetadataTypes.ts:89](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L89)
 
-___
+---
 
 ### Read
 
-• **Read** = ``"read"``
+• **Read** = `"read"`
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:2](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L2)
+[src/types/MetadataTypes.ts:87](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L87)
 
-___
+---
 
 ### Update
 
-• **Update** = ``"update"``
+• **Update** = `"update"`
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:3](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L3)
+[src/types/MetadataTypes.ts:88](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L88)

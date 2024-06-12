@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / ConditionState
+[@nevermined-io/sdk](../code-reference.md) / ConditionState
 
 # Enumeration: ConditionState
 
@@ -15,38 +15,38 @@
 
 ### Aborted
 
-• **Aborted** = ``3``
+• **Aborted** = `3`
 
 #### Defined in
 
-[src/keeper/contracts/conditions/Condition.abstract.ts:14](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/conditions/Condition.abstract.ts#L14)
+[src/types/ContractTypes.ts:5](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/ContractTypes.ts#L5)
 
-___
+---
 
 ### Fulfilled
 
-• **Fulfilled** = ``2``
+• **Fulfilled** = `2`
 
 #### Defined in
 
-[src/keeper/contracts/conditions/Condition.abstract.ts:13](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/conditions/Condition.abstract.ts#L13)
+[src/types/ContractTypes.ts:4](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/ContractTypes.ts#L4)
 
-___
+---
 
 ### Unfulfilled
 
-• **Unfulfilled** = ``1``
+• **Unfulfilled** = `1`
 
 #### Defined in
 
-[src/keeper/contracts/conditions/Condition.abstract.ts:12](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/conditions/Condition.abstract.ts#L12)
+[src/types/ContractTypes.ts:3](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/ContractTypes.ts#L3)
 
-___
+---
 
 ### Uninitialized
 
-• **Uninitialized** = ``0``
+• **Uninitialized** = `0`
 
 #### Defined in
 
-[src/keeper/contracts/conditions/Condition.abstract.ts:11](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/conditions/Condition.abstract.ts#L11)
+[src/types/ContractTypes.ts:2](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/ContractTypes.ts#L2)

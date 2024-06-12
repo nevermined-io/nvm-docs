@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / State
+[@nevermined-io/sdk](../code-reference.md) / State
 
 # Enumeration: State
 
@@ -14,28 +14,28 @@
 
 ### Confirmed
 
-• **Confirmed** = ``"confirmed"``
+• **Confirmed** = `"confirmed"`
 
 #### Defined in
 
-[src/profiles/Profiles.interfaces.ts:4](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/profiles/Profiles.interfaces.ts#L4)
+[src/types/MetadataTypes.ts:108](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L108)
 
-___
+---
 
 ### Disabled
 
-• **Disabled** = ``"disabled"``
+• **Disabled** = `"disabled"`
 
 #### Defined in
 
-[src/profiles/Profiles.interfaces.ts:2](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/profiles/Profiles.interfaces.ts#L2)
+[src/types/MetadataTypes.ts:106](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L106)
 
-___
+---
 
 ### Unconfirmed
 
-• **Unconfirmed** = ``"unconfirmed"``
+• **Unconfirmed** = `"unconfirmed"`
 
 #### Defined in
 
-[src/profiles/Profiles.interfaces.ts:3](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/profiles/Profiles.interfaces.ts#L3)
+[src/types/MetadataTypes.ts:107](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L107)

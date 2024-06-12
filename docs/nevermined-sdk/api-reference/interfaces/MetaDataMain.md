@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / MetaDataMain
+[@nevermined-io/sdk](../code-reference.md) / MetaDataMain
 
 # Interface: MetaDataMain
 
@@ -19,11 +19,18 @@ https://github.com/nevermined-io/docs/blob/master/docs/architecture/specs/metada
 - [encryptedService](MetaDataMain.md#encryptedservice)
 - [ercType](MetaDataMain.md#erctype)
 - [files](MetaDataMain.md#files)
+- [isDTP](MetaDataMain.md#isdtp)
 - [license](MetaDataMain.md#license)
 - [name](MetaDataMain.md#name)
 - [nftType](MetaDataMain.md#nfttype)
+- [nonce](MetaDataMain.md#nonce)
+- [paymentAttributes](MetaDataMain.md#paymentattributes)
 - [service](MetaDataMain.md#service)
+- [subType](MetaDataMain.md#subtype)
+- [subscription](MetaDataMain.md#subscription)
 - [type](MetaDataMain.md#type)
+- [updatedAt](MetaDataMain.md#updatedat)
+- [webService](MetaDataMain.md#webservice)
 - [workflow](MetaDataMain.md#workflow)
 
 ## Properties
@@ -34,9 +41,9 @@ https://github.com/nevermined-io/docs/blob/master/docs/architecture/specs/metada
 
 #### Defined in
 
-[src/ddo/MetaData.ts:190](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L190)
+[src/types/DDOTypes.ts:326](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L326)
 
-___
+---
 
 ### author
 
@@ -47,14 +54,14 @@ Name of the entity generating this data (e.g. Tfl, Disney Corp, etc.).
 **`Example`**
 
 ```ts
-"Met Office"
+'Met Office'
 ```
 
 #### Defined in
 
-[src/ddo/MetaData.ts:172](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L172)
+[src/types/DDOTypes.ts:304](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L304)
 
-___
+---
 
 ### dateCreated
 
@@ -66,14 +73,14 @@ ISO 8601 format, Coordinated Universal Time.
 **`Example`**
 
 ```ts
-"2019-01-31T08:38:32Z"
+'2019-01-31T08:38:32Z'
 ```
 
 #### Defined in
 
-[src/ddo/MetaData.ts:158](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L158)
+[src/types/DDOTypes.ts:280](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L280)
 
-___
+---
 
 ### datePublished
 
@@ -86,14 +93,14 @@ so this value can't be set.
 **`Example`**
 
 ```ts
-"2019-01-31T08:38:32Z"
+'2019-01-31T08:38:32Z'
 ```
 
 #### Defined in
 
-[src/ddo/MetaData.ts:166](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L166)
+[src/types/DDOTypes.ts:288](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L288)
 
-___
+---
 
 ### encryptedService
 
@@ -101,31 +108,41 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:186](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L186)
+[src/types/DDOTypes.ts:322](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L322)
 
-___
+---
 
 ### ercType
 
-• `Optional` **ercType**: `ERCType`
+• `Optional` **ercType**: [`ERCType`](../enums/ERCType.md)
 
 #### Defined in
 
-[src/ddo/MetaData.ts:194](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L194)
+[src/types/DDOTypes.ts:330](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L330)
 
-___
+---
 
 ### files
 
-• `Optional` **files**: [`File`](File.md)[]
+• `Optional` **files**: [`MetaDataExternalResource`](MetaDataExternalResource.md)[]
 
 Array of File objects including the encrypted file urls and some additional information.
 
 #### Defined in
 
-[src/ddo/MetaData.ts:184](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L184)
+[src/types/DDOTypes.ts:316](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L316)
 
-___
+---
+
+### isDTP
+
+• `Optional` **isDTP**: `boolean`
+
+#### Defined in
+
+[src/types/DDOTypes.ts:334](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L334)
+
+---
 
 ### license
 
@@ -137,14 +154,14 @@ If it's not specified, the following value will be added: "No License Specified"
 **`Example`**
 
 ```ts
-"CC-BY"
+'CC-BY'
 ```
 
 #### Defined in
 
-[src/ddo/MetaData.ts:179](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L179)
+[src/types/DDOTypes.ts:311](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L311)
 
-___
+---
 
 ### name
 
@@ -155,53 +172,127 @@ Descriptive name of the Asset.
 **`Example`**
 
 ```ts
-"UK Weather information 2011"
+'UK Weather information 2011'
 ```
 
 #### Defined in
 
-[src/ddo/MetaData.ts:144](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L144)
+[src/types/DDOTypes.ts:249](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L249)
 
-___
+---
 
 ### nftType
 
-• `Optional` **nftType**: `NeverminedNFTType`
+• `Optional` **nftType**: [`NeverminedNFTType`](../code-reference.md#neverminednfttype)
 
 #### Defined in
 
-[src/ddo/MetaData.ts:196](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L196)
+[src/types/DDOTypes.ts:332](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L332)
 
-___
+---
+
+### nonce
+
+• `Optional` **nonce**: `number`
+
+#### Defined in
+
+[src/types/DDOTypes.ts:298](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L298)
+
+---
+
+### paymentAttributes
+
+• `Optional` **paymentAttributes**: [`PaymentAttributes`](PaymentAttributes.md)[]
+
+#### Defined in
+
+[src/types/DDOTypes.ts:336](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L336)
+
+---
 
 ### service
 
-• `Optional` **service**: [`Service`](Service.md)
+• `Optional` **service**: [`ServiceCommon`](ServiceCommon.md)
 
 #### Defined in
 
-[src/ddo/MetaData.ts:192](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L192)
+[src/types/DDOTypes.ts:328](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L328)
 
-___
+---
+
+### subType
+
+• `Optional` **subType**: `string`
+
+Sub type asssociated to the main type of the asset. This subtype is open so final users are not restricted to use anything they need.
+Helps to filter by the sub type of asset, for example if type is a service, the subtype could ai-agent, web-service, web-socket-service, etc
+Another example, if the type is 'dataset' the subtype could be 'tabular', 'parquet', 'csv', etc
+
+#### Defined in
+
+[src/types/DDOTypes.ts:273](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L273)
+
+---
+
+### subscription
+
+• `Optional` **subscription**: [`SubscriptionMetadata`](SubscriptionMetadata.md)
+
+#### Defined in
+
+[src/types/DDOTypes.ts:318](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L318)
+
+---
 
 ### type
 
-• **type**: ``"dataset"`` \| ``"compute"`` \| ``"workflow"`` \| ``"algorithm"``
+• **type**: `"compute"` \| `"workflow"` \| `"service"` \| `"dataset"` \| `"algorithm"` \| `"subscription"` \| `"model"` \| `"file"` \| `"other"` \| `"assistant"`
 
 Type of the Asset. Helps to filter by the type of asset,
-initially ("dataset", "algorithm", "compute", "workflow", "compute", "other").
+initially ("dataset", "algorithm", "compute", "workflow", "model", "file", "subscription", "other").
 
 **`Example`**
 
 ```ts
-"dataset"
+'dataset'
 ```
 
 #### Defined in
 
-[src/ddo/MetaData.ts:151](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L151)
+[src/types/DDOTypes.ts:256](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L256)
 
-___
+---
+
+### updatedAt
+
+• `Optional` **updatedAt**: `string`
+
+The date on which the asset DDO was updated into the metadata store.
+This value is created automatically by Metadata upon update,
+so this value can't be set.
+
+**`Example`**
+
+```ts
+'2019-01-31T08:38:32Z'
+```
+
+#### Defined in
+
+[src/types/DDOTypes.ts:296](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L296)
+
+---
+
+### webService
+
+• `Optional` **webService**: [`WebService`](WebService.md)
+
+#### Defined in
+
+[src/types/DDOTypes.ts:320](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L320)
+
+---
 
 ### workflow
 
@@ -209,4 +300,4 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:188](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L188)
+[src/types/DDOTypes.ts:324](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L324)

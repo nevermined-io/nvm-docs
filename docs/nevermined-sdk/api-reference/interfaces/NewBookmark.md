@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / NewBookmark
+[@nevermined-io/sdk](../code-reference.md) / NewBookmark
 
 # Interface: NewBookmark
 
@@ -24,9 +24,9 @@
 
 #### Defined in
 
-[src/bookmarks/Bookmarks.interfaces.ts:4](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/bookmarks/Bookmarks.interfaces.ts#L4)
+[src/types/MetadataTypes.ts:78](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L78)
 
-___
+---
 
 ### did
 
@@ -34,9 +34,9 @@ ___
 
 #### Defined in
 
-[src/bookmarks/Bookmarks.interfaces.ts:2](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/bookmarks/Bookmarks.interfaces.ts#L2)
+[src/types/MetadataTypes.ts:76](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L76)
 
-___
+---
 
 ### userId
 
@@ -44,4 +44,4 @@ ___
 
 #### Defined in
 
-[src/bookmarks/Bookmarks.interfaces.ts:3](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/bookmarks/Bookmarks.interfaces.ts#L3)
+[src/types/MetadataTypes.ts:77](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L77)

@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / Stage
+[@nevermined-io/sdk](../code-reference.md) / Stage
 
 # Interface: Stage
 
@@ -9,7 +9,6 @@
 - [index](Stage.md#index)
 - [input](Stage.md#input)
 - [output](Stage.md#output)
-- [requirements](Stage.md#requirements)
 - [stageType](Stage.md#stagetype)
 - [transformation](Stage.md#transformation)
 
@@ -21,19 +20,19 @@
 
 #### Defined in
 
-[src/ddo/MetaData.ts:27](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L27)
+[src/types/DDOTypes.ts:54](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L54)
 
-___
+---
 
 ### input
 
-• **input**: [`StageInput`](StageInput.md)
+• **input**: [`StageInput`](StageInput.md)[]
 
 #### Defined in
 
-[src/ddo/MetaData.ts:30](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L30)
+[src/types/DDOTypes.ts:56](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L56)
 
-___
+---
 
 ### output
 
@@ -41,19 +40,9 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:32](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L32)
+[src/types/DDOTypes.ts:58](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L58)
 
-___
-
-### requirements
-
-• **requirements**: [`StageRequirements`](StageRequirements.md)
-
-#### Defined in
-
-[src/ddo/MetaData.ts:29](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L29)
-
-___
+---
 
 ### stageType
 
@@ -61,9 +50,9 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:28](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L28)
+[src/types/DDOTypes.ts:55](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L55)
 
-___
+---
 
 ### transformation
 
@@ -71,4 +60,4 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:31](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L31)
+[src/types/DDOTypes.ts:57](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L57)

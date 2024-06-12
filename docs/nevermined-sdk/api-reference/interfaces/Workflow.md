@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / Workflow
+[@nevermined-io/sdk](../code-reference.md) / Workflow
 
 # Interface: Workflow
 
@@ -6,9 +6,20 @@
 
 ### Properties
 
+- [coordinationType](Workflow.md#coordinationtype)
 - [stages](Workflow.md#stages)
 
 ## Properties
+
+### coordinationType
+
+• **coordinationType**: `"argo"` \| `"fl-coordinator"` \| `"bacalhau"`
+
+#### Defined in
+
+[src/types/DDOTypes.ts:62](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L62)
+
+---
 
 ### stages
 
@@ -16,4 +27,4 @@
 
 #### Defined in
 
-[src/ddo/MetaData.ts:36](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L36)
+[src/types/DDOTypes.ts:63](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L63)

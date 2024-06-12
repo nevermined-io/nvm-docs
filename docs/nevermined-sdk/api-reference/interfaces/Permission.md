@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / Permission
+[@nevermined-io/sdk](../code-reference.md) / Permission
 
 # Interface: Permission
 
@@ -31,9 +31,9 @@
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:12](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L12)
+[src/types/MetadataTypes.ts:97](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L97)
 
-___
+---
 
 ### id
 
@@ -41,9 +41,9 @@ ___
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:16](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L16)
+[src/types/MetadataTypes.ts:101](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L101)
 
-___
+---
 
 ### issuanceDate
 
@@ -51,9 +51,9 @@ ___
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:17](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L17)
+[src/types/MetadataTypes.ts:102](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L102)
 
-___
+---
 
 ### issuer
 
@@ -65,9 +65,9 @@ ___
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:11](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L11)
+[src/types/MetadataTypes.ts:96](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L96)
 
-___
+---
 
 ### type
 
@@ -79,9 +79,9 @@ ___
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:10](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L10)
+[src/types/MetadataTypes.ts:95](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L95)
 
-___
+---
 
 ### userId
 
@@ -93,4 +93,4 @@ ___
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:9](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L9)
+[src/types/MetadataTypes.ts:94](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L94)

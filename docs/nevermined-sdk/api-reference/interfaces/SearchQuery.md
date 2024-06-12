@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / SearchQuery
+[@nevermined-io/sdk](../code-reference.md) / SearchQuery
 
 # Interface: SearchQuery
 
@@ -10,7 +10,7 @@
 - [offset](SearchQuery.md#offset)
 - [page](SearchQuery.md#page)
 - [query](SearchQuery.md#query)
-- [show\_unlisted](SearchQuery.md#show_unlisted)
+- [show_unlisted](SearchQuery.md#show_unlisted)
 - [sort](SearchQuery.md#sort)
 - [text](SearchQuery.md#text)
 
@@ -22,9 +22,9 @@
 
 #### Defined in
 
-[src/common/interfaces.ts:20](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L20)
+[src/types/MetadataTypes.ts:72](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L72)
 
-___
+---
 
 ### offset
 
@@ -32,9 +32,9 @@ ___
 
 #### Defined in
 
-[src/common/interfaces.ts:14](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L14)
+[src/types/MetadataTypes.ts:66](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L66)
 
-___
+---
 
 ### page
 
@@ -42,9 +42,9 @@ ___
 
 #### Defined in
 
-[src/common/interfaces.ts:15](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L15)
+[src/types/MetadataTypes.ts:67](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L67)
 
-___
+---
 
 ### query
 
@@ -52,19 +52,19 @@ ___
 
 #### Defined in
 
-[src/common/interfaces.ts:17](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L17)
+[src/types/MetadataTypes.ts:69](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L69)
 
-___
+---
 
-### show\_unlisted
+### show_unlisted
 
-• `Optional` **show\_unlisted**: `boolean`
+• `Optional` **show_unlisted**: `boolean`
 
 #### Defined in
 
-[src/common/interfaces.ts:19](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L19)
+[src/types/MetadataTypes.ts:71](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L71)
 
-___
+---
 
 ### sort
 
@@ -72,9 +72,9 @@ ___
 
 #### Defined in
 
-[src/common/interfaces.ts:18](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L18)
+[src/types/MetadataTypes.ts:70](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L70)
 
-___
+---
 
 ### text
 
@@ -82,4 +82,4 @@ ___
 
 #### Defined in
 
-[src/common/interfaces.ts:16](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L16)
+[src/types/MetadataTypes.ts:68](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L68)

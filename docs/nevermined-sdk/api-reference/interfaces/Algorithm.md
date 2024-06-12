@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / Algorithm
+[@nevermined-io/sdk](../code-reference.md) / Algorithm
 
 # Interface: Algorithm
 
@@ -20,9 +20,9 @@
 
 #### Defined in
 
-[src/ddo/MetaData.ts:43](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L43)
+[src/types/DDOTypes.ts:85](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L85)
 
-___
+---
 
 ### format
 
@@ -30,9 +30,9 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:41](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L41)
+[src/types/DDOTypes.ts:83](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L83)
 
-___
+---
 
 ### language
 
@@ -40,9 +40,9 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:40](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L40)
+[src/types/DDOTypes.ts:82](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L82)
 
-___
+---
 
 ### requirements
 
@@ -50,17 +50,17 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `container?` | `any` |
+| Name           | Type     |
+| :------------- | :------- |
+| `container?`   | `any`    |
 | `requirement?` | `string` |
-| `version?` | `string` |
+| `version?`     | `string` |
 
 #### Defined in
 
-[src/ddo/MetaData.ts:44](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L44)
+[src/types/DDOTypes.ts:86](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L86)
 
-___
+---
 
 ### version
 
@@ -68,4 +68,4 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:42](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L42)
+[src/types/DDOTypes.ts:84](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L84)

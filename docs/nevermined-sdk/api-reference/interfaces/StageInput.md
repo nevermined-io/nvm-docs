@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / StageInput
+[@nevermined-io/sdk](../code-reference.md) / StageInput
 
 # Interface: StageInput
 
@@ -17,9 +17,9 @@
 
 #### Defined in
 
-[src/ddo/MetaData.ts:13](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L13)
+[src/types/DDOTypes.ts:40](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L40)
 
-___
+---
 
 ### index
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:12](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L12)
+[src/types/DDOTypes.ts:39](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L39)

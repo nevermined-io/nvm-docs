@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / ServiceDefinition
+[@nevermined-io/sdk](../code-reference.md) / ServiceDefinition
 
 # Interface: ServiceDefinition
 
@@ -17,18 +17,18 @@
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name        | Type     |
+| :---------- | :------- |
 | `password?` | `string` |
-| `token?` | `string` |
-| `type` | `string` |
-| `user?` | `string` |
+| `token?`    | `string` |
+| `type`      | `string` |
+| `user?`     | `string` |
 
 #### Defined in
 
-[src/ddo/MetaData.ts:52](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L52)
+[src/types/DDOTypes.ts:94](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L94)
 
-___
+---
 
 ### endpoints
 
@@ -36,13 +36,13 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name           | Type       |
+| :------------- | :--------- |
 | `contentTypes` | `string`[] |
-| `index` | `number` |
-| `method` | `string` |
-| `url` | `string` |
+| `index`        | `number`   |
+| `method`       | `string`   |
+| `url`          | `string`   |
 
 #### Defined in
 
-[src/ddo/MetaData.ts:58](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L58)
+[src/types/DDOTypes.ts:100](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L100)
