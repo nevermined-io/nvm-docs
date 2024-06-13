@@ -1,4 +1,4 @@
-[@nevermined-io/sdk](../code-reference.md) / NFTError
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / NFTError
 
 # Class: NFTError
 
@@ -39,8 +39,8 @@
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `message` | `string` |
 
 #### Returns
@@ -53,7 +53,7 @@ Error.constructor
 
 #### Defined in
 
-[src/errors/NeverminedErrors.ts:38](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/errors/NeverminedErrors.ts#L38)
+[src/errors/NeverminedErrors.ts:38](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/errors/NeverminedErrors.ts#L38)
 
 ## Properties
 
@@ -69,7 +69,7 @@ Error.cause
 
 node_modules/typescript/lib/lib.es2022.error.d.ts:24
 
-___
+---
 
 ### message
 
@@ -83,7 +83,7 @@ Error.message
 
 node_modules/typescript/lib/lib.es5.d.ts:1077
 
-___
+---
 
 ### name
 
@@ -97,7 +97,7 @@ Error.name
 
 node_modules/typescript/lib/lib.es5.d.ts:1076
 
-___
+---
 
 ### stack
 
@@ -111,7 +111,7 @@ Error.stack
 
 node_modules/typescript/lib/lib.es5.d.ts:1078
 
-___
+---
 
 ### prepareStackTrace
 
@@ -129,9 +129,9 @@ https://v8.dev/docs/stack-trace-api#customizing-stack-traces
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `err` | `Error` |
+| Name          | Type         |
+| :------------ | :----------- |
+| `err`         | `Error`      |
 | `stackTraces` | `CallSite`[] |
 
 ##### Returns
@@ -146,7 +146,7 @@ Error.prepareStackTrace
 
 node_modules/@types/node/globals.d.ts:28
 
-___
+---
 
 ### stackTraceLimit
 
@@ -170,9 +170,9 @@ Create .stack property on a target object
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `targetObject` | `object` |
+| Name              | Type       |
+| :---------------- | :--------- |
+| `targetObject`    | `object`   |
 | `constructorOpt?` | `Function` |
 
 #### Returns

@@ -1,12 +1,12 @@
-[@nevermined-io/sdk](../code-reference.md) / ServicePlugin
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / ServicePlugin
 
 # Interface: ServicePlugin\<T\>
 
 ## Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends [`Service`](../code-reference.md#service) |
+| Name | Type                                              |
+| :--- | :------------------------------------------------ |
+| `T`  | extends [`Service`](../code-reference.md#service) |
 
 ## Implemented by
 
@@ -32,8 +32,8 @@
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type                                      |
+| :------- | :---------------------------------------- |
 | `params` | [`ValidationParams`](ValidationParams.md) |
 
 #### Returns
@@ -42,9 +42,9 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:805](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L805)
+[src/types/DDOTypes.ts:805](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L805)
 
-___
+---
 
 ### createService
 
@@ -52,13 +52,13 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `publisher` | [`NvmAccount`](../classes/NvmAccount.md) |
-| `metadata` | [`MetaData`](MetaData.md) |
-| `serviceAttributes` | [`ServiceAttributes`](ServiceAttributes.md) |
-| `nftAttributes?` | [`NFTAttributes`](../classes/NFTAttributes.md) |
-| `pricedData?` | [`PricedMetadataInformation`](../code-reference.md#pricedmetadatainformation) |
+| Name                | Type                                                                          |
+| :------------------ | :---------------------------------------------------------------------------- |
+| `publisher`         | [`NvmAccount`](../classes/NvmAccount.md)                                      |
+| `metadata`          | [`MetaData`](MetaData.md)                                                     |
+| `serviceAttributes` | [`ServiceAttributes`](ServiceAttributes.md)                                   |
+| `nftAttributes?`    | [`NFTAttributes`](../classes/NFTAttributes.md)                                |
+| `pricedData?`       | [`PricedMetadataInformation`](../code-reference.md#pricedmetadatainformation) |
 
 #### Returns
 
@@ -66,9 +66,9 @@ ___
 
 #### Defined in
 
-[src/types/DDOTypes.ts:795](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L795)
+[src/types/DDOTypes.ts:795](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L795)
 
-___
+---
 
 ### process
 
@@ -76,11 +76,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `params` | [`ValidationParams`](ValidationParams.md) |
-| `from` | [`NvmAccount`](../classes/NvmAccount.md) |
-| `txparams?` | [`TxParameters`](TxParameters.md) |
+| Name        | Type                                      |
+| :---------- | :---------------------------------------- |
+| `params`    | [`ValidationParams`](ValidationParams.md) |
+| `from`      | [`NvmAccount`](../classes/NvmAccount.md)  |
+| `txparams?` | [`TxParameters`](TxParameters.md)         |
 
 #### Returns
 
@@ -88,9 +88,9 @@ ___
 
 #### Defined in
 
-[src/types/DDOTypes.ts:803](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L803)
+[src/types/DDOTypes.ts:803](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L803)
 
-___
+---
 
 ### track
 
@@ -98,11 +98,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `params` | [`ValidationParams`](ValidationParams.md) |
-| `from` | [`NvmAccount`](../classes/NvmAccount.md) |
-| `txparams?` | [`TxParameters`](TxParameters.md) |
+| Name        | Type                                      |
+| :---------- | :---------------------------------------- |
+| `params`    | [`ValidationParams`](ValidationParams.md) |
+| `from`      | [`NvmAccount`](../classes/NvmAccount.md)  |
+| `txparams?` | [`TxParameters`](TxParameters.md)         |
 
 #### Returns
 
@@ -110,4 +110,4 @@ ___
 
 #### Defined in
 
-[src/types/DDOTypes.ts:807](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L807)
+[src/types/DDOTypes.ts:807](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L807)

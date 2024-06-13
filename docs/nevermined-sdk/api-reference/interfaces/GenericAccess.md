@@ -1,4 +1,4 @@
-[@nevermined-io/sdk](../code-reference.md) / GenericAccess
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / GenericAccess
 
 # Interface: GenericAccess
 
@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[src/keeper/contracts/templates/GenericAccess.ts:22](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/GenericAccess.ts#L22)
+[src/keeper/contracts/templates/GenericAccess.ts:22](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/keeper/contracts/templates/GenericAccess.ts#L22)
 
 ## Methods
 
@@ -32,16 +32,16 @@
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `agreementIdSeed` | `string` |
-| `ddo` | [`DDO`](../classes/DDO.md) |
-| `serviceReference` | `number` \| [`ServiceType`](../code-reference.md#servicetype) |
-| `parameters` | `any` |
-| `consumer` | [`NvmAccount`](../classes/NvmAccount.md) |
-| `from` | [`NvmAccount`](../classes/NvmAccount.md) |
-| `txParams?` | [`TxParameters`](TxParameters.md) |
-| `observer?` | (`orderProgressStep`: [`OrderProgressStep`](../enums/OrderProgressStep.md)) => `void` |
+| Name               | Type                                                                                  |
+| :----------------- | :------------------------------------------------------------------------------------ |
+| `agreementIdSeed`  | `string`                                                                              |
+| `ddo`              | [`DDO`](../classes/DDO.md)                                                            |
+| `serviceReference` | `number` \| [`ServiceType`](../code-reference.md#servicetype)                         |
+| `parameters`       | `any`                                                                                 |
+| `consumer`         | [`NvmAccount`](../classes/NvmAccount.md)                                              |
+| `from`             | [`NvmAccount`](../classes/NvmAccount.md)                                              |
+| `txParams?`        | [`TxParameters`](TxParameters.md)                                                     |
+| `observer?`        | (`orderProgressStep`: [`OrderProgressStep`](../enums/OrderProgressStep.md)) => `void` |
 
 #### Returns
 
@@ -49,29 +49,29 @@
 
 #### Defined in
 
-[src/keeper/contracts/templates/GenericAccess.ts:8](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/GenericAccess.ts#L8)
+[src/keeper/contracts/templates/GenericAccess.ts:8](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/keeper/contracts/templates/GenericAccess.ts#L8)
 
-___
+---
 
 ### getAgreementData
 
-▸ **getAgreementData**(`agreementId`): `Promise`\<\{ `accessConsumer`: `string` ; `accessProvider`: `string`  }\>
+▸ **getAgreementData**(`agreementId`): `Promise`\<\{ `accessConsumer`: `string` ; `accessProvider`: `string` }\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name          | Type     |
+| :------------ | :------- |
 | `agreementId` | `string` |
 
 #### Returns
 
-`Promise`\<\{ `accessConsumer`: `string` ; `accessProvider`: `string`  }\>
+`Promise`\<\{ `accessConsumer`: `string` ; `accessProvider`: `string` }\>
 
 #### Defined in
 
-[src/keeper/contracts/templates/GenericAccess.ts:19](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/GenericAccess.ts#L19)
+[src/keeper/contracts/templates/GenericAccess.ts:19](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/keeper/contracts/templates/GenericAccess.ts#L19)
 
-___
+---
 
 ### params
 
@@ -79,10 +79,10 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `consumer` | `any` |
-| `...args` | `any`[] |
+| Name       | Type    |
+| :--------- | :------ |
+| `consumer` | `any`   |
+| `...args`  | `any`[] |
 
 #### Returns
 
@@ -90,4 +90,4 @@ ___
 
 #### Defined in
 
-[src/keeper/contracts/templates/GenericAccess.ts:21](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/GenericAccess.ts#L21)
+[src/keeper/contracts/templates/GenericAccess.ts:21](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/keeper/contracts/templates/GenericAccess.ts#L21)

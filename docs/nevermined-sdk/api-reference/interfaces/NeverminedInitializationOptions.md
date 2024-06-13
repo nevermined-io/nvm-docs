@@ -1,4 +1,4 @@
-[@nevermined-io/sdk](../code-reference.md) / NeverminedInitializationOptions
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / NeverminedInitializationOptions
 
 # Interface: NeverminedInitializationOptions
 
@@ -26,9 +26,9 @@
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:100](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L100)
+[src/types/GeneralTypes.ts:100](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L100)
 
-___
+---
 
 ### loadCompute
 
@@ -36,9 +36,9 @@ ___
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:104](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L104)
+[src/types/GeneralTypes.ts:104](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L104)
 
-___
+---
 
 ### loadCore
 
@@ -46,9 +46,9 @@ ___
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:94](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L94)
+[src/types/GeneralTypes.ts:94](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L94)
 
-___
+---
 
 ### loadDIDTransferFlow
 
@@ -56,9 +56,9 @@ ___
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:101](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L101)
+[src/types/GeneralTypes.ts:101](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L101)
 
-___
+---
 
 ### loadDispenser
 
@@ -66,9 +66,9 @@ ___
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:98](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L98)
+[src/types/GeneralTypes.ts:98](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L98)
 
-___
+---
 
 ### loadERC20Token
 
@@ -76,9 +76,9 @@ ___
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:99](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L99)
+[src/types/GeneralTypes.ts:99](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L99)
 
-___
+---
 
 ### loadNFTs1155
 
@@ -86,9 +86,9 @@ ___
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:97](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L97)
+[src/types/GeneralTypes.ts:97](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L97)
 
-___
+---
 
 ### loadNFTs721
 
@@ -96,9 +96,9 @@ ___
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:96](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L96)
+[src/types/GeneralTypes.ts:96](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L96)
 
-___
+---
 
 ### loadRewards
 
@@ -106,9 +106,9 @@ ___
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:102](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L102)
+[src/types/GeneralTypes.ts:102](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L102)
 
-___
+---
 
 ### loadRoyalties
 
@@ -116,9 +116,9 @@ ___
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:103](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L103)
+[src/types/GeneralTypes.ts:103](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L103)
 
-___
+---
 
 ### loadServiceAgreements
 
@@ -126,4 +126,4 @@ ___
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:95](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L95)
+[src/types/GeneralTypes.ts:95](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L95)

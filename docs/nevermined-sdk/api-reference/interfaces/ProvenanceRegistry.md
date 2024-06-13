@@ -1,4 +1,4 @@
-[@nevermined-io/sdk](../code-reference.md) / ProvenanceRegistry
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / ProvenanceRegistry
 
 # Interface: ProvenanceRegistry
 
@@ -24,9 +24,9 @@
 
 #### Defined in
 
-[src/keeper/contracts/Provenance.ts:29](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/Provenance.ts#L29)
+[src/keeper/contracts/Provenance.ts:29](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/keeper/contracts/Provenance.ts#L29)
 
-___
+---
 
 ### agentId
 
@@ -34,9 +34,9 @@ ___
 
 #### Defined in
 
-[src/keeper/contracts/Provenance.ts:28](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/Provenance.ts#L28)
+[src/keeper/contracts/Provenance.ts:28](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/keeper/contracts/Provenance.ts#L28)
 
-___
+---
 
 ### agentInvolvedId
 
@@ -44,9 +44,9 @@ ___
 
 #### Defined in
 
-[src/keeper/contracts/Provenance.ts:30](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/Provenance.ts#L30)
+[src/keeper/contracts/Provenance.ts:30](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/keeper/contracts/Provenance.ts#L30)
 
-___
+---
 
 ### blockNumberUpdated
 
@@ -54,9 +54,9 @@ ___
 
 #### Defined in
 
-[src/keeper/contracts/Provenance.ts:33](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/Provenance.ts#L33)
+[src/keeper/contracts/Provenance.ts:33](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/keeper/contracts/Provenance.ts#L33)
 
-___
+---
 
 ### createdBy
 
@@ -64,9 +64,9 @@ ___
 
 #### Defined in
 
-[src/keeper/contracts/Provenance.ts:32](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/Provenance.ts#L32)
+[src/keeper/contracts/Provenance.ts:32](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/keeper/contracts/Provenance.ts#L32)
 
-___
+---
 
 ### did
 
@@ -74,9 +74,9 @@ ___
 
 #### Defined in
 
-[src/keeper/contracts/Provenance.ts:26](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/Provenance.ts#L26)
+[src/keeper/contracts/Provenance.ts:26](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/keeper/contracts/Provenance.ts#L26)
 
-___
+---
 
 ### method
 
@@ -84,9 +84,9 @@ ___
 
 #### Defined in
 
-[src/keeper/contracts/Provenance.ts:31](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/Provenance.ts#L31)
+[src/keeper/contracts/Provenance.ts:31](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/keeper/contracts/Provenance.ts#L31)
 
-___
+---
 
 ### relatedDid
 
@@ -94,9 +94,9 @@ ___
 
 #### Defined in
 
-[src/keeper/contracts/Provenance.ts:27](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/Provenance.ts#L27)
+[src/keeper/contracts/Provenance.ts:27](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/keeper/contracts/Provenance.ts#L27)
 
-___
+---
 
 ### signatureDelegate
 
@@ -104,4 +104,4 @@ ___
 
 #### Defined in
 
-[src/keeper/contracts/Provenance.ts:34](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/Provenance.ts#L34)
+[src/keeper/contracts/Provenance.ts:34](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/keeper/contracts/Provenance.ts#L34)

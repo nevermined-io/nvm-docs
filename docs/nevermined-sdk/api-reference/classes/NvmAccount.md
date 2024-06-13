@@ -1,4 +1,4 @@
-[@nevermined-io/sdk](../code-reference.md) / NvmAccount
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / NvmAccount
 
 # Class: NvmAccount
 
@@ -49,9 +49,9 @@ Account information.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
+| Name          | Type             |
+| :------------ | :--------------- |
+| `id`          | `string`         |
 | `accountType` | `NvmAccountType` |
 
 #### Returns
@@ -60,7 +60,7 @@ Account information.
 
 #### Defined in
 
-[src/models/NvmAccount.ts:86](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L86)
+[src/models/NvmAccount.ts:86](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L86)
 
 ## Properties
 
@@ -70,9 +70,9 @@ Account information.
 
 #### Defined in
 
-[src/models/NvmAccount.ts:15](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L15)
+[src/models/NvmAccount.ts:15](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L15)
 
-___
+---
 
 ### accountType
 
@@ -80,9 +80,9 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:23](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L23)
+[src/models/NvmAccount.ts:23](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L23)
 
-___
+---
 
 ### babySecret
 
@@ -90,9 +90,9 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:14](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L14)
+[src/models/NvmAccount.ts:14](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L14)
 
-___
+---
 
 ### babyX
 
@@ -100,9 +100,9 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:12](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L12)
+[src/models/NvmAccount.ts:12](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L12)
 
-___
+---
 
 ### babyY
 
@@ -110,9 +110,9 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:13](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L13)
+[src/models/NvmAccount.ts:13](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L13)
 
-___
+---
 
 ### id
 
@@ -120,19 +120,19 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:87](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L87)
+[src/models/NvmAccount.ts:87](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L87)
 
-___
+---
 
 ### kernelClient
 
-• `Private` `Optional` **kernelClient**: `KernelAccountClient`\<``"0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"``, `Transport`, `Chain`, `any`\>
+• `Private` `Optional` **kernelClient**: `KernelAccountClient`\<`"0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"`, `Transport`, `Chain`, `any`\>
 
 #### Defined in
 
-[src/models/NvmAccount.ts:16](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L16)
+[src/models/NvmAccount.ts:16](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L16)
 
-___
+---
 
 ### password
 
@@ -140,9 +140,9 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:11](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L11)
+[src/models/NvmAccount.ts:11](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L11)
 
-___
+---
 
 ### zeroDevSigner
 
@@ -150,7 +150,7 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:22](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L22)
+[src/models/NvmAccount.ts:22](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L22)
 
 ## Methods
 
@@ -164,9 +164,9 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:94](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L94)
+[src/models/NvmAccount.ts:94](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L94)
 
-___
+---
 
 ### getAddress
 
@@ -178,9 +178,9 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:113](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L113)
+[src/models/NvmAccount.ts:113](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L113)
 
-___
+---
 
 ### getId
 
@@ -192,23 +192,23 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:117](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L117)
+[src/models/NvmAccount.ts:117](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L117)
 
-___
+---
 
 ### getKernelClient
 
-▸ **getKernelClient**(): `undefined` \| `KernelAccountClient`\<``"0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"``, `Transport`, `Chain`, `any`\>
+▸ **getKernelClient**(): `undefined` \| `KernelAccountClient`\<`"0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"`, `Transport`, `Chain`, `any`\>
 
 #### Returns
 
-`undefined` \| `KernelAccountClient`\<``"0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"``, `Transport`, `Chain`, `any`\>
+`undefined` \| `KernelAccountClient`\<`"0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"`, `Transport`, `Chain`, `any`\>
 
 #### Defined in
 
-[src/models/NvmAccount.ts:98](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L98)
+[src/models/NvmAccount.ts:98](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L98)
 
-___
+---
 
 ### getPassword
 
@@ -224,9 +224,9 @@ The account password.
 
 #### Defined in
 
-[src/models/NvmAccount.ts:153](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L153)
+[src/models/NvmAccount.ts:153](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L153)
 
-___
+---
 
 ### getPublic
 
@@ -238,23 +238,23 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:125](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L125)
+[src/models/NvmAccount.ts:125](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L125)
 
-___
+---
 
 ### getType
 
-▸ **getType**(): ``"local"`` \| ``"json-rpc"`` \| ``"zerodev"`` \| ``"sessionKey"``
+▸ **getType**(): `"local"` \| `"json-rpc"` \| `"zerodev"` \| `"sessionKey"`
 
 #### Returns
 
-``"local"`` \| ``"json-rpc"`` \| ``"zerodev"`` \| ``"sessionKey"``
+`"local"` \| `"json-rpc"` \| `"zerodev"` \| `"sessionKey"`
 
 #### Defined in
 
-[src/models/NvmAccount.ts:102](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L102)
+[src/models/NvmAccount.ts:102](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L102)
 
-___
+---
 
 ### getZeroDevSigner
 
@@ -266,9 +266,9 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:105](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L105)
+[src/models/NvmAccount.ts:105](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L105)
 
-___
+---
 
 ### isZeroDev
 
@@ -280,9 +280,9 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:109](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L109)
+[src/models/NvmAccount.ts:109](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L109)
 
-___
+---
 
 ### setId
 
@@ -290,8 +290,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name | Type     |
+| :--- | :------- |
 | `id` | `string` |
 
 #### Returns
@@ -300,9 +300,9 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:121](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L121)
+[src/models/NvmAccount.ts:121](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L121)
 
-___
+---
 
 ### setPassword
 
@@ -312,8 +312,8 @@ Set account password.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type     | Description           |
+| :--------- | :------- | :-------------------- |
 | `password` | `string` | Password for account. |
 
 #### Returns
@@ -322,9 +322,9 @@ Set account password.
 
 #### Defined in
 
-[src/models/NvmAccount.ts:145](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L145)
+[src/models/NvmAccount.ts:145](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L145)
 
-___
+---
 
 ### signTextLocally
 
@@ -332,8 +332,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type                     |
+| :----- | :----------------------- |
 | `text` | `string` \| `Uint8Array` |
 
 #### Returns
@@ -342,9 +342,9 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:129](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L129)
+[src/models/NvmAccount.ts:129](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L129)
 
-___
+---
 
 ### fromAccount
 
@@ -354,8 +354,8 @@ Returns a nevermined Account from a viem account
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type                             | Description          |
+| :-------- | :------------------------------- | :------------------- |
 | `account` | `Account` \| `PrivateKeyAccount` | A viem local account |
 
 #### Returns
@@ -366,9 +366,9 @@ The nevermined account
 
 #### Defined in
 
-[src/models/NvmAccount.ts:31](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L31)
+[src/models/NvmAccount.ts:31](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L31)
 
-___
+---
 
 ### fromAddress
 
@@ -378,8 +378,8 @@ Returns a nevermined Account from an address. This method is used for browser in
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type             | Description      |
+| :-------- | :--------------- | :--------------- |
 | `address` | \`0x$\{string}\` | A wallet address |
 
 #### Returns
@@ -390,9 +390,9 @@ The nevermined account
 
 #### Defined in
 
-[src/models/NvmAccount.ts:44](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L44)
+[src/models/NvmAccount.ts:44](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L44)
 
-___
+---
 
 ### fromZeroDevSessionKey
 
@@ -400,9 +400,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `kernelClient` | `KernelAccountClient`\<``"0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"``, `Transport`, `Chain`, `any`\> |
+| Name           | Type                                                                                                 |
+| :------------- | :--------------------------------------------------------------------------------------------------- |
+| `kernelClient` | `KernelAccountClient`\<`"0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"`, `Transport`, `Chain`, `any`\> |
 
 #### Returns
 
@@ -410,9 +410,9 @@ ___
 
 #### Defined in
 
-[src/models/NvmAccount.ts:71](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L71)
+[src/models/NvmAccount.ts:71](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L71)
 
-___
+---
 
 ### fromZeroDevSigner
 
@@ -422,9 +422,9 @@ Returns a nevermined Account from a zerodev signer
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `kernelClient` | `KernelAccountClient`\<``"0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"``, `Transport`, `Chain`, `any`\> |
+| Name           | Type                                                                                                 |
+| :------------- | :--------------------------------------------------------------------------------------------------- |
+| `kernelClient` | `KernelAccountClient`\<`"0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"`, `Transport`, `Chain`, `any`\> |
 
 #### Returns
 
@@ -434,4 +434,4 @@ The nevermined account
 
 #### Defined in
 
-[src/models/NvmAccount.ts:56](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NvmAccount.ts#L56)
+[src/models/NvmAccount.ts:56](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/models/NvmAccount.ts#L56)

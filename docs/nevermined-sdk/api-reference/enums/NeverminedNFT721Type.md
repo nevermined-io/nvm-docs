@@ -1,4 +1,4 @@
-[@nevermined-io/sdk](../code-reference.md) / NeverminedNFT721Type
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / NeverminedNFT721Type
 
 # Enumeration: NeverminedNFT721Type
 
@@ -15,38 +15,38 @@
 
 ### nft721
 
-• **nft721** = ``"nft721"``
+• **nft721** = `"nft721"`
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:20](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L20)
+[src/types/GeneralTypes.ts:20](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L20)
 
-___
+---
 
 ### nft721POAP
 
-• **nft721POAP** = ``"nft721-poap"``
+• **nft721POAP** = `"nft721-poap"`
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:22](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L22)
+[src/types/GeneralTypes.ts:22](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L22)
 
-___
+---
 
 ### nft721SoulBound
 
-• **nft721SoulBound** = ``"nft721-soulbound"``
+• **nft721SoulBound** = `"nft721-soulbound"`
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:23](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L23)
+[src/types/GeneralTypes.ts:23](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L23)
 
-___
+---
 
 ### nft721Subscription
 
-• **nft721Subscription** = ``"nft721-subscription"``
+• **nft721Subscription** = `"nft721-subscription"`
 
 #### Defined in
 
-[src/types/GeneralTypes.ts:21](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/GeneralTypes.ts#L21)
+[src/types/GeneralTypes.ts:21](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/GeneralTypes.ts#L21)

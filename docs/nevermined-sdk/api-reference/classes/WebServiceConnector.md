@@ -1,4 +1,4 @@
-[@nevermined-io/sdk](../code-reference.md) / WebServiceConnector
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / WebServiceConnector
 
 # Class: WebServiceConnector
 
@@ -39,8 +39,8 @@ Provides a common interface to web services.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type                                                        |
+| :------- | :---------------------------------------------------------- |
 | `config` | [`InstantiableConfig`](../interfaces/InstantiableConfig.md) |
 
 #### Returns
@@ -49,7 +49,7 @@ Provides a common interface to web services.
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:26](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L26)
+[src/nevermined/utils/WebServiceConnector.ts:26](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L26)
 
 ## Properties
 
@@ -59,18 +59,18 @@ Provides a common interface to web services.
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:24](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L24)
+[src/nevermined/utils/WebServiceConnector.ts:24](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L24)
 
 ## Methods
 
 ### \_sleep
 
-▸ **_sleep**(`ms`): `Promise`\<`unknown`\>
+▸ **\_sleep**(`ms`): `Promise`\<`unknown`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name | Type     |
+| :--- | :------- |
 | `ms` | `number` |
 
 #### Returns
@@ -79,9 +79,9 @@ Provides a common interface to web services.
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:226](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L226)
+[src/nevermined/utils/WebServiceConnector.ts:226](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L226)
 
-___
+---
 
 ### delete
 
@@ -89,11 +89,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
+| Name       | Type       |
+| :--------- | :--------- |
+| `url`      | `string`   |
 | `payload?` | `BodyInit` |
-| `headers` | `Object` |
+| `headers`  | `Object`   |
 
 #### Returns
 
@@ -101,9 +101,9 @@ ___
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:71](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L71)
+[src/nevermined/utils/WebServiceConnector.ts:71](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L71)
 
-___
+---
 
 ### downloadFile
 
@@ -111,12 +111,12 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
+| Name           | Type     |
+| :------------- | :------- |
+| `url`          | `string` |
 | `destination?` | `string` |
-| `index?` | `number` |
-| `headers?` | `Object` |
+| `index?`       | `number` |
+| `headers?`     | `Object` |
 
 #### Returns
 
@@ -124,9 +124,9 @@ ___
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:86](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L86)
+[src/nevermined/utils/WebServiceConnector.ts:86](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L86)
 
-___
+---
 
 ### downloadUrl
 
@@ -134,10 +134,10 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
-| `headers?` | `any` |
+| Name       | Type     |
+| :--------- | :------- |
+| `url`      | `string` |
+| `headers?` | `any`    |
 
 #### Returns
 
@@ -145,9 +145,9 @@ ___
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:139](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L139)
+[src/nevermined/utils/WebServiceConnector.ts:139](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L139)
 
-___
+---
 
 ### fetch
 
@@ -155,11 +155,11 @@ ___
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `url` | `any` | `undefined` |
-| `opts` | `RequestInit` | `undefined` |
-| `numberTries` | `number` | `1` |
+| Name          | Type          | Default value |
+| :------------ | :------------ | :------------ |
+| `url`         | `any`         | `undefined`   |
+| `opts`        | `RequestInit` | `undefined`   |
+| `numberTries` | `number`      | `1`           |
 
 #### Returns
 
@@ -167,9 +167,9 @@ ___
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:209](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L209)
+[src/nevermined/utils/WebServiceConnector.ts:209](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L209)
 
-___
+---
 
 ### fetchCID
 
@@ -177,8 +177,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name  | Type     |
+| :---- | :------- |
 | `cid` | `string` |
 
 #### Returns
@@ -187,9 +187,9 @@ ___
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:181](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L181)
+[src/nevermined/utils/WebServiceConnector.ts:181](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L181)
 
-___
+---
 
 ### fetchToken
 
@@ -197,11 +197,11 @@ ___
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `url` | `string` | `undefined` |
-| `grantToken` | `string` | `undefined` |
-| `numberTries` | `number` | `1` |
+| Name          | Type     | Default value |
+| :------------ | :------- | :------------ |
+| `url`         | `string` | `undefined`   |
+| `grantToken`  | `string` | `undefined`   |
+| `numberTries` | `number` | `1`           |
 
 #### Returns
 
@@ -209,9 +209,9 @@ ___
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:165](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L165)
+[src/nevermined/utils/WebServiceConnector.ts:165](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L165)
 
-___
+---
 
 ### get
 
@@ -219,9 +219,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `any` |
+| Name      | Type     |
+| :-------- | :------- |
+| `url`     | `any`    |
 | `headers` | `Object` |
 
 #### Returns
@@ -230,31 +230,31 @@ ___
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:47](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L47)
+[src/nevermined/utils/WebServiceConnector.ts:47](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L47)
 
-___
+---
 
 ### getFileResponse
 
-▸ **getFileResponse**(`url`, `index?`, `headers?`): `Promise`\<\{ `name`: `string` ; `response`: `Response`  }\>
+▸ **getFileResponse**(`url`, `index?`, `headers?`): `Promise`\<\{ `name`: `string` ; `response`: `Response` }\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
-| `index?` | `number` |
+| Name       | Type     |
+| :--------- | :------- |
+| `url`      | `string` |
+| `index?`   | `number` |
 | `headers?` | `Object` |
 
 #### Returns
 
-`Promise`\<\{ `name`: `string` ; `response`: `Response`  }\>
+`Promise`\<\{ `name`: `string` ; `response`: `Response` }\>
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:113](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L113)
+[src/nevermined/utils/WebServiceConnector.ts:113](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L113)
 
-___
+---
 
 ### post
 
@@ -262,11 +262,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
+| Name      | Type       |
+| :-------- | :--------- |
+| `url`     | `string`   |
 | `payload` | `BodyInit` |
-| `headers` | `Object` |
+| `headers` | `Object`   |
 
 #### Returns
 
@@ -274,9 +274,9 @@ ___
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:32](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L32)
+[src/nevermined/utils/WebServiceConnector.ts:32](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L32)
 
-___
+---
 
 ### put
 
@@ -284,11 +284,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
+| Name      | Type       |
+| :-------- | :--------- |
+| `url`     | `string`   |
 | `payload` | `BodyInit` |
-| `headers` | `Object` |
+| `headers` | `Object`   |
 
 #### Returns
 
@@ -296,9 +296,9 @@ ___
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:56](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L56)
+[src/nevermined/utils/WebServiceConnector.ts:56](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L56)
 
-___
+---
 
 ### uploadFile
 
@@ -306,11 +306,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
-| `data` | `ReadStream` |
-| `encrypt?` | `boolean` |
+| Name       | Type         |
+| :--------- | :----------- |
+| `url`      | `string`     |
+| `data`     | `ReadStream` |
+| `encrypt?` | `boolean`    |
 
 #### Returns
 
@@ -318,9 +318,9 @@ ___
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:156](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L156)
+[src/nevermined/utils/WebServiceConnector.ts:156](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L156)
 
-___
+---
 
 ### uploadMessage
 
@@ -328,10 +328,10 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
-| `data` | `string` |
+| Name       | Type      |
+| :--------- | :-------- |
+| `url`      | `string`  |
+| `data`     | `string`  |
 | `encrypt?` | `boolean` |
 
 #### Returns
@@ -340,9 +340,9 @@ ___
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:147](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L147)
+[src/nevermined/utils/WebServiceConnector.ts:147](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L147)
 
-___
+---
 
 ### getIPFSAuthToken
 
@@ -354,4 +354,4 @@ ___
 
 #### Defined in
 
-[src/nevermined/utils/WebServiceConnector.ts:199](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/WebServiceConnector.ts#L199)
+[src/nevermined/utils/WebServiceConnector.ts:199](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/utils/WebServiceConnector.ts#L199)

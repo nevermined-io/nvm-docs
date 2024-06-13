@@ -1,4 +1,4 @@
-[@nevermined-io/sdk](../code-reference.md) / WebService
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / WebService
 
 # Interface: WebService
 
@@ -23,9 +23,9 @@ Interface describing an asset of type `service`
 
 #### Defined in
 
-[src/types/DDOTypes.ts:206](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L206)
+[src/types/DDOTypes.ts:206](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L206)
 
-___
+---
 
 ### encryptedAttributes
 
@@ -33,19 +33,19 @@ ___
 
 #### Defined in
 
-[src/types/DDOTypes.ts:204](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L204)
+[src/types/DDOTypes.ts:204](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L204)
 
-___
+---
 
 ### endpoints
 
-• `Optional` **endpoints**: \{ `[verb: string]`: `string`;  }[]
+• `Optional` **endpoints**: \{ `[verb: string]`: `string`; }[]
 
 #### Defined in
 
-[src/types/DDOTypes.ts:198](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L198)
+[src/types/DDOTypes.ts:198](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L198)
 
-___
+---
 
 ### internalAttributes
 
@@ -53,9 +53,9 @@ ___
 
 #### Defined in
 
-[src/types/DDOTypes.ts:202](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L202)
+[src/types/DDOTypes.ts:202](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L202)
 
-___
+---
 
 ### openEndpoints
 
@@ -63,14 +63,14 @@ ___
 
 #### Defined in
 
-[src/types/DDOTypes.ts:200](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L200)
+[src/types/DDOTypes.ts:200](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L200)
 
-___
+---
 
 ### type
 
-• `Optional` **type**: ``"Other"`` \| ``"RESTful"`` \| ``"GrapQL"`` \| ``"RPC"``
+• `Optional` **type**: `"Other"` \| `"RESTful"` \| `"GrapQL"` \| `"RPC"`
 
 #### Defined in
 
-[src/types/DDOTypes.ts:196](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L196)
+[src/types/DDOTypes.ts:196](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L196)

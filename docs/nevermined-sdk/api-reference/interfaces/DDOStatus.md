@@ -1,4 +1,4 @@
-[@nevermined-io/sdk](../code-reference.md) / DDOStatus
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / DDOStatus
 
 # Interface: DDOStatus
 
@@ -17,18 +17,18 @@
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
+| Name     | Type     |
+| :------- | :------- |
+| `id`     | `string` |
 | `status` | `string` |
-| `type` | `string` |
-| `url` | `string` |
+| `type`   | `string` |
+| `url`    | `string` |
 
 #### Defined in
 
-[src/services/metadata/MetadataService.ts:25](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/services/metadata/MetadataService.ts#L25)
+[src/services/metadata/MetadataService.ts:25](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/services/metadata/MetadataService.ts#L25)
 
-___
+---
 
 ### internal
 
@@ -36,13 +36,13 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
+| Name     | Type     |
+| :------- | :------- |
+| `id`     | `string` |
 | `status` | `string` |
-| `type` | `string` |
-| `url` | `string` |
+| `type`   | `string` |
+| `url`    | `string` |
 
 #### Defined in
 
-[src/services/metadata/MetadataService.ts:19](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/services/metadata/MetadataService.ts#L19)
+[src/services/metadata/MetadataService.ts:19](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/services/metadata/MetadataService.ts#L19)

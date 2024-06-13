@@ -1,11 +1,11 @@
-[@nevermined-io/sdk](../code-reference.md) / MarketplaceResults
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / MarketplaceResults
 
 # Interface: MarketplaceResults\<Entity\>
 
 ## Type parameters
 
-| Name |
-| :------ |
+| Name     |
+| :------- |
 | `Entity` |
 
 ## Table of contents
@@ -14,8 +14,8 @@
 
 - [page](MarketplaceResults.md#page)
 - [results](MarketplaceResults.md#results)
-- [total\_pages](MarketplaceResults.md#total_pages)
-- [total\_results](MarketplaceResults.md#total_results)
+- [total_pages](MarketplaceResults.md#total_pages)
+- [total_results](MarketplaceResults.md#total_results)
 
 ## Properties
 
@@ -25,9 +25,9 @@
 
 #### Defined in
 
-[src/types/MetadataTypes.ts:59](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L59)
+[src/types/MetadataTypes.ts:59](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/MetadataTypes.ts#L59)
 
-___
+---
 
 ### results
 
@@ -35,24 +35,24 @@ ___
 
 #### Defined in
 
-[src/types/MetadataTypes.ts:60](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L60)
+[src/types/MetadataTypes.ts:60](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/MetadataTypes.ts#L60)
 
-___
+---
 
-### total\_pages
+### total_pages
 
-• **total\_pages**: `number`
-
-#### Defined in
-
-[src/types/MetadataTypes.ts:61](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L61)
-
-___
-
-### total\_results
-
-• **total\_results**: [`SearchResults`](SearchResults.md)
+• **total_pages**: `number`
 
 #### Defined in
 
-[src/types/MetadataTypes.ts:62](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L62)
+[src/types/MetadataTypes.ts:61](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/MetadataTypes.ts#L61)
+
+---
+
+### total_results
+
+• **total_results**: [`SearchResults`](SearchResults.md)
+
+#### Defined in
+
+[src/types/MetadataTypes.ts:62](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/MetadataTypes.ts#L62)

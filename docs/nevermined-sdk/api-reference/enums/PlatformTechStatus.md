@@ -1,4 +1,4 @@
-[@nevermined-io/sdk](../code-reference.md) / PlatformTechStatus
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / PlatformTechStatus
 
 # Enumeration: PlatformTechStatus
 
@@ -15,38 +15,38 @@
 
 ### Loading
 
-• **Loading** = ``"Loading"``
+• **Loading** = `"Loading"`
 
 #### Defined in
 
-[src/nevermined/Versions.ts:6](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Versions.ts#L6)
+[src/nevermined/Versions.ts:6](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/Versions.ts#L6)
 
-___
+---
 
 ### Stopped
 
-• **Stopped** = ``"Stopped"``
+• **Stopped** = `"Stopped"`
 
 #### Defined in
 
-[src/nevermined/Versions.ts:8](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Versions.ts#L8)
+[src/nevermined/Versions.ts:8](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/Versions.ts#L8)
 
-___
+---
 
 ### Unknown
 
-• **Unknown** = ``"Unknown"``
+• **Unknown** = `"Unknown"`
 
 #### Defined in
 
-[src/nevermined/Versions.ts:7](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Versions.ts#L7)
+[src/nevermined/Versions.ts:7](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/Versions.ts#L7)
 
-___
+---
 
 ### Working
 
-• **Working** = ``"Working"``
+• **Working** = `"Working"`
 
 #### Defined in
 
-[src/nevermined/Versions.ts:9](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Versions.ts#L9)
+[src/nevermined/Versions.ts:9](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/Versions.ts#L9)

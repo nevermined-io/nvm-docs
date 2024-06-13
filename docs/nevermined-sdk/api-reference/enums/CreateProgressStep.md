@@ -1,4 +1,4 @@
-[@nevermined-io/sdk](../code-reference.md) / CreateProgressStep
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / CreateProgressStep
 
 # Enumeration: CreateProgressStep
 
@@ -24,128 +24,128 @@
 
 ### ConditionsFilled
 
-• **ConditionsFilled** = ``3``
+• **ConditionsFilled** = `3`
 
 #### Defined in
 
-[src/nevermined/ProgressSteps.ts:5](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/ProgressSteps.ts#L5)
+[src/nevermined/ProgressSteps.ts:5](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/ProgressSteps.ts#L5)
 
-___
+---
 
 ### DdoStored
 
-• **DdoStored** = ``10``
+• **DdoStored** = `10`
 
 #### Defined in
 
-[src/nevermined/ProgressSteps.ts:12](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/ProgressSteps.ts#L12)
+[src/nevermined/ProgressSteps.ts:12](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/ProgressSteps.ts#L12)
 
-___
+---
 
 ### DdoStoredImmutable
 
-• **DdoStoredImmutable** = ``11``
+• **DdoStoredImmutable** = `11`
 
 #### Defined in
 
-[src/nevermined/ProgressSteps.ts:13](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/ProgressSteps.ts#L13)
+[src/nevermined/ProgressSteps.ts:13](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/ProgressSteps.ts#L13)
 
-___
+---
 
 ### DidRegistered
 
-• **DidRegistered** = ``12``
+• **DidRegistered** = `12`
 
 #### Defined in
 
-[src/nevermined/ProgressSteps.ts:14](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/ProgressSteps.ts#L14)
+[src/nevermined/ProgressSteps.ts:14](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/ProgressSteps.ts#L14)
 
-___
+---
 
 ### EncryptingFiles
 
-• **EncryptingFiles** = ``4``
+• **EncryptingFiles** = `4`
 
 #### Defined in
 
-[src/nevermined/ProgressSteps.ts:6](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/ProgressSteps.ts#L6)
+[src/nevermined/ProgressSteps.ts:6](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/ProgressSteps.ts#L6)
 
-___
+---
 
 ### FilesEncrypted
 
-• **FilesEncrypted** = ``5``
+• **FilesEncrypted** = `5`
 
 #### Defined in
 
-[src/nevermined/ProgressSteps.ts:7](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/ProgressSteps.ts#L7)
+[src/nevermined/ProgressSteps.ts:7](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/ProgressSteps.ts#L7)
 
-___
+---
 
 ### GeneratingProof
 
-• **GeneratingProof** = ``1``
+• **GeneratingProof** = `1`
 
 #### Defined in
 
-[src/nevermined/ProgressSteps.ts:3](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/ProgressSteps.ts#L3)
+[src/nevermined/ProgressSteps.ts:3](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/ProgressSteps.ts#L3)
 
-___
+---
 
 ### ProofGenerated
 
-• **ProofGenerated** = ``2``
+• **ProofGenerated** = `2`
 
 #### Defined in
 
-[src/nevermined/ProgressSteps.ts:4](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/ProgressSteps.ts#L4)
+[src/nevermined/ProgressSteps.ts:4](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/ProgressSteps.ts#L4)
 
-___
+---
 
 ### RegisteringDid
 
-• **RegisteringDid** = ``6``
+• **RegisteringDid** = `6`
 
 #### Defined in
 
-[src/nevermined/ProgressSteps.ts:8](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/ProgressSteps.ts#L8)
+[src/nevermined/ProgressSteps.ts:8](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/ProgressSteps.ts#L8)
 
-___
+---
 
 ### ServicesAdded
 
-• **ServicesAdded** = ``0``
+• **ServicesAdded** = `0`
 
 #### Defined in
 
-[src/nevermined/ProgressSteps.ts:2](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/ProgressSteps.ts#L2)
+[src/nevermined/ProgressSteps.ts:2](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/ProgressSteps.ts#L2)
 
-___
+---
 
 ### SettingRoyalties
 
-• **SettingRoyalties** = ``8``
+• **SettingRoyalties** = `8`
 
 #### Defined in
 
-[src/nevermined/ProgressSteps.ts:10](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/ProgressSteps.ts#L10)
+[src/nevermined/ProgressSteps.ts:10](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/ProgressSteps.ts#L10)
 
-___
+---
 
 ### SettingRoyaltyScheme
 
-• **SettingRoyaltyScheme** = ``7``
+• **SettingRoyaltyScheme** = `7`
 
 #### Defined in
 
-[src/nevermined/ProgressSteps.ts:9](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/ProgressSteps.ts#L9)
+[src/nevermined/ProgressSteps.ts:9](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/ProgressSteps.ts#L9)
 
-___
+---
 
 ### StoringDdo
 
-• **StoringDdo** = ``9``
+• **StoringDdo** = `9`
 
 #### Defined in
 
-[src/nevermined/ProgressSteps.ts:11](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/ProgressSteps.ts#L11)
+[src/nevermined/ProgressSteps.ts:11](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/nevermined/ProgressSteps.ts#L11)

@@ -1,4 +1,4 @@
-[@nevermined-io/sdk](../code-reference.md) / EventEmitter
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / EventEmitter
 
 # Interface: EventEmitter
 
@@ -21,10 +21,10 @@
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `callback` | () => `Promise`\<`void`\> |
-| `arg1` | () => `Promise`\<`bigint`\> |
+| Name       | Type                        |
+| :--------- | :-------------------------- |
+| `callback` | () => `Promise`\<`void`\>   |
+| `arg1`     | () => `Promise`\<`bigint`\> |
 
 ##### Returns
 
@@ -32,9 +32,9 @@
 
 #### Defined in
 
-[src/types/EventTypes.ts:17](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/EventTypes.ts#L17)
+[src/types/EventTypes.ts:17](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/EventTypes.ts#L17)
 
-___
+---
 
 ### unsubscribe
 
@@ -46,8 +46,8 @@ ___
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type                      |
+| :----- | :------------------------ |
 | `arg0` | () => `Promise`\<`void`\> |
 
 ##### Returns
@@ -56,4 +56,4 @@ ___
 
 #### Defined in
 
-[src/types/EventTypes.ts:18](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/EventTypes.ts#L18)
+[src/types/EventTypes.ts:18](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/EventTypes.ts#L18)

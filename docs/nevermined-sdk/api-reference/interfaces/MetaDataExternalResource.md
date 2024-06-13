@@ -1,4 +1,4 @@
-[@nevermined-io/sdk](../code-reference.md) / MetaDataExternalResource
+[@nevermined-io/sdk - v3.0.13](../code-reference.md) / MetaDataExternalResource
 
 # Interface: MetaDataExternalResource
 
@@ -29,9 +29,9 @@ File checksum.
 
 #### Defined in
 
-[src/types/DDOTypes.ts:148](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L148)
+[src/types/DDOTypes.ts:148](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L148)
 
-___
+---
 
 ### checksumType
 
@@ -41,9 +41,9 @@ Checksum hash algorithm.
 
 #### Defined in
 
-[src/types/DDOTypes.ts:153](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L153)
+[src/types/DDOTypes.ts:153](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L153)
 
-___
+---
 
 ### compression
 
@@ -54,14 +54,14 @@ File compression (e.g. no, gzip, bzip2, etc).
 **`Example`**
 
 ```ts
-"zip"
+'zip'
 ```
 
 #### Defined in
 
-[src/types/DDOTypes.ts:181](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L181)
+[src/types/DDOTypes.ts:181](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L181)
 
-___
+---
 
 ### contentLength
 
@@ -71,9 +71,9 @@ File content length.
 
 #### Defined in
 
-[src/types/DDOTypes.ts:158](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L158)
+[src/types/DDOTypes.ts:158](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L158)
 
-___
+---
 
 ### contentType
 
@@ -84,14 +84,14 @@ File format, if applicable.
 **`Example`**
 
 ```ts
-"text/csv"
+'text/csv'
 ```
 
 #### Defined in
 
-[src/types/DDOTypes.ts:143](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L143)
+[src/types/DDOTypes.ts:143](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L143)
 
-___
+---
 
 ### encoding
 
@@ -102,18 +102,18 @@ File encoding.
 **`Example`**
 
 ```ts
-"UTF-8"
+'UTF-8'
 ```
 
 #### Defined in
 
-[src/types/DDOTypes.ts:175](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L175)
+[src/types/DDOTypes.ts:175](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L175)
 
-___
+---
 
 ### encryption
 
-• `Optional` **encryption**: ``"dtp"`` \| ``"dleq"``
+• `Optional` **encryption**: `"dtp"` \| `"dleq"`
 
 Encryption mode used.
 
@@ -123,9 +123,9 @@ If not provided is assumed the files are not encrypted. Currently only `dtp` is 
 
 #### Defined in
 
-[src/types/DDOTypes.ts:189](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L189)
+[src/types/DDOTypes.ts:189](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L189)
 
-___
+---
 
 ### index
 
@@ -135,9 +135,9 @@ File index.
 
 #### Defined in
 
-[src/types/DDOTypes.ts:137](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L137)
+[src/types/DDOTypes.ts:137](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L137)
 
-___
+---
 
 ### name
 
@@ -147,9 +147,9 @@ File name.
 
 #### Defined in
 
-[src/types/DDOTypes.ts:127](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L127)
+[src/types/DDOTypes.ts:127](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L127)
 
-___
+---
 
 ### resourceId
 
@@ -160,9 +160,9 @@ For example the `ugcId`
 
 #### Defined in
 
-[src/types/DDOTypes.ts:169](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L169)
+[src/types/DDOTypes.ts:169](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L169)
 
-___
+---
 
 ### resourceType
 
@@ -172,9 +172,9 @@ The type of the external resource file
 
 #### Defined in
 
-[src/types/DDOTypes.ts:163](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L163)
+[src/types/DDOTypes.ts:163](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L163)
 
-___
+---
 
 ### url
 
@@ -184,4 +184,4 @@ File URL.
 
 #### Defined in
 
-[src/types/DDOTypes.ts:132](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L132)
+[src/types/DDOTypes.ts:132](https://github.com/nevermined-io/sdk-js/blob/0d598e72febf7cfaf48859e35dd566c39e7d5682/src/types/DDOTypes.ts#L132)
