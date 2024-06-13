@@ -14,28 +14,28 @@
 
 ### AmazonS3
 
-• **AmazonS3** = `"s3"`
+• **AmazonS3** = ``"s3"``
 
 #### Defined in
 
-[src/services/node/NeverminedNode.ts:16](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/services/node/NeverminedNode.ts#L16)
+[src/services/node/NeverminedNode.ts:16](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/services/node/NeverminedNode.ts#L16)
 
----
+___
 
 ### Filecoin
 
-• **Filecoin** = `"filecoin"`
+• **Filecoin** = ``"filecoin"``
 
 #### Defined in
 
-[src/services/node/NeverminedNode.ts:14](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/services/node/NeverminedNode.ts#L14)
+[src/services/node/NeverminedNode.ts:14](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/services/node/NeverminedNode.ts#L14)
 
----
+___
 
 ### IPFS
 
-• **IPFS** = `"ipfs"`
+• **IPFS** = ``"ipfs"``
 
 #### Defined in
 
-[src/services/node/NeverminedNode.ts:15](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/services/node/NeverminedNode.ts#L15)
+[src/services/node/NeverminedNode.ts:15](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/services/node/NeverminedNode.ts#L15)

@@ -39,14 +39,14 @@ Categories used to describe this content. Empty by default.
 **`Example`**
 
 ```ts
-;['Economy', 'Data Science']
+["Economy", "Data Science"]
 ```
 
 #### Defined in
 
-[src/types/DDOTypes.ts:425](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L425)
+[src/types/DDOTypes.ts:425](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L425)
 
----
+___
 
 ### cipher
 
@@ -54,9 +54,9 @@ Categories used to describe this content. Empty by default.
 
 #### Defined in
 
-[src/types/DDOTypes.ts:459](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L459)
+[src/types/DDOTypes.ts:459](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L459)
 
----
+___
 
 ### copyrightHolder
 
@@ -67,14 +67,14 @@ The party holding the legal copyright. Empty by default.
 **`Example`**
 
 ```ts
-'Met Office'
+"Met Office"
 ```
 
 #### Defined in
 
-[src/types/DDOTypes.ts:385](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L385)
+[src/types/DDOTypes.ts:385](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L385)
 
----
+___
 
 ### customData
 
@@ -89,9 +89,9 @@ Can be used to store any non-default data, needs to be checked
 
 #### Defined in
 
-[src/types/DDOTypes.ts:454](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L454)
+[src/types/DDOTypes.ts:454](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L454)
 
----
+___
 
 ### description
 
@@ -103,14 +103,14 @@ explains what the data represents and what it can be used for.
 **`Example`**
 
 ```ts
-'Weather information of UK including temperature and humidity'
+"Weather information of UK including temperature and humidity"
 ```
 
 #### Defined in
 
-[src/types/DDOTypes.ts:379](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L379)
+[src/types/DDOTypes.ts:379](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L379)
 
----
+___
 
 ### inLanguage
 
@@ -122,18 +122,18 @@ codes from the [IETF BCP 47 standard](https://tools.ietf.org/html/bcp47).
 **`Example`**
 
 ```ts
-'en'
+"en"
 ```
 
 #### Defined in
 
-[src/types/DDOTypes.ts:419](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L419)
+[src/types/DDOTypes.ts:419](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L419)
 
----
+___
 
 ### links
 
-• `Optional` **links**: \{ `[name: string]`: `string`; }[]
+• `Optional` **links**: \{ `[name: string]`: `string`;  }[]
 
 Mapping of links for data samples, or links to find out more information.
 Links may be to either a URL or another Asset. We expect marketplaces to
@@ -144,22 +144,21 @@ to be domain-specific.
 **`Example`**
 
 ```ts
-;[
-  {
-    anotherSample:
-      'http://data.ceda.ac.uk/badc/ukcp09/data/gridded-land-obs/gridded-land-obs-daily/',
-  },
-  {
-    fieldsDescription: 'http://data.ceda.ac.uk/badc/ukcp09/',
-  },
-]
+[
+   {
+     anotherSample: "http://data.ceda.ac.uk/badc/ukcp09/data/gridded-land-obs/gridded-land-obs-daily/",
+   },
+   {
+     fieldsDescription: "http://data.ceda.ac.uk/badc/ukcp09/",
+   },
+ ]
 ```
 
 #### Defined in
 
-[src/types/DDOTypes.ts:412](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L412)
+[src/types/DDOTypes.ts:412](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L412)
 
----
+___
 
 ### poseidonHash
 
@@ -167,9 +166,9 @@ to be domain-specific.
 
 #### Defined in
 
-[src/types/DDOTypes.ts:458](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L458)
+[src/types/DDOTypes.ts:458](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L458)
 
----
+___
 
 ### priceHighestDenomination
 
@@ -185,9 +184,9 @@ BigNumbers
 
 #### Defined in
 
-[src/types/DDOTypes.ts:479](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L479)
+[src/types/DDOTypes.ts:479](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L479)
 
----
+___
 
 ### providerKey
 
@@ -195,16 +194,16 @@ BigNumbers
 
 #### Type declaration
 
-| Name | Type     |
-| :--- | :------- |
-| `x`  | `string` |
-| `y`  | `string` |
+| Name | Type |
+| :------ | :------ |
+| `x` | `string` |
+| `y` | `string` |
 
 #### Defined in
 
-[src/types/DDOTypes.ts:461](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L461)
+[src/types/DDOTypes.ts:461](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L461)
 
----
+___
 
 ### secretId
 
@@ -212,29 +211,29 @@ BigNumbers
 
 #### Type declaration
 
-| Name | Type     |
-| :--- | :------- |
-| `x`  | `string` |
-| `y`  | `string` |
+| Name | Type |
+| :------ | :------ |
+| `x` | `string` |
+| `y` | `string` |
 
 #### Defined in
 
-[src/types/DDOTypes.ts:466](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L466)
+[src/types/DDOTypes.ts:466](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L466)
 
----
+___
 
 ### structuredMarkup
 
-• `Optional` **structuredMarkup**: \{ `mediaType`: `string` ; `uri`: `string` }[]
+• `Optional` **structuredMarkup**: \{ `mediaType`: `string` ; `uri`: `string`  }[]
 
 A link to machine-readable structured markup (such as ttl/json-ld/rdf)
 describing the dataset.
 
 #### Defined in
 
-[src/types/DDOTypes.ts:445](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L445)
+[src/types/DDOTypes.ts:445](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L445)
 
----
+___
 
 ### tags
 
@@ -245,14 +244,14 @@ Keywords or tags used to describe this content. Empty by default.
 **`Example`**
 
 ```ts
-;['weather', 'uk', '2011', 'temperature', 'humidity']
+["weather", "uk", "2011", "temperature", "humidity"]
 ```
 
 #### Defined in
 
-[src/types/DDOTypes.ts:431](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L431)
+[src/types/DDOTypes.ts:431](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L431)
 
----
+___
 
 ### updateFrequency
 
@@ -265,14 +264,14 @@ to get updated.
 **`Example`**
 
 ```ts
-'yearly'
+"yearly"
 ```
 
 #### Defined in
 
-[src/types/DDOTypes.ts:439](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L439)
+[src/types/DDOTypes.ts:439](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L439)
 
----
+___
 
 ### workExample
 
@@ -284,9 +283,9 @@ of the metadata, not an external link.
 **`Example`**
 
 ```ts
-'423432fsd,51.509865,-0.118092,2011-01-01T10:55:11+00:00,7.2,68'
+"423432fsd,51.509865,-0.118092,2011-01-01T10:55:11+00:00,7.2,68"
 ```
 
 #### Defined in
 
-[src/types/DDOTypes.ts:392](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L392)
+[src/types/DDOTypes.ts:392](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L392)

@@ -13,18 +13,18 @@
 
 ### Dynamic
 
-• **Dynamic** = `"dynamic"`
+• **Dynamic** = ``"dynamic"``
 
 #### Defined in
 
-[src/types/DDOTypes.ts:217](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L217)
+[src/types/DDOTypes.ts:217](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L217)
 
----
+___
 
 ### Fixed
 
-• **Fixed** = `"fixed"`
+• **Fixed** = ``"fixed"``
 
 #### Defined in
 
-[src/types/DDOTypes.ts:216](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L216)
+[src/types/DDOTypes.ts:216](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L216)

@@ -23,9 +23,9 @@
 
 #### Defined in
 
-[src/keeper/contracts/managers/AgreementStoreManager.ts:11](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/keeper/contracts/managers/AgreementStoreManager.ts#L11)
+[src/keeper/contracts/managers/AgreementStoreManager.ts:11](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/managers/AgreementStoreManager.ts#L11)
 
----
+___
 
 ### agreementIdSeed
 
@@ -33,9 +33,9 @@
 
 #### Defined in
 
-[src/keeper/contracts/managers/AgreementStoreManager.ts:12](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/keeper/contracts/managers/AgreementStoreManager.ts#L12)
+[src/keeper/contracts/managers/AgreementStoreManager.ts:12](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/managers/AgreementStoreManager.ts#L12)
 
----
+___
 
 ### conditionIdSeeds
 
@@ -43,9 +43,9 @@
 
 #### Defined in
 
-[src/keeper/contracts/managers/AgreementStoreManager.ts:17](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/keeper/contracts/managers/AgreementStoreManager.ts#L17)
+[src/keeper/contracts/managers/AgreementStoreManager.ts:17](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/managers/AgreementStoreManager.ts#L17)
 
----
+___
 
 ### conditionIds
 
@@ -53,9 +53,9 @@
 
 #### Defined in
 
-[src/keeper/contracts/managers/AgreementStoreManager.ts:16](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/keeper/contracts/managers/AgreementStoreManager.ts#L16)
+[src/keeper/contracts/managers/AgreementStoreManager.ts:16](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/managers/AgreementStoreManager.ts#L16)
 
----
+___
 
 ### creator
 
@@ -63,9 +63,9 @@
 
 #### Defined in
 
-[src/keeper/contracts/managers/AgreementStoreManager.ts:13](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/keeper/contracts/managers/AgreementStoreManager.ts#L13)
+[src/keeper/contracts/managers/AgreementStoreManager.ts:13](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/managers/AgreementStoreManager.ts#L13)
 
----
+___
 
 ### did
 
@@ -73,9 +73,9 @@
 
 #### Defined in
 
-[src/keeper/contracts/managers/AgreementStoreManager.ts:10](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/keeper/contracts/managers/AgreementStoreManager.ts#L10)
+[src/keeper/contracts/managers/AgreementStoreManager.ts:10](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/managers/AgreementStoreManager.ts#L10)
 
----
+___
 
 ### didOwner
 
@@ -83,9 +83,9 @@
 
 #### Defined in
 
-[src/keeper/contracts/managers/AgreementStoreManager.ts:14](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/keeper/contracts/managers/AgreementStoreManager.ts#L14)
+[src/keeper/contracts/managers/AgreementStoreManager.ts:14](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/managers/AgreementStoreManager.ts#L14)
 
----
+___
 
 ### templateId
 
@@ -93,4 +93,4 @@
 
 #### Defined in
 
-[src/keeper/contracts/managers/AgreementStoreManager.ts:15](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/keeper/contracts/managers/AgreementStoreManager.ts#L15)
+[src/keeper/contracts/managers/AgreementStoreManager.ts:15](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/managers/AgreementStoreManager.ts#L15)

@@ -32,8 +32,8 @@ Decentralized ID.
 
 #### Parameters
 
-| Name | Type     |
-| :--- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `id` | `string` |
 
 #### Returns
@@ -42,7 +42,7 @@ Decentralized ID.
 
 #### Defined in
 
-[src/nevermined/DID.ts:84](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/DID.ts#L84)
+[src/nevermined/DID.ts:84](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/DID.ts#L84)
 
 ## Properties
 
@@ -54,7 +54,7 @@ Short ID.
 
 #### Defined in
 
-[src/nevermined/DID.ts:82](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/DID.ts#L82)
+[src/nevermined/DID.ts:82](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/DID.ts#L82)
 
 ## Methods
 
@@ -72,9 +72,9 @@ A string with the prefixed id.
 
 #### Defined in
 
-[src/nevermined/DID.ts:92](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/DID.ts#L92)
+[src/nevermined/DID.ts:92](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/DID.ts#L92)
 
----
+___
 
 ### getEncoded
 
@@ -90,9 +90,9 @@ A base36 encoded string.
 
 #### Defined in
 
-[src/nevermined/DID.ts:75](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/DID.ts#L75)
+[src/nevermined/DID.ts:75](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/DID.ts#L75)
 
----
+___
 
 ### getId
 
@@ -108,9 +108,9 @@ A string of the _id_ without the prefix.
 
 #### Defined in
 
-[src/nevermined/DID.ts:100](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/DID.ts#L100)
+[src/nevermined/DID.ts:100](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/DID.ts#L100)
 
----
+___
 
 ### fromEncoded
 
@@ -120,8 +120,8 @@ Returns a new DID from a base36 encoded string.
 
 #### Parameters
 
-| Name      | Type     | Description            |
-| :-------- | :------- | :--------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `encoded` | `string` | Base36 encoded string. |
 
 #### Returns
@@ -132,9 +132,9 @@ Returns a new DID from a base36 encoded string.
 
 #### Defined in
 
-[src/nevermined/DID.ts:65](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/DID.ts#L65)
+[src/nevermined/DID.ts:65](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/DID.ts#L65)
 
----
+___
 
 ### generate
 
@@ -150,9 +150,9 @@ Returns a new DID.
 
 #### Defined in
 
-[src/nevermined/DID.ts:44](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/DID.ts#L44)
+[src/nevermined/DID.ts:44](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/DID.ts#L44)
 
----
+___
 
 ### parse
 
@@ -162,8 +162,8 @@ Parses a DID from a string.
 
 #### Parameters
 
-| Name        | Type                        | Description                                                                                 |
-| :---------- | :-------------------------- | :------------------------------------------------------------------------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `didString` | `string` \| [`DID`](DID.md) | DID in string format or DID instance. The didString can be in did:nv: format or 0x: format. |
 
 #### Returns
@@ -174,9 +174,9 @@ Parses a DID from a string.
 
 #### Defined in
 
-[src/nevermined/DID.ts:14](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/DID.ts#L14)
+[src/nevermined/DID.ts:14](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/DID.ts#L14)
 
----
+___
 
 ### parseBigInt
 
@@ -184,10 +184,10 @@ Parses a DID from a string.
 
 #### Parameters
 
-| Name    | Type     | Default value |
-| :------ | :------- | :------------ |
-| `value` | `any`    | `undefined`   |
-| `radix` | `number` | `36`          |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value` | `any` | `undefined` |
+| `radix` | `number` | `36` |
 
 #### Returns
 
@@ -195,4 +195,4 @@ Parses a DID from a string.
 
 #### Defined in
 
-[src/nevermined/DID.ts:48](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/DID.ts#L48)
+[src/nevermined/DID.ts:48](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/DID.ts#L48)

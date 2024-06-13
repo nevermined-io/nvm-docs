@@ -35,10 +35,10 @@
 
 #### Parameters
 
-| Name          | Type     |
-| :------------ | :------- |
+| Name | Type |
+| :------ | :------ |
 | `serviceType` | `string` |
-| `did?`        | `string` |
+| `did?` | `string` |
 
 #### Returns
 
@@ -50,7 +50,7 @@
 
 #### Defined in
 
-[src/errors/NeverminedErrors.ts:100](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/errors/NeverminedErrors.ts#L100)
+[src/errors/NeverminedErrors.ts:100](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/errors/NeverminedErrors.ts#L100)
 
 ## Properties
 
@@ -66,7 +66,7 @@
 
 node_modules/typescript/lib/lib.es2022.error.d.ts:24
 
----
+___
 
 ### message
 
@@ -80,7 +80,7 @@ node_modules/typescript/lib/lib.es2022.error.d.ts:24
 
 node_modules/typescript/lib/lib.es5.d.ts:1077
 
----
+___
 
 ### name
 
@@ -94,7 +94,7 @@ node_modules/typescript/lib/lib.es5.d.ts:1077
 
 node_modules/typescript/lib/lib.es5.d.ts:1076
 
----
+___
 
 ### stack
 
@@ -108,7 +108,7 @@ node_modules/typescript/lib/lib.es5.d.ts:1076
 
 node_modules/typescript/lib/lib.es5.d.ts:1078
 
----
+___
 
 ### prepareStackTrace
 
@@ -126,9 +126,9 @@ https://v8.dev/docs/stack-trace-api#customizing-stack-traces
 
 ##### Parameters
 
-| Name          | Type         |
-| :------------ | :----------- |
-| `err`         | `Error`      |
+| Name | Type |
+| :------ | :------ |
+| `err` | `Error` |
 | `stackTraces` | `CallSite`[] |
 
 ##### Returns
@@ -143,7 +143,7 @@ https://v8.dev/docs/stack-trace-api#customizing-stack-traces
 
 node_modules/@types/node/globals.d.ts:28
 
----
+___
 
 ### stackTraceLimit
 
@@ -167,9 +167,9 @@ Create .stack property on a target object
 
 #### Parameters
 
-| Name              | Type       |
-| :---------------- | :--------- |
-| `targetObject`    | `object`   |
+| Name | Type |
+| :------ | :------ |
+| `targetObject` | `object` |
 | `constructorOpt?` | `Function` |
 
 #### Returns

@@ -28,18 +28,18 @@
 
 #### Type declaration
 
-| Name                                             | Type                                                                                                              |
-| :----------------------------------------------- | :---------------------------------------------------------------------------------------------------------------- |
-| `additionalInformation`                          | \{ `description`: `string` ; `priceHighestDenomination`: `number` }                                               |
-| `additionalInformation.description`              | `string`                                                                                                          |
-| `additionalInformation.priceHighestDenomination` | `number`                                                                                                          |
-| `main`                                           | \{ `creator`: `string` ; `datePublished`: `string` ; `name`: `string` ; `price`: `string` ; `timeout`: `number` } |
-| `main.creator`                                   | `string`                                                                                                          |
-| `main.datePublished`                             | `string`                                                                                                          |
-| `main.name`                                      | `string`                                                                                                          |
-| `main.price`                                     | `string`                                                                                                          |
-| `main.timeout`                                   | `number`                                                                                                          |
-| `serviceAgreementTemplate?`                      | [`ServiceAgreementTemplate`](ServiceAgreementTemplate.md)                                                         |
+| Name | Type |
+| :------ | :------ |
+| `additionalInformation` | \{ `description`: `string` ; `priceHighestDenomination`: `number`  } |
+| `additionalInformation.description` | `string` |
+| `additionalInformation.priceHighestDenomination` | `number` |
+| `main` | \{ `creator`: `string` ; `datePublished`: `string` ; `name`: `string` ; `price`: `string` ; `timeout`: `number`  } |
+| `main.creator` | `string` |
+| `main.datePublished` | `string` |
+| `main.name` | `string` |
+| `main.price` | `string` |
+| `main.timeout` | `number` |
+| `serviceAgreementTemplate?` | [`ServiceAgreementTemplate`](ServiceAgreementTemplate.md) |
 
 #### Overrides
 
@@ -47,9 +47,9 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:702](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L702)
+[src/types/DDOTypes.ts:702](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L702)
 
----
+___
 
 ### index
 
@@ -61,9 +61,9 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:636](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L636)
+[src/types/DDOTypes.ts:636](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L636)
 
----
+___
 
 ### serviceEndpoint
 
@@ -75,9 +75,9 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:637](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L637)
+[src/types/DDOTypes.ts:637](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L637)
 
----
+___
 
 ### templateId
 
@@ -89,13 +89,13 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:701](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L701)
+[src/types/DDOTypes.ts:701](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L701)
 
----
+___
 
 ### type
 
-• **type**: `"compute"`
+• **type**: ``"compute"``
 
 #### Overrides
 
@@ -103,4 +103,4 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:700](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L700)
+[src/types/DDOTypes.ts:700](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L700)

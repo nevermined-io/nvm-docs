@@ -6,28 +6,28 @@
 
 ### Properties
 
-- [agreement_id](ValidationParams.md#agreement_id)
+- [agreement\_id](ValidationParams.md#agreement_id)
 - [babysig](ValidationParams.md#babysig)
 - [buyer](ValidationParams.md#buyer)
-- [consumer_address](ValidationParams.md#consumer_address)
+- [consumer\_address](ValidationParams.md#consumer_address)
 - [did](ValidationParams.md#did)
 - [duration](ValidationParams.md#duration)
 - [expiration](ValidationParams.md#expiration)
-- [nft_amount](ValidationParams.md#nft_amount)
-- [nft_holder](ValidationParams.md#nft_holder)
-- [service_index](ValidationParams.md#service_index)
+- [nft\_amount](ValidationParams.md#nft_amount)
+- [nft\_holder](ValidationParams.md#nft_holder)
+- [service\_index](ValidationParams.md#service_index)
 
 ## Properties
 
-### agreement_id
+### agreement\_id
 
-• **agreement_id**: `string`
+• **agreement\_id**: `string`
 
 #### Defined in
 
-[src/types/DDOTypes.ts:782](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L782)
+[src/types/DDOTypes.ts:782](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L782)
 
----
+___
 
 ### babysig
 
@@ -35,9 +35,9 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:787](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L787)
+[src/types/DDOTypes.ts:787](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L787)
 
----
+___
 
 ### buyer
 
@@ -45,19 +45,19 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:786](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L786)
+[src/types/DDOTypes.ts:786](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L786)
 
----
+___
 
-### consumer_address
+### consumer\_address
 
-• **consumer_address**: `string`
+• **consumer\_address**: `string`
 
 #### Defined in
 
-[src/types/DDOTypes.ts:785](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L785)
+[src/types/DDOTypes.ts:785](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L785)
 
----
+___
 
 ### did
 
@@ -65,9 +65,9 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:783](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L783)
+[src/types/DDOTypes.ts:783](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L783)
 
----
+___
 
 ### duration
 
@@ -75,9 +75,9 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:790](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L790)
+[src/types/DDOTypes.ts:790](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L790)
 
----
+___
 
 ### expiration
 
@@ -85,34 +85,34 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:791](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L791)
+[src/types/DDOTypes.ts:791](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L791)
 
----
+___
 
-### nft_amount
+### nft\_amount
 
-• `Optional` **nft_amount**: `bigint`
-
-#### Defined in
-
-[src/types/DDOTypes.ts:788](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L788)
-
----
-
-### nft_holder
-
-• `Optional` **nft_holder**: `string`
+• `Optional` **nft\_amount**: `bigint`
 
 #### Defined in
 
-[src/types/DDOTypes.ts:789](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L789)
+[src/types/DDOTypes.ts:788](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L788)
 
----
+___
 
-### service_index
+### nft\_holder
 
-• `Optional` **service_index**: `number`
+• `Optional` **nft\_holder**: `string`
 
 #### Defined in
 
-[src/types/DDOTypes.ts:784](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L784)
+[src/types/DDOTypes.ts:789](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L789)
+
+___
+
+### service\_index
+
+• `Optional` **service\_index**: `number`
+
+#### Defined in
+
+[src/types/DDOTypes.ts:784](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L784)

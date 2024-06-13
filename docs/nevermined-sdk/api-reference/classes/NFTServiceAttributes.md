@@ -47,9 +47,9 @@ Number of editions
 
 #### Defined in
 
-[src/models/NFTAttributes.ts:17](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/models/NFTAttributes.ts#L17)
+[src/models/NFTAttributes.ts:17](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NFTAttributes.ts#L17)
 
----
+___
 
 ### duration
 
@@ -59,9 +59,9 @@ If is a subscription this means the number of blocks the subscription last. If 0
 
 #### Defined in
 
-[src/models/NFTAttributes.ts:32](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/models/NFTAttributes.ts#L32)
+[src/models/NFTAttributes.ts:32](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NFTAttributes.ts#L32)
 
----
+___
 
 ### isSubscription
 
@@ -71,9 +71,9 @@ If true means the NFT works as a subscription
 
 #### Defined in
 
-[src/models/NFTAttributes.ts:27](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/models/NFTAttributes.ts#L27)
+[src/models/NFTAttributes.ts:27](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NFTAttributes.ts#L27)
 
----
+___
 
 ### maxCreditsToCharge
 
@@ -84,9 +84,9 @@ If not specified, the subscription cost is not capped
 
 #### Defined in
 
-[src/models/NFTAttributes.ts:44](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/models/NFTAttributes.ts#L44)
+[src/models/NFTAttributes.ts:44](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NFTAttributes.ts#L44)
 
----
+___
 
 ### minCreditsRequired
 
@@ -97,9 +97,9 @@ If not specified, the amount defined in the service agreement or 1 credit will b
 
 #### Defined in
 
-[src/models/NFTAttributes.ts:56](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/models/NFTAttributes.ts#L56)
+[src/models/NFTAttributes.ts:56](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NFTAttributes.ts#L56)
 
----
+___
 
 ### minCreditsToCharge
 
@@ -110,9 +110,9 @@ If not specified, the amount defined in the service agreement or 1 credit will b
 
 #### Defined in
 
-[src/models/NFTAttributes.ts:50](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/models/NFTAttributes.ts#L50)
+[src/models/NFTAttributes.ts:50](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NFTAttributes.ts#L50)
 
----
+___
 
 ### nftTransfer
 
@@ -122,9 +122,9 @@ The asset is transferred (true) or minted (false) with Nevermined contracts
 
 #### Defined in
 
-[src/models/NFTAttributes.ts:22](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/models/NFTAttributes.ts#L22)
+[src/models/NFTAttributes.ts:22](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NFTAttributes.ts#L22)
 
----
+___
 
 ### tokenId
 
@@ -135,9 +135,9 @@ For example if is a NFT Access service requiring holding a NFT, this is the toke
 
 #### Defined in
 
-[src/models/NFTAttributes.ts:38](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/models/NFTAttributes.ts#L38)
+[src/models/NFTAttributes.ts:38](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NFTAttributes.ts#L38)
 
----
+___
 
 ### defaultValues
 
@@ -145,21 +145,21 @@ For example if is a NFT Access service requiring holding a NFT, this is the toke
 
 #### Type declaration
 
-| Name                 | Type                                              |
-| :------------------- | :------------------------------------------------ |
-| `amount`             | `bigint`                                          |
-| `duration`           | `number`                                          |
-| `isSubscription`     | `boolean`                                         |
-| `maxCreditsToCharge` | `bigint`                                          |
-| `minCreditsRequired` | `bigint`                                          |
-| `minCreditsToCharge` | `bigint`                                          |
-| `nftTransfer`        | `boolean`                                         |
-| `serviceType`        | [`ServiceType`](../code-reference.md#servicetype) |
-| `tokenId`            | `string`                                          |
+| Name | Type |
+| :------ | :------ |
+| `amount` | `bigint` |
+| `duration` | `number` |
+| `isSubscription` | `boolean` |
+| `maxCreditsToCharge` | `bigint` |
+| `minCreditsRequired` | `bigint` |
+| `minCreditsToCharge` | `bigint` |
+| `nftTransfer` | `boolean` |
+| `serviceType` | [`ServiceType`](../code-reference.md#servicetype) |
+| `tokenId` | `string` |
 
 #### Defined in
 
-[src/models/NFTAttributes.ts:58](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/models/NFTAttributes.ts#L58)
+[src/models/NFTAttributes.ts:58](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NFTAttributes.ts#L58)
 
 ## Methods
 
@@ -171,8 +171,8 @@ Given some partial nft attributes it applies some default validations and pre-co
 
 #### Parameters
 
-| Name            | Type                                             | Description            |
-| :-------------- | :----------------------------------------------- | :--------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `nftAttributes` | `Partial`\<[`NFTAttributes`](NFTAttributes.md)\> | partial nft attributes |
 
 #### Returns
@@ -183,9 +183,9 @@ nft attributes validated and configured
 
 #### Defined in
 
-[src/models/NFTAttributes.ts:136](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/models/NFTAttributes.ts#L136)
+[src/models/NFTAttributes.ts:136](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NFTAttributes.ts#L136)
 
----
+___
 
 ### getCreditsToCharge
 
@@ -195,11 +195,11 @@ Taking into account the nft attributes confifured tt returns the number of credi
 
 #### Parameters
 
-| Name             | Type                                              | Default value      | Description                                        |
-| :--------------- | :------------------------------------------------ | :----------------- | :------------------------------------------------- |
-| `nftAttributes`  | [`NFTServiceAttributes`](NFTServiceAttributes.md) | `undefined`        | -                                                  |
-| `chargeType`     | [`ChargeType`](../enums/ChargeType.md)            | `ChargeType.Fixed` | -                                                  |
-| `dynamicAmount?` | `bigint`                                          | `undefined`        | the dynamic amount of credits asked to be consumed |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `nftAttributes` | [`NFTServiceAttributes`](NFTServiceAttributes.md) | `undefined` | - |
+| `chargeType` | [`ChargeType`](../enums/ChargeType.md) | `ChargeType.Fixed` | - |
+| `dynamicAmount?` | `bigint` | `undefined` | the dynamic amount of credits asked to be consumed |
 
 #### Returns
 
@@ -209,9 +209,9 @@ amount to consume
 
 #### Defined in
 
-[src/models/NFTAttributes.ts:81](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/models/NFTAttributes.ts#L81)
+[src/models/NFTAttributes.ts:81](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NFTAttributes.ts#L81)
 
----
+___
 
 ### getDefaultNFTServiceAttributes
 
@@ -223,9 +223,9 @@ amount to consume
 
 #### Defined in
 
-[src/models/NFTAttributes.ts:70](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/models/NFTAttributes.ts#L70)
+[src/models/NFTAttributes.ts:70](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NFTAttributes.ts#L70)
 
----
+___
 
 ### isCreditsBalanceEnough
 
@@ -235,11 +235,11 @@ Given some credits balance if checks if that's enough to access to a NFT asset
 
 #### Parameters
 
-| Name             | Type                                              | Description                                      |
-| :--------------- | :------------------------------------------------ | :----------------------------------------------- |
-| `nftAttributes`  | [`NFTServiceAttributes`](NFTServiceAttributes.md) | NFT Attributes metadata                          |
-| `creditsBalance` | `bigint`                                          | balance of credits                               |
-| `dynamicAmount?` | `bigint`                                          | the dynamic amount of credits asked to be burned |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `nftAttributes` | [`NFTServiceAttributes`](NFTServiceAttributes.md) | NFT Attributes metadata |
+| `creditsBalance` | `bigint` | balance of credits |
+| `dynamicAmount?` | `bigint` | the dynamic amount of credits asked to be burned |
 
 #### Returns
 
@@ -249,4 +249,4 @@ boolean
 
 #### Defined in
 
-[src/models/NFTAttributes.ts:115](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/models/NFTAttributes.ts#L115)
+[src/models/NFTAttributes.ts:115](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/models/NFTAttributes.ts#L115)

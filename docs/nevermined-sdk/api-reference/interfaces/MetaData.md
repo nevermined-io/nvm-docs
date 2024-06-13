@@ -20,9 +20,9 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:486](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L486)
+[src/types/DDOTypes.ts:486](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L486)
 
----
+___
 
 ### curation
 
@@ -30,9 +30,9 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:487](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L487)
+[src/types/DDOTypes.ts:487](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L487)
 
----
+___
 
 ### encryptedFiles
 
@@ -40,9 +40,9 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:485](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L485)
+[src/types/DDOTypes.ts:485](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L485)
 
----
+___
 
 ### main
 
@@ -50,9 +50,9 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:484](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L484)
+[src/types/DDOTypes.ts:484](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L484)
 
----
+___
 
 ### userId
 
@@ -60,4 +60,4 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:483](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L483)
+[src/types/DDOTypes.ts:483](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L483)

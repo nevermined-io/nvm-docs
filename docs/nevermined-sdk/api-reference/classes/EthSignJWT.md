@@ -43,8 +43,8 @@
 
 #### Parameters
 
-| Name      | Type         | Description                |
-| :-------- | :----------- | :------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `payload` | `JWTPayload` | The JWT Claims Set object. |
 
 #### Returns
@@ -73,7 +73,7 @@ SignJWT.\_payload
 
 node_modules/jose/dist/types/jwt/produce.d.ts:4
 
----
+___
 
 ### protectedHeader
 
@@ -81,7 +81,7 @@ node_modules/jose/dist/types/jwt/produce.d.ts:4
 
 #### Defined in
 
-[src/nevermined/utils/JwtUtils.ts:12](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/utils/JwtUtils.ts#L12)
+[src/nevermined/utils/JwtUtils.ts:12](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/JwtUtils.ts#L12)
 
 ## Methods
 
@@ -91,8 +91,8 @@ node_modules/jose/dist/types/jwt/produce.d.ts:4
 
 #### Parameters
 
-| Name    | Type                     |
-| :------ | :----------------------- |
+| Name | Type |
+| :------ | :------ |
 | `input` | `string` \| `Uint8Array` |
 
 #### Returns
@@ -101,9 +101,9 @@ node_modules/jose/dist/types/jwt/produce.d.ts:4
 
 #### Defined in
 
-[src/nevermined/utils/JwtUtils.ts:91](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/utils/JwtUtils.ts#L91)
+[src/nevermined/utils/JwtUtils.ts:91](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/JwtUtils.ts#L91)
 
----
+___
 
 ### concat
 
@@ -111,8 +111,8 @@ node_modules/jose/dist/types/jwt/produce.d.ts:4
 
 #### Parameters
 
-| Name         | Type           |
-| :----------- | :------------- |
+| Name | Type |
+| :------ | :------ |
 | `...buffers` | `Uint8Array`[] |
 
 #### Returns
@@ -121,9 +121,9 @@ node_modules/jose/dist/types/jwt/produce.d.ts:4
 
 #### Defined in
 
-[src/nevermined/utils/JwtUtils.ts:99](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/utils/JwtUtils.ts#L99)
+[src/nevermined/utils/JwtUtils.ts:99](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/JwtUtils.ts#L99)
 
----
+___
 
 ### ethSign
 
@@ -131,11 +131,11 @@ node_modules/jose/dist/types/jwt/produce.d.ts:4
 
 #### Parameters
 
-| Name             | Type                                        |
-| :--------------- | :------------------------------------------ |
-| `signatureUtils` | [`SignatureUtils`](SignatureUtils.md)       |
-| `account`        | [`NvmAccount`](NvmAccount.md)               |
-| `eip712Data?`    | [`Eip712Data`](../interfaces/Eip712Data.md) |
+| Name | Type |
+| :------ | :------ |
+| `signatureUtils` | [`SignatureUtils`](SignatureUtils.md) |
+| `account` | [`NvmAccount`](NvmAccount.md) |
+| `eip712Data?` | [`Eip712Data`](../interfaces/Eip712Data.md) |
 
 #### Returns
 
@@ -143,9 +143,9 @@ node_modules/jose/dist/types/jwt/produce.d.ts:4
 
 #### Defined in
 
-[src/nevermined/utils/JwtUtils.ts:19](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/utils/JwtUtils.ts#L19)
+[src/nevermined/utils/JwtUtils.ts:19](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/JwtUtils.ts#L19)
 
----
+___
 
 ### setAudience
 
@@ -155,8 +155,8 @@ Set "aud" (Audience) Claim.
 
 #### Parameters
 
-| Name       | Type                   | Description                                                |
-| :--------- | :--------------------- | :--------------------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `audience` | `string` \| `string`[] | "aud" (Audience) Claim value to set on the JWT Claims Set. |
 
 #### Returns
@@ -171,7 +171,7 @@ SignJWT.setAudience
 
 node_modules/jose/dist/types/jwt/produce.d.ts:24
 
----
+___
 
 ### setExpirationTime
 
@@ -181,8 +181,8 @@ Set "exp" (Expiration Time) Claim.
 
 #### Parameters
 
-| Name    | Type                 | Description                                                                                                                                                                                              |
-| :------ | :------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `input` | `string` \| `number` | "exp" (Expiration Time) Claim value to set on the JWT Claims Set. When number is passed that is used as a value, when string is passed it is resolved to a time span and added to the current timestamp. |
 
 #### Returns
@@ -197,7 +197,7 @@ SignJWT.setExpirationTime
 
 node_modules/jose/dist/types/jwt/produce.d.ts:46
 
----
+___
 
 ### setIssuedAt
 
@@ -207,8 +207,8 @@ Set "iat" (Issued At) Claim.
 
 #### Parameters
 
-| Name     | Type     | Description                                                                               |
-| :------- | :------- | :---------------------------------------------------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `input?` | `number` | "iat" (Issued At) Claim value to set on the JWT Claims Set. Default is current timestamp. |
 
 #### Returns
@@ -223,7 +223,7 @@ SignJWT.setIssuedAt
 
 node_modules/jose/dist/types/jwt/produce.d.ts:53
 
----
+___
 
 ### setIssuer
 
@@ -233,8 +233,8 @@ Set "iss" (Issuer) Claim.
 
 #### Parameters
 
-| Name     | Type     | Description                                        |
-| :------- | :------- | :------------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `issuer` | `string` | "Issuer" Claim value to set on the JWT Claims Set. |
 
 #### Returns
@@ -249,7 +249,7 @@ SignJWT.setIssuer
 
 node_modules/jose/dist/types/jwt/produce.d.ts:12
 
----
+___
 
 ### setJti
 
@@ -259,8 +259,8 @@ Set "jti" (JWT ID) Claim.
 
 #### Parameters
 
-| Name    | Type     | Description                                              |
-| :------ | :------- | :------------------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `jwtId` | `string` | "jti" (JWT ID) Claim value to set on the JWT Claims Set. |
 
 #### Returns
@@ -275,7 +275,7 @@ SignJWT.setJti
 
 node_modules/jose/dist/types/jwt/produce.d.ts:30
 
----
+___
 
 ### setNotBefore
 
@@ -285,8 +285,8 @@ Set "nbf" (Not Before) Claim.
 
 #### Parameters
 
-| Name    | Type                 | Description                                                                                                                                                                                         |
-| :------ | :------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `input` | `string` \| `number` | "nbf" (Not Before) Claim value to set on the JWT Claims Set. When number is passed that is used as a value, when string is passed it is resolved to a time span and added to the current timestamp. |
 
 #### Returns
@@ -301,7 +301,7 @@ SignJWT.setNotBefore
 
 node_modules/jose/dist/types/jwt/produce.d.ts:38
 
----
+___
 
 ### setProtectedHeader
 
@@ -309,8 +309,8 @@ node_modules/jose/dist/types/jwt/produce.d.ts:38
 
 #### Parameters
 
-| Name              | Type                  |
-| :---------------- | :-------------------- |
+| Name | Type |
+| :------ | :------ |
 | `protectedHeader` | `JWSHeaderParameters` |
 
 #### Returns
@@ -323,9 +323,9 @@ SignJWT.setProtectedHeader
 
 #### Defined in
 
-[src/nevermined/utils/JwtUtils.ts:14](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/utils/JwtUtils.ts#L14)
+[src/nevermined/utils/JwtUtils.ts:14](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/JwtUtils.ts#L14)
 
----
+___
 
 ### setSubject
 
@@ -335,8 +335,8 @@ Set "sub" (Subject) Claim.
 
 #### Parameters
 
-| Name      | Type     | Description                                               |
-| :-------- | :------- | :-------------------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `subject` | `string` | "sub" (Subject) Claim value to set on the JWT Claims Set. |
 
 #### Returns
@@ -351,7 +351,7 @@ SignJWT.setSubject
 
 node_modules/jose/dist/types/jwt/produce.d.ts:18
 
----
+___
 
 ### sign
 
@@ -361,10 +361,10 @@ Signs and returns the JWT.
 
 #### Parameters
 
-| Name       | Type                      | Description                                                                                                                     |
-| :--------- | :------------------------ | :------------------------------------------------------------------------------------------------------------------------------ |
-| `key`      | `Uint8Array` \| `KeyLike` | Private Key or Secret to sign the JWT with. See [Algorithm Key Requirements](https://github.com/panva/jose/issues/210#jws-alg). |
-| `options?` | `SignOptions`             | JWT Sign options.                                                                                                               |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `Uint8Array` \| `KeyLike` | Private Key or Secret to sign the JWT with. See [Algorithm Key Requirements](https://github.com/panva/jose/issues/210#jws-alg). |
+| `options?` | `SignOptions` | JWT Sign options. |
 
 #### Returns
 
@@ -378,7 +378,7 @@ SignJWT.sign
 
 node_modules/jose/dist/types/jwt/sign.d.ts:22
 
----
+___
 
 ### signText
 
@@ -386,10 +386,10 @@ node_modules/jose/dist/types/jwt/sign.d.ts:22
 
 #### Parameters
 
-| Name      | Type                     |
-| :-------- | :----------------------- |
-| `text`    | `string` \| `Uint8Array` |
-| `account` | `Account`                |
+| Name | Type |
+| :------ | :------ |
+| `text` | `string` \| `Uint8Array` |
+| `account` | `Account` |
 
 #### Returns
 
@@ -397,4 +397,4 @@ node_modules/jose/dist/types/jwt/sign.d.ts:22
 
 #### Defined in
 
-[src/nevermined/utils/JwtUtils.ts:77](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/utils/JwtUtils.ts#L77)
+[src/nevermined/utils/JwtUtils.ts:77](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/utils/JwtUtils.ts#L77)

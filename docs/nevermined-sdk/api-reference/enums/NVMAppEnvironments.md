@@ -22,108 +22,108 @@
 
 ### Base
 
-• **Base** = `"base"`
+• **Base** = ``"base"``
 
 #### Defined in
 
-[src/nevermined/NvmApp.ts:41](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/NvmApp.ts#L41)
+[src/nevermined/NvmApp.ts:41](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/NvmApp.ts#L41)
 
----
+___
 
 ### Celo
 
-• **Celo** = `"celo"`
+• **Celo** = ``"celo"``
 
 #### Defined in
 
-[src/nevermined/NvmApp.ts:42](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/NvmApp.ts#L42)
+[src/nevermined/NvmApp.ts:42](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/NvmApp.ts#L42)
 
----
+___
 
 ### Custom
 
-• **Custom** = `"custom"`
+• **Custom** = ``"custom"``
 
 #### Defined in
 
-[src/nevermined/NvmApp.ts:45](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/NvmApp.ts#L45)
+[src/nevermined/NvmApp.ts:45](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/NvmApp.ts#L45)
 
----
+___
 
 ### Gnosis
 
-• **Gnosis** = `"gnosis"`
+• **Gnosis** = ``"gnosis"``
 
 #### Defined in
 
-[src/nevermined/NvmApp.ts:40](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/NvmApp.ts#L40)
+[src/nevermined/NvmApp.ts:40](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/NvmApp.ts#L40)
 
----
+___
 
 ### Live
 
-• **Live** = `"live"`
+• **Live** = ``"live"``
 
 #### Defined in
 
-[src/nevermined/NvmApp.ts:37](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/NvmApp.ts#L37)
+[src/nevermined/NvmApp.ts:37](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/NvmApp.ts#L37)
 
----
+___
 
 ### Local
 
-• **Local** = `"local"`
+• **Local** = ``"local"``
 
 #### Defined in
 
-[src/nevermined/NvmApp.ts:44](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/NvmApp.ts#L44)
+[src/nevermined/NvmApp.ts:44](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/NvmApp.ts#L44)
 
----
+___
 
 ### Matic
 
-• **Matic** = `"matic"`
+• **Matic** = ``"matic"``
 
 #### Defined in
 
-[src/nevermined/NvmApp.ts:38](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/NvmApp.ts#L38)
+[src/nevermined/NvmApp.ts:38](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/NvmApp.ts#L38)
 
----
+___
 
 ### Mumbai
 
-• **Mumbai** = `"mumbai"`
+• **Mumbai** = ``"mumbai"``
 
 #### Defined in
 
-[src/nevermined/NvmApp.ts:39](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/NvmApp.ts#L39)
+[src/nevermined/NvmApp.ts:39](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/NvmApp.ts#L39)
 
----
+___
 
 ### Optimism
 
-• **Optimism** = `"optimism"`
+• **Optimism** = ``"optimism"``
 
 #### Defined in
 
-[src/nevermined/NvmApp.ts:43](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/NvmApp.ts#L43)
+[src/nevermined/NvmApp.ts:43](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/NvmApp.ts#L43)
 
----
+___
 
 ### Staging
 
-• **Staging** = `"staging"`
+• **Staging** = ``"staging"``
 
 #### Defined in
 
-[src/nevermined/NvmApp.ts:35](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/NvmApp.ts#L35)
+[src/nevermined/NvmApp.ts:35](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/NvmApp.ts#L35)
 
----
+___
 
 ### Testing
 
-• **Testing** = `"testing"`
+• **Testing** = ``"testing"``
 
 #### Defined in
 
-[src/nevermined/NvmApp.ts:36](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/nevermined/NvmApp.ts#L36)
+[src/nevermined/NvmApp.ts:36](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/NvmApp.ts#L36)

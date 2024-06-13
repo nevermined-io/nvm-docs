@@ -13,13 +13,13 @@
 
 ### coordinationType
 
-• **coordinationType**: `"argo"` \| `"fl-coordinator"` \| `"bacalhau"`
+• **coordinationType**: ``"argo"`` \| ``"fl-coordinator"`` \| ``"bacalhau"``
 
 #### Defined in
 
-[src/types/DDOTypes.ts:62](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L62)
+[src/types/DDOTypes.ts:62](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L62)
 
----
+___
 
 ### stages
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/types/DDOTypes.ts:63](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/DDOTypes.ts#L63)
+[src/types/DDOTypes.ts:63](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L63)

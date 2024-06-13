@@ -4,8 +4,8 @@
 
 ## Type parameters
 
-| Name     |
-| :------- |
+| Name |
+| :------ |
 | `Entity` |
 
 ## Table of contents
@@ -14,8 +14,8 @@
 
 - [page](MarketplaceResults.md#page)
 - [results](MarketplaceResults.md#results)
-- [total_pages](MarketplaceResults.md#total_pages)
-- [total_results](MarketplaceResults.md#total_results)
+- [total\_pages](MarketplaceResults.md#total_pages)
+- [total\_results](MarketplaceResults.md#total_results)
 
 ## Properties
 
@@ -25,9 +25,9 @@
 
 #### Defined in
 
-[src/types/MetadataTypes.ts:59](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L59)
+[src/types/MetadataTypes.ts:59](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L59)
 
----
+___
 
 ### results
 
@@ -35,24 +35,24 @@
 
 #### Defined in
 
-[src/types/MetadataTypes.ts:60](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L60)
+[src/types/MetadataTypes.ts:60](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L60)
 
----
+___
 
-### total_pages
+### total\_pages
 
-• **total_pages**: `number`
-
-#### Defined in
-
-[src/types/MetadataTypes.ts:61](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L61)
-
----
-
-### total_results
-
-• **total_results**: [`SearchResults`](SearchResults.md)
+• **total\_pages**: `number`
 
 #### Defined in
 
-[src/types/MetadataTypes.ts:62](https://github.com/nevermined-io/sdk-js/blob/e4809d494b1dd12cc268e67289765b571409560d/src/types/MetadataTypes.ts#L62)
+[src/types/MetadataTypes.ts:61](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L61)
+
+___
+
+### total\_results
+
+• **total\_results**: [`SearchResults`](SearchResults.md)
+
+#### Defined in
+
+[src/types/MetadataTypes.ts:62](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L62)
