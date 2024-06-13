@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / Nevermined
+[@nevermined-io/sdk](../code-reference.md) / Nevermined
 
 # Class: Nevermined
 
@@ -6,7 +6,7 @@ Main interface for Nevermined Protocol.
 
 ## Hierarchy
 
-- `Instantiable`
+- [`Instantiable`](Instantiable.md)
 
   ↳ **`Nevermined`**
 
@@ -18,134 +18,106 @@ Main interface for Nevermined Protocol.
 
 ### Properties
 
-- [aaveCredit](Nevermined.md#aavecredit)
 - [accounts](Nevermined.md#accounts)
 - [agreements](Nevermined.md#agreements)
 - [assets](Nevermined.md#assets)
-- [auth](Nevermined.md#auth)
-- [bookmarks](Nevermined.md#bookmarks)
+- [compute](Nevermined.md#compute)
 - [contracts](Nevermined.md#contracts)
-- [faucet](Nevermined.md#faucet)
-- [files](Nevermined.md#files)
-- [node](Nevermined.md#node)
+- [isKeeperConnected](Nevermined.md#iskeeperconnected)
 - [keeper](Nevermined.md#keeper)
-- [marketplace](Nevermined.md#marketplace)
-- [metadata](Nevermined.md#metadata)
-- [nfts](Nevermined.md#nfts)
-- [permissions](Nevermined.md#permissions)
-- [profiles](Nevermined.md#profiles)
+- [nfts1155](Nevermined.md#nfts1155)
+- [nfts721](Nevermined.md#nfts721)
 - [provenance](Nevermined.md#provenance)
-- [provider](Nevermined.md#provider)
-- [token](Nevermined.md#token)
+- [search](Nevermined.md#search)
+- [services](Nevermined.md#services)
 - [utils](Nevermined.md#utils)
-- [versions](Nevermined.md#versions)
+- [DEFAULT\_INITIALIZATION\_OPTIONS](Nevermined.md#default_initialization_options)
 
 ### Accessors
 
 - [artifactsFolder](Nevermined.md#artifactsfolder)
+- [circuitsFolder](Nevermined.md#circuitsfolder)
+- [client](Nevermined.md#client)
 - [config](Nevermined.md#config)
 - [instanceConfig](Nevermined.md#instanceconfig)
 - [instantiableConfig](Nevermined.md#instantiableconfig)
 - [logger](Nevermined.md#logger)
 - [nevermined](Nevermined.md#nevermined)
-- [web3](Nevermined.md#web3)
+- [publicClient](Nevermined.md#publicclient)
+- [walletClient](Nevermined.md#walletclient)
 
 ### Methods
 
-- [addresses](Nevermined.md#addresses)
-- [checkExists](Nevermined.md#checkexists)
-- [findSigner](Nevermined.md#findsigner)
 - [setInstanceConfig](Nevermined.md#setinstanceconfig)
-- [addressesStatic](Nevermined.md#addressesstatic)
-- [findSignerStatic](Nevermined.md#findsignerstatic)
 - [getInstance](Nevermined.md#getinstance)
+- [getSearchOnlyInstance](Nevermined.md#getsearchonlyinstance)
 - [setInstanceConfig](Nevermined.md#setinstanceconfig-1)
 
 ## Constructors
 
 ### constructor
 
-• `Private` **new Nevermined**()
+• **new Nevermined**(): [`Nevermined`](Nevermined.md)
+
+#### Returns
+
+[`Nevermined`](Nevermined.md)
 
 #### Overrides
 
-Instantiable.constructor
+[Instantiable](Instantiable.md).[constructor](Instantiable.md#constructor)
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:213](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L213)
+[src/nevermined/Nevermined.ts:263](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L263)
 
 ## Properties
 
-### aaveCredit
-
-• **aaveCredit**: `AaveCredit`
-
-AaveCredit allows taking loans from Aave protocol using NFT tokens as collateral.
-
-#### Defined in
-
-[src/nevermined/Nevermined.ts:196](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L196)
-
-___
-
 ### accounts
 
-• **accounts**: [`Accounts`](Accounts.md)
+• **accounts**: [`AccountsApi`](AccountsApi.md)
 
 Accounts submodule
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:156](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L156)
+[src/nevermined/Nevermined.ts:206](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L206)
 
 ___
 
 ### agreements
 
-• **agreements**: `Agreements`
+• **agreements**: [`AgreementsApi`](AgreementsApi.md)
 
 Agreements submodule
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:181](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L181)
+[src/nevermined/Nevermined.ts:211](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L211)
 
 ___
 
 ### assets
 
-• **assets**: `Assets`
+• **assets**: [`AssetsApi`](AssetsApi.md)
 
-Assets submodule
+Assets API
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:166](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L166)
+[src/nevermined/Nevermined.ts:216](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L216)
 
 ___
 
-### auth
+### compute
 
-• **auth**: `Auth`
+• **compute**: [`ComputeApi`](ComputeApi.md)
 
-Auth submodule
-
-#### Defined in
-
-[src/nevermined/Nevermined.ts:161](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L161)
-
-___
-
-### bookmarks
-
-• **bookmarks**: `Bookmarks`
-
-Bookmarks instance
+Compute API
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:141](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L141)
+[src/nevermined/Nevermined.ts:221](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L221)
 
 ___
 
@@ -153,54 +125,35 @@ ___
 
 • **contracts**: `Object`
 
-Nevermind very own contract reflector.
+Nevermined very own contract reflector.
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `loadErc20` | (`address`: `string`) => `Promise`<`default`\> |
-| `loadNft721` | (`address`: `string`) => `Promise`<[`Nft721`](Nft721.md)\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `loadErc20` | (`address`: `string`) => `Promise`\<[`CustomToken`](CustomToken.md)\> | - |
+| `loadNft1155` | (`address`: `string`) => `Promise`\<[`NFT1155Api`](NFT1155Api.md)\> | - |
+| `loadNft1155Api` | (`api`: [`NFT1155Api`](NFT1155Api.md)) => `Promise`\<[`NFT1155Api`](NFT1155Api.md)\> | - |
+| `loadNft1155Contract` | (`address`: `string`) => `Promise`\<[`Nft1155Contract`](Nft1155Contract.md)\> | - |
+| `loadNft721` | (`address`: `string`) => `Promise`\<[`NFT721Api`](NFT721Api.md)\> | - |
+| `loadNft721Api` | (`api`: [`NFT721Api`](NFT721Api.md)) => `Promise`\<[`NFT721Api`](NFT721Api.md)\> | - |
+| `loadNft721Contract` | (`address`: `string`) => `Promise`\<[`Nft721Contract`](Nft721Contract.md)\> | - |
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:97](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L97)
+[src/nevermined/Nevermined.ts:121](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L121)
 
 ___
 
-### faucet
+### isKeeperConnected
 
-• **faucet**: `Faucet`
+• **isKeeperConnected**: `boolean`
 
-Metadata instance.
-
-#### Defined in
-
-[src/nevermined/Nevermined.ts:151](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L151)
-
-___
-
-### files
-
-• **files**: `Files`
-
-Files submodule
+If keeper is connected
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:176](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L176)
-
-___
-
-### Node
-
-• **Node**: `Node`
-
-Node instance.
-
-#### Defined in
-
-[src/nevermined/Nevermined.ts:121](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L121)
+[src/nevermined/Nevermined.ts:261](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L261)
 
 ___
 
@@ -212,137 +165,99 @@ Keeper instance.
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:92](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L92)
+[src/nevermined/Nevermined.ts:201](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L201)
 
 ___
 
-### marketplace
+### nfts1155
 
-• **marketplace**: `MarketplaceApi`
+• **nfts1155**: [`NFT1155Api`](NFT1155Api.md)
 
-Marketplace instance.
+ERC-1155 Nfts API
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:131](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L131)
+[src/nevermined/Nevermined.ts:226](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L226)
 
 ___
 
-### metadata
+### nfts721
 
-• **metadata**: `Metadata`
+• **nfts721**: [`NFT721Api`](NFT721Api.md)
 
-Metadata instance.
-
-#### Defined in
-
-[src/nevermined/Nevermined.ts:126](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L126)
-
-___
-
-### nfts
-
-• **nfts**: [`Nfts`](Nfts.md)
-
-Nfts submodule
+ERC-721 Nfts API
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:171](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L171)
-
-___
-
-### permissions
-
-• **permissions**: `Permissions`
-
-Permissions instance
-
-#### Defined in
-
-[src/nevermined/Nevermined.ts:146](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L146)
-
-___
-
-### profiles
-
-• **profiles**: `Profiles`
-
-Profiles instance
-
-#### Defined in
-
-[src/nevermined/Nevermined.ts:136](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L136)
+[src/nevermined/Nevermined.ts:231](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L231)
 
 ___
 
 ### provenance
 
-• **provenance**: `Provenance`
+• **provenance**: [`ProvenanceApi`](ProvenanceApi.md)
 
 Provenance submodule
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:206](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L206)
+[src/nevermined/Nevermined.ts:236](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L236)
 
 ___
 
-### provider
+### search
 
-• **provider**: `Provider`
+• **search**: [`SearchApi`](SearchApi.md)
 
-Nevermined probiders submodule
+SearchApi API
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:186](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L186)
+[src/nevermined/Nevermined.ts:241](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L241)
 
 ___
 
-### token
+### services
 
-• **token**: `Token`
+• **services**: [`ServicesApi`](ServicesApi.md)
 
-Nevermined tokens submodule
+SearchApi API
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:191](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L191)
+[src/nevermined/Nevermined.ts:246](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L246)
 
 ___
 
 ### utils
 
-• **utils**: `Utils`
+• **utils**: [`UtilsApi`](UtilsApi.md)
 
 Utils submodule
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:211](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L211)
+[src/nevermined/Nevermined.ts:251](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L251)
 
 ___
 
-### versions
+### DEFAULT\_INITIALIZATION\_OPTIONS
 
-• **versions**: `Versions`
-
-Versions submodule
+▪ `Static` **DEFAULT\_INITIALIZATION\_OPTIONS**: [`NeverminedInitializationOptions`](../interfaces/NeverminedInitializationOptions.md)
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:201](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L201)
+[src/nevermined/Nevermined.ts:24](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L24)
 
 ## Accessors
 
 ### artifactsFolder
 
-• `Protected` `get` **artifactsFolder**(): `string`
+• `get` **artifactsFolder**(): `undefined` \| `string`
 
 #### Returns
 
-`string`
+`undefined` \| `string`
 
 #### Inherited from
 
@@ -350,17 +265,53 @@ Instantiable.artifactsFolder
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:96](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L96)
+[src/Instantiable.abstract.ts:132](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L132)
+
+___
+
+### circuitsFolder
+
+• `get` **circuitsFolder**(): `undefined` \| `string`
+
+#### Returns
+
+`undefined` \| `string`
+
+#### Inherited from
+
+Instantiable.circuitsFolder
+
+#### Defined in
+
+[src/Instantiable.abstract.ts:136](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L136)
+
+___
+
+### client
+
+• `get` **client**(): [`Web3Clients`](../interfaces/Web3Clients.md)
+
+#### Returns
+
+[`Web3Clients`](../interfaces/Web3Clients.md)
+
+#### Inherited from
+
+Instantiable.client
+
+#### Defined in
+
+[src/Instantiable.abstract.ts:84](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L84)
 
 ___
 
 ### config
 
-• `Protected` `get` **config**(): [`Config`](Config.md)
+• `get` **config**(): [`NeverminedOptions`](NeverminedOptions.md)
 
 #### Returns
 
-[`Config`](Config.md)
+[`NeverminedOptions`](NeverminedOptions.md)
 
 #### Inherited from
 
@@ -368,17 +319,17 @@ Instantiable.config
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:80](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L80)
+[src/Instantiable.abstract.ts:115](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L115)
 
 ___
 
 ### instanceConfig
 
-• `Protected` `get` **instanceConfig**(): `InstantiableConfig`
+• `get` **instanceConfig**(): [`InstantiableConfig`](../interfaces/InstantiableConfig.md)
 
 #### Returns
 
-`InstantiableConfig`
+[`InstantiableConfig`](../interfaces/InstantiableConfig.md)
 
 #### Inherited from
 
@@ -386,17 +337,17 @@ Instantiable.instanceConfig
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:100](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L100)
+[src/Instantiable.abstract.ts:140](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L140)
 
 ___
 
 ### instantiableConfig
 
-• `Protected` `get` **instantiableConfig**(): `InstantiableConfig`
+• `get` **instantiableConfig**(): `undefined` \| [`InstantiableConfig`](../interfaces/InstantiableConfig.md)
 
 #### Returns
 
-`InstantiableConfig`
+`undefined` \| [`InstantiableConfig`](../interfaces/InstantiableConfig.md)
 
 #### Inherited from
 
@@ -404,17 +355,17 @@ Instantiable.instantiableConfig
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:73](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L73)
+[src/Instantiable.abstract.ts:108](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L108)
 
 ___
 
 ### logger
 
-• `Protected` `get` **logger**(): [`Logger`](utils.Logger.md)
+• `get` **logger**(): `Logger`
 
 #### Returns
 
-[`Logger`](utils.Logger.md)
+`Logger`
 
 #### Inherited from
 
@@ -422,13 +373,13 @@ Instantiable.logger
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:87](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L87)
+[src/Instantiable.abstract.ts:123](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L123)
 
 ___
 
 ### nevermined
 
-• `Protected` `get` **nevermined**(): [`Nevermined`](Nevermined.md)
+• `get` **nevermined**(): [`Nevermined`](Nevermined.md)
 
 #### Returns
 
@@ -440,107 +391,152 @@ Instantiable.nevermined
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:33](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L33)
+[src/Instantiable.abstract.ts:76](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L76)
 
 ___
 
-### web3
+### publicClient
 
-• `Protected` `get` **web3**(): `JsonRpcProvider`
+• `get` **publicClient**(): `Object`
 
 #### Returns
 
-`JsonRpcProvider`
+`Object`
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `account` | `undefined` | The Account of the Client. |
+| `batch?` | \{ `multicall?`: `boolean` \| \{ `batchSize?`: `number` ; `wait?`: `number`  }  } | Flags for batch settings. |
+| `batch.multicall?` | `boolean` \| \{ `batchSize?`: `number` ; `wait?`: `number`  } | Toggle to enable `eth_call` multicall aggregation. |
+| `cacheTime` | `number` | Time (in ms) that cached data will remain in memory. |
+| `call` | (`parameters`: `CallParameters`\<`undefined` \| `Chain`\>) => `Promise`\<`CallReturnType`\> | - |
+| `ccipRead?` | ``false`` \| \{ `request?`: (`parameters`: `CcipRequestParameters`) => `Promise`\<\`0x$\{string}\`\>  } | [CCIP Read](https://eips.ethereum.org/EIPS/eip-3668) configuration. |
+| `chain` | `undefined` \| `Chain` | Chain for the client. |
+| `createBlockFilter` | () => `Promise`\<\{ `id`: \`0x$\{string}\` ; `request`: `EIP1193RequestFn`\<readonly [\{ `Method`: ``"eth_getFilterChanges"`` ; `Parameters`: [filterId: \`0x$\{string}\`] ; `ReturnType`: \`0x$\{string}\`[] \| `RpcLog`[]  }, \{ `Method`: ``"eth_getFilterLogs"`` ; `Parameters`: [filterId: \`0x$\{string}\`] ; `ReturnType`: `RpcLog`[]  }, \{ `Method`: ``"eth_uninstallFilter"`` ; `Parameters`: [filterId: \`0x$\{string}\`] ; `ReturnType`: `boolean`  }]\> ; `type`: ``"block"``  }\> | - |
+| `createContractEventFilter` | \<TAbi, TEventName, TArgs, TStrict, TFromBlock, TToBlock\>(`args`: `CreateContractEventFilterParameters`\<`TAbi`, `TEventName`, `TArgs`, `TStrict`, `TFromBlock`, `TToBlock`\>) => `Promise`\<`CreateContractEventFilterReturnType`\<`TAbi`, `TEventName`, `TArgs`, `TStrict`, `TFromBlock`, `TToBlock`\>\> | - |
+| `createEventFilter` | \<TAbiEvent, TAbiEvents, TStrict, TFromBlock, TToBlock, _EventName, _Args\>(`args?`: `CreateEventFilterParameters`\<`TAbiEvent`, `TAbiEvents`, `TStrict`, `TFromBlock`, `TToBlock`, `_EventName`, `_Args`\>) => `Promise`\<\{ [K in string \| number \| symbol]: Filter\<"event", TAbiEvents, \_EventName, \_Args, TStrict, TFromBlock, TToBlock\>[K] }\> | - |
+| `createPendingTransactionFilter` | () => `Promise`\<\{ `id`: \`0x$\{string}\` ; `request`: `EIP1193RequestFn`\<readonly [\{ `Method`: ``"eth_getFilterChanges"`` ; `Parameters`: [filterId: \`0x$\{string}\`] ; `ReturnType`: \`0x$\{string}\`[] \| `RpcLog`[]  }, \{ `Method`: ``"eth_getFilterLogs"`` ; `Parameters`: [filterId: \`0x$\{string}\`] ; `ReturnType`: `RpcLog`[]  }, \{ `Method`: ``"eth_uninstallFilter"`` ; `Parameters`: [filterId: \`0x$\{string}\`] ; `ReturnType`: `boolean`  }]\> ; `type`: ``"transaction"``  }\> | - |
+| `estimateContractGas` | \<TChain, abi, functionName, args\>(`args`: `EstimateContractGasParameters`\<`abi`, `functionName`, `args`, `TChain`\>) => `Promise`\<`bigint`\> | - |
+| `estimateFeesPerGas` | \<TChainOverride, TType\>(`args?`: `EstimateFeesPerGasParameters`\<`undefined` \| `Chain`, `TChainOverride`, `TType`\>) => `Promise`\<`EstimateFeesPerGasReturnType`\> | - |
+| `estimateGas` | (`args`: `EstimateGasParameters`\<`undefined` \| `Chain`\>) => `Promise`\<`bigint`\> | - |
+| `estimateMaxPriorityFeePerGas` | \<TChainOverride\>(`args?`: \{ `chain`: ``null`` \| `TChainOverride`  }) => `Promise`\<`bigint`\> | - |
+| `extend` | \<client\>(`fn`: (`client`: `Client`\<`Transport`, `undefined` \| `Chain`, `undefined`, `PublicRpcSchema`, `PublicActions`\<`Transport`, `undefined` \| `Chain`\>\>) => `client`) => `Client`\<`Transport`, `undefined` \| `Chain`, `undefined`, `PublicRpcSchema`, \{ [K in string \| number \| symbol]: client[K] } & `PublicActions`\<`Transport`, `undefined` \| `Chain`\>\> | - |
+| `getBalance` | (`args`: `GetBalanceParameters`) => `Promise`\<`bigint`\> | - |
+| `getBlobBaseFee` | () => `Promise`\<`bigint`\> | - |
+| `getBlock` | \<TIncludeTransactions, TBlockTag\>(`args?`: `GetBlockParameters`\<`TIncludeTransactions`, `TBlockTag`\>) => `Promise`\<\{ `baseFeePerGas`: ``null`` \| `bigint` ; `blobGasUsed`: `bigint` ; `difficulty`: `bigint` ; `excessBlobGas`: `bigint` ; `extraData`: \`0x$\{string}\` ; `gasLimit`: `bigint` ; `gasUsed`: `bigint` ; `hash`: `TBlockTag` extends ``"pending"`` ? ``null`` : \`0x$\{string}\` ; `logsBloom`: `TBlockTag` extends ``"pending"`` ? ``null`` : \`0x$\{string}\` ; `miner`: \`0x$\{string}\` ; `mixHash`: \`0x$\{string}\` ; `nonce`: `TBlockTag` extends ``"pending"`` ? ``null`` : \`0x$\{string}\` ; `number`: `TBlockTag` extends ``"pending"`` ? ``null`` : `bigint` ; `parentHash`: \`0x$\{string}\` ; `receiptsRoot`: \`0x$\{string}\` ; `sealFields`: \`0x$\{string}\`[] ; `sha3Uncles`: \`0x$\{string}\` ; `size`: `bigint` ; `stateRoot`: \`0x$\{string}\` ; `timestamp`: `bigint` ; `totalDifficulty`: ``null`` \| `bigint` ; `transactions`: `TIncludeTransactions` extends ``true`` ? (\{ `accessList?`: `undefined` ; `blobVersionedHashes?`: `undefined` ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId?`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice`: `bigint` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas?`: `undefined` ; `maxFeePerGas?`: `undefined` ; `maxPriorityFeePerGas?`: `undefined` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"legacy"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity?`: `undefined`  } \| \{ `accessList`: `AccessList` ; `blobVersionedHashes?`: `undefined` ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice`: `bigint` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas?`: `undefined` ; `maxFeePerGas?`: `undefined` ; `maxPriorityFeePerGas?`: `undefined` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"eip2930"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity`: `number`  } \| \{ `accessList`: `AccessList` ; `blobVersionedHashes?`: `undefined` ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice?`: `undefined` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas?`: `undefined` ; `maxFeePerGas`: `bigint` ; `maxPriorityFeePerGas`: `bigint` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"eip1559"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity`: `number`  } \| \{ `accessList`: `AccessList` ; `blobVersionedHashes`: \`0x$\{string}\`[] ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice?`: `undefined` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas`: `bigint` ; `maxFeePerGas`: `bigint` ; `maxPriorityFeePerGas`: `bigint` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"eip4844"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity`: `number`  })[] : \`0x$\{string}\`[] ; `transactionsRoot`: \`0x$\{string}\` ; `uncles`: \`0x$\{string}\`[] ; `withdrawals?`: `Withdrawal`[] ; `withdrawalsRoot?`: \`0x$\{string}\`  }\> | - |
+| `getBlockNumber` | (`args?`: `GetBlockNumberParameters`) => `Promise`\<`bigint`\> | - |
+| `getBlockTransactionCount` | (`args?`: `GetBlockTransactionCountParameters`) => `Promise`\<`number`\> | - |
+| `getBytecode` | (`args`: `GetBytecodeParameters`) => `Promise`\<`GetBytecodeReturnType`\> | - |
+| `getChainId` | () => `Promise`\<`number`\> | - |
+| `getContractEvents` | \<abi, eventName, strict, fromBlock, toBlock\>(`args`: `GetContractEventsParameters`\<`abi`, `eventName`, `strict`, `fromBlock`, `toBlock`\>) => `Promise`\<`GetContractEventsReturnType`\<`abi`, `eventName`, `strict`, `fromBlock`, `toBlock`\>\> | - |
+| `getEnsAddress` | (`args`: \{ `blockNumber?`: `bigint` ; `blockTag?`: `BlockTag` ; `coinType?`: `number` ; `gatewayUrls?`: `string`[] ; `name`: `string` ; `strict?`: `boolean` ; `universalResolverAddress?`: \`0x$\{string}\`  }) => `Promise`\<`GetEnsAddressReturnType`\> | - |
+| `getEnsAvatar` | (`args`: \{ `assetGatewayUrls?`: `AssetGatewayUrls` ; `blockNumber?`: `bigint` ; `blockTag?`: `BlockTag` ; `gatewayUrls?`: `string`[] ; `name`: `string` ; `strict?`: `boolean` ; `universalResolverAddress?`: \`0x$\{string}\`  }) => `Promise`\<`GetEnsAvatarReturnType`\> | - |
+| `getEnsName` | (`args`: \{ `address`: \`0x$\{string}\` ; `blockNumber?`: `bigint` ; `blockTag?`: `BlockTag` ; `gatewayUrls?`: `string`[] ; `strict?`: `boolean` ; `universalResolverAddress?`: \`0x$\{string}\`  }) => `Promise`\<`GetEnsNameReturnType`\> | - |
+| `getEnsResolver` | (`args`: \{ `blockNumber?`: `bigint` ; `blockTag?`: `BlockTag` ; `name`: `string` ; `universalResolverAddress?`: \`0x$\{string}\`  }) => `Promise`\<\`0x$\{string}\`\> | - |
+| `getEnsText` | (`args`: \{ `blockNumber?`: `bigint` ; `blockTag?`: `BlockTag` ; `gatewayUrls?`: `string`[] ; `key`: `string` ; `name`: `string` ; `strict?`: `boolean` ; `universalResolverAddress?`: \`0x$\{string}\`  }) => `Promise`\<`GetEnsTextReturnType`\> | - |
+| `getFeeHistory` | (`args`: `GetFeeHistoryParameters`) => `Promise`\<`GetFeeHistoryReturnType`\> | - |
+| `getFilterChanges` | \<TFilterType, TAbi, TEventName, TStrict, TFromBlock, TToBlock\>(`args`: `GetFilterChangesParameters`\<`TFilterType`, `TAbi`, `TEventName`, `TStrict`, `TFromBlock`, `TToBlock`\>) => `Promise`\<`GetFilterChangesReturnType`\<`TFilterType`, `TAbi`, `TEventName`, `TStrict`, `TFromBlock`, `TToBlock`\>\> | - |
+| `getFilterLogs` | \<TAbi, TEventName, TStrict, TFromBlock, TToBlock\>(`args`: `GetFilterLogsParameters`\<`TAbi`, `TEventName`, `TStrict`, `TFromBlock`, `TToBlock`\>) => `Promise`\<`GetFilterLogsReturnType`\<`TAbi`, `TEventName`, `TStrict`, `TFromBlock`, `TToBlock`\>\> | - |
+| `getGasPrice` | () => `Promise`\<`bigint`\> | - |
+| `getLogs` | \<TAbiEvent, TAbiEvents, TStrict, TFromBlock, TToBlock\>(`args?`: `GetLogsParameters`\<`TAbiEvent`, `TAbiEvents`, `TStrict`, `TFromBlock`, `TToBlock`\>) => `Promise`\<`GetLogsReturnType`\<`TAbiEvent`, `TAbiEvents`, `TStrict`, `TFromBlock`, `TToBlock`\>\> | - |
+| `getProof` | (`args`: `GetProofParameters`) => `Promise`\<`GetProofReturnType`\> | - |
+| `getStorageAt` | (`args`: `GetStorageAtParameters`) => `Promise`\<`GetStorageAtReturnType`\> | - |
+| `getTransaction` | \<TBlockTag\>(`args`: `GetTransactionParameters`\<`TBlockTag`\>) => `Promise`\<\{ `accessList?`: `undefined` ; `blobVersionedHashes?`: `undefined` ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId?`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice`: `bigint` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas?`: `undefined` ; `maxFeePerGas?`: `undefined` ; `maxPriorityFeePerGas?`: `undefined` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"legacy"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity?`: `undefined`  } \| \{ `accessList`: `AccessList` ; `blobVersionedHashes?`: `undefined` ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice`: `bigint` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas?`: `undefined` ; `maxFeePerGas?`: `undefined` ; `maxPriorityFeePerGas?`: `undefined` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"eip2930"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity`: `number`  } \| \{ `accessList`: `AccessList` ; `blobVersionedHashes?`: `undefined` ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice?`: `undefined` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas?`: `undefined` ; `maxFeePerGas`: `bigint` ; `maxPriorityFeePerGas`: `bigint` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"eip1559"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity`: `number`  } \| \{ `accessList`: `AccessList` ; `blobVersionedHashes`: \`0x$\{string}\`[] ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice?`: `undefined` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas`: `bigint` ; `maxFeePerGas`: `bigint` ; `maxPriorityFeePerGas`: `bigint` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"eip4844"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity`: `number`  }\> | - |
+| `getTransactionConfirmations` | (`args`: `GetTransactionConfirmationsParameters`\<`undefined` \| `Chain`\>) => `Promise`\<`bigint`\> | - |
+| `getTransactionCount` | (`args`: `GetTransactionCountParameters`) => `Promise`\<`number`\> | - |
+| `getTransactionReceipt` | (`args`: `GetTransactionReceiptParameters`) => `Promise`\<`TransactionReceipt`\> | - |
+| `key` | `string` | A key for the client. |
+| `multicall` | \<contracts, allowFailure\>(`args`: `MulticallParameters`\<`contracts`, `allowFailure`\>) => `Promise`\<`MulticallReturnType`\<`contracts`, `allowFailure`\>\> | - |
+| `name` | `string` | A name for the client. |
+| `pollingInterval` | `number` | Frequency (in ms) for polling enabled actions & events. Defaults to 4_000 milliseconds. |
+| `prepareTransactionRequest` | \<TRequest, TChainOverride, TAccountOverride\>(`args`: `PrepareTransactionRequestParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `TChainOverride`, `TAccountOverride`, `TRequest`\>) => `Promise`\<\{ [K in string \| number \| symbol]: (UnionRequiredBy\<Extract\<UnionOmit\<(...), (...)\> & ((...) extends (...) ? (...) : (...)) & ((...) extends (...) ? (...) : (...)), IsNever\<(...)\> extends true ? unknown : ExactPartial\<(...)\>\> & Object, ParameterTypeToParameters\<TRequest["parameters"] extends readonly PrepareTransactionRequestParameterType[] ? any[any][number] : "gas" \| "nonce" \| "blobVersionedHashes" \| "chainId" \| "type" \| "fees"\>\> & (unknown extends TRequest["kzg"] ? Object : Pick\<TRequest, "kzg"\>))[K] }\> | - |
+| `readContract` | \<abi, functionName, args\>(`args`: `ReadContractParameters`\<`abi`, `functionName`, `args`\>) => `Promise`\<`ReadContractReturnType`\<`abi`, `functionName`, `args`\>\> | - |
+| `request` | `EIP1193RequestFn`\<`PublicRpcSchema`\> | Request function wrapped with friendly error handling |
+| `sendRawTransaction` | (`args`: `SendRawTransactionParameters`) => `Promise`\<\`0x$\{string}\`\> | - |
+| `simulateContract` | \<abi, functionName, args, chainOverride, accountOverride\>(`args`: `SimulateContractParameters`\<`abi`, `functionName`, `args`, `undefined` \| `Chain`, `chainOverride`, `accountOverride`\>) => `Promise`\<`SimulateContractReturnType`\<`abi`, `functionName`, `args`, `undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`, `accountOverride`\>\> | - |
+| `transport` | `TransportConfig`\<`string`, `EIP1193RequestFn`\> & `Record`\<`string`, `any`\> | The RPC transport |
+| `type` | `string` | The type of client. |
+| `uid` | `string` | A unique ID for the client. |
+| `uninstallFilter` | (`args`: `UninstallFilterParameters`) => `Promise`\<`boolean`\> | - |
+| `verifyMessage` | (`args`: `VerifyMessageParameters`) => `Promise`\<`boolean`\> | - |
+| `verifyTypedData` | (`args`: `VerifyTypedDataParameters`) => `Promise`\<`boolean`\> | - |
+| `waitForTransactionReceipt` | (`args`: `WaitForTransactionReceiptParameters`\<`undefined` \| `Chain`\>) => `Promise`\<`TransactionReceipt`\> | - |
+| `watchBlockNumber` | (`args`: `WatchBlockNumberParameters`) => `WatchBlockNumberReturnType` | - |
+| `watchBlocks` | \<TIncludeTransactions, TBlockTag\>(`args`: `WatchBlocksParameters`\<`Transport`, `undefined` \| `Chain`, `TIncludeTransactions`, `TBlockTag`\>) => `WatchBlocksReturnType` | - |
+| `watchContractEvent` | \<TAbi, TEventName, TStrict\>(`args`: `WatchContractEventParameters`\<`TAbi`, `TEventName`, `TStrict`, `Transport`\>) => `WatchContractEventReturnType` | - |
+| `watchEvent` | \<TAbiEvent, TAbiEvents, TStrict\>(`args`: `WatchEventParameters`\<`TAbiEvent`, `TAbiEvents`, `TStrict`, `Transport`\>) => `WatchEventReturnType` | - |
+| `watchPendingTransactions` | (`args`: `WatchPendingTransactionsParameters`\<`Transport`\>) => `WatchPendingTransactionsReturnType` | - |
 
 #### Inherited from
 
-Instantiable.web3
+Instantiable.publicClient
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:63](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L63)
+[src/Instantiable.abstract.ts:92](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L92)
+
+___
+
+### walletClient
+
+• `get` **walletClient**(): `Object`
+
+#### Returns
+
+`Object`
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `account` | `undefined` \| `Account` | The Account of the Client. |
+| `addChain` | (`args`: `AddChainParameters`) => `Promise`\<`void`\> | - |
+| `batch?` | \{ `multicall?`: `boolean` \| \{ `batchSize?`: `number` ; `wait?`: `number`  }  } | Flags for batch settings. |
+| `batch.multicall?` | `boolean` \| \{ `batchSize?`: `number` ; `wait?`: `number`  } | Toggle to enable `eth_call` multicall aggregation. |
+| `cacheTime` | `number` | Time (in ms) that cached data will remain in memory. |
+| `ccipRead?` | ``false`` \| \{ `request?`: (`parameters`: `CcipRequestParameters`) => `Promise`\<\`0x$\{string}\`\>  } | [CCIP Read](https://eips.ethereum.org/EIPS/eip-3668) configuration. |
+| `chain` | `undefined` \| `Chain` | Chain for the client. |
+| `deployContract` | \<abi, chainOverride\>(`args`: `DeployContractParameters`\<`abi`, `undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`\>) => `Promise`\<\`0x$\{string}\`\> | - |
+| `extend` | \<client\>(`fn`: (`client`: `Client`\<`Transport`, `undefined` \| `Chain`, `undefined` \| `Account`, `WalletRpcSchema`, `WalletActions`\<`undefined` \| `Chain`, `undefined` \| `Account`\>\>) => `client`) => `Client`\<`Transport`, `undefined` \| `Chain`, `undefined` \| `Account`, `WalletRpcSchema`, \{ [K in string \| number \| symbol]: client[K] } & `WalletActions`\<`undefined` \| `Chain`, `undefined` \| `Account`\>\> | - |
+| `getAddresses` | () => `Promise`\<`GetAddressesReturnType`\> | - |
+| `getChainId` | () => `Promise`\<`number`\> | - |
+| `getPermissions` | () => `Promise`\<`GetPermissionsReturnType`\> | - |
+| `key` | `string` | A key for the client. |
+| `name` | `string` | A name for the client. |
+| `pollingInterval` | `number` | Frequency (in ms) for polling enabled actions & events. Defaults to 4_000 milliseconds. |
+| `prepareTransactionRequest` | \<TRequest, TChainOverride, TAccountOverride\>(`args`: `PrepareTransactionRequestParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `TChainOverride`, `TAccountOverride`, `TRequest`\>) => `Promise`\<\{ [K in string \| number \| symbol]: (UnionRequiredBy\<Extract\<UnionOmit\<(...), (...)\> & ((...) extends (...) ? (...) : (...)) & ((...) extends (...) ? (...) : (...)), IsNever\<(...)\> extends true ? unknown : ExactPartial\<(...)\>\> & Object, ParameterTypeToParameters\<TRequest["parameters"] extends readonly PrepareTransactionRequestParameterType[] ? any[any][number] : "gas" \| "nonce" \| "blobVersionedHashes" \| "chainId" \| "type" \| "fees"\>\> & (unknown extends TRequest["kzg"] ? Object : Pick\<TRequest, "kzg"\>))[K] }\> | - |
+| `request` | `EIP1193RequestFn`\<`WalletRpcSchema`\> | Request function wrapped with friendly error handling |
+| `requestAddresses` | () => `Promise`\<`RequestAddressesReturnType`\> | - |
+| `requestPermissions` | (`args`: \{ `eth_accounts`: `Record`\<`string`, `any`\>  }) => `Promise`\<`RequestPermissionsReturnType`\> | - |
+| `sendRawTransaction` | (`args`: `SendRawTransactionParameters`) => `Promise`\<\`0x$\{string}\`\> | - |
+| `sendTransaction` | \<TRequest, TChainOverride\>(`args`: `SendTransactionParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `TChainOverride`, `TRequest`\>) => `Promise`\<\`0x$\{string}\`\> | - |
+| `signMessage` | (`args`: `SignMessageParameters`\<`undefined` \| `Account`\>) => `Promise`\<\`0x$\{string}\`\> | - |
+| `signTransaction` | \<TChainOverride\>(`args`: `SignTransactionParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `TChainOverride`\>) => `Promise`\<\`0x02$\{string}\` \| \`0x01$\{string}\` \| \`0x03$\{string}\` \| `TransactionSerializedLegacy`\> | - |
+| `signTypedData` | \<TTypedData, TPrimaryType\>(`args`: `SignTypedDataParameters`\<`TTypedData`, `TPrimaryType`, `undefined` \| `Account`\>) => `Promise`\<\`0x$\{string}\`\> | - |
+| `switchChain` | (`args`: `SwitchChainParameters`) => `Promise`\<`void`\> | - |
+| `transport` | `TransportConfig`\<`string`, `EIP1193RequestFn`\> & `Record`\<`string`, `any`\> | The RPC transport |
+| `type` | `string` | The type of client. |
+| `uid` | `string` | A unique ID for the client. |
+| `watchAsset` | (`args`: `WatchAssetParams`) => `Promise`\<`boolean`\> | - |
+| `writeContract` | \<abi, functionName, args, TChainOverride\>(`args`: `WriteContractParameters`\<`abi`, `functionName`, `args`, `undefined` \| `Chain`, `undefined` \| `Account`, `TChainOverride`\>) => `Promise`\<\`0x$\{string}\`\> | - |
+
+#### Inherited from
+
+Instantiable.walletClient
+
+#### Defined in
+
+[src/Instantiable.abstract.ts:100](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L100)
 
 ## Methods
 
-### addresses
-
-▸ **addresses**(): `Promise`<`string`[]\>
-
-#### Returns
-
-`Promise`<`string`[]\>
-
-#### Inherited from
-
-Instantiable.addresses
-
-#### Defined in
-
-[src/Instantiable.abstract.ts:129](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L129)
-
-___
-
-### checkExists
-
-▸ `Protected` **checkExists**(`address`): `Promise`<`boolean`\>
-
-Returns true of contract exists else it throws.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `address` | `string` |
-
-#### Returns
-
-`Promise`<`boolean`\>
-
-true if the contract exists.
-
-#### Inherited from
-
-Instantiable.checkExists
-
-#### Defined in
-
-[src/Instantiable.abstract.ts:44](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L44)
-
-___
-
-### findSigner
-
-▸ **findSigner**(`from`): `Promise`<`Signer`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `from` | `string` |
-
-#### Returns
-
-`Promise`<`Signer`\>
-
-#### Inherited from
-
-Instantiable.findSigner
-
-#### Defined in
-
-[src/Instantiable.abstract.ts:105](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L105)
-
-___
-
 ### setInstanceConfig
 
-▸ `Protected` **setInstanceConfig**(`config`): `void`
+▸ **setInstanceConfig**(`config`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `config` | `InstantiableConfig` |
+| `config` | [`InstantiableConfig`](../interfaces/InstantiableConfig.md) |
 
 #### Returns
 
@@ -548,118 +544,88 @@ ___
 
 #### Inherited from
 
-Instantiable.setInstanceConfig
+[Instantiable](Instantiable.md).[setInstanceConfig](Instantiable.md#setinstanceconfig)
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:171](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L171)
-
-___
-
-### addressesStatic
-
-▸ `Static` **addressesStatic**(`config`, `web3`): `Promise`<`string`[]\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `config` | [`Config`](Config.md) |
-| `web3` | `JsonRpcProvider` |
-
-#### Returns
-
-`Promise`<`string`[]\>
-
-#### Inherited from
-
-Instantiable.addressesStatic
-
-#### Defined in
-
-[src/Instantiable.abstract.ts:142](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L142)
-
-___
-
-### findSignerStatic
-
-▸ `Static` **findSignerStatic**(`config`, `web3`, `from`): `Promise`<`Signer`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `config` | [`Config`](Config.md) |
-| `web3` | `JsonRpcProvider` |
-| `from` | `string` |
-
-#### Returns
-
-`Promise`<`Signer`\>
-
-#### Inherited from
-
-Instantiable.findSignerStatic
-
-#### Defined in
-
-[src/Instantiable.abstract.ts:115](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L115)
+[src/Instantiable.abstract.ts:158](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L158)
 
 ___
 
 ### getInstance
 
-▸ `Static` **getInstance**(`config`): `Promise`<[`Nevermined`](Nevermined.md)\>
+▸ **getInstance**(`config`, `initOptions?`): `Promise`\<[`Nevermined`](Nevermined.md)\>
 
 Returns the instance of Nevermined.
-
-**`Example`**
-
-```ts
-import { Nevermined, Config } from '@nevermined-io/nevermied-sdk-js'
-
-const config: Config = {...}
-const nevermined = await Nevermined.getInstance(config)
-```
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `config` | [`Config`](Config.md) | Nevermined instance configuration. |
+| `config` | [`NeverminedOptions`](NeverminedOptions.md) | Nevermined instance configuration. |
+| `initOptions` | [`NeverminedInitializationOptions`](../interfaces/NeverminedInitializationOptions.md) | - |
 
 #### Returns
 
-`Promise`<[`Nevermined`](Nevermined.md)\>
+`Promise`\<[`Nevermined`](Nevermined.md)\>
 
 A [Nevermined](Nevermined.md) instance
 
+**`Example`**
+
+```ts
+import { Nevermined, Config } from '@nevermined-io/sdk'
+
+const config: Config = {...}
+const nevermined = await Nevermined.getInstance(config)
+```
+
 #### Overrides
 
-Instantiable.getInstance
+[Instantiable](Instantiable.md).[getInstance](Instantiable.md#getinstance)
 
 #### Defined in
 
-[src/nevermined/Nevermined.ts:51](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Nevermined.ts#L51)
+[src/nevermined/Nevermined.ts:51](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L51)
+
+___
+
+### getSearchOnlyInstance
+
+▸ **getSearchOnlyInstance**(`config`): `Promise`\<[`Nevermined`](Nevermined.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `config` | [`NeverminedOptions`](NeverminedOptions.md) |
+
+#### Returns
+
+`Promise`\<[`Nevermined`](Nevermined.md)\>
+
+#### Defined in
+
+[src/nevermined/Nevermined.ts:102](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Nevermined.ts#L102)
 
 ___
 
 ### setInstanceConfig
 
-▸ `Static` `Protected` **setInstanceConfig**<`T`\>(`instance`, `instantiableConfig`): `void`
+▸ **setInstanceConfig**\<`T`\>(`instance`, `instantiableConfig`): `void`
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends `Instantiable`<`T`\> |
+| `T` | extends [`Instantiable`](Instantiable.md) |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `instance` | `T` |
-| `instantiableConfig` | `InstantiableConfig` |
+| `instantiableConfig` | [`InstantiableConfig`](../interfaces/InstantiableConfig.md) |
 
 #### Returns
 
@@ -667,8 +633,8 @@ ___
 
 #### Inherited from
 
-Instantiable.setInstanceConfig
+[Instantiable](Instantiable.md).[setInstanceConfig](Instantiable.md#setinstanceconfig-1)
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:162](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L162)
+[src/Instantiable.abstract.ts:149](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L149)

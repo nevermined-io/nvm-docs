@@ -13,7 +13,7 @@ Before you start with this demo you require:
 * The Nevermined artifacts, you can find the script [here](https://github.com/nevermined-io/create-nevermined-react/blob/main/scripts/download-artifacts.sh). To use the script run `./download-artifacts.sh [VERSION OF THE CONTRACT] [NETWORK]`
 
 ## Let's start with the app config file
-The first file that you need to create is the `config.ts` file which contains all the [options needed](./api-reference/classes/Config.md) to initialize the [Nevermined SDK](./intro.md).
+The first file that you need to create is the `config.ts` file which contains all the [options needed](./api-reference/classes/NeverminedOptions.md) to initialize the [Nevermined SDK](./intro.md).
 
 ```ts
 import { NeverminedOptions } from '@nevermined-io/sdk'

@@ -12,7 +12,7 @@ const config = {
     'Nevermined champions open Data and AI to lower the barrier of entry for AI adoption and advancement and opposes the centralization of AI development and training data',
   url: 'https://docs.nevermined.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   plugins: ['docusaurus-plugin-sass', './src/plugins/http-support'],

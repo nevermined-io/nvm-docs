@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / PlatformVersions
+[@nevermined-io/sdk](../code-reference.md) / PlatformVersions
 
 # Interface: PlatformVersions
 
@@ -6,22 +6,12 @@
 
 ### Properties
 
-- [node](PlatformVersions.md#node)
 - [metadata](PlatformVersions.md#metadata)
+- [node](PlatformVersions.md#node)
 - [sdk](PlatformVersions.md#sdk)
 - [status](PlatformVersions.md#status)
 
 ## Properties
-
-### node
-
-• **node**: [`PlatformKeeperTech`](PlatformKeeperTech.md)
-
-#### Defined in
-
-[src/nevermined/Versions.ts:29](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Versions.ts#L29)
-
-___
 
 ### metadata
 
@@ -29,7 +19,17 @@ ___
 
 #### Defined in
 
-[src/nevermined/Versions.ts:28](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Versions.ts#L28)
+[src/nevermined/Versions.ts:28](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Versions.ts#L28)
+
+___
+
+### node
+
+• **node**: [`PlatformKeeperTech`](PlatformKeeperTech.md)
+
+#### Defined in
+
+[src/nevermined/Versions.ts:29](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Versions.ts#L29)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/nevermined/Versions.ts:27](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Versions.ts#L27)
+[src/nevermined/Versions.ts:27](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Versions.ts#L27)
 
 ___
 
@@ -57,4 +57,4 @@ ___
 
 #### Defined in
 
-[src/nevermined/Versions.ts:30](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/nevermined/Versions.ts#L30)
+[src/nevermined/Versions.ts:30](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/nevermined/Versions.ts#L30)

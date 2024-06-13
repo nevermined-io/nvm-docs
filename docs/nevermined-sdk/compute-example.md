@@ -18,7 +18,7 @@ Before you start with this demo you require:
 
 
 ## Nevermined configuration
-The first step to run this example is to define the configuration [options needed](./api-reference/classes/Config.md) to initialize the [Nevermined SDK](./intro.md).
+The first step to run this example is to define the configuration [options needed](./api-reference/classes/NeverminedOptions.md)) to initialize the [Nevermined SDK](./intro.md).
 
 ```ts
 const configBase: NeverminedOptions = {

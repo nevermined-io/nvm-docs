@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / Bookmark
+[@nevermined-io/sdk](../code-reference.md) / Bookmark
 
 # Interface: Bookmark
 
@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[src/bookmarks/Bookmarks.interfaces.ts:9](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/bookmarks/Bookmarks.interfaces.ts#L9)
+[src/types/MetadataTypes.ts:83](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L83)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[src/bookmarks/Bookmarks.interfaces.ts:4](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/bookmarks/Bookmarks.interfaces.ts#L4)
+[src/types/MetadataTypes.ts:78](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L78)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[src/bookmarks/Bookmarks.interfaces.ts:2](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/bookmarks/Bookmarks.interfaces.ts#L2)
+[src/types/MetadataTypes.ts:76](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L76)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[src/bookmarks/Bookmarks.interfaces.ts:8](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/bookmarks/Bookmarks.interfaces.ts#L8)
+[src/types/MetadataTypes.ts:82](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L82)
 
 ___
 
@@ -78,4 +78,4 @@ ___
 
 #### Defined in
 
-[src/bookmarks/Bookmarks.interfaces.ts:3](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/bookmarks/Bookmarks.interfaces.ts#L3)
+[src/types/MetadataTypes.ts:77](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L77)

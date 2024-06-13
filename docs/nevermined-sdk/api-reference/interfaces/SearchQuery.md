@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / SearchQuery
+[@nevermined-io/sdk](../code-reference.md) / SearchQuery
 
 # Interface: SearchQuery
 
@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[src/common/interfaces.ts:20](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L20)
+[src/types/MetadataTypes.ts:72](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L72)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[src/common/interfaces.ts:14](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L14)
+[src/types/MetadataTypes.ts:66](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L66)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[src/common/interfaces.ts:15](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L15)
+[src/types/MetadataTypes.ts:67](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L67)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[src/common/interfaces.ts:17](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L17)
+[src/types/MetadataTypes.ts:69](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L69)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[src/common/interfaces.ts:19](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L19)
+[src/types/MetadataTypes.ts:71](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L71)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[src/common/interfaces.ts:18](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L18)
+[src/types/MetadataTypes.ts:70](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L70)
 
 ___
 
@@ -82,4 +82,4 @@ ___
 
 #### Defined in
 
-[src/common/interfaces.ts:16](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/common/interfaces.ts#L16)
+[src/types/MetadataTypes.ts:68](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L68)

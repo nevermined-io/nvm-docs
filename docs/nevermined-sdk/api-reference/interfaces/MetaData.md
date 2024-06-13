@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / MetaData
+[@nevermined-io/sdk](../code-reference.md) / MetaData
 
 # Interface: MetaData
 
@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/ddo/MetaData.ts:340](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L340)
+[src/types/DDOTypes.ts:486](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L486)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:341](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L341)
+[src/types/DDOTypes.ts:487](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L487)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:339](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L339)
+[src/types/DDOTypes.ts:485](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L485)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:338](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L338)
+[src/types/DDOTypes.ts:484](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L484)
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:337](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L337)
+[src/types/DDOTypes.ts:483](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L483)

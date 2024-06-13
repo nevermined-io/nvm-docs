@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / AdditionalInformation
+[@nevermined-io/sdk](../code-reference.md) / AdditionalInformation
 
 # Interface: AdditionalInformation
 
@@ -13,6 +13,7 @@ https://github.com/nevermined-io/docs/blob/master/docs/architecture/specs/metada
 ### Properties
 
 - [categories](AdditionalInformation.md#categories)
+- [cipher](AdditionalInformation.md#cipher)
 - [copyrightHolder](AdditionalInformation.md#copyrightholder)
 - [customData](AdditionalInformation.md#customdata)
 - [description](AdditionalInformation.md#description)
@@ -21,6 +22,7 @@ https://github.com/nevermined-io/docs/blob/master/docs/architecture/specs/metada
 - [poseidonHash](AdditionalInformation.md#poseidonhash)
 - [priceHighestDenomination](AdditionalInformation.md#pricehighestdenomination)
 - [providerKey](AdditionalInformation.md#providerkey)
+- [secretId](AdditionalInformation.md#secretid)
 - [structuredMarkup](AdditionalInformation.md#structuredmarkup)
 - [tags](AdditionalInformation.md#tags)
 - [updateFrequency](AdditionalInformation.md#updatefrequency)
@@ -42,7 +44,17 @@ Categories used to describe this content. Empty by default.
 
 #### Defined in
 
-[src/ddo/MetaData.ts:285](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L285)
+[src/types/DDOTypes.ts:425](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L425)
+
+___
+
+### cipher
+
+• `Optional` **cipher**: `string`
+
+#### Defined in
+
+[src/types/DDOTypes.ts:459](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L459)
 
 ___
 
@@ -60,7 +72,7 @@ The party holding the legal copyright. Empty by default.
 
 #### Defined in
 
-[src/ddo/MetaData.ts:245](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L245)
+[src/types/DDOTypes.ts:385](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L385)
 
 ___
 
@@ -77,7 +89,7 @@ Can be used to store any non-default data, needs to be checked
 
 #### Defined in
 
-[src/ddo/MetaData.ts:314](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L314)
+[src/types/DDOTypes.ts:454](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L454)
 
 ___
 
@@ -96,7 +108,7 @@ explains what the data represents and what it can be used for.
 
 #### Defined in
 
-[src/ddo/MetaData.ts:239](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L239)
+[src/types/DDOTypes.ts:379](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L379)
 
 ___
 
@@ -115,13 +127,13 @@ codes from the [IETF BCP 47 standard](https://tools.ietf.org/html/bcp47).
 
 #### Defined in
 
-[src/ddo/MetaData.ts:279](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L279)
+[src/types/DDOTypes.ts:419](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L419)
 
 ___
 
 ### links
 
-• `Optional` **links**: { `[name: string]`: `string`;  }[]
+• `Optional` **links**: \{ `[name: string]`: `string`;  }[]
 
 Mapping of links for data samples, or links to find out more information.
 Links may be to either a URL or another Asset. We expect marketplaces to
@@ -144,7 +156,7 @@ to be domain-specific.
 
 #### Defined in
 
-[src/ddo/MetaData.ts:272](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L272)
+[src/types/DDOTypes.ts:412](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L412)
 
 ___
 
@@ -154,7 +166,7 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:318](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L318)
+[src/types/DDOTypes.ts:458](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L458)
 
 ___
 
@@ -172,7 +184,7 @@ BigNumbers
 
 #### Defined in
 
-[src/ddo/MetaData.ts:333](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L333)
+[src/types/DDOTypes.ts:479](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L479)
 
 ___
 
@@ -189,20 +201,37 @@ ___
 
 #### Defined in
 
-[src/ddo/MetaData.ts:320](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L320)
+[src/types/DDOTypes.ts:461](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L461)
+
+___
+
+### secretId
+
+• `Optional` **secretId**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `string` |
+| `y` | `string` |
+
+#### Defined in
+
+[src/types/DDOTypes.ts:466](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L466)
 
 ___
 
 ### structuredMarkup
 
-• `Optional` **structuredMarkup**: { `mediaType`: `string` ; `uri`: `string`  }[]
+• `Optional` **structuredMarkup**: \{ `mediaType`: `string` ; `uri`: `string`  }[]
 
 A link to machine-readable structured markup (such as ttl/json-ld/rdf)
 describing the dataset.
 
 #### Defined in
 
-[src/ddo/MetaData.ts:305](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L305)
+[src/types/DDOTypes.ts:445](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L445)
 
 ___
 
@@ -220,7 +249,7 @@ Keywords or tags used to describe this content. Empty by default.
 
 #### Defined in
 
-[src/ddo/MetaData.ts:291](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L291)
+[src/types/DDOTypes.ts:431](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L431)
 
 ___
 
@@ -240,7 +269,7 @@ to get updated.
 
 #### Defined in
 
-[src/ddo/MetaData.ts:299](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L299)
+[src/types/DDOTypes.ts:439](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L439)
 
 ___
 
@@ -259,4 +288,4 @@ of the metadata, not an external link.
 
 #### Defined in
 
-[src/ddo/MetaData.ts:252](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/ddo/MetaData.ts#L252)
+[src/types/DDOTypes.ts:392](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/DDOTypes.ts#L392)

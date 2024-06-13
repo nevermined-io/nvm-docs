@@ -1,4 +1,4 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / NewPermission
+[@nevermined-io/sdk](../code-reference.md) / NewPermission
 
 # Interface: NewPermission
 
@@ -25,7 +25,7 @@
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:12](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L12)
+[src/types/MetadataTypes.ts:97](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L97)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:11](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L11)
+[src/types/MetadataTypes.ts:96](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L96)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:10](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L10)
+[src/types/MetadataTypes.ts:95](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L95)
 
 ___
 
@@ -55,4 +55,4 @@ ___
 
 #### Defined in
 
-[src/permissions/Permissions.interfaces.ts:9](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/permissions/Permissions.interfaces.ts#L9)
+[src/types/MetadataTypes.ts:94](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/types/MetadataTypes.ts#L94)

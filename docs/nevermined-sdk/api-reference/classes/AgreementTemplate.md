@@ -1,6 +1,6 @@
-[@nevermined-io/nevermined-sdk-js](../code-reference.md) / AgreementTemplate
+[@nevermined-io/sdk](../code-reference.md) / AgreementTemplate
 
-# Class: AgreementTemplate<Params\>
+# Class: AgreementTemplate\<Params\>
 
 ## Type parameters
 
@@ -10,11 +10,11 @@
 
 ## Hierarchy
 
-- `ContractBase`
+- [`ContractBase`](ContractBase.md)
 
   ↳ **`AgreementTemplate`**
 
-  ↳↳ [`BaseTemplate`](templates.BaseTemplate.md)
+  ↳↳ [`BaseTemplate`](BaseTemplate.md)
 
 ## Table of contents
 
@@ -24,6 +24,9 @@
 
 ### Properties
 
+- [\_conditionTypes](AgreementTemplate.md#_conditiontypes)
+- [\_conditions](AgreementTemplate.md#_conditions)
+- [address](AgreementTemplate.md#address)
 - [contract](AgreementTemplate.md#contract)
 - [contractName](AgreementTemplate.md#contractname)
 - [events](AgreementTemplate.md#events)
@@ -31,41 +34,37 @@
 
 ### Accessors
 
-- [address](AgreementTemplate.md#address)
 - [artifactsFolder](AgreementTemplate.md#artifactsfolder)
+- [circuitsFolder](AgreementTemplate.md#circuitsfolder)
+- [client](AgreementTemplate.md#client)
 - [config](AgreementTemplate.md#config)
 - [instanceConfig](AgreementTemplate.md#instanceconfig)
 - [instantiableConfig](AgreementTemplate.md#instantiableconfig)
 - [logger](AgreementTemplate.md#logger)
 - [nevermined](AgreementTemplate.md#nevermined)
-- [web3](AgreementTemplate.md#web3)
+- [publicClient](AgreementTemplate.md#publicclient)
+- [walletClient](AgreementTemplate.md#walletclient)
 
 ### Methods
 
-- [addresses](AgreementTemplate.md#addresses)
 - [agreementId](AgreementTemplate.md#agreementid)
 - [call](AgreementTemplate.md#call)
-- [checkExists](AgreementTemplate.md#checkexists)
 - [createAgreement](AgreementTemplate.md#createagreement)
 - [createAgreementAndPay](AgreementTemplate.md#createagreementandpay)
 - [createAgreementFromDDO](AgreementTemplate.md#createagreementfromddo)
 - [createAgreementWithPaymentFromDDO](AgreementTemplate.md#createagreementwithpaymentfromddo)
-- [findSigner](AgreementTemplate.md#findsigner)
-- [getAddress](AgreementTemplate.md#getaddress)
 - [getAgreementCreatedEvent](AgreementTemplate.md#getagreementcreatedevent)
 - [getAgreementIdsFromDDO](AgreementTemplate.md#getagreementidsfromddo)
 - [getAgreementStatus](AgreementTemplate.md#getagreementstatus)
 - [getAgreementsForDID](AgreementTemplate.md#getagreementsfordid)
 - [getConditionTypes](AgreementTemplate.md#getconditiontypes)
 - [getConditions](AgreementTemplate.md#getconditions)
-- [getContract](AgreementTemplate.md#getcontract)
 - [getFromAddress](AgreementTemplate.md#getfromaddress)
-- [getInputsOfMethod](AgreementTemplate.md#getinputsofmethod)
 - [getServiceAgreementTemplate](AgreementTemplate.md#getserviceagreementtemplate)
 - [getServiceAgreementTemplateConditionByRef](AgreementTemplate.md#getserviceagreementtemplateconditionbyref)
 - [getServiceAgreementTemplateConditions](AgreementTemplate.md#getserviceagreementtemplateconditions)
 - [getServiceAgreementTemplateDependencies](AgreementTemplate.md#getserviceagreementtemplatedependencies)
-- [getSignatureOfMethod](AgreementTemplate.md#getsignatureofmethod)
+- [getTransactionLogs](AgreementTemplate.md#gettransactionlogs)
 - [init](AgreementTemplate.md#init)
 - [instanceFromDDO](AgreementTemplate.md#instancefromddo)
 - [lockConditionIndex](AgreementTemplate.md#lockconditionindex)
@@ -77,9 +76,8 @@
 - [sendFrom](AgreementTemplate.md#sendfrom)
 - [service](AgreementTemplate.md#service)
 - [setInstanceConfig](AgreementTemplate.md#setinstanceconfig)
+- [someLog](AgreementTemplate.md#somelog)
 - [standardContext](AgreementTemplate.md#standardcontext)
-- [addressesStatic](AgreementTemplate.md#addressesstatic)
-- [findSignerStatic](AgreementTemplate.md#findsignerstatic)
 - [getInstance](AgreementTemplate.md#getinstance)
 - [setInstanceConfig](AgreementTemplate.md#setinstanceconfig-1)
 
@@ -87,7 +85,7 @@
 
 ### constructor
 
-• `Protected` **new AgreementTemplate**<`Params`\>(`contractName`)
+• **new AgreementTemplate**\<`Params`\>(`contractName`): [`AgreementTemplate`](AgreementTemplate.md)\<`Params`\>
 
 #### Type parameters
 
@@ -101,55 +99,93 @@
 | :------ | :------ |
 | `contractName` | `string` |
 
+#### Returns
+
+[`AgreementTemplate`](AgreementTemplate.md)\<`Params`\>
+
 #### Overrides
 
-ContractBase.constructor
+[ContractBase](ContractBase.md).[constructor](ContractBase.md#constructor)
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:75](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L75)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:51](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L51)
 
 ## Properties
 
-### contract
+### \_conditionTypes
 
-• **contract**: `Contract` = `null`
-
-#### Inherited from
-
-ContractBase.contract
+• `Private` **\_conditionTypes**: `string`[]
 
 #### Defined in
 
-[src/keeper/contracts/ContractBase.ts:24](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L24)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:35](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L35)
+
+___
+
+### \_conditions
+
+• `Private` **\_conditions**: `ConditionSmall`[]
+
+#### Defined in
+
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:36](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L36)
+
+___
+
+### address
+
+• **address**: \`0x$\{string}\`
+
+#### Inherited from
+
+[ContractBase](ContractBase.md).[address](ContractBase.md#address)
+
+#### Defined in
+
+[src/keeper/contracts/ContractBase.ts:22](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/ContractBase.ts#L22)
+
+___
+
+### contract
+
+• **contract**: `any`
+
+#### Inherited from
+
+[ContractBase](ContractBase.md).[contract](ContractBase.md#contract)
+
+#### Defined in
+
+[src/keeper/contracts/ContractBase.ts:19](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/ContractBase.ts#L19)
 
 ___
 
 ### contractName
 
-• **contractName**: `string`
+• `Readonly` **contractName**: `string`
 
 #### Inherited from
 
-ContractBase.contractName
+[ContractBase](ContractBase.md).[contractName](ContractBase.md#contractname)
 
 #### Defined in
 
-[src/keeper/contracts/ContractBase.ts:23](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L23)
+[src/keeper/contracts/ContractBase.ts:18](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/ContractBase.ts#L18)
 
 ___
 
 ### events
 
-• **events**: [`ContractEvent`](events.ContractEvent.md) \| [`SubgraphEvent`](events.SubgraphEvent.md) = `null`
+• **events**: [`ContractEvent`](ContractEvent.md) \| [`SubgraphEvent`](SubgraphEvent.md)
 
 #### Inherited from
 
-ContractBase.events
+[ContractBase](ContractBase.md).[events](ContractBase.md#events)
 
 #### Defined in
 
-[src/keeper/contracts/ContractBase.ts:25](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L25)
+[src/keeper/contracts/ContractBase.ts:20](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/ContractBase.ts#L20)
 
 ___
 
@@ -159,39 +195,21 @@ ___
 
 #### Inherited from
 
-ContractBase.version
+[ContractBase](ContractBase.md).[version](ContractBase.md#version)
 
 #### Defined in
 
-[src/keeper/contracts/ContractBase.ts:26](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L26)
+[src/keeper/contracts/ContractBase.ts:21](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/ContractBase.ts#L21)
 
 ## Accessors
 
-### address
-
-• `get` **address**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-ContractBase.address
-
-#### Defined in
-
-[src/keeper/contracts/ContractBase.ts:28](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L28)
-
-___
-
 ### artifactsFolder
 
-• `Protected` `get` **artifactsFolder**(): `string`
+• `get` **artifactsFolder**(): `undefined` \| `string`
 
 #### Returns
 
-`string`
+`undefined` \| `string`
 
 #### Inherited from
 
@@ -199,17 +217,53 @@ ContractBase.artifactsFolder
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:96](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L96)
+[src/Instantiable.abstract.ts:132](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L132)
+
+___
+
+### circuitsFolder
+
+• `get` **circuitsFolder**(): `undefined` \| `string`
+
+#### Returns
+
+`undefined` \| `string`
+
+#### Inherited from
+
+ContractBase.circuitsFolder
+
+#### Defined in
+
+[src/Instantiable.abstract.ts:136](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L136)
+
+___
+
+### client
+
+• `get` **client**(): [`Web3Clients`](../interfaces/Web3Clients.md)
+
+#### Returns
+
+[`Web3Clients`](../interfaces/Web3Clients.md)
+
+#### Inherited from
+
+ContractBase.client
+
+#### Defined in
+
+[src/Instantiable.abstract.ts:84](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L84)
 
 ___
 
 ### config
 
-• `Protected` `get` **config**(): [`Config`](Config.md)
+• `get` **config**(): [`NeverminedOptions`](NeverminedOptions.md)
 
 #### Returns
 
-[`Config`](Config.md)
+[`NeverminedOptions`](NeverminedOptions.md)
 
 #### Inherited from
 
@@ -217,17 +271,17 @@ ContractBase.config
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:80](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L80)
+[src/Instantiable.abstract.ts:115](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L115)
 
 ___
 
 ### instanceConfig
 
-• `Protected` `get` **instanceConfig**(): `InstantiableConfig`
+• `get` **instanceConfig**(): [`InstantiableConfig`](../interfaces/InstantiableConfig.md)
 
 #### Returns
 
-`InstantiableConfig`
+[`InstantiableConfig`](../interfaces/InstantiableConfig.md)
 
 #### Inherited from
 
@@ -235,17 +289,17 @@ ContractBase.instanceConfig
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:100](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L100)
+[src/Instantiable.abstract.ts:140](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L140)
 
 ___
 
 ### instantiableConfig
 
-• `Protected` `get` **instantiableConfig**(): `InstantiableConfig`
+• `get` **instantiableConfig**(): `undefined` \| [`InstantiableConfig`](../interfaces/InstantiableConfig.md)
 
 #### Returns
 
-`InstantiableConfig`
+`undefined` \| [`InstantiableConfig`](../interfaces/InstantiableConfig.md)
 
 #### Inherited from
 
@@ -253,17 +307,17 @@ ContractBase.instantiableConfig
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:73](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L73)
+[src/Instantiable.abstract.ts:108](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L108)
 
 ___
 
 ### logger
 
-• `Protected` `get` **logger**(): [`Logger`](utils.Logger.md)
+• `get` **logger**(): `Logger`
 
 #### Returns
 
-[`Logger`](utils.Logger.md)
+`Logger`
 
 #### Inherited from
 
@@ -271,13 +325,13 @@ ContractBase.logger
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:87](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L87)
+[src/Instantiable.abstract.ts:123](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L123)
 
 ___
 
 ### nevermined
 
-• `Protected` `get` **nevermined**(): [`Nevermined`](Nevermined.md)
+• `get` **nevermined**(): [`Nevermined`](Nevermined.md)
 
 #### Returns
 
@@ -289,49 +343,146 @@ ContractBase.nevermined
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:33](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L33)
+[src/Instantiable.abstract.ts:76](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L76)
 
 ___
 
-### web3
+### publicClient
 
-• `Protected` `get` **web3**(): `JsonRpcProvider`
+• `get` **publicClient**(): `Object`
 
 #### Returns
 
-`JsonRpcProvider`
+`Object`
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `account` | `undefined` | The Account of the Client. |
+| `batch?` | \{ `multicall?`: `boolean` \| \{ `batchSize?`: `number` ; `wait?`: `number`  }  } | Flags for batch settings. |
+| `batch.multicall?` | `boolean` \| \{ `batchSize?`: `number` ; `wait?`: `number`  } | Toggle to enable `eth_call` multicall aggregation. |
+| `cacheTime` | `number` | Time (in ms) that cached data will remain in memory. |
+| `call` | (`parameters`: `CallParameters`\<`undefined` \| `Chain`\>) => `Promise`\<`CallReturnType`\> | - |
+| `ccipRead?` | ``false`` \| \{ `request?`: (`parameters`: `CcipRequestParameters`) => `Promise`\<\`0x$\{string}\`\>  } | [CCIP Read](https://eips.ethereum.org/EIPS/eip-3668) configuration. |
+| `chain` | `undefined` \| `Chain` | Chain for the client. |
+| `createBlockFilter` | () => `Promise`\<\{ `id`: \`0x$\{string}\` ; `request`: `EIP1193RequestFn`\<readonly [\{ `Method`: ``"eth_getFilterChanges"`` ; `Parameters`: [filterId: \`0x$\{string}\`] ; `ReturnType`: \`0x$\{string}\`[] \| `RpcLog`[]  }, \{ `Method`: ``"eth_getFilterLogs"`` ; `Parameters`: [filterId: \`0x$\{string}\`] ; `ReturnType`: `RpcLog`[]  }, \{ `Method`: ``"eth_uninstallFilter"`` ; `Parameters`: [filterId: \`0x$\{string}\`] ; `ReturnType`: `boolean`  }]\> ; `type`: ``"block"``  }\> | - |
+| `createContractEventFilter` | \<TAbi, TEventName, TArgs, TStrict, TFromBlock, TToBlock\>(`args`: `CreateContractEventFilterParameters`\<`TAbi`, `TEventName`, `TArgs`, `TStrict`, `TFromBlock`, `TToBlock`\>) => `Promise`\<`CreateContractEventFilterReturnType`\<`TAbi`, `TEventName`, `TArgs`, `TStrict`, `TFromBlock`, `TToBlock`\>\> | - |
+| `createEventFilter` | \<TAbiEvent, TAbiEvents, TStrict, TFromBlock, TToBlock, _EventName, _Args\>(`args?`: `CreateEventFilterParameters`\<`TAbiEvent`, `TAbiEvents`, `TStrict`, `TFromBlock`, `TToBlock`, `_EventName`, `_Args`\>) => `Promise`\<\{ [K in string \| number \| symbol]: Filter\<"event", TAbiEvents, \_EventName, \_Args, TStrict, TFromBlock, TToBlock\>[K] }\> | - |
+| `createPendingTransactionFilter` | () => `Promise`\<\{ `id`: \`0x$\{string}\` ; `request`: `EIP1193RequestFn`\<readonly [\{ `Method`: ``"eth_getFilterChanges"`` ; `Parameters`: [filterId: \`0x$\{string}\`] ; `ReturnType`: \`0x$\{string}\`[] \| `RpcLog`[]  }, \{ `Method`: ``"eth_getFilterLogs"`` ; `Parameters`: [filterId: \`0x$\{string}\`] ; `ReturnType`: `RpcLog`[]  }, \{ `Method`: ``"eth_uninstallFilter"`` ; `Parameters`: [filterId: \`0x$\{string}\`] ; `ReturnType`: `boolean`  }]\> ; `type`: ``"transaction"``  }\> | - |
+| `estimateContractGas` | \<TChain, abi, functionName, args\>(`args`: `EstimateContractGasParameters`\<`abi`, `functionName`, `args`, `TChain`\>) => `Promise`\<`bigint`\> | - |
+| `estimateFeesPerGas` | \<TChainOverride, TType\>(`args?`: `EstimateFeesPerGasParameters`\<`undefined` \| `Chain`, `TChainOverride`, `TType`\>) => `Promise`\<`EstimateFeesPerGasReturnType`\> | - |
+| `estimateGas` | (`args`: `EstimateGasParameters`\<`undefined` \| `Chain`\>) => `Promise`\<`bigint`\> | - |
+| `estimateMaxPriorityFeePerGas` | \<TChainOverride\>(`args?`: \{ `chain`: ``null`` \| `TChainOverride`  }) => `Promise`\<`bigint`\> | - |
+| `extend` | \<client\>(`fn`: (`client`: `Client`\<`Transport`, `undefined` \| `Chain`, `undefined`, `PublicRpcSchema`, `PublicActions`\<`Transport`, `undefined` \| `Chain`\>\>) => `client`) => `Client`\<`Transport`, `undefined` \| `Chain`, `undefined`, `PublicRpcSchema`, \{ [K in string \| number \| symbol]: client[K] } & `PublicActions`\<`Transport`, `undefined` \| `Chain`\>\> | - |
+| `getBalance` | (`args`: `GetBalanceParameters`) => `Promise`\<`bigint`\> | - |
+| `getBlobBaseFee` | () => `Promise`\<`bigint`\> | - |
+| `getBlock` | \<TIncludeTransactions, TBlockTag\>(`args?`: `GetBlockParameters`\<`TIncludeTransactions`, `TBlockTag`\>) => `Promise`\<\{ `baseFeePerGas`: ``null`` \| `bigint` ; `blobGasUsed`: `bigint` ; `difficulty`: `bigint` ; `excessBlobGas`: `bigint` ; `extraData`: \`0x$\{string}\` ; `gasLimit`: `bigint` ; `gasUsed`: `bigint` ; `hash`: `TBlockTag` extends ``"pending"`` ? ``null`` : \`0x$\{string}\` ; `logsBloom`: `TBlockTag` extends ``"pending"`` ? ``null`` : \`0x$\{string}\` ; `miner`: \`0x$\{string}\` ; `mixHash`: \`0x$\{string}\` ; `nonce`: `TBlockTag` extends ``"pending"`` ? ``null`` : \`0x$\{string}\` ; `number`: `TBlockTag` extends ``"pending"`` ? ``null`` : `bigint` ; `parentHash`: \`0x$\{string}\` ; `receiptsRoot`: \`0x$\{string}\` ; `sealFields`: \`0x$\{string}\`[] ; `sha3Uncles`: \`0x$\{string}\` ; `size`: `bigint` ; `stateRoot`: \`0x$\{string}\` ; `timestamp`: `bigint` ; `totalDifficulty`: ``null`` \| `bigint` ; `transactions`: `TIncludeTransactions` extends ``true`` ? (\{ `accessList?`: `undefined` ; `blobVersionedHashes?`: `undefined` ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId?`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice`: `bigint` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas?`: `undefined` ; `maxFeePerGas?`: `undefined` ; `maxPriorityFeePerGas?`: `undefined` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"legacy"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity?`: `undefined`  } \| \{ `accessList`: `AccessList` ; `blobVersionedHashes?`: `undefined` ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice`: `bigint` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas?`: `undefined` ; `maxFeePerGas?`: `undefined` ; `maxPriorityFeePerGas?`: `undefined` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"eip2930"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity`: `number`  } \| \{ `accessList`: `AccessList` ; `blobVersionedHashes?`: `undefined` ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice?`: `undefined` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas?`: `undefined` ; `maxFeePerGas`: `bigint` ; `maxPriorityFeePerGas`: `bigint` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"eip1559"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity`: `number`  } \| \{ `accessList`: `AccessList` ; `blobVersionedHashes`: \`0x$\{string}\`[] ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice?`: `undefined` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas`: `bigint` ; `maxFeePerGas`: `bigint` ; `maxPriorityFeePerGas`: `bigint` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"eip4844"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity`: `number`  })[] : \`0x$\{string}\`[] ; `transactionsRoot`: \`0x$\{string}\` ; `uncles`: \`0x$\{string}\`[] ; `withdrawals?`: `Withdrawal`[] ; `withdrawalsRoot?`: \`0x$\{string}\`  }\> | - |
+| `getBlockNumber` | (`args?`: `GetBlockNumberParameters`) => `Promise`\<`bigint`\> | - |
+| `getBlockTransactionCount` | (`args?`: `GetBlockTransactionCountParameters`) => `Promise`\<`number`\> | - |
+| `getBytecode` | (`args`: `GetBytecodeParameters`) => `Promise`\<`GetBytecodeReturnType`\> | - |
+| `getChainId` | () => `Promise`\<`number`\> | - |
+| `getContractEvents` | \<abi, eventName, strict, fromBlock, toBlock\>(`args`: `GetContractEventsParameters`\<`abi`, `eventName`, `strict`, `fromBlock`, `toBlock`\>) => `Promise`\<`GetContractEventsReturnType`\<`abi`, `eventName`, `strict`, `fromBlock`, `toBlock`\>\> | - |
+| `getEnsAddress` | (`args`: \{ `blockNumber?`: `bigint` ; `blockTag?`: `BlockTag` ; `coinType?`: `number` ; `gatewayUrls?`: `string`[] ; `name`: `string` ; `strict?`: `boolean` ; `universalResolverAddress?`: \`0x$\{string}\`  }) => `Promise`\<`GetEnsAddressReturnType`\> | - |
+| `getEnsAvatar` | (`args`: \{ `assetGatewayUrls?`: `AssetGatewayUrls` ; `blockNumber?`: `bigint` ; `blockTag?`: `BlockTag` ; `gatewayUrls?`: `string`[] ; `name`: `string` ; `strict?`: `boolean` ; `universalResolverAddress?`: \`0x$\{string}\`  }) => `Promise`\<`GetEnsAvatarReturnType`\> | - |
+| `getEnsName` | (`args`: \{ `address`: \`0x$\{string}\` ; `blockNumber?`: `bigint` ; `blockTag?`: `BlockTag` ; `gatewayUrls?`: `string`[] ; `strict?`: `boolean` ; `universalResolverAddress?`: \`0x$\{string}\`  }) => `Promise`\<`GetEnsNameReturnType`\> | - |
+| `getEnsResolver` | (`args`: \{ `blockNumber?`: `bigint` ; `blockTag?`: `BlockTag` ; `name`: `string` ; `universalResolverAddress?`: \`0x$\{string}\`  }) => `Promise`\<\`0x$\{string}\`\> | - |
+| `getEnsText` | (`args`: \{ `blockNumber?`: `bigint` ; `blockTag?`: `BlockTag` ; `gatewayUrls?`: `string`[] ; `key`: `string` ; `name`: `string` ; `strict?`: `boolean` ; `universalResolverAddress?`: \`0x$\{string}\`  }) => `Promise`\<`GetEnsTextReturnType`\> | - |
+| `getFeeHistory` | (`args`: `GetFeeHistoryParameters`) => `Promise`\<`GetFeeHistoryReturnType`\> | - |
+| `getFilterChanges` | \<TFilterType, TAbi, TEventName, TStrict, TFromBlock, TToBlock\>(`args`: `GetFilterChangesParameters`\<`TFilterType`, `TAbi`, `TEventName`, `TStrict`, `TFromBlock`, `TToBlock`\>) => `Promise`\<`GetFilterChangesReturnType`\<`TFilterType`, `TAbi`, `TEventName`, `TStrict`, `TFromBlock`, `TToBlock`\>\> | - |
+| `getFilterLogs` | \<TAbi, TEventName, TStrict, TFromBlock, TToBlock\>(`args`: `GetFilterLogsParameters`\<`TAbi`, `TEventName`, `TStrict`, `TFromBlock`, `TToBlock`\>) => `Promise`\<`GetFilterLogsReturnType`\<`TAbi`, `TEventName`, `TStrict`, `TFromBlock`, `TToBlock`\>\> | - |
+| `getGasPrice` | () => `Promise`\<`bigint`\> | - |
+| `getLogs` | \<TAbiEvent, TAbiEvents, TStrict, TFromBlock, TToBlock\>(`args?`: `GetLogsParameters`\<`TAbiEvent`, `TAbiEvents`, `TStrict`, `TFromBlock`, `TToBlock`\>) => `Promise`\<`GetLogsReturnType`\<`TAbiEvent`, `TAbiEvents`, `TStrict`, `TFromBlock`, `TToBlock`\>\> | - |
+| `getProof` | (`args`: `GetProofParameters`) => `Promise`\<`GetProofReturnType`\> | - |
+| `getStorageAt` | (`args`: `GetStorageAtParameters`) => `Promise`\<`GetStorageAtReturnType`\> | - |
+| `getTransaction` | \<TBlockTag\>(`args`: `GetTransactionParameters`\<`TBlockTag`\>) => `Promise`\<\{ `accessList?`: `undefined` ; `blobVersionedHashes?`: `undefined` ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId?`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice`: `bigint` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas?`: `undefined` ; `maxFeePerGas?`: `undefined` ; `maxPriorityFeePerGas?`: `undefined` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"legacy"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity?`: `undefined`  } \| \{ `accessList`: `AccessList` ; `blobVersionedHashes?`: `undefined` ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice`: `bigint` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas?`: `undefined` ; `maxFeePerGas?`: `undefined` ; `maxPriorityFeePerGas?`: `undefined` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"eip2930"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity`: `number`  } \| \{ `accessList`: `AccessList` ; `blobVersionedHashes?`: `undefined` ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice?`: `undefined` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas?`: `undefined` ; `maxFeePerGas`: `bigint` ; `maxPriorityFeePerGas`: `bigint` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"eip1559"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity`: `number`  } \| \{ `accessList`: `AccessList` ; `blobVersionedHashes`: \`0x$\{string}\`[] ; `blockHash`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : \`0x$\{string}\` ; `blockNumber`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `bigint` ; `chainId`: `number` ; `from`: \`0x$\{string}\` ; `gas`: `bigint` ; `gasPrice?`: `undefined` ; `hash`: \`0x$\{string}\` ; `input`: \`0x$\{string}\` ; `maxFeePerBlobGas`: `bigint` ; `maxFeePerGas`: `bigint` ; `maxPriorityFeePerGas`: `bigint` ; `nonce`: `number` ; `r`: \`0x$\{string}\` ; `s`: \`0x$\{string}\` ; `to`: ``null`` \| \`0x$\{string}\` ; `transactionIndex`: `TBlockTag` extends ``"pending"`` ? ``true`` : ``false`` extends ``true`` ? ``null`` : `number` ; `type`: ``"eip4844"`` ; `typeHex`: ``null`` \| \`0x$\{string}\` ; `v`: `bigint` ; `value`: `bigint` ; `yParity`: `number`  }\> | - |
+| `getTransactionConfirmations` | (`args`: `GetTransactionConfirmationsParameters`\<`undefined` \| `Chain`\>) => `Promise`\<`bigint`\> | - |
+| `getTransactionCount` | (`args`: `GetTransactionCountParameters`) => `Promise`\<`number`\> | - |
+| `getTransactionReceipt` | (`args`: `GetTransactionReceiptParameters`) => `Promise`\<`TransactionReceipt`\> | - |
+| `key` | `string` | A key for the client. |
+| `multicall` | \<contracts, allowFailure\>(`args`: `MulticallParameters`\<`contracts`, `allowFailure`\>) => `Promise`\<`MulticallReturnType`\<`contracts`, `allowFailure`\>\> | - |
+| `name` | `string` | A name for the client. |
+| `pollingInterval` | `number` | Frequency (in ms) for polling enabled actions & events. Defaults to 4_000 milliseconds. |
+| `prepareTransactionRequest` | \<TRequest, TChainOverride, TAccountOverride\>(`args`: `PrepareTransactionRequestParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `TChainOverride`, `TAccountOverride`, `TRequest`\>) => `Promise`\<\{ [K in string \| number \| symbol]: (UnionRequiredBy\<Extract\<UnionOmit\<(...), (...)\> & ((...) extends (...) ? (...) : (...)) & ((...) extends (...) ? (...) : (...)), IsNever\<(...)\> extends true ? unknown : ExactPartial\<(...)\>\> & Object, ParameterTypeToParameters\<TRequest["parameters"] extends readonly PrepareTransactionRequestParameterType[] ? any[any][number] : "gas" \| "nonce" \| "blobVersionedHashes" \| "chainId" \| "type" \| "fees"\>\> & (unknown extends TRequest["kzg"] ? Object : Pick\<TRequest, "kzg"\>))[K] }\> | - |
+| `readContract` | \<abi, functionName, args\>(`args`: `ReadContractParameters`\<`abi`, `functionName`, `args`\>) => `Promise`\<`ReadContractReturnType`\<`abi`, `functionName`, `args`\>\> | - |
+| `request` | `EIP1193RequestFn`\<`PublicRpcSchema`\> | Request function wrapped with friendly error handling |
+| `sendRawTransaction` | (`args`: `SendRawTransactionParameters`) => `Promise`\<\`0x$\{string}\`\> | - |
+| `simulateContract` | \<abi, functionName, args, chainOverride, accountOverride\>(`args`: `SimulateContractParameters`\<`abi`, `functionName`, `args`, `undefined` \| `Chain`, `chainOverride`, `accountOverride`\>) => `Promise`\<`SimulateContractReturnType`\<`abi`, `functionName`, `args`, `undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`, `accountOverride`\>\> | - |
+| `transport` | `TransportConfig`\<`string`, `EIP1193RequestFn`\> & `Record`\<`string`, `any`\> | The RPC transport |
+| `type` | `string` | The type of client. |
+| `uid` | `string` | A unique ID for the client. |
+| `uninstallFilter` | (`args`: `UninstallFilterParameters`) => `Promise`\<`boolean`\> | - |
+| `verifyMessage` | (`args`: `VerifyMessageParameters`) => `Promise`\<`boolean`\> | - |
+| `verifyTypedData` | (`args`: `VerifyTypedDataParameters`) => `Promise`\<`boolean`\> | - |
+| `waitForTransactionReceipt` | (`args`: `WaitForTransactionReceiptParameters`\<`undefined` \| `Chain`\>) => `Promise`\<`TransactionReceipt`\> | - |
+| `watchBlockNumber` | (`args`: `WatchBlockNumberParameters`) => `WatchBlockNumberReturnType` | - |
+| `watchBlocks` | \<TIncludeTransactions, TBlockTag\>(`args`: `WatchBlocksParameters`\<`Transport`, `undefined` \| `Chain`, `TIncludeTransactions`, `TBlockTag`\>) => `WatchBlocksReturnType` | - |
+| `watchContractEvent` | \<TAbi, TEventName, TStrict\>(`args`: `WatchContractEventParameters`\<`TAbi`, `TEventName`, `TStrict`, `Transport`\>) => `WatchContractEventReturnType` | - |
+| `watchEvent` | \<TAbiEvent, TAbiEvents, TStrict\>(`args`: `WatchEventParameters`\<`TAbiEvent`, `TAbiEvents`, `TStrict`, `Transport`\>) => `WatchEventReturnType` | - |
+| `watchPendingTransactions` | (`args`: `WatchPendingTransactionsParameters`\<`Transport`\>) => `WatchPendingTransactionsReturnType` | - |
 
 #### Inherited from
 
-ContractBase.web3
+ContractBase.publicClient
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:63](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L63)
+[src/Instantiable.abstract.ts:92](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L92)
+
+___
+
+### walletClient
+
+• `get` **walletClient**(): `Object`
+
+#### Returns
+
+`Object`
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `account` | `undefined` \| `Account` | The Account of the Client. |
+| `addChain` | (`args`: `AddChainParameters`) => `Promise`\<`void`\> | - |
+| `batch?` | \{ `multicall?`: `boolean` \| \{ `batchSize?`: `number` ; `wait?`: `number`  }  } | Flags for batch settings. |
+| `batch.multicall?` | `boolean` \| \{ `batchSize?`: `number` ; `wait?`: `number`  } | Toggle to enable `eth_call` multicall aggregation. |
+| `cacheTime` | `number` | Time (in ms) that cached data will remain in memory. |
+| `ccipRead?` | ``false`` \| \{ `request?`: (`parameters`: `CcipRequestParameters`) => `Promise`\<\`0x$\{string}\`\>  } | [CCIP Read](https://eips.ethereum.org/EIPS/eip-3668) configuration. |
+| `chain` | `undefined` \| `Chain` | Chain for the client. |
+| `deployContract` | \<abi, chainOverride\>(`args`: `DeployContractParameters`\<`abi`, `undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`\>) => `Promise`\<\`0x$\{string}\`\> | - |
+| `extend` | \<client\>(`fn`: (`client`: `Client`\<`Transport`, `undefined` \| `Chain`, `undefined` \| `Account`, `WalletRpcSchema`, `WalletActions`\<`undefined` \| `Chain`, `undefined` \| `Account`\>\>) => `client`) => `Client`\<`Transport`, `undefined` \| `Chain`, `undefined` \| `Account`, `WalletRpcSchema`, \{ [K in string \| number \| symbol]: client[K] } & `WalletActions`\<`undefined` \| `Chain`, `undefined` \| `Account`\>\> | - |
+| `getAddresses` | () => `Promise`\<`GetAddressesReturnType`\> | - |
+| `getChainId` | () => `Promise`\<`number`\> | - |
+| `getPermissions` | () => `Promise`\<`GetPermissionsReturnType`\> | - |
+| `key` | `string` | A key for the client. |
+| `name` | `string` | A name for the client. |
+| `pollingInterval` | `number` | Frequency (in ms) for polling enabled actions & events. Defaults to 4_000 milliseconds. |
+| `prepareTransactionRequest` | \<TRequest, TChainOverride, TAccountOverride\>(`args`: `PrepareTransactionRequestParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `TChainOverride`, `TAccountOverride`, `TRequest`\>) => `Promise`\<\{ [K in string \| number \| symbol]: (UnionRequiredBy\<Extract\<UnionOmit\<(...), (...)\> & ((...) extends (...) ? (...) : (...)) & ((...) extends (...) ? (...) : (...)), IsNever\<(...)\> extends true ? unknown : ExactPartial\<(...)\>\> & Object, ParameterTypeToParameters\<TRequest["parameters"] extends readonly PrepareTransactionRequestParameterType[] ? any[any][number] : "gas" \| "nonce" \| "blobVersionedHashes" \| "chainId" \| "type" \| "fees"\>\> & (unknown extends TRequest["kzg"] ? Object : Pick\<TRequest, "kzg"\>))[K] }\> | - |
+| `request` | `EIP1193RequestFn`\<`WalletRpcSchema`\> | Request function wrapped with friendly error handling |
+| `requestAddresses` | () => `Promise`\<`RequestAddressesReturnType`\> | - |
+| `requestPermissions` | (`args`: \{ `eth_accounts`: `Record`\<`string`, `any`\>  }) => `Promise`\<`RequestPermissionsReturnType`\> | - |
+| `sendRawTransaction` | (`args`: `SendRawTransactionParameters`) => `Promise`\<\`0x$\{string}\`\> | - |
+| `sendTransaction` | \<TRequest, TChainOverride\>(`args`: `SendTransactionParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `TChainOverride`, `TRequest`\>) => `Promise`\<\`0x$\{string}\`\> | - |
+| `signMessage` | (`args`: `SignMessageParameters`\<`undefined` \| `Account`\>) => `Promise`\<\`0x$\{string}\`\> | - |
+| `signTransaction` | \<TChainOverride\>(`args`: `SignTransactionParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `TChainOverride`\>) => `Promise`\<\`0x02$\{string}\` \| \`0x01$\{string}\` \| \`0x03$\{string}\` \| `TransactionSerializedLegacy`\> | - |
+| `signTypedData` | \<TTypedData, TPrimaryType\>(`args`: `SignTypedDataParameters`\<`TTypedData`, `TPrimaryType`, `undefined` \| `Account`\>) => `Promise`\<\`0x$\{string}\`\> | - |
+| `switchChain` | (`args`: `SwitchChainParameters`) => `Promise`\<`void`\> | - |
+| `transport` | `TransportConfig`\<`string`, `EIP1193RequestFn`\> & `Record`\<`string`, `any`\> | The RPC transport |
+| `type` | `string` | The type of client. |
+| `uid` | `string` | A unique ID for the client. |
+| `watchAsset` | (`args`: `WatchAssetParams`) => `Promise`\<`boolean`\> | - |
+| `writeContract` | \<abi, functionName, args, TChainOverride\>(`args`: `WriteContractParameters`\<`abi`, `functionName`, `args`, `undefined` \| `Chain`, `undefined` \| `Account`, `TChainOverride`\>) => `Promise`\<\`0x$\{string}\`\> | - |
+
+#### Inherited from
+
+ContractBase.walletClient
+
+#### Defined in
+
+[src/Instantiable.abstract.ts:100](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L100)
 
 ## Methods
 
-### addresses
-
-▸ **addresses**(): `Promise`<`string`[]\>
-
-#### Returns
-
-`Promise`<`string`[]\>
-
-#### Inherited from
-
-ContractBase.addresses
-
-#### Defined in
-
-[src/Instantiable.abstract.ts:129](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L129)
-
-___
-
 ### agreementId
 
-▸ **agreementId**(`agreementIdSeed`, `creator`): `Promise`<`string`\>
+▸ **agreementId**(`agreementIdSeed`, `creator`): `Promise`\<`string`\>
 
 #### Parameters
 
@@ -342,17 +493,17 @@ ___
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:213](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L213)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:202](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L202)
 
 ___
 
 ### call
 
-▸ **call**<`T`\>(`name`, `args`, `from?`): `Promise`<`T`\>
+▸ **call**\<`T`\>(`functionName`, `args`, `from?`): `Promise`\<`T`\>
 
 #### Type parameters
 
@@ -364,55 +515,27 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `name` | `string` |
+| `functionName` | `string` |
 | `args` | `any`[] |
 | `from?` | `string` |
 
 #### Returns
 
-`Promise`<`T`\>
+`Promise`\<`T`\>
 
 #### Inherited from
 
-ContractBase.call
+[ContractBase](ContractBase.md).[call](ContractBase.md#call)
 
 #### Defined in
 
-[src/keeper/contracts/ContractBase.ts:244](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L244)
-
-___
-
-### checkExists
-
-▸ `Protected` **checkExists**(`address`): `Promise`<`boolean`\>
-
-Returns true of contract exists else it throws.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `address` | `string` |
-
-#### Returns
-
-`Promise`<`boolean`\>
-
-true if the contract exists.
-
-#### Inherited from
-
-ContractBase.checkExists
-
-#### Defined in
-
-[src/Instantiable.abstract.ts:44](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L44)
+[src/keeper/contracts/ContractBase.ts:91](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/ContractBase.ts#L91)
 
 ___
 
 ### createAgreement
 
-▸ **createAgreement**(`agreementId`, `did`, `conditionIds`, `timeLocks`, `timeOuts`, `extraArgs`, `from?`, `params?`): `Promise`<`ContractReceipt`\>
+▸ **createAgreement**(`agreementId`, `did`, `conditionIds`, `timeLocks`, `timeOuts`, `extraArgs`, `from`, `txParams?`): `Promise`\<`any`\>
 
 #### Parameters
 
@@ -424,22 +547,22 @@ ___
 | `timeLocks` | `number`[] |
 | `timeOuts` | `number`[] |
 | `extraArgs` | `any`[] |
-| `from?` | [`Account`](Account.md) |
-| `params?` | `TxParameters` |
+| `from` | [`NvmAccount`](NvmAccount.md) |
+| `txParams?` | [`TxParameters`](../interfaces/TxParameters.md) |
 
 #### Returns
 
-`Promise`<`ContractReceipt`\>
+`Promise`\<`any`\>
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:99](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L99)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:73](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L73)
 
 ___
 
 ### createAgreementAndPay
 
-▸ **createAgreementAndPay**(`agreementId`, `did`, `conditionIds`, `timeLocks`, `timeOuts`, `accessConsumer`, `condIdx`, `rewardAddress`, `tokenAddress`, `amounts`, `receivers`, `from?`, `params?`): `Promise`<`ContractReceipt`\>
+▸ **createAgreementAndPay**(`agreementId`, `did`, `conditionIds`, `timeLocks`, `timeOuts`, `accessConsumer`, `condIdx`, `rewardAddress`, `tokenAddress`, `amounts`, `receivers`, `from`, `txParams?`): `Promise`\<`any`\>
 
 #### Parameters
 
@@ -454,24 +577,24 @@ ___
 | `condIdx` | `number` |
 | `rewardAddress` | `string` |
 | `tokenAddress` | `string` |
-| `amounts` | `default`[] |
+| `amounts` | `bigint`[] |
 | `receivers` | `string`[] |
-| `from?` | [`Account`](Account.md) |
-| `params?` | `TxParameters` |
+| `from` | [`NvmAccount`](NvmAccount.md) |
+| `txParams?` | [`TxParameters`](../interfaces/TxParameters.md) |
 
 #### Returns
 
-`Promise`<`ContractReceipt`\>
+`Promise`\<`any`\>
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:124](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L124)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:98](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L98)
 
 ___
 
 ### createAgreementFromDDO
 
-▸ **createAgreementFromDDO**(`agreementIdSeed`, `ddo`, `parameters`, `consumer`, `from`, `timeOuts?`, `params?`): `Promise`<`string`\>
+▸ **createAgreementFromDDO**(`agreementIdSeed`, `ddo`, `parameters`, `consumer`, `timeOuts?`, `txParams?`): `Promise`\<`string`\>
 
 Create a new agreement using the data of a DDO.
 
@@ -482,26 +605,25 @@ Create a new agreement using the data of a DDO.
 | `agreementIdSeed` | `string` | - |
 | `ddo` | [`DDO`](DDO.md) | DDO. |
 | `parameters` | `Params` |  |
-| `consumer` | [`Account`](Account.md) | - |
-| `from` | [`Account`](Account.md) | - |
+| `consumer` | [`NvmAccount`](NvmAccount.md) | - |
 | `timeOuts?` | `number`[] | - |
-| `params?` | `TxParameters` | - |
+| `txParams?` | [`TxParameters`](../interfaces/TxParameters.md) | - |
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 true if the call was successful.
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:225](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L225)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:211](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L211)
 
 ___
 
 ### createAgreementWithPaymentFromDDO
 
-▸ **createAgreementWithPaymentFromDDO**(`agreementIdSeed`, `ddo`, `parameters`, `consumer`, `from`, `timeOuts?`, `txParams?`, `observer?`): `Promise`<`string`\>
+▸ **createAgreementWithPaymentFromDDO**(`agreementIdSeed`, `ddo`, `serviceReference`, `parameters`, `consumer`, `from`, `txParams?`, `observer?`): `Promise`\<`string`\>
 
 #### Parameters
 
@@ -509,68 +631,26 @@ ___
 | :------ | :------ |
 | `agreementIdSeed` | `string` |
 | `ddo` | [`DDO`](DDO.md) |
+| `serviceReference` | `number` \| [`ServiceType`](../code-reference.md#servicetype) |
 | `parameters` | `Params` |
-| `consumer` | [`Account`](Account.md) |
-| `from` | [`Account`](Account.md) |
-| `timeOuts?` | `number`[] |
-| `txParams?` | `TxParameters` |
-| `observer?` | (`OrderProgressStep`: `any`) => `void` |
+| `consumer` | [`NvmAccount`](NvmAccount.md) |
+| `from` | [`NvmAccount`](NvmAccount.md) |
+| `txParams?` | [`TxParameters`](../interfaces/TxParameters.md) |
+| `observer?` | (`orderProgressStep`: [`OrderProgressStep`](../enums/OrderProgressStep.md)) => `void` |
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:255](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L255)
-
-___
-
-### findSigner
-
-▸ **findSigner**(`from`): `Promise`<`Signer`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `from` | `string` |
-
-#### Returns
-
-`Promise`<`Signer`\>
-
-#### Inherited from
-
-ContractBase.findSigner
-
-#### Defined in
-
-[src/Instantiable.abstract.ts:105](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L105)
-
-___
-
-### getAddress
-
-▸ **getAddress**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-ContractBase.getAddress
-
-#### Defined in
-
-[src/keeper/contracts/ContractBase.ts:41](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L41)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:240](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L240)
 
 ___
 
 ### getAgreementCreatedEvent
 
-▸ **getAgreementCreatedEvent**(`agreementId`): `Promise`<`any`[]\>
+▸ **getAgreementCreatedEvent**(`agreementId`): `Promise`\<`any`[]\>
 
 Generates and returns the agreement creation event.
 
@@ -582,19 +662,19 @@ Generates and returns the agreement creation event.
 
 #### Returns
 
-`Promise`<`any`[]\>
+`Promise`\<`any`[]\>
 
 Agreement created event.
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:469](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L469)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:450](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L450)
 
 ___
 
 ### getAgreementIdsFromDDO
 
-▸ **getAgreementIdsFromDDO**(`agreementId`, `ddo`, `creator`, `params`): `Promise`<`string`[]\>
+▸ **getAgreementIdsFromDDO**(`agreementId`, `ddo`, `creator`, `params`): `Promise`\<`string`[]\>
 
 Get agreement conditions IDs.
 
@@ -609,19 +689,19 @@ Get agreement conditions IDs.
 
 #### Returns
 
-`Promise`<`string`[]\>
+`Promise`\<`string`[]\>
 
 The condition IDs.
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:183](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L183)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:169](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L169)
 
 ___
 
 ### getAgreementStatus
 
-▸ **getAgreementStatus**(`agreementId`): `Promise`<``false`` \| [`AgreementConditionsStatus`](../interfaces/templates.AgreementConditionsStatus.md)\>
+▸ **getAgreementStatus**(`agreementId`): `Promise`\<``false`` \| [`AgreementConditionsStatus`](../interfaces/AgreementConditionsStatus.md)\>
 
 Returns the status of the conditions.
 
@@ -633,19 +713,19 @@ Returns the status of the conditions.
 
 #### Returns
 
-`Promise`<``false`` \| [`AgreementConditionsStatus`](../interfaces/templates.AgreementConditionsStatus.md)\>
+`Promise`\<``false`` \| [`AgreementConditionsStatus`](../interfaces/AgreementConditionsStatus.md)\>
 
 The conditions status.
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:343](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L343)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:331](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L331)
 
 ___
 
 ### getAgreementsForDID
 
-▸ **getAgreementsForDID**(`did`): `Promise`<`string`[]\>
+▸ **getAgreementsForDID**(`did`): `Promise`\<`string`[]\>
 
 #### Parameters
 
@@ -655,71 +735,53 @@ ___
 
 #### Returns
 
-`Promise`<`string`[]\>
+`Promise`\<`string`[]\>
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:496](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L496)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:476](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L476)
 
 ___
 
 ### getConditionTypes
 
-▸ **getConditionTypes**(): `Promise`<`string`[]\>
+▸ **getConditionTypes**(): `Promise`\<`string`[]\>
 
 Conditions address list.
 
 #### Returns
 
-`Promise`<`string`[]\>
+`Promise`\<`string`[]\>
 
 A list of condition addresses.
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:163](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L163)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:137](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L137)
 
 ___
 
 ### getConditions
 
-▸ **getConditions**(): `Promise`<[`ConditionSmall`](conditions.ConditionSmall.md)[]\>
+▸ **getConditions**(): `Promise`\<`ConditionSmall`[]\>
 
 List of condition contracts.
 
 #### Returns
 
-`Promise`<[`ConditionSmall`](conditions.ConditionSmall.md)[]\>
+`Promise`\<`ConditionSmall`[]\>
 
 A list of condition contracts.
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:171](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L171)
-
-___
-
-### getContract
-
-▸ **getContract**(): `Contract`
-
-#### Returns
-
-`Contract`
-
-#### Inherited from
-
-ContractBase.getContract
-
-#### Defined in
-
-[src/keeper/contracts/ContractBase.ts:37](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L37)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:148](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L148)
 
 ___
 
 ### getFromAddress
 
-▸ `Protected` **getFromAddress**(`from?`): `Promise`<`string`\>
+▸ **getFromAddress**(`from?`): `Promise`\<`string`\>
 
 #### Parameters
 
@@ -729,59 +791,35 @@ ___
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 #### Inherited from
 
-ContractBase.getFromAddress
+[ContractBase](ContractBase.md).[getFromAddress](ContractBase.md#getfromaddress)
 
 #### Defined in
 
-[src/keeper/contracts/ContractBase.ts:90](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L90)
-
-___
-
-### getInputsOfMethod
-
-▸ **getInputsOfMethod**(`methodName`): `any`[]
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `methodName` | `string` |
-
-#### Returns
-
-`any`[]
-
-#### Inherited from
-
-ContractBase.getInputsOfMethod
-
-#### Defined in
-
-[src/keeper/contracts/ContractBase.ts:50](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L50)
+[src/keeper/contracts/ContractBase.ts:67](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/ContractBase.ts#L67)
 
 ___
 
 ### getServiceAgreementTemplate
 
-▸ `Abstract` **getServiceAgreementTemplate**(): `Promise`<`ServiceAgreementTemplate`\>
+▸ **getServiceAgreementTemplate**(): [`ServiceAgreementTemplate`](../interfaces/ServiceAgreementTemplate.md)
 
 #### Returns
 
-`Promise`<`ServiceAgreementTemplate`\>
+[`ServiceAgreementTemplate`](../interfaces/ServiceAgreementTemplate.md)
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:317](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L317)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:307](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L307)
 
 ___
 
 ### getServiceAgreementTemplateConditionByRef
 
-▸ **getServiceAgreementTemplateConditionByRef**(`ref`): `Promise`<[`ConditionSmall`](conditions.ConditionSmall.md)\>
+▸ **getServiceAgreementTemplateConditionByRef**(`ref`): `Promise`\<`undefined` \| `ConditionSmall`\>
 
 #### Parameters
 
@@ -791,95 +829,96 @@ ___
 
 #### Returns
 
-`Promise`<[`ConditionSmall`](conditions.ConditionSmall.md)\>
+`Promise`\<`undefined` \| `ConditionSmall`\>
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:324](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L324)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:314](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L314)
 
 ___
 
 ### getServiceAgreementTemplateConditions
 
-▸ **getServiceAgreementTemplateConditions**(): `Promise`<`ServiceAgreementTemplateCondition`[]\>
+▸ **getServiceAgreementTemplateConditions**(): [`ServiceAgreementTemplateCondition`](../interfaces/ServiceAgreementTemplateCondition.md)[]
 
 #### Returns
 
-`Promise`<`ServiceAgreementTemplateCondition`[]\>
+[`ServiceAgreementTemplateCondition`](../interfaces/ServiceAgreementTemplateCondition.md)[]
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:319](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L319)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:309](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L309)
 
 ___
 
 ### getServiceAgreementTemplateDependencies
 
-▸ **getServiceAgreementTemplateDependencies**(): `Promise`<{ `[condition: string]`: `string`[];  }\>
+▸ **getServiceAgreementTemplateDependencies**(): `Promise`\<\{ `[condition: string]`: `string`[];  }\>
 
 #### Returns
 
-`Promise`<{ `[condition: string]`: `string`[];  }\>
+`Promise`\<\{ `[condition: string]`: `string`[];  }\>
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:333](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L333)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:321](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L321)
 
 ___
 
-### getSignatureOfMethod
+### getTransactionLogs
 
-▸ **getSignatureOfMethod**(`methodName`, `args?`): `string`
+▸ **getTransactionLogs**(`txReceipt`, `eventName`): `ParseEventLogsReturnType`\<`any`, `string`, ``false``, `string`\>
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `methodName` | `string` | `undefined` |
-| `args` | `any`[] | `[]` |
+| Name | Type |
+| :------ | :------ |
+| `txReceipt` | `TransactionReceipt` |
+| `eventName` | `string` |
 
 #### Returns
 
-`string`
+`ParseEventLogsReturnType`\<`any`, `string`, ``false``, `string`\>
 
 #### Inherited from
 
-ContractBase.getSignatureOfMethod
+[ContractBase](ContractBase.md).[getTransactionLogs](ContractBase.md#gettransactionlogs)
 
 #### Defined in
 
-[src/keeper/contracts/ContractBase.ts:45](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L45)
+[src/keeper/contracts/ContractBase.ts:75](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/ContractBase.ts#L75)
 
 ___
 
 ### init
 
-▸ `Protected` **init**(`config`, `optional?`): `Promise`<`void`\>
+▸ **init**(`config`, `optional?`, `contractAddress?`): `Promise`\<`void`\>
 
 #### Parameters
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| `config` | `InstantiableConfig` | `undefined` |
+| `config` | [`InstantiableConfig`](../interfaces/InstantiableConfig.md) | `undefined` |
 | `optional` | `boolean` | `false` |
+| `contractAddress?` | `string` | `undefined` |
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-ContractBase.init
+[ContractBase](ContractBase.md).[init](ContractBase.md#init)
 
 #### Defined in
 
-[src/keeper/contracts/ContractBase.ts:55](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L55)
+[src/keeper/contracts/ContractBase.ts:29](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/ContractBase.ts#L29)
 
 ___
 
 ### instanceFromDDO
 
-▸ `Optional` `Abstract` **instanceFromDDO**(`agreementIdSeed`, `ddo`, `creator`, `parameters`): `Promise`<[`AgreementInstance`](../interfaces/templates.AgreementInstance.md)<`Params`\>\>
+▸ **instanceFromDDO**(`agreementIdSeed`, `ddo`, `creator`, `parameters`, `serviceIndex?`): `Promise`\<`AgreementInstance`\<`Params`\>\>
 
 #### Parameters
 
@@ -889,14 +928,15 @@ ___
 | `ddo` | [`DDO`](DDO.md) |
 | `creator` | `string` |
 | `parameters` | `Params` |
+| `serviceIndex?` | `number` |
 
 #### Returns
 
-`Promise`<[`AgreementInstance`](../interfaces/templates.AgreementInstance.md)<`Params`\>\>
+`Promise`\<`AgreementInstance`\<`Params`\>\>
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:198](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L198)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:179](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L179)
 
 ___
 
@@ -910,13 +950,13 @@ ___
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:81](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L81)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:57](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L57)
 
 ___
 
 ### lockTokens
 
-▸ **lockTokens**(`tokenAddress`, `amounts`, `from`, `txParams`): `Promise`<`void`\>
+▸ **lockTokens**(`tokenAddress`, `amounts`, `from`, `txParams?`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -924,22 +964,22 @@ ___
 | :------ | :------ |
 | `tokenAddress` | `any` |
 | `amounts` | `any` |
-| `from` | [`Account`](Account.md) |
-| `txParams` | `TxParameters` |
+| `from` | [`NvmAccount`](NvmAccount.md) |
+| `txParams?` | [`TxParameters`](../interfaces/TxParameters.md) |
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:398](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L398)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:382](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L382)
 
 ___
 
 ### params
 
-▸ `Abstract` **params**(...`args`): `Params`
+▸ **params**(`...args`): `Params`
 
 #### Parameters
 
@@ -953,33 +993,33 @@ ___
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:79](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L79)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:55](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L55)
 
 ___
 
 ### paymentData
 
-▸ **paymentData**(`service`): [`PaymentData`](../interfaces/templates.PaymentData.md)
+▸ **paymentData**(`service`): `Promise`\<[`PaymentData`](../interfaces/PaymentData.md)\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `service` | `ServiceCommon` |
+| `service` | [`ServiceCommon`](../interfaces/ServiceCommon.md) |
 
 #### Returns
 
-[`PaymentData`](../interfaces/templates.PaymentData.md)
+`Promise`\<[`PaymentData`](../interfaces/PaymentData.md)\>
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:85](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L85)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:61](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L61)
 
 ___
 
 ### printAgreementStatus
 
-▸ **printAgreementStatus**(`agreementId`): `Promise`<`void`\>
+▸ **printAgreementStatus**(`agreementId`): `Promise`\<`void`\>
 
 Prints the agreement status.
 
@@ -991,91 +1031,91 @@ Prints the agreement status.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:439](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L439)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:418](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L418)
 
 ___
 
 ### send
 
-▸ **send**(`name`, `from`, `args`, `params?`): `Promise`<`ContractReceipt`\>
+▸ **send**(`functionName`, `from`, `args`, `params?`): `Promise`\<`any`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `name` | `string` |
-| `from` | `string` |
+| `functionName` | `string` |
+| `from` | [`NvmAccount`](NvmAccount.md) |
 | `args` | `any`[] |
-| `params` | `TxParameters` |
+| `params` | [`TxParameters`](../interfaces/TxParameters.md) |
 
 #### Returns
 
-`Promise`<`ContractReceipt`\>
+`Promise`\<`any`\>
 
 #### Inherited from
 
-ContractBase.send
+[ContractBase](ContractBase.md).[send](ContractBase.md#send)
 
 #### Defined in
 
-[src/keeper/contracts/ContractBase.ts:117](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L117)
+[src/keeper/contracts/ContractBase.ts:127](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/ContractBase.ts#L127)
 
 ___
 
 ### sendFrom
 
-▸ **sendFrom**(`name`, `args`, `from?`, `value?`): `Promise`<`ContractReceipt`\>
+▸ **sendFrom**(`functionName`, `args`, `from`, `value?`): `Promise`\<`any`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `name` | `string` |
+| `functionName` | `string` |
 | `args` | `any`[] |
-| `from?` | [`Account`](Account.md) |
-| `value?` | `TxParameters` |
+| `from` | [`NvmAccount`](NvmAccount.md) |
+| `value?` | [`TxParameters`](../interfaces/TxParameters.md) |
 
 #### Returns
 
-`Promise`<`ContractReceipt`\>
+`Promise`\<`any`\>
 
 #### Inherited from
 
-ContractBase.sendFrom
+[ContractBase](ContractBase.md).[sendFrom](ContractBase.md#sendfrom)
 
 #### Defined in
 
-[src/keeper/contracts/ContractBase.ts:97](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/ContractBase.ts#L97)
+[src/keeper/contracts/ContractBase.ts:108](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/ContractBase.ts#L108)
 
 ___
 
 ### service
 
-▸ `Abstract` **service**(): `ServiceType`
+▸ **service**(): [`ServiceType`](../code-reference.md#servicetype)
 
 #### Returns
 
-`ServiceType`
+[`ServiceType`](../code-reference.md#servicetype)
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:205](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L205)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:187](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L187)
 
 ___
 
 ### setInstanceConfig
 
-▸ `Protected` **setInstanceConfig**(`config`): `void`
+▸ **setInstanceConfig**(`config`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `config` | `InstantiableConfig` |
+| `config` | [`InstantiableConfig`](../interfaces/InstantiableConfig.md) |
 
 #### Returns
 
@@ -1083,17 +1123,41 @@ ___
 
 #### Inherited from
 
-ContractBase.setInstanceConfig
+[ContractBase](ContractBase.md).[setInstanceConfig](ContractBase.md#setinstanceconfig)
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:171](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L171)
+[src/Instantiable.abstract.ts:158](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L158)
+
+___
+
+### someLog
+
+▸ **someLog**(`logs`): `undefined`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `logs` | `any`[] |
+
+#### Returns
+
+`undefined`
+
+#### Inherited from
+
+[ContractBase](ContractBase.md).[someLog](ContractBase.md#somelog)
+
+#### Defined in
+
+[src/keeper/contracts/ContractBase.ts:84](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/ContractBase.ts#L84)
 
 ___
 
 ### standardContext
 
-▸ **standardContext**(`ddo`, `creator`): [`ConditionContext`](../interfaces/conditions.ConditionContext.md)
+▸ **standardContext**(`ddo`, `creator`, `serviceIndex?`): `ConditionContext`
 
 #### Parameters
 
@@ -1101,71 +1165,21 @@ ___
 | :------ | :------ |
 | `ddo` | [`DDO`](DDO.md) |
 | `creator` | `string` |
+| `serviceIndex?` | `number` |
 
 #### Returns
 
-[`ConditionContext`](../interfaces/conditions.ConditionContext.md)
+`ConditionContext`
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:207](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L207)
-
-___
-
-### addressesStatic
-
-▸ `Static` **addressesStatic**(`config`, `web3`): `Promise`<`string`[]\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `config` | [`Config`](Config.md) |
-| `web3` | `JsonRpcProvider` |
-
-#### Returns
-
-`Promise`<`string`[]\>
-
-#### Inherited from
-
-ContractBase.addressesStatic
-
-#### Defined in
-
-[src/Instantiable.abstract.ts:142](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L142)
-
-___
-
-### findSignerStatic
-
-▸ `Static` **findSignerStatic**(`config`, `web3`, `from`): `Promise`<`Signer`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `config` | [`Config`](Config.md) |
-| `web3` | `JsonRpcProvider` |
-| `from` | `string` |
-
-#### Returns
-
-`Promise`<`Signer`\>
-
-#### Inherited from
-
-ContractBase.findSignerStatic
-
-#### Defined in
-
-[src/Instantiable.abstract.ts:115](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L115)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:189](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L189)
 
 ___
 
 ### getInstance
 
-▸ `Static` **getInstance**<`Params`\>(`config`, `templateContractName`, `templateClass`, `optional?`): `Promise`<`any`\>
+▸ **getInstance**\<`Params`\>(`config`, `templateContractName`, `templateClass`, `optional?`): `Promise`\<`any`\>
 
 #### Type parameters
 
@@ -1177,41 +1191,41 @@ ___
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| `config` | `InstantiableConfig` | `undefined` |
+| `config` | [`InstantiableConfig`](../interfaces/InstantiableConfig.md) | `undefined` |
 | `templateContractName` | `string` | `undefined` |
 | `templateClass` | `any` | `undefined` |
 | `optional` | `boolean` | `false` |
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`\<`any`\>
 
 #### Overrides
 
-ContractBase.getInstance
+[ContractBase](ContractBase.md).[getInstance](ContractBase.md#getinstance)
 
 #### Defined in
 
-[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:62](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L62)
+[src/keeper/contracts/templates/AgreementTemplate.abstract.ts:38](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/keeper/contracts/templates/AgreementTemplate.abstract.ts#L38)
 
 ___
 
 ### setInstanceConfig
 
-▸ `Static` `Protected` **setInstanceConfig**<`T`\>(`instance`, `instantiableConfig`): `void`
+▸ **setInstanceConfig**\<`T`\>(`instance`, `instantiableConfig`): `void`
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends `Instantiable`<`T`\> |
+| `T` | extends [`Instantiable`](Instantiable.md) |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `instance` | `T` |
-| `instantiableConfig` | `InstantiableConfig` |
+| `instantiableConfig` | [`InstantiableConfig`](../interfaces/InstantiableConfig.md) |
 
 #### Returns
 
@@ -1219,8 +1233,8 @@ ___
 
 #### Inherited from
 
-ContractBase.setInstanceConfig
+[ContractBase](ContractBase.md).[setInstanceConfig](ContractBase.md#setinstanceconfig-1)
 
 #### Defined in
 
-[src/Instantiable.abstract.ts:162](https://github.com/nevermined-io/sdk-js/blob/55f88d2/src/Instantiable.abstract.ts#L162)
+[src/Instantiable.abstract.ts:149](https://github.com/nevermined-io/sdk-js/blob/4d0a0baa5afc98578a0eec8d32b14e61f501c376/src/Instantiable.abstract.ts#L149)
