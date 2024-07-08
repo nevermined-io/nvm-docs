@@ -20,27 +20,27 @@ import { NeverminedOptions } from '@nevermined-io/sdk'
 import { ethers } from 'ethers'
 
 // The web3 endpoint of the blockchain network to connect to, could be an Infura endpoint, Quicknode, or any other web3 provider
-export const web3ProviderUri = process.env.REACT_APP_NODE_URI || 'https://matic-mumbai.chainstacklabs.com'
+export const web3ProviderUri = process.env.REACT_APP_NODE_URI ||  'https://sepolia-rollup.arbitrum.io/rpc'
 
 // The url to a Nevermined node. It could be your own if you run a Nevermined Node
 export const neverminedNodeUri =
-  process.env.REACT_APP_GATEWAY_URI || 'https://node.mumbai.public.nevermined.network'
+  process.env.REACT_APP_GATEWAY_URI ||  'https://node.testing.nevermined.app'
 
 // The public address of the above Node
 export const neverminedNodeAddress =
   process.env.REACT_APP_GATEWAY_ADDRESS || '0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc'
 
 // The url of the marketplace api if you connect to one. It could be your own service if you run a Marketplace API
-export const marketplaceUri = 'https://marketplace-api.mumbai.public.nevermined.network'
+export const marketplaceUri = 'https://marketplace-api.testing.nevermined.app'
 
 // The url of the The Graph deployment of Nevermined
 const graphHttpUri = process.env.GRAPH_HTTP_URI ||  'https://api.thegraph.com/subgraphs/name/nevermined-io/public'
 
-// represent USDC token in mumbai that can be claimed in the faucet https://calibration-faucet.filswan.com/#/dashboard 
-export const erc20TokenAddress = process.env.ERC20_TOKEN_ADDRESS || '0xe11a86849d99f524cac3e7a0ec1241828e332c62'
+// represent USDC token in arbitrum-sepolia that can be claimed in the faucet https://faucet.circle.com/
+export const erc20TokenAddress = process.env.ERC20_TOKEN_ADDRESS || '0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d'
 
 // The Chain Id of the network where we are connecting
-export const acceptedChainId = process.env.REACT_APP_ACCEPTED_CHAIN_ID || '80001' // for Mumbai
+export const acceptedChainId = process.env.REACT_APP_ACCEPTED_CHAIN_ID || '421614'
 
 // The React application URL
 export const rootUri = process.env.REACT_APP_ROOT_URI || 'http://localhost:3445'

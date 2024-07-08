@@ -21,7 +21,7 @@ The network fee in Nevermined testnets is **1%** and the receiver of that fee is
 
 ## Arbitrum - Sepolia
 
-### Public Mumbai deployment (v3)
+### Public Arbitrum sepolia deployment (v3)
 
 This is a **public** network deployment (`TAG_NAME=public`) of the Nevermined Contracts v3 in the Arbitrum Sepolia network. You can use this network if you want to integrate with Nevermined in a Arbitrum Testnet.
 
@@ -31,34 +31,10 @@ The **ABIs of the contracts** to connect via SDK can be download from here: http
 
 | Environment | Network | Contracts Version | Tag | Component | URL | Comments |
 |-------------|---------|-------------------|-----|-----------|-----|----------|
-| [public-v3-mumbai](https://artifacts.nevermined.network/421614/public/contracts_v3.5.6.json) | Arbitrum Sepolia | 3.5.6 | public | Node | https://node.testing.nevermined.app | |
-| public-v3-mumbai | Mumbai | - | public | Marketplace API | https://marketplace-api.testing.nevermined.app | |
+| [public-v3-arbitrum-sepolia](https://artifacts.nevermined.network/421614/public/contracts_v3.5.6.json) | Arbitrum Sepolia | 3.5.6 | public | Node | https://node.testing.nevermined.app | |
+| public-v3-arbitrum-sepolia | Arbitrum Sepolia | - | public | Marketplace API | https://marketplace-api.testing.nevermined.app | |
 
 All the contract events are exposed via [The Graph](https://thegraph.com/). You can find all the `Arbitrum Sepolia` Nevermined Subgraphs here (search by Nevermined):
 
 https://thegraph.com/hosted-service
-
-
-## Polygon - Mumbai
-
-### Public Mumbai deployment (v3)
-
-This is a **public** network deployment (`TAG_NAME=public`) of the Nevermined Contracts v3 in the Polygon Mumbai network. You can use this network if you want to integrate with Nevermined in a Polygon Testnet.
-
-The **addresses** of the Nevermined Contracts can be found here: https://artifacts.nevermined.network/80001/public/contracts_v3.5.6.json
-
-The **ABIs of the contracts** to connect via SDK can be download from here: https://artifacts.nevermined.network/80001/public/contracts_v3.5.6.tar.gz
-
-| Environment | Network | Contracts Version | Tag | Component | URL | Comments |
-|-------------|---------|-------------------|-----|-----------|-----|----------|
-| [public-v3-mumbai](https://artifacts.nevermined.network/80001/public/contracts_v3.5.6.json) | Mumbai | 3.5.6 | public | Node | https://node.mumbai.nevermined.app | |
-| public-v3-mumbai | Mumbai | - | public | Marketplace API | https://marketplace-api.mumbai.nevermined.app | |
-
-All the contract events are exposed via [The Graph](https://thegraph.com/). You can find all the `Polygon Mumbai` Nevermined Subgraphs here (search by Nevermined):
-
-https://thegraph.com/hosted-service
-
-For example for Nevermined Polygon Mumbai:
-
-https://thegraph.com/hosted-service/subgraph/nevermined-io/publicmumbaiv2neverminedtoken
 

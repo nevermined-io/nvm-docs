@@ -194,7 +194,7 @@ export const DemoCatalog = () => {
   config.web3Provider = typeof window !== 'undefined'
   // eslint-disable-next-line
     ? (window as any)?.ethereum
-    : new ethers.providers.JsonRpcProvider('https://matic-mumbai.chainstacklabs.com')
+    : new ethers.providers.JsonRpcProvider('https://sepolia-rollup.arbitrum.io/rpc')
 
   const client = Wagmi.createClient(
     ConnectKit.getDefaultClient({

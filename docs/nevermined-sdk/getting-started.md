@@ -34,29 +34,29 @@ There are multiple environments of Nevermined available, before connecting you n
 You can find a full list of the environments available in the [Environments section](../environments/).
 
 
-This will download the artifacts for the latest contracts in _mumbai_ and store them in a folder called `./artifacts`:
+This will download the artifacts for the latest contracts in arbitrum_sepolia and store them in a folder called `./artifacts`:
 
 ```bash
- wget -c https://artifacts.nevermined.network/80001/public/contracts_v3.0.0.tar.gz -O -| tar -xz --one-top-level=./artifacts
+ wget -c https://artifacts.nevermined.network/421614/public/contracts_v3.5.7.tar.gz -O -| tar -xz --one-top-level=./artifacts
  ```
 
  Next we need to chose the nevermined environment we want to connect to.
 
 <Tabs>
-  <TabItem label="mumbai" value="mumbai" default>
+  <TabItem label="arbitrum-sepolia" value="arbitrum-sepolia" default>
 
   ```typescript
   import { Config } from '@nevermined-io/sdk'
 
   const config: NeverminedOptions = {
       // The web3 endpoint of the blockchain network to connect to, could be an Infura endpoint, Quicknode, or any other web3 provider
-      web3ProviderUri: 'https://rpc-mumbai.maticvigil.com',
+      web3ProviderUri: 'https://sepolia-rollup.arbitrum.io/rpc',
       // The url of the marketplace api if you connect to one. It could be your own service if you run a Marketplace API
-      marketplaceUri: 'https://marketplace-api.mumbai.public.nevermined.network',
+      marketplaceUri: 'https://marketplace-api.testing.nevermined.app',
       // The url to a Nevermined node. It could be your own if you run a Nevermined Node
-      neverminedNodeUri: 'https://node.mumbai.public.nevermined.network',
+      neverminedNodeUri: 'https://node.testing.nevermined.app',
       // The public address of the above Node
-      neverminedNodeAddress: '0x068ed00cf0441e4829d9784fcbe7b9e26d4bd8d0',
+      neverminedNodeAddress: '0x5838B5512cF9f12FE9f2beccB20eb47211F9B0bc',
       marketplaceAuthToken: undefined,
       // Folder where are copied the ABIs of the Nevermined Smart Contracts 
       artifactsFolder: './artifacts',
@@ -64,20 +64,20 @@ This will download the artifacts for the latest contracts in _mumbai_ and store 
   ```
 
   </TabItem>
-  <TabItem label="matic" value="matic">
+  <TabItem label="arbitrum-one" value="arbitrum-one">
 
   ```typescript
   import { Config } from '@nevermined-io/sdk'
 
   const config: NeverminedOptions = {
       // The web3 endpoint of the blockchain network to connect to, could be an Infura endpoint, Quicknode, or any other web3 provider
-      web3ProviderUri: 'https://rpc-mainnet.maticvigil.com',
+      web3ProviderUri: 'https://arb1.arbitrum.io/rpc',
       // The url of the marketplace api if you connect to one. It could be your own service if you run a Marketplace API
-      marketplaceUri: 'https://marketplace-api.public.nevermined.network',
+      marketplaceUri: 'https://marketplace-api.arbitrum.nevermined.app',
       // The url to a Nevermined node. It could be your own if you run a Nevermined Node
-      neverminedNodeUri: 'https://node.public.nevermined.network',
+      neverminedNodeUri:'https://node.arbitrum.nevermined.app',
       // The public address of the above Node
-      neverminedNodeAddress: '0x068ed00cf0441e4829d9784fcbe7b9e26d4bd8d0',
+      neverminedNodeAddress: '0x0b5297b97655A29dE245700864F5591741e50d2c',
       marketplaceAuthToken: '',
       // Folder where are copied the ABIs of the Nevermined Smart Contracts 
       artifactsFolder: './artifacts',
@@ -109,7 +109,7 @@ console.log(await nevermined.utils.versions.get())
 //     version: '1.0.0',
 //     commit: '9d31ebc27fe6c7c8a573abd283c632e5c70e687c',
 //     status: 'Working',
-//     network: 'mumbai',
-//     keeperVersion: '3.0.0',
+//     network: 'arbitrum-sepolia',
+//     keeperVersion: '3.5.7',
 // }
 ```
