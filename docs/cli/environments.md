@@ -152,3 +152,19 @@ The Marketplace API used can be found on https://marketplace-api.celo.nevermined
 The Nevermined Node can be found on http://node.celo.nevermined.app and uses the public address **0x824dbcE5E9C96C5b8ce2A35a25a5ab87eD1D00b1**.<br/>
 
 
+
+ 
+
+## appPeaq
+The Peaq network production environment where users can interact with Nevermined protocol.<br/>
+
+ **Production Environment** 
+The Native token is **PEAQ**. This environment has the network name **peaq-mainnet** and the chain id/network id **undefined**. <br/>
+
+### Nevermined configuration 
+
+ The Nevermined contracts deployed have the version: **3.5.7**  The Nevermined contracts are labeled with the tag name: **public** 
+The Marketplace API used can be found on https://marketplace-api.peaq.nevermined.app. <br/>
+The Nevermined Node can be found on http://node.peaq.nevermined.app and uses the public address **0x824dbcE5E9C96C5b8ce2A35a25a5ab87eD1D00b1**.<br/>
+
+
