@@ -2126,4 +2126,64 @@ ncli app download did:nv:afd733c23c41af948be7ec039c3fb2048d437e082a69ea3f336cdf4
 
 
 
+### create-api-key [name]
+It creates a new NVM API Key<br/>
+
+Nevermined API Keys allow to interact with the protocol in a programatic way. This command allows the generation of NVM API Keys. NOTE: This method requires the user to setup the ZERO_PROJECT_ID environment variable.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **name** | `string` |  |    | The name of the NVM API Key to create |
+
+
+
+#### Example/s
+
+
+```bash
+ncli app create-api-key &quot;My Test API Key&quot;
+```
+
+
+
+### list-api-keys
+It lists all the NVM API Keys associated to the user<br/>
+
+This command lists allt he NVM API Keys created by the user.<br/>
+
+
+
+#### Example/s
+
+
+```bash
+ncli app list-api-keys
+```
+
+
+
+### revoke-api-key [hash]
+It revokes a existing NVM API Key<br/>
+
+Nevermined API Keys allow to interact with the protocol in a programatic way. This command allows to revoke an existing NVM API Keys.<br/>
+
+#### Positional Arguments
+
+| Name of the Argument | Type | Is required? | Default value | Description |
+|----------------------|------|-------------:|--------------:|-------------|
+| **hash** | `string` |  |    | The hash of the NVM API Key to revoke |
+
+
+
+#### Example/s
+
+
+```bash
+ncli app revoke-api-key &quot;eyJhbGciOiJFUzI1NksifQ.eyJpc&quot;
+```
+
+
+
 
