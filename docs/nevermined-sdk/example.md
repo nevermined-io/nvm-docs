@@ -17,7 +17,6 @@ The first file that you need to create is the `config.ts` file which contains al
 
 ```ts
 import { NeverminedOptions } from '@nevermined-io/sdk'
-import { ethers } from 'ethers'
 
 // The web3 endpoint of the blockchain network to connect to, could be an Infura endpoint, Quicknode, or any other web3 provider
 export const web3ProviderUri = process.env.REACT_APP_NODE_URI ||  'https://sepolia-rollup.arbitrum.io/rpc'
@@ -47,7 +46,7 @@ export const rootUri = process.env.REACT_APP_ROOT_URI || 'http://localhost:3445'
 
 export const appConfig: NeverminedOptions = {
   //@ts-ignore
-  web3ProviderUri: typeof window !== 'undefined' ? window.ethereum : new ethers.providers.JsonRpcProvider(nodeUri),
+  web3ProviderUri: typeof window !== 'undefined' ? window.ethereum : nodeUri,
   neverminedNodeUri,
   neverminedNodeAddress,
   graphHttpUri,

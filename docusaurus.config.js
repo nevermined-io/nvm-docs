@@ -17,7 +17,7 @@ const config = {
   favicon: 'img/favicon.ico',
   plugins: ['docusaurus-plugin-sass', './src/plugins/http-support'],
   customFields: {
-    subtitle: 'Your Data & AI Unchained',
+    subtitle: 'AN AI-PAYMENTS PROTOCOL FOR AI-COMMERCE',
   },
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.

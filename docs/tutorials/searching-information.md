@@ -1,9 +1,9 @@
 ---
-sidebar_position: 4
+sidebar_position: 15
 description: What information is available in Nevermined, and how to find it
 ---
 
-# Searching information in Nevermined
+# Searching information in Data Marketplaces
 
 Nevermined allows the creation of networks where multiple use cases can be built. The modular architecture of Nevermined allows that using the deployment of Smart Contracts, to have independent "domains" or "applications" using the same contracts.
 
