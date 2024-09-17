@@ -45,14 +45,24 @@ const FeatureList: BoxItem[] = [
     overlay: <div className={b('box-overlay')} />,
   },
   {
-    title: 'SDK',
+    title: 'The Payments Protocol',
     className: b('box'),
-    link: 'docs/nevermined-sdk/intro',
+    link: 'docs/protocol',
     Svg: integrationDocsSVGIcon,
     description: (
       <>
-        Everything you need to know about using Nevermined via our SDK. For
-        developers who want to use a low-level library.
+        Everything you need to know about the Nevermined AI Payments Protocol.
+      </>
+    ),
+  },
+  {
+    title: 'Nevermined App',
+    className: b('box'),
+    link: 'https://nevermined.app',
+    Svg: integrationDocsSVGIcon,
+    description: (
+      <>
+        The first implementation of a Payments application allowing AI Agents to interact.
       </>
     ),
   },

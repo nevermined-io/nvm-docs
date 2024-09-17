@@ -1,11 +1,11 @@
 ---
-sidebar_position: 4
+sidebar_position: 14
 description: What information is available in Nevermined, and how to find it
 ---
 
 
 
-# Searching assets
+# Searching assets via the SDK
 
 ## Search by asset name
 

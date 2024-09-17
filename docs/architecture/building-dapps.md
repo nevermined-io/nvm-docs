@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 19
 description: Nevermined decentralized Applications
 ---
 
@@ -19,9 +19,9 @@ From a developer point of view, the integration of Nevermined is quite straight 
 
 Nevermined provides the following core features that can be used to build different scenarios or use cases:
 
+* Payments - It allows to define the price of an asset and the conditions to access it.
 * Access Control - It is a core and cross capability of Nevermined that can be found across all the existing features. It allows to asset creators/providers to define authorization rules that are enforced and validated in a blockchain.
 * Data Sharing - In Nevermined a digital asset can be registered and provide an **access** service. That service allows the download of all the files attached to the asset, when the consumer fulfills all the conditions defined by the asset creator/provider.
-* Remote Computation - It allows to define scenarios where an asset owner enable the execution of an algorithm on top of existing data in a privacy preserving manner.
 * Tokenization - Allows digital assets tokenization via ERC-721 or ERC-1155 NFTs. It includes the modules to facilitate secondary markets and royalties enforcement.
 * Search & Discovery - Exposes the flexibility of querying for digital asset metadata attributes and the events associated with their life-cycle.
 * Provenance - Tracks on-chain all the relevant actions related with the digital assets.

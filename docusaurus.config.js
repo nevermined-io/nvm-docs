@@ -17,7 +17,7 @@ const config = {
   favicon: 'img/favicon.ico',
   plugins: ['docusaurus-plugin-sass', './src/plugins/http-support'],
   customFields: {
-    subtitle: 'Your Data & AI Unchained',
+    subtitle: 'AN AI-PAYMENTS PROTOCOL FOR AI-COMMERCE',
   },
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -92,8 +92,8 @@ const config = {
           },
           {
             position: 'left',
-            label: 'SDK',
-            to: 'docs/nevermined-sdk/getting-started',
+            label: 'Protocol',
+            to: 'docs/protocol',
           },
           {
             position: 'left',
@@ -101,6 +101,11 @@ const config = {
             to: 'docs/tutorials',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            position: 'left',
+            label: 'Nevermined App',
+            href: 'https://nevermined.app/',
+          },
           {
             position: 'right',
             href: 'https://discord.gg/GZju2qScKq',
@@ -123,6 +128,10 @@ const config = {
                 to: '/docs/getting-started',
               },
               {
+                label: 'Nevermined Protocol',
+                to: '/docs/protocol',
+              },
+              {
                 label: 'Architecture',
                 to: '/docs/architecture',
               },
@@ -135,6 +144,14 @@ const config = {
           {
             title: 'More',
             items: [
+              {
+                label: 'Nevermined App',
+                href: 'https://nevermined.app/',
+              },
+              {
+                label: 'Nevermined App (Testing)',
+                href: 'https://testing.nevermined.app/',
+              },
               {
                 label: 'Blog',
                 to: '/blog',

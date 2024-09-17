@@ -43,7 +43,7 @@ This will download the artifacts for the latest contracts in arbitrum_sepolia an
  Next we need to chose the nevermined environment we want to connect to.
 
 <Tabs>
-  <TabItem label="arbitrum-sepolia" value="arbitrum-sepolia" default>
+  <TabItem label="testing" value="testing" default>
 
   ```typescript
   import { Config } from '@nevermined-io/sdk'
@@ -64,7 +64,7 @@ This will download the artifacts for the latest contracts in arbitrum_sepolia an
   ```
 
   </TabItem>
-  <TabItem label="arbitrum-one" value="arbitrum-one">
+  <TabItem label="production" value="production">
 
   ```typescript
   import { Config } from '@nevermined-io/sdk'
