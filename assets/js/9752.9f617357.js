@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[9752],{92076:(c,s,a)=>{a.r(s),a.d(s,{default:()=>e});const e=a.p+"assets/fonts/Catalogue-DemiItalic-8f2caaa55c807b7987cca6f46f69cd80.otf"}}]);

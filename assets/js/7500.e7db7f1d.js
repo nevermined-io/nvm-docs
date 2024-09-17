@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[7500],{67500:(s,e,t)=>{t.r(e),t.d(e,{default:()=>c});const c=t.p+"assets/fonts/Catalogue-ThinItalic-56e86c98bd604fbdbeef3982615d2551.otf"}}]);

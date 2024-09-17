@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[3913],{93913:(c,s,t)=>{t.r(s),t.d(s,{default:()=>a});const a=t.p+"assets/fonts/Catalogue-LightItalic-28ba2836008f17c8c02d88fd7ccdc486.otf"}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[4341],{84341:(e,s,d)=>{d.r(s),d.d(s,{default:()=>c});const c=d.p+"assets/images/single-bg-body-d0eed827872a1b906ecdf4620bd33fe3.png"}}]);
