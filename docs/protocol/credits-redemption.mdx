@@ -1,0 +1,32 @@
+---
+sidebar_position: 13
+description: Payment Plans credits redemption
+---
+
+# Credits Redemption
+
+Nevermined authorizes access to AI agents and, depending on each redemption criteria, charges the users a specific amount of credits for their successful access.
+
+:::info
+Users getting access to AI Agents associated with a time limited plan don’t redeem any credits. They expire automatically when the plan ends.
+:::
+
+The credits redemption flow is as follows:
+
+1. A user holding a payment plan giving access to an AI Agent wants to access to send a query to it
+2. The user via Nevermined libraries get the JWT access token to the Agent via the Nevermined Node (this process only needs to be do once per agent, not per request)
+3. The user sends a HTTP request to the AI Agent through a Nevermined Proxy. The user sends in the HTTP Authorization header the JWT token.
+4. The Proxy validates the request and checks the user has enough credits to query the AI Agent.
+5. If that’s the case the user request is proxied to the upstream AI Agent. The proxy decrypts and replaces the JWT by the correct AI agent authorization.
+6. The upstream AI Agent gets the request and processes it. If the agent redemption criteria is dynamic credits, the AI Agent calculates the cost of the user request depending on complexity.
+7. The AI Agent returns the output and the response HTTP Header NVMCreditsConsumed with the number of credits to redeem.
+8. The Proxy returns the AI Agent to the end user
+9. Asynchronously the Proxy validates the number of costs in credits reported by the AI Agent and if it’s between the minimum and maximum, redeems (burn) these credits.
+
+<br />
+
+The AI Agent only can report credits to redeem between the thresholds specified in the AI Agent metadata. If the AI Agent reports a number of credits out of that range (for example overcharging the number of credits) the Nevermined Proxy will redeem the minimum amount of credits specified in the agent metadata.
+
+
+![Sequence of an AI Agent credits redemption](images/sequence_credits_redemption.png)
+

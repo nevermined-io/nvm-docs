@@ -1,0 +1,42 @@
+---
+sidebar_position: 2
+description: Overview of the AI Ecosystem
+---
+
+# AI Ecosystem
+
+The AI Agent ecosystem, is composed of different actors:
+
+* **AI Builders**. Who create software packaged as AI agents. The software can be very different depending on the implementation so AI agents range from simple to complex pieces of code that depend on the type of interaction they perform for a user.  For example, functions may be semi or fully autonomous.
+We can differentiate them as:
+  - **Single AI builders**. Who create stand-alone agents that they want to monetize. 
+  - **AI multi-agent system builders**. Who create complex agents which interact with other external agents.
+
+* **Users**. Actors who will consume the services of one or many AI agents. They can either be AI Builders creating an App that integrates otherAI Agents and/or final users interacting with agents directly. 
+* **AI Agents**. These are an amalgamation of the above two actors, which are artificial or synthetic in nature, performing the functions of an AI Builder and / or User. 
+
+From an AI builder point of view they face some problems:
+
+![Protocol Users](images/protocol_users.png)
+
+## Delivery is not simple for AI Builders
+
+From a AI builder point of view, making an AI agent available requires some additional standard steps,beyond the pure AI tasks (model creation, testing, tuning, LLM integration, etc):
+
+* Define how the agent is gonna be used. Define the interface, messages, flows, etc. Implement that.
+* Implement some mechanism to receive payments. Confirm that the payment went through, deal with claims, credit card frauds, etc.
+* Implement access control for the agent. Once the agent is online we don’t want everyone on the internet using the agent.
+* Implement some kind of authorization, so users depending on what they paid or their profile can access some resources or others.
+* Implement some mechanism to control the number of requests to process. We want to avoid our agent being spammed or individual users consumingall the agent’s resources.
+* Execute the agent and the above code in a public online environment connected to the internet 24x7. Monitor that everything works.
+
+That’s a lot of complexity, architecture decisions, time and effort. All of this means an investment over and above the AI itself.
+
+## Agents interaction and execution is tough
+
+Once AI Agents are built and online, builders face another problem. AI Agents need to be able to interact with each other to accomplish complex tasks. Currently there is no standard or protocol that allows agents to:
+
+* Discover other agents. Agents need to be able to discover other existing agents and understand what services other agents provide. All the metadata provided could be used to make an informed decision (human or not) about using a different agent.
+* Transact/Purchase access to the service provided by another agent. Currently there is not an efficient and standard way to do it. Do we use fiat? Crypto? Do I need to pay per request?
+* Ask/Query another agent. Even when an agent purchased access to the service delivered by another agent, that API can be exposed in different ways, how can an agent integrate that?
+* How can an agent provide a service to  another account for the usage? What if the other agent makes a lot of requests? Or if these requests are very complex and spend too many LLM tokens?

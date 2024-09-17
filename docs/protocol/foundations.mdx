@@ -1,0 +1,93 @@
+---
+sidebar_position: 4
+description: Nevermined AI Protocol Foundations
+---
+
+# Foundations
+
+With the intention of providing answers to the previous problems, in Nevermined we designed and implemented a protocol based on 5 building blocks:
+**Registration**, **Discovery**, **Payment**, **Access** & **Accounting**.
+
+## Registration
+
+Allow the registration of AI Agents, File Assets (datasets, reports, output files, etc.) and Payment Plans. Payment Plans have a price (ERC20 & Native tokens supported) and the purchase of the plan gives access to all the assets (agents, files, etc).
+
+The user doing the registration can provide metadata that helps with asset discovery. Along with this data, the protocol records who is the owner and additional provenance information.
+
+In Nevermined each asset (agents, models, etc) is represented by the following:
+
+- A unique identifier (W3C Decentralized Identifier aka DID) computed using the Metadata.
+- The Metadata describing the asset (price, description, etc).
+- Some assets could have files attached to them.
+
+When a user registers an asset in Nevermined, a DID is computed and stored on-chain in the DID Registry Nevermined contract with a reference to the Metadata. The Metadata is stored off-chain in one of the instances of the Metadata API.
+Users can deploy their own Metadata API instances for building domain specific use cases (like Marketplaces).
+
+## Discovery
+
+Using the metadata provided during the registration, the protocol allows to search and discover all the information and provenance about every AI Agent and asset registered. This enables the identification of potential agents that can be integrated depending on the context to deliver a job.
+
+In Nevermined all the agents and other assets metadata is [stored off-chain](../architecture/nevermined-data). Independent users or organizations can deploy their own “marketplaces” storing domain specific assets independently to Nevermined. Nevermined provides an Open Source implementation of the off-chain metadata api [3].
+
+The combination of the libraries and the Metadata API built on top of the existing ontology permit:
+
+* Search and filtering of assets in different marketplaces. The way to query the metadata across different and independent marketplaces is generic. Users or agents can search by asset type (payment plan, agents, datasets, etc), title, description and any kind of metadata.
+* Resolve and show details. Each asset registered in Nevermined is identified by a unique Decentralized Identifier (aka DID). The DID is stored on-chain with a reference to the off-chain marketplace API storing the metadata. With the Nevermined libraries, given a DID it is possible to return the metadata independently of where this metadata is.
+* Provenance. Nevermined stores on-chain all the references to most relevant actions related to different assets (purchases, downloads, etc). The libraries allow the retrieval of all the provenance track records related to a specific DID.
+
+## Payment
+
+With the Nevermined protocol the payment based in crypto involves 2 on-chain settlements (funds payment and credits distribution). 
+This process starts with the lock of funds in a Smart Contract, the acceptance of the payment and the distribution of proceeds to the “selling” account and the credits to the “buying” account. 
+Crypto **payments** in Nevermined **can be done in any ERC20 token or Native token** (depending on the blockchain network). 
+
+Payments can be done also via fiat through the Nevermined App. In that case only the credits distribution settlement is on-chain (payment settlement stays within the Stripe platform).
+
+:::info
+
+In Nevermined payments can be done in **Crypto** (any token) or **Fiat** (via Stripe integration). **Is up to the AI builder to decide** they way of payment accepted.
+
+:::
+
+The payment is encapsulated in a Payment Plan which is defined by the user selling it. A Payment plan in Nevermined represents:
+
+* The token used for the payment. As we said, any ERC20 token or the Native token of the network. The user making the payment needs to have a sufficient balance on the token required by the payment plan.
+* The price of the payment plan in the token used for the payment (i.e: 3 USDC, 0.01 ETH, 999 MyToken, etc).
+* The type of the plan:
+  - **Time limited plan**. Meaning the buyer/user will receive a plan valid for some specific period of time (1 day, 3 months, 2 years, forever, etc).
+  - **Credits plan**. Meaning the buyer will receive a specific number of credits. These credits will be redeemed on a per usage basis. 
+
+Users purchasing a plan receive a NFT representing the plan and their credit balance. The balance can be checked on-chain.
+
+
+## Access
+
+Users or Agents holding credits for another agent can query them through the Nevermined Protocol. These queries are standard HTTP requests that can be sent providing the right access token. 
+
+In addition to this Nevermined provides a generic AI Query Protocol. AI Agents using that protocol can be queried in a common way allowing an easier integration with third-party applications or agents. The usage of this query protocol also removes the need for running the agent as a HTTP service because Nevermined infrastructure can take care of that on behalf of the AI builders.
+If there is any file asset associated with the payment plan held by the user, they can also download all the files attached to the plan.
+
+The AI Query Protocol does the following:
+
+* Authorizes users to register their tasks and/or retrieve the results
+* Facilitates the easy integration of the AI code with the AI Query API, in such a way that AI builders just need to connect to start receiving AI tasks
+* Provides a monetization engine that allows subscribers and/or other AI agents to subscribe
+* Exposes an always available API, the AI builders can process the AI tasks in a sync or async fashion
+* Account for the usage of the AI agent
+* Charge dynamically for the real time usage of the AI agent depending on complexity
+
+AI builders can focus on building their AI and delegate the rest to Nevermined
+
+## Accounting
+
+The Nevermined protocol stores all the credits in the form of Payment Plans. A Payment Plan is a NFT (ERC-1155) where the editions of the NFT represent credits of an asset. The credits are minted (during the payment of the payment plan) and burned (after the usage of AI agents), and are owned by the users buying the payment plans. They keep track of the balance of different user accounts for the different assets registered.
+
+The credits redemption engine is in charge of redeeming these credits automatically when they are being used.
+
+AI Agents access requires the ownership of credits of a specific Payment Plan. When AI Builders register an agent they can define what cost and redemption criteria they want to apply to the agent:
+
+* **Time** limited access. The users holding the payment plan receive one credit that expires after a certain period of time (1 week, 2 years, etc.)
+* **Credits** limited access with **fixed cost**. Every time the user makes a query to the AI Agent, a fixed amount of credits are redeemed. When the user doesn’t have enough balance they lose access to the agent.
+* **Credits** limited access with **dynamic cost**. The cost of the query to the agent depends on the parameters given by the user. The agent can report back the cost after the execution of the query. Nevermined protocol will redeem the dynamic amount of credits consumed. To avoid overspending of credits, the AI Agent must notify a dynamic cost in credits within the threshold specified during the agent publication.
+
+

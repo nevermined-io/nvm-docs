@@ -5,7 +5,7 @@ description: Nevermined Building Blocks
 
 # Building Blocks
 
-Nevermined is a digital ecosystems builder where different entities can share and monetize
+Nevermined protocol allows to build builder where different entities can share and monetize
 their data and make an efficient and secure usage of it even with untrusted parties.
 
 Nevermined packages, automate and augment multiple independent open and private
@@ -14,8 +14,7 @@ requirements of the enterprises.
 
 The complete technical solution includes the following components:
 
-![Nevermined components](images/nvm_logical_architecture.png)
-
+![Nevermined components](images/layers_and_blocks.png)
 
 ## Smart Contracts
 
@@ -35,9 +34,8 @@ The team responsible for the definition, deployment and maintenance of the whole
  encapsulated in the client libraries so typically there is no direct
  integration between the users and the Smart Contracts.  
 
-Nevermined provides a [DAOs contracts framework](https://github.com/nevermined-io/governance-contracts) 
+Nevermined provides a [DAOs contracts framework](https://github.com/nevermined-io/governance-contracts)
 that allows the governance of a digital ecosystem.
-
 
 ## Marketplace API
 
@@ -55,8 +53,6 @@ you can find in a Marketplace (user profiles, bookmarks, etc).
 Nevermined provides the package and automation of the micro-service allowing an
 easy integration and deployment in cloud providers and Kubernetes clusters.
 
-
-
 ### Nevermined Node
 
 The [Nevermined Node](https://github.com/nevermined-io/node) is an
@@ -66,39 +62,19 @@ extended data services (e.g. storage and compute). The Nevermined Node, as
 part of the Publisher ecosystem, includes the credentials to interact with the
 infrastructure (initially cloud, but could be on-premise).
 
-The Node allows also the encryption and decryption of content via:
-
-* RSA
-* ECDSA
-
 Nevermined provides the package and automation of the micro-service allowing an
 easy integration and deployment in cloud providers and Kubernetes clusters.
 
+#### Nevermined Proxy
 
-#### Compute Endpoints
+The Nevermined Proxy implements a HTTP proxy that protect access to AI Agents and
+ upstream HTTP services. With the integration of the Proxy, the AI Agents can
+ protect the access to their endpoints and only the users with the proper credentials
+ (via payment plan purchase) can access to the services.
 
-The [Nevermined Node](https://github.com/nevermined-io/node) is also in charge of
- orchestrating the execution of compute jobs in the premises of
- the Data/Compute Providers.
-
- In Nevermined the Data/Compute Providers can publish services saying they offer
-  compute capabilities to the network on top of their data under some conditions
-   for a given price. The Nevermined Node is in charge of, after run all the
-   verifications needed, to manage all the infrastructure to move
-   the algorithm where the data is and track the execution of these ephemeral
-   environments.
-
-The Nevermined Node exposes a set of endpoints in its REST API, that can plugs
-different compute backends. At this point in time, integrates
-2 different backends:
-
-* **Kubernetes backend** - It allows the orchestration of Kubernetes clusters
-for setting up compute workflows in cloud or on-premise environments.  
-* **Federated Learning backend** - It manages the execution of FL jobs in
-different federated environments. It starts the coordinator and an aggregator
-tasks doing the management of the participants as part of a federated job and
-the secure aggregation of the trained models.
-
+:::info
+Differently to other integrations, the Proxy doesn't require any software modification in the AI Agent or service protected.
+:::
 
 ### Software Development Kits (SDK's)
 
@@ -107,17 +83,18 @@ components & APIs of the system.
 Nevermined provides 3 different Open Source implementation of SDK's allowing the integration and implementation of
 complex use cases on top of the Nevermined Data Ecosystems.
 
+- [Python Payments Library]((https://pypi.org/project/payments-py/)) - Library oriented to Python AI Builders to facilitate the
+  integration of the Payments, Registration, Access and Discovery functionalities in their AI Agents.
+  [See an integration tutorial](https://docs.nevermined.app/docs/tutorials/integration/python-integration).
+- [Javascript Payments Library](https://github.com/nevermined-io/payments) - Library oriented to AI Builders (using Typescript/Javascript) to facilitate the
+  integration of the Payments, Registration, Access and Discovery functionalities in their AI Agents.
+  [See an integration tutorial](https://docs.nevermined.app/docs/tutorials/integration/nextjs-react-payments).  
 - [Nevermined SDK JS](https://github.com/nevermined-io/sdk-js) - JavaScript version of the Nevermined SDK to be
-  integrated with front-end applications.
-- [Nevermined SDK PY](https://github.com/nevermined-io/sdk-py) - Python version of the Nevermined SDK to be
-  integrated with back-end applications. The primary users are data scientists.
+  integrated with front-end applications. This library is oriented to build complex applications like Marketplaces, dApps, etc. The [Nevermined App](https://nevermined.app/) is an example of a complex application built using the SDK.
 
-
-The libraries are packaged and delivered in the typical formats for each language allowing easy integration:
-
-- [NPM Nevermined SDK JS](https://www.npmjs.com/package/@nevermined-io/sdk-js)
-- [NPM Nevermined SDK PY](https://pypi.org/project/nevermined-sdk-py/)
-
+:::info
+Libraries are Open Source and available in NPM and PyPi repositories.
+:::
 
 
 ### Command Line Interface (CLI) tool
@@ -134,50 +111,3 @@ and interact with it using the command line interface. It orchestrates all the u
 - Review Nevermined deployments
 - Manage accounts/wallets
 - Some additional functionalities
-
-## Operational
-
-Are the Nevermined tools (not Open Source) allowing to automate, integrate and
-operate the rest of the components of the stack. The main tools available are:
-
-### Contract Tools
-
-[Nevermined Contract Tools](https://github.com/nevermined-io/contract-tools).
-The Nevermined Zeppelin OS contract management framework. Deploying and
-upgrading Smart Contracts in multiple environments is not an easy thing.
-
-The Nevermined Contract Tools allow to deploy and upgrade smart contracts across
- multiple networks (production or testnet, public or private) mitigating the
- risk loose the control of the Smart Contracts or leave them in a non-functional
-  way.
-
-
-### Development and Integration
-
-The [Nevermined Tools](https://github.com/nevermined-io/tools) allows to
-execute all the components included in the stack in a local environment.
-Nevermined Tools make use of all the containers of the components and
-orchestrate the execution of them having a fully functional solution using the
-same software that you can find in a production environment.
-
-This approach allows to:
-
-- Develop and integrate functionalities with a lower risk of issues when you
-  move to a staging or production environment
-- Automate the integration tests in the CI environments having fully functional
-  networks used for testing
-- Connect to remote blockchain networks from your local environment
-
-
-## Dictionary of Terms and Components
-
-### Components
-
-* `Nevermined Node` or `Node`
-* `Smart Contracts` or `Contracts`
-
-
-### Configuration
-
-* `web3ProviderUri` or `web3ProviderUrl` - The JSON-RPC or WS url to the blockchain provider. Typically Infura or Alchemy (localhost on local environments)
- 

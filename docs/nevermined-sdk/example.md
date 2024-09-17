@@ -13,7 +13,7 @@ Before you start with this demo you require:
 * The Nevermined artifacts, you can find the script [here](https://github.com/nevermined-io/create-nevermined-react/blob/main/scripts/download-artifacts.sh). To use the script run `./download-artifacts.sh [VERSION OF THE CONTRACT] [NETWORK]`
 
 ## Let's start with the app config file
-The first file that you need to create is the `config.ts` file which contains all the [options needed](./api-reference/classes/NeverminedOptions.md) to initialize the [Nevermined SDK](./intro.md).
+The first file that you need to create is the `config.ts` file which contains all the [options needed](https://github.com/nevermined-io/sdk-js/blob/main/src/models/NeverminedOptions.ts) to initialize the [Nevermined SDK](./intro.md).
 
 ```ts
 import { NeverminedOptions } from '@nevermined-io/sdk'
@@ -58,7 +58,7 @@ export const appConfig: NeverminedOptions = {
 
 ## The example file
 
-The example file `src/example/index.tsx` contains all the basic logic to handle a [NFT1155](../architecture/what-can-i-do.md#tokenization-of-assets-via-erc-1155-nfts-aka-nft-sales) as a component. It outlines each functionality and component in detail.
+The example file `src/example/index.tsx` contains all the basic logic to handle a **NFT1155** as a component. It outlines each functionality and component in detail.
 
 ### SingleAsset
 It shows the content of the ddo object published
