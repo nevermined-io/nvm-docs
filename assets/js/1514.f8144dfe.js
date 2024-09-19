@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[1514],{31514:(s,c,e)=>{e.r(c),e.d(c,{default:()=>f});const f=e.p+"assets/fonts/Catalogue-Book-cb66724dc8bf822477d702f7cf1b3835.otf"}}]);

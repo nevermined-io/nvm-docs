@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[6629],{86629:(s,e,a)=>{a.r(e),a.d(e,{default:()=>c});const c=a.p+"assets/fonts/Catalogue-Demi-8ad222321cb3c8000b9f9ea67de8484d.otf"}}]);
