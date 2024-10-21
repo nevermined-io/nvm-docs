@@ -9,7 +9,7 @@ Nevermined Smart Contracts implement the main business logic of all the Nevermin
 
 :::info Open Source
 
-The Smart Contracts are Open Source software built in Solidity, allowing to be deployed in any EVM compatible network.
+The Smart Contracts are developed in Solidity and can be deployed in any EVM compatible network.
 
 :::
 
