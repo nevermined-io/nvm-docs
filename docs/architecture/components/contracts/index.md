@@ -12833,6 +12833,70 @@ function mintBatch(address to, uint256[] ids, uint256[] amounts, uint256[] expir
 function burnBatch(address from, uint256[] ids, uint256[] amounts) external
 ```
 
+### burnBatchFromHolders
+
+```solidity
+function burnBatchFromHolders(address[] from, uint256[] ids, uint256[] amounts) external
+```
+
+## NFT1155SubscriptionWithoutBlocks
+
+### nftType
+
+```solidity
+bytes32 nftType
+```
+
+### initialize
+
+```solidity
+function initialize(address owner, address didRegistryAddress, string name_, string symbol_, string uri_, address nvmConfig_) public virtual
+```
+
+### mint
+
+```solidity
+function mint(address to, uint256 tokenId, uint256 amount, bytes data) public virtual
+```
+
+### burn
+
+```solidity
+function burn(uint256 id, uint256 amount) public
+```
+
+### burn
+
+```solidity
+function burn(address to, uint256 id, uint256 amount) public
+```
+
+### balanceOf
+
+```solidity
+function balanceOf(address account, uint256 tokenId) public view virtual returns (uint256)
+```
+
+_See {NFT1155Upgradeableable-balanceOf}._
+
+### mintBatch
+
+```solidity
+function mintBatch(address to, uint256[] ids, uint256[] amounts, bytes data) external
+```
+
+### burnBatch
+
+```solidity
+function burnBatch(address from, uint256[] ids, uint256[] amounts) external
+```
+
+### burnBatchFromHolders
+
+```solidity
+function burnBatchFromHolders(address[] from, uint256[] ids, uint256[] amounts) external
+```
+
 ## NFT1155Upgradeable
 
 _Implementation of the basic standard multi-token.
