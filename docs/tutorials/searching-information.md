@@ -94,23 +94,11 @@ You can find a full reference of the The Graph search options in their [search d
 
 :::
 
-All the Metadata search queries can be sent to the base endpoint: `https://api.thegraph.com/subgraphs/name/nevermined-io/`. The rest of the subgraph URL depends on:
-
-* The deployment tag name (i.e: `public`, `common`, etc)
-* The network name (i.e: `mumbai`, `matic`, `mainnet`, etc)
-* The contracts major version (i.e: `v2`)
-* The subgraph name coming from contract name (i.e: `didregistry`, `whitelistingcondition`)
-
-Taking that into accout it can result in urls like:
-
-* Events emitted by the `DIDRegistry` Smart Contract on `mumbai` network for `v2`: https://api.thegraph.com/subgraphs/name/nevermined-io/publicmumbaiv2didregistry
-* Events emitted by the `NFTAccessCondition` Smart Contract on `matic` network for `v2`: https://thegraph.com/hosted-service/subgraph/nevermined-io/publicmaticv2nftaccesscondition
-
 Here you can find a list of the most relevant queries you can send to the Nevermined subgraphs:
 
 ### On-chain information of an asset published
 
-Here you can see the [AssetRegistered query](https://api.thegraph.com/subgraphs/name/nevermined-io/publicmumbaiv2didregistry/graphql?query=query+AssetRegistered+%7B++%0A++didattributeRegistereds%28%0A++++where%3A+%7B%0A++++++_did%3A+%220xefdaacb570370f87f9a850c3e91e106e3ec17acee582bbba47cc03e7554616e5%22%0A++++%7D%0A++%29%7B++++%0A++++++id%0A++++++_did%0A++++++_owner%0A++++++_checksum%2C%0A++++++_value%0A++++++_lastUpdatedBy%2C%0A++++++_blockNumberUpdated++++%0A++%7D%0A%7D&operationName=AssetRegistered) about all the on-chain data emitted when an asset is registered:
+Here you can see the **AssetRegistered query** about all the on-chain data emitted when an asset is registered:
 
 ```graphql
 query AssetRegistered {  
@@ -132,7 +120,7 @@ query AssetRegistered {
 
 ### Assets published for a user
 
-In [UserPublishedAssets query](https://api.thegraph.com/subgraphs/name/nevermined-io/publicmumbaiv2didregistry/graphql?query=query+UserPublishedAssets+%7B++%0A++didattributeRegistereds%28%0A++++where%3A+%7B%0A++++++_owner%3A+%220x322718d8defb7a58eddab138dededc582efa617f%22%0A++++%7D%0A++%29%7B++++%0A++++++id%0A++++++_did%0A++++++_owner%0A++++++_checksum%2C%0A++++++_value%0A++++++_lastUpdatedBy%2C%0A++++++_blockNumberUpdated++++%0A++%7D%0A%7D&operationName=PublishedEvents) you can see all the information of assets published by a user:
+In **UserPublishedAssets query** you can see all the information of assets published by a user:
 
 ```graphql
 query UserPublishedAssets {  
@@ -154,7 +142,7 @@ query UserPublishedAssets {
 
 ### Assets purchased by a user
 
-In [UserPurchasedAssets query](https://api.thegraph.com/subgraphs/name/nevermined-io/publicmumbaiv2accesscondition/graphql?query=query+UserPurchasedAssets+%7B++%0A++fulfilleds%28%0A++++where%3A+%7B%0A++++++_grantee%3A+%220x827c6546ca48ee9a33efee3342292e61c6ea6507%22%0A++++%7D%0A++%29%7B++++%0A++++++id%0A++++%09_agreementId%0A++++%09_documentId%0A++++%09_grantee%0A++++%09_conditionId%0A++%7D%0A%7D&operationName=PublishedEvents) you can see all the information of assets purchased by a user:
+In **UserPurchasedAssets query** you can see all the information of assets purchased by a user:
 
 ```graphql
 query UserPurchasedAssets {  
@@ -174,7 +162,7 @@ query UserPurchasedAssets {
 
 ### Downloads from a user
 
-In [UserDownloads query](https://api.thegraph.com/subgraphs/name/nevermined-io/publicmumbaiv2didregistry/graphql?query=query+UserDownloads+%7B++%0A++useds%28%0A++++where%3A+%7B%0A++++++_agentId%3A+%220x827c6546ca48ee9a33efee3342292e61c6ea6507%22%0A++++%7D%0A++%29%7B++++%0A++++++id%0A++++++_did%0A++++++_agentId%0A++++++_activityId%0A++++++provId%0A++++++_attributes%0A++++++_blockNumberUpdated++++%0A++%7D%0A%7D) you can see all the assets downloaded for a specific user:
+In **UserDownloads query** you can see all the assets downloaded for a specific user:
 
 ```graphql
 query UserDownloads {  
@@ -196,7 +184,7 @@ query UserDownloads {
 
 ### Transactions associated to an asset
 
-In [AssetProvenance query](https://api.thegraph.com/subgraphs/name/nevermined-io/publicmumbaiv2didregistry/graphql?query=query+AssetProvenance+%7B++%0A++provenanceAttributeRegistereds%28%0A++++where%3A+%7B%0A++++++_did%3A+%220xefdaacb570370f87f9a850c3e91e106e3ec17acee582bbba47cc03e7554616e5%22%0A++++%7D%0A++%29%7B++++%0A++++++id%0A++++++_did%0A++++++_agentId%0A++++++_activityId%0A++++++_attributes%0A++++++_blockNumberUpdated++++%0A++%7D%0A%7D) you can get all the events associated with an asset:
+In **AssetProvenance query** you can get all the events associated with an asset:
 
 ```graphql
 query AssetProvenance {  

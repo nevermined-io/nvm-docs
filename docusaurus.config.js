@@ -45,7 +45,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/nevermined-io/docs/tree/main/',
+          // editUrl: 'https://github.com/nevermined-io/docs/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -55,7 +55,7 @@ const config = {
           blogSidebarCount: 0,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/nevermined-io/docs/tree/main/blog/',
+          // editUrl: 'https://github.com/nevermined-io/docs/tree/main/blog/',
         },
         theme: {
           customCss: [require.resolve('./src/scss/custom.scss')],
