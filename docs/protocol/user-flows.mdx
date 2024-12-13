@@ -26,12 +26,18 @@ If the request sent by the user was processed correctly, Nevermined infrastructu
 
 It allows the registration of assets (agents, models, payment plans, etc) in a Nevermined network. The registration happens directly from the Publisher and involves the following steps:
 
-1. The publisher locally computes the DID using the Metadata and registers it on-chain in the DIDRegistry contract associated with the URL where the metadata will be stored
+1. The publisher locally computes the unique identifier of the asset (aka [DID](architecture/specs/Spec-DID.md)) using the [Metadata](../architecture/specs/Spec-METADATA.md) and registers it on-chain in the DIDRegistry contract associated with the URL where the metadata will be stored
 2. The publisher stores the metadata and any existing Metadata API implementation
 
-Having a DID any user can resolve the metadata by having the DID query the DIDRegistry Smart Contract:
+:::info
 
-1. The user having the DID can get the full metadata url
+A DID stands for Decentralized Identifier. You can find further information about the DID standard in the [W3C DID specification](https://www.w3.org/TR/did-core/) and how this is used on the Nevermined Protocol [here](../architecture/specs/Spec-DID).
+
+:::
+
+Having a DID of an asset, any user can resolve the metadata describing that asset:
+
+1. The user having the DID can get the full metadata url from the `DIDRegistry` contract
 2. Having the metadata url the user can fetch the complete metadata from the Metadata API
 
 ![Sequence Diagram Registration](images/sequience_registration.png)

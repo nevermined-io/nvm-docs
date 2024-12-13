@@ -18,64 +18,99 @@ The network fee in Nevermined production environments is **1%** and the receiver
 
 ## Production environment (Arbitrum)
 
+* Network: **Arbitrum One**
+* Contracts Version: **3.5.9**
+* [Contracts Artifacts - ABIs](https://artifacts.nevermined.network/42161/public/contracts_v3.5.9.tar.gz)
+* [Contracts Addresses](https://artifacts.nevermined.network/42161/public/contracts_v3.5.9.json)
 
-### Version 3.5.7
-
-| Environment | Network | Contracts Version | Tag | Component | URL | Comments |
-|-------------|---------|-------------------|-----|-----------|-----|----------|
-| public-nvm-v3-arbitrum | Arbitrum One | 3.5.7 | public | Node | https://node.arbitrum.nevermined.app | |
-| public-nvm-v3-arbitrum | Arbitrum | 3.5.7 | public | Marketplace API | https://marketplace-api.arbitrum.nevermined.app | |
-
-All the contract events are exposed via [The Graph](https://thegraph.com/). You can find all the `Arbitrum` Nevermined Subgraphs here (search by Nevermined):
+| Component | URL | Comments          |
+|-----------|-----|-------------------|
+| Node | https://node.arbitrum.nevermined.app | |
+| Proxy | https://proxy.arbitrum.nevermined.app | |
+| Marketplace API | https://marketplace-api.arbitrum.nevermined.app | |
 
 ## Polygon environment
 
-### Version 3.5.7
+* Network: **Polygon Matic**
+* Contracts Version: **3.5.9**
+* [Contracts Artifacts - ABIs](https://artifacts.nevermined.network/137/public/contracts_v3.5.9.tar.gz)
+* [Contracts Addresses](https://artifacts.nevermined.network/137/public/contracts_v3.5.9.json)
 
-| Environment | Network | Contracts Version | Tag | Component | URL | Comments |
-|-------------|---------|-------------------|-----|-----------|-----|----------|
-| public-nvm-v3-matic | Polygon Matic | 3.5.7 | public | Node | https://node.matic.nevermined.app | |
-| public-nvm-v3-matic | Polygon Matic | 3.5.7 | public | Marketplace API | https://marketplace-api.matic.nevermined.app | |
+| Component | URL | Comments          |
+|-----------|-----|-------------------|
+| Node | https://node.matic.nevermined.app | |
+| Proxy | https://proxy.matic.nevermined.app | |
+| Marketplace API | https://marketplace-api.matic.nevermined.app | |
 
-All the contract events are exposed via [The Graph](https://thegraph.com/). You can find all the `Polygon Matic` Nevermined Subgraphs here (search by Nevermined):
-
-https://thegraph.com/hosted-service
-
-For example for Nevermined Polygon Matic:
-
-https://thegraph.com/hosted-service/subgraph/nevermined-io/publicmaticv2neverminedtoken
 
 ## Gnosis
 
-The `v3.5.7` contracts are also deployed in the **Gnosis** network:
+* Network: **Gnosis**
+* Contracts Version: **3.5.7**
+* [Contracts Artifacts - ABIs](https://artifacts.nevermined.network/100/public/contracts_v3.5.7.tar.gz)
+* [Contracts Addresses](https://artifacts.nevermined.network/100/public/contracts_v3.5.7.json)
 
-* Smart Contract addresses can be found [here](https://artifacts.nevermined.network/100/public/contracts_v3.5.7.json)
-* The ABIs of the contracts to connect via SDK can be downloaded from [here](https://artifacts.nevermined.network/100/public/contracts_v3.5.7.tar.gz)
+| Component | URL | Comments          |
+|-----------|-----|-------------------|
+| Node | https://node.gnosis.nevermined.app | |
+| Proxy | https://proxy.gnosis.nevermined.app | |
+| Marketplace API | https://marketplace-api.gnosis.nevermined.app | |
+
 
 ## Optimism
 
-The `v3.5.7` contracts are also deployed in the **Optimism Mainnet** network:
+* Network: **Optimism Mainnet**
+* Contracts Version: **3.5.7**
+* [Contracts Artifacts - ABIs](https://artifacts.nevermined.network/10/public/contracts_v3.5.7.tar.gz)
+* [Contracts Addresses](https://artifacts.nevermined.network/10/public/contracts_v3.5.7.json)
 
-* Smart Contract addresses can be found [here](https://artifacts.nevermined.network/10/public/contracts_v3.5.7.json)
-* The ABIs of the contracts to connect via SDK can be downloaded from [here](https://artifacts.nevermined.network/10/public/contracts_v3.5.7.tar.gz)
+| Component | URL | Comments          |
+|-----------|-----|-------------------|
+| Node | https://node.optimism.nevermined.app | |
+| Proxy | https://proxy.optimism.nevermined.app | |
+| Marketplace API | https://marketplace-api.optimism.nevermined.app | |
+
 
 ## Base
 
-The `v3.5.7` contracts are also deployed in the **Base Mainnet** network:
+* Network: **Base**
+* Contracts Version: **3.5.7**
+* [Contracts Artifacts - ABIs](https://artifacts.nevermined.network/8453/public/contracts_v3.5.7.tar.gz)
+* [Contracts Addresses](https://artifacts.nevermined.network/8453/public/contracts_v3.5.7.json)
 
-* Smart Contract addresses can be found [here](https://artifacts.nevermined.network/8453/public/contracts_v3.5.7.json)
-* The ABIs of the contracts to connect via SDK can be downloaded from [here](https://artifacts.nevermined.network/8453/public/contracts_v3.5.7.tar.gz)
+| Component | URL | Comments          |
+|-----------|-----|-------------------|
+| Node | https://node.base.nevermined.app | |
+| Proxy | https://proxy.base.nevermined.app | |
+| Marketplace API | https://marketplace-api.base.nevermined.app | |
+
 
 ## Peaq
 
-The `v3.5.7` contracts are also deployed in the **Base Mainnet** network:
+* Network: **Peaq Mainnet**
+* Contracts Version: **3.5.9**
+* [Contracts Artifacts - ABIs](https://artifacts.nevermined.network/3338/public/contracts_v3.5.9.tar.gz)
+* [Contracts Addresses](https://artifacts.nevermined.network/3338/public/contracts_v3.5.9.json)
+
+| Component | URL | Comments          |
+|-----------|-----|-------------------|
+| Node | https://node.peaq.nevermined.app | |
+| Proxy | https://proxy.peaq.nevermined.app | |
+| Marketplace API | https://marketplace-api.peaq.nevermined.app | |
+
 
 * Smart Contract addresses can be found [here](https://artifacts.nevermined.network/3338/public/contracts_v3.5.7.json)
 * The ABIs of the contracts to connect via SDK can be downloaded from [here](https://artifacts.nevermined.network/3338/public/contracts_v3.5.7.tar.gz)
 
 ## Celo
 
-The `v3.5.7` contracts are also deployed in the **Celo Mainnet** network:
+* Network: **Celo Mainnet**
+* Contracts Version: **3.5.7**
+* [Contracts Artifacts - ABIs](https://artifacts.nevermined.network/42220/public/contracts_v3.5.7.tar.gz)
+* [Contracts Addresses](https://artifacts.nevermined.network/42220/public/contracts_v3.5.7.json)
 
-* Smart Contract addresses can be found [here](https://artifacts.nevermined.network/42220/public/contracts_v3.5.7.json)
-* The ABIs of the contracts to connect via SDK can be downloaded from [here](https://artifacts.nevermined.network/42220/public/contracts_v3.5.7.tar.gz)
+| Component | URL | Comments          |
+|-----------|-----|-------------------|
+| Node | https://node.celo.nevermined.app | |
+| Proxy | https://proxy.celo.nevermined.app | |
+| Marketplace API | https://marketplace-api.celo.nevermined.app | |

@@ -54,7 +54,6 @@ The Native token is **MATIC**. This environment has the network name **matic** a
  The Nevermined contracts deployed have the version: **3.5.7**  The Nevermined contracts are labeled with the tag name: **public** 
 The Marketplace API used can be found on https://marketplace-api.matic.nevermined.app. <br/>
 The Nevermined Node can be found on https://node.matic.nevermined.app and uses the public address **0x824dbcE5E9C96C5b8ce2A35a25a5ab87eD1D00b1**.<br/>
- The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
 
 
  
@@ -86,7 +85,6 @@ The Native token is **ETH**. This environment has the network name **arbitrum-on
  The Nevermined contracts deployed have the version: **3.5.7**  The Nevermined contracts are labeled with the tag name: **public** 
 The Marketplace API used can be found on https://marketplace-api.arbitrum.nevermined.app. <br/>
 The Nevermined Node can be found on https://node.arbitrum.nevermined.app and uses the public address **0x824dbcE5E9C96C5b8ce2A35a25a5ab87eD1D00b1**.<br/>
- The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
 
 
  
@@ -102,7 +100,6 @@ The Native token is **ETH**. This environment has the network name **base** and 
  The Nevermined contracts deployed have the version: **3.5.7**  The Nevermined contracts are labeled with the tag name: **public** 
 The Marketplace API used can be found on https://marketplace-api.base.nevermined.app. <br/>
 The Nevermined Node can be found on https://node.base.nevermined.app and uses the public address **0x824dbcE5E9C96C5b8ce2A35a25a5ab87eD1D00b1**.<br/>
- The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
 
 
  
@@ -118,7 +115,6 @@ The Native token is **xDAI**. This environment has the network name **gnosis** a
  The Nevermined contracts deployed have the version: **3.5.7**  The Nevermined contracts are labeled with the tag name: **public** 
 The Marketplace API used can be found on https://marketplace-api.gnosis.nevermined.app. <br/>
 The Nevermined Node can be found on https://node.gnosis.nevermined.app and uses the public address **0x824dbcE5E9C96C5b8ce2A35a25a5ab87eD1D00b1**.<br/>
- The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
 
 
  
@@ -134,7 +130,6 @@ The Native token is **ETH**. This environment has the network name **optimism** 
  The Nevermined contracts deployed have the version: **3.5.7**  The Nevermined contracts are labeled with the tag name: **public** 
 The Marketplace API used can be found on https://marketplace-api.optimism.nevermined.app. <br/>
 The Nevermined Node can be found on https://node.optimism.nevermined.app and uses the public address **0x824dbcE5E9C96C5b8ce2A35a25a5ab87eD1D00b1**.<br/>
- The subgraphs to fetch contracts events can be found on https://api.thegraph.com/subgraphs/name/nevermined-io/public .<br/>
 
 
  

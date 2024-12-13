@@ -33,7 +33,7 @@ export const neverminedNodeAddress =
 export const marketplaceUri = 'https://marketplace-api.testing.nevermined.app'
 
 // The url of the The Graph deployment of Nevermined
-const graphHttpUri = process.env.GRAPH_HTTP_URI ||  'https://api.thegraph.com/subgraphs/name/nevermined-io/public'
+const graphHttpUri = process.env.GRAPH_HTTP_URI
 
 // represent USDC token in arbitrum-sepolia that can be claimed in the faucet https://faucet.circle.com/
 export const erc20TokenAddress = process.env.ERC20_TOKEN_ADDRESS || '0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d'

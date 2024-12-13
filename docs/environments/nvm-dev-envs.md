@@ -21,20 +21,17 @@ The network fee in Nevermined testnets is **1%** and the receiver of that fee is
 
 ## Testing - (Arbitrum Sepolia)
 
-### Public Arbitrum sepolia deployment (v3)
+This is a **testing** network deployment of the Nevermined Protocol in the Arbitrum Sepolia network. You can use this network if you want to integrate with Nevermined in a Arbitrum Testnet.
 
-This is a **public** network deployment (`TAG_NAME=public`) of the Nevermined Contracts v3 in the Arbitrum Sepolia network. You can use this network if you want to integrate with Nevermined in a Arbitrum Testnet.
 
-The **addresses** of the Nevermined Contracts can be found here: https://artifacts.nevermined.network/421614/public/contracts_v3.5.7.json
+* Network: **Arbitrum Sepolia**
+* Contracts Version: **3.5.9**
+* [Contracts Artifacts - ABIs](https://artifacts.nevermined.network/421614/public/contracts_v3.5.9.tar.gz)
+* [Contracts Addresses](https://artifacts.nevermined.network/421614/public/contracts_v3.5.9.json)
 
-The **ABIs of the contracts** to connect via SDK can be download from here: https://artifacts.nevermined.network/421614/public/contracts_v3.5.7.tar.gz
-
-| Environment | Network | Contracts Version | Tag | Component | URL | Comments |
-|-------------|---------|-------------------|-----|-----------|-----|----------|
-| [public-v3-arbitrum-sepolia](https://artifacts.nevermined.network/421614/public/contracts_v3.5.7.json) | Arbitrum Sepolia | 3.5.7 | public | Node | https://node.testing.nevermined.app | |
-| public-v3-arbitrum-sepolia | Arbitrum Sepolia | - | public | Marketplace API | https://marketplace-api.testing.nevermined.app | |
-
-All the contract events are exposed via [The Graph](https://thegraph.com/). You can find all the `Arbitrum Sepolia` Nevermined Subgraphs here (search by Nevermined):
-
-https://thegraph.com/hosted-service
+| Component | URL | Comments          |
+|-----------|-----|-------------------|
+| Node | https://node.testing.nevermined.app | |
+| Proxy | https://proxy.testing.nevermined.app | |
+| Marketplace API | https://marketplace-api.testing.nevermined.app | |
 
