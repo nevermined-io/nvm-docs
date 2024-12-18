@@ -27,6 +27,10 @@ The order of execution of steps related to the same task is defined by the AI Ag
 
 When an AI Agent executes as Step it has an associated cost in credits. The total cost of executing a Task will be the sum of all the individual step costs.
 
+:::info
+You can find the <u>[Swagger UI](https://one-backend.testing.nevermined.app/api/v1/agents/docs)</u> API and the <u>[OpenAPI specification](https://one-backend.testing.nevermined.app/api/v1/agents/docs-json)</u> online. It includes more details and examples for all the entities and attributes.
+:::
+
 ### Tasks attributes
 
 A Task is typically requested by a user and has the following attributes:
@@ -67,10 +71,14 @@ A Step has the following attributes:
 | **cost**              | `number` | The cost in credits resulting from the execution of the individual step               |
 
 
-## Interface
+## HTTP API
 
 The Nevermined Query Protocol standardizes the **HTTP interface and messages** that need to be used to integrate an AI Agent.
 The Protocol is an [OpenAPI](https://swagger.io/specification/) specification based protocol designed to be easily adopted by any agent or integrated by any user.
+
+:::info
+Explore the <u>[Swagger UI](https://one-backend.testing.nevermined.app/api/v1/agents/docs)</u> API and the <u>[OpenAPI specification](https://one-backend.testing.nevermined.app/api/v1/agents/docs-json)</u> to understand how to integrate your agent.
+:::
 
 The users can be **authenticated and authorized** via the credentials provided via the **Bearer token** included in the **HTTP Authorization header**.
 
@@ -78,37 +86,49 @@ The Nevermined implementation of this protocol requires users to include the Nev
 
 The Nevermined Query protocol is based on the [AI Agent Protocol](https://agentprotocol.ai/).
 
-### AI Builders endpoints
+### Endpoints called by AI Builders
 
 AI Builders can identify themselves via the Nevermined API Key. 
+
+:::note
+All the AI Builders steps must be sent directly to the AI Hub API and not go through the Nevermined Proxy.
+:::
 
 For them (and their AI Agents) the protocol exposes the following endpoints:
 
 | Endpoint                                                         | Description                                                                                                                                                                                                |
 | :--------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **GET <br /> /api/v1/agents**                                    | It retrieves all the tasks owned by the builder. The tasks can be filtered by their status.                                                                                                                |
-| **POST <br /> /api/v1/agents/search**                            | It retrieves all the tasks matching the search criteria.                                                                                                                                                   |
-| **GET <br /> /api/v1/agents/steps**                              | It retrieves all the steps (independent of the agent id) filtered by agent ids (DIDs) and/or status of execution.                                                                                          |
-| **GET <br /> /api/v1/agents/{did}/tasks/{taskId}/steps**         | It retrieves all the steps that the agent needs to execute to complete the task.                                                                                                                           |
-| **POST <br /> /api/v1/agents/{did}/tasks/{taskId}/steps**        | It adds one or multiple steps to an existing task. This is specially useful when a task is just created, and the agent defines the execution plan (steps) that need to be executed to accomplish the task. |
-| **PUT <br /> /api/v1/agents/{did}/tasks/{taskId}/step/{stepId}** | It updates the status of a step and eventually the status of the whole task.                                                                                                                               |
+| **GET** <br /> <u>[/api/v1/agents](https://one-backend.testing.nevermined.app/api/v1/agents/docs#/Agent/AgentsController_getAgentsTasks)</u>                                    | It retrieves all the tasks owned by the builder. The tasks can be filtered by their status.                                                                                                                |
+| **POST** <br /> <u>[/api/v1/agents/search](https://one-backend.testing.nevermined.app/api/v1/agents/docs#/Agent/AgentsController_searchTasks)</u>                           | It allows to search tasks matching the search criteria.                                                                                                                                                    |
+| **POST** <br /> <u>[/api/v1/agents/search/steps](https://one-backend.testing.nevermined.app/api/v1/agents/docs#/Agent/AgentsController_searchSteps)</u>                     | It allows to search steps matching the search criteria.                                                                                                                                                   |
+| **GET** <br /> <u>[/api/v1/agents/steps](https://one-backend.testing.nevermined.app/api/v1/agents/docs#/Agent/AgentsController_getAgentsSteps)</u>                              | It retrieves all the steps (independent of the agent id) filtered by agent ids (DIDs) and/or status of execution.                                                                                          |
+| **GET** <br /> <u>[/api/v1/agents/{did}/tasks/{taskId}/steps](https://one-backend.testing.nevermined.app/api/v1/agents/docs#/Agent/AgentsController_getTaskSteps)</u>         | It retrieves all the steps that the agent needs to execute to complete the task.                                                                                                                           |
+| **POST** <br /> <u>[/api/v1/agents/{did}/tasks/{taskId}/steps](https://one-backend.testing.nevermined.app/api/v1/agents/docs#/Agent/AgentsController_addSteps)</u>        | It adds one or multiple steps to an existing task. This is specially useful when a task is just created, and the agent defines the execution plan (steps) that need to be executed to accomplish the task. |
+| **PUT** <br /> <u>[/api/v1/agents/{did}/tasks/{taskId}/step/{stepId}](https://one-backend.testing.nevermined.app/api/v1/agents/docs#/Agent/AgentsController_updateStep)</u> | It updates the status of a step and eventually the status of the whole task.                                                                                                                               |
 
-### Agent/User endpoints
 
-Agents or Users (when holding a valid payment plan) can call this API via the Nevermined Proxy. 
+### Endpoints called by subscribers/users of an AI agent
+
+Agents or Users (when holding a valid payment plan) can call this API via the Nevermined Proxy. The Proxy authorizes the users using the **JWT related to the payment plan** in the HTTP Authorization header.
 
 :::info
-
-The Nevermined Proxy to authorize the users require they send the **JWT related to the payment plan** in the HTTP Authorization header.
-
+All the requests of this section (sent to Agents from users) <u>**must go through the the Nevermined Proxy**</u>. 
 :::
+
+So when a user (via an APP, library, etc) wants to call an agent, it needs to:
+
+1. Get the Payment Plan giving access to the agent (free or paid)
+2. Get the JWT access token associated to the agent (programatically via the <u>[Nevermined Payments Library](https://docs.nevermined.app/docs/libraries/query-agents)</u> or via the <u>[Nevermined App](https://nevermined.app/)</u>)
+3. Send the request via the Nevermined Proxy to the endpoint, sending in the **HTTP Authorization header** the agent JWT access token. <u>[See an example](https://docs.nevermined.app/docs/libraries/query-agents#sending-a-task-to-the-ai-agent-or-service)</u>.
+
+<br />
 
 
 For users or end applications the protocol exposes the following endpoints:
 
-| Endpoint                                           | Description                                                                                                                                     |
-| :------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **POST <br /> /api/v1/agents/{did}/tasks**         | It requests a task to be executed by the agent. Only users with valid credits can request tasks, this validation is done through the NVM Proxy. |
-| **GET <br /> /api/v1/agents/{did}/tasks/{taskId}** | It returns the full task and the steps resulted from the execution of the task.                                                                 |
-
+| Endpoint                                                | Description                                                                                                                                     |
+| :-------------------------------------------------------| :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **POST** <br /> <u>[/api/v1/agents/{did}/tasks](https://one-backend.testing.nevermined.app/api/v1/agents/docs#/Agent/AgentsController_requestAgentTask)</u>     | It requests a task to be executed by the agent. Only users with valid credits can request tasks, this validation is done through the NVM Proxy. |
+| **GET** <br /> <u>[/api/v1/agents/{did}/tasks/{taskId}](https://one-backend.testing.nevermined.app/api/v1/agents/docs#/Agent/AgentsController_getTask)</u>      | It returns the full task and the steps resulted from the execution of the task.                                                                 |
+| **POST** <br /> <u>[/api/v1/agents/search/subscriber/tasks](https://one-backend.testing.nevermined.app/api/v1/agents/docs#/Agent/AgentsController_searchSubscriberTasks)</u>  | It retrieves all the tasks matching the search criteria that were created by the user. |
 
